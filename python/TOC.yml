@@ -1,0 +1,84 @@
+- name: 面向 Python 开发人员的 Azure
+  href: index.yml
+- name: 概述
+  items:
+    - name: 关于 Python SDK
+      href: python-sdk-azure-overview.md
+- name: 快速入门
+  items:
+    - name: Python SDK
+      href: python-sdk-azure-get-started.yml
+    - name: 开发人员工具
+      href: python-azure-tools.md
+    - name: 应用托管
+      items:
+        - name: 应用服务
+          href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Kubernetes
+          href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Linux VM
+          href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 容器实例
+          href: /azure/container-instances/container-instances-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Batch
+          href: /azure/batch/quick-run-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - name: 数据解决方案
+      items:
+        - name: Blob 存储
+          href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 表存储
+          href: /azure/cosmos-db/create-table-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Cosmos DB
+          href: /azure/cosmos-db/sql-api-python-application?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Redis 缓存
+          href: /azure/redis-cache/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: SQL 数据库
+          href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: PostgreSQL
+          href: /azure/app-service/containers/tutorial-docker-python-postgresql-app?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: MySQL
+          href: /azure/mysql/connect-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 数据工厂
+          href: /azure/data-factory/quickstart-create-data-factory-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - name: AI 和机器学习
+      items:
+        - name: 机器学习服务
+          href: /azure/machine-learning/desktop-workbench/tutorial-classifying-iris-part-1?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Batch AI
+          href: /azure/batch-ai/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 计算机视觉
+          href: /azure/cognitive-services/Computer-vision/Quickstarts/python-analyze?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 文本分析
+          href: /azure/cognitive-services/Text-Analytics/quickstarts/python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Azure Notebook
+          href: 'https://notebooks.azure.com/liwong/libraries/iris1234/html/Data+Science+Quickstart.ipynb'
+    - name: 安全性和集成
+      items:
+        - name: 服务总线
+          href: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 事件网格
+          href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 队列存储
+          href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- name: 操作指南
+  items:
+    - name: 安装 SDK
+      href: python-sdk-azure-install.md
+    - name: Authentication
+      href: python-sdk-azure-authenticate.md
+    - name: 操作配置
+      href: python-sdk-azure-operation-config.md
+    - name: 多云开发
+      href: python-sdk-azure-multi-cloud.md
+- name: 示例
+  items:
+    - name: 虚拟机
+      href: python-sdk-azure-virtual-machine-samples.md
+    - name: Web 应用
+      href: python-sdk-azure-web-apps-samples.md
+    - name: SQL 数据库
+      href: python-sdk-azure-sql-database-samples.md
+    - name: 所有 Python 示例
+      href: 'https://azure.microsoft.com/resources/samples/?platform=python'
+- name: 引用
+  href: /python/api/?view=azure-python
