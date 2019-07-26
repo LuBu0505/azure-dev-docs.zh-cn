@@ -1,0 +1,87 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: 面向 Java 云开发人员的 Azure
+metadata:
+  title: 面向 Java 开发人员的 Azure - 教程和 API 参考
+  description: 使用这些面向 Java 开发人员的优良教程和工具开始开发云应用。
+  keywords: 'Azure, Java, SDK, API, Maven, Spring'
+  author: rloutlaw
+  ms.author: brendm
+  manager: douge
+  ms.date: 11/02/2017
+  ms.topic: article
+  ms.technology: azure
+  ms.devlang: java
+  ms.service: multiple
+sections:
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 2
+        items:
+          - href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            html: <p>将第一个 Web 应用部署到 Azure</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+            title: 入门
+          - href: 'https://docs.microsoft.com/java/azure/spring-framework/'
+            html: <p>将 Azure 服务与 Spring Boot 配合使用</p>
+            image:
+              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg'
+            title: Azure 上的 Spring
+          - href: java-azure-tools.md
+            html: <p>工具和 IDE</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+            title: IntelliJ、Maven、Eclipse 和 VS Code 插件
+          - href: jdk/index.md
+            html: <p>支持的 JDK</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+            title: 支持的 JDK
+          - href: /java/api/?view=azure-java
+            html: <p>API 参考</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+            title: 用于 Java 的 Azure SDK
+  - title: 入门指南
+    items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg'
+            title: 使用 Maven 部署 Spring Boot 应用
+            href: 'https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin'
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/storage.svg'
+            title: 从存储上传和下载 blob
+            href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/azurefunctions.svg'
+            title: 创建 Java 无服务器函数
+            href: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          - image:
+              src: 'https://docs.microsoft.com/javascript/azure/media/k8s_logo.svg'
+            title: 部署到 Kubernetes
+            href: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-kubernetes?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          - image:
+              src: 'https://docs.microsoft.com/azure/media/index/fabric.svg'
+            title: 将微服务与 Service Fabric 配合使用
+            href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          - image:
+              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/jenkins_logo.svg'
+            title: 使用 Jenkins® 持续集成/持续交付到应用服务
+            href: /azure/jenkins/java-deploy-webapp-tutorial?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+  - title: 示例
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2">使用 Linux 和 Cosmos DB 创建 Spring Boot 应用</a>'
+          - html: '<a href="https://github.com/Azure-Samples/storage-blobs-java-v10-quickstart">使用 Java 的 Azure Blob 存储</a>'
+          - html: '<a href="https://github.com/Azure-Samples/azure-cosmos-db-sql-api-async-java-getting-started">使用 SQL API 连接到 Cosmos DB</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/samples/service-fabric-java-getting-started/">将 Java 微服务与 Service Fabric 配合使用</a>'

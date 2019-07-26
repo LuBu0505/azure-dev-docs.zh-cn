@@ -1,0 +1,7 @@
+- name: Azure
+  tocHref: /azure
+  topicHref: /azure/index
+  items:
+    - name: Azure 上的 Python
+      tocHref: /azure/python
+      topicHref: /azure/python/index
