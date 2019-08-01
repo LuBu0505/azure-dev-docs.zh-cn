@@ -1,5 +1,5 @@
 ---
-title: 使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到云中
+title: 使用 Maven 将 Spring Boot JAR 文件应用部署到 Azure
 description: 了解如何使用适用于 Linux 的 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。
 services: app-service
 documentationcenter: java
@@ -11,12 +11,13 @@ ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 83bc65357f14b17ad60d0eb15adaac328dbc0386
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-java-july2019
+ms.openlocfilehash: e4aec4beb141025d49afbe200a090a40e327a12c
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281458"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691100"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
 
@@ -201,6 +202,14 @@ Web 部署完成后即可通过 [Azure 门户]进行管理。
    ![确定 Web 应用的 URL][AP02]
 
 通过与以前相同的 cURL 命令（使用来自门户的 Web 应用 URL而不是 `localhost`）验证部署是否成功。 应当会看到显示了以下消息：**Greetings from Spring Boot!** 
+
+## <a name="clean-up-resources"></a>清理资源
+不再需要 Azure 资源时，请通过删除资源组来清理部署的资源。
+
+- 在 Azure 门户上的左侧菜单中选择“资源组”。
+- 在“按名称筛选”  字段中输入 **gs-spring-boot-** ，在本教程中创建的资源组应具有此前缀。
+- 选择在本教程中创建的资源组。
+- 在顶部菜单中选择“删除资源组”。
 
 ## <a name="next-steps"></a>后续步骤
 

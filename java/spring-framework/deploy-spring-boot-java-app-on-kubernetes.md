@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: f7bb539e59b8d9d6afcf736560348748d311b49a
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 3363e1a4600328e012b99bd940cf88bb47e2ee57
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430938"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691717"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -226,9 +226,9 @@ ms.locfileid: "68430938"
    ```
    在此命令中：
 
-   * 容器名称 `gs-spring-boot-docker` 会立即在 `expose deployment` 命令后指定
+   * 容器名称 `gs-spring-boot-docker` 紧跟在 `expose deployment` 命令后指定。
 
-   * `--type` 参数指定此群集使用负载均衡器
+   * `--type` 参数指定此群集使用负载均衡器。
 
    * `--port` 参数指定面向公众的 TCP 端口 80。 在此端口访问应用。
 
@@ -253,7 +253,7 @@ ms.locfileid: "68430938"
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
-1. 在浏览器中打开 Kubernetes 配置网站后，单击“部署容器化应用”的链接  ：
+1. 在浏览器中打开 Kubernetes 配置网站后，选择“部署容器化应用”的链接  ：
 
    ![Kubernetes 配置网站][KB01]
 
@@ -272,7 +272,7 @@ ms.locfileid: "68430938"
    ![Kubernetes 配置网站][KB02]
 
 
-1. 单击“部署”对容器进行部署  。
+1. 选择“部署”对容器进行部署  。
 
    ![Kubernetes 部署][KB05]
 
@@ -280,7 +280,7 @@ ms.locfileid: "68430938"
 
    ![Kubernetes 服务][KB06]
 
-1. 若单击“外部终结点”的链接，则可看见 Spring Boot 应用程序在 Azure 上运行  。
+1. 若选择“外部终结点”的链接，则可看见 Spring Boot 应用程序在 Azure 上运行  。
 
    ![Kubernetes 服务][KB07]
 
