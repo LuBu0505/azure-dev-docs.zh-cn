@@ -1,19 +1,19 @@
 ---
 title: 使用 Node.js 的 Azure 数据库教程
 description: 有关在 Node.js 中连接和使用 Azure 数据库的教程。
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 06/17/2017
 ms.author: karler
-ms.openlocfilehash: c60e878b4dcfcecd727efed060499ee0575f1128
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 961e070d096f9e72972e3b4022da23d27f0cce4b
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68429054"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68690691"
 ---
 # <a name="tutorials-for-using-azure-databases-with-nodejs"></a>有关在 Node.js 中使用 Azure 数据库的教程
 

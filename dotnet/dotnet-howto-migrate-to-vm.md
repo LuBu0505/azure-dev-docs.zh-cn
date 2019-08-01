@@ -3,12 +3,13 @@ title: 将 ASP.NET Web 应用程序迁移到 Azure 虚拟机
 description: 了解如何将 ASP.NET Web 应用程序从本地迁移到 Azure 虚拟机。
 ms.date: 11/15/2017
 ms.service: virtual-machines
-ms.openlocfilehash: 6f9e7e9574c4aabcc84a3e71c78d95412f362b6e
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: a3a60e788d578f8f3a94283b1f323ce0c943796a
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280228"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691252"
 ---
 # <a name="migrate-an-aspnet-web-application-to-an-azure-virtual-machine"></a>将 ASP.NET Web 应用程序迁移到 Azure 虚拟机
 

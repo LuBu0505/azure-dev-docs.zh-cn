@@ -2,12 +2,13 @@
 title: 用于 Visual Studio 2015 的 Azure 工具
 description: 获取工具以开始使用 Visual Studio 2015 中的 Azure .NET 库。
 ms.date: 10/19/2017
-ms.openlocfilehash: 887190bf3c564d1352b37c657f8d1bb395b8a7de
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: 98849363744f52c8fa882f2dbaef263be5fd3f0c
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280608"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691403"
 ---
 # <a name="azure-tools-for-visual-studio-2015"></a>用于 Visual Studio 2015 的 Azure 工具
 

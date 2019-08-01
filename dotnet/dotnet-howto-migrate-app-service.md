@@ -3,12 +3,13 @@ title: 将 .NET Web 应用或服务迁移到 Azure 应用服务
 description: 了解如何将 .NET Web 应用或服务从本地迁移到 Azure 应用服务。
 ms.date: 08/11/2018
 ms.service: app-service
-ms.openlocfilehash: dc8b42e6c5b099f7b1cbba37c7c0071c376cf06d
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: d9ab2e536f7b0cd1f069d71911f24f1632cd156e
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280208"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691149"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>将 .NET Web 应用或服务迁移到 Azure 应用服务 
 

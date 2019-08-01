@@ -1,15 +1,16 @@
 ---
 title: 选择正确的 Azure 托管选项
 description: 了解 ASP.NET Web 应用程序适合使用哪个 Azure 迁移路径。
-author: CESARDELATORRE
+author: cesardelatorre
 ms.author: cesardl
 ms.date: 11/15/2017
-ms.openlocfilehash: 32c2c1afd5983b3eb514cb47bd089959fb8c7b09
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: cc9c8080a8e6596fd14759967a43792523ea5a86
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280218"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691211"
 ---
 # <a name="choose-the-right-azure-hosting-option"></a>选择正确的 Azure 托管选项 
 

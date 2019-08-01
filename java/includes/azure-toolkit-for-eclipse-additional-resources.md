@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 72cbb56fb496bf3ee78e3cac2ab54d72b0e6c508
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429269"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691760"
 ---
 若要报告 bug 或请求新功能，请在[我们的 GitHub 存储库](https://github.com/Microsoft/azure-tools-for-java/issues)上创建问题。 或者，[在 Stack Overflow 上使用标记 azure-java-tools](https://stackoverflow.com/questions/tagged/azure-java-tools) 提出问题。
 
