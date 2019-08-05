@@ -13,8 +13,8 @@
           href: deploy-microprofile-to-web-app-for-containers.md
         - name: Azure Key Vault 的配置源
           href: configure-microprofile-with-keyvault.md
-        - name: 使用 Azure DevOps 对 MicroProfile 应用程序进行 CI/CD
-          href: cicd-microprofile-vsts.md
+        - name: 使用 Azure Pipelines 对 MicroProfile 应用程序进行 CI/CD
+          href: cicd-microprofile.md
     - name: 示例
       expanded: false
       items:
