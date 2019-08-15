@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 7b5133739b0f053b40ed24dceac6558dbbe2b151
-ms.sourcegitcommit: 30d4b58285422a2596dd97137fb82bba30d35388
+ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "68278818"
 ---
 ## <a name="displaying-the-azure-explorer-tool-window"></a>显示 Azure 资源管理器工具窗口
