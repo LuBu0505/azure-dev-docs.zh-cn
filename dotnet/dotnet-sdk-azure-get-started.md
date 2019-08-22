@@ -2,13 +2,15 @@
 title: Azure 和 .NET 入门
 description: 学习了解 Azure 和 .NET 所需的基础知识。
 ms.date: 09/19/2018
+author: CamSoper
+ms.author: casoper
 ms.topic: conceptual
-ms.openlocfilehash: 70c3dbecbd184ed8952ad343e33686bdf8ae1fd5
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 9b0c9b23fa8b75975b0412804ce8b9a1ecb41b46
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691383"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633125"
 ---
 # <a name="get-started-with-azure-and-net"></a>Azure 和 .NET 入门
 

@@ -75,7 +75,7 @@ sections:
           - image:
               src: /java/media/jenkins_logo.svg
             title: 使用 Jenkins® 持续集成/持续交付到应用服务
-            href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service&bc=/azure/java/breadcrumb/toc.json
+            href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
   - title: 示例
     items:
       - type: list

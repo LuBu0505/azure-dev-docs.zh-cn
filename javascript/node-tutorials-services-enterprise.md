@@ -1,19 +1,19 @@
 ---
 title: 使用 Node.js 的 Azure 企业服务教程
 description: 有关在 Node.js 中使用 Azure 企业服务的教程。
-author: karlerickson
-manager: douge
+author: kraigb
+manager: barbkess
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 06/17/2017
-ms.author: karler
-ms.openlocfilehash: e8444653525a49cac413159ce644dc0b868b68ac
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.author: kraigb
+ms.openlocfilehash: 172e5508924af77e5df6fd5d47f559272bd11e7d
+ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690738"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889867"
 ---
 # <a name="tutorials-for-using-azure-enterprise-services-with-nodejs"></a>有关在 Node.js 中使用 Azure 企业服务的教程
 

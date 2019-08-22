@@ -2,13 +2,15 @@
 title: 用于 .NET 的 Azure 管理库用法概念和模式
 description: ''
 ms.date: 10/19/2017
+author: CamSoper
+ms.author: casoper
 ms.topic: conceptual
-ms.openlocfilehash: 2d7cea696bf51fbeece1c99f5db2b09e6166f3be
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 2eb4784f6ed8dbe1fc60644a303da6fe6fed46a6
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691450"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633060"
 ---
 # <a name="azure-management-library-for-net-fluent-concepts"></a>用于 .NET 的 Azure 管理库的 Fluent 概念
 
