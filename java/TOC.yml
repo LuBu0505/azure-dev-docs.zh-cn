@@ -129,6 +129,10 @@
           href: /azure/service-fabric/service-fabric-tutorial-create-java-app?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: 将应用服务上的 Spring Boot 与 Cosmos DB 配合使用
           href: /azure/app-service/containers/tutorial-java-spring-cosmosdb?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure Pipelines CI/CD 到应用服务
+          href: /azure/devops/pipelines/languages/java-webapp?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure Pipelines CI/CD 到 Azure Functions
+          href: /azure/devops/pipelines/languages/java-function?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: 使用 Jenkins 持续集成/持续交付到应用服务
           href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: 使用 Maven 部署到应用服务
