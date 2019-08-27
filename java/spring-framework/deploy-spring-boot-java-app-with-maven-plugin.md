@@ -11,15 +11,15 @@ ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.custom: seo-java-july2019
-ms.openlocfilehash: e4aec4beb141025d49afbe200a090a40e327a12c
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: 05d9fb7817eafea56e095667c260075c5e02c6da
+ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691100"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889812"
 ---
-# <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
+# <a name="deploy-a-spring-boot-web-app-to-azure-app-service-on-linux"></a>将 Spring Boot Web 应用部署到 Linux 上的 Azure 应用服务
 
 本文演示如何使用[适用于 Azure 应用服务 Web 应用的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)将打包为 Java SE JAR 的 Spring Boot 应用程序部署到 [Linux 上的 Azure 应用服务](/azure/app-service/containers/)。 如果要将应用的依赖关系、运行时和配置合并到单个可部署项目中，请选择通过 [Tomcat 和 WAR 文件](/azure/app-service/containers/quickstart-java)进行 Java SE 部署。
 
