@@ -31,13 +31,11 @@
             - name: 将 Log Analytics 与 Azure Monitor 配合使用
               href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: GitHub 操作
-              href: 'https://css-tricks.com/introducing-github-actions/'
+              href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
         - name: 调试和诊断
           items:
             - name: 适用于 Azure 应用服务的远程调试
               href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            - name: VS Code 中针对 Azure 应用服务的日志点
-              href: 'https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach'
             - name: 在 VS Code 中调试本地 Node.js 应用
               href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
         - name: 工具和扩展
