@@ -8,12 +8,12 @@ ms.date: 08/21/2019
 ms.devlang: java
 ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: f41486c7063a6b0fa26ca4055d5f10e625676e8a
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 58d8dd00deeb90b1a1b8935bcbbab471255328d4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892371"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181985"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
 
@@ -24,9 +24,6 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://do
 适用于 Azure 服务总线 JMS 的 Spring Boot Starter 可用于将 Spring 与服务总线相集成。
 
 本文介绍如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter 从服务总线 `queues` 和 `topics` 收发消息。
-
-> [!NOTE]
-> 目前，本文使用的是该 Starter 的 `SNAPSHOT` 版本。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -66,28 +63,11 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://do
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7-SNAPSHOT</version>
+        <version>2.1.7</version>
     </dependency>
     ```
 
-    ![将依赖项部分添加到 pom.xml 文件。](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section.png)
-
-1. 添加 [maven 存储库](https://maven.apache.org/settings.html#Repositories)配置，以使用 SNAPSHOT 版本：
-
-    ```xml
-    <repositories>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-    ```
-
-    ![将存储库部分添加到 pom.xml 文件。](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-repository-section.png)
+    ![将依赖项部分添加到 pom.xml 文件。](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section-new.png)
 
 1. 保存并关闭 pom.xml 文件  。
 
@@ -121,7 +101,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://do
     | `spring.jms.servicebus.connection-string` | 指定从 Azure 门户内你的服务总线命名空间中获取的连接字符串。 |
     | `spring.jms.servicebus.idle-timeout`      | 指定空闲超时时间（以毫秒为单位）。 在本教程中，建议的值为 1800000。   |
 
-3. 保存并关闭 application.properties 文件  。
+1. 保存并关闭 application.properties 文件  。
 
 ### <a name="use-service-bus-topic"></a>使用服务总线主题
 
@@ -353,7 +333,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://do
     mvn clean spring-boot:run
     ```
 
-3. 在应用程序运行后，你可以使用 curl  对其进行测试：
+1. 在应用程序运行后，你可以使用 curl  对其进行测试：
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello
