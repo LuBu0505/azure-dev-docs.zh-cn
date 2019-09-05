@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/19/2019
 ms.author: kraigb
-ms.openlocfilehash: 0917da975f29d392944ba2351e894de640182eb9
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: a5ed7d5d99009593845966969217f8a5081da4c4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892491"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181945"
 ---
 # <a name="how-to-write-serverless-nodejs-code-on-azure"></a>如何在 Azure 上编写无服务器 Node.js 代码
 
@@ -40,12 +40,14 @@ ms.locfileid: "69892491"
 - 了解如何使用各种触发器运行无服务器代码：
 
   - [在计时器上运行代码](/azure/azure-functions/functions-create-scheduled-function)
-  - [当文件在 Azure Blob 存储中上传或更新时运行代码](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
+  - [当文件上传到 Azure Blob 存储中或在 Azure Blob 存储中更新时运行代码](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
   - [在消息写入 Azure 队列存储时运行代码](/azure/azure-functions/functions-create-storage-queue-triggered-function)
 
 - [使用 Azure Functions 和 Azure Cosmos DB 存储非结构化数据](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript)。 有关其他数据库的信息，请参阅[如何将 Azure 数据库集成到 Node.js 代码中](node-howto-integrate-databases.md)
 
-- [在本地对 Azure Functions 进行编码和测试](/azure/azure-functions/functions-develop-local)，以及[在 Azure Functions 中测试代码的策略](/azure/azure-functions/functions-test-a-function)和[错误处理](/azure/azure-functions/functions-bindings-error-pages)
+- [在本地对 Azure Functions 进行编码和测试](/azure/azure-functions/functions-develop-local)
+
+- [在 Azure Functions 中测试代码的策略](/azure/azure-functions/functions-test-a-function)和[错误处理](/azure/azure-functions/functions-bindings-error-pages)
 
 - [使用 Azure Active Directory 配置身份验证](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
 

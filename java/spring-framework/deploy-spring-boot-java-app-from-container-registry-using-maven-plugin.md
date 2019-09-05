@@ -14,15 +14,15 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.custom: seo-java-july2019
-ms.openlocfilehash: c2622da604e31b5cf2a2f1e7b3344b21338aa56d
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: a281a33958f33b37f205dc9642f1bce714725923
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691127"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182003"
 ---
-# <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
+# <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>使用用于 Azure Web 应用的 Maven 将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
 本文演示如何将示例 [Spring Boot] 应用程序部署到 Azure 容器注册表以及在此之后如何使用适用于 Azure Web 应用的 Maven 插件将应用程序部署到 Azure 应用服务。
 
