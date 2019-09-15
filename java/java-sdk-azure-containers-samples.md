@@ -9,16 +9,16 @@ ms.date: 07/31/2017
 ms.topic: article
 ms.devlang: java
 ms.service: multiple
-ms.custom: seo-java-july2019
-ms.openlocfilehash: 87bfa673926b6349ec3ffdb066a60556179e4065
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-september2019
+ms.openlocfilehash: a3580c528660d941f9addff71fa0d9b5fc232f3a
+ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691922"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904923"
 ---
 # <a name="java-samples-for-azure-container-service"></a>Azure 容器服务的 Java 示例
 
-下表提供了可用于创建和配置在容器中运行的应用程序的 Java 源代码的链接。
+下表提供了可用于创建和配置在 Azure 容器服务中运行的应用程序的 Java 源代码的链接。
 
 [!INCLUDE [java-container-samples](includes/java-container-samples.md)]

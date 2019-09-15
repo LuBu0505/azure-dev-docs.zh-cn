@@ -8,17 +8,17 @@ ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
-ms.custom: seo-java-august2019
-ms.openlocfilehash: b91da6ad547743a31967838786a52ce4303fff1e
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 618766a6aafbafea3036b9c4abff51bd069e2786
+ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181935"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904884"
 ---
 # <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>为 Azure 将 Docker 与 Java 开发工具包 (JDK) 配合使用 
 
-针对 Java 7、8、11 预生成的 Docker 映像可以通过 [Docker Hub](https://hub.docker.com/_/microsoft-java-se) 使用。
+本文介绍了如何为 Azure 将 Docker 与 Java 开发工具包 (JDK) 配合使用。 针对 Java 7、8、11 预生成的 Docker 映像可以通过 [Docker Hub](https://hub.docker.com/_/microsoft-java-se) 使用。
 
 Docker Hub 上提供适用于 Zulu JDK、JRE 和 JRE-headless 且基于多个基 OS 映像的认证 Docker 容器映像：
 
