@@ -60,6 +60,54 @@
           href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
         - name: 队列存储
           href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- name: 教程
+  items:
+    - name: 使用 VS Code 部署到应用服务
+      items:
+        - name: 简介和先决条件
+          href: tutorial-deploy-app-service-on-linux-01.md
+        - name: 准备应用程序
+          href: tutorial-deploy-app-service-on-linux-02.md
+        - name: 创建应用服务
+          href: tutorial-deploy-app-service-on-linux-03.md
+        - name: 配置启动文件
+          href: tutorial-deploy-app-service-on-linux-04.md
+        - name: 部署应用
+          href: tutorial-deploy-app-service-on-linux-05.md
+        - name: 流式传输日志
+          href: tutorial-deploy-app-service-on-linux-06.md
+        - name: 清理资源
+          href: tutorial-deploy-app-service-on-linux-07.md
+    - name: 使用 VS Code 部署容器
+      items:
+        - name: 简介和先决条件
+          href: tutorial-deploy-containers-01.md
+        - name: 部署容器映像
+          href: tutorial-deploy-containers-02.md
+        - name: 进行更改并重新部署
+          href: tutorial-deploy-containers-03.md
+        - name: 流式传输日志
+          href: tutorial-deploy-containers-04.md
+        - name: 清理资源
+          href: tutorial-deploy-containers-05.md
+    - name: 使用 VS Code 部署 Azure Functions
+      items:
+        - name: 简介和先决条件
+          href: tutorial-vs-code-serverless-python-01.md
+        - name: 创建 Python 函数
+          href: tutorial-vs-code-serverless-python-02.md
+        - name: 检查代码文件
+          href: tutorial-vs-code-serverless-python-03.md
+        - name: 本地调试
+          href: tutorial-vs-code-serverless-python-04.md
+        - name: “部署到 Azure”
+          href: tutorial-vs-code-serverless-python-05.md
+        - name: 添加第二个函数
+          href: tutorial-vs-code-serverless-python-06.md
+        - name: 添加存储绑定
+          href: tutorial-vs-code-serverless-python-07.md
+        - name: 清理资源
+          href: tutorial-vs-code-serverless-python-08.md
 - name: 操作指南
   items:
     - name: 安装 SDK
