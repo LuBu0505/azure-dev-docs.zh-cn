@@ -1,7 +1,7 @@
 ### YamlMime:Landing
-title: Azure SDK for Go
+title: Azure SDK for Go 文档
 summary: >
-  了解如何使用 Azure SDK for Go、该 SDK 提供的功能以及使得 Azure 便于使用的开发工具。
+  了解如何使用 Azure SDK for Go、该 SDK 提供哪些功能，以及如何通过开发工具轻松地使用 Azure 和 Go。
 metadata:
   title: 面向 Go 开发人员的 Azure
   description: 参考以下开发人员资源，开始使用 Azure SDK for Go 进行开发。
@@ -11,12 +11,12 @@ metadata:
   ms.topic: landing-page
   ms.collection: collection
   ms.devlang: golang
-  ms.openlocfilehash: 68af188ce8193241127b418df00352481151ce4e
-  ms.sourcegitcommit: e1204a575c95672b6ba369d12bc7d86d4e2acc52
+  ms.openlocfilehash: f6f32557f7ee54e42882bf270e93e5d37019a2db
+  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70864366"
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71094797"
 landingContent:
 - title: Azure SDK for Go 入门
   linkLists:

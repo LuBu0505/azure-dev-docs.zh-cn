@@ -1,190 +1,99 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: 面向 Python 云开发人员的 Azure
+### YamlMime:Landing
+title: Azure SDK for Python 文档
+summary: >
+  了解 Azure SDK for Python、其入门方法以及其为开发人员提供的功能。 开始使用各种有用的 Azure 功能（例如应用程序托管）、对开源数据库（例如 mySQL 和 PostgreSQL）的支持，以及使用大数据进行机器学习和其他应用。
 metadata:
-  title: 面向 Python 开发人员的 Azure - 教程和 API 参考
-  description: 通过这些快速入门、教程和 API 参考了解 Azure 上的 Python。
-  keywords: 'Azure, Python, SDK, API'
+  title: 面向 Python 开发人员的 Azure
+  description: 参考以下开发人员资源，开始使用 Azure SDK for Python 进行开发。
   author: sptramer
   ms.author: sttramer
-  manager: carmonm
-  ms.date: 06/27/2019
+  ms.date: 09/10/2019
   ms.topic: landing-page
-  ms.prod: azure
-  ms.devlang: python
-sections:
-  - title: 快速入门
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: 在 Azure 上生成并部署 Python Web 应用。
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/AzureFunctions.svg'
-            title: 使用 Visual Studio Code 在 Azure Functions 中创建和部署无服务器 Python 应用。
-            href: 'https://code.visualstudio.com/docs/python/tutorial-azure-functions'
-          - image:
-              src: 'https://docs.microsoft.com/azure/python/media/AzureNotebooks.png'
-            title: 在 Jupyter Notebook 中开始使用 Azure 机器学习。
-            href: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/devops/_img/index/devopsiconpipelines96.svg'
-            title: 在 Azure Pipelines 上生成并部署 Python 应用
-            href: /azure/devops/pipelines/languages/python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/cosmosdb.svg'
-            title: 使用 Visual Studio Code 在 Azure 上的全局复制数据库中创建并查询数据。
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/Storage.svg'
-            title: 在 Azure 上安全地存储和检索数据。
-            href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: 应用托管
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: Azure Web 应用
-            html: 在 Linux 上生成、部署和缩放 Python Web 应用。
-            href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_kubernetes.svg'
-            title: Azure Kubernetes 服务
-            html: 通过 Kubernetes 业务流程部署和管理容器化应用。
-            href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/media/index/virtual-machines.svg'
-            title: 虚拟机
-            html: 使用 Linux 或 Windows Server VM 大规模运行代码。
-            href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/AzureFunctions.svg'
-            title: Azure Functions
-            html: 将 Python 代码作为无服务器函数运行。
-            href: /azure/azure-functions/functions-create-first-function-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: 数据科学、AI 和机器学习
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MachineLearning.svg'
-            title: Azure 机器学习
-            html: 发现用于准备和训练数据以及部署机器学习模型的 Azure 服务。
-            href: /azure/machine-learning/service?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/python/media/AzureNotebooks.png'
-            title: Azure Notebook
-            html: 使用完全托管的 Jupyter 笔记本运行 Python 数据科学试验。
-            href: 'https://notebooks.azure.com/'
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/media/index/virtual-machines.svg'
-            title: 用于数据科学的虚拟机
-            html: 快速创建已预装数据科学常用工具的虚拟机。
-            href: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/hdinsight/media/index/spark_r.svg'
-            title: 分布式数据处理
-            html: 通过 Azure HDInsights 使用托管 Hadoop 或 Spark 群集，适用于大型数据处理工作负荷。
-            href: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg'
-            title: 认知服务
-            html: 使用 Azure 服务生成具有计算机视觉、文本分析、语音识别等功能的应用程序。
-            href: /azure/cognitive-services?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: 数据解决方案
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/Storage.svg'
-            title: 存储
-            html: 使用高度可用且可缩放的云存储安全地存储文件。
-            href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/cosmosdb.svg'
-            title: Cosmos DB
-            html: 在全球分布式可缩放多模型 NoSQL 数据库中存储数据。
-            href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/RedisCache.svg'
-            title: Redis 缓存
-            html: 通过 Python 在 Azure Redis 缓存中读取和写入数据。
-            href: /azure/redis-cache/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/PostgreSQL.svg'
-            title: Azure Database for PostgreSQL
-            html: 在 Azure 上使用 Python 创建 PostgreSQL 实例并与之连接。
-            href: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MySQL.SVG'
-            title: Azure Database for MySQL
-            html: 在 Azure 上使用 Python 创建 MySQL 实例并与之连接。
-            href: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/SQLDatabase.svg'
-            title: SQL 数据库
-            html: 在 Azure 中设置托管 SQL Server。
-            href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/EventHubs.svg'
-            title: 事件中心
-            html: 使用简单、安全且可缩放的实时数据引入来解锁数据见解
-            href: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ServiceBus.svg'
-            title: 服务总线
-            html: 通过 FIFO 队列或主题订阅跨云发送消息。
-            href: /azure/service-bus-messaging?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: 安全性和集成
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/KeyVault.svg'
-            title: Key Vault
-            html: 保护云应用和服务使用的加密密钥和机密。
-            href: /python/api/overview/azure/key-vault
-  - title: 适用于 Azure 上的 Python 开发的工具
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /python/api?view=azure-python
-            image:
-              src: 'http://docs.microsoft.com/media/common/i_api-reference.svg'
-            title: 用于 Python 的 Azure SDK API 参考
-          - href: 'https://code.visualstudio.com/docs/python/python-tutorial'
-            html: 使用 Visual Studio Code 开发 Python 应用并将其部署到 Azure。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            title: Visual Studio Code
-          - href: /cli/azure?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            html: 从命令行管理 Azure 资源。
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/azure_dev-7.svg'
-            title: Azure CLI
-          - href: /windows/wsl/install-win10?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            html: 使用各种发行版，在 Windows 10 上本机运行 Linux 应用程序。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_linux-color.svg'
-            title: 适用于 Linux 的 Windows 子系统
+  ms.collection: collection
+  ms.openlocfilehash: a753597a65f959e638a4aa72b99327ea1f635aee
+  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71094803"
+landingContent:
+- title: Azure SDK for Python 入门
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 Azure SDK for Python
+      url: python-sdk-azure-overview.md
+  - linkListType: download
+    links:
+    - text: 安装 SDK
+      url: python-sdk-azure-install.md
+    - text: 在 Azure Notebooks 中使用 Jupyter 笔记本
+      url: https://notebooks.azure.com/
+    - text: Visual Studio Code 中的 Python
+      url: https://code.visualstudio.com/docs/languages/python
+  - linkListType: how-to-guide
+    links:
+    - text: 对应用程序进行身份验证
+      url: python-sdk-azure-authenticate.md
+  - linkListType: quickstart
+    links:
+    - text: 使用 Visual Studio Code 在 Azure Functions 中创建无服务器 Python 应用
+      url: /azure/azure-functions/tutorial-vs-code-serverless-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 在 Jupyter 笔记本中使用 Azure 机器学习工具
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 通过 Azure Pipelines 生成并部署 Python 应用
+      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: 在 Azure 中托管应用程序
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Linux 上的 Azure 应用服务简介
+      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: 生成、部署和缩放 Python Web 应用
+      url: /azure/app-service/containers/quickstart-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 在 Azure Kubernetes 服务中部署容器化应用
+      url: /azure/aks/kubernetes-walkthrough?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 在 Python 中创建和部署无服务器函数
+      url: /azure/azure-functions/functions-create-first-function-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: 用于数据科学、AI 和机器学习的服务
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 Azure 机器学习服务
+      url: /azure/machine-learning/service?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 关于 Azure 认知服务
+      url: /azure/cognitive-services?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: 使用托管的 Azure HDInsights 群集进行数据处理
+      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 创建用于数据科学任务的 Azure 虚拟机
+      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- title: Azure SDK for Python 参考
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 用于 Python 的 Azure SDK API 参考
+      url: /python/api?view=azure-python
+- title: Azure 上的存储、消息传递和数据库解决方案
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 Azure 上的存储解决方案
+      url: /storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 可缩放的 NoSQL 与 Azure CosmosDB
+      url: /azure/cosmos-db/introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 使用 Azure 服务总线进行应用程序之间的消息传递
+      url: /azure/service-bus-messaging?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: 通过 Python 在 Azure 存储中管理 Blob
+      url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 通过 Python 在 Azure CosmosDB 帐户上使用 SQL 查询
+      url: /azure/cosmos-db/create-sql-api-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 在 Azure 中设置托管 SQL Server
+      url: /azure/sql-database/sql-database-connect-query-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 通过 Azure 事件中心实时引入数据
+      url: /azure/event-hubs/event-hubs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
