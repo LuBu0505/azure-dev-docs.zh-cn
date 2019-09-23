@@ -8,16 +8,16 @@ ms.date: 04/19/2019
 ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
-ms.openlocfilehash: 58fb77c44c290ad86f64a6f71b1e750e364363a6
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 7d3d2af845ba2d8d1ba16b6dcd34b21c0853633f
+ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691728"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094881"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>安装适用于 Azure 和 Azure Stack 的 JDK
 
-Azul Zulu Enterprise 内部版 OpenJDK 是适用于 Azure 和 Azure Stack 的 OpenJDK 的免费、多平台、生产就绪型发行版，由 Microsoft 及 Azul Systems 提供支持。 这些版本包含构建和运行 Java SE 应用程序所需的所有组件。
+Azul Zulu for Azure - Enterprise Edition 内部版 JDK 是适用于 Azure 和 Azure Stack 的 OpenJDK 的免费、多平台、生产就绪型发行版，由 Microsoft 及 Azul Systems 提供支持。 这些版本包含构建和运行 Java SE 应用程序所需的所有组件。
 
 有[多个支持用于每个客户端 OS 的下载包类型](https://www.azul.com/downloads/azure-only/zulu/)。 也可从以下平台的 Azure 市场库获取虚拟机映像：
 
@@ -33,13 +33,13 @@ Azul Zulu Enterprise 内部版 OpenJDK 是适用于 Azure 和 Azure Stack 的 Op
 >
 >  Java 11 包也在 [Azul 的 Azure 下载页](https://www.azul.com/downloads/azure-only/zulu/)上提供。
 
-## <a name="download-and-install-the-azul-zulu-jdks-for-windows"></a>下载并安装 Windows 版 Azul Zulu JDK 
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-windows"></a>下载并安装用于 Windows 的 Azul Zulu for Azure - Enterprise Edition JDK 内部版 
 
 1. [将 64 位 Azul Zulu JDK 8 作为 MSI 下载](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-win_x64.msi)到客户端的某个位置，例如 `C:\Users\<your_login>\Downloads`。 （.ZIP 包也在 [Azul 的 Azure 下载页](https://www.azul.com/downloads/azure-only/zulu/)上提供。）
 
 2. 导航到该目录，双击下载的 MSI 文件即可开始安装。
 
-## <a name="download-and-install-the-azul-zulu-jdks-for-mac"></a>下载并安装 Mac 版 Azul Zulu JDK 
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-mac"></a>下载并安装用于 Mac 的 Azul Zulu for Azure - Enterprise Edition JDK 内部版 
 
 这些步骤将 ZIP 文件下载到 Mac。 此外还提供 DMG 版本。
 
@@ -51,7 +51,7 @@ Azul Zulu Enterprise 内部版 OpenJDK 是适用于 Azure 和 Azure Stack 的 Op
 unzip <name_of_zulu_package>.zip
 ```
 
-## <a name="download-and-install-the-azul-zulu-jdks-for-alpine-linux"></a>下载并安装 Alpine Linux 版 Azul Zulu JDK
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-alpine-linux"></a>下载并安装用于 Alpine Linux 的 Azul Zulu for Azure - Enterprise Edition JDK 内部版
 
 1. [将 64 位 Azul Zulu JDK 8 作为 TAR 文件下载](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-linux_x64.tar.gz)到客户端的某个位置，例如 `/usr/lib/jvm`。 （.RPM 和 .DEB 包也在 [Azul 的 Azure 下载页](https://www.azul.com/downloads/azure-only/zulu/)上提供。）
 
@@ -76,7 +76,7 @@ OpenJDK 64-Bit Server VM (Zulu 8.38.0.13-macosx)-Microsoft-Azure-restricted (bui
 
 ```
 
-## <a name="download-and-install-the-azul-zulu-jdks-from-a-yum-repository"></a>下载并安装 Yum 存储库中的 Azul Zulu JDK
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdks-from-a-yum-repository"></a>下载并安装 Yum 存储库中的 Azul Zulu for Azure - Enterprise Edition JDK
 
 Azul Zulu JDK 在 [Yum 存储库](https://repos.azul.com/azure-only/zulu-azure.repo)中由 Azul 提供。
 
