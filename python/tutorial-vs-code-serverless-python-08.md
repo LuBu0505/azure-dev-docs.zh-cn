@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 9c0b3b8b4a21975a849531d5c6560a291ed4b7f2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 6996121fc8ecba4489e2ec920de35574f6d1c5d8
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019885"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186174"
 ---
 # <a name="clean-up-resources"></a>清理资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "71019885"
 
 如前所述，若要详细了解 Functions 扩展，可以访问其 GitHub 存储库：[vscode-azurefunctions](https://github.com/Microsoft/vscode-azurefunctions)。 欢迎提交问题和贡献材料。
 
-请阅读 [Azure Functions 概述](/azure/azure-functions/functions-overview.md)，了解可以使用的不同触发器。
+请阅读 [Azure Functions 概述](/azure/azure-functions/functions-overview)，了解可以使用的不同触发器。
 
 若要详细了解可以通过 Python 使用的 Azure 服务（包括数据存储、AI 和机器学习服务），请访问 [Azure Python 开发人员中心](/azure/python/?view=azure-python)。
 

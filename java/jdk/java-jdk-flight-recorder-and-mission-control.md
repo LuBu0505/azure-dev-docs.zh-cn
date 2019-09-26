@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 02c8a59849ff24058a1d9d0727842c41e993711c
-ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
+ms.openlocfilehash: c33b4586b801bda58493efdebc6e6fb6b8136992
+ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70904863"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71225233"
 ---
 # <a name="monitor-and-manage-java-workloads-with-java-flight-recorder-jfr-and-zulu-mission-control"></a>使用 Java Flight Recorder (JFR) 和 Zulu Mission Control 监视和管理 Java 工作负荷
 
@@ -88,7 +88,7 @@ Zulu Mission Control 兼容以下 JDK/JRE：
     在 Windows 中，*zmc.exe* 会使用在注册表中配置的默认 JVM 安装。 必须通过完整的 JDK 启动 Zulu Mission Control，否则无法自动检测本地 JVM 实例。 如果这是一个 JRE，则会出现以下警告：
 
     > [!div class="mx-imgBorder"]
-    ![在 JDK 安装仅为 JRE 的情况下出现的警告](../media/jdk/azul-jfr-1.png)
+    ![在 JDK 安装仅为 JRE 的情况下出现的警告](../media/jdk/jfr-jre-warning-message.png)
 
     若要更改 Mission Control 使用的 JVM，请执行以下步骤： 
     1.  打开 *zmc.exe* 所在目录中的 *zmc.ini* 配置文件
@@ -101,7 +101,7 @@ Zulu Mission Control 兼容以下 JDK/JRE：
     2.  选择并展开运行应用程序的 JVM 实例左上的列表项。
 
     > [!div class="mx-imgBorder"]
-    ![展开 JVM 实例左上的列表项](../media/jdk/azul-jfr-2.png)
+    ![展开 JVM 实例左上的列表项](../media/jdk/jfr-jvm-instance-dashboard.png)
 
 
 8.  必要时启动飞行记录
@@ -109,7 +109,7 @@ Zulu Mission Control 兼容以下 JDK/JRE：
     2.  选择固定时长记录或持续记录，接着选择“分析”配置（精细）或“持续”配置（降低开销），然后选择“完成”。 
 
     > [!div class="mx-imgBorder"]
-    ![启动飞行记录](../media/jdk/azul-jfr-3.png)
+    ![启动飞行记录](../media/jdk/jfr-start-flight-recording.png)
 
 9.  转储飞行记录
     1.  飞行记录应该显示在 JVM 浏览器中 Flight Recorder 行的下面。 右键单击表示飞行记录的行，然后选择“转储整个记录”。 
@@ -119,7 +119,7 @@ Zulu Mission Control 兼容以下 JDK/JRE：
     1.  在 Zulu Mission Control 窗口的左窗格中选择标为“大纲”的选项卡（如果尚未激活）。  此选项卡包含在飞行记录中收集的数据的不同视图。
  
     > [!div class="mx-imgBorder"]
-    ![查看飞行记录](../media/jdk/azul-jfr-4.png)
+    ![查看飞行记录](../media/jdk/jfr-zulu-mission-control-data.png)
 
 ## <a name="resources"></a>资源
 

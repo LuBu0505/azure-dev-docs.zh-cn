@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 8fdb78024cc6ac1df0ee961fc424878f5f634cf2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 4595b6a60aa83d3818b41ddd1e4f06a44bb1eec1
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019935"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186121"
 ---
 # <a name="add-a-binding-to-write-messages-to-azure-storage"></a>通过添加绑定将消息写入 Azure 存储
 
 [上一步：部署另一个函数](tutorial-vs-code-serverless-python-06.md)
 
-可以通过绑定  将函数代码连接到资源（例如 Azure 存储），不需编写任何数据访问代码。 绑定在 *function.json* 文件中定义，可以代表输入和输出。 一个函数可以使用多个输入和输出绑定，但只能使用一个触发器。 有关详细信息，请参阅 [Azure Functions 触发器和绑定的概念](/azure/azure-functions/functions-triggers-bindings.md)。
+可以通过绑定  将函数代码连接到资源（例如 Azure 存储），不需编写任何数据访问代码。 绑定在 *function.json* 文件中定义，可以代表输入和输出。 一个函数可以使用多个输入和输出绑定，但只能使用一个触发器。 有关详细信息，请参阅 [Azure Functions 触发器和绑定的概念](/azure/azure-functions/functions-triggers-bindings)。
 
 在此部分，我们将存储绑定添加到此前在本教程中创建的 HttpExample 函数。 每次进行请求时，该函数通过此绑定将消息写入存储。 相关存储使用函数应用所使用的默认存储帐户。 但是，如果你打算大量使用存储，则需考虑创建单独的帐户。
 
@@ -92,9 +92,9 @@ ms.locfileid: "71019935"
 
     1. 登录 [Azure 门户](https://portal.azure.com)，导航到包含 Functions 项目的资源组。 在该资源组中找到项目的存储帐户并导航到其中，然后导航到“队列”中。  在该页上导航到“outqueue”中，此时会显示所有记录的消息。
 
-    1. 通过集成了 Visual Studio 的 Azure 存储资源管理器导航并检查此队列，详见[使用 Visual Studio Code 将 Functions 连接到 Azure 存储](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md)，尤其是[检查输出队列](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md#examine-the-output-queue)部分。
+    1. 通过集成了 Visual Studio 的 Azure 存储资源管理器导航并检查此队列，详见[使用 Visual Studio Code 将 Functions 连接到 Azure 存储](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code)，尤其是[检查输出队列](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue)部分。
 
-    1. 使用 Azure CLI 查询存储队列，详见[查询存储队列](/azure/azure-functions/functions-add-output-binding-storage-queue-python.md#query-the-storage-queue)。
+    1. 使用 Azure CLI 查询存储队列，详见[查询存储队列](/azure/azure-functions/functions-add-output-binding-storage-queue-python#query-the-storage-queue)。
 
 1. 若要在云中进行测试，请使用  **Azure:Functions** 资源管理器中的“部署到函数应用”命令重新部署代码。 当系统提示时，请选择以前创建的函数应用。 部署完成（需要数分钟！）后，“输出”窗口会再次显示可以用来重复你的测试的公共终结点。 
 

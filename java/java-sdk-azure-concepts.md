@@ -10,13 +10,13 @@ ms.topic: article
 ms.devlang: java
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
-ms.custom: seo-java-july2019
-ms.openlocfilehash: dc7819f46725203c18c0bc50fe45135d61b4870e
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-september2019
+ms.openlocfilehash: dfa3681cd1e6ac193a48d7e60ce8507af49c4776
+ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691935"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71225279"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>有关使用用于 Java 的 Azure 库进行开发的模式和最佳做法 
 
@@ -35,7 +35,7 @@ StorageAccount storage = azure.storageAccounts().define(storageAccountName)
 
 在操作方法链的过程中，IDE 会在 Fluent 对话中建议下一个要调用的方法。   
 
-![Fluent 链中 IntelliJ GIF 命令完成的 GIF](media/intelliJFluent.gif)
+![Fluent 链中 IntelliJ GIF 命令完成的 GIF](media/intellij-fluent-method-chain.gif)
 
 只要 IDE 建议的方法对于正在定义的 Azure 资源合理，就可以将这些方法加入链中。 如果链中缺少所需的方法，IDE 会在错误消息中突出显示该方法。
 

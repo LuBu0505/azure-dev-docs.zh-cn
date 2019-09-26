@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 37df8bf4a84d13d6fc4e25ea6c91ef14b6f6f502
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 0135761f8294b3fbbb8fe821540b46126c107109
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019485"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186178"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>将容器部署到 Azure 应用服务
 
@@ -25,7 +25,7 @@ ms.locfileid: "71019485"
 
 - 一个 [Azure 帐户](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- 一个已上传到容器注册表的合适容器。 例如，可以在[创建容器](https://code.visualstudio.com/python/tutorial-create-containers)一文中详细了解如何使用 Python Web 应用创建容器，以及如何将它添加到注册表。
+- 一个已上传到容器注册表的合适容器。 例如，可以在[创建容器](https://code.visualstudio.com/docs/python/tutorial-create-containers)一文中详细了解如何使用 Python Web 应用创建容器，以及如何将它添加到注册表。
 - [适用于 VS Code 的 Azure 应用服务扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)。
 - [适用于 VS Code 的 Docker 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)。
 

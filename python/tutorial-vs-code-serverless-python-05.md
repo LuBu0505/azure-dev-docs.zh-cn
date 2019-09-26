@@ -8,20 +8,20 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 0bf24a900eb0c501443b8ff353c8b07529f840be
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: da7761f568849537ac3ee06cf6ef2c4cc521b452
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019955"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186152"
 ---
 # <a name="deploy-to-azure-functions"></a>部署到 Azure Functions
 
 [上一步：本地调试](tutorial-vs-code-serverless-python-04.md)
 
-在以下步骤中，我们使用 Functions 扩展在 Azure 中创建一个函数应用以及其他必需的 Azure 资源。 函数应用可将函数分组为一个逻辑单元，以便更轻松地管理、部署和共享资源。 它还需要一个用于数据的 Azure 存储帐户，以及一项[托管计划](/azure/azure-functions/functions-scale.md#hosting-plan-support)。 所有这些资源都被组织到单个资源组中。
+在以下步骤中，我们使用 Functions 扩展在 Azure 中创建一个函数应用以及其他必需的 Azure 资源。 函数应用可将函数分组为一个逻辑单元，以便更轻松地管理、部署和共享资源。 它还需要一个用于数据的 Azure 存储帐户，以及一项[托管计划](/azure/azure-functions/functions-scale#hosting-plan-support)。 所有这些资源都被组织到单个资源组中。
 
-1. 在“Azure:  Functions”资源管理器中选择“部署到函数应用”命令，  或者打开命令面板 (**F1**)，然后选择“Azure Functions:  部署到函数应用”命令。 同样，函数应用是 Python 项目在 Azure 中运行时所在的位置。
+1. 在“Azure：函数”  Functions”资源管理器中选择“部署到函数应用”命令，  或者打开命令面板 (**F1**)，然后选择“Azure Functions:  部署到函数应用”命令。 同样，函数应用是 Python 项目在 Azure 中运行时所在的位置。
 
     ![“部署到函数应用”命令](media/tutorial-vs-code-serverless-python/deploy-command.png)
 
@@ -30,7 +30,7 @@ ms.locfileid: "71019955"
 1. 此扩展执行以下操作，这些操作可以在 Visual Studio Code 弹出消息和“输出”窗口中观察到（此过程需要数分钟）： 
 
     - 使用你提供的名称创建资源组（删除连字符）。
-    - 在该资源组中，创建存储帐户、托管计划和函数应用。 默认情况下，会创建[消耗计划](/azure/azure-functions/functions-scale.md#consumption-plan)。 若要在专用计划中运行函数，需[启用通过高级创建选项进行发布的功能](/azure/azure-functions/functions-develop-vs-code.md)。
+    - 在该资源组中，创建存储帐户、托管计划和函数应用。 默认情况下，会创建[消耗计划](/azure/azure-functions/functions-scale#consumption-plan)。 若要在专用计划中运行函数，需[启用通过高级创建选项进行发布的功能](/azure/azure-functions/functions-develop-vs-code)。
     - 将代码部署到函数应用。
 
     “Azure:  Functions”资源管理器也显示进度：

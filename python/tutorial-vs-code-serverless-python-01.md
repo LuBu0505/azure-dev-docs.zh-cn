@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 84971f6befb7210052ee3b144533715d0c6d1fb3
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: efa55b4c2cc916f5bbebcc795ed70d920d395362
+ms.sourcegitcommit: 4188b92d8de367cf82f22dba5d9ccb2cb6dd2899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020075"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71126852"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>使用 Visual Studio Code 将 Python 部署到 Azure Functions
 
@@ -42,7 +42,7 @@ ms.locfileid: "71020075"
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local.md#v2) 一文中适用于你的操作系统的说明操作。 工具本身以 .NET Core 编写，Core Tools 包最好使用 Node.js 包管理器（简称 npm）进行安装。因此，目前需要安装 .NET Core 和 Node.js，即使使用 Python 代码也是如此。 不过，可以使用“扩展捆绑”来规避 .NET Core 要求，详见前述文档。 不管什么情况，你只需安装这些组件一次，然后 Visual Studio Code 就会自动提示你安装任何更新。
+按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明操作。 工具本身以 .NET Core 编写，Core Tools 包最好使用 Node.js 包管理器（简称 npm）进行安装。因此，目前需要安装 .NET Core 和 Node.js，即使使用 Python 代码也是如此。 不过，可以使用“扩展捆绑”来规避 .NET Core 要求，详见前述文档。 不管什么情况，你只需安装这些组件一次，然后 Visual Studio Code 就会自动提示你安装任何更新。
 
 ### <a name="sign-in-to-azure"></a>登录 Azure
 

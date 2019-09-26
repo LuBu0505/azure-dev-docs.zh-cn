@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 4427137000e7fca7706b782a73a45db03782872f
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 9af09298c479f7584ffaece422c135e75138f0fc
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019555"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186162"
 ---
 # <a name="create-the-python-function"></a>创建 Python 函数
 
 [上一步：先决条件](tutorial-vs-code-serverless-python-01.md)
 
-1. Azure Functions 的代码在 Functions  项目中管理，该项目在创建代码之前创建。 在 **Azure:Functions** 资源管理器（已使用左侧的 Azure 图标打开）中选择“新建项目”命令图标，  或者打开命令面板 (F1) 并选择“Azure Functions:  创建新项目”。
+1. Azure Functions 的代码在 Functions  项目中管理，该项目在创建代码之前创建。 在 **Azure:Functions** 资源管理器（已使用左侧的 Azure 图标打开）中选择“新建项目”命令图标，  或者打开命令面板 (F1) 并选择“Azure Functions:  Create New Project”。
 
     ![Functions 资源管理器中的“创建新项目”按钮](media/tutorial-vs-code-serverless-python/project-create-new.png)
 
@@ -29,7 +29,7 @@ ms.locfileid: "71019555"
     | --- | --- | --- |
     | 为项目指定文件夹 | 当前打开的文件夹 | 可在其中创建项目的文件夹。 可能需要在子文件夹中创建项目。 |
     | 选择函数应用项目的语言 | **Python** | 用于函数的语言，决定了用于代码的模板。 |
-    | 为项目的第一个函数选择模板 | **HTTP 触发器** | 向函数的终结点发出 HTTP 请求时，系统就会运行一个使用 HTTP 触发器的函数。 （有各种用于 Azure Functions 的其他触发器。 若要了解详细信息，请参阅[使用 Functions 可以做什么？](/azure/azure-functions/functions-overview.md#what-can-i-do-with-functions)。） |
+    | 为项目的第一个函数选择模板 | **HTTP 触发器** | 向函数的终结点发出 HTTP 请求时，系统就会运行一个使用 HTTP 触发器的函数。 （有各种用于 Azure Functions 的其他触发器。 若要了解详细信息，请参阅[使用 Functions 可以做什么？](/azure/azure-functions/functions-overview#what-can-i-do-with-functions)。） |
     | 提供函数名称 | HttpExample | 此名称用于一个子文件夹，该文件夹包含函数的代码和配置数据，并且还定义 HTTP 终结点的名称。 请使用“HttpExample”而不是接受默认的“HTTPTrigger”，这样可以将函数本身与触发器区别开来。 |
     | 授权级别 | **匿名** | 匿名授权使得该函数可供任何人公开访问。 |
     | 选择打开项目的方式 | **在当前窗口中打开** | 在当前的 Visual Studio Code 窗口中打开项目。 |
@@ -44,7 +44,7 @@ ms.locfileid: "71019555"
     > ![选择通过项目创建的虚拟环境](media/tutorial-vs-code-serverless-python/select-venv-interpreter.png)
 
 > [!TIP]
-> 如果需要在同一项目中创建另一函数，请使用  **Azure:Functions** 资源管理器中的“创建函数”命令，或者打开命令面板 (**F1**) 并选择“Azure Functions:  创建函数”命令。 两个命令都会提示你输入函数名称（即终结点的名称），然后创建一个包含默认文件的子文件夹。
+> 如果需要在同一项目中创建另一函数，请使用  **Azure:Functions** 资源管理器中的“创建函数”命令，或者打开命令面板 (**F1**) 并选择“Azure Functions:  Create Function”命令。 两个命令都会提示你输入函数名称（即终结点的名称），然后创建一个包含默认文件的子文件夹。
 >
 > ![“Azure:Functions”资源管理器中的“新建函数”命令](media/tutorial-vs-code-serverless-python/function-create-new.png)
 
