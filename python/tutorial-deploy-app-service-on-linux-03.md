@@ -1,5 +1,5 @@
 ---
-title: 从 Visual Studio Code 创建应用服务
+title: 教程：从 Visual Studio Code 创建应用服务
 description: 教程步骤 3，从 VS Code 扩展创建应用服务。
 services: app-service
 author: kraigb
@@ -8,20 +8,21 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 15e4e3b4ec5ab79110b1785335ce064cd90fd602
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 8a2a719ee578553bb2033469e64c2df34351e36e
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019805"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172513"
 ---
-# <a name="create-the-app-service"></a>创建应用服务
+# <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>教程：从 Visual Studio Code 创建应用服务
 
 [上一步：准备应用](tutorial-deploy-app-service-on-linux-01.md)
 
 在此步骤中，我们创建需向其部署应用的 Azure 应用服务的实例。 在部署代码之前，请先执行此步骤，这样就可以在下一步根据需要配置自定义启动文件。
 
-1. 在“Azure:  应用服务”资源管理器中，选择 **+** 命令以创建新的应用服务，或者打开命令面板 (**F1**)，然后选择“Azure 应用服务:  创建新的 Web 应用”。 （在应用服务术语中，“Web 应用”是与 Web 应用代码相对应的**主机**，不是应用代码本身。）
+1. 在“Azure：函数”  应用服务”资源管理器中，选择 **+** 命令以创建新的应用服务，或者打开命令面板 (**F1**)，然后选择“Azure 应用服务:  创建新的 Web 应用”。 （在应用服务术语中，“Web 应用”是与 Web 应用代码相对应的**主机**，不是应用代码本身。）
 
     ![应用服务资源管理器中的“创建新的应用服务”按钮](media/deploy-azure/app-service-create-new.png)
 
@@ -46,7 +47,7 @@ ms.locfileid: "71019805"
 
 如果有环境变量定义文件，也可使用该文件配置应用服务环境。 （若要详细了解此类通常有 *.env* 扩展的文件，请参阅 [Visual Studio Code - Python 环境](https://code.visualstudio.com/docs/python/environments#environment-variable-definitions-file)。）
 
-1. 在“Azure:  应用服务”资源管理器中，展开所需应用服务的节点，然后右键单击“应用程序设置”节点并选择“上传本地设置”。  
+1. 在“Azure：函数”  应用服务”资源管理器中，展开所需应用服务的节点，然后右键单击“应用程序设置”节点并选择“上传本地设置”。  
 
 1. VS Code 会提示你输入 *.env* 文件的位置，然后将该文件上传到应用服务。
 

@@ -1,5 +1,5 @@
 ---
-title: 清理 Azure 资源
+title: 教程：清理 Azure 资源
 description: 教程步骤 5，清理 Azure 资源，避免持续产生费用。
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 96db5581b2752e29633412776efdfe9d1328abdb
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 351d7853eb3ebbf5a62e7798eb0696657b0ca216
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019515"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172460"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="tutorial-clean-up-azure-resources"></a>教程：清理 Azure 资源
 
 在本教程中创建的各种 Azure 资源可能会持续产生费用。 若要清理它们，最好是访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
 

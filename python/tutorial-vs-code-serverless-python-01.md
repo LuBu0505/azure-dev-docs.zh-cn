@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: efa55b4c2cc916f5bbebcc795ed70d920d395362
-ms.sourcegitcommit: 4188b92d8de367cf82f22dba5d9ccb2cb6dd2899
+ms.openlocfilehash: bf6dd180d5fabc04c8fe3bf09c8277bb7b22ea47
+ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71126852"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710196"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>使用 Visual Studio Code 将 Python 部署到 Azure Functions
 
@@ -39,6 +39,9 @@ ms.locfileid: "71126852"
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Python 扩展](https://marketplace.visualstudio.com/items?itemName=ms-python.python)，详见 [Visual Studio Code Python 教程 - 先决条件](https://code.visualstudio.com/docs/python/python-tutorial)。
 - [Azure Functions 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)。 如需常规信息，请访问 [vscode-azurefunctions GitHub 存储库](https://github.com/Microsoft/vscode-azurefunctions)。
+
+> [!NOTE]
+> Azure Functions 扩展包含在 [Azure 工具扩展包](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack)中。
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 

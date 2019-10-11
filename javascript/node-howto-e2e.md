@@ -11,14 +11,14 @@ ms.topic: article
 ms.date: 06/25/2017
 ms.author: karler
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: da1436106b681508ef226ad33ccfc10160485d42
-ms.sourcegitcommit: d3349f1a2a8a7eab1ffe2fcb1d05f22cac91dffb
+ms.openlocfilehash: 51ed46032d0cff0f2e35c0a69e9b339158bad867
+ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923124"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710259"
 ---
-# <a name="nodejs-development-with-visual-studio-code-and-azure"></a>使用 Visual Studio Code 和 Azure 进行 Node.js 开发
+# <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
 本教程演示如何使用 Visual Studio Code 提取现有的 Node.js 应用、将其“容器化”（使用 Docker），然后将其部署到 Azure。
 

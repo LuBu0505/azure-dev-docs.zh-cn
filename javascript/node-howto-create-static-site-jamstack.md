@@ -9,14 +9,14 @@ ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: dc1d376be0f57d7d79a7a67d43dca49c30163c90
-ms.sourcegitcommit: 52fa18873a6a8dc7f28c063cca0175bae2720b2a
+ms.openlocfilehash: 5fae0fb9e7d76d33e39ec85a27c46c339b4b38f4
+ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808464"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71813710"
 ---
-# <a name="how-to-build-jamstack-static-site-web-apps-with-azure"></a>如何使用 Azure 构建 JAMstack（静态站点）Web 应用
+# <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>使用 Node.js 在 Azure 上构建 JAMstack（静态站点）Web 应用
 
 精彩的 Web 应用可以使用 JavaScript  前端、API  （作为无服务器代码构建的第三方或自定义 API）和作为静态页面提供的模板化标记  （HTML 和 CSS）的组合高效地构建和维护。 通过这种组合（亦称 JAMstack），可以避免编写用于提供网页的复杂后端代码。 相反，系统仅提供静态页面（HTML、CSS 和 JavaScript），其中，这些页面会调用 API 以执行服务器端工作。 由于可以使用自动缩放无服务器技术编写这些 API，因此，完全避免了使用典型的始终可用服务器或 Web 主机所带来的成本和安全问题。 （有关详细信息，请参阅 [jamstack.org](https://jamstack.org/)。）
 
@@ -31,7 +31,7 @@ ms.locfileid: "70808464"
 
 > [!VIDEO https://medius.studios.ms/Embed/Video-nc/B19-BRK3021?latestplayer=true]
 
-分步教程可以在 Visual Studio Code 文档的[将静态网站部署到 Azure](https://code.visualstudio.com/tutorials/static-website/getting-started) 中找到。
+可以在[将静态网站部署到 Azure](tutorial-vscode-static-website-node-01.md) 中找到一个分步教程。
 
 以下文章还介绍了更多详细信息：
 
@@ -39,7 +39,7 @@ ms.locfileid: "70808464"
   
 - **无服务器 API**：
 
-  - 从[使用 Visual Studio Code 创建第一个函数](/azure/azure-functions/functions-create-first-function-vs-code)网页开始，该网页介绍基于 Visual Studio Code 上下文的 Azure Functions，以简化很多详细信息。
+  - 从[在 Visual Studio Code 中部署 Azure Functions](tutorial-vscode-serverless-node-01.md) 开始。该文章在 Visual Studio Code 的上下文中介绍 Azure Functions，以简化很多详细信息。
   - 完成本文后，将拥有一个 Azure Functions 项目（文件夹），其中包含为该函数命名的子文件夹，该子文件夹与该项目的 HTTP 终结点的子文件夹相同。 该函数文件夹中的 index.js  文件包含代码。
   - 可以根据需要修改该函数，还可以向该项目中添加更多函数，然后将其重新部署到 Azure，以供公开发布。
   - 有关无服务器开发的其他资源，请参阅[如何在 Azure 上编写无服务器 Node.js 代码](node-howto-write-serverless-code.md)
