@@ -1,5 +1,5 @@
 ---
-title: 使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
+title: 教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 description: 教程步骤 1，简介和先决条件。
 services: functions
 author: kraigb
@@ -8,16 +8,17 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: bf6dd180d5fabc04c8fe3bf09c8277bb7b22ea47
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 792c9962d738a8e70f29d5df78c44b6303a63b77
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710196"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172290"
 ---
-# <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>使用 Visual Studio Code 将 Python 部署到 Azure Functions
+# <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
-在本教程中，我们使用 Visual Studio Code 和 Azure Functions 扩展通过 Python 创建一个无服务器 HTTP 终结点，并将连接（或“绑定”）添加到存储。 Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，也不需发布 Web 应用。 用于 Visual Studio Code 的 Azure Functions 扩展可以自动处理许多配置问题，大大简化了使用 Functions 的过程。
+在本文中，我们使用 Visual Studio Code 和 Azure Functions 扩展通过 Python 创建一个无服务器 HTTP 终结点，并将连接（或“绑定”）添加到存储。 Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，也不需发布 Web 应用。 用于 Visual Studio Code 的 Azure Functions 扩展可以自动处理许多配置问题，大大简化了使用 Functions 的过程。
 
 如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 请使用每篇文章末尾的“我遇到了问题”  按钮来提交反馈。
 

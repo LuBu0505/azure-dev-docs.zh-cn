@@ -1,5 +1,5 @@
 ---
-title: 在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应用服务
+title: 教程：在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应用服务
 description: 教程步骤 3，用于重新生成和重新部署容器映像的简单步骤。
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 30b0d0863900c36232b69c23db0eae1c70a34396
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 0c57729fd3ab1f671b2533f3e15056aec99cb6c9
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019495"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172450"
 ---
-# <a name="make-changes-and-redeploy"></a>进行更改并重新部署
+# <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>教程：在更改后将容器重新部署到 Azure 应用服务
 
 [上一步：将映像部署到 Azure](tutorial-deploy-containers-02.md)
 
@@ -27,7 +28,7 @@ ms.locfileid: "71019495"
 
 1. 将映像推送到注册表。 同样，如果只更改应用代码，则只需推送那个很小的层，此过程通常在数秒内完成。
 
-1. 在“Azure:  应用服务”资源管理器中，右键单击相应的应用服务，然后选择“重启”。  重启应用服务会自动从注册表拉取最新的容器映像。
+1. 在“Azure：函数”  应用服务”资源管理器中，右键单击相应的应用服务，然后选择“重启”。  重启应用服务会自动从注册表拉取最新的容器映像。
 
 1. 大约 15-20 秒后，再次访问应用服务 URL，查看更新。
 

@@ -1,30 +1,26 @@
 ---
 title: 如何将 Spring Data JPA 用于 Azure PostgreSQL
-description: 了解如何将 Spring Data JPA 用于 Azure PostgreSQL 数据库。
-services: postgresql
+description: 了解如何配置 Spring Data JPA 并将其与 Azure Database for PostgreSQL 数据库配合使用。
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: dca92f4cac26ba3e4f96f3591c3b4dfe997fbfba
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: da8feb20e4163d9280256b51f64d3148b077f7ce
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281918"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960772"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>如何将 Spring Data JPA 用于 Azure PostgreSQL
 
 ## <a name="overview"></a>概述
 
-本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 Azure [PostgreSQL]https://www.postgresql.org/ 数据库中存储和检索信息。
+本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 [Azure Database for PostgreSQL](/azure/postgresql/) 数据库中存储和检索信息。
 
 ## <a name="prerequisites"></a>先决条件
 

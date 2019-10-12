@@ -1,5 +1,5 @@
 ---
-title: 清理 Azure 资源
+title: 教程：清理 Azure 资源- Python 中的 Azure Functions
 description: 教程步骤 8，清理 Azure 资源，避免持续产生费用。
 services: functions
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 6996121fc8ecba4489e2ec920de35574f6d1c5d8
-ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
+ms.custom: seo-python-october2019
+ms.openlocfilehash: aac220a57c83b274c46886f4548e41b41ec8327e
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71186174"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172423"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>教程：为 Azure Functions 清理 Azure 资源
 
 [上一步：添加存储绑定](tutorial-vs-code-serverless-python-07.md)
 

@@ -1,5 +1,5 @@
 ---
-title: 在 Visual Studio Code 中检查用于 Azure Functions 的 Python 代码文件
+title: 教程：在 Visual Studio Code 中检查用于 Azure Functions 的 Python 代码文件
 description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代码。
 services: functions
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: b1ed7f69656797822b17c11bcf0f2ece0caa09e2
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-python-october2019
+ms.openlocfilehash: c09323e35c20a0b9fb5162c08f7fa223969d83fe
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71707339"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172113"
 ---
-# <a name="examine-the-code-files"></a>检查代码文件
+# <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>教程：在 Visual Studio Code 中检查 Python 代码文件
 
 [上一步：创建函数](tutorial-vs-code-serverless-python-02.md)
 

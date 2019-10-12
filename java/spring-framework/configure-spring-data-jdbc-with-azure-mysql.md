@@ -1,30 +1,26 @@
 ---
-title: 如何将 Spring Data JDBC 用于 Azure MySQL
-description: 了解如何将 Spring Data JDBC 用于 Azure MySQL 数据库。
-services: mysql
+title: 如何将 Spring Data JDBC 与 Azure Database for MySQL 配合使用
+description: 了解如何将 Spring Data JDBC 与 Azure Database for MySQL 数据库配合使用。
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: mysql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: 5e9947e3717fda66bab01a3e3d1dd658f1f1c649
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: 0fd650caba9ecd1746a18d8696cccc50aca64d82
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282368"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960787"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>如何将 Spring Data JDBC 用于 Azure MySQL
 
 ## <a name="overview"></a>概述
 
-本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 数据库连接 (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 在 Azure [MySQL](https://www.mysql.com/) 数据库中存储和检索信息。
+本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 数据库连接 (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 在 [Azure Database for MySQL](/azure/mysql/) 数据库中存储和检索信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,9 +33,9 @@ ms.locfileid: "68282368"
 * [mysql](https://dev.mysql.com/downloads/) 命令行实用工具。
 * [Git](https://git-scm.com/downloads) 客户端。
 
-## <a name="create-a-mysql-database-for-azure"></a>创建 MySQL database for Azure
+## <a name="create-an-azure-database-for-mysql"></a>创建 Azure Database for MySQL 
 
-### <a name="create-a-mysql-database-server-using-the-azure-portal"></a>使用 Azure 门户创建 MySQL 数据库服务器
+### <a name="create-a-server-using-the-azure-portal"></a>使用 Azure 门户创建服务器
 
 > [!NOTE]
 > 
@@ -67,11 +63,11 @@ ms.locfileid: "68282368"
 
 1. 输入上述所有信息后，单击“创建”  。
 
-### <a name="configure-a-firewall-rule-for-your-mysql-database-server-using-the-azure-portal"></a>使用 Azure 门户为 MySQL 数据库服务器配置防火墙规则
+### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>使用 Azure 门户为服务器配置防火墙规则
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”  ，然后单击你刚才创建的 MySQL 数据库。
+1. 单击“所有资源”  ，然后单击刚创建的 Azure Database for MySQL 资源。
 
    ![选择 MySQL 数据库][MYSQL03]
 
@@ -79,11 +75,11 @@ ms.locfileid: "68282368"
 
    ![配置连接安全性][MYSQL04]
 
-### <a name="retrieve-the-connection-string-for-your-mysql-server-using-the-azure-portal"></a>使用 Azure 门户检索 MySQL 服务器的连接字符串
+### <a name="retrieve-the-connection-string-for-your-server-using-the-azure-portal"></a>使用 Azure 门户检索服务器的连接字符串
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”  ，然后单击你刚才创建的 MySQL 数据库。
+1. 单击“所有资源”  ，然后选择刚创建的 Azure Database for MySQL。
 
    ![选择 MySQL 数据库][MYSQL03]
 
@@ -91,7 +87,7 @@ ms.locfileid: "68282368"
 
    ![检索 JDBC 连接字符串][MYSQL05]
 
-### <a name="create-mysql-database-using-the-mysql-command-line-utility"></a>使用 `mysql` 命令行实用工具创建 MySQL 数据库
+### <a name="create-a-database-using-the-mysql-command-line-utility"></a>使用 `mysql` 命令行实用程序创建数据库
 
 1. 打开一个命令 shell，通过输入 `mysql` 命令连接到 MySQL 服务器，如以下示例所示：
 
@@ -229,7 +225,7 @@ ms.locfileid: "68282368"
 
 ## <a name="summary"></a>摘要
 
-在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JDBC 在 Azure MySQL 数据库中存储和检索信息。
+在本教程中，我们创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JDBC 在 Azure Database for MySQL 数据库中存储和检索信息。
 
 ## <a name="next-steps"></a>后续步骤
 

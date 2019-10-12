@@ -1,5 +1,5 @@
 ---
-title: 使用 VS Code 将 Python Web 应用部署到 Linux 上的 Azure 应用服务
+title: 教程：使用 VS Code 将 Python Web 应用部署到 Linux 上的 Azure 应用服务
 description: 教程步骤 5，部署 Web 应用代码
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: e9b85928bd2b1308ab57747d7b0c32c085274cde
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: f7db7b93c3d8b2a130844ff91e1a4e294a0668f4
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019675"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172492"
 ---
-# <a name="deploy-your-app"></a>部署应用
+# <a name="tutorial-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>教程：将 Python Web 应用部署到 Linux 上的 Azure 应用服务
 
 [上一步：配置自定义启动文件](tutorial-deploy-app-service-on-linux-04.md)
 

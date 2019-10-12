@@ -7,14 +7,15 @@ manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: c114fa9aa360f58f5688f8b70685402ba0c12db7
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.custom: seo-python-october2019
+ms.openlocfilehash: cb5881ed9da546d9d9d2b639e475d5fdf815e2cd
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889725"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172386"
 ---
-# <a name="authenticate-with-the-azure-management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
+# <a name="authenticate-with-the-azure--management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
 
 使用 Python 管理库创建和管理资源时，可借助多个选项在 Azure 中对应用程序进行身份验证。
 

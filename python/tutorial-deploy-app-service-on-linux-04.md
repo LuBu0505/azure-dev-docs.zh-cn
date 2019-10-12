@@ -1,5 +1,5 @@
 ---
-title: 在 Linux 上的 Azure 应用服务上为 Python 应用配置自定义启动文件
+title: 教程：在 Linux 上的 Azure 应用服务上为 Python 应用配置自定义启动文件
 description: 教程步骤 4，指示应用服务如何启动 Web 应用。
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 7cbeef403e038baec77e4bf03c36dc746b53096d
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: fdd3248e50020bb90cdde8a3e9c30c2895dccdae
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019865"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172205"
 ---
-# <a name="configure-a-custom-startup-file"></a>配置自定义启动文件
+# <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>教程：在 Azure 应用服务上为 Python 应用配置自定义启动文件
 
 [上一步：创建应用服务](tutorial-deploy-app-service-on-linux-02.md)
 
@@ -34,7 +35,7 @@ ms.locfileid: "71019865"
 
 1. 将文件提交到代码存储库，使之能够与应用的其余部分一起部署。
 
-1. 在“Azure:  应用服务”资源管理器中展开“应用服务”，右键单击“应用程序设置”，选择“在门户中打开”：  
+1. 在“Azure：函数”  应用服务”资源管理器中展开“应用服务”，右键单击“应用程序设置”，选择“在门户中打开”：  
 
     ![应用服务资源管理器中的“在门户中打开设置”命令](media/deploy-azure/open-settings-in-portal-command.png)
 

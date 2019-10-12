@@ -1,5 +1,5 @@
 ---
-title: 使用 Visual Studio Code 向 Azure Functions 添加另一个 Python 函数
+title: 教程：使用 Visual Studio Code 向 Azure Functions 添加另一个 Python 函数
 description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 项目。
 services: functions
 author: kraigb
@@ -8,20 +8,21 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: a55b25326e7a87810ded7af1c375b185b7ef64eb
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 07f806dc58eb5aede65f0dca67e1bc59ce495a25
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019545"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172434"
 ---
-# <a name="add-a-second-function"></a>添加第二个函数
+# <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>教程：向 Azure Functions 添加另一个 Python 函数
 
 [上一步：部署到 Azure](tutorial-vs-code-serverless-python-05.md)
 
 在第一次部署后，可以更改代码（例如添加其他函数），然后重新部署到同一 Functions 应用。
 
-1. 在“Azure:  Functions”资源管理器中选择“创建函数”命令，  或者使用命令面板中的“Azure Functions:  创建函数”。 为函数指定以下详细信息：
+1. 在“Azure：函数”  Functions”资源管理器中选择“创建函数”命令，  或者使用命令面板中的“Azure Functions:  创建函数”。 为函数指定以下详细信息：
 
     - 模板：HTTP 触发器
     - 姓名：“DigitsOfPi”

@@ -8,17 +8,17 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 1d9cfc4d58355f374877941747138d8e8f53c8ea
-ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: 89a2ce8214e6e3706b6387f657715fe3ee7f4fbe
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71813697"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172407"
 ---
 # <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>将 Node.js Web 应用部署到 Azure 应用服务
 
-在 Azure 上，有下面几个用于托管 Web 应用的选项：
+在 Azure 上，有下面几个用于部署和托管 Web 应用的选项：
 
 - 用于托管 Web 应用的最佳选项是 Azure 应用服务，这是一种平台即服务 (PaaS) 产品。 若要开始，请试用以下资源之一：
 
