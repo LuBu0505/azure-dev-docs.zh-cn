@@ -1,21 +1,21 @@
 ### YamlMime:Landing
-title: Azure SDK for Python 文档
+title: 面向 Python 开发人员的 Azure
 summary: >
-  了解 Azure SDK for Python、其入门方法以及其为开发人员提供的功能。 开始使用各种有用的 Azure 功能（例如应用程序托管）、对开源数据库（例如 mySQL 和 PostgreSQL）的支持，以及使用大数据进行机器学习和其他应用。
+  了解 Azure 为 Python 开发人员提供的功能。 开始使用各种有用的 Azure 功能（例如应用托管）、对开源数据库（例如 mySQL 和 PostgreSQL）的支持，以及使用大数据进行机器学习和其他应用。
 metadata:
   title: 面向 Python 开发人员的 Azure
-  description: 参考以下开发人员资源，开始使用 Azure SDK for Python 进行开发。
-  author: sptramer
-  ms.author: sttramer
-  ms.date: 09/10/2019
+  description: 开始使用 Python 以及 Azure for Python 进行开发。
+  author: kraigb
+  ms.author: kraigb
+  ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: a753597a65f959e638a4aa72b99327ea1f635aee
-  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+  ms.openlocfilehash: a6008ed6b2a07db2853521922a29f1bd51a909d3
+  ms.sourcegitcommit: e081f71211e8f33420e92635c9a61eaa2f34c5e6
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/18/2019
-  ms.locfileid: "71094803"
+  ms.lasthandoff: 10/14/2019
+  ms.locfileid: "72306308"
 landingContent:
 - title: Azure SDK for Python 入门
   linkLists:
@@ -27,36 +27,54 @@ landingContent:
     links:
     - text: 安装 SDK
       url: python-sdk-azure-install.md
-    - text: 在 Azure Notebooks 中使用 Jupyter 笔记本
-      url: https://notebooks.azure.com/
-    - text: Visual Studio Code 中的 Python
-      url: https://code.visualstudio.com/docs/languages/python
   - linkListType: how-to-guide
     links:
     - text: 对应用程序进行身份验证
       url: python-sdk-azure-authenticate.md
-  - linkListType: quickstart
+  - linkListType: reference
     links:
-    - text: 使用 Visual Studio Code 在 Azure Functions 中创建无服务器 Python 应用
-      url: /azure/azure-functions/tutorial-vs-code-serverless-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: 在 Jupyter 笔记本中使用 Azure 机器学习工具
-      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: 通过 Azure Pipelines 生成并部署 Python 应用
-      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 用于 Python 的 Azure SDK API 参考
+      url: /python/api?view=azure-python
 - title: 在 Azure 中托管应用程序
   linkLists:
-  - linkListType: overview
-    links:
-    - text: Linux 上的 Azure 应用服务简介
-      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
   - linkListType: quickstart
     links:
     - text: 生成、部署和缩放 Python Web 应用
       url: /azure/app-service/containers/quickstart-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 使用 Visual Studio Code 在 Azure Functions 中创建无服务器 Python 应用
+      url: tutorial-vs-code-serverless-python-01.md
     - text: 在 Azure Kubernetes 服务中部署容器化应用
       url: /azure/aks/kubernetes-walkthrough?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: 在 Python 中创建和部署无服务器函数
-      url: /azure/azure-functions/functions-create-first-function-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 通过 Azure Pipelines 生成并部署 Python 应用
+      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 向 Python Web 应用程序添加 Microsoft 登录功能
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: overview
+    links:
+    - text: Linux 上的 Azure 应用服务简介
+      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: 开发人员工具入门
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visual Studio Code 中的 Python
+      url: https://code.visualstudio.com/docs/languages/python
+  - linkListType: tutorial
+    links:
+    - text: 使用 Visual Studio Code 在 Azure Functions 中创建无服务器 Python 应用
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: 利用 Visual Studio Code 创建和部署 Web 应用
+      url: tutorial-deploy-app-service-on-linux-01.md
+    - text: 利用 Visual Studio Code 创建和部署容器
+      url: tutorial-deploy-containers-01.md
+  - linkListType: download
+    links:
+    - text: 适用于 Visual Studio Code 的 Azure 扩展
+      url: https://code.visualstudio.com/docs/azure/extensions
+    - text: 安装 Azure CLI
+      url: /azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 使用各种分发版，在 Windows 10 上本机运行 Linux 应用程序
+      url: /windows/wsl/install-win10?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
 - title: 用于数据科学、AI 和机器学习的服务
   linkLists:
   - linkListType: overview
@@ -67,16 +85,14 @@ landingContent:
       url: /azure/cognitive-services?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
   - linkListType: quickstart
     links:
+    - text: 在 Jupyter 笔记本中使用 Azure 机器学习工具
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: 使用托管的 Azure HDInsights 群集进行数据处理
       url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: 创建用于数据科学任务的 Azure 虚拟机
       url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-- title: Azure SDK for Python 参考
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: 用于 Python 的 Azure SDK API 参考
-      url: /python/api?view=azure-python
+    - text: 在 Azure Notebooks 中使用 Jupyter 笔记本
+      url: https://notebooks.azure.com/
 - title: Azure 上的存储、消息传递和数据库解决方案
   linkLists:
   - linkListType: overview
@@ -91,6 +107,10 @@ landingContent:
     links:
     - text: 通过 Python 在 Azure 存储中管理 Blob
       url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: 在 Azure 上使用 Python 创建 PostgreSQL 实例并与之连接
+      url: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: 在 Azure 上使用 Python 创建 MySQL 实例并与之连接。
+      url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: 通过 Python 在 Azure CosmosDB 帐户上使用 SQL 查询
       url: /azure/cosmos-db/create-sql-api-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: 在 Azure 中设置托管 SQL Server
