@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fdd3248e50020bb90cdde8a3e9c30c2895dccdae
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172205"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278940"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>教程：在 Azure 应用服务上为 Python 应用配置自定义启动文件
 
-[上一步：创建应用服务](tutorial-deploy-app-service-on-linux-02.md)
+[上一步：创建应用服务](tutorial-deploy-app-service-on-linux-03.md)
+
+本文介绍了如何在 Azure 应用服务上为 Python 应用配置自定义启动文件。
 
 可能需要根据应用构建情况，按照 Azure 文档中[为 Linux 上的应用服务配置 Python 应用](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)一文的说明为应用创建自定义启动命令文件。
 
@@ -37,11 +39,11 @@ ms.locfileid: "72172205"
 
 1. 在“Azure：函数”  应用服务”资源管理器中展开“应用服务”，右键单击“应用程序设置”，选择“在门户中打开”：  
 
-    ![应用服务资源管理器中的“在门户中打开设置”命令](media/deploy-azure/open-settings-in-portal-command.png)
+    ![在应用服务资源管理器的门户中打开“应用程序设置”](media/deploy-azure/open-application-settings-in-portal-for-app-service.png)
 
 1. 必要时，在 Azure 门户中登录；然后，在“配置”页上  选择“常规设置”，  在“堆栈设置”   >   “启动命令”下输入启动文件的名称（例如 *startup.txt*），然后选择“保存”。 
 
-    ![在 Azure 门户中设置启动文件名称](media/deploy-azure/azure-portal-startup-file.png)
+    ![在 Azure 门户中设置启动命令文件名](media/deploy-azure/enter-startup-file-for-app-service-in-the-azure-portal.png)
 
     > [!NOTE]
     > 也可将启动命令直接置于  Azure 门户的“启动命令”字段中，而不必使用启动命令文件。 但通常情况下，我们首选使用文件，因为这样可以将此类配置信息保存在存储库中，方便审核所做的更改，并将它们一起重新部署到另一应用服务实例。

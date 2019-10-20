@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 691e64ae9b407ba4277ddde2a62a583623e53484
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: b87ca4bdefafbfa3e23c9538d6c77357dc9ba99b
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172484"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278739"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>教程：为 Azure Functions 创建 Python 函数
 
 [上一步：先决条件](tutorial-vs-code-serverless-python-01.md)
 
-1. Azure Functions 的代码在 Functions  项目中管理，该项目在创建代码之前创建。 在 **Azure:Functions** 资源管理器（已使用左侧的 Azure 图标打开）中选择“新建项目”命令图标，  或者打开命令面板 (F1) 并选择“Azure Functions:  Create New Project”。
+本文介绍如何使用 Visual Studio Code 创建用于 Azure Functions 的 Python 函数。 Azure Functions 的代码在 Functions  项目中管理，该项目在创建代码之前创建。
 
-    ![Functions 资源管理器中的“创建新项目”按钮](media/tutorial-vs-code-serverless-python/project-create-new.png)
+1. 在 **Azure:Functions** 资源管理器（已使用左侧的 Azure 图标打开）中选择“新建项目”命令图标，  或者打开命令面板 (F1) 并选择“Azure Functions:  Create New Project”。
+
+    ![在 Azure Functions 资源管理器中创建一个新项目](media/tutorial-vs-code-serverless-python/create-a-new-project-in-azure-functions-explorer.png)
 
 1. 在接下来的提示窗口中执行以下操作：
 
@@ -37,17 +39,17 @@ ms.locfileid: "72172484"
 
 1. 稍后会出现一条表明新项目已创建的消息。 在**资源管理器**中有针对该函数创建的子文件夹，Visual Studio Code 会打开 *\_\_init\_\_.py* 文件，其中包含默认的函数代码：
 
-    [![创建新的 Python 函数项目的结果](media/tutorial-vs-code-serverless-python/project-create-results.png)](media/tutorial-vs-code-serverless-python/project-create-results.png)
+    ![在 Azure Functions 中创建新 Python 项目的结果](media/tutorial-vs-code-serverless-python/display-results-of-new-python-project-in-azure-functions.png)
 
     > [!NOTE]
     > 如果 Visual Studio Code 在打开 *\_\_init\_\_.py* 时告知你，你没有选择 Python 解释器，请打开命令面板 (**F1**)，选择“Python:  选择解释器”命令，然后在本地 `.env` 文件夹（已创建为项目的一部分）中选择虚拟环境。 具体说来，环境必须基于 Python 3.6x，这在上一篇文章的[先决条件](tutorial-vs-code-serverless-python-01.md#prerequisites)中已注明。
     >
-    > ![选择通过项目创建的虚拟环境](media/tutorial-vs-code-serverless-python/select-venv-interpreter.png)
+    > ![选择通过 Python 项目创建的虚拟环境](media/tutorial-vs-code-serverless-python/select-virtual-environment-created-with-the-python-project.png)
 
 > [!TIP]
 > 如果需要在同一项目中创建另一函数，请使用  **Azure:Functions** 资源管理器中的“创建函数”命令，或者打开命令面板 (**F1**) 并选择“Azure Functions:  Create Function”命令。 两个命令都会提示你输入函数名称（即终结点的名称），然后创建一个包含默认文件的子文件夹。
 >
-> ![“Azure:Functions”资源管理器中的“新建函数”命令](media/tutorial-vs-code-serverless-python/function-create-new.png)
+> ![使用 Azure Functions 资源管理器中的“新建函数”创建函数](media/tutorial-vs-code-serverless-python/create-new-functions-in-azure-functions-explorer.png)
 
 > [!div class="nextstepaction"]
 > [我创建了函数](tutorial-vs-code-serverless-python-03.md)

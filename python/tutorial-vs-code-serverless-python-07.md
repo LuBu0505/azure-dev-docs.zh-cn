@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9f23e138dc9ddc0022199296320ff5c04e6c3d6
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: f8cfe602676c64f516f0a95ae73801b58f35076c
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172124"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278526"
 ---
 # <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>教程：在 Python 中添加 Azure Functions 的存储绑定
 
 [上一步：部署另一个函数](tutorial-vs-code-serverless-python-06.md)
 
-可以通过绑定  将函数代码连接到资源（例如 Azure 存储），不需编写任何数据访问代码。 绑定在 *function.json* 文件中定义，可以代表输入和输出。 一个函数可以使用多个输入和输出绑定，但只能使用一个触发器。 有关详细信息，请参阅 [Azure Functions 触发器和绑定的概念](/azure/azure-functions/functions-triggers-bindings)。
+可以为 Azure Functions 添加存储绑定。 可以通过绑定  将函数代码连接到资源（例如 Azure 存储），而无需编写任何数据访问代码。
+
+绑定在 *function.json* 文件中定义，可以代表输入和输出。 一个函数可以使用多个输入和输出绑定，但只能使用一个触发器。 有关详细信息，请参阅 [Azure Functions 触发器和绑定的概念](/azure/azure-functions/functions-triggers-bindings)。
 
 在此部分，我们将存储绑定添加到此前在本教程中创建的 HttpExample 函数。 每次进行请求时，该函数通过此绑定将消息写入存储。 相关存储使用函数应用所使用的默认存储帐户。 但是，如果你打算大量使用存储，则需考虑创建单独的帐户。
 
@@ -28,7 +30,7 @@ ms.locfileid: "72172124"
 
 1. 在 `HttpExample` 文件夹中，右键单击 *function.json*，选择“添加绑定”： 
 
-    ![Visual Studio Code 资源管理器中的“添加绑定”命令](media/tutorial-vs-code-serverless-python/add-binding-command.png)
+    ![Visual Studio Code 资源管理器中的“添加绑定”命令](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
 1. 在 Visual Studio Code 的接下来的提示窗口中，选择或提供以下值：
 

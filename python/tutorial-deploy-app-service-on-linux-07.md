@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4ffadce6a6895041efe6737b271d7ab11c830095
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 1eeb8f66040a757809aad9df374f3d6a5f9390d2
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172475"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278901"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 
 [上一步：流式传输日志](tutorial-deploy-app-service-on-linux-06.md)
 
-创建的应用服务包含一项可能产生费用的后备应用服务计划。 若要清理资源，请在“Azure:  应用服务”资源管理器中右键单击应用服务，然后选择“删除”。 
+创建的 Azure 应用服务包含一项可能产生费用的后备应用服务计划。 若要清理资源，请在“Azure:  应用服务”资源管理器中右键单击应用服务，然后选择“删除”。 
 
 也可访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
 
@@ -34,7 +34,7 @@ ms.locfileid: "72172475"
 
 可能还有其他用于 VS Code 的 Azure 扩展对你有用。 直接在“扩展”资源管理器中搜索“Azure”：
 
-![用于 VS Code 的 Azure 扩展](media/deploy-containers/azure-extensions.png)
+![适用于 Visual Studio Code 的 Azure 扩展](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
 
 下面是一些常用的扩展：
 

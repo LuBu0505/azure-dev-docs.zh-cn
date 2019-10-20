@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c09323e35c20a0b9fb5162c08f7fa223969d83fe
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 4a8ef594b461df406846f16ad71e595b64ffee5e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172113"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278781"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>教程：在 Visual Studio Code 中检查 Python 代码文件
 
 [上一步：创建函数](tutorial-vs-code-serverless-python-02.md)
+
+使用 Visual Studio Code 查看函数文件夹中的 Python 文件。
 
 在新创建的函数子文件夹中有三个文件： *\_\_init\_\_.py* 包含函数的代码，*function.json* 介绍 Azure Functions 的函数，*sample.dat* 是一个示例数据文件。 可以删除 *sample.dat*（如果你希望删除它），因为它存在只是为了演示你可以向子文件夹添加其他文件。
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a099e25134615fc05508cde3c0f128a3be813402
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: bb1797ef86d9a98661412ef555b4eb78a9282ad9
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172273"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278895"
 ---
 # <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>教程：将容器映像部署到 Azure 应用服务
 
@@ -24,15 +24,15 @@ ms.locfileid: "72172273"
 
 1. 在 **Docker** 资源管理器中，依次展开“注册表”、  注册表的节点（例如 **Azure**）、映像名称的节点，直到看到带 `:latest` 标记的映像。
 
-    ![在 Docker 资源管理器中找到一个映像](media/deploy-containers/deploy-find-image.png)
+    ![在 Docker 资源管理器中找到一个映像](media/deploy-containers/find-image-to-deploy-in-docker-explorer.png)
 
 1. 右键单击映像，然后选择“将映像部署到 Azure 应用服务”  。
 
-    ![选择“部署”菜单命令](media/deploy-containers/deploy-menu.png)
+    ![选择“将映像部署到 Azure 应用服务”菜单项](media/deploy-containers/deploy-image-to-azure-app-service-with-docker-explorer.png)
 
 1. 按照提示操作，选择 Azure 订阅，选择或指定资源组，指定区域，配置“应用服务计划”（B1 是开销最小的），然后指定站点的名称。 下面的动画演示了该过程。
 
-    ![创建并部署动画](media/deploy-containers/deploy-to-app-service.gif)
+    ![创建映像并将映像部署到 Azure 应用服务](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
     “资源组”  是组成某个应用的不同资源的命名集合。 将应用的所有资源分配给单个组即可轻松地以单个单元的形式管理这些资源。 （有关详细信息，请参阅 Azure 文档中的 [Azure 资源管理器概述](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)。）
 
@@ -44,7 +44,7 @@ ms.locfileid: "72172273"
 
 1. 完成后，还必须  将名为 `WEBSITES_PORT`（注意复数形式的“WEBSITES”）的设置添加到应用服务，以便指定供容器在其上侦听的端口。 （例如，如果使用[在 VS Code 中创建 Python 容器](https://code.visualstudio.com/docs/python/tutorial-create-container)教程中的映像，则用于 Flask 的端口为 5000，用于 Django 的端口为 8000）。 若要设置 `WEBSITES_PORT`，请切换到“Azure:  应用服务”资源管理器，展开新应用服务的节点（必要时进行刷新），然后右键单击“应用程序设置”  并选择“添加新设置”。  出现提示时，输入 `WEBSITES_PORT` 作为键，输入端口号作为值。
 
-    ![应用服务上与“添加新设置”相对应的上下文菜单命令](media/deploy-containers/add-app-service-setting.png)
+    ![将新设置添加到应用服务以指定端口](media/deploy-containers/add-new-setting-in-app-service-settings-explorer.png)
 
 1. 更改设置后，应用服务会自动重启。 也可随时右键单击应用服务，然后选择“重启”。 
 

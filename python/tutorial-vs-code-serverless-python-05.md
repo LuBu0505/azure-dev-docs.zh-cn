@@ -9,22 +9,24 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 231aefd696b3f4c91e5da8156dc339f4b355c1c7
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 9acf6e4c0ecc5357580957e2ea9295cd89f441f0
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172179"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278583"
 ---
 # <a name="tutorial-deploy-azure-functions-in-python"></a>教程：在 Python 中部署 Azure Functions
 
 [上一步：本地调试](tutorial-vs-code-serverless-python-04.md)
 
-在以下步骤中，我们使用 Functions 扩展在 Azure 中创建一个函数应用以及其他必需的 Azure 资源。 函数应用可将函数分组为一个逻辑单元，以便更轻松地管理、部署和共享资源。 它还需要一个用于数据的 Azure 存储帐户，以及一项[托管计划](/azure/azure-functions/functions-scale#hosting-plan-support)。 所有这些资源都被组织到单个资源组中。
+本文介绍如何使用 Azure Functions 扩展在 Azure 中创建一个函数应用以及其他必需的 Azure 资源。 函数应用可将函数分组为一个逻辑单元，以便更轻松地管理、部署和共享资源。
+
+函数应用需要一个用于数据的 Azure 存储帐户，以及一项[托管计划](/azure/azure-functions/functions-scale#hosting-plan-support)。 所有这些资源都被组织到单个资源组中。
 
 1. 在“Azure：函数”  Functions”资源管理器中选择“部署到函数应用”命令，  或者打开命令面板 (**F1**)，然后选择“Azure Functions:  部署到函数应用”命令。 同样，函数应用是 Python 项目在 Azure 中运行时所在的位置。
 
-    ![“部署到函数应用”命令](media/tutorial-vs-code-serverless-python/deploy-command.png)
+    ![将 Python 函数部署到 Azure 函数应用](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
 1. 系统提示时，选择“在 Azure 中创建新的函数应用”，  提供在 Azure 中独一无二的名称（通常使用个人或公司名称以及其他唯一标识符；可以使用字母、数字和连字符）。 如果以前创建过函数应用，其名称会显示在此选项列表中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "72172179"
 
     “Azure:  Functions”资源管理器也显示进度：
 
-    ![“Azure:Functions”资源管理器中的部署进度指示器](media/tutorial-vs-code-serverless-python/deploy-progress.png)
+    ![“Azure:Functions”资源管理器中的部署进度指示器](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
 
 1. 部署完成后，Azure Functions 扩展会显示一条消息，其中包含用于三项其他操作的按钮：
 
-    ![指示已成功完成部署并提供其他操作的消息](media/tutorial-vs-code-serverless-python/deployment-popup.png)
+    ![指示已成功完成部署并提供其他操作的消息](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
     对于“流式传输日志”和“上传设置”，请参阅后续部分。   对于“查看输出”，请参阅后面的步骤 5。 
 

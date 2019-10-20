@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 324a67e5eebfce8fde7a2cf88d40f15864817df5
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: cafa10a4ddc9ccc365f9054d009b58b3c9c615bf
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172438"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278608"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>教程：在本地调试 Azure Functions Python 代码
 
 [上一步：检查代码文件](tutorial-vs-code-serverless-python-03.md)
 
+可以在 Visual Studio Code 中本地调试 Azure Functions Python 代码。
+
 1. 创建 Functions 项目时，Visual Studio Code 扩展也在 `.vscode/launch.json` 中创建启动配置，该文件包含名为“附加到 Python 含”的单个配置。  此配置意味着，若要启动项目，只需按 F5 或使用调试资源管理器：
 
-    ![显示 Functions 启动配置的调试资源管理器](media/tutorial-vs-code-serverless-python/launch-configuration.png)
+    ![用于启动 Python 项目的调试浏览器的配置](media/tutorial-vs-code-serverless-python/configuration-to-start-a-python-project-for-debugging.png)
 
 1. 启动调试程序时，会打开一个终端，显示来自 Azure Functions 的输出，其中包含可用终结点的摘要。 如果使用的名称不是“HttpExample”，则 URL 可能有所不同：
 

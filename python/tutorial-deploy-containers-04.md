@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0f002444d2454b734821e067e65fa513619a68bf
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 12cc4880a7001fc51b0e70f89f177390c5fd0f45
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172223"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278699"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>教程：从用于容器的 Azure 应用服务流式传输日志
 
 [上一步：进行更改并重新部署](tutorial-deploy-containers-03.md)
+
+按照此过程操作可将容器的 Azure 应用服务中的日志流式传输到 Visual Studio Code。
 
 在 VS Code 中，可以查看（或“跟踪”）Azure 应用服务上正在运行的站点的日志，该服务捕获从 `print` 语句到控制台的任何输出，并将其路由到 VS Code 的“输出”面板。 
 

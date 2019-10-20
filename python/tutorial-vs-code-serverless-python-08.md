@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: aac220a57c83b274c46886f4548e41b41ec8327e
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 8c3110b14d70c787f81a18aa5d0b5bb3bde41ec1
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172423"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278439"
 ---
 # <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>教程：为 Azure Functions 清理 Azure 资源
 
 [上一步：添加存储绑定](tutorial-vs-code-serverless-python-07.md)
 
-创建的函数应用包括可能产生少量费用的资源（请参阅 [Functions 定价](https://azure.microsoft.com/pricing/details/functions/)）。 若要清理资源，请在“Azure:  Functions”资源管理器中右键单击函数应用，然后选择“删除函数应用”。 
+本文介绍如何删除在本教程中创建的 Azure 资源。 使用 Visual Studio Code 创建的 Azure 函数应用包括可能会产生最小开销的资源。
+
+若要清理资源，请在“Azure:  Functions”资源管理器中右键单击函数应用，然后选择“删除函数应用”。  有关详细信息，请参阅 [Functions 定价](https://azure.microsoft.com/pricing/details/functions/)。
 
 也可访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
 
@@ -36,7 +38,7 @@ ms.locfileid: "72172423"
 
 可能还有其他用于 Visual Studio Code 的 Azure 扩展对你有用。 直接在“扩展”资源管理器中搜索“Azure”：
 
-![适用于 Visual Studio Code 的 Azure 扩展](media/tutorial-vs-code-serverless-python/azure-extensions.png)
+![适用于 Visual Studio Code 的 Azure 扩展](media/tutorial-vs-code-serverless-python/azure-extensions-for-visual-studio-code.png)
 
 下面是一些常用的扩展：
 

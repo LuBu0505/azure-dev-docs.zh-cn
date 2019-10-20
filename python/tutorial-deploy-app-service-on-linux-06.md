@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f4aac132e9c01a0c428e243e06e811357defc2aa
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: a60c8fd0202e935960f14a9ab5570f86a78fab6e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172235"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278916"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>教程：将日志从 Azure 应用服务流式传输到 Visual Studio Code 中
 
 [上一步：部署应用](tutorial-deploy-app-service-on-linux-05.md)
 
+按照此过程操作可将 Azure 应用服务中的日志流式传输到 Visual Studio Code。
+
 1. 在 Visual Studio Code 中打开“Azure:  应用服务”资源管理器，右键单击应用服务，然后选择“开始流式传输日志”： 
 
-   ![“开始流式传输日志”命令](media/deploy-azure/start-streaming-logs-command.png)
+   ![从应用服务资源管理器启动流式传输日志](media/deploy-azure/start-streaming-logs-in-visual-studio-code.png)
 
 1. 当系统提示你启用文件日志记录功能并重启 Web 应用时，请选择“是”。  当应用重启时，  VS Code 中的“输出”窗口会显示进度。 启用日志记录是一次性的操作。
 
