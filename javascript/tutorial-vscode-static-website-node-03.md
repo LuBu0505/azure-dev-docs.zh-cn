@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: kraigb
-ms.openlocfilehash: 44e6479379fff3ddf1012cdb61cf73440cad346e
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: ad207007e1c5a781f8cc02a2d20e0a68c77892e7
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685967"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587646"
 ---
 # <a name="create-an-azure-storage-account"></a>创建 Azure 存储帐户
 
@@ -21,7 +21,7 @@ ms.locfileid: "71685967"
 
 在此步骤中，将创建一个 Azure 存储帐户，该帐户使用内置 Web 服务器充当简单的文件存储（或 CDN）。 此内置服务器使 Azure 存储成为快速托管静态站点的理想选择。
 
-1. 从上一步中创建的 `my-react-app` 文件夹中，启动 Visual Studio Code，以便它自动打开该文件夹：
+1. 从上一步中创建的 `my-static-app` 文件夹中，启动 Visual Studio Code，以便它自动打开该文件夹：
 
     ```bash
     code .
