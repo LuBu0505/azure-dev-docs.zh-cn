@@ -4,19 +4,19 @@ description: 安装用于在 Azure 上进行 Node.js 和 JavaScript 开发的各
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 801e621b361a87223a9d2b948ce2afa8c2b1a138
-ms.sourcegitcommit: 47afd94820bad5214e60b42575e2a2d91a07ff65
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: d943325cae970b69629fbc71ff4d86b6c0fa0491
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72348036"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587301"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>面向 JavaScript 开发人员的 Azure 工具
 建议使用以下工具在 Azure 上开发 JavaScript 应用。
@@ -24,7 +24,7 @@ ms.locfileid: "72348036"
 ## <a name="azure-cli"></a>Azure CLI
 Azure CLI 经过优化，可从命令行管理 Azure 资源。
 
-![CLI](media/node-azure-tools/cli.png)
+![用于管理 Azure 资源的 Azure CLI](media/node-azure-tools/azure-cli.png)
  
 > [!div class="nextstepaction"]
 > [安装 Azure CLI 2.0](/cli/azure/install-az-cli2)
@@ -32,7 +32,7 @@ Azure CLI 经过优化，可从命令行管理 Azure 资源。
 ## <a name="visual-studio-code"></a>Visual Studio Code
 在任何 OS 上编辑和调试 JavaScript 应用。
 
-![Visual Studio Code](media/node-azure-tools/vs-code.png)
+![使用 Visual Studio Code 编辑 JavaScript](media/node-azure-tools/visual-studio-code-debug-javascript.png)
 
 > [!div class="nextstepaction"]
 > [下载 Visual Studio Code](https://code.visualstudio.com)

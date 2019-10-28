@@ -4,19 +4,19 @@ description: 演示如何创建、使用 Docker 容器化 Node.js 应用并将�
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/25/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 51ed46032d0cff0f2e35c0a69e9b339158bad867
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: bc8e3a79e3d32cc3d16f496b169f4229d20a6163
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710259"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587406"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
@@ -47,13 +47,13 @@ ms.locfileid: "71710259"
 
 1. 在命令面板的提示符下输入 `gitcl`，选择“Git:  克隆”命令，按 **&lt;Enter>** 。
 
-    ![Visual Studio Code 命令面板提示符中的 gitcl 命令](./media/node-howto-e2e/git-clone.png)
+    ![Visual Studio Code 命令面板提示符中的 gitcl 命令](./media/node-howto-e2e/visual-studio-code-git-clone.png)
 
 1. 系统提示输入“存储库 URL”时，请输入 `https://github.com/scotch-io/node-todo`，按 **&lt;Enter>** 。 
 
 1. 选择（或创建）要将项目克隆到的本地目录。
 
-    ![Visual Studio Code 资源管理器](./media/node-howto-e2e/explorer.png)
+    ![Visual Studio Code 资源管理器](./media/node-howto-e2e/visual-studio-code-explorer.png)
 
 ## <a name="integrated-terminal"></a>集成式终端
 
@@ -63,7 +63,7 @@ ms.locfileid: "71710259"
 
 1. 输入 `yarn`，按 **&lt;Enter>** 。  
 
-    ![在 Visual Studio Code 中运行 yarn 命令](./media/node-howto-e2e/terminal.png)
+    ![在 Visual Studio Code 中运行 yarn 命令](./media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
 ## <a name="integrated-git-version-control"></a>集成式 Git 版本控制
 
@@ -75,7 +75,7 @@ ms.locfileid: "71710259"
 
 1. 在“消息”框中输入提交消息，并按 **&lt;Ctrl>&lt;Enter>** 。  
 
-    ![将 yarn.lock 文件添加到 Git](./media/node-howto-e2e/git.png)
+    ![将 yarn.lock 文件添加到 Git](./media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
 ## <a name="project-and-code-navigation"></a>项目和代码导航
 
@@ -85,21 +85,21 @@ ms.locfileid: "71710259"
 
 1. 输入 `.js` 显示项目中的所有 JavaScript/JSON 文件以及每个文件的父目录 
 
-    ![显示所有 .js* 文件](./media/node-howto-e2e/git-output.png)
+    ![在 Visual Studio Code 中显示所有 .js* 文件](./media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. 选择 `server.js`，即应用的启动脚本。 
 
 1. 将鼠标悬停在 **database** 变量（在第 6 行导入）上，以查看其类型。 在开发项目期间，这种在文件中快速检查变量/模块/类型的功能非常有用。 
 
-    ![发现类型](./media/node-howto-e2e/hover-help.png)
+    ![通过悬停帮助发现 Visual Studio Code 中的类型](./media/node-howto-e2e/visual-studio-code-hover-help.png)
 
 1. 在变量（例如 **database**）的范围中单击鼠标可查看同一文件中对该变量的所有引用。 若要在项目中查看对某个变量的所有引用，请右键单击该变量，并从上下文菜单中选择“查找所有引用”。 
 
-    ![查找对变量的引用](./media/node-howto-e2e/word-hilight.png)
+    ![使用 Visual Studio Code 查找所有引用](./media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
 1. 除了通过将鼠标悬停在变量上来发现其类型以外，还可以检查变量的定义，即使该变量位于另一文件中。 若要了解这项操作，请右键单击“database.localUrl”（第 12 行），并从上下文菜单中选择“查看定义”。   
 
-    ![查看变量的定义](./media/node-howto-e2e/code-peek.png)
+    ![在 Visual Studio Code 中速览变量的定义](./media/node-howto-e2e/visual-studio-code-peek-definition.png)
 
 ## <a name="modifying-the-code-and-using-autocompletion"></a>修改代码并使用自动完成
 
@@ -121,7 +121,7 @@ MongoDB 连接字符串在 **database.localUrl** 的声明中经过硬编码。 
 
 请注意，如果手动键入代码（而不是复制并粘贴），则在 `process` 后面键入句点时，Visual Studio Code 会显示 Node.js **process** 全局 API 的可用成员。
 
-![自动完成功能会自动显示 API 的成员](./media/node-howto-e2e/process-env.png)
+![自动完成功能会自动显示 API 的成员](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 之所以能够实现自动完成，是因为 Visual Studio Code 在幕后使用 TypeScript（即使是对于 JavaScript）来提供键入信息，然后，在键入时使用这些信息来显示完成列表。 Visual Studio Code 能够检测到 Node.js 项目，因此，能够自动下载适用于 [NPM 中的 Node.js](https://www.npmjs.com/package/@types/node) 的 TypeScript 键入内容文件。 使用键入内容文件可以获取其他 Node.js 全局变量（例如 **Buffer** 和 **setTimeout**）和所有内置模块（例如 **fs** 和 **http**）的自动完成列表。
 
@@ -133,7 +133,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 在上面的代码中可以看到，不需要采取任何动作就获得了自动完成功能。
 
-![自动完成功能会自动显示 API 的成员](./media/node-howto-e2e/mongoose.png)
+![自动完成功能会自动显示 API 的成员](./media/node-howto-e2e/visual-studio-code-autocomplete-mongoose.png)
 
 可以通过浏览 [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) 项目（所有 TypeScript 键入内容定义的社区驱动源）来了解哪些模块支持此自动完成功能。
 
@@ -141,19 +141,19 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 稍微了解代码之后，便可以开始运行应用了。 若要从 Visual Studio Code 运行应用，请按 **&lt;F5>** 。 通过 **&lt;F5>** （调试模式）运行代码时，Visual Studio Code 会启动应用，并显示“调试控制台”窗口，其中显示了应用的 stdout。 
 
-![通过调试控制台监视应用的 stdout](./media/node-howto-e2e/console.png)
+![通过调试控制台监视应用的 stdout](./media/node-howto-e2e/visual-studio-code-debug-console.png)
 
 此外，“调试控制台”已附加到最近运行的应用，因此，可以键入要在应用中评估的、也支持自动完成功能的 JavaScript 表达式。  若要了解这项操作，请在控制台中键入 `process.env`：
 
-![在调试控制台中键入代码](./media/node-howto-e2e/console-code.png)
+![在调试控制台中键入代码](./media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
 之所以能够按 **&lt;F5>** 运行应用，是因为当前打开的文件是 JavaScript 文件 (`server.js`)。 因此，Visual Studio Code 假设项目是 Node.js 应用。 如果在 Visual Studio Code 中关闭所有 JavaScript 文件，再按 **&lt;F5>** ，则 Visual Studio Code 会查询环境：
 
-![指定运行时环境](./media/node-howto-e2e/select-env.png)
+![指定运行时环境](./media/node-howto-e2e/visual-studio-code-select-environment.png)
 
 打开浏览器并导航到 `http://localhost:8080` 以查看正在运行的应用。 在文本框中键入一条消息，并添加/删除几个待办事项来感受应用的工作方式。
 
-![正在运行的待办事项应用](./media/node-howto-e2e/todo.png)
+![使用应用添加或删除待办事项](./media/node-howto-e2e/add-remove-todos-app.png)
 
 ## <a name="debugging"></a>调试
 
@@ -161,7 +161,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 在第 28 行设置一个断点，用于表示当应用尝试添加待办事项条目时要调用的 Express 路由。 若要设置断点，只需在编辑器中单击行号左侧的区域，如下图所示。
 
-![在 Visual Studio Code 中设置断点](./media/node-howto-e2e/breakpoint.png)
+![在 Visual Studio Code 中设置断点](./media/node-howto-e2e/visual-studio-code-set-breakpoint.png)
 
 > [!NOTE]
 > 除了标准断点以外，Visual Studio Code 还支持可用于自定义应用何时应暂停执行的条件断点。 若要设置条件断点，请右键单击要暂停执行的行左侧的区域，选择“添加条件断点...”，并指定 JavaScript 表达式（例如 `foo = "bar"`）或执行计数来定义要在哪种条件下暂停执行。 
@@ -170,7 +170,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 设置断点后，返回到正在运行的应用并添加一个待办事项条目。 添加待办事项条目会立即导致应用在设置了断点的第 28 行处暂停执行：
 
-![Visual Studio Code 在断点处暂停执行](./media/node-howto-e2e/debugger.png)
+![Visual Studio Code 在断点处暂停执行](./media/node-howto-e2e/visual-studio-code-pause-breakpoint-execution.png)
 
 暂停应用程序后，可将鼠标悬停在代码的表达式上，以查看其当前值，检查局部变量/监视项和调用堆栈，并使用调试工具栏逐步执行代码。 按 **&lt;F5>** 可恢复应用的执行。
 
@@ -180,17 +180,17 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 切换到“扩展”选项卡上，在搜索框中键入 `chrome`： 
 
-![Visual Studio Code 的 Chrome 调试扩展](./media/node-howto-e2e/chrome.png)
+![Visual Studio Code 的 Chrome 调试扩展](./media/node-howto-e2e/visual-studio-code-chrome-extension.png)
 
 选择名为“适用于 Chrome 的调试程序”的扩展，再选择“安装”。   安装 Chrome 调试扩展后，选择“重新加载”关闭再重新打开 Visual Studio Code 以激活该扩展。  
 
-![安装 Chrome 调试扩展后重新加载 Visual Studio Code](./media/node-howto-e2e/chrome-extension-reload-vscode.png)
+![安装 Chrome 调试扩展后重新加载 Visual Studio Code](./media/node-howto-e2e/visual-studio-code-reload-extension.png)
 
 尽管无需进行任何特定于 Visual Studio Code 的配置即可运行和调试 Node.js 代码，但若要调试前端 Web 应用，需要生成一个 `launch.json` 文件来指示 Visual Studio Code 如何运行应用。 
 
 若要生成 `launch.json` 文件，请切换到“调试”选项卡，单击齿轮图标（顶部应有一个小红点），并选择 **node.js** 环境。 
 
-![Visual Studio Code 中用于配置 launch.json 文件的选项](./media/node-howto-e2e/debug-gear.png)
+![Visual Studio Code 中用于配置 launch.json 文件的选项](./media/node-howto-e2e/visual-studio-code-debug-gear.png)
 
 创建的 `launch.json` 文件如下所示，它告知 Visual Studio Code 如何启动和/或附加到应用以便对其进行调试。 
 
@@ -219,7 +219,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 打开 `launch.json` 文件后，选择“添加配置”（右下角），然后选择“Chrome:   使用 userDataDir 启动”。
 
-![将 Chrome 配置添加到 Visual Studio Code](./media/node-howto-e2e/add-chrome-config.png)
+![将 Chrome 配置添加到 Visual Studio Code](./media/node-howto-e2e/visual-studio-code-add-chrome-config.png)
 
 为 Chrome 添加新的运行配置可以调试前端 JavaScript 代码。 
 
@@ -251,7 +251,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 在 **compounds.configurations** 数组中指定的字符串值引用**配置**列表中各个条目的**名称**。 如果已修改这些名称，则需要在数组中进行相应的更改。 若要了解这项操作，请切换到调试选项卡，将选定的配置更改为 **Full-Stack**（复合配置的名称），并按 **&lt;F5>** 运行该配置。
 
-![在 Visual Studio Code 中运行配置](./media/node-howto-e2e/full-stack-profile.png)
+![在 Visual Studio Code 中运行配置](./media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 运行配置会启动 Node.js 应用（可在调试控制台输出中查看）和 Chrome（配置为导航到 `http://localhost:8080` 上的 Node.js 应用）。
 
@@ -261,7 +261,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 返回到正在运行的应用，添加新的待办事项条目，然后可以看到，Visual Studio Code 现已暂停 Angular 代码中的执行。
 
-![在 Visual Studio Code 中调试前端代码](./media/node-howto-e2e/chrome-pause.png)
+![在 Visual Studio Code 中调试前端代码](./media/node-howto-e2e/visual-studio-code-chrome-pause.png)
 
 与执行 Node.js 调试时一样，可以通过将鼠标悬停在表达式上来查看局部变量/监视项、在控制台中评估表达式，等等。 
 
@@ -283,19 +283,19 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 安装 Docker 扩展，重新加载 Visual Studio Code。
 
-![安装 Visual Studio Code 的 Docker 扩展](./media/node-howto-e2e/docker-search.png)
+![安装 Visual Studio Code 的 Docker 扩展](./media/node-howto-e2e/visual-studio-code-docker-extension.png)
 
 Visual Studio Code 的 Docker 扩展包含一条命令用于生成 *Dockerfile* 以及现有项目的 `docker-compose.yml` 文件。 
 
 若要查看可用的 Docker 命令，请通过 **&lt;F1>** 显示命令面板并键入 `docker`。
 
-![Visual Studio 的 Docker 扩展支持的命令 ](./media/node-howto-e2e/docker-commands.png)
+![Visual Studio Code 的 Docker 扩展支持的命令 ](./media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
 选择“Docker:  将 Docker 文件添加到工作区”，选择“Node.js”作为应用平台，然后指定应用公开端口 `8080`。  
 
 Docker 命令会生成可立即开始使用的完整 `Dockerfile` 和 Docker-compose 文件。
 
-![生成的 Dockerfile](./media/node-howto-e2e/docker-file.png)
+![在 Visual Studio Code 中生成的 Dockerfile](./media/node-howto-e2e/visual-studio-code-complete-dockerfile.png)
 
 Docker 扩展还针对 `Dockerfiles` 和 `docker-compose.yml` 文件提供自动完成功能。 
 
@@ -313,7 +313,7 @@ FROM mhart
 
 将光标定位在 `mhart` 中的 `t` 后面，按 **&lt;Ctrl>&lt;Space>** 查看 `mhart` 在 DockerHub 中发布的所有映像存储库。
 
-![Docker 扩展自动完成](./media/node-howto-e2e/docker-completion.png)
+![查看 DockerHub 中的映像存储库](./media/node-howto-e2e/visual-studio-code-dockerhub-image-repositories.png)
 
 选择 `mhart/alpine-node`（提供此应用所需的所有内容）。 
 
@@ -321,7 +321,7 @@ FROM mhart
 
 生成 `Dockerfile` 后，需要生成实际的 Docker 映像。 同样，可以使用 Docker 扩展在 Visual Studio Code 中安装的命令。 按 **&lt;F1>** ，在命令面板中输入 `dockerb`，选择“Docker:  生成映像”命令。 选择刚刚生成并修改的 `/Dockerfile`。 指定包含 DockerHub 用户名的标记（例如 `lostintangent/node`）。 按 **&lt;ENTER>** 启动集成式终端窗口，其中显示了正在生成的 Docker 映像的输出。
 
-![Docker 映像生成状态](./media/node-howto-e2e/docker-build.png)
+![Docker 映像生成输出](./media/node-howto-e2e/docker-build-image-output.png)
 
 请注意，该命令已自动完成 `docker build` 的运行过程（这是可以选择用来提高工作效率的另一个例子）。也可以直接使用 Docker CLI。 
 
@@ -381,7 +381,7 @@ FROM mhart
     az webapp browse
     ```
 
-    ![浏览器中运行的待办事项应用](./media/node-howto-e2e/browse-app.png)
+    ![浏览器中运行的待办事项应用](./media/node-howto-e2e/deployed-container-app.png)
 
     > [!NOTE]
     > 首次加载应用可能需要几分钟时间，因为应用服务必须从 DockerHub 提取 Docker 映像，然后再启动它。
@@ -414,7 +414,7 @@ FROM mhart
 
 4. 返回到浏览器并刷新。 尝试添加和删除某个待办事项来证明该应用现在是否可正常工作，而无需更改任何设置！ 将环境变量设置为创建的、可完全模拟 MongoDB 数据库的 Cosmos DB 实例。
 
-    ![连接到数据库之后的演示应用](./media/node-howto-e2e/finished-demo.png)
+    ![连接到数据库之后的演示应用](./media/node-howto-e2e/finish-demo-walkthrough.png)
 
 如果需要，可切换回到的 Cosmos DB 实例，并增大（或减小）MongoDB 实例所需的保留吞吐量，然后，即可享受到流量的添加好处，且无需手动管理任何基础结构。
 

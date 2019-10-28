@@ -7,34 +7,38 @@ manager: barbkess
 ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: 566d166a69bbbee59726b8e381bee4a24077d8c6
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.author: buhollan
+ms.openlocfilehash: b57789ca26851c27a3a68c9d095f327ea64164cf
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685980"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587230"
 ---
 # <a name="create-the-app"></a>创建应用程序
 
 [上一步：简介和先决条件](tutorial-vscode-static-website-node-01.md)
 
-在此步骤中，将使用 React 实用程序 CLI [create-react-app](https://github.com/facebook/create-react-app) 创建一个可以部署到 Azure 的简单 React 应用。 可以交替使用 Angular、Vue、其他框架或任何包含几个 HTML 文件的文件夹。 如果已有一个可以部署的应用，可以跳到[创建 Azure 存储帐户](tutorial-vscode-static-website-node-03.md)。
+在此步骤中，你将使用 [Angular](https://cli.angular.io/)、[React](https://github.com/facebook/create-react-app) 或 [Vue](https://cli.vuejs.org/) 的命令行接口 (CLI) 创建可部署到 Azure 的简单应用。 可以交替地使用任何其他 JavaScript 框架来生成一组静态文件，或者任何包含 HTML、CSS 或 JavaScript 文件的文件夹。 如果已有一个可以部署的应用，可以跳到[创建 Azure 存储帐户](tutorial-vscode-static-website-node-03.md)。
 
-1. 使用 create-react-app 工具通过运行以下命令搭建一个名为 `my-react-app` 的新 React 应用：
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
+
+1. 使用 CLI 通过运行以下命令搭建名为“my-static-app”的新应用：
 
     ```bash
-    npm create react-app my-react-app
+    npx @angular/cli new my-static-app
     ```
+
+    当 CLI 询问任何配置问题时，按 Enter 选择默认选项。
 
 1. 通过切换到新文件夹并运行 `npm run build` 来生成应用程序：
 
     ```bash
-    cd my-react-app
+    cd my-static-app
     npm run build
     ```
 
-1. 现在，应该在 my-react-app  文件夹中有一个 build  文件夹。 build  文件夹包含部署到 Azure 存储的 HTML、CSS 和 JavaScript 文件。
+1. 现在，应该在 my-static-app  文件夹中有一个 dist  文件夹。 在该 _dist_ 文件夹内，将有一个与你的项目同名的文件夹 _my-static-app_。 _build/my-static-app_ 文件夹包含部署到 Azure 存储的 HTML、CSS 和 JavaScript 文件。
 
 1. 使用以下命令运行应用：
 
@@ -44,9 +48,71 @@ ms.locfileid: "71685980"
 
 1. 将浏览器打开到 [http://localhost:3000](http://localhost:3000) 以验证该应用正在运行：
 
-    ![正在运行的示例 React 应用](media/static-website/local-app.png)
+    ![正在运行的示例 Angular 应用](media/static-website/local-app-angular.png)
 
 1. 通过在终端中或命令提示符下按 **Ctrl**+**C** 来停止服务器。
+
+# <a name="reacttabreact"></a>[React](#tab/react)
+
+1. 使用 CLI 通过运行以下命令搭建名为“my-static-app”的新应用：
+
+    ```bash
+    npx create-react-app my-static-app
+    ```
+
+1. 通过切换到新文件夹并运行 `npm run build` 来生成应用程序：
+
+    ```bash
+    cd my-static-app
+    npm run build
+    ```
+
+1. 现在，应该在 my-static-app  文件夹中有一个 build  文件夹。 build  文件夹包含部署到 Azure 存储的 HTML、CSS 和 JavaScript 文件。
+
+1. 使用以下命令运行应用：
+
+    ```bash
+    npm start
+    ```
+
+1. 将浏览器打开到 [http://localhost:3000](http://localhost:3000) 以验证该应用正在运行：
+
+    ![正在运行的示例 React 应用](media/static-website/local-app-react.png)
+
+1. 通过在终端中或命令提示符下按 **Ctrl**+**C** 来停止服务器。
+
+# <a name="vuetabvue"></a>[Vue](#tab/vue)
+
+1. 使用 CLI 通过运行以下命令搭建名为“my-static-app”的新应用：
+
+    ```bash
+    npx @vue/cli create my-static-app
+    ```
+
+当 CLI 询问任何配置问题时，按 Enter 选择默认选项。
+
+1. 通过切换到新文件夹并运行 `npm run build` 来生成应用程序：
+
+    ```bash
+    cd my-static-app
+    npm run build
+    ```
+
+1. 现在，应该在 my-static-app  文件夹中有一个 dist  文件夹。 dist  文件夹包含部署到 Azure 存储的 HTML、CSS 和 JavaScript 文件。
+
+1. 使用以下命令运行应用：
+
+     ```bash
+     npm run serve
+     ```
+
+1. 将浏览器打开到 [http://localhost:8080](http://localhost:8080) 以验证该应用正在运行：
+
+    ![正在运行的示例 Vue 应用](media/static-website/local-app-vue.png)
+
+1. 通过在终端中或命令提示符下按 **Ctrl**+**C** 来停止服务器。
+
+---
 
 > [!div class="nextstepaction"]
 > [我创建了应用](tutorial-vscode-static-website-node-03.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-app)

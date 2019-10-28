@@ -8,16 +8,16 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: kraigb
-ms.openlocfilehash: 45dfb1f32d98385b2cb944340b4601de804e133f
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 0e5a7e12d234b56899e3c814cb577002125ea052
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685912"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587133"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>从 Visual Studio Code 将静态网站部署到 Azure
 
-在本教程中，你将使用 [Azure 存储](https://docs.microsoft.com/azure/storage)创建静态网站并将其部署到 Azure。 静态网站由 HTML、CSS、JavaScript 和其他静态文件（如图像或字体）组成。 静态站点通常是用 Angular 或 React 编写的单页应用程序（或 [SPA](https://en.wikipedia.org/wiki/Single-page_application)）。 无论你如何设计应用，你都是直接从*存储*托管和处理这些文件，而不是使用 Web 服务器。 在存储中托管比维护 Web 服务器更简单，成本更低。
+在本教程中，你将使用 [Azure 存储](https://docs.microsoft.com/azure/storage)创建静态网站并将其部署到 Azure。 静态网站由 HTML、CSS、JavaScript 和其他静态文件（如图像或字体）组成。 静态站点通常是用 Angular、React 或 Vue 编写的单页应用程序（或 [SPA](https://en.wikipedia.org/wiki/Single-page_application)）。 无论你如何设计应用，你都是直接从_存储_托管和处理这些文件，而不是使用 Web 服务器。 在存储中托管比维护 Web 服务器更简单，成本更低。
 
 > [!NOTE]
 > 如果你有自己的服务器代码（例如，Node.js/Express 应用），请改为按照[应用服务教程](tutorial-vscode-azure-app-service-node-01.md)进行操作。

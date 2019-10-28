@@ -7,13 +7,13 @@ manager: barbkess
 ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: 986d2a0f8999d79dfd1d856ed20a053c495a3765
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.author: buhollan
+ms.openlocfilehash: 73d27549e5ff1acb294f8e65fa610d0b46f56914
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685937"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587289"
 ---
 # <a name="make-changes-and-redeploy"></a>进行更改并重新部署
 
@@ -21,19 +21,55 @@ ms.locfileid: "71685937"
 
 在此步骤中，将对应用的源代码进行简单更改，并重新部署站点以体验端到端部署工作流。
 
-1. 在 Visual Studio Code 中，打开 *src/app.js* 文件，更改第 11 行以匹配以下内容：
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
-    ```js
+1. 在 Visual Studio Code 中，打开 _src/app/app.component.html_ 文件，更改第 305 行以匹配以下内容：
+
+    ```html
+    <span>Welcome To Azure</span>
+    ```
+
+1. 在终端或命令提示符处，运行 `npm run build`。
+
+1. 在 VS Code 中，右键单击已更新的 _dist/my-static-site_ 文件夹，然后再次选择“部署到静态网站”  。 选择存储帐户，并确认要部署所做的更改。 （在部署更改之前，Azure 扩展会自动删除旧文件以避免缓存问题。）
+
+1. 部署完成后，请在浏览器中刷新站点以观察更改：
+
+    ![重新部署后应用中的更改](media/static-website/updated-azure-app-angular.png)
+
+# <a name="reacttabreact"></a>[React](#tab/react)
+
+1. 在 Visual Studio Code 中，打开 _src/app.js_ 文件，更改第 11 行以匹配以下内容：
+
+    ```html
     <h1 className="App-title">Welcome to Azure!</h1>
     ```
 
 1. 在终端或命令提示符处，运行 `npm run build`。
 
-1. 在 VS Code 中，右键单击已更新的 *build* 文件夹，然后再次选择“部署到静态网站”  。 选择存储帐户，并确认要部署所做的更改。 （在部署更改之前，Azure 扩展会自动删除旧文件以避免缓存问题。）
+1. 在 VS Code 中，右键单击已更新的 _build_ 文件夹，然后再次选择“部署到静态网站”  。 选择存储帐户，并确认要部署所做的更改。 （在部署更改之前，Azure 扩展会自动删除旧文件以避免缓存问题。）
 
 1. 部署完成后，请在浏览器中刷新站点以观察更改：
 
-    ![重新部署后应用中的更改](media/static-website/updated-azure-app.png)
+    ![重新部署后应用中的更改](media/static-website/updated-azure-app-react.png)
+
+# <a name="vuetabvue"></a>[Vue](#tab/vue)
+
+1. 在 Visual Studio Code 中，打开 _src/App.vue_ 文件，更改第 11 行以匹配以下内容：
+
+    ```html
+    <HelloWorld msg="Welcome to Azure!" />
+    ```
+
+1. 在终端或命令提示符处，运行 `npm run build`。
+
+1. 在 VS Code 中，右键单击已更新的 _dist_ 文件夹，然后再次选择“部署到静态网站”  。 选择存储帐户，并确认要部署所做的更改。 （在部署更改之前，Azure 扩展会自动删除旧文件以避免缓存问题。）
+
+1. 部署完成后，请在浏览器中刷新站点以观察更改：
+
+    ![重新部署后应用中的更改](media/static-website/updated-azure-app-vue.png)
+
+---
 
 > [!div class="nextstepaction"]
 > [我部署了更改](tutorial-vscode-static-website-node-06.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=code-change)
