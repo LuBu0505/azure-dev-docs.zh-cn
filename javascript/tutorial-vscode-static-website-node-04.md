@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 705256291709c6715f90f19c220a7e3e127f923f
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 671e600471402dbd6ca71d385a238caeee889497
+ms.sourcegitcommit: 66cc8d1839dbd7cc01b33030f188e15bf5f24dae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587160"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916683"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>将网站部署到 Azure 存储
 
@@ -26,10 +26,6 @@ ms.locfileid: "72587160"
 1. 在 Visual Studio Code 中，转到 **Azure 存储**资源管理器，展开订阅，展开在上一步中创建的 Azure 存储帐户的节点，然后展开“Blob 容器”  节点。 `$web` 容器是你部署应用代码的位置。
 
    ![Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
-
-1. 选择**文件**资源管理器，右键单击 _dist/my-static-app_ 文件夹，然后选择“部署到静态网站”  ：
-
-    ![“部署到静态网站”命令](media/static-website/deploy-build-angular.png)
 
 1. 选择**文件**资源管理器，右键单击 _dist/my-static-app_ 文件夹，然后选择“部署到静态网站”  ：
 
@@ -48,10 +44,6 @@ ms.locfileid: "72587160"
 1. 在 Visual Studio Code 中，转到 **Azure 存储**资源管理器，展开订阅，展开在上一步中创建的 Azure 存储帐户的节点，然后展开“Blob 容器”  节点。 `$web` 容器是你部署应用代码的位置。
 
    ![Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
-
-1. 选择**文件**资源管理器，右键单击 build  文件夹，然后选择“部署到静态网站”  ：
-
-    ![“部署到静态网站”命令](media/static-website/deploy-build-react.png)
 
 1. 选择**文件**资源管理器，右键单击 build  文件夹，然后选择“部署到静态网站”  ：
 
