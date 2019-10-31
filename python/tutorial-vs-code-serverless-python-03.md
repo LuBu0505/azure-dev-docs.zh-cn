@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4a8ef594b461df406846f16ad71e595b64ffee5e
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: f31cbb3c1ad66a97ab4bb87cdcc58c9bd815c72e
+ms.sourcegitcommit: 38fc0daead4f6ef0cf16d9f4762ad24f4dc4c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278781"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980949"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>教程：在 Visual Studio Code 中检查 Python 代码文件
 
@@ -57,7 +57,7 @@ function.json 文件提供 Azure Functions 终结点的必需配置信息：
 
 `bindings` 元素包含两个对象，一个用于描述传入请求，另一个用于描述 HTTP 响应。 对于传入请求 (`"direction": "in"`)，此函数响应 HTTP GET 或 POST 请求，不需要身份验证。 响应 (`"direction": "out"`) 是一个 HTTP 响应，它返回从 `main` Python 函数返回的任意值。
 
-## <a name="__initpy__"></a>\_\_init.py\_\_
+## <a name="__init__py"></a>\_\_init\_\_.py
 
 当你创建新函数时，Azure Functions 在 *\_\_init\_\_.py* 中提供默认 Python 代码：
 
