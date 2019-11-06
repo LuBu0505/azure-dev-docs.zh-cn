@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 title: 面向 Python 开发人员的 Azure
 summary: >
-  了解 Azure 为 Python 开发人员提供的功能。 开始使用各种有用的 Azure 功能（例如应用托管）、对开源数据库（例如 mySQL 和 PostgreSQL）的支持，以及使用大数据进行机器学习和其他应用。
+  Azure 为 Python 开发人员提供了广泛的服务，包括应用托管、存储、开源数据库（如 mySQL 和 PostgreSQL）、数据科学、机器学习和 AI。 Azure SDK for Python 可帮助开发人员在使用这些服务时提高工作效率。
 metadata:
   title: 面向 Python 开发人员的 Azure
   description: 开始使用 Python 以及 Azure for Python 进行开发。
@@ -10,12 +10,12 @@ metadata:
   ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: a6008ed6b2a07db2853521922a29f1bd51a909d3
-  ms.sourcegitcommit: e081f71211e8f33420e92635c9a61eaa2f34c5e6
+  ms.openlocfilehash: b6c33142880eb289cfe1c87b54341341f98ef939
+  ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/14/2019
-  ms.locfileid: "72306308"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73568171"
 landingContent:
 - title: Azure SDK for Python 入门
   linkLists:
