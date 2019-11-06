@@ -141,6 +141,8 @@
           href: spring-framework/deploy-containerized-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: 从 Azure 容器注册表部署到应用服务
           href: spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: 在 Azure 上将 Logz.io 与 Java 配合使用
+          href: java-get-started-with-logzio.md
     - name: 操作指南文章
       items:
         - name: 添加根证书
