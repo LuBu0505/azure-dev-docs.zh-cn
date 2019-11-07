@@ -2,21 +2,21 @@
 title: 通过 VS Code 和 Azure 部署容器化 Node.js 应用
 description: 演示如何创建、使用 Docker 容器化 Node.js 应用并将其部署到 Azure 的完整端到端教程
 services: multiple
-author: karlerickson
-manager: douge
+author: kraigb
+manager: barbkess
 ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/25/2017
-ms.author: karler
+ms.author: kraigb
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: bc8e3a79e3d32cc3d16f496b169f4229d20a6163
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 2d130be2550af5be2206c332f629c9221188ed91
+ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587406"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73661326"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
