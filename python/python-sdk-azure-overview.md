@@ -1,35 +1,97 @@
 ---
-title: 用于 Python 的 Azure 库
-description: 用于 Python 的 Azure 管理和服务库概述
-author: sptramer
-ms.author: sttramer
-manager: carmonm
-ms.date: 06/01/2017
+title: 用于 Python 的 Azure SDK
+description: 概述 Azure SDK for Python 的特性和功能，这些特性和功能可提高开发人员使用 Azure 服务时的工作效率。
+author: kraigb
+ms.author: kraigb
+manager: barbkess
+ms.service: multiple
+ms.date: 10/30/2019
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: fc2cd78ff147cba6b228387dc8e39efacdedce47
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 28787b4ca08b593239274bfce62a02895d7f6b6a
+ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284848"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568206"
 ---
-# <a name="azure-libraries-for-python"></a>用于 Python 的 Azure 库
+# <a name="azure-sdk-for-python"></a>用于 Python 的 Azure SDK
 
-借助用于 Python 的 Azure 库可以通过应用程序代码使用 Azure 服务和管理 Azure 资源。 
+Azure SDK for Python 简化了通过 Python 应用程序代码使用和管理 Azure 资源的过程。 此 SDK 支持 Python 2.7 和 Python 3.5.3 或更高版本。
+
+安装此 SDK 时，只需使用 `pip install <library>` 安装它的任何单个组件库即可。 可以在 [Azure SDK for Python 包索引](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)上看到库列表
+
+若要更详细地了解如何安装库并将其导入项目中，请参阅[安装 SDK](python-sdk-azure-install.md)。 然后阅读 [SDK 入门](python-sdk-azure-get-started.yml)，了解如何针对自己的 Azure 订阅设置身份验证并运行示例代码。
+
+> [!TIP]
+> 若要了解 SDK 中的变更，请参阅 [SDK 发行说明](https://azure.github.io/azure-sdk/)。
+
+## <a name="connect-and-use-azure-services"></a>连接并使用 Azure 服务
+
+ 可以通过 SDK 中的许多客户端库连接到现有 Azure 资源并在应用中使用它们，用途包括：上传文件、访问表数据，或者使用各种 Azure 认知服务。 有了此 SDK，就可以通过熟悉的 Python 编程范例而不是服务的通用 REST API 来使用这些资源。
+
+例如，假设要将 blob 上传到以前预配的 Azure 存储帐户。 第一步是安装适当的库：
+
+```bash
+pip install azure-storage-blob
+```
+
+接下来，将该库导入代码中：
+
+```python
+from azure.storage.blob import BlobClient
+```
+
+最后，使用该库的 API 连接到数据并将其上传。 在以下示例中，连接字符串和容器名称已在存储帐户中预配。 blob 名称是分配给已上传数据的名称：
+
+```python
+blob = BlobClient.from_connection_string("my_connection_string", container="mycontainer", blob="my_blob")
+
+with open("./SampleSource.txt", "rb") as data:
+    blob.upload_blob(data)
+```
+
+若要详细了解如何使用每个特定的库，请参阅 *README.md* 或 *README.rst* 文件，该文件位于 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中。 另请参阅提供的 [Azure 示例](https://docs.microsoft.com/samples/browse/?languages=python)。
+
+也可在[参考文档](/python/api?view=azure-python)中找到其他代码片段
+
+### <a name="the-azure-core-library"></a>Azure Core 库
+
+我们目前正更新 Python 客户端库，以便共享核心功能，例如重试、日志记录、传输协议、身份验证协议等。该共享功能包含在 [azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) 库中。 若要详细了解库及其指南，请参阅 [Python Guidelines:Introduction](https://azure.github.io/azure-sdk/python_introduction.html)（Python 指南：简介）。
+
+目前兼容 Core 库的库如下所示：
+
+- `azure-storage-blob`
+- `azure-storage-queue`
+- `azure-keyvault-keys`
+- `azure-keyvault-secrets`
 
 ## <a name="manage-azure-resources"></a>管理 Azure 资源
 
-使用用于 Python 的 Azure 库通过 Python 应用程序创建和管理 Azure 资源。
+Azure SDK for Python 还包括许多可以用来创建、预配并以其他方式管理 Azure 资源本身的库。 我们将这些库称为“管理库”  。 每个管理库的名称为 `azure-mgmt-<service name>`。 有了管理库，就可以编写 Python 代码来完成通过 [Azure 门户](https://portal.azure.com)或 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) 完成的那些任务。
 
-例如，若要创建 SQL Server 实例，可使用以下代码：
+例如，假设你要创建 SQL Server 实例。 首先，安装适当的管理库：
+
+```bash
+pip install azure-mgmt-sql
+```
+
+在 Python 代码中，导入库：
 
 ```python
-sql_client = SqlManagementClient(
-    credentials,
-    subscription_id
-)
+from azure.mgmt.sql import SqlManagementClient
 
+```
+
+接下来，使用凭据和 Azure 订阅 ID 创建管理客户端对象：
+
+```python
+sql_client = SqlManagementClient(credentials, subscription_id)
+```
+
+最后，使用相应的资源组名称、服务器名称、位置和管理员凭据通过该客户端对象创建资源：
+
+```python
 server = sql_client.servers.create_or_update(
     'myresourcegroup',
     'myservername',
@@ -42,41 +104,13 @@ server = sql_client.servers.create_or_update(
 )
 ```
 
-查看[安装说明](python-sdk-azure-install.md)了解库的完整列表以及如何将其导入项目，然后阅读[入门文章](python-sdk-azure-get-started.yml)来设置身份验证并针对自己的 Azure 订阅运行示例代码。
+就像使用客户端库一样，若要详细了解如何使用每个管理库，可参阅 *README.md* 或 *README.rst* 文件，该文件位于 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中。
 
-## <a name="connect-to-azure-services"></a>连接到 Azure 服务
-
-使用 Python 库除了可以在 Azure 中创建和管理资源以外，还可以连接并使用应用中的资源。 例如，可以更新表 SQL 数据库或者在 Azure 存储中存储文件。 从库的完整列表中选择特定服务所需的库，并访问 Python 开发人员中心获取教程和示例代码来帮助自己在应用中使用这些库。
-
-例如，若要在 Blob 中上传简单的 HTML 页面并获取 URL，请使用以下代码：
-
-```python
-storage_client = CloudStorageAccount(storage_account_name, storage_key)
-blob_service = storage_client.create_block_blob_service()
-
-blob_service.create_container(
-    'mycontainername',
-    public_access=PublicAccess.Blob
-)
-
-blob_service.create_blob_from_bytes(
-    'mycontainername',
-    'myblobname',
-    b'<center><h1>Hello World!</h1></center>',
-    content_settings=ContentSettings('text/html')
-)
-
-print(blob_service.make_blob_url('mycontainername', 'myblobname'))
-```
-
-## <a name="sample-code-and-reference"></a>代码示例和参考
-以下示例涵盖可以通过用于 Python 的 Azure 管理库完成的常见自动化任务，并提供可在自己应用中使用的现成代码：
-- [虚拟机](python-sdk-azure-virtual-machine-samples.md)
-- [Web 应用](python-sdk-azure-web-apps-samples.md)
-- [SQL 数据库](python-sdk-azure-sql-database-samples.md)
-
-我们针对服务和管理库中的所有包提供了[参考](/python/api/overview/azure)文档。 [发行说明](python-sdk-azure-release-notes.md)中介绍了新增功能、重大更改，并提供了有关如何从以前的版本迁移的说明。 
+也可在[参考文档](/python/api?view=azure-python)中找到其他代码片段。 
 
 ## <a name="get-help-and-give-feedback"></a>获取帮助和提供反馈
 
-请在 [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sdk-python) 社区中提问，在[项目 GitHub](https://github.com/Azure/azure-sdk-for-python) 中反映有关 SDK 的问题。
+- 访问 [Azure SDK for Python 文档](https://aka.ms/python-docs)
+- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sdk-python) 社区中提问
+- 在 [GitHub](https://github.com/Azure/azure-sdk-for-python/issues) 上提出针对此 SDK 的问题
+- Tweet [@AzureSDK](https://twitter.com/AzureSdk/)

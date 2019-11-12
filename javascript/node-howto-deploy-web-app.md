@@ -9,12 +9,12 @@ ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 89a2ce8214e6e3706b6387f657715fe3ee7f4fbe
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 07112f988856df2598d1f336c779a3982f9342c1
+ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172407"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568183"
 ---
 # <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>将 Node.js Web 应用部署到 Azure 应用服务
 
@@ -30,7 +30,7 @@ ms.locfileid: "72172407"
 
 - 可以使用 Azure 容器注册表和 Azure Kubernetes 服务构建自己的容器并将其部署到 Azure。 有关详细信息，请参阅[如何将 Node.js 容器部署到 Azure](node-howto-deploy-containers.md)。
 
-- 如果希望主要使用无服务器代码，请参考[如何在 Azure 上编写无服务器 Node.js 代码](node-howto-write-serverless-code.md)。
+- 如果希望主要使用无服务器代码，请参阅[如何在 Azure 上编写无服务器 Node.js 代码](node-howto-write-serverless-code.md)。
 
 - 有关创建 JAMstack（静态）站点的详细信息，请参阅[如何使用 Azure 构建 JAMstack（静态站点）Web 应用](node-howto-create-static-site-jamstack.md)。
 

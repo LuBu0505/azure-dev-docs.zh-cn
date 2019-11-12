@@ -3,49 +3,42 @@ title: 使用用于 Python 的 Azure 库开始云开发
 metadata:
   title: 用于 Python 的 Azure 库入门
   description: 了解如何创建 Azure 云资源，以及如何在 Python 应用程序中连接和使用这些资源。
-  author: sptramer
-  ms.author: sttramer
-  manager: carmonm
+  author: kraigb
+  ms.author: kraigb
+  manager: barbkess
   audience: Developer
   level: Beginner
   nextTutorialHref: /python/api/overview/azure/?view=azure-python
   nextTutorialTitle: Python SDK 参考
   displayType: two-column
   interactive: azurecli
-  ms.date: 11/30/2017
-  ms.openlocfilehash: 39dc282c9d0a2cebb0f540a446767e3a60fc1428
-  ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
+  ms.date: 10/18/2019
+  ms.openlocfilehash: 32cfda14e307d0293c9ffec8b24685375cc929d0
+  ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/20/2019
-  ms.locfileid: "69635088"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73568201"
 items:
 - durationInMinutes: 1
-  content: "本指南演示多个用于 Python 的 Azure 库的用法。  \n"
+  content: "本指南演示 Azure SDK for Python 中多个库的用法。  \n"
 - title: 先决条件
   durationInMinutes: 5
   content: >
     - 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)。
 
-    - [Python](https://www.python.org/downloads/)
+    - [最新的 Python 3.x 解释器](https://www.python.org/downloads/)
 
-    - [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) 或 [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)。
+    - 在本地使用的 [Azure CLI 2.0](/azure/install-az-cli2) 或在云中专用的 [Azure Cloud Shell](/azure/cloud-shell/quickstart)。
 - title: 设置身份验证
   durationInMinutes: 5
   content: >
-    > [!IMPORTANT]
-
-    > 应将此方法用作开发人员快速入门体验。 对于生产用途，请使用 [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-python) 或自己的凭据系统。
-
-    > 对 CLI 配置进行任何更改会影响 SDK 的执行。
+    SDK 能够使用 CLI 活动订阅创建客户端。 但是，对于生产用途，请使用 [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-python) 或你自己的凭据系统。
 
 
-    SDK 能够使用 CLI 活动订阅创建客户端。
+    若要定义活动的凭据，请使用 [az login](/azure/authenticate-azure-cli)。
 
-
-    若要定义活动的凭据，请使用 [az login](https://docs.microsoft.com/cli/azure/authenticate-azure-cli)。
-
-    默认的订阅 ID 是你拥有的唯一 ID，或使用 [az account](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) 定义的 ID。
+    默认的订阅 ID 是你拥有的唯一 ID，或使用 [az account](/azure/manage-azure-subscriptions-azure-cli) 定义的 ID。
 
 
     ```python
@@ -61,9 +54,7 @@ items:
 - title: 创建虚拟环境
   durationInMinutes: 5
   content: >
-    > [!IMPORTANT]
-
-    > 创建虚拟环境是可选的操作，但我们强烈建议这样做。
+    虚拟环境将 SDK 库保存在项目的隔离位置，因此可以根据需要轻松地通过删除环境文件夹来卸载此 SDK。
 
 
     在 Bash 中创建虚拟环境（Linux 或 [Bash for Windows](https://msdn.microsoft.com/commandline/wsl/about)）：

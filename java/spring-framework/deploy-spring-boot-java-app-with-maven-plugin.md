@@ -12,12 +12,12 @@ ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 0993634d87dd321f7322cbdbebd57ec880abcbff
-ms.sourcegitcommit: 76d0783395cbcf6ec1784b5aed368cab7058f8b3
+ms.openlocfilehash: c4af364cf6c47b23415a47974fd7eb909a371efb
+ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71270022"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73661315"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>在 Linux 上使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到 Azure 应用服务
 
@@ -100,14 +100,13 @@ ms.locfileid: "71270022"
    <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.6.0</version>
+    <version>1.8.0</version>
    </plugin>
    ```
 
 3. 然后可以配置部署，在命令提示符下运行 maven 命令 `mvn azure-webapp:config`，并使用**数字**选择提示中的这些选项：
     * **OS**：linux  
-    * **javaVersion**：jre8
-    * **runtimeStack**：jre8
+    * **javaVersion**：Java 8    
 
 显示 **Confirm (Y/N)** 提示时，请按 **'y'** ，配置将完成。
 
@@ -126,16 +125,10 @@ Define value for OS(Default: Linux):
 2. windows
 3. docker
 Enter index to use:
-Define value for javaVersion(Default: jre8):
-1. jre8 [*]
-2. java11
+Define value for javaVersion(Default: Java 8):
+1. Java 11
+2. Java 8 [*]
 Enter index to use:
-Define value for runtimeStack(Default: TOMCAT 8.5):
-1. TOMCAT 9.0
-2. jre8
-3. TOMCAT 8.5 [*]
-4. WILDFLY 14
-Enter index to use: 2
 Please confirm webapp properties
 AppName : gs-spring-boot-1559091271202
 ResourceGroup : gs-spring-boot-1559091271202-rg
@@ -153,14 +146,18 @@ Confirm (Y/N)? : Y
    <plugin>
        <groupId>com.microsoft.azure</groupId>
        <artifactId>azure-webapp-maven-plugin</artifactId>
-       <version>1.6.0</version>
+       <version>1.8.0</version>
        <configuration>
           <schemaVersion>V2</schemaVersion>
           <resourceGroup>gs-spring-boot-1559091271202-rg</resourceGroup>
           <appName>gs-spring-boot-1559091271202</appName>
           <region>westeurope</region>
           <pricingTier>P1V2</pricingTier>
-
+          <runtime>
+            <os>linux</os>
+            <javaVersion>jre8</javaVersion>
+            <webContainer>jre8</webContainer>
+          </runtime>
           <!-- Begin of App Settings  -->
           <appSettings>
              <property>
