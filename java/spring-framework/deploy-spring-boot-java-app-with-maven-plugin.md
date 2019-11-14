@@ -12,12 +12,12 @@ ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c4af364cf6c47b23415a47974fd7eb909a371efb
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.openlocfilehash: f093e7f23a15420a60b6725e0f13d8457478ab5c
+ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661315"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842225"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>在 Linux 上使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到 Azure 应用服务
 
@@ -57,7 +57,7 @@ ms.locfileid: "73661315"
    ```
    \- 或 -
    ```shell
-   md ~/SpringBoot
+   mkdir ~/SpringBoot
    cd ~/SpringBoot
    ```
 
@@ -104,9 +104,13 @@ ms.locfileid: "73661315"
    </plugin>
    ```
 
-3. 然后可以配置部署，在命令提示符下运行 maven 命令 `mvn azure-webapp:config`，并使用**数字**选择提示中的这些选项：
+3. 然后可以配置部署，在命令提示符下运行以下 maven 命令，并使用**数字**选择提示中的这些选项：
     * **OS**：linux  
     * **javaVersion**：Java 8    
+    
+```cmd
+mvn azure-webapp:config
+```
 
 显示 **Confirm (Y/N)** 提示时，请按 **'y'** ，配置将完成。
 
@@ -118,7 +122,7 @@ ms.locfileid: "73661315"
 [INFO] Building gs-spring-boot 0.1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- azure-webapp-maven-plugin:1.6.0:config (default-cli) @ gs-spring-boot ---
+[INFO] --- azure-webapp-maven-plugin:1.8.0:config (default-cli) @ gs-spring-boot ---
 [WARNING] The plugin may not work if you change the os of an existing webapp.
 Define value for OS(Default: Linux):
 1. linux [*]
@@ -166,7 +170,16 @@ Confirm (Y/N)? : Y
              </property>
           </appSettings>
           <!-- End of App Settings  -->
-          ...
+          <deployment>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/target</directory>
+                <includes>
+                  <include>*.jar</include>
+                </includes>
+              </resource>
+            </resources>
+          </deployment>
          </configuration>
    </plugin>
    ```
