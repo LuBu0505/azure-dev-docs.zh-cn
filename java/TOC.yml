@@ -93,9 +93,10 @@
       items:
         - name: 概述
           href: java-azure-tools.md
-        - name: Java 长期支持
-          href: jdk/index.md
+        - name: Java 支持
           items:
+            - name: Java 长期支持
+              href: jdk/index.md
             - name: Java JDK 安装
               href: jdk/java-jdk-install.md
             - name: Azure 的 Java Docker 映像
