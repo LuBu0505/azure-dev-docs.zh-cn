@@ -4,22 +4,18 @@ description: 将使用 Spring Initializr 创建的 Spring Boot 应用程序配�
 services: Application-Insights
 documentationcenter: java
 author: dhaval24
-manager: alexklim
-editor: ''
-ms.assetid: ''
 ms.author: dhdoshi
-ms.date: 12/19/2018
+ms.date: 11/29/2019
 ms.devlang: java
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 56f54ee2fefcdfb5cfdb694f41426913b4978344
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 25a036e129d6a8853059d61da7ff8565ab0ddd72
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691163"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118265"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>将 Spring Boot Initializer 应用配置为使用 Application Insights
 
@@ -36,6 +32,8 @@ ms.locfileid: "68691163"
 
 ## <a name="create-a-custom-application-using-spring-initializr"></a>使用 Spring Initializr 创建自定义应用程序
 
+使用以下过程创建应用程序。
+
 1. 浏览到 [https://start.spring.io/](https://start.spring.io/)。
 
 1. 指定你想要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后在依赖项部分选择 Web 依赖项。  
@@ -44,45 +42,46 @@ ms.locfileid: "68691163"
 
    > [!NOTE]
    >
-   > Spring Initializr 将使用“组”名称和“项目”名称创建包名称，例如：*com.example.demo*。  
+   > Spring Initializr 将使用“组”名称和“项目”名称创建包名称，例如：*com.vged.appinsights*。  
    >
 
-1. 单击“生成项目”对应的按钮。 
+1. 单击“生成”按钮。 
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
 1. 提取本地系统上的文件之后，自定义 Spring Boot 应用程序便可进行编辑。
 
-   ![自定义 Spring Boot 项目文件][SI02]
-
 ## <a name="create-an-application-insights-resource-on-azure"></a>在 Azure 中创建 Application Insights 资源
 
-1. 浏览到位于 <https://portal.azure.com/> 的 Azure，单击“+新建”  。
+使用以下过程创建 Application Insights 资源。
 
-   ![Azure][AZ01]
+1. 浏览到位于 <https://portal.azure.com/> 的 Azure，然后单击“+ 创建新资源”  。
 
-1. 依次单击“管理工具”、“Application Insights”。  
+1. 单击“IT 和管理工具”，然后单击“Application Insights”。  
 
-   ![Azure][AZ02]
+1. 在“新建 Application Insights 资源”页上，输入以下信息  ：
 
-1. 在“新建 Application Insights 资源”页上，指定以下信息  ：
+* 指定你的“订阅”和“资源组”。  
+* 输入 Application Insights 资源的**名称**。
+* 选择“区域”。 
 
-   * 输入 Application Insights 资源的**名称**。
-   * 在“应用程序类型”中选择“Java Web 应用程序”。 
-   * 指定“订阅”、“资源组”和“位置”。   
-   * 若要在 Azure 上固定资源，请选择“固定到仪表板”选项。
-
-   指定这些选项后，单击“创建”以创建 Application Insights 资源  。
+   指定这些选项后，单击“查看并创建”  。
 
    ![Azure][AZ03]
- 
-1. 创建资源后，Azure **仪表板**上以及“所有资源”页下会列出该资源。  可在上述任何位置单击该资源，打开 Application Insights 资源概述页。 请复制此概述页中的**检测密钥**。
+
+* 查看具体细节，然后单击“创建”  。
+
+创建资源后，Azure **仪表板**上以及“所有资源”页下会列出该资源。  可在上述任何位置单击该资源，打开 Application Insights 资源概述页。
+
+请复制此概览页中的**检测密钥**。
 
    ![Azure][AZ04]
 
 ## <a name="configure-your-downloaded-spring-boot-application-to-use-application-insights"></a>将下载的 Spring Boot 应用程序配置为使用 Application Insights
 
-1. 在应用的根目录中找到 *POM.xml* 文件，并在其 dependencies 节中添加以下依赖项。 
+使用以下过程配置应用程序。
+
+1. 在应用的根目录中找到 *POM.xml* 文件，并在其 dependencies 节中添加以下依赖项。
 
 ```XML
  <dependency>
@@ -93,8 +92,6 @@ ms.locfileid: "68691163"
 ```
 
 1. 在应用的“资源”目录中找到 application.properties 文件，或创建此文件（若此文件不存在）   。
-
-   ![找到 application.properties 文件][RE01]
 
 1. 在文本编辑器中打开 *application.properties* 文件，将以下行添加到该文件，然后将示例值替换为包含相应凭据的相应属性：
 
@@ -190,6 +187,8 @@ ms.locfileid: "68691163"
 
 ## <a name="configure-springboot-application-to-send-log4j-logs-to-application-insights"></a>将 Springboot 应用程序配置为向 Application Insights 发送 log4j 日志
 
+使用以下过程配置应用程序，以便发送日志。
+
 1. 修改项目的 POM.xml 文件，并按如下所示添加/修改 dependencies 节。 
 
 ```xml
@@ -257,13 +256,10 @@ ms.locfileid: "68691163"
   </Loggers>
 </Configuration>
 ```
-4. 再次按前面所示生成并运行 Spring Boot 应用程序。 
 
-几秒钟内，Azure 中会显示所有 Spring 日志。 
+4. 再次按前面所示生成并运行 Spring Boot 应用程序。
 
-![Azure][AZ06]
-
-甚至可以在 Analytics 门户中查看详细的日志消息和执行分析。 
+几秒钟内，Azure 中会显示所有 Spring 日志。 可以在分析门户中查看详细的日志消息和执行分析。
 
 ![Azure][AZ07]
 
@@ -317,7 +313,7 @@ Application Insights 支持收集外部依赖项及其与传入请求之间的�
 [AZ07]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/traces_details.png
 [AZ08]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/AppMap.png
 
-[SI01]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/spring_start.png
+[SI01]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/spring_start.PNG
 [SI02]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/After_extract.png
 
 [RE01]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/applicationproperties_loc.png

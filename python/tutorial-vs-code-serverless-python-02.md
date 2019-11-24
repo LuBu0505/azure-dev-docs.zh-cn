@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b87ca4bdefafbfa3e23c9538d6c77357dc9ba99b
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 4c4fab3227194884e1b9a77439efbe87099a6812
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278739"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118088"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>教程：为 Azure Functions 创建 Python 函数
 
@@ -36,6 +36,9 @@ ms.locfileid: "72278739"
     | 提供函数名称 | HttpExample | 此名称用于一个子文件夹，该文件夹包含函数的代码和配置数据，并且还定义 HTTP 终结点的名称。 请使用“HttpExample”而不是接受默认的“HTTPTrigger”，这样可以将函数本身与触发器区别开来。 |
     | 授权级别 | **匿名** | 匿名授权使得该函数可供任何人公开访问。 |
     | 选择打开项目的方式 | **在当前窗口中打开** | 在当前的 Visual Studio Code 窗口中打开项目。 |
+
+    > [!NOTE]
+    > 如果 Python 3.6 和 3.7 均已安装，Visual Studio Code 会将 Python 3.6 默认用于 Azure Functions 项目。 若要现在就使用 Python 3.7，请先创建并激活 Python 3.7 环境，然后通过终端使用 `func init` 命令。 然后使用 `code .` 命令从该文件夹重启 Visual Studio Code。
 
 1. 稍后会出现一条表明新项目已创建的消息。 在**资源管理器**中有针对该函数创建的子文件夹，Visual Studio Code 会打开 *\_\_init\_\_.py* 文件，其中包含默认的函数代码：
 

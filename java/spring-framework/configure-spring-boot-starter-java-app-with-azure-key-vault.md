@@ -4,26 +4,21 @@ description: 了解如何使用 Azure Key Vault 起动器配置 Spring Boot Init
 services: key-vault
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
-ms.date: 12/19/2018
+ms.date: 10/29/2019
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 1c04bab67c7fc6a409893416d27de7ed18018cd9
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 7841386ba89f2f14e4ef6e5c279d62293940f4af
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283218"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118021"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
-
-## <a name="overview"></a>概述
 
 本文演示如何使用 **[Spring Initializr]** 创建一个应用，该应用使用适用于 Azure Key Vault 的 Spring Boot 起动器检索密钥保管库中以机密形式存储的连接字符串。
 
@@ -37,23 +32,25 @@ ms.locfileid: "68283218"
 
 ## <a name="create-an-app-using-spring-initializr"></a>使用 Spring Initialzr 创建应用
 
+以下过程使用 Spring Initializr 创建该应用程序。
+
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版      。
+1. 指定你希望使用 **Java** 生成一个 **Maven** 项目。  
 
-   ![指定组和项目名称][secrets-01]
+1. 输入应用程序的“组”和“项目”名称。  
 
-1. 向下滚动到“Azure”部分，并选中“Azure Key Vault”对应的框。  
+1. 在“依赖项”部分，输入“Azure Key Vault”。  
 
-   ![选择 Azure Key Vault 起动器][secrets-02]
+1. 滚动到页面底部，单击“生成”  。
 
-1. 滚动到页面底部，单击“生成项目”对应的按钮。 
-
-   ![生成 Spring Boot 项目][secrets-03]
+   ![生成 Spring Boot 项目][secrets-01]
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
 ## <a name="sign-into-azure"></a>登录 Azure
+
+以下过程在 Azure CLI 中进行用户身份验证。
 
 1. 打开命令提示符。
 
@@ -62,13 +59,15 @@ ms.locfileid: "68283218"
    ```azurecli
    az login
    ```
-   按照说明完成登录过程。
+
+按照说明完成登录过程。
 
 1. 列出订阅：
 
    ```azurecli
    az account list
    ```
+
    Azure 将返回订阅列表；需要复制想要使用的订阅的 GUID，例如：
 
    ```json
@@ -96,10 +95,14 @@ ms.locfileid: "68283218"
 
 ## <a name="create-a-new-azure-key-vault"></a>创建新的 Azure 密钥保管库
 
+以下过程创建并初始化该密钥保管库。
+
 1. 为要用于 Key Vault 的 Azure 资源创建资源组，例如：
+
    ```azurecli
-   az group create --name wingtiptoysresources --location westus
+   az group create --name vged-rg2 --location westus
    ```
+
    其中：
 
    | 参数 | 说明 |
@@ -111,10 +114,10 @@ ms.locfileid: "68283218"
 
    ```json
    {
-     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/wingtiptoysresources",
+     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/vged-rg2",
      "location": "westus",
      "managedBy": null,
-     "name": "wingtiptoysresources",
+     "name": "vged-rg2",
      "properties": {
        "provisioningState": "Succeeded"
      },
@@ -124,7 +127,7 @@ ms.locfileid: "68283218"
 
 2. 从应用程序注册创建 Azure 服务主体，例如：
    ```shell
-   az ad sp create-for-rbac --name "wingtiptoysuser"
+   az ad sp create-for-rbac --name "vgeduser"
    ```
    其中：
 
@@ -132,22 +135,24 @@ ms.locfileid: "68283218"
    |---|---|
    | `name` | 指定 Azure 服务主体的名称。 |
 
-   Azure CLI 将返回包含 *appId* 和 *password* 的 JSON 状态消息，稍后要使用此信息分别作为客户端 ID 和客户端密码；例如：
+   Azure CLI 将返回包含 *appId* 和 *password* 的 JSON 状态消息，稍后要使用此信息分别作为客户端 ID 和客户端密码，例如：
 
    ```json
    {
      "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
-     "displayName": "wingtiptoysuser",
-     "name": "http://wingtiptoysuser",
+     "displayName": "vgeduser",
+     "name": "http://vgeduser",
      "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
      "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
    }
    ```
 
 3. 在资源组中创建新的 Key Vault，例如：
+
    ```azurecli
-   az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   az keyvault create --name vgedkeyvault --resource-group vged-rg2 --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
+
    其中：
 
    | 参数 | 说明 |
@@ -162,14 +167,17 @@ ms.locfileid: "68283218"
 
    Azure CLI 将显示稍后要使用的 Key Vault URI，例如：  
 
-   ```
-   "https://wingtiptoyskeyvault.vault.azure.net"
+   ```azurecli
+   "https://vgedkeyvault.vault.azure.net"
+
    ```
 
 4. 针对前面创建的 Azure 服务主体设置访问策略，例如：
+
    ```azurecli
-   az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
+   az keyvault set-policy --name vgedkeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
+
    其中：
 
    | 参数 | 说明 |
@@ -184,22 +192,24 @@ ms.locfileid: "68283218"
    {
      "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
      "location": "westus",
-     "name": "wingtiptoyskeyvault",
+     "name": "vgedkeyvault",
      "properties": {
        ...
        ... (A long list of values will be displayed here.)
        ...
      },
-     "resourceGroup": "wingtiptoysresources",
+     "resourceGroup": "vged-rg2",
      "tags": {},
      "type": "Microsoft.KeyVault/vaults"
    }
    ```
 
 5. 在新的 Key Vault 中存储一个机密，例如：
+
    ```azurecli
-   az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   az keyvault secret set --vault-name "vgedkeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
+
    其中：
 
    | 参数 | 说明 |
@@ -221,28 +231,32 @@ ms.locfileid: "68283218"
        "updated": "2017-12-01T09:00:16+00:00"
      },
      "contentType": null,
-     "id": "https://wingtiptoyskeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
+     "id": "https://vgedkeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
      "kid": null,
      "managed": null,
      "tags": {
        "file-encoding": "utf-8"
      },
-     "value": "jdbc:sqlserver://wingtiptoys.database.windows.net:1433;database=DATABASE;"
+     "value": "jdbc:sqlserver://.database.windows.net:1433;database=DATABASE;"
    }
    ```
 
 ## <a name="configure-and-compile-your-app"></a>配置并编译你的应用
+
+使用以下过程配置并编译应用程序。
 
 1. 将前面下载的 Spring Boot 项目存档中的文件提取到某个目录中。
 
 2. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。
 
 3. 使用前面在完成本教程的步骤时创建的值添加 Key Vault 的值，例如：
+
    ```yaml
-   azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
+   azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
+
    其中：
 
    |          参数          |                                 说明                                 |
@@ -252,12 +266,12 @@ ms.locfileid: "68283218"
    | `azure.keyvault.client-key` | 指定创建服务主体时使用的 *password* GUID。 |
 
 
-4. 导航到项目的主源代码文件，例如： */src/main/java/com/wingtiptoys/secrets*。
+4. 导航到项目的主源代码文件，例如： */src/main/java/com/vged/secrets*。
 
 5. 在文本编辑器中打开应用程序的主 Java 文件；例如：*SecretsApplication.java*，并向文件中添加以下行：
 
    ```java
-   package com.wingtiptoys.secrets;
+   package com.vged.secrets;
 
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -284,6 +298,8 @@ ms.locfileid: "68283218"
 6. 保存并关闭该 Java 文件。
 
 ## <a name="build-and-test-your-app"></a>生成并测试应用
+
+使用以下过程测试应用程序。
 
 1. 导航到 Spring Boot 应用的 *pom.xml* 文件所在的目录：
 

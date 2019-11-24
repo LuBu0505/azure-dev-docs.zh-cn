@@ -13,16 +13,14 @@ ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 46084a5bc1d98f5e8343fc20446dc0516057ce83
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 93dff9e1f12a17660b367060dd9d404127285df2
+ms.sourcegitcommit: 8be617e100ae3d3e90d56c672b1c7c110b7a588f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282488"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74160680"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>如何将 Spring Data Apache Cassandra API 用于 Azure Cosmos DB
-
-## <a name="overview"></a>概述
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Azure Cosmos DB Cassandra API](/azure/cosmos-db/cassandra-introduction) 存储和检索信息。
 
@@ -37,6 +35,8 @@ ms.locfileid: "68282488"
 * [Git](https://git-scm.com/downloads) 客户端。
 
 ## <a name="create-an-azure-cosmos-db-account"></a>创建 Azure Cosmos DB 帐户
+
+以下过程在 Azure 门户中创建并配置 Cosmos 帐户。
 
 ### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>使用 Azure 门户创建 Cosmos DB 帐户
 
@@ -66,13 +66,13 @@ ms.locfileid: "68282488"
 
    ![查看 Cosmos DB 帐户设置][COSMOSDB03]
 
+部署数据库需要几分钟的时间。
+
 ### <a name="add-a-keyspace-to-your-azure-cosmos-db-account"></a>向 Azure Cosmos DB 帐户添加密钥空间
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 Azure Cosmos DB 帐户。
-
-   ![选择 Azure Cosmos DB 帐户][COSMOSDB04]
 
 1. 依次单击“数据资源管理器”、“新建密钥空间”   。 为“密钥空间 ID”输入一个唯一标识符，然后单击“确定”。  
 
@@ -84,13 +84,13 @@ ms.locfileid: "68282488"
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 Azure Cosmos DB 帐户。
 
-   ![选择 Azure Cosmos DB 帐户][COSMOSDB04]
-
 1. 单击“连接字符串”，复制“接触点”、“端口”、“用户名”和“主要密码”字段的值；稍后需要使用这些值来配置应用程序。     
 
-   ![检索 Cosmos DB 连接设置][COSMOSDB05]
+   ![检索 Cosmos DB 连接设置][COSMOSDB06]
 
 ## <a name="configure-the-sample-application"></a>配置示例应用程序
+
+以下过程配置测试性应用程序。
 
 1. 打开一个命令 shell 并使用 git 命令克隆示例项目，如以下示例所示：
 
@@ -121,6 +121,8 @@ ms.locfileid: "68282488"
 
 ## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序 
 
+浏览到 .pom 文件所在目录，以便生成并测试应用程序。
+
 1. 使用 Maven 生成示例应用程序，例如：
 
    ```shell
@@ -136,9 +138,9 @@ ms.locfileid: "68282488"
 1. 在命令提示符下使用 `curl` 创建新记录，如以下示例所示：
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    你的应用程序应返回如下所示的值：
@@ -154,7 +156,7 @@ ms.locfileid: "68282488"
    ```shell
    curl -s http://localhost:8080/pets
    ```
-    
+
    你的应用程序应返回如下所示的值：
 
    ```json
@@ -194,3 +196,4 @@ ms.locfileid: "68282488"
 [COSMOSDB03]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-03.png
 [COSMOSDB04]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-04.png
 [COSMOSDB05]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05.png
+[COSMOSDB06]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-06.png

@@ -7,18 +7,16 @@ ms.author: brendm
 ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.devlang: java
-ms.service: app-service, cosmos-db
+ms.service: cosmos-db
 ms.topic: article
-ms.openlocfilehash: e7360067deaa9d038440978892f093dfb28db499
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 7fcd23ad45a591614516fec97e312c71773ce657
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691161"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118047"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>如何将 Spring 和 Cosmos DB 与 Linux 上的应用服务配合使用
-
-## <a name="overview"></a>概述
 
 本文将详细介绍如何在 Linux 上的 Azure 应用服务中生成、配置、部署和缩放 Java Web 应用并对其进行故障排除。
 
@@ -38,6 +36,7 @@ ms.locfileid: "68691161"
 - [Maven 3](http://maven.apache.org/)
 
 ## <a name="clone-the-sample-java-web-app-repository"></a>克隆示例 Java Web 应用存储库
+
 在此练习中，我们将使用 Spring Todo 应用，这是一个使用 [Spring Boot](https://spring.io/projects/spring-boot)、[Spring Data for Cosmos DB](https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db) 和 [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction) 生成的 Java 应用程序。
 1. 克隆 Spring Todo 应用并复制 **.prep** 文件夹的内容，以便初始化项目：
 
@@ -58,8 +57,11 @@ ms.locfileid: "68691161"
 
    ```bash
    cd initial\spring-todo-app
-   ``` 
+   ```
+
 ## <a name="create-an-azure-cosmos-db-from-azure-cli"></a>通过 Azure CLI 创建 Azure Cosmos DB
+
+以下过程使用 CLI 创建 Azure Cosmos 数据库。
 
 1. 登录到 Azure CLI 并设置订阅 ID。
 
@@ -68,6 +70,7 @@ ms.locfileid: "68691161"
     ```
 
 2. 根据需要设置订阅 ID。
+
     ```bash
     az account set -s <your-subscription-id>
     ```
@@ -88,13 +91,15 @@ Cosmos DB 的名称只能使用小写字母。 请务必记下响应中的 `docu
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
      ```
 
-4. 获取 Azure Cosmos DB 密钥，记录 `primaryMasterKey` 值供以后使用。
+5. 获取 Azure Cosmos DB 密钥，记录 `primaryMasterKey` 值供以后使用。
 
     ```bash
-    az cosmosdb list-keys -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
+    az cosmosdb keys list -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
 ## <a name="build-and-run-the-app-locally"></a>在本地生成并运行应用
+
+以下过程在开发计算机上运行该应用程序。
 
 1. 在所选控制台中，使用此前在本文中收集的 Azure 和 Cosmos DB 连接信息配置在以下代码部分显示的环境变量。 需要为 **WEBAPP_NAME** 提供唯一名称，为 **REGION** 变量提供值。
 
@@ -139,6 +144,8 @@ set REGION=<put-your-REGION-here>
  ![在本地运行的 Spring 应用][SCDB01]
 
 ## <a name="deploy-to-app-service-linux"></a>部署到应用服务 Linux
+
+以下过程将应用程序部署到 Azure 上的 Linux。
 
 1. 打开 pom.xml 文件，该文件以前已复制到存储库的 **initial/spring-todo-app** 目录。 确保[适用于 Azure 应用服务的 Maven 插件](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)包含在其中，如下面的 pom.xml 文件所示。 如果未将版本设置为 **1.6.0**，则更新该值。
 
@@ -231,6 +238,8 @@ bash-3.2$ mvn azure-webapp:deploy
 
 ## <a name="troubleshoot-spring-todo-app-on-azure-by-viewing-logs"></a>通过查看日志，排查 Azure 上的 Spring Todo 应用的问题
 
+以下过程打开 Azure 上的日志文件。
+
 1. 为 Linux 中的 Azure 应用服务中部署的 Java Web 应用配置日志：
 
     ```bash
@@ -282,6 +291,8 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 
 
 ## <a name="scale-out-the-spring-todo-app"></a>横向扩展 Spring Todo 应用
+
+使用以下过程缩放应用程序。
 
 1. 使用 Azure CLI 横向扩展 Java Web 应用：
 

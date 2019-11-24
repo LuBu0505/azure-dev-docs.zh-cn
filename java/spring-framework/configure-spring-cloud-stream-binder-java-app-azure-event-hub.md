@@ -4,9 +4,6 @@ description: 了解如何配置基于 Java 的 Spring Cloud Stream Binder 应用
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
@@ -14,16 +11,14 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 48dfa19177c52da4f296b3e19ae26e91b1d44c33
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 56ac71007af04d3294da811a879ebcf37f54ae73
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282698"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118122"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
-
-## <a name="overview"></a>概述
 
 本文介绍如何配置基于 Java 的 Spring Cloud Stream Binder 应用程序，该应用程序是在 Azure 事件中心使用 Spring Boot Initializer 创建的。
 
@@ -42,67 +37,69 @@ ms.locfileid: "68282698"
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>使用 Azure 门户创建 Azure 事件中心
 
+以下过程创建 Azure 事件中心。
+
 ### <a name="create-an-azure-event-hub-namespace"></a>创建 Azure 事件中心命名空间
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“物联网”、“事件中心”。   
+1. 单击“+ 创建资源”，然后搜索“事件中心”。  ***
+
+1. 单击“创建”。 
 
    ![创建 Azure 事件中心命名空间][IMG01]
 
 1. 在“创建命名空间”页上，输入以下信息  ：
 
    * 输入一个唯一**名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 **wingtiptoys** 作为**名称**，则 URI 将为 *wingtiptoys.servicebus.windows.net*。
-   * 为事件中心命名空间选择一个“定价层”。 
+   * 定价层。
    * 选择需要用于命名空间的“订阅”  。
    * 指定是为命名空间创建新的“资源组”，还是选择现有资源组  。
    * 指定事件中心命名空间的“位置”。 
+   * 也可指定命名空间的“吞吐量单位”。 
 
    ![指定 Azure 事件中心命名空间选项][IMG02]
 
 1. 指定上面列出的选项后，请单击“创建”以创建命名空间  。
 
-### <a name="create-an-azure-event-hub-in-your-namespace"></a>在命名空间中创建 Azure 事件中心
+## <a name="create-an-azure-event-hub-in-your-namespace"></a>在命名空间中创建 Azure 事件中心
 
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户。
+部署命名空间以后，即可在命名空间中创建事件中心。
 
-1. 单击“所有资源”，然后单击已创建的命名空间名称。 
+1. 导航到在上一步创建的命名空间。
 
-   ![选择 Azure 事件中心命名空间][IMG03]
+1. 单击顶部菜单栏中的“+ 事件中心”。 
 
-1. 单击“事件中心”，然后单击“+事件中心”。  
+1. 为事件中心命名。
 
-   ![添加新的 Azure 事件中心][IMG04]
+1. 单击“创建”。 
 
-1. 在“创建事件中心”页上，为事件中心输入唯一的**名称**，然后单击“创建”。  
-
-   ![创建 Azure 事件中心][IMG05]
-
-1. 事件中心在创建后会列在“事件中心”页上。 
-
-   ![创建 Azure 事件中心][IMG06]
+   ![创建事件中心][IMG05]
 
 ### <a name="create-an-azure-storage-account-for-your-event-hub-checkpoints"></a>为事件中心检查点创建 Azure 存储帐户
 
+以下过程创建用于事件中心检查点的存储帐户。
+
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户。
 
-1. 依次单击“+创建资源”、“存储”、“存储帐户”。   
+1. 依次单击“+创建”、“存储”、“存储帐户”。   
 
-   ![创建 Azure 存储帐户][IMG07]
+1. 在“创建存储帐户”  页中，输入以下信息：
 
-1. 在“创建命名空间”页上，输入以下信息  ：
-
-   * 输入一个唯一**名称**，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoys** 作为**名称**，则 URI 将为 *wingtiptoys.core.windows.net*。
-   * 选择“Blob 存储”作为“帐户类型”。  
-   * 指定存储帐户的“位置”。 
    * 选择需要用于存储帐户的“订阅”  。
    * 指定是为存储帐户创建新的“资源组”，还是选择现有资源组  。
+   * 输入存储帐户的唯一“名称”。 
+   * 指定存储帐户的“位置”。 
 
    ![指定 Azure 存储帐户选项][IMG08]
 
-1. 指定上面列出的选项后，请单击“创建”以创建存储帐户  。
+1. 指定上面列出的选项后，请单击“查看 + 创建”以创建存储帐户  。
+
+1. 查看具体细节，然后单击“创建”  。  部署将需要数分钟。
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
+
+以下过程创建 Spring Boot 应用程序。
 
 1. 浏览到 <https://start.spring.io/>。
 
@@ -123,8 +120,6 @@ ms.locfileid: "68282698"
 1. 指定上面列出的选项后，请单击“生成项目”  。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
-
-   ![下载 Spring 项目][SI02]
 
 1. 在本地系统中提供文件后，就可以对简单的 Spring Boot 应用程序进行编辑。
 
@@ -245,7 +240,6 @@ ms.locfileid: "68282698"
    spring.cloud.azure.eventhub.checkpoint-storage-account=wingtiptoysstorage
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
-   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
    ```
    其中：
@@ -364,6 +358,8 @@ ms.locfileid: "68282698"
 1. 保存 *EventhubSink.java* 文件后将其关闭。
 
 ## <a name="build-and-test-your-application"></a>生成和测试应用程序
+
+使用以下过程生成并测试应用程序。
 
 1.  打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
 

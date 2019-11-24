@@ -12,12 +12,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 07481fa72186c02d9cd3bd082ecf6e57a44671d8
-ms.sourcegitcommit: 60c41faa59dbb59406eb7c1715f5708b5ed892c2
+ms.openlocfilehash: 192550b74a35eb24620c58e86e6a55e86e5e90ab
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72036064"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118161"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -36,8 +36,6 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“创建资源”  。
 
-    ![Azure 门户][AZ01]
-
 1. 单击“数据库”，然后单击“Azure Cosmos DB”   。
 
     ![Azure 门户][AZ02]
@@ -50,13 +48,11 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
     * 为 API 选择 **Core (SQL)** 。
     * 为数据库指定“位置”  。
 
-    指定这些选项后，单击“查看 + 创建”以创建数据库  。
+    指定这些选项后，单击“查看 + 创建”，查看具体细节，然后单击“创建”  。 
 
     ![Azure 门户][AZ03]
 
 1. 创建数据库之后，它将在 Azure 的“仪表板”、“所有资源”和“Azure Cosmos DB”页面下列出    。 在任意这些位置单击数据库可打开缓存的属性页面。
-
-    ![Azure 门户][AZ04]
 
 1. 当显示数据库的属性页面时，单击“密钥”  ，然后复制数据库的 URI 和访问密钥；在 Spring Boot 应用程序中会用到这些值。
 

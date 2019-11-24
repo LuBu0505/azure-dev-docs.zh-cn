@@ -4,26 +4,20 @@ description: 了解如何配置使用 Spring Boot Initializer 创建的应用程
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: event-hubs
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 074c7bb28907b3c71c981f261ae69d5477c21028
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5d1f1d40eba0f4b4a6aa2718f09124b765a06a82
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282618"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118337"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>如何将适用于 Apache Kafka 的 Spring Boot Starter 与 Azure 事件中心配合使用
-
-## <a name="overview"></a>概述
 
 本文介绍如何配置基于 Java 的 Spring Cloud Stream Binder，它是使用 Spring Boot Initializer 创建的，目的是将 [Apache Kafka] 与 Azure 事件中心配合使用。
 
@@ -46,18 +40,21 @@ ms.locfileid: "68282618"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“物联网”、“事件中心”。   
+1. 单击“+ 创建资源”，接着单击“物联网”，然后搜索“事件中心”。   ***
+
+1. 单击“创建”。 
 
    ![创建 Azure 事件中心命名空间][IMG01]
 
 1. 在“创建命名空间”页上，输入以下信息  ：
 
    * 输入一个唯一**名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 **wingtiptoys** 作为**名称**，则 URI 将为 *wingtiptoys.servicebus.windows.net*。
-   * 为事件中心命名空间选择一个“定价层”。 
+   * 定价层。
    * 为命名空间指定“启用 Kafka”设置。 
    * 选择需要用于命名空间的“订阅”  。
    * 指定是为命名空间创建新的“资源组”，还是选择现有资源组  。
    * 指定事件中心命名空间的“位置”。 
+   * 也可指定命名空间的“吞吐量单位”。 
 
    ![指定 Azure 事件中心命名空间选项][IMG02]
 
@@ -65,23 +62,17 @@ ms.locfileid: "68282618"
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>在命名空间中创建 Azure 事件中心
 
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户。
+部署命名空间以后，即可在命名空间中创建事件中心。
 
-1. 单击“所有资源”，然后单击已创建的命名空间名称。 
+1. 导航到在上一步创建的命名空间。
 
-   ![选择 Azure 事件中心命名空间][IMG03]
+1. 单击顶部菜单栏中的“+ 事件中心”。 
 
-1. 单击“事件中心”，然后单击“+事件中心”。  
+1. 为事件中心命名。
 
-   ![添加新的 Azure 事件中心][IMG04]
+1. 单击“创建”。 
 
-1. 在“创建事件中心”页上，为事件中心输入唯一的**名称**，然后单击“创建”。  
-
-   ![创建 Azure 事件中心][IMG05]
-
-1. 事件中心在创建后会列在“事件中心”页上。 
-
-   ![创建 Azure 事件中心][IMG06]
+   ![创建事件中心][IMG05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
@@ -104,8 +95,6 @@ ms.locfileid: "68282618"
 1. 指定上面列出的选项后，请单击“生成项目”  。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
-
-   ![下载 Spring 项目][SI02]
 
 1. 在本地系统中提供文件后，就可以对简单的 Spring Boot 应用程序进行编辑。
 
@@ -229,7 +218,7 @@ ms.locfileid: "68282618"
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
    spring.cloud.azure.region=West US
-   spring.cloud.azure.eventhub.namespace=wingtiptoysnamespace
+   spring.cloud.azure.eventhub.namespace=wingtiptoys
 
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
