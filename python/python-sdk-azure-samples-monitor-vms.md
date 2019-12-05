@@ -1,24 +1,20 @@
 ---
 title: Azure Monitor
 description: 检查和配置 Azure Monitor 提供的指标报告。
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.author: sttramer
-ms.openlocfilehash: ef46e316979c5a86e94c840ec52206400da7500c
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6b92cd130988773107a51ce4055ea196801fb4a8
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285468"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466288"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
 此示例获取 Azure 上的资源（VM 等）的指标。
 
-[此处](https://msdn.microsoft.com/en-us/library/azure/mt743622.aspx)提供了筛选器可用关键字的完整列表
+[此处](https://msdn.microsoft.com/library/azure/mt743622.aspx)提供了筛选器可用关键字的完整列表
 
 ```python
 import datetime

@@ -1,19 +1,14 @@
 ---
 title: 用于 Python 的 Azure SDK
 description: 概述 Azure SDK for Python 的特性和功能，这些特性和功能可提高开发人员使用 Azure 服务时的工作效率。
-author: kraigb
-ms.author: kraigb
-manager: barbkess
-ms.service: multiple
 ms.date: 10/30/2019
 ms.topic: conceptual
-ms.devlang: python
-ms.openlocfilehash: dda3044bcf80ff45d4a39c9186c6ad44a153218e
-ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
+ms.openlocfilehash: fb81b743de8332d18aeb815d1ed1efa09e6e3305
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74118013"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466330"
 ---
 # <a name="azure-sdk-for-python"></a>用于 Python 的 Azure SDK
 

@@ -1,25 +1,18 @@
 ---
-title: 使用适用于 IntelliJ 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
+title: 将 Spring Boot 应用作为 Docker 容器发布
+titleSuffix: Azure Toolkit for IntelliJ
 description: 了解如何使用用于 IntelliJ 的 Azure 工具包将 Web 应用作为 Docker 容器发布到 Microsoft Azure。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 11/13/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: ce46bcf3fb7f7ad96452303df42a2ae72f52e5ae
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: eb8458301036ffedfce98844c22aa4ef1aafb0e0
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68278868"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812499"
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用适用于 IntelliJ 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
 
@@ -223,7 +216,7 @@ IntelliJ 应在项目工具窗口中显示 Spring Boot 应用的已完成项目�
 
 <!-- URL List -->
 
-[Azure Management Portal]: http://go.microsoft.com/fwlink/?LinkID=512959
+[Azure Management Portal]: https://go.microsoft.com/fwlink/?LinkID=512959
 [Azure Sign In for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 [Configuring Artifacts]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
 [Deploy Spring Boot on Linux in AKS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux

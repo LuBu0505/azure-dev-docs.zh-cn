@@ -1,25 +1,18 @@
 ---
 title: 用于 IntelliJ 的 Azure 工具包中的新增功能
 description: 了解用于 IntelliJ 的 Azure 工具包中的最新功能。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
 ms.assetid: 46ed791f-df59-416a-809e-f52345ad973c
-ms.author: brendm
 ms.date: 11/13/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 09082fd5e439197581d8241acc3211d8c87739ff
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 2812ae04fbba9d0b58894ad5c57c111db9eee48c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281418"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812487"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-intellij"></a>用于 IntelliJ 的 Azure 工具包中的新增功能
 

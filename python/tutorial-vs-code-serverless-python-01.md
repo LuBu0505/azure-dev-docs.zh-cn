@@ -1,20 +1,15 @@
 ---
 title: 教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 description: 教程步骤 1，简介和先决条件。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0aa353d741906c887723a012bb6d4abfc719a049
-ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
+ms.openlocfilehash: e6076bf9760a2f5b5e38622693b9a23561d3c964
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74118215"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467013"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 

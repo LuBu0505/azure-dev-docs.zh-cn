@@ -1,20 +1,15 @@
 ---
 title: 教程：在 Linux 上的 Azure 应用服务上为 Python 应用配置自定义启动文件
 description: 教程步骤 4，指示应用服务如何启动 Web 应用。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278940"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467048"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>教程：在 Azure 应用服务上为 Python 应用配置自定义启动文件
 

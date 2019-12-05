@@ -1,19 +1,14 @@
 ---
 title: 在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应用服务
 description: 教程步骤 5，用于重新生成和重新部署容器映像的简单步骤。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 7b0f95bf0d478a742386060d05ebec20f60b4aeb
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 6ca29318b7dd5f1256d1b4503cf1ae9fc37ab111
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686042"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467117"
 ---
 # <a name="make-changes-and-redeploy"></a>进行更改并重新部署
 

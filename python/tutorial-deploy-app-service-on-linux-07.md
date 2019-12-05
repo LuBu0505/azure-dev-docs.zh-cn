@@ -1,20 +1,15 @@
 ---
 title: 教程：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 description: 教程步骤 7，清理 Azure 资源
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 1eeb8f66040a757809aad9df374f3d6a5f9390d2
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 5a890ae2db4f9aa9bd3ca09364467adb022beed8
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278901"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466051"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 

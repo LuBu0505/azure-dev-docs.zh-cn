@@ -1,19 +1,14 @@
 ---
 title: 通过 Visual Studio Code 使用容器注册表
 description: 教程第 2 部分：使用容器注册表
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 790267333cadc1208b6a750e487f0e459e87185d
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686251"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466628"
 ---
 # <a name="use-a-container-registry"></a>使用容器注册表
 
@@ -21,7 +16,7 @@ ms.locfileid: "71686251"
 
 在此步骤中，将为应用映像设置合适的容器注册表。 然后，支持容器的托管服务（如 Azure 应用服务）将从注册表中提取映像。
 
-本教程使用 [Azure 容器注册表](https://azure.microsoft.com/en-us/services/container-registry/) (ACR)，这是用于映像的专用、安全的托管注册表。 但是，此处显示的工具和过程也可以与其他注册表（例如 [Docker Hub](https://hub.docker.com/)）一起使用。
+本教程使用 [Azure 容器注册表](https://azure.microsoft.com/services/container-registry/) (ACR)，这是用于映像的专用、安全的托管注册表。 但是，此处显示的工具和过程也可以与其他注册表（例如 [Docker Hub](https://hub.docker.com/)）一起使用。
 
 ## <a name="create-an-azure-container-registry"></a>创建 Azure 容器注册表
 

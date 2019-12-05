@@ -2,27 +2,23 @@
 title: 跨区域并行创建 VM | Microsoft Docs
 description: 使用用于 Java 的 Azure SDK 跨不同的 Azure 区域并行创建虚拟机的示例代码
 author: rloutlaw
-manager: douge
 ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 03/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: 8aacf198657da96218ef48b4714c26c6199724fc
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691782"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812280"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>通过 Java 应用程序跨多个地区创建虚拟机
 
 [本示例](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel)使用[用于 Java 的 Azure 管理库](https://github.com/Azure/azure-sdk-for-java)跨不同的 Azure 区域并行创建虚拟机。
 
 > [!IMPORTANT]
-> 本示例在四个区域总共创建 48 个运行 Ubuntu 16.04 LTS、[大小为 STANDARD_DS3_V2](http://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sizes) 的 VM。 在退出之前，示例代码会删除这些虚拟机。 在针对默认的 VM 数目运行本示例之前，请务必[检查服务限制和配额](http://docs.microsoft.com/azure/azure-subscription-service-limits)。
+> 本示例在四个区域总共创建 48 个运行 Ubuntu 16.04 LTS、[大小为 STANDARD_DS3_V2](/azure/virtual-machines/virtual-machines-windows-sizes) 的 VM。 在退出之前，示例代码会删除这些虚拟机。 在针对默认的 VM 数目运行本示例之前，请务必[检查服务限制和配额](/azure/azure-subscription-service-limits)。
 
 ## <a name="run-the-sample"></a>运行示例
 

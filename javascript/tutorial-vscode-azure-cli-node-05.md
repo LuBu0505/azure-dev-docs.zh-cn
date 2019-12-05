@@ -1,19 +1,14 @@
 ---
 title: 从 Azure 应用服务流式传输日志
 description: 教程第 5 部分：查看日志
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: ce112d535d1f89a7e153f80b9fb80032a977b8d8
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 8a173bbb7f53de2189e0ecb99b851d77704ff92d
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686151"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466762"
 ---
 # <a name="stream-logs-from-app-service"></a>从应用服务流式传输日志
 

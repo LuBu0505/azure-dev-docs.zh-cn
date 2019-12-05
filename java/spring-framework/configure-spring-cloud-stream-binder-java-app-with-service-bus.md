@@ -3,17 +3,15 @@ title: 如何使用适用于 Azure 服务总线的 Spring Cloud Azure Stream Bin
 description: 本文介绍如何使用 Spring Cloud Stream Binder 通过 Azure 服务总线收发消息。
 author: seanli1988
 manager: kyliel
-ms.author: Sean.Li
+ms.author: seal
 ms.date: 08/21/2019
-ms.devlang: java
-ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: 48bb5ee53c88910528ad2ed7f06c626e0a431275
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892381"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812048"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>如何使用适用于 Azure 服务总线的 Spring Cloud Azure Stream Binder
 
@@ -31,13 +29,13 @@ Azure 提供了一个异步消息平台，即 [Azure 服务总线](https://docs.
 
 1. 支持的 Java 开发工具包 (JDK) 8 或更高版本。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 
-1. Apache's [Maven](http://maven.apache.org/) 3.2 或更高版本。
+1. Apache 的 [Maven](http://maven.apache.org/) 3.2 或更高版本。
 
 1. 如果已有一个已配置的服务总线队列或服务总线主题，请确保服务总线命名空间满足以下要求：
 
-    1. 允许从所有网络访问
+    1. 允许来自所有网络的访问
     1. 是高级版（或更高版本）
-    1. 具有允许对队列和主题进行读/写访问的访问策略
+    1. 具有一个有关队列和主题的读/写访问权限的访问策略
 
 1. 如果没有已配置的服务总线队列或服务总线主题，请使用 Azure 门户[创建服务总线队列](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal)或[创建服务总线主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)。 确保该命名空间满足上一步中指定的要求。 另外，请记下该命名空间中的连接字符串，因为本教程的测试应用程序需要用到它。
 
@@ -268,7 +266,7 @@ Azure 提供了一个异步消息平台，即 [Azure 服务总线](https://docs.
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要，请使用 [Azure 门户](http://ms.portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 

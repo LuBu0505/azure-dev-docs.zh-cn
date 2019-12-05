@@ -1,19 +1,14 @@
 ---
 title: 在 Visual Studio Code 中创建 Azure 应用服务
 description: 教程第 2 部分：创建 Node.js 应用
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 0ee7b185532b3febe8aab720e40ff10cf4b079b7
-ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
+ms.openlocfilehash: 96c786b7cc8112c36c0aff06761417a97e30bf44
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842208"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466801"
 ---
 # <a name="create-your-nodejs-application"></a>创建 Node.js 应用程序
 

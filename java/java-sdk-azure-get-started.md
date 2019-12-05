@@ -3,20 +3,17 @@ title: Azure SDK for Java 入门
 description: 了解如何创建 Azure 云资源，以及如何在 Java 应用程序中连接和使用这些资源。
 keywords: Azure, Java, SDK, API, 身份验证, 入门
 author: rloutlaw
-ms.author: brendm
-manager: douge
 ms.date: 04/16/2017
 ms.topic: article
-ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019
-ms.openlocfilehash: 36693307d140c3cde4e28c5583bebea20ee3dc79
-ms.sourcegitcommit: 2147617c746bc9be7b6ee66e0250bd16cf9febab
+ms.openlocfilehash: b0fcdae9e54ac990b94b605cf4ba4c76707258bd
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68829654"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812395"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 

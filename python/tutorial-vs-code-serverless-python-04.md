@@ -1,20 +1,15 @@
 ---
 title: 教程：使用 Visual Studio Code 在本地调试 Azure Functions Python 代码
 description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Code 调试程序。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e866d95acdd5d9e3a36b1a94efe624379e715dbe
-ms.sourcegitcommit: 6cc225a6cec98bd51ef3c7bca05eeab210f2bbae
+ms.openlocfilehash: b1ea7c60b8d4dca8de829a9c627811a33ea57f01
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142665"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465953"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>教程：在本地调试 Azure Functions Python 代码
 

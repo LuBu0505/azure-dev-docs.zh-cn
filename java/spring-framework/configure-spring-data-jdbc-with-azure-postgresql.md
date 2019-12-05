@@ -3,22 +3,16 @@ title: 如何将 Spring Data JDBC 用于 Azure PostgreSQL
 description: 了解如何将 Spring Data JDBC 用于 Azure PostgreSQL 数据库。
 services: postgresql
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: edbdb909e6ea5d55421a1734856d97844bd301f1
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: d7f4ddeab5c46f6070145e5aab0b273156ed38a0
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282298"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812002"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>如何将 Spring Data JDBC 用于 Azure PostgreSQL
 

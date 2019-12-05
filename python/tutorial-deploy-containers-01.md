@@ -1,20 +1,15 @@
 ---
 title: 教程：使用 Visual Studio Code 将 Docker 容器部署到 Azure 应用服务
 description: 教程步骤 1，简介和先决条件。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f6cdd345fddf0123cb26549ddbc498f156737799
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 94c6339c57746c84865a370a721fd94dfd30f625
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172301"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466080"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>教程：使用 Visual Studio Code 将 Docker 容器部署到 Azure 应用服务
 

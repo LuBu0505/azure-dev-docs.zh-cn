@@ -1,19 +1,14 @@
 ---
 title: 从 Visual Studio Code 中将 Docker 容器部署到 Azure 应用服务
 description: 教程第 1 部分：简介和先决条件。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: f37e049ab3c6dd0a01726aa9204746658540110b
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 2d6721060281fb73d31576caa47f316f2d078d29
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686118"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467151"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>将容器部署到 Azure 应用服务
 
@@ -34,7 +29,7 @@ ms.locfileid: "71686118"
 
 ### <a name="azure-subscription"></a>Azure 订阅
 
-如果你没有 Azure 订阅，请[立即注册](https://azure.microsoft.com/en-us/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)一个免费使用的帐户来试用任何服务组合，并获得 200 美元的 Azure 额度。
+如果你没有 Azure 订阅，请[立即注册](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)一个免费使用的帐户来试用任何服务组合，并获得 200 美元的 Azure 额度。
 
 ## <a name="sign-in-to-azure"></a>登录 Azure
 

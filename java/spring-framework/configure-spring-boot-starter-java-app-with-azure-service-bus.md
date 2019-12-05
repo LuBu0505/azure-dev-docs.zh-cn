@@ -3,17 +3,15 @@ title: 如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
 description: 本文介绍如何使用 Spring JMS Starter 从 Azure 服务总线收发消息。
 author: seanli1988
 manager: kyliel
-ms.author: Sean.Li
+ms.author: seal
 ms.date: 08/21/2019
-ms.devlang: java
-ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: 58d8dd00deeb90b1a1b8935bcbbab471255328d4
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.openlocfilehash: b64095bc2971bf9d9a7308bebdb91617538796c4
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181985"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812121"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
 
@@ -348,7 +346,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://do
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要，请使用 [Azure 门户](http://ms.portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 

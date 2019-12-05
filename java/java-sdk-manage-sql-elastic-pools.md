@@ -2,20 +2,16 @@
 title: 使用 Java 管理 SQL 数据库弹性池 | Microsoft Docs
 description: 使用用于 Java 的 Azure SDK 创建和配置 Azure SQL 数据库的示例代码
 author: rloutlaw
-manager: douge
 ms.assetid: 9b461de8-46bc-4650-8e9e-59531f4e2a53
 ms.topic: article
-ms.service: azure
-ms.devlang: java
 ms.date: 3/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: f88d72c2ae15c999c43ce08a9717a67edf47644b
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 9a30217ccd336b0fa656910c9015615a95dc193a
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691855"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812332"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>通过 Java 应用程序管理弹性池中的 Azure SQL 数据库
 

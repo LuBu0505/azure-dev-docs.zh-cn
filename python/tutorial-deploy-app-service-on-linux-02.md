@@ -1,20 +1,15 @@
 ---
 title: 教程：准备从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务的应用
 description: 教程步骤 2，设置应用程序
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 96e3a653567d146e1ce10fe0ae7950d35b9ed9e3
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e504e78ae660719c60827db46d4801f5f5c4b3ce
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279073"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466210"
 ---
 # <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>教程：对应用进行部署到 Azure 应用服务的准备
 

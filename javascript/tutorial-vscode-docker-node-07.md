@@ -1,19 +1,14 @@
 ---
 title: 在从 Visual Studio Code 部署容器化 Node.js 应用后清理资源
 description: 教程第 6 部分：清理资源
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 53fbfc2c3dc04ed30e940a680eb4c65de6591504
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 7c235cff8b5685880fc63d7e50587980502c7e8d
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686006"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467125"
 ---
 # <a name="clean-up-resources"></a>清理资源
 

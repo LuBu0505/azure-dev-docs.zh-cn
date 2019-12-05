@@ -3,20 +3,16 @@ title: 如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程
 description: 了解如何配置基于 Java 的 Spring Cloud Stream Binder 应用程序，该应用程序是在 Azure 事件中心使用 Spring Boot Initializr 创建的。
 services: event-hubs
 documentationcenter: java
-author: bmitchell287
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 56ac71007af04d3294da811a879ebcf37f54ae73
-ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
+ms.openlocfilehash: 9eef2c48b076ae0fc84aea16bb3e5b7bba17d744
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74118122"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812070"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 

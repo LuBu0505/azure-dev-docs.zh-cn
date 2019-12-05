@@ -3,23 +3,17 @@ title: 如何将 Spring Boot Starter 与 Azure 存储 API 配合使用
 description: 了解如何使用 Azure 存储 API 配置 Spring Boot Initializer 应用。
 services: storage
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 5524b131d1019128ef9deb8a2ebf8f68f7e7b629
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5f61f3eb721c475b0941b2215a0a180ef00ea3d3
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283078"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812107"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>如何将 Spring Boot Starter 与 Azure 存储 API 配合使用
 
@@ -32,7 +26,7 @@ ms.locfileid: "68283078"
 为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费的 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
-* [Azure 命令行接口 (CLI)](http://docs.microsoft.com/cli/azure/overview)。
+* [Azure 命令行接口 (CLI)](/cli/azure/overview)。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * Apache 的 [Maven](http://maven.apache.org/) 3.0 或更高版本。
 

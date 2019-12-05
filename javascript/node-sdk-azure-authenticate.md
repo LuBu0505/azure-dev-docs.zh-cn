@@ -1,21 +1,16 @@
 ---
 title: 使用用于 Node.js 的 Azure 管理模块进行身份验证
 description: 在用于 Node.js 的 Azure 管理模块中使用服务主体进行身份验证
-author: kraigb
-manager: barbkess
-ms.author: kraigb
-ms.date: 06/17/2017
 ms.topic: article
-ms.prod: azure
-ms.devlang: nodejs
-ms.openlocfilehash: 87a30973c8a295540924e41aee9c8e0af455b41f
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.date: 06/17/2017
+ms.openlocfilehash: bf368183b63dbe42dd02d8236cf7e7b73cbc1845
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661232"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467270"
 ---
-# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>使用用于 Node.js 的 Azure 模块进行身份验证 
+# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>使用用于 Node.js 的 Azure 模块进行身份验证
 
 在被实例化时，所有服务 API 需要通过 `credentials` 对象进行身份验证。 可以使用三种方法通过用于 Node.js 的 Azure SDK 进行身份验证和创建所需的凭据： 
 

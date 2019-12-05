@@ -1,22 +1,15 @@
 ---
 title: Azure 上的面向 JavaScript 开发人员的工具
 description: 安装用于在 Azure 上进行 Node.js 和 JavaScript 开发的各个工具
-services: multiple
-author: kraigb
-manager: barbkess
-ms.service: app-service
-ms.tgt_pltfrm: na
-ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/07/2017
-ms.author: kraigb
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 6652907800f0092cb66a70cf3d72fbc4e32c37a7
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.openlocfilehash: 690ae9375a8ac8d929d610bde4e306061cd1ff8e
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661294"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466837"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>面向 JavaScript 开发人员的 Azure 工具
 建议使用以下工具在 Azure 上开发 JavaScript 应用。

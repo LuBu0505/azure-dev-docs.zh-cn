@@ -1,19 +1,14 @@
 ---
 title: 在 Visual Studio Code 中使用 Node.js 部署 Azure Functions
 description: 教程第 1 部分：简介和先决条件。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: kraigb
-ms.openlocfilehash: 5dd41d710df629565699cff3bfd8e4bca7677087
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: a4e60d45f5bddb358e596fc3b9e7db72e7e2f9eb
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686093"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466621"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>在 Visual Studio Code 中部署 Azure Functions
 
@@ -30,7 +25,7 @@ ms.locfileid: "71686093"
 
 ### <a name="azure-subscription"></a>Azure 订阅
 
-如果你没有 Azure 订阅，请[立即注册](https://azure.microsoft.com/en-us/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)一个免费使用的帐户来试用任何服务组合，并获得 200 美元的 Azure 额度。
+如果你没有 Azure 订阅，请[立即注册](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)一个免费使用的帐户来试用任何服务组合，并获得 200 美元的 Azure 额度。
 
 ## <a name="sign-in-to-azure"></a>登录 Azure
 

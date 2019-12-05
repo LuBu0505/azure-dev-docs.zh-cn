@@ -1,25 +1,20 @@
 ---
 title: 从 Visual Studio Code 部署 Node.js 应用的容器映像
 description: 教程第 4 部分，将映像部署到 Azure 应用服务
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 60eb5be0b3d4049c7955195f3bb6bc85dd2b2498
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: b43f93ba97950c84302db2e18f69b506e44dc84e
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686016"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466541"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>将映像部署到 Azure 应用服务
 
 [上一步：创建应用映像](tutorial-vscode-docker-node-03.md)
 
-在此步骤中，你将直接从 Visual Studio Code 将推送到注册表的映像部署到 [Azure 应用服务](https://azure.microsoft.com/en-us/services/app-service/)。
+在此步骤中，你将直接从 Visual Studio Code 将推送到注册表的映像部署到 [Azure 应用服务](https://azure.microsoft.com/services/app-service/)。
 
 1. 在 **DOCKER** 资源管理器中，展开“注册表”  下的映像节点，右键单击 `:latest`，然后选择“将映像部署到 Azure 应用服务”  。
 
