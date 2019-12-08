@@ -5,23 +5,19 @@ services: app-service
 keywords: java, eclipse, web 应用, azure 应用服务, hello world, 快速入门
 documentationcenter: java
 author: selvasingh
-manager: douge
-editor: ''
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
-ms.author: brendm
 ms.reviewer: asirveda
 ms.date: 02/01/2018
-ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3d673abe4f4efd7330307999c7a945cd5cb37179
-ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
+ms.openlocfilehash: ae3d983a0b3e64489fa89d0e6a845310878b204c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68691739"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811432"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>使用 Eclipse 创建适用于 Azure 应用服务的 Hello World Web 应用
 

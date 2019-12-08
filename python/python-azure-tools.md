@@ -1,24 +1,20 @@
 ---
 title: 面向 Python 开发人员的 Azure 工具 | Microsoft Docs
 description: 面向使用 Azure 的 Python 开发人员的 IDE 集成和命令行接口。
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 06/21/2017
-ms.author: sttramer
-ms.openlocfilehash: 19f314347296c2ecaf7e41da2332ff6a018a5a06
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285768"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467068"
 ---
 # <a name="azure-tools-for-python-developers"></a>面向 Python 开发人员的 Azure 工具
 
 ## <a name="azure-cli-20"></a>Azure CLI 2.0
 
-Azure CLI 2.0 提供一个命令行接口用于在订阅中创建和配置 Azure 资源。 Azure CLI 2.0 是跨平台的工具，具有查询和筛选功能，使用它可以通过管道将输出直接传送到偏好的命令行工具。 
+Azure CLI 2.0 提供一个命令行接口用于在订阅中创建和配置 Azure 资源。 Azure CLI 2.0 是跨平台的工具，具有查询和筛选功能，可以用来通过管道将输出直接传送到你偏好的命令行工具。
 
 [安装 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli)
 
@@ -33,6 +29,6 @@ Windows 上的 Visual Studio 通过 Python 开发和数据科学工作负荷 (Vi
 [在 Visual Studio 中安装 Python 支持](https://docs.microsoft.com/visualstudio/python/installation)
 
 ## <a name="azure-notebooks-preview"></a>Azure Notebook（预览）
-Azure Notebook 是适用于 Jupyter Notebook 的托管服务，不需要安装。 使用它可以快速开始原型制作、数据科学、学术研究或学习 Python、R 和 F# 编程。 可以采用一种格式合并代码、标记、图像、视频和图表。
+Azure Notebook 是适用于 Jupyter Notebook 的托管服务，不需要安装。 使用它可以快速开始原型制作、数据科学、学术研究或 Python、R 和 F# 编程的学习。 可以采用一种格式合并代码、标记、图像、视频和图表。
 
 [Azure Notebook 入门](https://notebooks.azure.com/)

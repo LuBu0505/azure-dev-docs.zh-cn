@@ -1,19 +1,14 @@
 ---
 title: 从 Visual Studio Code 中部署 Node.js 应用的容器映像
 description: 教程第 3 部分：创建 Node.js 应用程序映像
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 1b79f84bd69853578796b4485ca669be98f41006
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: c3662c7d21359008bdc0cc5c3050fb2fdc7d6241
+ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686096"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540520"
 ---
 # <a name="create-your-nodejs-application-image"></a>创建 Node.js 应用程序映像
 
@@ -27,7 +22,7 @@ ms.locfileid: "71686096"
 
 1. 在 Visual Studio Code 中打开命令面板  (**F1**)，键入 `add docker files to workspace`，然后选择 **Docker:Add Docker files to workspace** 命令。
 
-1. 出现提示时，选择 **Node.js** 作为应用程序类型，然后选择应用程序侦听的端口。
+1. 出现提示时，请选择 **Node.js** 作为应用程序类型，然后选择应用程序侦听的端口。
 
 1. 该命令将创建一个 `Dockerfile`，以及一些用于 Docker 撰写的配置文件和一个 `.dockerignore`。
 

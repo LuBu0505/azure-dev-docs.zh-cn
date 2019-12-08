@@ -1,23 +1,18 @@
 ---
-title: 使用 Maven 将 Spring Boot JAR 文件应用部署到 Azure
-description: 了解如何使用适用于 Linux 的 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到云中。
+title: 在 Linux 上将 Spring Boot JAR 文件 Web 应用部署到 Azure 应用服务
+description: 了解如何使用 Azure Web 应用的 Maven 插件将 Spring Boot 应用 Jar 文件部署到 Linux 上的应用服务。
 services: app-service
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: brborges
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 274287a6e29bd75721758805d508ebebfcc7586a
-ms.sourcegitcommit: 8be617e100ae3d3e90d56c672b1c7c110b7a588f
+ms.openlocfilehash: c97363fa84421a73d9493b41c66e2d2dc40250cc
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74160739"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811862"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>在 Linux 上使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到 Azure 应用服务
 

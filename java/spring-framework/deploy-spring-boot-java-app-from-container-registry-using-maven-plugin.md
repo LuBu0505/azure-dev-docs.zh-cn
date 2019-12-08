@@ -1,26 +1,21 @@
 ---
-title: 使用 Maven 部署 Azure 容器注册表中的 Spring Boot 应用
+title: 部署 Azure 容器注册表中的 Spring Boot 应用
+titleSuffix: Azure App Service
 description: 本教程介绍使用 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用程序部署到 Azure App Service 的步骤。
 services: container-registry
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 4b5e0ad06822351f92ec66d862e9608e6c499c21
-ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
+ms.openlocfilehash: 1c5254c041c57e1fc04ce9553d6902047eec878a
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71225252"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811913"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>使用用于 Azure Web 应用的 Maven 将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 

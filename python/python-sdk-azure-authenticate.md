@@ -1,19 +1,15 @@
 ---
 title: 使用用于 Python 的 Azure 管理库进行身份验证
 description: 在用于 Python 的 Azure 管理库中使用服务主体进行身份验证
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
-ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: afeaafb4289544b92324154d5c45d3410cbb3b02
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 93d41e76bc8fb58d70a3590e2ea3658014a8673a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279100"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466438"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
 
@@ -215,9 +211,9 @@ client = get_client_from_cli_profile(ComputeManagementClient)
 
 ## <a name="mgmt-auth-legacy"></a>使用令牌凭据进行身份验证（传统方法）
 
-以前的 SDK 版本尚未推出 ADAL，而是提供一个 `UserPassCredentials` 类。 此类被视为已弃用，不应继续使用。
+以前的 SDK 版本尚未推出 ADAL，而是提供一个 `UserPassCredentials` 类。 使用此类会被视为已过时，因此不应继续使用此类。
 
-此示例演示用户/密码方案。 此方案不支持 2FA。
+此示例演示不支持 2FA 的用户/密码方案。
 
 ```python
 from azure.common.credentials import UserPassCredentials

@@ -3,22 +3,16 @@ title: 如何将 Spring Data JPA 用于 Azure SQL 数据库
 description: 了解如何将 Spring Data JPA 用于 Azure SQL 数据库。
 services: sql-database
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a344596f93a8fc24c3d8853821b8a829e8904547
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281888"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811946"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>如何将 Spring Data JPA 用于 Azure SQL 数据库
 
@@ -66,21 +60,17 @@ ms.locfileid: "68281888"
    - **密码**和**确认密码**：指定数据库管理员的密码。
    - **位置**：指定最靠近你的数据库的地理区域。
 
-   ![指定 SQL Server][SQL03]
+1. 输入上述所有信息后，请单击“确定”  。
 
-1. 输入上述所有信息后，单击“选择”  。
-
-1. 对于本教程，请指定价格最低的**定价层**，然后单击“创建”  。
-
-   ![创建 SQL 数据库][SQL04]
+1. 单击“审阅并创建”  。
 
 ### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>使用 Azure 门户为 SQL Server 配置防火墙规则
+
+创建 SQL 数据库和 Server 以后，即可配置安全设置。
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 SQL Server。
-
-   ![选择 SQL Server][SQL05]
 
 1. 在“概述”  部分中，单击“显示防火墙设置” 
 
@@ -96,9 +86,12 @@ ms.locfileid: "68281888"
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 SQL 数据库。
 
+1. 单击“连接字符串”。 
+
+
    ![选择 SQL 数据库][SQL08]
 
-1. 单击“连接字符串”  ，然后单击“JDBC”  并复制 JDBC 文本字段中的值。
+1. 然后，单击“JDBC”并复制 JDBC 文本字段中的值。 
 
    ![检索 JDBC 连接字符串][SQL09]
 
@@ -140,15 +133,15 @@ ms.locfileid: "68281888"
 1. 启动示例应用程序；例如：
 
    ```shell
-   java -jar target/spring-data-jpa-on-azure-0.1.0-SNAPSHOT.jar
+   java -jar target/spring-data-jdbc-on-azure-0.1.0-SNAPSHOT.jar
    ```
 
 1. 在命令提示符下使用 `curl` 创建新记录，如以下示例所示：
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    你的应用程序应返回如下所示的值：

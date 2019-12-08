@@ -3,22 +3,16 @@ title: 如何将 Spring Data JDBC 用于 Azure SQL 数据库
 description: 了解如何将 Spring Data JDBC 用于 Azure SQL 数据库。
 services: sql-database
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 86851ca66b55a59d788aee7bcde5d50a522442bd
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 76fe515c6f315a340d5c306edfef31cdf736ceed
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282158"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811983"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>如何将 Spring Data JDBC 用于 Azure SQL 数据库
 

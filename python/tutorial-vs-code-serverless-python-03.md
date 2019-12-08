@@ -1,20 +1,15 @@
 ---
 title: 教程：在 Visual Studio Code 中检查用于 Azure Functions 的 Python 代码文件
 description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代码。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f31cbb3c1ad66a97ab4bb87cdcc58c9bd815c72e
-ms.sourcegitcommit: 38fc0daead4f6ef0cf16d9f4762ad24f4dc4c3e9
+ms.openlocfilehash: 5fa6f0095dec212f935c8c2e106f63eb58784d00
+ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980949"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540504"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>教程：在 Visual Studio Code 中检查 Python 代码文件
 
@@ -90,7 +85,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 代码的重要部分如下所示：
 
-- 必须从 `azure.functions` 导入 `func`；导入日志记录模块为可选操作，但建议你执行它。
+- 必须导入 `azure.functions` 模块；导入日志记录模块为可选操作，但建议你执行它。
 - 必需的 `main` Python 函数接收名为 `req` 的 `func.HttpRequest` 对象，并返回类型为 `func.HttpResponse` 的值。 若要详细了解这些对象的功能，可参阅 [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) 和 [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python)。
 - 然后，`main` 的主体会处理请求并生成响应。 在这种情况下，代码会在 URL 中查找 `name` 参数。 如果这样做失败，它会检查请求正文是否包含 JSON（使用 `func.HttpRequest.get_json`），以及 JSON 是否包含 `name` 值（使用 `get_json` 返回的 JSON 对象的 `get` 方法）。
 - 如果找到一个名称，代码会返回追加了该名称的字符串“Hello”，否则会返回错误消息。

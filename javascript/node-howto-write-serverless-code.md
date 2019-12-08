@@ -1,24 +1,19 @@
 ---
 title: 使用 Azure Functions 编写无服务器 Node.js 代码
 description: 有关如何使用 Azure Functions 创建和部署无服务器代码的指南。
-author: kraigb
-manager: barbkess
-ms.devlang: nodejs
 ms.topic: article
-ms.service: azure-nodejs
 ms.date: 08/19/2019
-ms.author: kraigb
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: a985578312a2c7cb722307bf8b291eaf02905e2c
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: e8caa6d540d7f3be815b05e627b82745ccf9c14f
+ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172157"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540496"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>使用 Azure Functions 编写 Azure 上的无服务器 Node.js 代码
 
-在 Azure 上，无服务器产品称为 Azure Functions。 通过无服务器代码，可以在 Internet 上创建响应式按需终结点，而不用为预配或管理基础结构担心。 无服务器代码可编写成脚本或其他少量代码，为了响应各种事件而运行。 
+在 Azure 上，无服务器产品称为 Azure Functions。 通过无服务器代码，可以在 Internet 上创建响应式按需终结点，而不用为预配或管理基础结构担心。 无服务器代码包含为了响应各种事件而运行的脚本或其他代码内容。 
 
 首先，立即开始：
 

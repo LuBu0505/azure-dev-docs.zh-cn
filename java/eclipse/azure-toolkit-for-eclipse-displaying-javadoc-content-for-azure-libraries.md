@@ -1,25 +1,19 @@
 ---
-title: 在 Eclipse 中显示 Azure Libraries Package for Java 的 Javadoc 内容
+title: 在 Eclipse 中显示 Javadoc 内容
+titleSuffix: Azure Libraries for Java
 description: 如何在 Eclipse 中显示 Azure Libraries 的 Javadoc 内容。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
 ms.assetid: 30f8b6a1-1d76-4d1c-861b-1db478c46e6b
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: b25feaeae2a38bbf6cbbbeef94ee40718956b85a
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: ecd491031522fdf2a9e06ff4104f7191f4efc59e
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429387"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811558"
 ---
 # <a name="displaying-javadoc-content-in-eclipse-for-the-azure-libraries-package-for-java"></a>在 Eclipse 中显示 Azure Libraries Package for Java 的 Javadoc 内容
 
@@ -37,7 +31,7 @@ ms.locfileid: "68429387"
 
 1. 可以指定“Javadoc URL”或“存档中的 Javadoc”。  
 
-   * 如果选择指定 **Javadoc URL**，请使用 **http://dl.windowsazure.com/javadoc** 或 **http://dl.windowsazure.com/storage/javadoc** 等 URL。
+   * 如果选择指定 **Javadoc URL**，请使用 **https://dl.windowsazure.com/javadoc** 或 **https://dl.windowsazure.com/storage/javadoc** 等 URL。
 
    * 如果选择使用“存档中的 Javadoc”，可以指定外部文件或工作区文件。 
 

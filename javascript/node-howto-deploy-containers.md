@@ -1,20 +1,15 @@
 ---
 title: 将 Node.js 容器部署到 Azure
 description: 使用 Docker 容器将 Node.js Web 应用部署到 Azure
-author: kraigb
-manager: barbkess
-ms.devlang: nodejs
 ms.topic: article
-ms.service: azure-nodejs
 ms.date: 08/20/2019
-ms.author: kraigb
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: b35ee6c921fa9b5c01b5c89f7fa546a110bb21c2
-ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
+ms.openlocfilehash: 5d6851f00a6a53f207ab1dc08c209416160f896e
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71813763"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467250"
 ---
 # <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>使用 Azure 部署、缩放和管理 Node.js 容器
 

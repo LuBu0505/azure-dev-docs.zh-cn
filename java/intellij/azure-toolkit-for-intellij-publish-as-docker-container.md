@@ -1,25 +1,18 @@
 ---
-title: 使用用于 IntelliJ 的 Azure 工具包发布 Docker 容器
+title: 将 Web 应用作为 Docker 容器发布
+titleSuffix: Azure Toolkit for IntelliJ
 description: 了解如何使用用于 IntelliJ 的 Azure 工具包将 Web 应用作为 Docker 容器发布到 Microsoft Azure。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: a4518994b961294a6a9cf3dffc302da6bd52b441
-ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
+ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68279208"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812511"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器
 

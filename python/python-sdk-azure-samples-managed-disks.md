@@ -1,22 +1,18 @@
 ---
 title: 托管磁盘
 description: 创建、调整和更新托管磁盘。
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.author: sttramer
-ms.openlocfilehash: ab80a4aebd5f43d10f0cb6d939afbdf7ea9fb1b5
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c65e07dc4a56ef0376785df4f55d3a9fc9f129ac
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285718"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467020"
 ---
 # <a name="managed-disks"></a>托管磁盘
 
-Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更好的安全性和可扩展性。 它消除了磁盘的存储帐户概念，使客户能够进行缩放，而无需担心存储帐户相关的限制。 本文提供有关从 Python 使用该服务的快速简介和参考信息。
+Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更好的安全性和更大的规模。 它消除了磁盘的存储帐户概念，使客户能够进行缩放，而无需担心存储帐户相关的限制。 本文提供有关从 Python 使用该服务的快速简介和参考信息。
 
 从开发人员的角度来看，Azure CLI 中的托管磁盘体验与其他跨平台工具中的 CLI 体验有异曲同工之处。 可以使用 [Azure Python](https://azure.microsoft.com/develop/python/) SDK 和 [azure-mgmt-compute 包 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) 来管理托管磁盘。 可以参考[此教程](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)创建计算客户端。
 
@@ -166,7 +162,7 @@ async_update.wait()
 
 在托管磁盘推出之前，需针对要放入规模集的所有 VM 手动创建存储帐户，然后使用列表参数 ``vhd_containers`` 将所有存储帐户名称提供给规模集 RestAPI。 此文 `<https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md>` 中提供了正式版转换指南。
 
-现在，有了托管磁盘，不需要管理任何存储帐户。 如果熟悉 VMSS Python SDK 的话，``storage_profile`` 与创建 VM 时所用的配置文件完全相同：
+现在，有了托管磁盘，不需要管理任何存储帐户。 如果熟悉虚拟机规模集 Python SDK，你会发现现在的 ``storage_profile`` 与创建 VM 时所用的配置文件完全相同：
 
 ```python
 'storage_profile': {

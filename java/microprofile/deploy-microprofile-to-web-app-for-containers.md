@@ -1,25 +1,22 @@
 ---
-title: 将基于 Java 的 MicroProfile 服务部署到用于容器的 Azure Web 应用
+title: 部署 Java MicroProfile 服务
+titleSuffix: Azure Web App for Containers
 description: 了解如何使用 Docker 和用于容器的 Azure Web 应用部署 MicroProfile 服务
 services: container-registry;app-service
 documentationcenter: java
 author: jonathangiles
-manager: douge
-editor: jonathangiles
-ms.assetid: ''
 ms.author: jogiles
 ms.date: 09/07/2018
-ms.devlang: java
-ms.service: container-registry;app-service
+ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 4ef47693094489baae85bc7622289d9943acb62b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6deaced31e9cbe6ebd1ef1eb20bd0414ab5df471
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284018"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812187"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>将基于 Java 的 MicroProfile 服务部署到用于容器的 Azure Web 应用
 
@@ -37,9 +34,9 @@ MicroProfile 是生成可快速轻松部署到[用于容器的 Azure Web 应用]
 
 ## <a name="creating-an-azure-container-registry"></a>创建 Azure 容器注册表
 
-我们将使用 [Azure 门户](http://portal.azure.com)来创建 Azure 容器注册表，但请注意，也可以使用其他选项，例如 Azure CLI。 遵循以下步骤创建新的 Azure 容器注册表：
+我们将使用 [Azure 门户](https://portal.azure.com)来创建 Azure 容器注册表，但请注意，也可以使用其他选项，例如 Azure CLI。 遵循以下步骤创建新的 Azure 容器注册表：
 
-1. 登录到 [Azure 门户](http://portal.azure.com)并创建新的 Azure 容器注册表资源。 提供注册表名称（请注意，这是应在 `pom.xml` 中设置为 `docker.registry` 属性的名称）。 根据需要更改默认值，然后单击“创建”。
+1. 登录到 [Azure 门户](https://portal.azure.com)并创建新的 Azure 容器注册表资源。 提供注册表名称（请注意，这是应在 `pom.xml` 中设置为 `docker.registry` 属性的名称）。 根据需要更改默认值，然后单击“创建”。
 
 1. 激活容器注册表后（单击“创建”后等待大约 30 秒），单击该容器注册表，然后单击左侧菜单区域中的“访问密钥”链接。 在这里，需要启用“管理员用户”设置，以便能够从计算机（Docker 容器将推送到其中）访问此容器注册表；另外，需要启用从稍后将要设置的用于容器的 Azure Web 应用实例进行的访问。
 
@@ -143,7 +140,7 @@ public class API {
 
 ## <a name="creating-an-azure-web-app-for-containers-instance"></a>创建用于容器的 Azure Web 应用实例
 
-1. 返回 [Azure 门户](http://portal.azure.com)，创建新的用于容器的 Web 应用实例（在菜单中的“Web + 移动”标题下）。 几个要点：
+1. 返回 [Azure 门户](https://portal.azure.com)，创建新的用于容器的 Web 应用实例（在菜单中的“Web + 移动”标题下）。 几个要点：
 
    1. 此处指定的名称将是 Web 应用的公共 URL（不过稍后可根据需要添加自定义域），因此最好选择一个容易记住的名称。
 
