@@ -4,17 +4,15 @@ description: 本文为摘要级别的文档，适用于那些正权衡从 Java 8
 author: dsgrieve
 manager: maverberg
 tags: java
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: ed9b4d7e98357486367f7e7eaacac64ff05a0ff8
-ms.sourcegitcommit: 90068e30def5dfcb4289d8530ea5914728182a15
+ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74250744"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812218"
 ---
 # <a name="reasons-to-move-to-java-11"></a>迁移到 Java 11 的原因
 
@@ -27,7 +25,7 @@ ms.locfileid: "74250744"
 可以逐步过渡到 Java 11。 代码不需使用 Java 模块即可在 Java 11 上运行。  Java 11 可以用来运行通过 JDK 8 开发和生成的代码，
 但存在一些潜在的问题，主要涉及弃用的 API、类加载程序和反射。
 
-Microsoft Java 平台组很快会提供一个综合性指南，介绍如何从 Java 8 过渡到 Java 11。 另外还有许多介绍如何从 Java 8 过渡到 Java 9 的入门指南。 例如，[Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)（Java 平台标准版 Oracle JDK 9 迁移指南）和 [The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)（模块系统状态：兼容性和迁移）。
+Microsoft Java 工程组很快会提供一个综合性指南，介绍如何从 Java 8 过渡到 Java 11。 另外还有许多介绍如何从 Java 8 过渡到 Java 9 的入门指南。 例如，[Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)（Java 平台标准版 Oracle JDK 9 迁移指南）和 [The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)（模块系统状态：兼容性和迁移）。
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>概述从 Java 8 到 11 的更改
 
@@ -66,7 +64,7 @@ Java 11 有一个通用日志记录系统，适合 JVM 的所有组件。
 
 已经向 Java 虚拟机工具接口 (JVMTI) 添加了新的 API，用于对 Java 堆分配采样。 采样的开销低，可以持续启用。 虽然可以使用 Java Flight Recorder (JFR) 监视堆分配，但 JFR 中的采样方法只能用于分配。 JFR 实现也可能未命中分配。 与之形成对比的是，Java 11 中的堆采样可以同时提供活对象和死对象的相关信息。
 
-应用程序性能监视 (APM) 供应商开始利用此新功能，Java 平台组正在研究是否有可能将它与 Azure 性能监视工具配合使用。
+应用程序性能监视 (APM) 供应商开始利用此新功能，Java 工程组正在研究是否有可能将它与 Azure 性能监视工具配合使用。
 
 #### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
 
