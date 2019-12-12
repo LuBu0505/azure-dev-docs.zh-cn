@@ -1,15 +1,15 @@
 ---
-title: 教程：使用 Visual Studio Code 向 Azure Functions 添加另一个 Python 函数
+title: 教程：使用 VS Code 向 Azure Functions 添加另一个 Python 函数
 description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 项目。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 84130e3bc4d5a85046e21b66338ccc07bba8cad1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 12cd3625d3eec63a2ba3de4d55dbd957fbf0fb34
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465917"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992426"
 ---
 # <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>教程：向 Azure Functions 添加另一个 Python 函数
 

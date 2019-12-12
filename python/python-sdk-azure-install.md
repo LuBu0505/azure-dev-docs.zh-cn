@@ -4,12 +4,12 @@ description: 如何使用 pip 或 GitHub 安装 Azure SDK for Python。 Azure SD
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 39de0959f3d73306412c39b32a4e13766d1500e9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d3d162bc14f27a9b2bc3fb033dab36dcd1dfeb89
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466398"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992487"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>安装 Azure SDK for Python
 
@@ -19,7 +19,7 @@ Azure SDK for Python 经过测试，可以在 CPython versions 2.7 和 3.5.3+ �
 
 ## <a name="install-sdk-libraries-using-pip"></a>使用 pip 安装 SDK 库
 
-Azure SDK for Python 包含许多单独的库，每个这样的库都可以预配或兼容特定的 Azure 服务。 可以使用 `pip install <library>` 安装每个库，其名称显示在 [SDK 库列表](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)中。 （该列表提供每个库的有用的自述文件的链接。）
+Azure SDK for Python 包含许多单独的库，每个这样的库都可以预配或兼容特定的 Azure 服务。 可以使用 `pip install <library>`安装每个库。 有关每个库的特定说明和文档，请参阅 [SDK 版本页](https://azure.github.io/azure-sdk/releases/latest/python.html)。
 
 例如，如果使用 Azure 存储，则可安装 `azure-storage-file`、`azure-storage-blob` 或 `azure-storage-queue` 库。 如果使用 Azure Cosmos DB 表，则请安装 `azure-cosmosdb-table`。 Azure Functions 可以与 `azure-functions` 库配合使用，依此类推。 以 `azure-mgmt-` 开头的那些库提供的 API 可以用来预配 Azure 资源。
 

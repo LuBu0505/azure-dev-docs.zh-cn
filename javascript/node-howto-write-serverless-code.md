@@ -4,12 +4,12 @@ description: 有关如何使用 Azure Functions 创建和部署无服务器代�
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: e8caa6d540d7f3be815b05e627b82745ccf9c14f
-ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
+ms.openlocfilehash: d1b17e33b5ae4aa51a84ceae8005a5385c162967
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540496"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992470"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>使用 Azure Functions 编写 Azure 上的无服务器 Node.js 代码
 

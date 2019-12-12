@@ -1,15 +1,15 @@
 ---
-title: 教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
+title: 教程：使用 VS Code 通过 Python 创建并部署无服务器 Azure Functions
 description: 教程步骤 1，简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e6076bf9760a2f5b5e38622693b9a23561d3c964
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 388c49767e08d4f86ad02439ece58610b7c2cf09
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467013"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992537"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -43,7 +43,9 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明操作。 工具本身以 .NET Core 编写，Core Tools 包最好使用 Node.js 包管理器（简称 npm）进行安装。因此，目前需要安装 .NET Core 和 Node.js，即使使用 Python 代码也是如此。 不过，可以使用“扩展捆绑”来规避 .NET Core 要求，详见前述文档。 不管什么情况，你只需安装这些组件一次，然后 Visual Studio Code 就会自动提示你安装任何更新。
+按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明操作。
+
+工具以 .NET Core 编写，Core Tools 包最好使用 Node.js 包管理器（简称 npm）进行安装。因此，目前需要安装 .NET Core 和 Node.js，即使要通过 Python 使用 Azure Functions 也是如此。 不过，可以使用“扩展捆绑”来规避 .NET Core 要求，详见前述文档。 不管什么情况，你只需安装这些组件一次，然后 Visual Studio Code 就会自动提示你安装任何更新。
 
 ### <a name="sign-in-to-azure"></a>登录 Azure
 
@@ -57,7 +59,9 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 输出以 Azure Functions 徽标（需向上滚动输出）开头表示 Azure Functions Core Tools 存在。
 
-如果系统无法识别 `func` 命令，则验证在其中安装了 Azure Functions Core Tools 的文件夹是否包含在 PATH 环境变量中。
+如果无法识别 `func` 命令，请再次运行 `npm install -g azure-functions-core-tools`，并验证安装是否成功。 另外，还请确保将 `-g` 开关用于 install 命令；否则，npm 只会在当前文件夹中安装包。
+
+`func` 命令通过安装在 node.js 全局文件夹中的 *func* 文件发挥作用。 若要查看此文件夹的位置，请运行 `npm -l`，并检查输出末尾的位置。
 
 > [!div class="nextstepaction"]
 > [我已登录到 Azure](tutorial-vs-code-serverless-python-02.md)
