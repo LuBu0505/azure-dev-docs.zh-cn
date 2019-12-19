@@ -3,12 +3,12 @@ title: 使用用于 Node.js 的 Azure 管理模块进行身份验证
 description: 在用于 Node.js 的 Azure 管理模块中使用服务主体进行身份验证
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: bf368183b63dbe42dd02d8236cf7e7b73cbc1845
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 76233fb6e6d15829783ff98b3af672abc7eba226
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467270"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010506"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>使用用于 Node.js 的 Azure 模块进行身份验证
 
@@ -17,6 +17,8 @@ ms.locfileid: "74467270"
 - 基本身份验证
 - 交互式登录
 - 服务主体身份验证
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="basic-authentication"></a>基本身份验证
 

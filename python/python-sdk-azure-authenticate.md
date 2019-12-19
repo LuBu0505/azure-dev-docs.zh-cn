@@ -4,16 +4,18 @@ description: 在用于 Python 的 Azure 管理库中使用服务主体进行身�
 ms.date: 04/11/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 93d41e76bc8fb58d70a3590e2ea3658014a8673a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 760b8e7c565cbef3d8e6e7664a53f6e2758bbe8c
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466438"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010546"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
 
 本文介绍如何在使用 Python 管理库时对应用程序进行身份验证。 有多个选项可用于在 Azure 中对应用程序进行身份验证。
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="mgmt-auth-token"></a>使用令牌凭据进行身份验证
 
