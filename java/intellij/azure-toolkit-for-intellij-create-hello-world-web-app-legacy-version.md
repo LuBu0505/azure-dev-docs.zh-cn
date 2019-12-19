@@ -1,5 +1,5 @@
 ---
-title: 使用用于 IntelliJ 的旧工具包创建适用于 Azure 的 Hello World Web 应用
+title: 在 IntelliJ 中创建适用于 Azure 的 Hello World Web 应用（旧版）
 description: 本教程说明如何使用用于 IntelliJ 的 Azure 工具包 3.0.6（或更低版本）创建适用于 Azure 的 Hello World Web 应用。
 services: app-service
 documentationcenter: java
@@ -8,12 +8,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 423379239c823bdeba9947719a43d9f446bbd2f3
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: ffb633ac6d1ddfc4255d6f8917b6a27a5ea0a3bc
+ms.sourcegitcommit: db803eba96ffa73b21b94fcb41439cb9b7a0e3c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811182"
+ms.lasthandoff: 12/13/2019
+ms.locfileid: "75031702"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>使用用于 IntelliJ 的旧工具包创建适用于 Azure 的 Hello World Web 应用
 

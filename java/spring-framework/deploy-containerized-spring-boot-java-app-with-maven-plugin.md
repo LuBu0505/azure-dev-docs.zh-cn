@@ -1,5 +1,5 @@
 ---
-title: 使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到云中
+title: 使用 Maven 将 Spring Boot 应用部署到 Azure
 description: 了解如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure。
 services: app-service
 documentationcenter: java
@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 8ea9007dbc929ccbe2718b16c1381e1d09ec3b3a
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5468016954c562258245958cf7b95d2200dcc5f0
+ms.sourcegitcommit: db803eba96ffa73b21b94fcb41439cb9b7a0e3c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811902"
+ms.lasthandoff: 12/13/2019
+ms.locfileid: "75031683"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>使用用于 Azure Web 应用的 Maven 将容器化 Spring Boot 应用部署到 Azure
 
@@ -224,7 +224,7 @@ ms.locfileid: "74811902"
 
 | 元素 | 说明 |
 |---|---|
-| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，确保使用最新版本。 |
+| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，以确保使用最新版本。 |
 | `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值  。 |
 | `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
 | `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-linux-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |

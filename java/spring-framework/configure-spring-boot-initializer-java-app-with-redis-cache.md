@@ -1,18 +1,18 @@
 ---
-title: 将 Spring Boot Initializer 应用配置为使用 Azure Redis 缓存
+title: 创建 Spring Boot Initializer 应用 - Azure Redis 缓存
 description: 将使用 Spring Initializer 创建的 Spring Boot 应用程序配置为使用云中的 Redis 和 Azure Redis 缓存。
 services: redis-cache
 documentationcenter: java
 ms.date: 12/19/2018
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
-ms.topic: article
-ms.openlocfilehash: 06fbeb24ca237124210a2ffe0e37755645a446dd
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.topic: conceptual
+ms.openlocfilehash: e70b5f9b8427bebd9c5ca3761a664464ad3b0909
+ms.sourcegitcommit: 670874dfe49e6ffa5bee88555851878f0da93042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812180"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75034034"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
