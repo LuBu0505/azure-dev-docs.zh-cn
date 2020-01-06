@@ -21,10 +21,15 @@ sections:
         columns: 2
         items:
           - href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-            html: <p>将第一个 Web 应用部署到 Azure</p>
+            html: <p>将第一个 Web 应用部署到应用服务</p>
             image:
               src: /media/common/i_get-started.svg
-            title: 入门
+            title: Azure Web 应用
+          - href: 'https://docs.microsoft.com/en-us/azure/spring-cloud/'
+            html: <p>用于 Spring Cloud 的托管服务</p>
+            image:
+              src: /java/media/spring.svg
+            title: Azure Spring Cloud
           - href: /azure/java/spring-framework/
             html: <p>将 Azure 服务与 Spring Boot 配合使用</p>
             image:
@@ -45,11 +50,6 @@ sections:
             image:
               src: /media/common/i_api-reference.svg
             title: 用于 Java 的 Azure SDK
-          - href: 'https://docs.microsoft.com/en-us/azure/spring-cloud/'
-            html: <p>Azure Spring Cloud</p>
-            image:
-              src: /java/media/spring.svg
-            title: Spring Cloud 服务
   - title: 入门指南
     items:
       - type: list
@@ -62,6 +62,10 @@ sections:
             title: 使用 Maven 部署 Spring Boot 应用
             href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
           - image:
+              src: /azure/media/index/spring.svg
+            title: 将微服务与 Azure Spring Cloud 配合使用
+            href: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+          - image:
               src: /azure/media/index/storage.svg
             title: 从存储上传和下载 blob
             href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
@@ -73,10 +77,6 @@ sections:
               src: /javascript/azure/media/k8s_logo.svg
             title: 部署到 Kubernetes
             href: /azure/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes
-          - image:
-              src: /azure/media/index/fabric.svg
-            title: 将微服务与 Service Fabric 配合使用
-            href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
               src: /java/media/jenkins_logo.svg
             title: 使用 Jenkins® 持续集成/持续交付到应用服务
