@@ -62,7 +62,7 @@ sections:
             title: 使用 Maven 部署 Spring Boot 应用
             href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
           - image:
-              src: /azure/media/index/spring.svg
+              src: /java/media/spring.svg
             title: 将微服务与 Azure Spring Cloud 配合使用
             href: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
           - image:
