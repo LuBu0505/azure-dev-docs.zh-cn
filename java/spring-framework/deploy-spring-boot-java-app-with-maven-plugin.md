@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c97363fa84421a73d9493b41c66e2d2dc40250cc
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 1cca7784cd341c65f1a6e4fea37e500e7c102018
+ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811862"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75319664"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>在 Linux 上使用 Maven 和 Azure 将 Spring Boot JAR 文件应用部署到 Azure 应用服务
 
@@ -20,7 +20,7 @@ ms.locfileid: "74811862"
 
 如果还没有 Azure 订阅，可以在开始前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要完成本教程中的步骤，需要安装和配置以下内容：
 
@@ -161,7 +161,7 @@ ms.locfileid: "74811862"
           <appSettings>
              <property>
                    <name>JAVA_OPTS</name>
-                   <value>-D server.port=80</value>
+                   <value>-Dserver.port=80</value>
              </property>
           </appSettings>
           <!-- End of App Settings  -->
