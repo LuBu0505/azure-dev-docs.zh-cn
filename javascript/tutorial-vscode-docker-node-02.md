@@ -3,12 +3,12 @@ title: 通过 Visual Studio Code 使用容器注册表
 description: 教程第 2 部分：使用容器注册表
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466628"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191008"
 ---
 # <a name="use-a-container-registry"></a>使用容器注册表
 
@@ -20,9 +20,13 @@ ms.locfileid: "74466628"
 
 ## <a name="create-an-azure-container-registry"></a>创建 Azure 容器注册表
 
-1. 登录到 [Azure 门户](https://portal.azure.com)，选择“创建资源” > “容器” >   “容器注册表”   。
+1. 登录到 [Azure 门户](https://portal.azure.com)，然后选择“创建资源”  。
 
-    ![在 Azure 门户中创建容器注册表](media/deploy-containers/portal-01.png)
+    ![在 Azure 门户上创建新资源](media/deploy-containers/portal-01a.png)
+
+1. 在下一页上，选择“容器”   >   “容器注册表”。
+
+    ![在 Azure 门户中创建容器注册表](media/deploy-containers/portal-01b.png)
 
 1. 在出现的“创建容器注册表”  表单中，输入适当的值：
 
@@ -50,6 +54,8 @@ ms.locfileid: "74466628"
     ```bash
     docker login <registry_name>.azurecr.io -u <username> -p <password>
     ```
+
+    为提高安全性，请使用 `--password-stdin` 而不是 `-p <password>`，然后在出现提示时粘贴密码。
 
 1. 在 Visual Studio Code 中，打开 **Docker** 资源管理器，并确保刚刚设置的注册表终结点在**注册表**下可见：
 

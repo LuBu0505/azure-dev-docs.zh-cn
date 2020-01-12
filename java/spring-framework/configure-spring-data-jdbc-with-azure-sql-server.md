@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 76fe515c6f315a340d5c306edfef31cdf736ceed
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 028e54c54410caf9e81448fd8df8283532591895
+ms.sourcegitcommit: 7722fc50eeab0f97bd0ea9cb3263da87244af406
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811983"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75492213"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>如何将 Spring Data JDBC 用于 Azure SQL 数据库
 
@@ -20,7 +20,7 @@ ms.locfileid: "74811983"
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 数据库连接 (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 在 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)中存储和检索信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -30,7 +30,7 @@ ms.locfileid: "74811983"
 * 用来测试功能的 [Curl](https://curl.haxx.se/) 或类似的 HTTP 实用工具。
 * [Git](https://git-scm.com/downloads) 客户端。
 
-## <a name="create-an-azure-sql-satabase"></a>创建 Azure SQL 数据库
+## <a name="create-an-azure-sql-database"></a>创建 Azure SQL 数据库
 
 ### <a name="create-a-sql-database-server-using-the-azure-portal"></a>使用 Azure 门户创建 SQL 数据库服务器
 
@@ -53,20 +53,19 @@ ms.locfileid: "74811983"
 
    ![指定 SQL 数据库属性][SQL02]
    
-1. 依次单击“服务器”、“创建新服务器”   ，然后指定以下信息：
+1. 依次单击“服务器”、“新建”   ，然后指定以下信息：
 
    - **服务器名称**：为 SQL 服务器选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoyssql.database.windows.net*。
    - **服务器管理员登录名**：指定数据库管理员名称。
    - **密码**和**确认密码**：指定数据库管理员的密码。
    - **位置**：指定最靠近你的数据库的地理区域。
 
-   ![指定 SQL Server][SQL03]
 
-1. 输入上述所有信息后，单击“选择”  。
+1. 输入上述所有信息后，请单击“确定”  。
 
-1. 对于本教程，请指定价格最低的**定价层**，然后单击“创建”  。
+1. 单击“审阅并创建”  。
 
-   ![创建 SQL 数据库][SQL04]
+1. 检查设置，并单击“创建”。 
 
 ### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>使用 Azure 门户为 SQL Server 配置防火墙规则
 
@@ -74,9 +73,7 @@ ms.locfileid: "74811983"
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 SQL Server。
 
-   ![选择 SQL Server][SQL05]
-
-1. 在“概述”  部分中，单击“显示防火墙设置” 
+1. 在左侧导航窗格中，单击“概览”部分，并单击“设置服务器防火墙”  
 
    ![显示防火墙设置][SQL06]
 
@@ -89,8 +86,6 @@ ms.locfileid: "74811983"
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 SQL 数据库。
-
-   ![选择 SQL 数据库][SQL08]
 
 1. 单击“连接字符串”  ，然后单击“JDBC”  并复制 JDBC 文本字段中的值。
 
@@ -165,7 +160,7 @@ ms.locfileid: "74811983"
    [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
    ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JDBC 在 Azure SQL 数据库中存储和检索信息。
 

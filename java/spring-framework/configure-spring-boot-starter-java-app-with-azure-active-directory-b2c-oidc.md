@@ -1,5 +1,5 @@
 ---
-title: 如何使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器
+title: 使用适用于 Azure Active Directory B2C 的 Spring Boot Starter
 description: 了解如何使用 Azure Active Directory B2C 起动器配置 Spring Boot Initializer 应用。
 services: active-directory-b2c
 documentationcenter: java
@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 7996e4f2947e08fc7a802a741b958988e58829e8
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 87134da87f47b1c808648a8b6e2f77650c9141bf
+ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812161"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75319674"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
 
@@ -24,7 +24,7 @@ ms.locfileid: "74812161"
 
 本文演示了如何使用 [Spring Initializr](https://start.spring.io/) 创建一个 Java 应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。
 
-本教程介绍如何执行下列操作：
+在本教程中，你将了解如何执行以下操作：
 
 > [!div class="checklist"]
 > * 使用 Spring Initializr 创建 Java 应用程序
@@ -34,7 +34,7 @@ ms.locfileid: "74812161"
 
 如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -270,7 +270,7 @@ ms.locfileid: "74812161"
 
    ![成功登录](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO3.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，我们使用 Azure Active Directory B2C 起动器创建了新的 Java Web 应用程序，配置了新的 Azure AD B2C 租户并在其中注册了新的应用程序，然后将应用程序配置为使用 Spring 批注和类来保护 Web 应用。
 

@@ -7,16 +7,16 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8b601f2faf1431cf393db3560077e299d2a52f4c
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812511"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191054"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Web 应用发布为 Docker 容器
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>使用 Azure Toolkit for IntelliJ 将 Web 应用作为 Docker 容器发布（已弃用）
 
-Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将其所有项目文件和依赖项整合成单个包，以便部署到服务器。 用于 IntelliJ 的 Azure 工具包可以添加用于部署到 Microsoft Azure 的“发布为 Docker 容器”功能，为 Java 开发人员简化了部署过程。  本文逐步引导你完成将应用程序作为 Docker 容器发布到 Azure 的过程。
+Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将其所有项目文件和依赖项整合成单个包，以便部署到服务器。 用于 IntelliJ 的 Azure 工具包可以添加用于部署到 Microsoft Azure 的“发布为 Docker 容器”功能，为 Java 开发人员简化了部署过程。  本文逐步引导完成将应用程序作为 Docker 容器发布到 Azure 的过程。
 
 > [!NOTE]
 >
@@ -44,7 +44,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
    * 在 IntelliJ 工具栏中单击“发布组”按钮，然后单击“发布为 Docker 容器”：  
 
       ![“发布为 Docker 容器”命令][PUB02]  
-    此时将打开“在 Azure 中部署 Docker 容器”向导。 
+    此时会打开“在 Azure 中部署 Docker 容器”向导。 
 
    ![“在 Azure 中部署 Docker 容器”向导][PUB03]
 
@@ -52,10 +52,10 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
 
    a. 在“Docker 映像名称”框中输入 Docker 主机的唯一名称。  （向导会自动创建名称，但你可以修改该名称。） 
 
-   b. “主机”区域将显示已创建的所有 Docker 主机。  执行下列操作之一： 
+   b. “主机”区域会显示已创建的所有 Docker 主机。  执行下列任一操作： 
    * 如果有现有的 Docker 主机，可以在其中部署 Web 应用。
    * 若要创建 Docker 主机，请单击绿色加号 ( **+** )。  
-     此时将打开“创建 Docker 主机”对话框。  
+     此时会打开“创建 Docker 主机”对话框。  
 
      ![“在 Azure 中部署 Docker 容器”向导][PUB04a]
 
@@ -69,7 +69,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
       
    d. 在“OS 和大小”选项卡上执行以下操作：       
       * **主机 OS**：输入包含主机的虚拟机的操作系统。 
-      * **大小**：输入主机的虚拟机大小。   
+      * **Size**：输入主机的虚拟机大小。   
        
    e. 在“资源组”选项卡上选择以下选项之一：       
       * **新建资源组**：为主机创建资源组。
@@ -84,7 +84,7 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
       * **现有存储帐户**：指定 Azure 帐户中的现有存储帐户。
        
 5. 单击“下一步”。   
-     此时将打开“配置登录凭据和端口设置”窗口。 
+     此时会打开“配置登录凭据和端口设置”窗口。 
 
       ![“配置登录凭据和端口设置”窗口][PUB05]
 
@@ -136,12 +136,12 @@ Docker 容器广泛用于部署 Web 应用程序。 开发人员可在其中将�
          * *server.pem* 和 *server-key.pem*：包含用于 TLS 身份验证的客户端证书和公钥。
 
 7. 输入所需的信息后，单击“完成”。   
-    此时将再次显示“在 Azure 中部署 Docker 容器”向导。 
+    此时会再次显示“在 Azure 中部署 Docker 容器”向导。 
 
    ![“在 Azure 中部署 Docker 容器”向导][PUB07]
 
 8. 单击“下一步”。   
-    此时将打开“配置要创建的 Docker 容器”窗口。 
+    此时会打开“配置要创建的 Docker 容器”窗口。 
 
    ![“配置要创建的 Docker 容器”窗口][PUB08]
 
@@ -188,7 +188,7 @@ Azure 工具包随即开始在 Docker 容器中将你的 Web 应用部署到 Azu
 
    ![项目名称框][ART03]
 
-有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [Configuring artifacts]（配置项目）。
+有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [配置项目]。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -199,7 +199,7 @@ Azure 工具包随即开始在 Docker 容器中将你的 Web 应用部署到 Azu
 <!-- URL List -->
 
 [Docker 网站]: https://www.docker.com/
-[Configuring artifacts]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
+[配置项目]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
 
 <!-- IMG List -->
 

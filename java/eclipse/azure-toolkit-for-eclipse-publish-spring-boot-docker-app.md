@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: ece88bc262cf6b7c626cd50364c1133b098bb0f7
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: d11dfce0baa04fd19d54f37832bf61b785818390
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811834"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191113"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>使用适用于 Eclipse 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse-deprecated"></a>使用 Azure Toolkit for Eclipse 将 Spring Boot 应用作为 Docker 容器发布（已弃用）
 
 [Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了简化的方法来创建独立的 Java 应用程序。
 

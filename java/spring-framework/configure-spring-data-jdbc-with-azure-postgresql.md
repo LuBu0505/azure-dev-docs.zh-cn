@@ -3,24 +3,22 @@ title: 如何将 Spring Data JDBC 用于 Azure PostgreSQL
 description: 了解如何将 Spring Data JDBC 用于 Azure PostgreSQL 数据库。
 services: postgresql
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 12/26/2019
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d7f4ddeab5c46f6070145e5aab0b273156ed38a0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: b5abc7479a52aa84cd3f05ffb56e5c7f31d0c533
+ms.sourcegitcommit: 94ca8c28d8d3e954cf118f1f46ac905c3a470b38
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812002"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502358"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>如何将 Spring Data JDBC 用于 Azure PostgreSQL
 
-## <a name="overview"></a>概述
-
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 数据库连接 (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 在 Azure [PostgreSQL](https://www.postgresql.org/) 数据库中存储和检索信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -47,19 +45,20 @@ ms.locfileid: "74812002"
 
 1. 输入以下信息：
 
-   - **服务器名称**：为 PostgreSQL 服务器选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoyspostgresql.postgres.database.azure.com*。
-   - **订阅**：指定要使用的 Azure 订阅。
    - **资源组**：指定是要创建新资源组，还是选择现有资源组。
-   - **选择源**：对于本教程，请选择 `Blank` 以创建新数据库。
+   - **订阅**：指定要使用的 Azure 订阅。
+   - **服务器名称**：为 PostgreSQL 服务器选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoyspostgresql.postgres.database.azure.com*。
+   - **选择源**：对于本教程，请选择 `None` 以创建新数据库。
    - **服务器管理员登录名**：指定数据库管理员名称。
    - **密码**和**确认密码**：指定数据库管理员的密码。
    - **位置**：指定最靠近你的数据库的地理区域。
    - **版本**：指定最新的数据库版本。
-   - **定价层**：对于本教程，请指定最经济的定价层。
 
    ![创建 PostgreSQL 数据库属性][POSTGRESQL02]
 
-1. 输入上述所有信息后，单击“创建”  。
+1. 输入上述所有信息后，单击“查看并创建”  。
+
+1. 验证具体细节，然后单击“创建”  。
 
 ### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>使用 Azure 门户为 PostgreSQL 数据库服务器配置防火墙规则
 
@@ -67,19 +66,15 @@ ms.locfileid: "74812002"
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 PostgreSQL 数据库。
 
-   ![选择 PostgreSQL 数据库][POSTGRESQL03]
-
 1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
 
-   ![配置连接安全性][POSTGRESQL04]
+   ![配置连接安全性][POSTGRESQL03]
 
 ### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>使用 Azure 门户检索 PostgreSQL 服务器的连接字符串
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 PostgreSQL 数据库。
-
-   ![选择 PostgreSQL 数据库][POSTGRESQL03]
 
 1. 单击“连接字符串”  ，然后复制“JDBC”  文本字段中的值。
 
@@ -209,7 +204,7 @@ ms.locfileid: "74812002"
    [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
    ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JDBC 在 Azure PostgreSQL 数据库中存储和检索信息。
 

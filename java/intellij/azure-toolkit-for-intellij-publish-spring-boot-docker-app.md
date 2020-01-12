@@ -7,14 +7,14 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: eb8458301036ffedfce98844c22aa4ef1aafb0e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 00d6d77c78a1b38bbeb5369301956b2cfce166a5
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812499"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191126"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>使用适用于 IntelliJ 的 Azure 工具包将 Spring Boot 应用作为 Docker 容器发布
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>使用 Azure Toolkit for IntelliJ 将 Spring Boot 应用作为 Docker 容器发布（已弃用）
 
 [Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了简化的方法来创建独立的 Java 应用程序。
 
@@ -84,7 +84,7 @@ ms.locfileid: "74812499"
 
    ![指定 JDK][CL12]
 
-1. 单击“Finish”（完成）  。
+1. 单击“完成”  。
 
    ![“完成”按钮][CL13]
 
@@ -110,7 +110,7 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
 
 ### <a name="create-a-deployment-ready-artifact"></a>创建随时可用于部署的项目
 
-若要发布 Spring Boot 应用，需要创建一个随时可用于部署的项目。 请执行以下步骤：
+若要发布 Spring Boot 应用，需要创建一个随时可用于部署的项目。 请使用以下步骤：
 
 1. 在 IntelliJ 中打开你的 Web 应用项目。
 
@@ -149,7 +149,7 @@ IntelliJ 会将 Spring Boot 应用作为项目导入，并在导入完成后显�
    ![关闭“项目结构”对话框][ART05]
 
 > [!NOTE]
-> 有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [Configuring Artifacts]（配置项目）。
+> 有关在 IntelliJ 中创建项目的详细信息，请参阅 JetBrains 网站上的 [配置项目]。
 >
 
 ### <a name="build-the-artifact-for-deployment"></a>生成要部署的项目
@@ -218,7 +218,7 @@ IntelliJ 应在项目工具窗口中显示 Spring Boot 应用的已完成项目�
 
 [Azure Management Portal]: https://go.microsoft.com/fwlink/?LinkID=512959
 [Azure Sign In for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
-[Configuring Artifacts]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
+[配置项目]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
 [Deploy Spring Boot on Linux in AKS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: ./azure-toolkit-for-intellij-publish-as-docker-container.md

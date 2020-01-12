@@ -3,24 +3,24 @@ title: 在用于容器的 Azure 应用服务上部署 Spring Boot Web 应用
 description: 本教程将指导用户完成在 Microsoft Azure 中将 Spring Boot 应用程序部署为 Linux Web 应用的步骤。
 services: azure app service
 documentationcenter: java
-ms.date: 11/12/2019
+ms.date: 12/31/2019
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 63e9b6bda4edb332441df20b5a6e7b2637aff610
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a98575021be229ed067ce424cd101721c98f9ea4
+ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811896"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75755695"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序
 
 本教程介绍如何使用 [Docker] 将 [Spring Boot] 应用程序容器化并将自己的 docker 映像部署到 [Azure 应用服务](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)中的 Linux 主机。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 完成本教程中的步骤需要具备以下先决条件：
 
@@ -38,7 +38,7 @@ ms.locfileid: "74811896"
 
 ## <a name="create-the-spring-boot-on-docker-getting-started-web-app"></a>创建 Docker 上的 Spring Boot 入门 Web 应用
 
-以下步骤将引导你完成以下步骤：创建一个简单的 Spring Boot Web 应用程序并对其进行本地测试。
+以下步骤将引导用户完成创建简单 Spring Boot Web 应用程序并对其进行本地测试所需的步骤。
 
 1. 打开命令提示符，创建本地目录以存放应用程序，并更改为以下目录；例如：
    ```
@@ -83,7 +83,7 @@ ms.locfileid: "74811896"
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>创建 Azure 容器注册表以用作专用 Docker 注册表
 
-以下步骤将引导你完成使用 Azure 门户来创建 Azure 容器注册表的步骤。
+以下步骤将引导用户完成使用 Azure 门户来创建 Azure 容器注册表的过程。
 
 > [!NOTE]
 >
@@ -92,21 +92,17 @@ ms.locfileid: "74811896"
 
 1. 浏览到 [Azure 门户]并登录。
 
-   登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。
+   登录到你在 Azure 门户的帐户后，请按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，这些步骤在以下步骤中进行了改述。
 
 1. 单击“+ 新建”  菜单图标，然后依次单击“容器”、  “Azure 容器注册表”  。
    
    ![创建新的 Azure 容器注册表][AR01]
 
-1. 显示 Azure 容器注册表模板的信息页面时，请单击“创建”  。 
-
-   ![创建新的 Azure 容器注册表][AR02]
-
-1. 当显示“创建容器注册表”  页时，输入你的“注册表名称”  和“资源组”  ，为“管理员用户”  选择“启用”  ，然后单击“创建”  。
+1. 显示“创建容器注册表”  页面时，请输入注册表名称  、订阅  、资源组  和位置  。 为“管理员用户”选择“启用”   。 然后单击“创建”  。
 
    ![配置 Azure 容器注册表设置][AR03]
 
-1. 创建容器注册表后，在 Azure 门户中导航到你的容器注册表，然后单击“访问密钥”  。 记下用户名和密码，以供后续步骤中使用。
+1. 创建容器注册表后，在 Azure 门户中导航到你的容器注册表，并单击“访问密钥”  。 记下用户名和密码，以供后续步骤中使用。
 
    ![Azure 容器注册表访问密钥][AR04]
 
@@ -126,22 +122,28 @@ ms.locfileid: "74811896"
    </properties>
    ```
 
-1. 将 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 添加到 *pom.xml* 文件中的 `<plugins>` 集合，在 `<from>/<image>` 中指定基础映像，指定最终映像名称 `<to>/<image>`，并在 `<to>/<auth>` 中指定上一部分提供的用户名和密码。 例如：
+1. 将 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 添加到 pom.xml  文件中的 `<plugins>` 集合。  此示例使用版本 1.8.0。 
+
+在 `<from>/<image>` 中指定基本映像（此处为 `openjdk:8-jre-alpine`）。 指定要从 `<to>/<image>` 中的基本映像生成的最终映像的名称。  
+
+身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Mavin Build 中的 JAR 文件的名称和版本号。
+
+在 `<to>/<auth>` 节点中指定来自注册表窗格的用户名和密码。 例如：
 
    ```xml
    <plugin>
      <artifactId>jib-maven-plugin</artifactId>
      <groupId>com.google.cloud.tools</groupId>
-     <version>${jib-maven-plugin.version}</version>
+     <version>1.8.0</version>
      <configuration>
         <from>
             <image>openjdk:8-jre-alpine</image>
         </from>
         <to>
-            <image>${docker.image.prefix}/${project.artifactId}</image>
+            <image>{docker.image.prefix}/{project.artifactId}</image>
             <auth>
-               <username>${username}</username>
-               <password>${password}</password>
+               <username>{username}</username>
+               <password>{password}</password>
             </auth>
         </to>
      </configuration>
@@ -156,7 +158,7 @@ ms.locfileid: "74811896"
 
 > [!NOTE]
 >
-> 使用 Jib 将映像推送到 Azure 容器注册表时，该映像不会认可 *Dockerfile*。有关详细信息，请参阅[此](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)文档。
+> 使用 Jib 将映像推送到 Azure 容器注册表时，该映像不会使用 Dockerfile  。有关详细信息，请参阅[此](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)文档。
 >
 
 ## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a>在 Azure 应用服务中使用容器映像创建 Linux 上的 Web 应用
@@ -169,33 +171,47 @@ ms.locfileid: "74811896"
 
 3. 当显示“Linux 上的 Web 应用”  页时，输入以下信息：
 
-   a. 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”   。
+   * 从下拉列表中选择一个订阅  。
 
-   b. 从下拉列表中选择一个订阅  。
+   * 选择现有资源组  ，或指定名称以创建新资源组。
 
-   c. 选择现有资源组  ，或指定名称以创建新资源组。
+   * 为“应用名称”输入唯一名称；例如：“wingtiptoyslinux”   。
 
-   d. 选择 *Linux* 作为 **OS**。
+   * 对于“发布”，请指定 `Docker Container`  。
 
-   e. 单击“应用服务计划/位置”，选择现有的应用服务计划；或者单击“新建”，创建新的应用服务计划。  
+   * 选择“Linux”作为“操作系统”   。
 
-   f. 单击“配置容器”  边栏选项卡，然后输入以下信息：
+   * 选择“区域”。 
 
-   * 选择“单一容器”和“Azure 容器注册表”。  
+   * 接受“Linux 计划”并选择现有的应用服务计划；或者单击“新建”，创建新的应用服务计划。   
 
-   * **注册表**：选择此前创建的容器名称，例如“*wingtiptoysregistry*”
-
-   * **映像**：选择映像名称，例如“*gs-spring-boot-docker*”
-   
-   * **标记**：选择映像的标记，例如“*latest*”
-   
-   * **启动文件**：将此项留空，因为映像已经有启动命令
-   
-   e. 输入上述所有信息后，请单击“应用”  。
+   * 单击“下一步:  Docker”。
 
    ![配置 Web 应用设置][LX02]
 
-4. 单击“创建”。 
+      在“Web 应用”  页上选择“Docker”  ，并输入以下信息：
+
+   * 选择“单个容器”  。
+
+   * **注册表**：选择容器，例如：“wingtiptoysregistry” 
+
+   * **映像**：选择之前创建的映像，例如：“gs-boot-docker” 
+
+   * **标记**：选择映像的标记，例如“*latest*”
+   
+   * **启动命令**：将此项留空，因为映像已经有启动命令
+   
+   输入上述所有信息后，单击“查看 + 创建”  。
+
+   ![配置 Web 应用设置][LX02-A]
+
+   * 单击“查看 + 创建”  。
+   
+查看信息，并单击“创建”  。
+
+部署完成后，单击“转到资源”。   部署页将显示用于访问应用程序的 URL。
+
+   ![获取部署的 URL][LX02-B]
 
 > [!NOTE]
 >
@@ -203,13 +219,13 @@ ms.locfileid: "74811896"
 >
 > 1. 浏览到 [Azure 门户]并登录。
 > 
-> 2. 单击**应用服务**的图标，然后从列表中选择你的 Web 应用。
+> 2. 单击 **Web 应用**的图标，然后从“应用服务”  页选择应用。
 >
-> 4. 单击“配置”  。 （下图中的第 1 项。）
+> 4. 单击左侧导航窗格中的“配置”  。
 >
-> 5. 在“应用程序设置”  部分中，添加一个名为 **PORT** 的新设置，并为该值输入自定义端口号。 （下图中的第 2、3、4 项。）
+> 5. 在“应用程序设置”  部分中，添加一个名为 **PORT** 的新设置，并为该值输入自定义端口号。
 >
-> 6. 单击“ **保存**”。 （请参阅下图中的第 5 项。）
+> 6. 单击“确定”。  然后单击“保存”  。
 >
 > ![在 Azure 门户中保存自定义端口号][LX03]
 >
@@ -284,12 +300,11 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 [SB01]: ./media/deploy-spring-boot-java-app-on-linux/SB01.png
 [SB02]: ./media/deploy-spring-boot-java-app-on-linux/SB02.png
-
 [AR01]: ./media/deploy-spring-boot-java-app-on-linux/AR01.png
-[AR02]: ./media/deploy-spring-boot-java-app-on-linux/AR02.png
 [AR03]: ./media/deploy-spring-boot-java-app-on-linux/AR03.png
 [AR04]: ./media/deploy-spring-boot-java-app-on-linux/AR04.png
-
 [LX01]: ./media/deploy-spring-boot-java-app-on-linux/LX01.png
 [LX02]: ./media/deploy-spring-boot-java-app-on-linux/LX02.png
+[LX02-A]: ./media/deploy-spring-boot-java-app-on-linux/LX02-A.png
+[LX02-B]: ./media/deploy-spring-boot-java-app-on-linux/LX02-B.png
 [LX03]: ./media/deploy-spring-boot-java-app-on-linux/LX03.png
