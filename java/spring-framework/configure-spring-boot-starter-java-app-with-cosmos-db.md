@@ -10,12 +10,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 33e590106a5686eafa89924e22aeef05aa4f6df7
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 887925fd652194c38db99c30e1db505ecfcee918
+ms.sourcegitcommit: 8c84b6db37d0f78d66779fb6489cc8fe063055b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812086"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913983"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -23,7 +23,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 本文演示如何使用 Azure 门户创建 Azure Cosmos DB，如何使用 **[Spring Initializr]** 创建自定义 Spring Boot 应用程序，以及如何将[用于 Azure 的 Spring Boot Cosmos DB Starter] 添加到自定义应用程序，以使用 Spring Data 和 Cosmos DB SQL API 在 Azure Cosmos DB 中执行数据的存储和检索操作。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
@@ -91,12 +91,6 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
     </dependency>
-
-    <dependency>
-        <groupId>io.projectreactor.netty</groupId>
-        <artifactId>reactor-netty</artifactId>
-        <version>0.8.3.RELEASE</version>
-    </dependency>
     ```
 
 1. 验证 *properties* 元素是否指示 Java 和 Azure 的必需版本：
@@ -104,7 +98,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
     ```xml
     <properties>
        <java.version>1.8</java.version>
-       <azure.version>2.2.0.M1</azure.version>
+       <azure.version>2.2.0</azure.version>
     </properties>
     ```
 
