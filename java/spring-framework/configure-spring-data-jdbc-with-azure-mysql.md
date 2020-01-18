@@ -6,12 +6,12 @@ ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: 7a6550be633b29d97d55b8db2f50b2c57d0ba30d
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755654"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022084"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>如何将 Spring Data JDBC 用于 Azure MySQL
 
@@ -67,7 +67,7 @@ ms.locfileid: "75755654"
 
 1. 单击“所有资源”  ，然后单击刚创建的 Azure Database for MySQL 资源。
 
-1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
+1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。）
 
    ![配置连接安全性][MYSQL04]
 
@@ -113,6 +113,7 @@ ms.locfileid: "75755654"
    
    mysql>
    ```
+   > 注意：如果出现一条错误消息指示服务器无法识别此 IP 地址，则客户端正在使用的 IP 地址将显示在错误中。  请返回并按前面所述分配该地址：*使用 Azure 门户为服务器配置防火墙规则*。
 
 1. 通过输入 `mysql` 命令创建名为 *mysqldb* 的数据库，如以下示例所示：
 
@@ -192,9 +193,9 @@ ms.locfileid: "75755654"
 1. 在命令提示符下使用 `curl` 创建新记录，如以下示例所示：
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    你的应用程序应返回如下所示的值：

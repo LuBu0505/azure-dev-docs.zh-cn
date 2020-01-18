@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 028e54c54410caf9e81448fd8df8283532591895
-ms.sourcegitcommit: 7722fc50eeab0f97bd0ea9cb3263da87244af406
+ms.openlocfilehash: d5e7ff3a31f8fb66b4231770c86094244752b439
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75492213"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022124"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>如何将 Spring Data JDBC 用于 Azure SQL 数据库
 
@@ -77,7 +77,7 @@ ms.locfileid: "75492213"
 
    ![显示防火墙设置][SQL06]
 
-1. 在“防火墙和虚拟网络”  部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
+1. 在“防火墙和虚拟网络”  部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。）
 
    ![配置防火墙设置][SQL07]
 
