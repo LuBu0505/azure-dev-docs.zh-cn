@@ -7,12 +7,12 @@ ms.date: 12/26/2019
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: b5abc7479a52aa84cd3f05ffb56e5c7f31d0c533
-ms.sourcegitcommit: 94ca8c28d8d3e954cf118f1f46ac905c3a470b38
+ms.openlocfilehash: 956867a355ffdd64dbeac8e85df4d0ced4362d16
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/27/2019
-ms.locfileid: "75502358"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022100"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>如何将 Spring Data JDBC 用于 Azure PostgreSQL
 
@@ -66,7 +66,7 @@ ms.locfileid: "75502358"
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 PostgreSQL 数据库。
 
-1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
+1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。）
 
    ![配置连接安全性][POSTGRESQL03]
 
@@ -105,6 +105,7 @@ ms.locfileid: "75502358"
    
    postgres=>
    ```
+   > 注意：如果出现一条错误消息指示服务器无法识别此 IP 地址，则客户端正在使用的 IP 地址将显示在错误中。  请返回并按前面所述分配该地址：*使用 Azure 门户为服务器配置防火墙规则*。
 
 1. 通过输入 `psql` 命令创建名为 *mypgsqldb* 的数据库，如以下示例所示：
 

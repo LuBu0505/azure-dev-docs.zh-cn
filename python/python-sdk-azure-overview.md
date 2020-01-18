@@ -3,18 +3,18 @@ title: 用于 Python 的 Azure SDK
 description: 概述 Azure SDK for Python 的特性和功能，这些特性和功能可提高开发人员使用 Azure 服务时的工作效率。
 ms.date: 10/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7a70f6050890bc384bac0d58ba3f0aa2e5e553cb
-ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
+ms.openlocfilehash: 83a9541330f270e51ffa5ed8952a93dee8ff132f
+ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75010584"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946702"
 ---
 # <a name="azure-sdk-for-python"></a>用于 Python 的 Azure SDK
 
 Azure SDK for Python 简化了通过 Python 应用程序代码使用和管理 Azure 资源的过程。 此 SDK 支持 Python 2.7 和 Python 3.5.3 或更高版本。
 
-安装此 SDK 时，只需使用 `pip install <library>` 安装它的任何单个组件库即可。 可以在 [Azure SDK for Python 包索引](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)上看到库列表
+安装此 SDK 时，只需使用 `pip install <library>` 安装它的任何单个组件库即可。 可以在 [Azure SDK for Python 文档](https://azure.github.io/azure-sdk-for-python/)中找到适用于不同服务的库的名称。
 
 若要更详细地了解如何安装库并将其导入项目中，请参阅[安装 SDK](python-sdk-azure-install.md)。 然后阅读 [SDK 入门](python-sdk-azure-get-started.yml)，了解如何针对自己的 Azure 订阅设置身份验证并运行示例代码。
 

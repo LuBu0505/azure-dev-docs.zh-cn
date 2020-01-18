@@ -6,18 +6,18 @@ ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 83883ffd06353854a3c69c9abdc946a035dda6b1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 927cc72a526651be71a7983a298ca2c6718f4546
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811962"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022085"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>如何将 Spring Data JPA 与 Azure Database for MySQL 配合使用
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 [Azure Database for MySQL](/azure/mysql/) 数据库中存储和检索信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -63,7 +63,7 @@ ms.locfileid: "74811962"
 
 1. 单击“所有资源”  ，然后单击你刚才创建的 MySQL 数据库。
 
-1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
+1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。 另请参阅标题“使用 mysql 命令行实用程序创建数据库”下的注释  。）
 
    ![配置连接安全性][MYSQL04]
 
@@ -110,6 +110,7 @@ ms.locfileid: "74811962"
    
    mysql>
    ```
+   > 注意：如果出现一条错误消息指示服务器无法识别此 IP 地址，则客户端正在使用的 IP 地址将显示在错误中。  请返回并按前面所述分配该地址：*使用 Azure 门户为服务器配置防火墙规则*。
 
 1. 通过输入 `mysql` 命令创建名为 *mysqldb* 的数据库，如以下示例所示：
 
@@ -216,7 +217,7 @@ ms.locfileid: "74811962"
    [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
    ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，我们创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JPA 在 Azure Database for MySQL 中存储和检索信息。
 

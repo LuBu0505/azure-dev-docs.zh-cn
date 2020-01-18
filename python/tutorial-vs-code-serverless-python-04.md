@@ -4,12 +4,12 @@ description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Co
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7dafd432289ad96664ca7c8a319b3368368adcbd
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: ffd5d433166c44edd8c021fd29cb7e43395df7ff
+ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992450"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946688"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>教程：在本地调试 Azure Functions Python 代码
 
@@ -47,6 +47,10 @@ ms.locfileid: "74992450"
     curl --header "Content-Type: application/json" --request POST \
         --data {"""name""":"""Visual Studio Code"""} http://localhost:7071/api/HttpExample
     ```
+
+    在 PowerShell 中，还可以使用 [Invoke-WebRequest cmdlet](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6)。
+
+    ---
 
     也可创建 *data.json* 之类的包含 `{"name":"Visual Studio Code"}` 的文件，并使用 `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample` 命令。
 

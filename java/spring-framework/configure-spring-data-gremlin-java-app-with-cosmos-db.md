@@ -3,17 +3,17 @@ title: 如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合�
 description: 了解如何为使用 Spring Boot Initializer 创建的应用程序配置 Azure Cosmos DB SQL API。
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 01/10/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: b5e6b3866b9b1e6a326547c053c628a282d9aaf3
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 61bf7d78edf2fcdc755d90588fe1c839d319f823
+ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812098"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946784"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -23,7 +23,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 本文演示如何使用 Azure 门户创建可与 Gremlin API 配合使用的 Azure Cosmos DB，使用 **[Spring Initializr]** 创建自定义的 Java 应用程序，然后将 Spring Data Gremlin Starter 功能添加到自定义应用程序用于存储数据，并使用 Gremlin 从 Azure Cosmos DB 检索数据。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
@@ -42,29 +42,27 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“创建资源”  。
 
-   ![创建资源][AZ01]
-
 1. 单击“数据库”，然后单击“Azure Cosmos DB”   。
 
    ![创建 Azure Cosmos DB][AZ02]
 
 1. 在“Azure Cosmos DB”页面上，输入以下信息  ：
 
-   * 输入唯一的 **ID**，用作数据库 Gremlin URI 的一部分。 例如：如果输入了 **wingtiptoysdata** 作为 **ID**，则 Gremlin URI 将是 *wingtiptoysdata.gremlin.cosmosdb.azure.com*。
-   * 选择“Gremlin (图形)”作为 API。 
-   * 选择要用于数据库的订阅  。
+   * 选择要用于数据库的“订阅”  。
    * 指定是否为数据库创建新的“资源组”，或选择现有资源组  。
+   * 输入要用作数据库 Gremlin URI 的一部分的唯一“帐户名”  。 例如：如果输入了 **wingtiptoysdata** 作为“帐户名”  ，则 Gremlin URI 将是 *wingtiptoysdata.gremlin.cosmosdb.azure.com*。
+   * 选择“Gremlin (图形)”作为 API。 
    * 为数据库指定“位置”  。
    
-   指定这些选项后，单击“创建”以创建数据库  。
+指定这些选项后，单击“查看 + 创建”  。
 
    ![指定 Azure Cosmos DB 选项][AZ03]
 
-1. 创建数据库之后，它将在 Azure 的“仪表板”、“所有资源”和“Azure Cosmos DB”页面下列出    。 在任意这些位置单击数据库可打开缓存的属性页面。
+查看具体细节，然后单击“创建”以创建数据库。 
 
-   ![所有资源][AZ04]
+1. 数据库已创建后，单击“转到资源”  。 数据库将在 Azure 的“仪表板”、“所有资源”和“Azure Cosmos DB”页面下列出    。 在任意这些位置单击数据库可打开缓存的属性页面。
 
-1. 当显示数据库的属性页面时，单击“访问密钥”  ，然后复制数据库的 URI 和访问密钥，在 Spring Boot 应用程序中会用到这些值。
+1. 当显示数据库的属性页面时，单击“密钥”  ，然后复制数据库的 URI 和访问密钥；在 Spring Boot 应用程序中会用到这些值。
 
    ![访问密钥][AZ05]
 
@@ -77,9 +75,10 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 1. 显示“添加图形”后，输入以下信息： 
 
    * 指定数据库的唯一“数据库 ID”。 
-   * 指定图形的唯一“图形 ID”。 
    * 可以选择指定“存储容量”，或者接受默认值。 
-   * 指定“吞吐量”，对于本示例，可以选择 400 个请求单位 (RU)。 
+   * 指定图形的唯一“图形 ID”。 
+   * 指定“分区键”  。 有关详细信息，请参阅[在 Azure Cosmos DB 中使用分区图](https://docs.microsoft.com/azure/cosmos-db/graph-partitioning)。
+单击“确定”。 
    
    指定这些选项后，单击“确定”以创建图形  。
 
@@ -104,8 +103,6 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
-   ![下载自定义 Spring Boot 项目][SI02]
-
 1. 在本地系统中提供文件后，就可以对简单的 Spring Boot 应用程序进行编辑。
 
    ![自定义 Spring Boot 项目文件][SI03]
@@ -119,8 +116,6 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    -或-
 
    `/users/example/home/wingtiptoysdata/pom.xml`
-
-   ![找到 pom.xml 文件][PM01]
 
 1. 在文本编辑器中打开 *pom.xml* 文件，将 Spring Data Gremlin Starter 添加到 `<dependencies>` 列表：
 
@@ -558,23 +553,19 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 <!-- IMG List -->
 
-[AZ01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ01.png
 [AZ02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ02.png
 [AZ03]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ03.png
-[AZ04]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ04.png
 [AZ05]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ05.png
 [AZ06]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ06.png
 [AZ07]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ07.png
 [AZ08]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ08.png
 
 [SI01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI01.png
-[SI02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI02.png
 [SI03]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI03.png
 
 [RE01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/RE01.png
 [RE02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/RE02.png
 
-[PM01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/PM01.png
 [PM02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/PM02.png
 
 [JV01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/JV01.png

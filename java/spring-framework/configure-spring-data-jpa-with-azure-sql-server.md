@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811946"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022127"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>如何将 Spring Data JPA 用于 Azure SQL 数据库
 
@@ -20,7 +20,7 @@ ms.locfileid: "74811946"
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)中存储和检索信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -76,7 +76,7 @@ ms.locfileid: "74811946"
 
    ![显示防火墙设置][SQL06]
 
-1. 在“防火墙和虚拟网络”  部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。
+1. 在“防火墙和虚拟网络”  部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。）
 
    ![配置防火墙设置][SQL07]
 
@@ -164,7 +164,7 @@ ms.locfileid: "74811946"
    [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
    ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JPA 在 Azure SQL 数据库中存储和检索信息。
 
