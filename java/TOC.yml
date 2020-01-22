@@ -152,9 +152,17 @@
       items:
         - name: 添加根证书
           href: java-sdk-add-certificate-ca-store.md
-        - name: 身份验证
+        - name: Authenticate
           href: java-sdk-azure-authenticate.md
-    - name: 代码示例
+        - name: 将 Java 迁移到 Azure
+          items:
+            - name: 概述
+              href: migration-overview.md
+            - name: Tomcat 到 Azure 应用服务
+              href: migrate-tomcat-to-tomcat-app-service.md
+            - name: Tomcat 到 AKS 上的容器
+              href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+    - name: 示例代码
       items:
         - name: Service Fabric
           href: 'https://azure.microsoft.com/resources/samples/service-fabric-java-getting-started/'
@@ -164,11 +172,11 @@
           href: java-sdk-azure-web-apps-samples.md
         - name: SQL 数据库
           href: java-sdk-azure-sql-database-samples.md
-        - name: 安全
+        - name: 安全性
           href: java-sdk-azure-security-samples.md
         - name: 容器
           href: java-sdk-azure-containers-samples.md
         - name: 所有 Java 示例
           href: 'https://azure.microsoft.com/resources/samples/?platform=java'
-    - name: 引用
+    - name: 参考
       href: /java/api/?view=azure-java
