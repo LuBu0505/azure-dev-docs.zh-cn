@@ -4,20 +4,20 @@ description: 教程步骤 7，清理 Azure 资源
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 5a890ae2db4f9aa9bd3ca09364467adb022beed8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8145b33ae52427d55c9b3de9fcf6fb20467b7ba9
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466051"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125260"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 
 [上一步：流式传输日志](tutorial-deploy-app-service-on-linux-06.md)
 
-创建的 Azure 应用服务包含一项可能产生费用的后备应用服务计划。 若要清理资源，请在“Azure:  应用服务”资源管理器中右键单击应用服务，然后选择“删除”。 
+创建的 Azure 应用服务包含一项可能产生费用的后备应用服务计划。 若要避免此类成本，请删除包含所有资源的资源组。
 
-也可访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

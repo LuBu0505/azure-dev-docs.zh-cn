@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5e7ff3a31f8fb66b4231770c86094244752b439
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: b75db0f3cff02b5f7ead90265a170fc63405dbb6
+ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022124"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76283330"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>如何将 Spring Data JDBC 用于 Azure SQL 数据库
 
@@ -46,10 +46,10 @@ ms.locfileid: "76022124"
 
 1. 指定以下信息：
 
-   - **数据库名称**：为 SQL 数据库选择一个唯一名称；这将在你稍后指定的 SQL 服务器中创建。
-   - **订阅**：指定要使用的 Azure 订阅。
-   - **资源组**：指定是要创建新资源组，还是选择现有资源组。
-   - **选择源**：对于本教程，请选择 `Blank database` 以创建新数据库。
+   * **数据库名称**：为 SQL 数据库选择一个唯一名称；这将在你稍后指定的 SQL 服务器中创建。
+   * **订阅**：指定要使用的 Azure 订阅。
+   * **资源组**：指定是要创建新资源组，还是选择现有资源组。
+   * **选择源**：对于本教程，请选择 `Blank database` 以创建新数据库。
 
    ![指定 SQL 数据库属性][SQL02]
    
@@ -91,6 +91,19 @@ ms.locfileid: "76022124"
 
    ![检索 JDBC 连接字符串][SQL09]
 
+### <a name="create-test-table-in-database"></a>在数据库中创建测试表
+若要对此数据库运行客户端应用程序，请使用以下 SQL 命令来创建新表。
+
+``` SQL
+IF NOT EXISTS (SELECT 1 FROM sysobjects WHERE NAME='pet' and XTYPE='U')
+  CREATE TABLE pet (
+    id      INT           IDENTITY  PRIMARY KEY,
+    name    VARCHAR(255),
+    species VARCHAR(255)
+  );
+
+```
+
 ## <a name="configure-the-sample-application"></a>配置示例应用程序
 
 1. 打开一个命令 shell 并使用 git 命令克隆示例项目，如以下示例所示：
@@ -99,11 +112,21 @@ ms.locfileid: "76022124"
    git clone https://github.com/Azure-Samples/spring-data-jdbc-on-azure.git
    ```
 
+1. 修改 POM 文件，使之包含以下依赖项：
+
+```
+ <dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>7.4.1.jre11</version>
+ </dependency>
+```
 1. 在示例项目的 *resources* 目录中找到 *application.properties* 文件，或者创建此文件（若此文件尚不存在）。
 
 1. 在文本编辑器中打开 *application.properties* 文件，在文件中添加或配置以下行，并将示例值替换为上文中的相应值：
 
    ```yaml
+   spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
    spring.datasource.url=jdbc:sqlserver://wingtiptoyssql.database.windows.net:1433;database=wingtiptoys;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
    spring.datasource.username=wingtiptoysuser@wingtiptoyssql
    spring.datasource.password=********
@@ -136,8 +159,12 @@ ms.locfileid: "76022124"
 
    ```shell
    curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   ```
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   或者：
+
+``` shell
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    你的应用程序应返回如下所示的值：
