@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: fbf1faabbefcb987cf398a45005eb480ec16b27d
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288586"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825791"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -129,9 +129,9 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 |目标&nbsp;→<br><br>应用程序&nbsp;类型&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|应用<br>服务<br>WildFly|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR 应用程序 | 已计划 | 已计划        | 已计划 | 已计划 | 已计划        | 已计划 |
-| Spring Cloud/<br>微服务   | 空值     | 空值            | 空值     | 已计划 | 已计划        | 已计划 |
-| Tomcat 上的<br>Web 应用程序     | 空值     | [可用][2] | 空值     | 空值     | [可用][3] | 已计划 |
+| Spring Boot/<br>JAR 应用程序 | [可用][5] | 已计划        | 已计划 | 已计划 | 已计划        | 已计划 |
+| Spring Cloud/<br>微服务   | 空值            | 空值            | 空值     | 已计划 | 已计划        | 已计划 |
+| Web 应用程序<br>Web 应用程序     | 空值            | [可用][2] | 空值     | 空值     | [可用][3] | 已计划 |
 
 **Java EE 应用程序**
 
@@ -139,12 +139,14 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 |目标&nbsp;→<br><br>应用服务器&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|应用<br>服务<br>WildFly|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划 |
-| WebLogic              | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划 |
-| WebSphere             | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划 |
-| JBoss EAP             | 空值 | 空值 | 已计划 | 空值 | 空值     | 已计划 |
+| WildFly/<br>JBoss AS | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划        |
+| WebLogic              | 空值 | 空值 | 已计划 | 空值 | 已计划 | [可用][4] |
+| WebSphere             | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划        |
+| JBoss EAP             | 空值 | 空值 | 已计划 | 空值 | 空值     | 已计划        |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+[4]: migrate-weblogic-to-virtual-machines.md
+[5]: migrate-java-se-to-java-se-app-service.md

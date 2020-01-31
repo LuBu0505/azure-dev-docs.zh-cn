@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: aa26952b320392beb553f327920fe5bd905a0b85
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811825"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872132"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>将 Spring 应用部署到使用 MySQL 的应用服务
 
@@ -19,7 +19,7 @@ ms.locfileid: "74811825"
 
 本教程以常用的 Spring PetClinic 示例应用程序为基础。 在本主题中，你将在本地测试 HSQLDB 版本的应用，然后将其部署到 [Azure 应用服务](/azure/app-service/containers)。 之后，你将配置并部署一个使用 [Azure Database for MySQL](/azure/mysql) 的版本。 最后，你将了解如何通过增加运行应用程序的辅助角色的数量来访问应用日志并进行横向扩展。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * [Azure CLI](https://docs.microsoft.com/cli/azure/overview)
 * [Java 8](http://java.oracle.com/)
@@ -121,7 +121,7 @@ Maven 将使用这些值来创建具有你提供的名称的 Azure 资源。 通
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>

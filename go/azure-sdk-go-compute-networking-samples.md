@@ -1,18 +1,14 @@
 ---
 title: 用于计算和网络的 Azure SDK for Go 示例
 description: Azure SDK for Go 中用于使用 VM 和虚拟网络等计算资源的选定示例。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: sample
-ms.devlang: go
-ms.openlocfilehash: f04ba1af468e8f7f5e52847883f1f51948b94ff6
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 9cb8af3ea5ceb24147006d8b57d7231c2c7e9ad9
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68292000"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871852"
 ---
 # <a name="azure-sdk-for-go-samples-for-compute-and-networking"></a>用于计算和网络的 Azure SDK for Go 示例
 
@@ -20,7 +16,7 @@ ms.locfileid: "68292000"
 
 [GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples) 上提供了 Azure SDK for Go 的所有示例。
 
-| Name | 说明 |
+| 名称 | 说明 |
 |------|-------------|
 | [network/network](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/network/network.go) | 创建、更新、删除和查询网络资源，包括虚拟网络、子网和网络安全组。 |
 | [compute/vm_disk](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/compute/vm_disk.go) | 为 VM 创建、附加、分离、更新和加密数据磁盘。 |

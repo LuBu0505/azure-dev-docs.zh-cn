@@ -1,18 +1,14 @@
 ---
 title: 安装 Azure SDK for Go
 description: 如何安装、引用 (vendor) 和配置 Azure SDK for Go。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 03/14/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: e7a4449ed29239e7cb08902cee299d74102a72bf
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: daf725a59042038e682c852a50080972d33a497e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291932"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871870"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>安装 Azure SDK for Go
 
