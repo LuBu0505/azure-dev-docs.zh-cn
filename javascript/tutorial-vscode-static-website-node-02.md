@@ -4,14 +4,14 @@ description: 教程第 2 部分：创建示例应用
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: bc930b7c6a3454ca335fec5a955113a45fa2f0f2
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: b236f64f04be0c0b8faa74eb67ce22f96ec595aa
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466548"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825841"
 ---
-# <a name="create-the-app"></a>创建应用程序
+# <a name="create-the-app"></a>创建应用
 
 [上一步：简介和先决条件](tutorial-vscode-static-website-node-01.md)
 
@@ -42,7 +42,7 @@ ms.locfileid: "74466548"
     npm start
     ```
 
-1. 将浏览器打开到 [http://localhost:3000](http://localhost:3000) 以验证该应用正在运行：
+1. 将浏览器打开到 [http://localhost:4200](http://localhost:4200) 以验证该应用正在运行：
 
     ![正在运行的示例 Angular 应用](media/static-website/local-app-angular.png)
 

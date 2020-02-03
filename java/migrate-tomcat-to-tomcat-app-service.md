@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: ce1c54f0f4b28c5c0a2e11f4afc53f1dd59899c5
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: f9611415264ce0c00a077d8988ef0fc9f7d97f66
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288596"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825856"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
 
@@ -21,36 +21,17 @@ ms.locfileid: "76288596"
 如果无法满足任何预迁移要求，请参阅以下伴随迁移指南：
 
 * [将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
-* 将 Tomcat 应用程序迁移到 Azure 虚拟机（即将推出）
+* 将 Tomcat 应用程序迁移到 Azure 虚拟机（已计划）
 
 ## <a name="pre-migration-steps"></a>迁移前步骤
 
-* [切换到受支持的平台](#switch-to-a-supported-platform)
-* [清点外部资源](#inventory-external-resources)
-* [清点机密](#inventory-secrets)
-* [清点持久性使用情况](#inventory-persistence-usage)
-* [特殊情况](#special-cases)
-
 ### <a name="switch-to-a-supported-platform"></a>切换到受支持的平台
 
-应用服务在特定版本的 Java 上提供特定版本的 Tomcat。 若要确保兼容性，请在继续执行其余步骤之前，将应用程序迁移到当前环境中支持的 Tomcat 和 Java 版本之一。 务必全面测试生成的配置。 请使用 [Red Hat Enterprise Linux 8](https://portal.azure.com/#create/RedHat.RedHatEnterpriseLinux80-ARM) 作为此类测试中的操作系统。
+应用服务在特定版本的 Java 上提供特定版本的 Tomcat。 若要确保兼容性，请在继续执行其余步骤之前，将应用程序迁移到当前环境中支持的 Tomcat 和 Java 版本之一。 务必全面测试生成的配置。 请在此类测试中使用最新且稳定的 Linux 发布版。
 
-#### <a name="java"></a>Java
+[!INCLUDE [note-obtain-your-current-java-version](includes/migration/note-obtain-your-current-java-version.md)]
 
-> [!NOTE]
-> 如果当前服务器在不受支持的 JDK（如 Oracle JDK 或 IBM OpenJ9）上运行，则此验证尤其重要。
-
-若要获取当前的 Java 版本，请登录到生产服务器并运行以下命令：
-
-```bash
-java -version
-```
-
-若要获取 Azure 应用服务使用的当前版本，请下载 [Zulu 8](https://www.azul.com/downloads/zulu-community/?&version=java-8-lts&os=&os=linux&architecture=x86-64-bit&package=jdk)（如果想要使用 Java 8 运行时）或 [Zulu 11](https://www.azul.com/downloads/zulu-community/?&version=java-11-lts&os=&os=linux&architecture=x86-64-bit&package=jdk)（如果想要使用 Java 11 运行时）。
-
-#### <a name="tomcat"></a>Tomcat
-
-若要确定当前的 Tomcat 版本，请登录到生产服务器并运行以下命令：
+若要获取当前的 Tomcat 版本，请登录到生产服务器并运行以下命令：
 
 ```bash
 ${CATALINA_HOME}/bin/version.sh
@@ -61,6 +42,8 @@ ${CATALINA_HOME}/bin/version.sh
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/migration/inventory-secrets.md)]
+
+[!INCLUDE [inventory-certificates](includes/migration/inventory-certificates.md)]
 
 [!INCLUDE [inventory-persistence-usage](includes/migration/inventory-persistence-usage.md)]
 
@@ -123,7 +106,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 ## <a name="migration"></a>迁移
 
-### <a name="parametrize-the-configuration"></a>将配置参数化
+### <a name="parameterize-the-configuration"></a>将配置参数化
 
 在预迁移中，你可能已在 *server.xml* 和 *context.xml* 文件中标识了机密和外部依赖项（如数据源）。 对于这样标识的每个项，请将任何用户名、密码、连接字符串或 URL 替换为环境变量。
 
@@ -164,7 +147,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 ### <a name="create-and-deploy-web-apps"></a>创建和部署 Web 应用
 
-需要在应用服务计划中针对部署到 Tomcat 服务器的每个 WAR 文件创建一个 Web 应用。
+需要在应用服务计划（选择一个版本的 Tomcat 作为运行时堆栈）中针对部署到 Tomcat 服务器的每个 WAR 文件创建一个 Web 应用。
 
 > [!NOTE]
 > 虽然可以将多个 WAR 文件部署到单个 Web 应用，但这根本没有必要。 如果将多个 WAR 文件部署到单个 Web 应用，则会妨碍每个应用程序根据其自身的使用需求进行缩放。 另外，这样还会增加后续部署管道的复杂性。 如果单个 URL 上需要有多个可用的应用程序，请考虑使用路由解决方案，如 [Azure 应用程序网关](/azure/application-gateway/)。
@@ -191,17 +174,15 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 使用“应用程序设置”存储特定于应用程序的任何机密。 若要在多个应用程序中使用相同的机密，或者需要精细的访问策略和审核功能，请改为[使用 Azure Key Vault](/azure/app-service/containers/configure-language-java#use-keyvault-references)。
 
-### <a name="configure-custom-domain-and-ssl"></a>配置自定义域和 SSL
+[!INCLUDE [configure-custom-domain-and-ssl](includes/migration/configure-custom-domain-and-ssl.md)]
 
-如果应用程序将在自定义域上可见，则需[将 Web 应用程序映射到它](/azure/app-service/app-service-web-tutorial-custom-domain)。
-
-然后，需[将该域的 SSL 证书绑定到应用服务 Web 应用](/azure/app-service/app-service-web-tutorial-custom-ssl)。
+[!INCLUDE [import-backend-certificates](includes/migration/import-backend-certificates.md)]
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>迁移数据源、库和 JNDI 资源
 
 执行[这些迁移数据源的步骤](/azure/app-service/containers/configure-language-java#tomcat)。
 
-按照[数据源 jar 文件的步骤](/azure/app-service/containers/configure-language-java#finalize-configuration)迁移任何其他服务器级 classpath 依赖关系。
+按照[数据源 JAR 文件的步骤](/azure/app-service/containers/configure-language-java#finalize-configuration)迁移任何其他服务器级 classpath 依赖关系。
 
 迁移任何其他的[共享服务器级 JDNI 资源](/azure/app-service/containers/configure-language-java#shared-server-level-resources)。
 
@@ -214,14 +195,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 通过复制任何其他配置（如[领域](https://tomcat.apache.org/tomcat-8.5-doc/config/realm.html)、[JASPIC](https://tomcat.apache.org/tomcat-8.5-doc/config/jaspic.html)）完成迁移。
 
-### <a name="migrate-scheduled-jobs"></a>迁移计划的作业
-
-若要在 Azure 上执行计划的作业，请考虑将 [Azure Functions 与计时器触发器](/azure/azure-functions/functions-bindings-timer)配合使用。 无需将作业代码本身迁移到函数中。 函数可以直接在应用程序中调用 URL 来触发作业。
-
-也可使用[定期触发器](/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow#add-the-recurrence-trigger)来创建[逻辑应用](/azure/logic-apps/logic-apps-overview)，以便调用 URL，而无需在应用程序外编写任何代码。
-
-> [!NOTE]
-> 若要防止恶意使用，可能需确保作业调用终结点要求使用凭据。 在这种情况下，触发器函数需要提供凭据。
+[!INCLUDE [migrate-scheduled-jobs](includes/migration/migrate-scheduled-jobs.md)]
 
 ### <a name="restart-and-smoke-test"></a>重启和冒烟测试
 

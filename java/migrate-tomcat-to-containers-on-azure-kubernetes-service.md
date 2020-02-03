@@ -5,24 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: da516609aaf976db929664bf0402a48f378034d3
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288606"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825805"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器
 
 本指南介绍在需要迁移现有 Tomcat 应用程序以使之在 Azure Kubernetes 服务 (AKS) 上运行时应注意的事项。
 
 ## <a name="pre-migration-steps"></a>迁移前步骤
-
-* [清点外部资源](#inventory-external-resources)
-* [清点机密](#inventory-secrets)
-* [清点持久性使用情况](#inventory-persistence-usage)
-* [特殊情况](#special-cases)
-* [就地测试](#in-place-testing)
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -75,7 +69,7 @@ Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/co
 
 在创建容器映像之前，请将应用程序迁移到要在 AKS 上使用的 JDK 和 Tomcat。 全面测试应用程序，确保兼容性和性能。
 
-### <a name="parametrize-the-configuration"></a>将配置参数化
+### <a name="parameterize-the-configuration"></a>将配置参数化
 
 在预迁移中，你可能已在 *server.xml* 和 *context.xml* 文件中标识了机密和外部依赖项（如数据源）。 对于这样标识的每个项，请将任何用户名、密码、连接字符串或 URL 替换为环境变量。
 
@@ -128,7 +122,7 @@ az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plug
 
 #### <a name="open-ports-for-clustering-if-needed"></a>根据需要打开用于聚类分析的端口
 
-若要在 AKS 上使用 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)，请确保在 Dockerfile 中公开必要的端口范围。 若要在 `server.xml` 中指定服务器 IP 地址，请确保使用在容器启动时初始化为 Pod 的 IP 地址的变量中的值。
+若要在 AKS 上使用 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)，请确保在 Dockerfile 中公开必要的端口范围。 若要在 *server.xml* 中指定服务器 IP 地址，请确保使用在容器启动时初始化为 Pod 的 IP 地址的变量中的值。
 
 也可将会话状态[持久保存到备用位置](#identify-session-persistence-mechanism)，使之可以跨副本使用。
 
@@ -218,7 +212,7 @@ echo "Your public IP address is ${publicIp}."
 
 如果应用程序需要非易失性存储，请配置一个或多个[持久性卷](/azure/aks/azure-disks-dynamic-pv)。
 
-可能需要[使用 Azure 文件存储创建持久性卷](/azure/aks/azure-files-dynamic-pv)，该卷装载到 Tomcat 日志目录 ( */tomcat_logs*)，目的是集中保留日志。
+可能需要使用 Azure 文件存储创建持久性卷，该卷装载到 Tomcat 日志目录 ( */tomcat_logs*)，目的是集中保留日志。 有关详细信息，请参阅[在 Azure Kubernetes 服务 (AKS) 中动态创建永久性卷并将其用于 Azure 文件存储](/azure/aks/azure-files-dynamic-pv)。
 
 ### <a name="configure-keyvault-flexvolume"></a>配置 KeyVault FlexVolume
 

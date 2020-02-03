@@ -1,22 +1,21 @@
 ---
 author: yevster
 ms.author: yebronsh
-ms.topic: include
 ms.date: 1/20/2020
-ms.openlocfilehash: 23289c7dc4b608c6fe8bb75af479ea877a2000d9
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: 478059f598b9c39609a85647945ebef3df3cb7ec
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288616"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825804"
 ---
 ### <a name="inventory-persistence-usage"></a>清点持久性使用情况
 
-使用应用程序服务器上的文件系统需要重新配置，在极少数情况下需要体系结构更改。 文件系统可供 Tomcat 模块或应用程序代码使用。 可以识别下面的部分或所有情况。
+使用应用程序服务器上的文件系统需要重新配置，在极少数情况下需要体系结构更改。 可以识别下面的部分或所有情况。
 
 #### <a name="read-only-static-content"></a>只读静态内容
 
-如果应用程序当前通过某种方式（例如，通过 Apache 集成）提供静态内容，则需为该静态内容提供一个备用位置。 可能需要考虑将静态内容移到 Azure Blob 存储，并添加 Azure CDN，方便用户在全球范围内快速下载。 有关详细信息，请参阅 [Azure 存储中的静态网站托管](/azure/storage/blobs/storage-blob-static-website)和[为存储帐户启用 Azure CDN](/azure/cdn/cdn-create-a-storage-account-with-cdn#enable-azure-cdn-for-the-storage-account)。
+如果应用程序当前通过某种方式（例如，通过 Apache 集成）提供静态内容，则需为该静态内容提供一个备用位置。 可能需要考虑将静态内容移到 Azure Blob 存储，并添加 Azure CDN，方便用户在全球范围内快速下载。 有关详细信息，请参阅 [Azure 存储中的静态网站托管](/azure/storage/blobs/storage-blob-static-website)和[快速入门：将 Azure 存储帐户与 Azure CDN 集成](/azure/cdn/cdn-create-a-storage-account-with-cdn#enable-azure-cdn-for-the-storage-account)。
 
 #### <a name="dynamically-published-static-content"></a>动态发布的静态内容
 
