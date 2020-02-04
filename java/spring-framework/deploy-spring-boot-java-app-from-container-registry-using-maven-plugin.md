@@ -10,12 +10,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 1c5254c041c57e1fc04ce9553d6902047eec878a
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 729efd44b5b2489462c55c29f669d7bbbde8740c
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811913"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967250"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>使用用于 Azure Web 应用的 Maven 将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
@@ -28,7 +28,7 @@ ms.locfileid: "74811913"
 > 适用于 Azure Web 应用的 Maven 插件当前提供预览版。 目前，仅支持 FTP 发布，但计划在未来支持其他功能。
 > 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 完成本教程中的步骤需要具备以下先决条件：
 
@@ -61,7 +61,7 @@ ms.locfileid: "74811913"
 
 1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：
    ```shell
-   git clone -b https://github.com/spring-guides/gs-spring-boot-docker
+   https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
 
 1. 将目录更改为已完成项目；例如：
@@ -108,15 +108,9 @@ ms.locfileid: "74811913"
 
 3. 创建 Azure 服务主体：
    ```azurecli
-   az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
+   az ad sp create-for-rbac --name <ServicePrincipalName>
    ```
-   其中：
-
-   | 参数  |                    说明                     |
-   |------------|----------------------------------------------------|
-   | `uuuuuuuu` | 指定服务主体的用户名。 |
-   | `pppppppp` | 指定服务主体的密码。  |
-
+没有任何身份验证参数，基于密码的身份验证与为你创建的随机密码配合使用。
 
 4. Azure 使用与以下示例类似的 JSON 进行响应：
    ```json
