@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: bd956502c6cd5910f6c22844840aeec6cb1ec8aa
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 092bb328c4d7e68da9c75a43eaa9c31173d79864
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812291"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002528"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机规模集
 
@@ -226,11 +226,11 @@ virtualMachineScaleSet.update()
    
 | 示例中使用的类 | 说明
 |-------|-------|
-| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set) | 查询、启动、停止、更新和删除规模集中的所有虚拟机。
-| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_v_m) | 从 `virtualMachineScaleSet.virtualMachines().get()` 或 `list()` 检索，用于查询、启动、停止、配置和删除规模集中的虚拟机。
-| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_network_interface) | 从 `virtualMachineScaleSet.listNetworkInterfaces()` 返回，规模集中虚拟机上的网络接口的只读表示形式。
-| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_sku_types) | 静态字段的类，用于设置[虚拟机规模集层](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)来定义规模集成员可以消耗的资源量。
-| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_nic_i_p_configuration) | 用于查询与规模集虚拟机上的网络接口关联的 IP 配置。
+| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescaleset) | 查询、启动、停止、更新和删除规模集中的所有虚拟机。
+| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetvm) | 从 `virtualMachineScaleSet.virtualMachines().get()` 或 `list()` 检索，用于查询、启动、停止、配置和删除规模集中的虚拟机。
+| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnetworkinterface) | 从 `virtualMachineScaleSet.listNetworkInterfaces()` 返回，规模集中虚拟机上的网络接口的只读表示形式。
+| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetskutypes) | 静态字段的类，用于设置[虚拟机规模集层](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)来定义规模集成员可以消耗的资源量。
+| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnicipconfiguration) | 用于查询与规模集虚拟机上的网络接口关联的 IP 配置。
 
 ## <a name="next-steps"></a>后续步骤
 

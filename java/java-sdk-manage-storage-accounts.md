@@ -6,12 +6,12 @@ ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: b1eeaa139e7642220524a76869fd8713044f9df5
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 88298088099ed61c97eb6cb4a900c2ce55f5c3f0
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812325"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002423"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>从 Java 应用程序管理 Azure 存储帐户
 
@@ -43,7 +43,7 @@ StorageAccount storageAccount = azure.storageAccounts().define(storageAccountNam
                     .create();
 ```
 
-提供的存储名称必须在 Azure 中的所有名称之间保持唯一，且仅包含小写字母和数字。 用于此帐户的默认性能和复制配置文件为 [Standard_GRS](https://docs.microsoft.com/azure/storage/storage-redundancy#geo-redundant-storage)。
+提供的存储名称必须在 Azure 中的所有名称之间保持唯一，且仅包含小写字母和数字。 用于此帐户的默认性能和复制配置文件为 [Standard_GRS](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs)。
 
 ## <a name="list-keys-in-a-storage-account"></a>列出存储帐户中的密钥
 ```java
@@ -75,7 +75,7 @@ for (StorageAccount sa : accounts) {
 }
 ```
 
-[com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account) 提供了一组有用的方法来检查存储帐户的配置。
+[com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount) 提供了一组有用的方法来检查存储帐户的配置。
 
 ## <a name="delete-a-storage-account"></a>删除存储帐户
 ```java
@@ -100,8 +100,8 @@ azure.storageAccounts().deleteByResourceGroup(rgName,accountName);
 
 | 示例中使用的类 | 说明
 |-------|-------|
-| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account)  | Azure 存储帐户的表示形式。 使用类中的方法获取有关存储帐户的信息。
-| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account_key) | `StorageAccount.getKeys()` 返回存储帐户密钥。 使用 `StorageAccount` 中的 `regenerateKey` 方法来更新密钥。
+| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount)  | Azure 存储帐户的表示形式。 使用类中的方法获取有关存储帐户的信息。
+| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` 返回存储帐户密钥。 使用 `StorageAccount` 中的 `regenerateKey` 方法来更新密钥。
 
 ## <a name="next-steps"></a>后续步骤
 

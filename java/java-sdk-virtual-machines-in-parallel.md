@@ -6,12 +6,12 @@ ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
 ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: ef56241e0ddf0dca34a0229c7d2261d996d05870
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812280"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002501"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>通过 Java 应用程序跨多个地区创建虚拟机
 
@@ -185,11 +185,11 @@ finally {
 
 | 示例中使用的类 | 说明
 |-------|-------|
-| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine) | 查询属性并管理虚拟机的状态。 在从 `azure.virtualMachines().list()` 返回的，或者按名称或 ID 执行 `azure.virtualMachines().getByResourceGroup()` 后返回的列表表单中检索
-| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_size_types) | 映射到[虚拟机大小选项](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)的静态值，定义虚拟机时用作 `withSize()` 的参数。
-| [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._public_i_p_address) | 通过 `azure.publicIpAddresses().define()` 为每个虚拟机定义，但不会立即创建该类。 存储每个 `Creatable` 的键，稍后可通过 `createdRelatedResource()` 检索
-| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Linux 虚拟机选项集，在定义虚拟机时用作 `withPopularLinuxImage()` 方法的参数。
-| [网络](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | 本示例通过 `azure.networks().define()` 为每个区域定义一个虚拟网络。 
+| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachine) | 查询属性并管理虚拟机的状态。 在从 `azure.virtualMachines().list()` 返回的，或者按名称或 ID 执行 `azure.virtualMachines().getByResourceGroup()` 后返回的列表表单中检索
+| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | 映射到[虚拟机大小选项](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)的静态值，定义虚拟机时用作 `withSize()` 的参数。
+| [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.publicipaddress) | 通过 `azure.publicIpAddresses().define()` 为每个虚拟机定义，但不会立即创建该类。 存储每个 `Creatable` 的键，稍后可通过 `createdRelatedResource()` 检索
+| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | Linux 虚拟机选项集，在定义虚拟机时用作 `withPopularLinuxImage()` 方法的参数。
+| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.network) | 本示例通过 `azure.networks().define()` 为每个区域定义一个虚拟网络。 
 
 ## <a name="next-steps"></a>后续步骤
 

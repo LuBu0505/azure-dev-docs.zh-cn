@@ -6,12 +6,12 @@ ms.assetid: 9b461de8-46bc-4650-8e9e-59531f4e2a53
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 9a30217ccd336b0fa656910c9015615a95dc193a
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 535490109824f0caf9e7d041114ada9a507b41ea
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812332"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002440"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>通过 Java 应用程序管理弹性池中的 Azure SQL 数据库
 
@@ -48,7 +48,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
                     .create();
 ```
 
-请参阅 [ElasticPoolEditions 类参考](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions)获取当前版本值。 查看 [SQL 数据库弹性池文档](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)来比较版本资源的特征。 
+请参阅 [ElasticPoolEditions 类参考](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpooleditions)获取当前版本值。 查看 [SQL 数据库弹性池文档](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)来比较版本资源的特征。 
 
 ## <a name="change-database-transaction-unit-dtu-settings-in-an-elastic-pool"></a>更改弹性池中的数据库事务单位 (DTU) 设置
 
@@ -83,7 +83,7 @@ anotherDatabase = anotherDatabase.update()
                      .apply();
 ```
 
-请参阅 [DatabaseEditions 类参考](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._database_editions)来了解要传递给 `withEdition()` 的值。
+请参阅 [DatabaseEditions 类参考](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.databaseeditions)来了解要传递给 `withEdition()` 的值。
 
 ## <a name="list-current-database-activities-in-an-elastic-pool"></a>列出弹性池中的当前数据库活动
 ```java
@@ -106,7 +106,7 @@ for (SqlDatabase databaseInServer : elasticPool.listDatabases()) {
 }
 ```
 
-查看 [com.microsoft.azure.management.sql.SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_database) 中的方法，以便更详细地查询数据库。
+查看 [com.microsoft.azure.management.sql.SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqldatabase) 中的方法，以便更详细地查询数据库。
 
 ## <a name="delete-an-elastic-pool"></a>删除弹性池
 ```java
@@ -123,13 +123,13 @@ sqlServer.elasticPools().delete(elasticPoolName);
 
 | 示例中使用的类 | 说明 |
 |-------|-------|
-| [SqlServer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_server) | `azure.sqlServers().define()...create()` Fluent 链在 Azure 中创建的 SQL 数据库服务器。 提供方法来创建和使用弹性池与数据库。 
-| [SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_database) | 表示 SQL 数据库的客户端对象。 通过 `sqlServer().define()...create()` 创建。 
-| [DatabaseEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._database_editions) | 在弹性池外部创建数据库或者将数据库移出弹性池时，用于设置数据库资源的常量静态字段  
-| [SqlElasticPool](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_elastic_pool) | 通过在 Azure 中创建 SqlServer 的 Fluent 链的 `withNewElasticPool()` 部分创建。 提供方法用于针对弹性池中运行的数据库以及弹性池本身设置资源限制。 
-| [ElasticPoolEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions) | 定义弹性池可用资源的常量字段的类。 请参阅 [SQL 数据库弹性池文档](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)了解有关层的详细信息。 
-| [ElasticPoolDatabaseActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_database_activity) | 通过 `SqlElasticPool.listDatabaseActivities()` 检索。 此类型的每个对象表示针对弹性池中的数据库执行的活动。
-| [ElasticPoolActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_activity) | 通过 `SqlElasticPool.listActivities()` 在列表中检索。 列表中的每个对象表示针对弹性池（不是弹性池中的数据库）执行的活动。
+| [SqlServer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqlserver) | `azure.sqlServers().define()...create()` Fluent 链在 Azure 中创建的 SQL 数据库服务器。 提供方法来创建和使用弹性池与数据库。 
+| [SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqldatabase) | 表示 SQL 数据库的客户端对象。 通过 `sqlServer().define()...create()` 创建。 
+| [DatabaseEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.databaseeditions) | 在弹性池外部创建数据库或者将数据库移出弹性池时，用于设置数据库资源的常量静态字段  
+| [SqlElasticPool](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqlelasticpool) | 通过在 Azure 中创建 SqlServer 的 Fluent 链的 `withNewElasticPool()` 部分创建。 提供方法用于针对弹性池中运行的数据库以及弹性池本身设置资源限制。 
+| [ElasticPoolEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpooleditions) | 定义弹性池可用资源的常量字段的类。 请参阅 [SQL 数据库弹性池文档](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)了解有关层的详细信息。 
+| [ElasticPoolDatabaseActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpooldatabaseactivity) | 通过 `SqlElasticPool.listDatabaseActivities()` 检索。 此类型的每个对象表示针对弹性池中的数据库执行的活动。
+| [ElasticPoolActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpoolactivity) | 通过 `SqlElasticPool.listActivities()` 在列表中检索。 列表中的每个对象表示针对弹性池（不是弹性池中的数据库）执行的活动。
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -6,12 +6,12 @@ ms.assetid: 92736911-3df6-46e7-b751-25bb36bf89b9
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 9f66434c67cabd08304faecb56e51107a2aeb8ee
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 3c537d7d7030ea46bdbc7d6873819ea8e12f03b3
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812301"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002352"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>通过 Java 应用创建和管理 Azure 虚拟网络
 
@@ -173,9 +173,9 @@ azure.networks().deleteByResourceGroup(rgName,vnetName1);
 
 | 示例中使用的类 | 说明
 |-------|-------|
-| [网络](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | 从 `azure.networks().define()...create()` 创建的虚拟网络的本地对象表示形式。 使用 `update()...apply()` Fluent 链更新现有的虚拟网络。
-| [子网](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | 使用 `withSubnet()` 定义或更新网络时，在虚拟网络中创建子网。 通过 `Network.subnets().get()` 或 `Network.subnets().entrySet()` 获取子网的对象表示形式。 这些对象提供用于查询子网属性的方法。
-| [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network_security_group) | 使用 `azure.networkSecurityGroups().define()...create()` Fluent 链创建，然后通过在虚拟网络中更新或创建子网应用到子网。 
+| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.network) | 从 `azure.networks().define()...create()` 创建的虚拟网络的本地对象表示形式。 使用 `update()...apply()` Fluent 链更新现有的虚拟网络。
+| [子网](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.subnet) | 使用 `withSubnet()` 定义或更新网络时，在虚拟网络中创建子网。 通过 `Network.subnets().get()` 或 `Network.subnets().entrySet()` 获取子网的对象表示形式。 这些对象提供用于查询子网属性的方法。
+| [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.networksecuritygroup) | 使用 `azure.networkSecurityGroups().define()...create()` Fluent 链创建，然后通过在虚拟网络中更新或创建子网应用到子网。 
 
 ## <a name="next-steps"></a>后续步骤
 

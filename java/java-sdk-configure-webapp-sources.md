@@ -5,12 +5,12 @@ author: rloutlaw
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: 8ed90b7fff9c973481af1603e14fdb5858d5b9e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: e8cda5ca26b57e7c64d577fb5542295c930f5623
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812338"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002457"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>从 Java 应用程序配置 Azure 应用服务部署源
 
@@ -153,12 +153,12 @@ WebApp app4 = azure.webApps()
 
 | 示例中使用的类 | 说明
 |-------|-------|
-| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_app) | 从 `azure.webApps().define()....create()` Fluent 链创建。 创建应用服务 Web 应用和该应用所需的所有资源。 大多数方法会在对象中查询配置详细信息，但 `restart()` 等谓词方法会更改 Web 应用的状态。
-| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_container) | 包含静态公共字段的类，在定义运行 Java webcontainer 的 Web 应用时，这些字段用作 `withWebContainer()` 的参数。 为 Tomcat 和 Jetty 版本提供了相应的选项。
-| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._publishing_profile) | 使用 `getPublishingProfile()` 方法通过 WebApp 对象获取。 包含 FTP 和 Git 部署信息，其中包括部署用户名和密码（不同于 Azure 帐户或服务主体凭据）。
-| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_plan) | 由 `azure.appServices().appServicePlans().getByResourceGroup()` 返回。 提供了相应的方法用于检查计划中运行的 Web 应用的容量、层和数量。
-| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_pricing_tier) | 包含表示应用服务层的静态公共字段的类。 用于在创建应用期间通过 `withPricingTier()` 定义内联计划层，或者在通过 `azure.appServices().appServicePlans().define()` 定义计划时直接用于定义内联计划层
-| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._java_version) | 包含表示应用服务所支持 Java 版本的静态公共字段的类。 创建新的 Web 应用时，在 `define()...create()` 链接期间与 `withJavaVersion()` 结合使用。
+| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webapp) | 从 `azure.webApps().define()....create()` Fluent 链创建。 创建应用服务 Web 应用和该应用所需的所有资源。 大多数方法会在对象中查询配置详细信息，但 `restart()` 等谓词方法会更改 Web 应用的状态。
+| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webcontainer) | 包含静态公共字段的类，在定义运行 Java webcontainer 的 Web 应用时，这些字段用作 `withWebContainer()` 的参数。 为 Tomcat 和 Jetty 版本提供了相应的选项。
+| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.publishingprofile) | 使用 `getPublishingProfile()` 方法通过 WebApp 对象获取。 包含 FTP 和 Git 部署信息，其中包括部署用户名和密码（不同于 Azure 帐户或服务主体凭据）。
+| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.appserviceplan) | 由 `azure.appServices().appServicePlans().getByResourceGroup()` 返回。 提供了相应的方法用于检查计划中运行的 Web 应用的容量、层和数量。
+| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.PricingTier) | 包含表示应用服务层的静态公共字段的类。 用于在创建应用期间通过 `withPricingTier()` 定义内联计划层，或者在通过 `azure.appServices().appServicePlans().define()` 定义计划时直接用于定义内联计划层
+| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.javaversion) | 包含表示应用服务所支持 Java 版本的静态公共字段的类。 创建新的 Web 应用时，在 `define()...create()` 链接期间与 `withJavaVersion()` 结合使用。
 
 ## <a name="next-steps"></a>后续步骤
 

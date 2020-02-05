@@ -6,26 +6,26 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812048"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002281"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>如何使用适用于 Azure 服务总线的 Spring Cloud Azure Stream Binder
 
 [!INCLUDE [spring-boot-20-note.md](../includes/spring-boot-20-note.md)]
 
-Azure 提供了一个异步消息平台，即 [Azure 服务总线](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)（“服务总线”），该平台基于[高级消息队列协议 1.0](http://www.amqp.org/)（“AMQP 1.0”）标准。 服务总线可用于各种支持的 Azure 平台。
+Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)（“服务总线”），该平台基于[高级消息队列协议 1.0](http://www.amqp.org/)（“AMQP 1.0”）标准。 服务总线可用于各种受支持的 Azure 平台。
 
 本文介绍如何使用 Spring Cloud Stream Binder 通过服务总线 `queues` 和 `topics` 收发消息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 在本文中，需要满足以下先决条件：
 
-1. 如果还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)或注册获取[免费帐户](https://azure.microsoft.comfree/)。
+1. 如果还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)或注册获取[免费帐户](https://azure.microsoft.com/free/)。
 
 1. 支持的 Java 开发工具包 (JDK) 8 或更高版本。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 
@@ -37,7 +37,7 @@ Azure 提供了一个异步消息平台，即 [Azure 服务总线](https://docs.
     1. 是高级版（或更高版本）
     1. 具有一个有关队列和主题的读/写访问权限的访问策略
 
-1. 如果没有已配置的服务总线队列或服务总线主题，请使用 Azure 门户[创建服务总线队列](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal)或[创建服务总线主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)。 确保该命名空间满足上一步中指定的要求。 另外，请记下该命名空间中的连接字符串，因为本教程的测试应用程序需要用到它。
+1. 如果没有已配置的服务总线队列或服务总线主题，请使用 Azure 门户[创建服务总线队列](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal)或[创建服务总线主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)。 确保该命名空间满足上一步中指定的要求。 另外，请记下该命名空间中的连接字符串，因为本教程的测试应用需要用到它。
 
 1. 如果没有 Spring Boot 应用程序，请[使用 Spring Initializr 创建一个 **Maven** 项目](https://start.spring.io/)。 请记得选择“Maven 项目”  ，然后在“依赖项”  下方，添加“Web”  依赖项。
 
@@ -83,7 +83,7 @@ Azure 提供了一个异步消息平台，即 [Azure 服务总线](https://docs.
 
 ## <a name="configure-the-app-for-your-service-bus"></a>针对服务总线配置应用
 
-可以基于连接字符串或凭据文件配置应用。 本教程使用连接字符串。 有关使用凭据文件的详细信息，请参阅[适用于服务总线队列的 Cloud Azure Stream Binder 代码示例](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-queue-binder-sample#credential-file-based-usage
+可以基于连接字符串或凭据文件配置应用。 本教程使用连接字符串。 有关使用凭据文件的详细信息，请参阅[适用于服务总线队列的 Spring Cloud Azure Stream Binder 代码示例](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-queue-binder-sample#credential-file-based-usage
 )和[适用于服务总线主题的 Cloud Azure Stream Binder 代码示例](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-topic-binder-sample#credential-file-based-usage)。
 
 1. 在应用的“资源”目录中找到 application.properties 文件，例如   ：
@@ -121,7 +121,7 @@ Azure 提供了一个异步消息平台，即 [Azure 服务总线](https://docs.
 
     |                                        字段                                   |                                                                                   说明                                                                                    |
     |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    |               `spring.cloud.azure.servicebus.connection-string`                |                                        指定服务总线命名空间中从 Azure 门户获取的连接字符串。                                   |
+    |               `spring.cloud.azure.servicebus.connection-string`                |                                        指定从 Azure 门户内你的服务总线命名空间中获取的连接字符串。                                   |
     |               `spring.cloud.stream.bindings.input.destination`                 |                            指定在本教程中使用的服务总线队列或服务总线主题。                         |
     |                  `spring.cloud.stream.bindings.input.group`                    |                                            如果使用了服务总线主题，请指定主题订阅。                                |
     |               `spring.cloud.stream.bindings.output.destination`                |                               指定用于输入目标的相同值。                        |

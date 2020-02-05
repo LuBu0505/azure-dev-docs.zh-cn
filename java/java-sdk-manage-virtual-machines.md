@@ -6,12 +6,12 @@ ms.assetid: 88629aee-6279-433e-a08b-4f8e290446d0
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: a4ea556fa9fa43575d56d041e0d177ed834555cb
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c1b8145fd2e7085f524329f958c43797df6c6b1a
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812306"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002406"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机
 
@@ -152,12 +152,12 @@ azure.virtualMachines().deleteByResourceGroup(rgName,windowsVmName);
 
 | 示例中使用的类 | 说明
 |-------|-------|
-| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine) | 查询属性并管理虚拟机的状态。 在使用 `azure.virtualMachines().list()` 返回的，或者按名称或 ID 执行 `azure.virtualMachines().getByResourceGroup()` 后返回的列表表单中检索
-| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_size_types) | 包含映射到[虚拟机大小选项](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)的静态值的类，`withSize()` 方法使用它来定义分配给 VM 的资源。
-| [磁盘](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._disk) | 定义磁盘时，使用 `withData()` 创建一个用于存储数据的磁盘，或使用相应的 `withLinux` 或 `withWindows` 方法创建用于存储操作系统映像的磁盘。 在创建时（`using withNewDataDisk` 或 `withExistingDataDisk`）或者在 VirtualMachine 对象上通过 `update()..apply()` 进行创建后将磁盘添加到虚拟机。
-| [DiskSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._disk_sku_types) | 包含静态值的类，用于定义采用标准或[高级](https://docs.microsoft.com/azure/storage/storage-premium-storage)存储计划的磁盘。
-| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | 包含一组 Linux 虚拟机选项的类，在定义虚拟机时与 `withPopularLinuxImage()` 方法结合使用。
-| [KnownWindowsVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_windows_virtual_machine_image) | 包含一组 Windows 虚拟机映像选项的类，在定义虚拟机时与 `withPopularWindowsImage()` 方法结合使用。
+| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachine) | 查询属性并管理虚拟机的状态。 在使用 `azure.virtualMachines().list()` 返回的，或者按名称或 ID 执行 `azure.virtualMachines().getByResourceGroup()` 后返回的列表表单中检索
+| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | 包含映射到[虚拟机大小选项](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)的静态值的类，`withSize()` 方法使用它来定义分配给 VM 的资源。
+| [磁盘](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.disk) | 定义磁盘时，使用 `withData()` 创建一个用于存储数据的磁盘，或使用相应的 `withLinux` 或 `withWindows` 方法创建用于存储操作系统映像的磁盘。 在创建时（`using withNewDataDisk` 或 `withExistingDataDisk`）或者在 VirtualMachine 对象上通过 `update()..apply()` 进行创建后将磁盘添加到虚拟机。
+| [DiskSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.diskskutypes) | 包含静态值的类，用于定义采用标准或[高级](https://docs.microsoft.com/azure/storage/storage-premium-storage)存储计划的磁盘。
+| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | 包含一组 Linux 虚拟机选项的类，在定义虚拟机时与 `withPopularLinuxImage()` 方法结合使用。
+| [KnownWindowsVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownwindowsvirtualmachineimage) | 包含一组 Windows 虚拟机映像选项的类，在定义虚拟机时与 `withPopularWindowsImage()` 方法结合使用。
 
 ## <a name="next-steps"></a>后续步骤
 
