@@ -11,7 +11,7 @@
           items:
             - name: Azure 存储
               href: configure-spring-boot-starter-java-app-with-azure-storage.md
-            - name: Azure 密钥保管库
+            - name: Azure Key Vault
               href: configure-spring-boot-starter-java-app-with-azure-key-vault.md
             - name: Azure App Insights
               href: configure-spring-boot-java-applicationinsights.md
@@ -20,6 +20,8 @@
         - name: Spring Data
           expanded: true
           items:
+            - name: Azure Cosmos DB 开发人员指南
+              href: how-to-guides-spring-data-cosmosdb.md
             - name: Azure Cosmos DB Starter
               href: configure-spring-boot-starter-java-app-with-cosmos-db.md
             - name: Azure Cosmos DB 与 Linux 上的应用服务
@@ -88,7 +90,7 @@
           href: configure-spring-boot-starter-java-app-with-azure-storage-api.md
         - name: Spring Initializr
           href: 'https://start.spring.io/'
-    - name: 引用
+    - name: 参考
       items:
         - name: Spring Framework
           href: 'https://spring.io/'

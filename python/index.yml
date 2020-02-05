@@ -10,12 +10,12 @@ metadata:
   ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: b6c33142880eb289cfe1c87b54341341f98ef939
-  ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
+  ms.openlocfilehash: 39ea83a1e5795b6eec19ef960b188b156525329b
+  ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 11/04/2019
-  ms.locfileid: "73568171"
+  ms.lasthandoff: 02/04/2020
+  ms.locfileid: "77002176"
 landingContent:
 - title: Azure SDK for Python 入门
   linkLists:
@@ -72,7 +72,7 @@ landingContent:
     - text: 适用于 Visual Studio Code 的 Azure 扩展
       url: https://code.visualstudio.com/docs/azure/extensions
     - text: 安装 Azure CLI
-      url: /azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /cli/azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: 使用各种分发版，在 Windows 10 上本机运行 Linux 应用程序
       url: /windows/wsl/install-win10?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
 - title: 用于数据科学、AI 和机器学习的服务
@@ -98,7 +98,7 @@ landingContent:
   - linkListType: overview
     links:
     - text: 关于 Azure 上的存储解决方案
-      url: /storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: 可缩放的 NoSQL 与 Azure CosmosDB
       url: /azure/cosmos-db/introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: 使用 Azure 服务总线进行应用程序之间的消息传递
