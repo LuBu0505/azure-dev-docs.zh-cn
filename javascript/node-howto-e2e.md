@@ -4,12 +4,12 @@ description: 演示如何创建、使用 Docker 容器化 Node.js 应用并将�
 ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 98b154a78702fa5c5a0808170c8227ce7910459b
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467383"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002518"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
@@ -17,7 +17,7 @@ ms.locfileid: "74467383"
 
 本教程使用一个通过 [Scotch.io](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular) 创建并发布的简单待办事项应用。 这是一个单页 MEAN 应用，因此，它使用 MongoDB 作为数据库，使用 Node/Express 作为 REST API/Web 服务器，使用 Angular.js 1.x 作为前端 UI。 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要遵循本演示教程，需要安装以下软件：
 
@@ -48,7 +48,7 @@ ms.locfileid: "74467383"
 
     ![Visual Studio Code 资源管理器](./media/node-howto-e2e/visual-studio-code-explorer.png)
 
-## <a name="integrated-terminal"></a>集成式终端
+## <a name="integrated-terminal"></a>集成终端
 
 使用此 Node.js 项目时，必须先确保从 npm 安装项目的所有依赖项。  
 
@@ -354,7 +354,7 @@ FROM mhart
     ```
 
     > [!NOTE]
-    > 如果想要使用 Git 部署而非自定义容器，请参阅[在 Azure 中创建 Node.js Web 应用](/azure/app-service-web/app-service-web-get-started-nodejs#configure-to-use-nodejs)一文。
+    > 如果想要使用 Git 部署而非自定义容器，请参阅[在 Azure 中创建 Node.js Web 应用](/azure/app-service-web/app-service-web-get-started-nodejs)一文。
 
 1. 将 Web 应用设为默认 Web 实例：
 

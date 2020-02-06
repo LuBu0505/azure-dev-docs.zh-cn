@@ -4,12 +4,12 @@ description: 教程步骤 3，用于重新生成和重新部署容器映像的�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7f6c8f742029533fa54bad2c4492397a0fe17d70
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 88c5b608316f7dec601625fbf5962b9b888a4662
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466045"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002298"
 ---
 # <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>教程：在更改后将容器重新部署到 Azure 应用服务
 
@@ -19,7 +19,7 @@ ms.locfileid: "74466045"
 
 由于你不可避免地需要对应用进行更改，因此最终会重新生成并重新部署容器多次。 好在此过程很简单：
 
-1. 在本地更改并测试应用。 （如需此步骤以及随后两个步骤的说明，请参阅教程：[在 VS Code 中创建 Python 容器](https://code.visualstudio.com/docs/python/tutorial-create-container)。）
+1. 在本地更改并测试应用。 （如需此步骤以及随后两个步骤的说明，请参阅教程：[在 VS Code 中创建 Python 容器](https://code.visualstudio.com/docs/python/tutorial-create-containers)。）
 
 1. 重新生成 Docker 映像。 如果只更改应用代码，生成过程应该只需要数秒钟。
 

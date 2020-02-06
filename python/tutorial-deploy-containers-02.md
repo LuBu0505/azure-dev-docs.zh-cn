@@ -4,12 +4,12 @@ description: 教程步骤 2，将实际的 Docker 映像从容器注册表部署
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0039b2cc9e612d7e03398e772183fe6eb81313f2
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 446653a4de98954ae75caa38c9cb2ae04ec071c4
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467039"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002369"
 ---
 # <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>教程：将容器映像部署到 Azure 应用服务
 
@@ -37,7 +37,7 @@ ms.locfileid: "74467039"
 
 1. 创建应用服务需要数分钟，可以在 VS Code 的“输出”面板中查看进度。
 
-1. 完成后，还必须  将名为 `WEBSITES_PORT`（注意复数形式的“WEBSITES”）的设置添加到应用服务，以便指定供容器在其上侦听的端口。 （例如，如果使用[在 VS Code 中创建 Python 容器](https://code.visualstudio.com/docs/python/tutorial-create-container)教程中的映像，则用于 Flask 的端口为 5000，用于 Django 的端口为 8000）。 若要设置 `WEBSITES_PORT`，请切换到“Azure:  应用服务”资源管理器，展开新应用服务的节点（必要时进行刷新），然后右键单击“应用程序设置”  并选择“添加新设置”。  出现提示时，输入 `WEBSITES_PORT` 作为键，输入端口号作为值。
+1. 完成后，还必须  将名为 `WEBSITES_PORT`（注意复数形式的“WEBSITES”）的设置添加到应用服务，以便指定供容器在其上侦听的端口。 （例如，如果使用[在 VS Code 中创建 Python 容器](https://code.visualstudio.com/docs/python/tutorial-create-containers)教程中的映像，则用于 Flask 的端口为 5000，用于 Django 的端口为 8000）。 若要设置 `WEBSITES_PORT`，请切换到“Azure:  应用服务”资源管理器，展开新应用服务的节点（必要时进行刷新），然后右键单击“应用程序设置”  并选择“添加新设置”。  出现提示时，输入 `WEBSITES_PORT` 作为键，输入端口号作为值。
 
     ![将新设置添加到应用服务以指定端口](media/deploy-containers/add-new-setting-in-app-service-settings-explorer.png)
 
