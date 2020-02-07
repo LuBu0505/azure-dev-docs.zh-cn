@@ -3,18 +3,18 @@ title: 从 Visual Studio Code 创建 Azure Functions 应用程序
 description: 教程第 2 部分：创建 Azure Functions 应用
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 5b2e46cde8740020cc2ad7a1b50ac9b4687d17d3
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467126"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967236"
 ---
 # <a name="create-the-local-functions-app"></a>创建本地 Functions 应用
 
 [上一步：简介和先决条件](tutorial-vscode-serverless-node-01.md)
 
-在此步骤中，将创建一个本地 Azure Functions 应用程序，其中包含一个使用 HTTP 触发器的函数。 Azure Functions 应用可以包含多个具有不同触发器的 Functions。 HTTP 触发器专门处理传入的 HTTP 流量。
+在此步骤中，将创建一个本地 Azure Functions 应用程序，其中包含一个使用 [HTTP 触发器](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)的函数。 Azure Functions 应用可以包含多个具有[不同触发器](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)的函数。 HTTP 触发器专门处理传入的 HTTP 流量。
 
 1. 在终端中或命令提示符下，从适合项目的文件夹中运行 Visual Studio Code：
 
@@ -54,4 +54,4 @@ ms.locfileid: "74467126"
     ![创建函数应用的结果](media/functions-extension/create-function-app-results.png)
 
 > [!div class="nextstepaction"]
-> [我创建了函数应用](tutorial-vscode-serverless-node-03.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=create-app)
+> [我创建了 Functions 应用](tutorial-vscode-serverless-node-03.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=create-app)

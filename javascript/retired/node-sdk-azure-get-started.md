@@ -3,12 +3,12 @@ title: 用于 Node.js 的 Azure 模块入门
 description: 使用适用于 Node.js 的 Azure 模块开始进行身份验证和资源管理
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: 66aface16b4281c541f0f40a3f0f6cbc12be8f89
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: ecd256b28e666368d3b15a97a198aacc82a0f823
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872122"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002271"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>用于 Node.js 的 Azure 模块入门
 
@@ -60,7 +60,7 @@ export AZURE_PASS password
 export AZURE_TENANT XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-使用 [az account show](/cli/azure/account#show) 获取订阅的 ID
+使用 [az account show](/cli/azure/account#az-account-show) 获取订阅的 ID。
 
 ```azurecli-interactive
 az account show

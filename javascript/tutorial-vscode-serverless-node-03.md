@@ -3,12 +3,12 @@ title: 在 Visual Studio Code 中本地运行 Azure Functions 应用程序
 description: 教程第 3 部分，在本地运行应用进行测试。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 2a7cb5e5c433c90d74cd3b7771ce90529f617fcb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466571"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967233"
 ---
 # <a name="test-the-function-locally"></a>在本地测试函数
 
@@ -20,7 +20,7 @@ ms.locfileid: "74466571"
 
 1. 在 Visual Studio Code 中，按 **F5**（或使用“调试”   > “开始调试”  菜单命令）启动调试器并附加到 Azure Functions 主机。 （此命令自动使用 Azure Functions 创建的单个调试配置。）
 
-1. 函数核心工具的输出出现在 VS Code“终端”  面板中。 启动主机后，**Ctrl**+click 输出中显示的本地 URL 以打开浏览器并运行函数：
+1. 函数核心工具的输出出现在 VS Code“终端”  面板中。 启动主机后，在按住 **Alt** 键的同时单击输出中显示的本地 URL 以打开浏览器并运行函数：
 
     ![本地调试时 VS Code“终端”面板中显示的输出](media/functions-extension/local-test-output.png)
 
@@ -33,4 +33,4 @@ ms.locfileid: "74466571"
     ![在断点处停止的 VS Code](media/functions-extension/debugging-breakpoint.png)
 
 > [!div class="nextstepaction"]
-> [我在本地运行了函数应用](tutorial-vscode-serverless-node-04.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)
+> [我在本地运行了 Functions 应用](tutorial-vscode-serverless-node-04.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)
