@@ -3,22 +3,22 @@ title: 创建 Spring Boot Initializer 应用 - Azure Redis 缓存
 description: 将使用 Spring Initializer 创建的 Spring Boot 应用程序配置为使用云中的 Redis 和 Azure Redis 缓存。
 services: redis-cache
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 02/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
-ms.openlocfilehash: e70b5f9b8427bebd9c5ca3761a664464ad3b0909
-ms.sourcegitcommit: 670874dfe49e6ffa5bee88555851878f0da93042
+ms.openlocfilehash: 8287cf923acb5770a5ba5eb88fe60896e6cd3a4d
+ms.sourcegitcommit: 24795630044c10a07b5dedc0f51c280f090c097e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75034034"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075283"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
 本文提供以下分步指导：使用 Azure 门户在云中创建 Redis 缓存，使用 **[Spring Initializr]** 创建自定义应用程序，然后创建使用 Redis 缓存存储并检索数据的 Java Web 应用程序。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -30,18 +30,17 @@ ms.locfileid: "75034034"
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定要使用 Java 生成的 Maven 项目，输入应用程序的“组”名称和“Aritifact”名称，然后单击链接切换到 Spring Initializr 完整版      。
+1. 指定使用 Java 生成 Maven 项目，并输入应用程序的“组”名称和“项目”名称     。
+
+1. 添加“Spring Web”部分的依赖项，选中“Web”框，然后向下滚动到“NoSQL”部分，选中“Spring Data Reactive Redis”框     。 
+1. 滚动到页面底部，单击“生成项目”对应的按钮。 
 
    ![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr 会使用“组”和“Artifact”名称创建包名称，例如：com.contoso.myazuredemo    。
+   > Spring Initializr 会使用“组”和“项目”名称来创建包名称，例如：com.contoso.myazuredemo    。
    >
-
-1. 向下滚动到“Web”部分，选中“Web”框，然后向下滚动到“NoSQL”，选中“Redis”框，再滚动到页面底部，单击“生成项目”按钮      。
-
-   ![Spring Initializr 的完整选项][SI02]
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -54,8 +53,6 @@ ms.locfileid: "75034034"
 ## <a name="create-a-redis-cache-on-azure"></a>在 Azure 上创建 Redis 缓存
 
 1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“+ 新建”  。
-
-   ![Azure 门户][AZ01]
 
 1. 单击“数据库”，然后单击“Redis 缓存”   。
 

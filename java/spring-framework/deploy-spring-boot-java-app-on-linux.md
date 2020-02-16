@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: a98575021be229ed067ce424cd101721c98f9ea4
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: b6c8e138c9d738b56d237180e618268cb71284e3
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755695"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144073"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序
 
@@ -223,7 +223,7 @@ ms.locfileid: "75755695"
 >
 > 4. 单击左侧导航窗格中的“配置”  。
 >
-> 5. 在“应用程序设置”  部分中，添加一个名为 **PORT** 的新设置，并为该值输入自定义端口号。
+> 5. 在“应用程序设置”  部分，添加一个名为 **WEBSITES_PORT** 的新设置，并为该值输入自定义端口号。
 >
 > 6. 单击“确定”。  然后单击“保存”  。
 >

@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 部署 Azure Functions 应用程序
 description: 教程第 4 部分：将 Functions 应用部署到云。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 690477392fffda4cd94d7271b061c195ccceb42b
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: e287f24429fc5939bcd64ba753b36eb0f387d8f3
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467101"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144072"
 ---
 # <a name="deploy-the-functions-app"></a>部署 Functions 应用
 
@@ -23,6 +23,10 @@ ms.locfileid: "74467101"
 1. 在提示“选择 Azure 中的函数应用”  时，然后选择“在 Azure 中创建新的函数应用”  。
 
 1. 出现下一提示时，为函数应用输入一个全局唯一的名称，然后按 **Enter**。 函数应用名称的有效字符包括“a-z”、“0-9”和“-”。
+
+1. 选择 Node.js 版本/运行时 
+
+    ![显示 Node.js 版本/运行时的 VS Code 输出面板](media/functions-extension/nodejs-runtime-version.png)
 
 1. 出现下一提示时，选择你附近的 Azure [区域](https://azure.microsoft.com/regions/)。
 
@@ -44,4 +48,4 @@ ms.locfileid: "74467101"
     > 在部署时，将部署整个 Functions 应用程序，因此对所有单个功能的更改将立即部署。
 
 > [!div class="nextstepaction"]
-> [我部署了函数应用](tutorial-vscode-serverless-node-05.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=deploy-app)
+> [我部署了函数应用](tutorial-vscode-serverless-node-05.md) [我遇到一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=deploy-app)

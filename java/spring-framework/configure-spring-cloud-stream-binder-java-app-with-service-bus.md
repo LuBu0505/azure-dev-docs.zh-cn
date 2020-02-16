@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: e8f9dd93da56b17efca059e00cf1483666f4cf33
+ms.sourcegitcommit: 24795630044c10a07b5dedc0f51c280f090c097e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002281"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075261"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>如何使用适用于 Azure 服务总线的 Spring Cloud Azure Stream Binder
 
@@ -34,7 +34,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](https://do
 1. 如果已有一个已配置的服务总线队列或服务总线主题，请确保服务总线命名空间满足以下要求：
 
     1. 允许来自所有网络的访问
-    1. 是高级版（或更高版本）
+    1. 为 Standard（或更高版本）
     1. 具有一个有关队列和主题的读/写访问权限的访问策略
 
 1. 如果没有已配置的服务总线队列或服务总线主题，请使用 Azure 门户[创建服务总线队列](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal)或[创建服务总线主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)。 确保该命名空间满足上一步中指定的要求。 另外，请记下该命名空间中的连接字符串，因为本教程的测试应用需要用到它。
