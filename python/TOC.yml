@@ -64,55 +64,55 @@
   items:
     - name: 使用 VS Code 部署到应用服务
       items:
-        - name: 简介和先决条件
+        - name: 1 简介和先决条件
           href: tutorial-deploy-app-service-on-linux-01.md
-        - name: 准备应用程序
+        - name: 2 准备应用程序
           href: tutorial-deploy-app-service-on-linux-02.md
-        - name: 创建应用服务
+        - name: 3 创建应用服务
           href: tutorial-deploy-app-service-on-linux-03.md
-        - name: 配置启动文件
+        - name: 4 配置启动文件
           href: tutorial-deploy-app-service-on-linux-04.md
-        - name: 部署应用
+        - name: 5 部署应用
           href: tutorial-deploy-app-service-on-linux-05.md
-        - name: 流式传输日志
+        - name: 6 流式传输日志
           href: tutorial-deploy-app-service-on-linux-06.md
-        - name: 清理资源
+        - name: 7 清理资源
           href: tutorial-deploy-app-service-on-linux-07.md
     - name: 使用 VS Code 部署容器
       items:
-        - name: 简介和先决条件
+        - name: 1 简介和先决条件
           href: tutorial-deploy-containers-01.md
-        - name: 部署容器映像
+        - name: 2 部署容器映像
           href: tutorial-deploy-containers-02.md
-        - name: 进行更改并重新部署
+        - name: 3 进行更改并重新部署
           href: tutorial-deploy-containers-03.md
-        - name: 流式传输日志
+        - name: 4 流式传输日志
           href: tutorial-deploy-containers-04.md
-        - name: 清理资源
+        - name: 5 清理资源
           href: tutorial-deploy-containers-05.md
     - name: 使用 VS Code 部署 Azure Functions
       items:
-        - name: 简介和先决条件
+        - name: 1 简介和先决条件
           href: tutorial-vs-code-serverless-python-01.md
-        - name: 创建 Python 函数
+        - name: 2 创建 Python 函数
           href: tutorial-vs-code-serverless-python-02.md
-        - name: 检查代码文件
+        - name: 3 检查代码文件
           href: tutorial-vs-code-serverless-python-03.md
-        - name: 本地调试
+        - name: 4 本地调试
           href: tutorial-vs-code-serverless-python-04.md
-        - name: “部署到 Azure”
+        - name: 5 部署到 Azure
           href: tutorial-vs-code-serverless-python-05.md
-        - name: 添加第二个函数
+        - name: 6 添加第二个函数
           href: tutorial-vs-code-serverless-python-06.md
-        - name: 添加存储绑定
+        - name: 7 添加存储绑定
           href: tutorial-vs-code-serverless-python-07.md
-        - name: 清理资源
+        - name: 8 清理资源
           href: tutorial-vs-code-serverless-python-08.md
-- name: 操作指南
+- name: 操作方法指南
   items:
     - name: 安装 SDK
       href: python-sdk-azure-install.md
-    - name: Authentication
+    - name: 身份验证
       href: python-sdk-azure-authenticate.md
     - name: 操作配置
       href: python-sdk-azure-operation-config.md
@@ -148,5 +148,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: 所有示例
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: 引用
+- name: 参考
   href: /python/api/?view=azure-python
