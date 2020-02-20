@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 部署 Azure Functions 应用程序
 description: 教程第 4 部分：将 Functions 应用部署到云。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: e287f24429fc5939bcd64ba753b36eb0f387d8f3
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.openlocfilehash: 8cb80b25e224d6f4552ec165779cda35f990ad6a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144072"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422536"
 ---
 # <a name="deploy-the-functions-app"></a>部署 Functions 应用
 
@@ -24,7 +24,7 @@ ms.locfileid: "77144072"
 
 1. 出现下一提示时，为函数应用输入一个全局唯一的名称，然后按 **Enter**。 函数应用名称的有效字符包括“a-z”、“0-9”和“-”。
 
-1. 选择 Node.js 版本/运行时 
+1. 选择 Node.js 版本/运行时
 
     ![显示 Node.js 版本/运行时的 VS Code 输出面板](media/functions-extension/nodejs-runtime-version.png)
 

@@ -4,12 +4,12 @@ description: 使用 Azure 管理 SDK 库通过 Azure 服务对 Python 应用进�
 ms.date: 01/16/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0c1dc8395710eec86f2bcd2b7e8334b987f15917
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.openlocfilehash: 30979223a5f5f055ee51a82a4cb97f8ae4cf5a38
+ms.sourcegitcommit: b41b4c48a57de223be3424cb9d9d08c1a4001575
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144040"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478022"
 ---
 # <a name="authenticate-by-using-the-azure-management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
 
@@ -45,7 +45,7 @@ ms.locfileid: "77144040"
     ```
 
     > [!TIP]
-    > 可以先使用 [az login](/cli/azure/group#az-login) 命令登录到 Azure，然后使用 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令，以便使用已准备到位的订阅 ID 检索凭据文件：
+    > 可以先使用 [az login](/cli/azure/reference-index#az-login) 命令登录到 Azure，然后使用 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令，以便使用已准备到位的订阅 ID 检索凭据文件：
     >
     > ```azurecli
     > az login
