@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 5748f3e51132ff003e41d61f9c10dff61b95e364
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: e968f6a86cc8616b0ae79e5d55756acea76040a6
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022103"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422549"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>如何将 Spring Data JPA 用于 Azure PostgreSQL
 
@@ -24,7 +24,7 @@ ms.locfileid: "76022103"
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
-* 用来测试功能的 [Curl](https://curl.haxx.se/) 或类似的 HTTP 实用工具。 或用来测试功能的类似 HTTP 实用工具。
+* 用来测试功能的 [Curl](https://curl.haxx.se/) 或类似的 HTTP 实用工具。
 * [psql](https://www.postgresql.org/docs/current/app-psql.html) 命令行实用工具。
 * [Git](https://git-scm.com/downloads) 客户端。
 
