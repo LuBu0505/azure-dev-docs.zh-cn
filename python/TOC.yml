@@ -4,62 +4,92 @@
   items:
     - name: 关于 Python SDK
       href: python-sdk-azure-overview.md
+    - name: 开发人员工具
+      href: python-azure-tools.md
 - name: 快速入门
   items:
     - name: Python SDK
       href: python-sdk-azure-get-started.yml
-    - name: 开发人员工具
-      href: python-azure-tools.md
     - name: 应用托管
       items:
-        - name: 应用服务
+        - name: 部署无服务器函数 (VS Code)
+          href: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 部署无服务器函数 (CLI)
+          href: /azure/azure-functions/functions-create-first-function-python?pivots=programming-language-python&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 部署到应用服务
           href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Kubernetes
+        - name: 部署 Kubernetes 群集
           href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Linux VM
-          href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: 容器实例
+        - name: 部署 Azure 容器实例
           href: /azure/container-instances/container-instances-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Batch
+        - name: 运行 Azure Batch 作业
           href: /azure/batch/quick-run-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 创建 Linux VM
+          href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - name: 数据解决方案
       items:
-        - name: Blob 存储
-          href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: 表存储
-          href: /azure/cosmos-db/create-table-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Cosmos DB
-          href: /azure/cosmos-db/sql-api-python-application?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Redis 缓存
-          href: /azure/redis-cache/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: SQL 数据库
-          href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: PostgreSQL
-          href: /azure/app-service/containers/tutorial-docker-python-postgresql-app?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: MySQL
+        - name: 将 PostgreSQL 与 Django 配合使用
+          href: /azure/app-service/containers/tutorial-python-postgresql-app?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用 MySQL 数据库
           href: /azure/mysql/connect-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: 数据工厂
+        - name: 使用 SQL 数据库
+          href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 管理 Blob 存储
+          href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用表存储
+          href: /azure/cosmos-db/create-table-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用 Azure Cosmos DB SQL API
+          href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用 Azure Cache for Redis
+          href: /azure/azure-cache-for-redis/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 创建 Azure 数据工厂
           href: /azure/data-factory/quickstart-create-data-factory-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-    - name: AI 和机器学习
+    - name: 机器学习
       items:
-        - name: 机器学习服务
-          href: /azure/machine-learning/desktop-workbench/tutorial-classifying-iris-part-1?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Batch AI
-          href: /azure/batch-ai/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 创建 ML 试验
+          href: /azure/machine-learning/tutorial-1st-experiment-sdk-setup?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 训练分类模型
+          href: /azure/machine-learning/tutorial-train-models-with-aml?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - name: Azure 认知服务
+      items:
+        - name: 适用于 Python 的认知服务 SDK
+          href: /python/api/overview/azure/cognitive-services?view=azure-python
         - name: 计算机视觉
           href: /azure/cognitive-services/Computer-vision/Quickstarts/python-analyze?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 自定义视觉
+          href: /azure/cognitive-services/custom-vision-service/python-tutorial?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 面部识别
+          href: /azure/cognitive-services/face/quickstarts/python-sdk?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 语言理解
+          href: /azure/cognitive-services/luis/sdk-authoring?pivots=programming-language-python&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
         - name: 文本分析
-          href: /azure/cognitive-services/Text-Analytics/quickstarts/python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Azure Notebook
-          href: 'https://notebooks.azure.com/liwong/libraries/iris1234/html/Data+Science+Quickstart.ipynb'
+          href: '/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?pivots=programming-language-python#sentiment-analysis&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json'
+        - name: 自动建议
+          href: /azure/cognitive-services/bing-autosuggest/quickstarts/python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 内容审查器
+          href: /azure/cognitive-services/content-moderator/python-sdk-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 语音服务中心页面
+          href: /azure/cognitive-services/speech-service/index
+        - name: 搜索中心页面
+          href: /azure/cognitive-services/bing-web-search/index
+    - name: 消息传递
+      items:
+        - name: 使用 Azure 队列存储
+          href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用 Azure 服务总线队列
+          href: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用事件中心引入实时数据
+          href: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用事件网格路由自定义事件
+          href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - name: 安全性和集成
       items:
-        - name: 服务总线
-          href: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: 事件网格
-          href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: 队列存储
-          href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用 Active Directory 进行身份验证
+          href: python-sdk-azure-authenticate.md
+        - name: 使用 Key Vault 存储机密
+          href: /azure/key-vault/quick-create-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 使用 Active Directory 登录到 Web 应用
+          href: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
 - name: 教程
   items:
     - name: 使用 VS Code 部署到应用服务
