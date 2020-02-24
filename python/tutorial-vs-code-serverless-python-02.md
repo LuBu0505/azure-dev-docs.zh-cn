@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 VS Code 为 Azure Functions 创建 Python 函数
+title: 步骤 2：使用 VS Code 为 Azure Functions 创建 Python 函数
 description: 教程步骤 2，演示如何使用用于 VS Code 的 Azure Functions 扩展。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 49ab6b150f14268b6d52ac48524f66e6e520e547
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 3d33213d00c2b20d3a712c5cf9ca6888d25ebb8a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992515"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422159"
 ---
-# <a name="tutorial-create-a-python-function-for-azure-functions"></a>教程：为 Azure Functions 创建 Python 函数
+# <a name="2-create-a-python-function-for-azure-functions"></a>2:为 Azure Functions 创建 Python 函数
 
 [上一步：先决条件](tutorial-vs-code-serverless-python-01.md)
 
@@ -50,6 +50,6 @@ ms.locfileid: "74992515"
 > ![使用 Azure Functions 资源管理器中的“新建函数”创建函数](media/tutorial-vs-code-serverless-python/create-new-functions-in-azure-functions-explorer.png)
 
 > [!div class="nextstepaction"]
-> [我创建了函数](tutorial-vs-code-serverless-python-03.md)
+> [我创建了函数 - 转到步骤 3 >>>](tutorial-vs-code-serverless-python-03.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=02-create-function)

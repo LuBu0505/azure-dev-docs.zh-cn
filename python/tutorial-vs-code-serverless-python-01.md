@@ -4,12 +4,12 @@ description: 教程步骤 1，简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a380a447150f29653a1f94a3fe1f6464dd495a81
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: 3056ccaa6d0cc8e5f2e15c6b7511172f59644936
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75190994"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422188"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -67,6 +67,6 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 `func` 命令通过安装在 node.js 全局文件夹中的 *func* 文件发挥作用。 若要查看此文件夹的位置，请运行 `npm -l`，并检查输出末尾的位置。
 
 > [!div class="nextstepaction"]
-> [我已登录到 Azure](tutorial-vs-code-serverless-python-02.md)
+> [我已登录到 Azure - 转到步骤 2 >>>](tutorial-vs-code-serverless-python-02.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)

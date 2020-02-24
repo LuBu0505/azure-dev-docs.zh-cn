@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 VS Code 通过 Python 部署 Azure Functions
+title: 步骤 5：使用 VS Code 通过 Python 部署 Azure Functions
 description: 教程步骤 5，将 Python 函数代码部署到 Azure，学习如何在本地项目和 Azure 之间流式传输日志并同步设置。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 07af40c402104f07844c2cbe0d84c38c86f2fca2
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992505"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422202"
 ---
-# <a name="tutorial-deploy-azure-functions-in-python"></a>教程：在 Python 中部署 Azure Functions
+# <a name="5-deploy-azure-functions-in-python"></a>5：在 Python 中部署 Azure Functions
 
 [上一步：本地调试](tutorial-vs-code-serverless-python-04.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74992505"
 
     “Azure:  Functions”资源管理器也显示进度：
 
-    ![“Azure:Functions”资源管理器中的部署进度指示器](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
+    ![“Azure:Functions”资源管理器中的“新建函数”命令](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
 
 1. 部署完成后，Azure Functions 扩展会显示一条消息，其中包含用于三项其他操作的按钮：
 
@@ -41,7 +41,7 @@ ms.locfileid: "74992505"
 
     对于“流式传输日志”和“上传设置”，请参阅后续部分。   对于“查看输出”，请参阅后面的步骤 5。 
 
-1. 部署后，“输出”  窗口还会显示 Azure 上的公共终结点：
+1. 部署后，“输出”  窗口还会显示 Azure 上的公共终结点（特定终结点的 URL 将与为函数应用指定的名称匹配）：
 
     ```output
     HTTP Trigger Urls:
@@ -70,6 +70,6 @@ func azure functionapp logstream <app_name> --browser
 若要通过门户或 **Azure 资源管理器**应用对 *local.settings.json* 文件所做的更改，请右键单击“应用程序设置”节点，然后选择“下载远程设置”命令。   还可以使用命令面板来选择“Azure Functions:  下载远程设置”命令。
 
 > [!div class="nextstepaction"]
-> [我部署了函数](tutorial-vs-code-serverless-python-06.md)
+> [我部署了函数 - 转到步骤 6 >>>](tutorial-vs-code-serverless-python-06.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)

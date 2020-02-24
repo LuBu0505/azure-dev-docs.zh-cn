@@ -1,17 +1,17 @@
 ---
-title: 教程：在 VS Code 中检查用于 Azure Functions 的 Python 代码文件
+title: 步骤 3：在 VS Code 中检查用于 Azure Functions 的 Python 代码文件
 description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代码。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 253bc4384f896c9114f2f1113cdf0ee2f290819d
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992504"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422217"
 ---
-# <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>教程：在 Visual Studio Code 中检查 Python 代码文件
+# <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3：在 Visual Studio Code 中检查 Python 代码文件
 
 [上一步：创建函数](tutorial-vs-code-serverless-python-02.md)
 
@@ -91,6 +91,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 - 如果找到一个名称，代码会返回追加了该名称的字符串“Hello”，否则会返回错误消息。
 
 > [!div class="nextstepaction"]
-> [我检查了代码文件](tutorial-vs-code-serverless-python-04.md)
+> [我检查了代码文件 - 转到步骤 4 >>>](tutorial-vs-code-serverless-python-04.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=03-examine-code-files)

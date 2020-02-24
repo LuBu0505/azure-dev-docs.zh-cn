@@ -1,17 +1,17 @@
 ---
-title: 教程：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
+title: 步骤 7：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 description: 教程步骤 7，清理 Azure 资源
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8145b33ae52427d55c9b3de9fcf6fb20467b7ba9
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: 001e5d58311267221c5fafb3de89aff3859f4197
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125260"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422434"
 ---
-# <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
+# <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7:在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 
 [上一步：流式传输日志](tutorial-deploy-app-service-on-linux-06.md)
 
@@ -39,6 +39,6 @@ ms.locfileid: "76125260"
 - [Azure 资源管理器 (ARM) 工具](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [我完成了](https://docs.microsoft.com/python/azure/?view=azure-python) 
+> [我完成了！](https://docs.microsoft.com/python/azure/?view=azure-python) 
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=07-clean-up-resources)

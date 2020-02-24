@@ -1,17 +1,17 @@
 ---
-title: 教程：准备从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务的应用
+title: 步骤 2：准备从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务的应用
 description: 教程步骤 2，设置应用程序
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d77da775a112185f7ccb81805272c5c70a2aecb3
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 78a8bc92e05d0e13874345ab86907cfa4c29764b
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825771"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422470"
 ---
-# <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>教程：对应用进行部署到 Azure 应用服务的准备
+# <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:对应用进行部署到 Azure 应用服务的准备
 
 [上一步：先决条件](tutorial-deploy-app-service-on-linux-01.md)
 
@@ -75,6 +75,6 @@ ms.locfileid: "76825771"
 不管什么情况，最佳选择是使用单独的数据库，该数据库的部署和初始化独立于应用代码。
 
 > [!div class="nextstepaction"]
-> [我的应用已准备就绪](tutorial-deploy-app-service-on-linux-03.md)
+> [我的应用已准备就绪 - 转到步骤 3 >>>](tutorial-deploy-app-service-on-linux-03.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=02-prepare-app)

@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 VS Code 将 Python Web 应用部署到 Linux 上的 Azure 应用服务
+title: 步骤 5：使用 VS Code 将 Python Web 应用部署到 Linux 上的 Azure 应用服务
 description: 教程步骤 5，部署 Web 应用代码
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 02d906611ac5f2a56ba85202d89c7c39058b3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 3f17fe3190857d1cc4faca84c9319e1c514cea4c
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466091"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422448"
 ---
-# <a name="tutorial-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>教程：将 Python Web 应用部署到 Linux 上的 Azure 应用服务
+# <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5：将 Python Web 应用部署到 Linux 上的 Azure 应用服务
 
 [上一步：配置自定义启动文件](tutorial-deploy-app-service-on-linux-04.md)
 
@@ -45,6 +45,6 @@ ms.locfileid: "74466091"
     *antenv* 文件夹是应用服务创建包含依赖项的虚拟环境的位置。 如果展开此节点，则可验证在 *requirements.txt* 中命名的包是否安装在 *antenv/lib/python3.7/site-packages* 中。
 
 > [!div class="nextstepaction"]
-> [我部署了我的应用](tutorial-deploy-app-service-on-linux-06.md)
+> [我部署了我的应用 - 转到步骤 6 >>>](tutorial-deploy-app-service-on-linux-06.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=05-deploy-app)

@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825791"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440858"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -48,7 +48,7 @@ Web 应用程序会打包成带 *.war* 扩展的存档（WAR 文件）。
 
 ### <a name="java-ee-applications"></a>Java EE 应用程序
 
-Java EE 应用程序（也称为 J2EE 应用程序，最新的称为 JakartaEE 应用程序）可能包含 Web 应用程序的部分或全部元素，或不包含其中的任何元素。 它们还可能包含并使用 [Java EE 规范](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)定义的多个其他组件。
+Java EE 应用程序（也称为 J2EE 应用程序，最新的称为 Jakarta EE 应用程序）可能包含 Web 应用程序的部分或全部元素，或不包含其中的任何元素。 它们还可能包含并使用 [Java EE 规范](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)定义的多个其他组件。
 
 Java EE 应用程序可打包为带 *.ear* 扩展的存档（EAR 文件），或带 *.war* 扩展的存档（WAR 文件）。
 

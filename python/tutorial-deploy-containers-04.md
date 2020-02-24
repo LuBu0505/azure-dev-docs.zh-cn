@@ -1,17 +1,17 @@
 ---
-title: 教程：将日志从用于容器的 Azure 应用服务流式传递到 Visual Studio Code 中
+title: 步骤 4：将日志从用于容器的 Azure 应用服务流式传递到 Visual Studio Code 中
 description: 教程第 4 部分，查看 Azure 应用服务中的日志以监视其行为。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9b54e53763b729f5042cfb0d8df438650fd362f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4f448945c0e1d1eda7870eb633d644535da7be0e
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466990"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422227"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>教程：从用于容器的 Azure 应用服务流式传输日志
+# <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4：从用于容器的 Azure 应用服务流式传输日志
 
 [上一步：进行更改并重新部署](tutorial-deploy-containers-03.md)
 
@@ -39,6 +39,6 @@ ms.locfileid: "74466990"
 1. 在应用内导航，查看各种 HTTP 请求的其他输出。
 
 > [!div class="nextstepaction"]
-> [我看到了日志](tutorial-deploy-containers-05.md)
+> [我看到了日志 - 转到步骤 5 >>>](tutorial-deploy-containers-05.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=04-stream-logs)

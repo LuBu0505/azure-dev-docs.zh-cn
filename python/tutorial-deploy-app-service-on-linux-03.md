@@ -1,17 +1,17 @@
 ---
-title: 教程：从 Visual Studio Code 创建应用服务
+title: 步骤 3：从 Visual Studio Code 创建应用服务
 description: 教程步骤 3，从 VS Code 扩展创建应用服务。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b64adc1604698de74f4f318b805dd8c289c8fff8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: dea4ace359c8d072af8ab9ed33451bc8077249b7
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466221"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422463"
 ---
-# <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>教程：从 Visual Studio Code 创建应用服务
+# <a name="3-create-the-app-service-from-visual-studio-code"></a>3：从 Visual Studio Code 创建应用服务
 
 [上一步：准备应用](tutorial-deploy-app-service-on-linux-02.md)
 
@@ -53,6 +53,6 @@ ms.locfileid: "74466221"
 1. 如果在 Azure 门户中直接创建设置，则可将设置保存到定义文件中，方法是：右键单击“应用程序设置”节点，然后选择“下载远程设置”。   此过程确保你在存储库中有这些设置，而不是仅在门户中有。
 
 > [!div class="nextstepaction"]
-> [我创建了应用服务](tutorial-deploy-app-service-on-linux-04.md)
+> [我创建了应用服务 - 转到步骤 4 >>>](tutorial-deploy-app-service-on-linux-04.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=03-create-app-service)

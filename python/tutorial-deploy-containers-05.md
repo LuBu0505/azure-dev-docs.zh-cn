@@ -1,17 +1,17 @@
 ---
-title: 教程：清理 Azure 资源
+title: 步骤 5：清理 Azure 资源
 description: 教程步骤 5，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: bbafb323c49b9dd6879bf69924d8e8bcf62093a3
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: df785e68de26fe4414430289800fdabfa8757eef
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125232"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422234"
 ---
-# <a name="tutorial-clean-up-azure-resources"></a>教程：清理 Azure 资源
+# <a name="5-clean-up-azure-resources"></a>5：清理 Azure 资源
 
 [上一步：流式传输日志](tutorial-deploy-containers-04.md)
 
@@ -37,6 +37,6 @@ ms.locfileid: "76125232"
 - [Azure 资源管理器工具](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [我完成了](https://docs.microsoft.com/python/azure/?view=azure-python)
+> [我完成了！](https://docs.microsoft.com/python/azure/?view=azure-python)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=07-clean-up-resources)

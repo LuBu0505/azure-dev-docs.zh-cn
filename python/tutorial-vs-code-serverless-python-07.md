@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 VS Code 通过 Python 添加 Azure Functions 的存储绑定
+title: 步骤 7：使用 VS Code 通过 Python 添加 Azure Functions 的存储绑定
 description: 教程步骤 7，通过在 Python 中添加绑定将消息写入 Azure 存储。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 34ee80b2fac2f66e37e67fd45ca366b97d3f52dd
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 2203104d53387254284e75e322367f2e7142bfad
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002075"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422177"
 ---
-# <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>教程：在 Python 中添加 Azure Functions 的存储绑定
+# <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:在 Python 中添加 Azure Functions 的存储绑定
 
 [上一步：部署另一个函数](tutorial-vs-code-serverless-python-06.md)
 
@@ -97,6 +97,6 @@ ms.locfileid: "77002075"
 1. 若要在云中进行测试，请使用  **Azure:Functions** 资源管理器中的“部署到函数应用”命令重新部署代码。 当系统提示时，请选择以前创建的函数应用。 部署完成（需要数分钟！）后，“输出”窗口会再次显示可以用来重复你的测试的公共终结点。 
 
 > [!div class="nextstepaction"]
-> [我添加了存储绑定](tutorial-vs-code-serverless-python-08.md)
+> [我添加了存储绑定 - 转到步骤 8 >>>](tutorial-vs-code-serverless-python-08.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)

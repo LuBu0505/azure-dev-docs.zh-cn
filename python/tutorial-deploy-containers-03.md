@@ -1,17 +1,17 @@
 ---
-title: 教程：在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应用服务
+title: 步骤 3：在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应用服务
 description: 教程步骤 3，用于重新生成和重新部署容器映像的简单步骤。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 88c5b608316f7dec601625fbf5962b9b888a4662
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: f0e6eb808e25f3bb48eb2c849310747945e0d7f9
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002298"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422397"
 ---
-# <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>教程：在更改后将容器重新部署到 Azure 应用服务
+# <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2:在更改后将容器重新部署到 Azure 应用服务
 
 [上一步：将映像部署到 Azure](tutorial-deploy-containers-02.md)
 
@@ -30,6 +30,6 @@ ms.locfileid: "77002298"
 1. 大约 15-20 秒后，再次访问应用服务 URL，查看更新。
 
 > [!div class="nextstepaction"]
-> [我进行了更改并已重新部署](tutorial-deploy-containers-04.md)
+> [我进行了更改并已重新部署 - 转到步骤 4 >>>](tutorial-deploy-containers-04.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=03-make-changes-redeploy)

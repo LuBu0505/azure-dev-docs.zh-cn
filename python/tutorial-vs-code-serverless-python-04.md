@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 VS Code 在本地调试 Azure Functions Python 代码
+title: 步骤 4：使用 VS Code 在本地调试 Azure Functions Python 代码
 description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Code 调试程序。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ffd5d433166c44edd8c021fd29cb7e43395df7ff
-ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
+ms.openlocfilehash: ddb6cd0b1c1cac308e7e7e8da5b658cda277586a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946688"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422145"
 ---
-# <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>教程：在本地调试 Azure Functions Python 代码
+# <a name="4-debug-the-azure-functions-python-code-locally"></a>4：在本地调试 Azure Functions Python 代码
 
 [上一步：检查代码文件](tutorial-vs-code-serverless-python-03.md)
 
@@ -59,6 +59,6 @@ ms.locfileid: "75946688"
 1. 如果已在本地对函数进行详细的测试并对测试结果满意，请停止调试程序（使用“调试”   >   “停止调试”菜单命令，或者使用调试工具栏上的“断开连接”命令  ）。
 
 > [!div class="nextstepaction"]
-> [我在本地运行了调试程序](tutorial-vs-code-serverless-python-05.md)
+> [我在本地运行了调试程序 - 转到步骤 5 >>>](tutorial-vs-code-serverless-python-05.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=04-test-debug)

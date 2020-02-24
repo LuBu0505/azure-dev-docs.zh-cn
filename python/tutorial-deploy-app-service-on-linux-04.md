@@ -1,17 +1,17 @@
 ---
-title: 教程：在 Linux 上的 Azure 应用服务上为 Python 应用配置自定义启动文件
+title: 步骤 4：在 Linux 上的 Azure 应用服务上为 Python 应用配置自定义启动文件
 description: 教程步骤 4，指示应用服务如何启动 Web 应用。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d744b4a270c89b7feb826353366ba021345eac85
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467048"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422479"
 ---
-# <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>教程：在 Azure 应用服务上为 Python 应用配置自定义启动文件
+# <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4：在 Azure 应用服务上为 Python 应用配置自定义启动文件
 
 [上一步：创建应用服务](tutorial-deploy-app-service-on-linux-03.md)
 
@@ -88,6 +88,6 @@ gunicorn --bind=0.0.0.0 --timeout 600 <module>.wsgi
     ```
 
 > [!div class="nextstepaction"]
-> [我配置了我的启动文件](tutorial-deploy-app-service-on-linux-05.md)
+> [我配置了我的启动文件 - 转到步骤 5 >>>](tutorial-deploy-app-service-on-linux-05.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)

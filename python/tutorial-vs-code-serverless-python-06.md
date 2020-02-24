@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 VS Code 向 Azure Functions 添加另一个 Python 函数
+title: 步骤 6：使用 VS Code 向 Azure Functions 添加另一个 Python 函数
 description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 项目。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 12cd3625d3eec63a2ba3de4d55dbd957fbf0fb34
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 45a17a403073110fec03c077d6009e26928d2310
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992426"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422150"
 ---
-# <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>教程：向 Azure Functions 添加另一个 Python 函数
+# <a name="6-add-a-second-python-function-to-azure-functions"></a>6：向 Azure Functions 添加另一个 Python 函数
 
 [上一步：部署到 Azure](tutorial-vs-code-serverless-python-05.md)
 
@@ -119,6 +119,6 @@ ms.locfileid: "74992426"
 1. 部署完成（需要数分钟！）后，“输出”窗口会显示可以用来重复你的测试的公共终结点。 
 
 > [!div class="nextstepaction"]
-> [我添加了另一个函数](tutorial-vs-code-serverless-python-07.md)
+> [我添加了另一个函数 - 转到步骤 7 >>>](tutorial-vs-code-serverless-python-07.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=06-second-function)

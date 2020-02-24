@@ -1,17 +1,17 @@
 ---
-title: 教程：清理 Azure Functions 中与 Python 代码配合使用的资源
+title: 步骤 8：清理 Azure Functions 中与 Python 代码配合使用的资源
 description: 教程步骤 8，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 264c09a8d84c7115bb0a56d0455d576187695db0
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: 1e8735f8cb1a3955fda50365a70274ae6c3c5230
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125250"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422197"
 ---
-# <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>教程：为 Azure Functions 清理 Azure 资源
+# <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:为 Azure Functions 清理 Azure 资源
 
 [上一步：添加存储绑定](tutorial-vs-code-serverless-python-07.md)
 
@@ -45,6 +45,6 @@ ms.locfileid: "76125250"
 - [Azure 资源管理器工具](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [我完成了](https://docs.microsoft.com/python/azure/?view=azure-python)
+> [我完成了！](https://docs.microsoft.com/python/azure/?view=azure-python)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=08-clean-up-resources)

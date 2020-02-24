@@ -1,17 +1,17 @@
 ---
-title: 教程：使用 Visual Studio Code 将容器映像部署到 Azure 应用服务
+title: 步骤 2：使用 Visual Studio Code 将容器映像部署到 Azure 应用服务
 description: 教程步骤 2，将实际的 Docker 映像从容器注册表部署到 Azure 应用服务。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 446653a4de98954ae75caa38c9cb2ae04ec071c4
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 8005ba428d99051d9b5b86ed4f5222c1cd9ba673
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002369"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422412"
 ---
-# <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>教程：将容器映像部署到 Azure 应用服务
+# <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:将容器映像部署到 Azure 应用服务
 
 [上一步：先决条件](tutorial-deploy-containers-01.md)
 
@@ -46,6 +46,6 @@ ms.locfileid: "77002369"
 1. 在服务重启后，通过 `http://<name>.azurewebsites.net` 浏览站点。 可以通过 **Ctrl**+ 单击（在 macOS 上为 **Cmd** + 单击）来访问“输出”面板中的 URL，也可以右键单击“Azure:  应用服务”资源管理器中的应用服务，然后选择“浏览网站”。 
 
 > [!div class="nextstepaction"]
-> [我部署了映像](tutorial-deploy-containers-03.md)
+> [我部署了映像 - 转到步骤 3 >>>](tutorial-deploy-containers-03.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=02-deploy-container)

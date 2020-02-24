@@ -1,17 +1,17 @@
 ---
-title: 教程：将日志从 Azure 应用服务传输到 VS Code 中
+title: 步骤 6：将日志从 Azure 应用服务传输到 VS Code 中
 description: 教程步骤 6，将应用日志流式传输到 Visual Studio Code 中
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 56cbd468771af8d60fce20d88b8c984f95d4b9b9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f2e19a52b673ddcef927165191d610776e06a32f
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466070"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422419"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>教程：将日志从 Azure 应用服务流式传输到 Visual Studio Code 中
+# <a name="6-stream-logs-from-azure-app-service-into-visual-studio-code"></a>6：将日志从 Azure 应用服务流式传输到 Visual Studio Code 中
 
 [上一步：部署应用](tutorial-deploy-app-service-on-linux-05.md)
 
@@ -28,6 +28,6 @@ ms.locfileid: "74466070"
 1. 若要停止流式传输日志（不禁用日志记录），请在“Azure:  应用服务”资源管理器中右键单击应用，然后选择“停止流式传输日志”。 
 
 > [!div class="nextstepaction"]
-> [我看到了日志](tutorial-deploy-app-service-on-linux-07.md)
+> [我看到了日志 - 转到步骤 7 >>>](tutorial-deploy-app-service-on-linux-07.md)
 
 [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=06-stream-logs)
