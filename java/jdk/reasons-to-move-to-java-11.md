@@ -1,18 +1,19 @@
 ---
 title: 迁移到 Java 11 的原因
+titleSuffix: Azure
 description: 本文为摘要级别的文档，适用于那些正权衡从 Java 8 迁移到 Java 11 的优势的决策者。
 author: dsgrieve
-manager: maverberg
+manager: maverbur
 tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812218"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440936"
 ---
 # <a name="reasons-to-move-to-java-11"></a>迁移到 Java 11 的原因
 
@@ -25,13 +26,13 @@ ms.locfileid: "74812218"
 可以逐步过渡到 Java 11。 代码不需使用 Java 模块即可在 Java 11 上运行。  Java 11 可以用来运行通过 JDK 8 开发和生成的代码，
 但存在一些潜在的问题，主要涉及弃用的 API、类加载程序和反射。
 
-Microsoft Java 工程组很快会提供一个综合性指南，介绍如何从 Java 8 过渡到 Java 11。 另外还有许多介绍如何从 Java 8 过渡到 Java 9 的入门指南。 例如，[Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)（Java 平台标准版 Oracle JDK 9 迁移指南）和 [The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)（模块系统状态：兼容性和迁移）。
+Microsoft Java 工程组提供了[从 Java 8 转换到 Java 11](./transition-from-java-8-to-java-11.md) 的指南。 [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)（Java 平台标准版 Oracle JDK 9 迁移指南）和 [The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)（模块系统状态：兼容性和迁移）是其他有用的指南。 
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>概述从 Java 8 到 11 的更改
 
 此部分不会将 Java 版本 9 \[[1](#ref1)\]、10 \[[2](#ref2)\] 和 11 \[[3](#ref3)\] 中所做的全部更改都枚举出来， 但会重点介绍对性能、诊断和工作效率有影响的更改。
 
-### <a name="modules-4ref4"></a>模块 \[[4](#ref4)\]
+### <a name="modules-4"></a>模块 \[[4](#ref4)\]
 
 模块解决在大型应用程序（在 *classpath* 上运行）中难以管理的配置和封装问题。 模块是 Java 类和接口以及相关资源的自述性集合。 
 
@@ -46,31 +47,31 @@ Microsoft Java 工程组很快会提供一个综合性指南，介绍如何从 J
 
 ### <a name="profiling-and-diagnostics"></a>分析和诊断
 
-#### <a name="java-flight-recorder-5ref5"></a>Java Flight Recorder \[[5](#ref5)\]
+#### <a name="java-flight-recorder-5"></a>Java Flight Recorder \[[5](#ref5)\]
 
 Java Flight Recorder (JFR) 从正在运行的 Java 应用程序中收集诊断和分析数据。 JFR 对正在运行的 Java 应用程序几乎没有影响。 收集的数据随后可以使用 Java Mission Control (JMC) 和其他工具进行分析。 虽然 JFR 和 JMC 在 Java 8 中都是商业功能，但二者在 Java 11 中都是开放源代码。
 
-#### <a name="java-mission-control-6ref6"></a>Java Mission Control \[[6](#ref6)\]
+#### <a name="java-mission-control-6"></a>Java Mission Control \[[6](#ref6)\]
 
 Java Mission Control (JMC) 可以通过图形方式显示 Java Flight Recorder (JFR) 收集的数据，在 Java 11 中是开放源代码。
 11. 除了收集正在运行的应用程序的常规信息，JMC 还允许用户向下钻取到数据中。 JFR 和 JMC 可以用来诊断运行时问题，例如内存泄露、GC 开销、热方法、线程瓶颈、阻塞 I/O。
 
-#### <a name="unified-logging-7ref7"></a>统一日志记录 \[[7](#ref7)\]
+#### <a name="unified-logging-7"></a>统一日志记录 \[[7](#ref7)\]
 
 Java 11 有一个通用日志记录系统，适合 JVM 的所有组件。
 用户可以使用此统一日志记录系统来定义哪些组件需要记录，以及记录到何种级别。 这种精细的日志记录适用于对 JVM 崩溃进行根本原因分析，以及在生产环境中诊断性能问题。
 
-#### <a name="low-overhead-heap-profiling-8ref8"></a>低开销堆分析 \[[8](#ref8)\]
+#### <a name="low-overhead-heap-profiling-8"></a>低开销堆分析 \[[8](#ref8)\]
 
 已经向 Java 虚拟机工具接口 (JVMTI) 添加了新的 API，用于对 Java 堆分配采样。 采样的开销低，可以持续启用。 虽然可以使用 Java Flight Recorder (JFR) 监视堆分配，但 JFR 中的采样方法只能用于分配。 JFR 实现也可能未命中分配。 与之形成对比的是，Java 11 中的堆采样可以同时提供活对象和死对象的相关信息。
 
 应用程序性能监视 (APM) 供应商开始利用此新功能，Java 工程组正在研究是否有可能将它与 Azure 性能监视工具配合使用。
 
-#### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
+#### <a name="stackwalker-9"></a>StackWalker \[[9](#ref9)\]
 
 进行日志记录时，通常会获取当前线程的堆栈的快照。 问题在于要记录多少堆栈跟踪，以及是否有必要记录堆栈跟踪。 例如，用户可能只想在某个方法出现特定异常时查看堆栈跟踪。 StackWalker 类（在 Java 9 中添加）提供堆栈的快照，并提供方便程序员对堆栈跟踪使用方式进行精细控制的方法。
 
-### <a name="garbage-collection-10ref10"></a>垃圾回收 \[[10](#ref10)\]
+### <a name="garbage-collection-10"></a>垃圾回收 \[[10](#ref10)\]
 
 Java 11 提供以下垃圾回收器：串行、并行、Garbage-First 和 Epsilon。 Java 11 中的默认垃圾回收器是 Garbage First 垃圾回收器 (G1GC)。
 
@@ -88,12 +89,12 @@ Java 11 中的默认垃圾回收器是 G1 垃圾回收器 (G1GC)。 G1GC 的目�
 
 并行回收器是 Java 8 中的默认回收器。 并行 GC 是一个吞吐量回收器，使用多个线程来加速垃圾回收。
 
-#### <a name="epsilon-11ref11"></a>Epsilon \[[11](#ref11)\]
+#### <a name="epsilon-11"></a>Epsilon \[[11](#ref11)\]
 
 Epsilon 垃圾回收器负责处理分配，但不回收任何内存。 当堆耗尽时，JVM 会关闭。
 Epsilon 适用于生存期短的服务和已知没有垃圾的应用程序。
 
-#### <a name="improvements-for-docker-containers-12ref12"></a>Docker 容器改进 \[[12](#ref12)\]
+#### <a name="improvements-for-docker-containers-12"></a>Docker 容器改进 \[[12](#ref12)\]
 
 在 Java 10 之前，JVM 无法识别在容器上设置的内存和 CPU 约束。 例如，在 Java 8 中，JVM 会将最大堆大小默认设置为基础主机物理内存的 ¼。 从 Java 10 开始，JVM 会使用容器控制组 (cgroups) 设置的约束来设置内存和 CPU 限制（参见下面的说明）。
 例如，默认的最大堆大小为容器的内存限制的 ¼（例如，如果内存限制为 2G，则最大堆大小为 500MB）。
@@ -105,7 +106,7 @@ Epsilon 适用于生存期短的服务和已知没有垃圾的应用程序。
 > [!NOTE]
 > 大多数 cgroup 支持工作可以后向移植到 Java 8（直至 jdk8u191）。 进一步的改进不一定能够后向移植到 8。
 
-#### <a name="multi-release-jar-files-13ref13"></a>多发布版 jar 文件 \[[13](#ref13)\]
+#### <a name="multi-release-jar-files-13"></a>多发布版 jar 文件 \[[13](#ref13)\]
 
 在 Java 11 中，可以创建一个 jar 文件，其中包含多个特定于 Java 发布版的类文件版本。 有了多发布版 jar 文件，库开发人员就可以支持多个 Java 版本，不需交付多个版本的 jar 文件。 对于这些库的使用者来说，多发布版 jar 文件解决了必须将特定 jar 文件与特定运行时目标匹配的问题。
 
