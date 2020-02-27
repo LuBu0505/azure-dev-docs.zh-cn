@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: a5e36d535cba39728d28c1f2aa64985863103ee6
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441081"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504548"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>从 Java 8 转换到 Java 11
 
@@ -26,7 +26,7 @@ ms.locfileid: "77441081"
 
 迁移到 Java 11 值得付出这样的努力。 自 Java 8 发布以来，我们已添加了多项新功能并对原有功能进行了强化。 这些功能和增强功能可改进启动、性能和内存使用情况，并提供与容器更好的集成。 此外还对 API 进行了添加和修改，这可以提高开发人员的工作效率。 
 
-本文档介绍了用于检查代码的工具。 它还介绍了你可能遇到的问题以及解决这些问题的建议。 你还应参阅其他指南，如 [Oracle JDK Migration Guide](https://docs.oracle.com/en/java/javase/11/migrate/index.htm)（Oracle JDK 迁移指南）。 本文不介绍如何将现有代码[模块化](http://openjdk.java.net/projects/jigsaw)。  
+本文档介绍了用于检查代码的工具。 它还介绍了你可能遇到的问题以及解决这些问题的建议。 你还应参阅其他指南，如 [Oracle JDK Migration Guide](https://docs.oracle.com/en/java/javase/11/migrate/index.html)（Oracle JDK 迁移指南）。 本文不介绍如何将现有代码[模块化](http://openjdk.java.net/projects/jigsaw)。  
 
 
 ## <a name="the-toolbox"></a>工具箱
@@ -125,7 +125,7 @@ sun.misc.Unsafe                          See http://openjdk.java.net/jeps/260
 ### <a name="check-command-line-options"></a>检查命令行选项
 
 在 Java 11 上运行之前，请对命令行选项进行快速扫描。 
-[已删除的选项](#unrecognized options)会导致 Java 虚拟机 (JVM) 退出。 如果使用 GC 日志记录选项，则此检查尤其重要，因为它们已明显不同于 Java 8 中的情况。 [JaCoLine](https://jacoline.dev/about) 工具是一项很好的工具，用于检查命令行选项的问题。 
+[已删除的选项](#unrecognized-options)会导致 Java 虚拟机 (JVM) 退出。 如果使用 GC 日志记录选项，则此检查尤其重要，因为它们已明显不同于 Java 8 中的情况。 [JaCoLine](https://jacoline.dev/about) 工具是一项很好的工具，用于检查命令行选项的问题。 
 
 ### <a name="check-third-party-libraries"></a>检查第三方库
 

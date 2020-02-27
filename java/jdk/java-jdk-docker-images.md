@@ -4,14 +4,14 @@ description: 了解如何使用命令行接口将 Docker 映像与 Azure 的 Jav
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: d7647757f371baa0b6fd21bd51d6629c6e1e0e10
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: b3a046563fa51efae32fd45e6154901539a8f4c8
+ms.sourcegitcommit: 6ffa53b933da524e09911b164bba8515722bfa91
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812265"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77629362"
 ---
-# <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>为 Azure 将 Docker 与 Java 开发工具包 (JDK) 配合使用 
+# <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>为 Azure 将 Docker 与 Java 开发工具包 (JDK) 配合使用
 
 本文介绍了如何为 Azure 将 Docker 与 Java 开发工具包 (JDK) 配合使用。 针对 Java 7、8、11 预生成的 Docker 映像可以通过 [Docker Hub](https://hub.docker.com/_/microsoft-java-se) 使用。
 
@@ -26,7 +26,7 @@ Docker Hub 上提供适用于 Zulu JDK、JRE 和 JRE-headless 且基于多个基
 可以通过语法 `$ docker run mcr.microsoft.com/java/jdk:tag java` 运行 Docker 映像，如以下示例所示。
 
 ```cli
-docker run mcr.microsoft.com/java/jdk:8u212-zulu-alpine java -version 
+docker run mcr.microsoft.com/java/jdk:8-zulu-alpine java -version
 ```
 
 ## <a name="creating-a-docker-image"></a>创建 Docker 映像
@@ -36,7 +36,7 @@ docker run mcr.microsoft.com/java/jdk:8u212-zulu-alpine java -version
 ### <a name="create-a-docker-file"></a>创建 Docker 文件
 
 ```cli
-FROM mcr.microsoft.com/java/jdk:8u212-zulu-alpine 
+FROM mcr.microsoft.com/java/jdk:8-zulu-alpine
   
 RUN echo $' \
   
