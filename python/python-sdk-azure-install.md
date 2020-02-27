@@ -4,16 +4,16 @@ description: 如何使用 pip 或 GitHub 安装 Azure SDK for Python。 Azure SD
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: de36effc1787c83d137f84f8e0d670c97c71cdcf
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: c244280703400a3dabd150c10e66550dbc064abc
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422503"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504563"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>安装 Azure SDK for Python
 
-Azure SDK for Python 提供一个 API，你可以在 Python 代码中通过该 API 与 Azure 交互。 可以根据需要从 SDK 安装单个库，也可以安装一整套库。
+Azure SDK for Python 提供一个 API，你可以在 Python 代码中通过该 API 与 Azure 交互。 根据需要从 SDK 安装各个库。
 
 Azure SDK for Python 经过测试，可以在 CPython versions 2.7 和 3.5.3+ 以及 PyPy 5.4+ 中使用。 开发人员也可将此 SDK 与其他解释器（例如 IronPython 和 Jython）配合使用，但可能会遇到孤立的问题和不兼容问题。 如果需要 Python 解释器，请从 [python.org/downloads](https://www.python.org/downloads) 安装最新版本。
 

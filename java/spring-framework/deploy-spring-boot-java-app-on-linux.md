@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 9288f680f5eb92046ada7ce420d64de2e5301fcc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440965"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504445"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序
 
@@ -126,7 +126,7 @@ ms.locfileid: "77440965"
 
 在 `<from>/<image>` 中指定基本映像（此处为 `openjdk:8-jre-alpine`）。 指定要从 `<to>/<image>` 中的基本映像生成的最终映像的名称。  
 
-身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Mavin Build 中的 JAR 文件的名称和版本号。
+身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Maven Build 中的 JAR 文件的名称和版本号。
 
 在 `<to>/<auth>` 节点中指定来自注册表窗格的用户名和密码。 例如：
 

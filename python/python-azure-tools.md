@@ -1,34 +1,44 @@
 ---
-title: 面向 Python 开发人员的 Azure 工具 | Microsoft Docs
+title: 面向 Python 开发人员的 Azure 工具
 description: 面向使用 Azure 的 Python 开发人员的 IDE 集成和命令行接口。
 ms.topic: conceptual
-ms.date: 06/21/2017
-ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 02/19/2020
+ms.openlocfilehash: 2cf9e2cad7cfb69a50da09438f448e6d2676faaa
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467068"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504427"
 ---
 # <a name="azure-tools-for-python-developers"></a>面向 Python 开发人员的 Azure 工具
 
-## <a name="azure-cli-20"></a>Azure CLI 2.0
-
-Azure CLI 2.0 提供一个命令行接口用于在订阅中创建和配置 Azure 资源。 Azure CLI 2.0 是跨平台的工具，具有查询和筛选功能，可以用来通过管道将输出直接传送到你偏好的命令行工具。
-
-[安装 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
 ## <a name="visual-studio-code"></a>Visual Studio Code
-可通过扩展在 Visual Studio Code 中完全支持 Python。 市场中的流行扩展提供代码完成、检查、调试、代码格式设置、片段编写等功能。
 
-[安装 Visual Studio Code 和扩展](https://code.visualstudio.com/docs/languages/python)
+通过大受欢迎的 Python 扩展，Python 在 Visual Studio Code 中完全受支持。
 
-## <a name="python-tools-for-visual-studio-extension"></a>针对 Visual Studio 的 Python 工具扩展
-Windows 上的 Visual Studio 通过 Python 开发和数据科学工作负荷 (Visual Studio 2017) 及免费的针对 Visual Studio 的 Python 工具扩展（Visual Studio 2015 和更低版本）提供对 Python 语言的开源支持。 
+[安装 Visual Studio Code 和 Python 扩展](https://code.visualstudio.com/docs/languages/python)
+
+## <a name="azure-sdk-for-python"></a>用于 Python 的 Azure SDK
+
+Azure SDK for Python 提供一个 API，你可以在 Python 代码中通过该 API 与 Azure 交互。
+
+[安装用于 Python 的 Azure SDK 库](python-sdk-azure-install.md)
+
+## <a name="azure-command-line-interface-cli"></a>Azure 命令行界面 (CLI)
+
+跨平台的 Azure CLI 提供一个用于在订阅中创建和配置 Azure 资源的命令行接口。 Azure CLI 包括查询和筛选功能，因此，你可以通过管道将输出直接传送到其他命令行工具。 （Azure CLI 本身是用 Python 编写的，并使用了用于 Python 的 Azure SDK。）
+
+[安装 Azure CLI](/cli/azure/install-azure-cli)
+
+## <a name="azure-powershell"></a>Azure PowerShell
+
+与 Azure CLI 一样，Azure PowerShell 提供用于创建和配置 Azure 资源的 PowerShell 命令，并且可与全套的常规 PowerShell 功能一起使用。
+
+[安装 Azure PowerShell](/powershell/azure/install-az-ps)
+
+## <a name="visual-studio"></a>Visual Studio
+
+Windows 上的 Visual Studio 通过 Python 开发和数据科学工作负载（Visual Studio 2017 及更高版本）及免费的针对 Visual Studio 的 Python 工具扩展（Visual Studio 2015 及更低版本）提供对 Python 语言的开源支持。 使用 Python 和 C++ 的开发人员最常使用 Visual Studio，因为它提供了一流的跨语言开发和调试支持。
 
 [在 Visual Studio 中安装 Python 支持](https://docs.microsoft.com/visualstudio/python/installation)
 
-## <a name="azure-notebooks-preview"></a>Azure Notebook（预览）
-Azure Notebook 是适用于 Jupyter Notebook 的托管服务，不需要安装。 使用它可以快速开始原型制作、数据科学、学术研究或 Python、R 和 F# 编程的学习。 可以采用一种格式合并代码、标记、图像、视频和图表。
-
-[Azure Notebook 入门](https://notebooks.azure.com/)
