@@ -15,6 +15,8 @@
               href: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: 监视 Web 应用
           href: /azure/azure-monitor/learn/java-quick-start?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure 容器注册表
+          href: /azure/container-registry/container-registry-java-quickstart?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Azure 资源管理器
           href: /azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-intellij?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Azure DevOps Projects
@@ -144,7 +146,7 @@
           href: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: 将容器部署到应用服务
           href: spring-framework/deploy-containerized-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-        - name: 从 Azure 容器注册表部署到应用服务
+        - name: 从 ACR 部署到应用服务
           href: spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Java 函数与事件中心和 Cosmos DB
           href: /azure/azure-functions/functions-event-hub-cosmos-db?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
