@@ -3,12 +3,12 @@ title: 使用 Azure CLI 将 Node.js 应用部署到 Azure 应用服务
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: b249084e6c22491bd05dbb3df2544f8570dadad0
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7abe3bf3d59072acf8b448b66e68908b5d824a8c
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466790"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709865"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>使用 Azure CLI 部署到 Azure 应用服务
 
@@ -33,7 +33,7 @@ ms.locfileid: "74466790"
 
 安装 Azure CLI 后，请从终端或命令提示符运行以下命令：
 
-```bash
+```azurecli
 az login
 ```
 
@@ -44,4 +44,4 @@ az login
 如果已安装了 Node.js，请运行 `node -v` 命令并验证版本是否为 10.x 或更高版本。 如果使用的是旧版本，请[升级](https://nodejs.org/en/download/)到最新的 LTS（“长期支持”）版本。
 
 > [!div class="nextstepaction"]
-> [我安装了必备项](tutorial-vscode-azure-cli-node-02.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=getting-started)
+> [我安装了必备项](tutorial-vscode-azure-cli-node-02.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=getting-started)

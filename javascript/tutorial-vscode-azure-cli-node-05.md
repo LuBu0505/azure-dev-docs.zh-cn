@@ -3,12 +3,12 @@ title: 从 Azure 应用服务流式传输日志
 description: 教程第 5 部分：查看日志
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 8a173bbb7f53de2189e0ecb99b851d77704ff92d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f96deb992af0d446876265e1b8214879ddff45e6
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466762"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709867"
 ---
 # <a name="stream-logs-from-app-service"></a>从应用服务流式传输日志
 
@@ -18,23 +18,23 @@ ms.locfileid: "74466762"
 
 1. 将 `<your_app_name>` 替换为应用服务的名称，运行以下命令以启动日志记录：
 
-    ```bash
+    ```azurecli
     az webapp log tail --name <your_app_name>
     ```
 
-1. 几秒钟后，应出现一条消息以指示你已连接到日志流服务。
+1. 几秒钟后，输出中应出现一条消息，指示你已连接到日志流服务。
 
-    ```bash
+    <pre>
     2019-09-25T13:39:23  Welcome, you are now connected to log-streaming service. The default timeout is 2 hours. Change the timeout with the App Setting SCM_LOGSTREAM_TIMEOUT (in seconds).
-    ```
+    </pre>
 
 1. 在浏览器中刷新页面几次以生成更多输出：
 
-    ```bash
+    <pre>
     GET / 304 2.327 ms - -
     GET / 304 0.957 ms - -
     GET / 304 2.435 ms - -
-    ```
+    </pre>
 
 1. 按 **Ctrl**+**C** 结束日志记录会话。
 

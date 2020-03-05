@@ -4,12 +4,12 @@ description: 使用 Azure 管理 SDK 库通过 Azure 服务对 Python 应用进�
 ms.date: 01/16/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 30979223a5f5f055ee51a82a4cb97f8ae4cf5a38
-ms.sourcegitcommit: b41b4c48a57de223be3424cb9d9d08c1a4001575
+ms.openlocfilehash: abf1b0b37d782addfd2b772fb7d382ce2815e891
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478022"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709814"
 ---
 # <a name="authenticate-by-using-the-azure-management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
 

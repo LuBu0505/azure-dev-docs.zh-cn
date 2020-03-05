@@ -4,12 +4,12 @@ description: 教程步骤 5，将 Python 函数代码部署到 Azure，学习如
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422202"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709754"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5：在 Python 中部署 Azure Functions
 
@@ -43,10 +43,11 @@ ms.locfileid: "77422202"
 
 1. 部署后，“输出”  窗口还会显示 Azure 上的公共终结点（特定终结点的 URL 将与为函数应用指定的名称匹配）：
 
-    ```output
+    <pre>
     HTTP Trigger Urls:
-      HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
-    ```
+
+          HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
+    </pre>
 
     使用此终结点运行已在本地运行的相同测试，将 URL 参数和/或请求与请求正文中的 JSON 数据配合使用。 公共终结点的结果应该与以前在[第 4 部分](tutorial-vs-code-serverless-python-04.md)测试的本地终结点的结果相符。
 
@@ -56,7 +57,7 @@ ms.locfileid: "77422202"
 
 但是，这些命令目前尚不可操作。 可以改在浏览器中使用日志流式传输，方法是：运行以下命令，将 `<app_name>` 替换为你在 Azure 上的 Functions 应用的名称：
 
-```bash
+```
 # Replace <app_name> with the name of your Functions app on Azure
 func azure functionapp logstream <app_name> --browser
 ```

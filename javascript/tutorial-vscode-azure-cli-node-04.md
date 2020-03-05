@@ -3,12 +3,12 @@ title: 使用 Azure CLI 将应用代码部署到 Azure 应用服务
 description: 教程第 4 部分，部署网站
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4911ccdf4003b44359d40c58d1b924e6bf88c829
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 668d055a56eae2eb365884a41fcc515aae5fb229
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467173"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709794"
 ---
 # <a name="deploy-the-app-to-app-service"></a>将应用部署到应用服务
 
@@ -26,23 +26,23 @@ ms.locfileid: "74467173"
 
 1. 运行以下命令以在 Azure 中设置部署凭据，将 `username` 和 `pPassword` 替换为凭据。 成功后，该命令将显示 JSON 输出。
 
-    ```bash
+    ```azurecli
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
 1. 运行以下命令以检索我们要将应用代码推送到的 Git 终结点，将 `<your_app_name>` 替换为在上一步中创建应用服务时使用的名称：
 
-    ```bash
+    ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>
     ```
 
     该命令的输出类似于以下内容：
 
-    ```output
+    <pre>
     {
       "url": "https://username@msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git"
     }
-    ```
+    </pre>
 
 1. 运行以下命令，使用上一步中的 URL（省略用户名），在 Git 中设置一个名为 `azure` 的新远程存储库  。 使用上一步中的示例，命令将如下所示：
 
@@ -63,9 +63,9 @@ ms.locfileid: "74467173"
 > [!TIP]
 > 如果遇到错误 `Object #<eventemitter> has no method 'hrtime'`，则可能需要在站点上设置节点运行时版本。 以下命令通知站点使用节点版本 `6.9.1`。 如果站点需要其他版本或更高版本的节点，请指定完整的语义版本 `major.minor.patch`。
 >
-> ```bash
+> ```azurecli
 > az webapp config appsettings set --name <your_app_name> --settings
 > ```
 
 > [!div class="nextstepaction"]
-> [我部署了应用](tutorial-vscode-azure-cli-node-05.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=deploy-website)
+> [我部署了应用](tutorial-vscode-azure-cli-node-05.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=deploy-website)

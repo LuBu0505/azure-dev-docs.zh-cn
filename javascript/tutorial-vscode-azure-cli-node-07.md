@@ -3,12 +3,12 @@ title: 使用 Azure CLI 将 Node.js 应用部署到 Azure 后清理资源
 description: 教程第 7 部分：清理资源
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 7998eb641090b252455613a46ae41e45e5cd1c1d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466757"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709854"
 ---
 # <a name="clean-up-resources"></a>清理资源
 
@@ -16,7 +16,7 @@ ms.locfileid: "74466757"
 
 创建的应用服务包含一项可能产生费用的后备应用服务计划。 若要清理资源，请在终端或命令提示符下运行以下命令：
 
-```bash
+```azurecli
 az group delete --name myResourceGroup
 ```
 

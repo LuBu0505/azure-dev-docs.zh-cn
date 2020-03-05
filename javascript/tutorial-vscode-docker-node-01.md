@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 中将 Docker 容器部署到 Azure 应用服务
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2d6721060281fb73d31576caa47f316f2d078d29
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 98ebb6bd857216cb395eb8cc62faa3d6ee30e3eb
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467151"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709826"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>将容器部署到 Azure 应用服务
 
@@ -20,7 +20,7 @@ ms.locfileid: "74467151"
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Docker 扩展](vscode:extension/ms-azuretools.vscode-docker)
 - [Azure 应用服务扩展](vscode:extension/ms-azuretools.vscode-azureappservice)
-- [Node.js 和 npm](https://nodejs.org/en/download)，Node.js 包管理器。
+- [Node.js 和 npm](https://nodejs.org/en/download)，即 Node.js 包管理器。
 - [Docker](https://www.docker.com/community-edition)。
 
 > <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-docker">安装 Docker 扩展</a>
@@ -45,9 +45,9 @@ docker --version
 
 输出应如下所示：
 
-```output
+<pre>
 Docker Version 17.12.0-ce, build c97c6d6
-```
+</pre>
 
 > [!div class="nextstepaction"]
 > [我已安装 Docker扩展](tutorial-vscode-docker-node-02.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=getting-started)

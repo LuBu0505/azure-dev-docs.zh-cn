@@ -3,12 +3,12 @@ title: 在 Visual Studio Code 中使用 Node.js 部署 Azure Functions
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: a4e60d45f5bddb358e596fc3b9e7db72e7e2f9eb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8a6dc30c90ba056070e69e40ed1534a176ae21aa
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466621"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709844"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>在 Visual Studio Code 中部署 Azure Functions
 
@@ -19,7 +19,7 @@ ms.locfileid: "74466621"
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Azure Functions 扩展](vscode:extension/ms-azuretools.vscode-azurefunctions)
-- [Node.js 和 npm](https://nodejs.org/en/download)，Node.js 包管理器。
+- [Node.js 和 npm](https://nodejs.org/en/download)，即 Node.js 包管理器。
 
 > <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurefunctions">安装 Azure Functions 扩展</a>
 
@@ -41,7 +41,7 @@ ms.locfileid: "74466621"
 
 1. 若要验证安装，请在 VS Code 中选择菜单命令“终端”   >   “新终端”，然后运行命令 `func`。 该命令应显示如下所示的输出（以及使用情况信息）。
 
-    ```output
+    <pre>
                       %%%%%%
                      %%%%%%
                 @   %%%%%%    @
@@ -56,7 +56,7 @@ ms.locfileid: "74466621"
 
     Azure Functions Core Tools (2.4.419 Commit hash: c9c1724d002bd90b2e6b41393915ea3a26bcf0ce)
     Function Runtime Version: 2.0.12332.0
-    ```
+    </pre>
 
 > [!div class="nextstepaction"]
 > [我安装了必备项](tutorial-vscode-serverless-node-02.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=getting-started)

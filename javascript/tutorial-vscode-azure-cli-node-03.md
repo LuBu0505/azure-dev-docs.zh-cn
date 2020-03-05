@@ -3,12 +3,12 @@ title: 通过 Azure CLI 创建用于托管应用的 Azure 应用服务
 description: 教程第 3 部分：创建应用服务
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: afac5aa2f610384b537c1f235b99cd29e6ff86d0
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 827bcde79336304f424a283ccbdc4a4282a50bf7
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466769"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709884"
 ---
 # <a name="create-the-app-service"></a>创建应用服务
 
@@ -18,7 +18,7 @@ ms.locfileid: "74466769"
 
 1. 在终端或命令提示符处，使用以下命令创建应用服务的**资源组**。 资源组实际上是 Azure 中应用资源的命名集合，例如网站、数据库、Azure Functions 等。
 
-    ```bash
+    ```azurecli
     az group create --name myResourceGroup --location westus
     ```
 
@@ -28,13 +28,13 @@ ms.locfileid: "74466769"
 
 1. 运行以下命令，为后续命令设置默认资源组和区域。 这样做就不需每次都指定这些值。 （此命令在成功运行后没有输出。）
 
-    ```bash
+    ```azurecli
     az configure --defaults group=myResourceGroup location=westus
     ```
 
 1. 运行以下命令，创建一个**应用服务计划**，用于定义应用服务所使用的底层虚拟机：
 
-    ```bash
+    ```azurecli
     az appservice plan create --name myPlan --sku F1
     ```
 
@@ -42,7 +42,7 @@ ms.locfileid: "74466769"
 
 1. 运行以下命令来创建应用服务，将 `<your_app_name>` 替换为会成为 URL (`http://<your_app_name>.azurewebsites.net`) 的唯一名称。 请注意，PowerShell 命令稍有不同。 `--runtime "node|6.9"` 参数告知 Azure 在服务器上使用 Node 版本 6.9.x。
 
-    ```bash
+    ```azurecli
     az webapp create --name <your_app_name> --plan myPlan --runtime "node|6.9"
     ```
 
@@ -57,7 +57,7 @@ ms.locfileid: "74466769"
 
 1. 运行以下命令，将浏览器打开到新创建的应用服务。同样，将 `<your_app_name>` 替换为你所使用的名称：
 
-    ```bash
+    ```azurecli
     az webapp browse --name <your_app_name>
     ```
 
