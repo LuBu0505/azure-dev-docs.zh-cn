@@ -4,12 +4,12 @@ description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 45a17a403073110fec03c077d6009e26928d2310
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 0f28ef3b6d57abe75c286839001078875787b849
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422150"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709654"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6：向 Azure Functions 添加另一个 Python 函数
 
@@ -104,13 +104,11 @@ ms.locfileid: "77422150"
 
 1. 启动调试程序，方法是：按 F5 或选择“调试”   >   “启动调试”菜单命令。 现在，“输出”窗口会显示项目中的两个终结点： 
 
-    ```output
+    <pre>
     Http Functions:
-
             DigitsOfPi: [GET] http://localhost:7071/api/DigitsOfPi
-
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
-    ```
+    </pre>
 
 1. 通过浏览器或 curl 向 `http://localhost:7071/api/DigitsOfPi?digits=125` 发出一个请求，然后观察输出。 （你可能会注意到，此代码算法不是很精确，但我们将改进的任务交给你了！）完成后，停止调试程序。
 

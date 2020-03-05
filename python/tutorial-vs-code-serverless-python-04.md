@@ -4,12 +4,12 @@ description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Co
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ddb6cd0b1c1cac308e7e7e8da5b658cda277586a
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 15b0eeb6be2d1477b99b3fd2ec3abb48df353873
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422145"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709705"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4：在本地调试 Azure Functions Python 代码
 
@@ -23,11 +23,11 @@ ms.locfileid: "77422145"
 
 1. 启动调试程序时，会打开一个终端，显示来自 Azure Functions 的输出，其中包含可用终结点的摘要。 如果使用的名称不是“HttpExample”，则 URL 可能有所不同：
 
-    ```output
+    <pre>
     Http Functions:
 
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
-    ```
+    </pre>
 
 1. 在 Visual Studio Code 的“输出”窗口  中对 URL 使用 **Ctrl+单击**或 **Cmd+单击** 即可将浏览器打开到该地址，也可启动浏览器后在其中粘贴同一 URL。 不管什么情况，终结点都是 `api/<function_name>`，在此示例中为 `api/HttpExample`。 但是，由于该 URL 不含名称参数，因此浏览器窗口会直接显示“请传递查询字符串或请求正文中的名称”，此名称与代码中的该路径相对应。
 
@@ -35,13 +35,17 @@ ms.locfileid: "77422145"
 
 1. 若要在 JSON 请求正文中传递名称值，可以使用 curl 之类的内联了 JSON 的工具：
 
+    # <a name="bash"></a>[bash](#tab/bash)
+
     ```bash
     # Mac OS/Linux: modify the URL if you're using a different function name
     curl --header "Content-Type: application/json" --request POST \
         --data '{"name":"Visual Studio Code"}' http://localhost:7071/api/HttpExample
     ```
 
-    ```ps
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+    ```powershell
     # Windows (escaping on the quotes is necessary; also modify the URL
     # if you're using a different function name)
     curl --header "Content-Type: application/json" --request POST \

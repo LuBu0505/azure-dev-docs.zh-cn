@@ -3,18 +3,18 @@ title: 用于 Node.js 的 Azure 模块入门
 description: 使用适用于 Node.js 的 Azure 模块开始进行身份验证和资源管理
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ecd256b28e666368d3b15a97a198aacc82a0f823
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 600c10c052a3aa95eb4dc04de0166a6974ede060
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002271"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709894"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>用于 Node.js 的 Azure 模块入门
 
 本指南逐步讲解如何安装 Azure Node.js 模块，使用服务主体在 Azure 中进行身份验证，以及运行可在 Azure 订阅中创建资源并连接到 Azure 云服务的示例代码。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)
 - [Node.js](https://nodejs.org)
@@ -38,7 +38,7 @@ Node.js 应用程序需要 Azure 订阅中的读取和创建权限才能运行�
 
 [使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 需要在密码参数而非 `MY_SECURE_PASSWORD` 中提供[安全密码](/azure/active-directory/active-directory-passwords-policy)。
 
-```azurecli-interactive
+```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD
 ```
 
@@ -62,7 +62,7 @@ export AZURE_TENANT XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 
 使用 [az account show](/cli/azure/account#az-account-show) 获取订阅的 ID。
 
-```azurecli-interactive
+```azurecli
 az account show
 ```
 
@@ -181,7 +181,7 @@ node createVM.js
 
 完成该代码后，请获取新虚拟机的 IP，并使用代码中 `adminPass` 的值通过 SSH 登录。
 
-```azurecli-interactive
+```azurecli
 az vm list-ip-addresses --name newLinuxVM
 ```
 
@@ -248,7 +248,7 @@ node uploadFile.js
 
 删除资源组，以删除本指南中创建的资源。
 
-```azurecli-interactive
+```azurecli
 az group delete --name myResourceGroup
 ```
 
