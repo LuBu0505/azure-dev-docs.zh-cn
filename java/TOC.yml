@@ -170,6 +170,10 @@
               href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
             - name: WebLogic 到 Azure 虚拟机
               href: migrate-weblogic-to-virtual-machines.md
+            - name: WebLogic 到 AKS 上的 WildFly
+              href: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+            - name: WebSphere 到 AKS 上的 WildFly
+              href: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
     - name: 示例代码
       items:
         - name: Service Fabric
