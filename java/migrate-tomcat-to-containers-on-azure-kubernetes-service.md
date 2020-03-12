@@ -5,18 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825805"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893743"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器
 
 本指南介绍在需要迁移现有 Tomcat 应用程序以使之在 Azure Kubernetes 服务 (AKS) 上运行时应注意的事项。
 
-## <a name="pre-migration-steps"></a>迁移前步骤
+## <a name="pre-migration"></a>预迁移
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -224,26 +224,26 @@ echo "Your public IP address is ${publicIp}."
 
 若要在 AKS 群集上执行计划的作业，请按需定义 [Cron 作业](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/)。
 
-## <a name="post-migration-steps"></a>迁移后的步骤
+## <a name="post-migration"></a>迁移后
 
 将应用程序迁移到 AKS 后，即应验证其运行是否符合预期。 完成此操作后，可以参考我们提供的一些建议，使应用程序的云原生性更好。
 
-1. 考虑向分配给入口控制器或应用程序负载均衡器的 IP 地址[添加 DNS 名称](/azure/aks/ingress-static-ip#configure-a-dns-name)。
+* 考虑向分配给入口控制器或应用程序负载均衡器的 IP 地址[添加 DNS 名称](/azure/aks/ingress-static-ip#configure-a-dns-name)。
 
-1. 考虑[为应用程序添加 HELM 图表](https://helm.sh/docs/topics/charts/)。 可以通过 Helm 图表将应用程序部署参数化，供更多样化的客户使用和自定义。
+* 考虑[为应用程序添加 HELM 图表](https://helm.sh/docs/topics/charts/)。 可以通过 Helm 图表将应用程序部署参数化，供更多样化的客户使用和自定义。
 
-1. 设计和实施 DevOps 策略。 若要在提高开发速度的同时保持可靠性，请考虑[通过 Azure Pipelines 自动进行部署和测试](/azure/devops/pipelines/ecosystems/kubernetes/aks-template)。
+* 设计和实施 DevOps 策略。 若要在提高开发速度的同时保持可靠性，请考虑[通过 Azure Pipelines 自动进行部署和测试](/azure/devops/pipelines/ecosystems/kubernetes/aks-template)。
 
-1. 启用[针对群集的 Azure 监视](/azure/azure-monitor/insights/container-insights-enable-existing-clusters)，以便收集容器日志、跟踪利用率等。
+* 启用[针对群集的 Azure 监视](/azure/azure-monitor/insights/container-insights-enable-existing-clusters)，以便收集容器日志、跟踪利用率等。
 
-1. 考虑通过 Prometheus 公开特定于应用程序的指标。 Prometheus 是在 Kubernetes 社区中广泛采用的开源指标框架。 可以配置 [Azure Monitor 中的 Prometheus 指标抓取](/azure/azure-monitor/insights/container-insights-prometheus-integration)，而不是托管你自己的 Prometheus 服务器，以便进行应用程序指标聚合，并自动响应或升级异常情况。
+* 考虑通过 Prometheus 公开特定于应用程序的指标。 Prometheus 是在 Kubernetes 社区中广泛采用的开源指标框架。 可以配置 [Azure Monitor 中的 Prometheus 指标抓取](/azure/azure-monitor/insights/container-insights-prometheus-integration)，而不是托管你自己的 Prometheus 服务器，以便进行应用程序指标聚合，并自动响应或升级异常情况。
 
-1. 设计和实施业务连续性和灾难恢复策略。 对于关键应用程序，请考虑[多区域部署体系结构](/azure/aks/operator-best-practices-multi-region)。
+* 设计和实施业务连续性和灾难恢复策略。 对于关键应用程序，请考虑[多区域部署体系结构](/azure/aks/operator-best-practices-multi-region)。
 
-1. 查看 [Kubernetes 版本支持策略](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy)。 你有责任持续[更新 AKS 群集](/azure/aks/upgrade-cluster)，确保其始终运行受支持的版本。
+* 查看 [Kubernetes 版本支持策略](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy)。 你有责任持续[更新 AKS 群集](/azure/aks/upgrade-cluster)，确保其始终运行受支持的版本。
 
-1. 让所有负责群集管理和应用程序开发的团队成员查看相关的 [AKS 最佳做法](/azure/aks/best-practices)。
+* 让所有负责群集管理和应用程序开发的团队成员查看相关的 [AKS 最佳做法](/azure/aks/best-practices)。
 
-1. 评估 *logging.properties* 文件中的项。 考虑消除或减少某些日志记录输出以提高性能。
+* 评估 *logging.properties* 文件中的项。 考虑消除或减少某些日志记录输出以提高性能。
 
-1. 考虑[监视代码缓存大小](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm)并向 Dockerfile 中的 `JAVA_OPTS` 变量添加参数 `-XX:InitialCodeCacheSize` 和 `-XX:ReservedCodeCacheSize`，进一步优化性能。
+* 考虑[监视代码缓存大小](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm)并向 Dockerfile 中的 `JAVA_OPTS` 变量添加参数 `-XX:InitialCodeCacheSize` 和 `-XX:ReservedCodeCacheSize`，进一步优化性能。

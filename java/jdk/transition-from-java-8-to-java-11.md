@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 528b111e945bb68bd18c849847522a070259c0f3
+ms.sourcegitcommit: f1e3c72c38376b15f5313d4bfe5fefdbfc022dc9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504548"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022306"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>从 Java 8 转换到 Java 11
 
@@ -246,7 +246,7 @@ $ java --add-opens=java.base/jdk.internal.loader=UNNAMED-MODULE example.Main
 
 ##### <a name="noclassdeffounderror-caused-by-using-java-ee-or-corba-modules"></a>使用 Java EE 或 CORBA 模块导致的 NoClassDefFoundError
 
-如果应用程序在 Java 8 上运行但却引发 `java.lang.NoClassDefFoundError` 或 `java.lang.ClassNotFoundError`，则可能是应用程序在使用 Java EE 或 CORBA 模块中的包。 这些模块在 Java 9 弃用，[在 Java 11 中删除](https://openjdk.java.net/jeps/320)。 
+如果应用程序在 Java 8 上运行但却引发 `java.lang.NoClassDefFoundError` 或 `java.lang.ClassNotFoundException`，则可能是应用程序在使用 Java EE 或 CORBA 模块中的包。 这些模块在 Java 9 弃用，[在 Java 11 中删除](https://openjdk.java.net/jeps/320)。 
 
 若要解决此问题，请向项目添加运行时依赖项。
 

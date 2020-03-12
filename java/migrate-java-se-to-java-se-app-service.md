@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 5a9f6838e516b6168be40c83ea1ff4329676e6e3
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 2846dc10ff782568d596daee4baa8ecbd1195729
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76830705"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894204"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>将可执行的 JAR Web 应用程序迁移到 Azure 应用服务上的 Java SE
 
@@ -23,7 +23,7 @@ ms.locfileid: "76830705"
 * 将可执行的 JAR 应用程序迁移到 Azure Kubernetes 服务（已计划）上的容器
 * 将可执行的 JAR 应用程序迁移到 Azure 虚拟机（已计划）
 
-## <a name="pre-migration-steps"></a>迁移前步骤
+## <a name="pre-migration"></a>预迁移
 
 ### <a name="switch-to-a-supported-platform"></a>切换到受支持的平台
 
@@ -209,7 +209,7 @@ spring.jms.servicebus.idle-timeout=10000
 
 最后，需重启 Web 应用以应用所有配置更改。 重启完成后，请验证应用程序是否正常运行。
 
-## <a name="post-migration-steps"></a>迁移后的步骤
+## <a name="post-migration"></a>迁移后
 
 将应用程序迁移到 Azure 应用服务后，即应验证其运行是否符合预期。 完成此操作后，可以参考我们提供的一些建议，使应用程序的云原生性更好。
 

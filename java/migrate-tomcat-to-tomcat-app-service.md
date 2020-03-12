@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: f9611415264ce0c00a077d8988ef0fc9f7d97f66
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: a6212433e10de774924d49e508cb010251d60b02
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825856"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893755"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
 
@@ -23,7 +23,7 @@ ms.locfileid: "76825856"
 * [将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
 * 将 Tomcat 应用程序迁移到 Azure 虚拟机（已计划）
 
-## <a name="pre-migration-steps"></a>迁移前步骤
+## <a name="pre-migration"></a>预迁移
 
 ### <a name="switch-to-a-supported-platform"></a>切换到受支持的平台
 
@@ -201,18 +201,18 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 最后，需重启 Web 应用以应用所有配置更改。 重启完成后，请验证应用程序是否正常运行。
 
-## <a name="post-migration-steps"></a>迁移后的步骤
+## <a name="post-migration"></a>迁移后
 
 将应用程序迁移到 Azure 应用服务后，即应验证其运行是否符合预期。 完成此操作后，可以参考我们提供的一些建议，使应用程序的云原生性更好。
 
 ### <a name="recommendations"></a>建议
 
-1. 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/containers/how-to-serve-content-from-azure-storage)。
+* 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/containers/how-to-serve-content-from-azure-storage)。
 
-1. 如果 */home* 目录中的配置包含连接字符串、SSL 密钥和其他机密信息，请考虑结合使用 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 和/或[参数注入与应用程序设置](/azure/app-service/configure-common#configure-app-settings)（如果可能）。
+* 如果 */home* 目录中的配置包含连接字符串、SSL 密钥和其他机密信息，请考虑结合使用 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 和/或[参数注入与应用程序设置](/azure/app-service/configure-common#configure-app-settings)（如果可能）。
 
-1. 请考虑[使用部署槽位](/azure/app-service/deploy-staging-slots)实现可靠的部署，不需停机。
+* 请考虑[使用部署槽位](/azure/app-service/deploy-staging-slots)实现可靠的部署，不需停机。
 
-1. 设计和实施 DevOps 策略。 若要在提高开发速度的同时保持可靠性，请考虑[通过 Azure Pipelines 自动进行部署和测试](/azure/devops/pipelines/ecosystems/java-webapp)。 如果使用部署槽位，则可[自动部署到槽位](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)并进行后续的槽位交换。
+* 设计和实施 DevOps 策略。 若要在提高开发速度的同时保持可靠性，请考虑[通过 Azure Pipelines 自动进行部署和测试](/azure/devops/pipelines/ecosystems/java-webapp)。 如果使用部署槽位，则可[自动部署到槽位](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)并进行后续的槽位交换。
 
-1. 设计和实施业务连续性和灾难恢复策略。 对于关键应用程序，请考虑[多区域部署体系结构](/azure/architecture/reference-architectures/app-service-web-app/multi-region)。
+* 设计和实施业务连续性和灾难恢复策略。 对于关键应用程序，请考虑[多区域部署体系结构](/azure/architecture/reference-architectures/app-service-web-app/multi-region)。
