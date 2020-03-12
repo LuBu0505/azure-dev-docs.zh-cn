@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 创建 Azure Functions 应用程序
 description: 教程第 2 部分：创建 Azure Functions 应用
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fb7b5f3bab0dbde0a04671126ad7aa8e5be16ba0
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967236"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089960"
 ---
 # <a name="create-the-local-functions-app"></a>创建本地 Functions 应用
 
@@ -48,7 +48,7 @@ ms.locfileid: "76967236"
     | 文件名 | 说明 |
     | --- | --- |
     | *index.js* |  响应 HTTP 请求的源代码。 |
-    | *functions.json* | HTTP 触发器的[绑定配置](/azure/azure-functions/functions-triggers-bindings)。 |
+    | *function.json* | HTTP 触发器的[绑定配置](/azure/azure-functions/functions-triggers-bindings)。 |
     | *sample.dat* | 一个占位符数据文件，用于演示文件夹中可以有其他文件。 如果需要，可以删除此文件，因为本教程中没有使用它。 |
 
     ![创建函数应用的结果](media/functions-extension/create-function-app-results.png)
