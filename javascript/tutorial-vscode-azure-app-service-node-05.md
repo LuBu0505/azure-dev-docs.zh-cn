@@ -1,24 +1,22 @@
 ---
 title: 在 Visual Studio Code 中部署到 Azure 应用服务后清理资源
 description: 教程第 5 部分：清理资源
-author: kraigb
-manager: barbkess
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: d7ce42ab0807a9331d8c3021ff0d3007381f3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467192"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894212"
 ---
 # <a name="clean-up-resources"></a>清理资源
 
 [上一步：流式传输日志](tutorial-vscode-azure-app-service-node-04.md)
 
-创建的应用服务包含一项可能产生费用的后备应用服务计划。 若要清理资源，请在“Azure:  应用服务”资源管理器中右键单击应用服务，然后选择“删除”。 
+创建的应用服务包括一个在免费定价层上运行的后备应用服务计划，因此你不会产生任何持续成本。
 
-也可访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
+需要清理资源时，请访问 [Azure 门户](https://portal.azure.com)，选择“资源组”，  找到并选择在本教程中创建的资源组（例如 `AppServiceTutorial-rg`），然后使用“删除资源组”命令。 
 
 ## <a name="next-steps"></a>后续步骤
 

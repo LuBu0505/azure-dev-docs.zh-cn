@@ -9,18 +9,18 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504445"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893699"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序
 
 本教程介绍如何使用 [Docker] 将 [Spring Boot] 应用程序容器化并将自己的 docker 映像部署到 [Azure 应用服务](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)中的 Linux 主机。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 完成本教程中的步骤需要具备以下先决条件：
 
@@ -215,7 +215,7 @@ ms.locfileid: "77504445"
 
 > [!NOTE]
 >
-> Azure 会将 Internet 请求自动映射到在标准端口 80 或 8080 上运行的嵌入式 Tomcat 服务器。 但是，如果已将嵌入式 Tomcat 服务器配置为在自定义端口上运行，则需要将一个环境变量添加到为嵌入式 Tomcat 服务器定义端口的 Web 应用。 为此，请按照以下步骤操作：
+> Azure 会将 Internet 请求自动映射到在端口 80 上运行的嵌入式 Tomcat 服务器。 但是，如果已将嵌入式 Tomcat 服务器配置为在端口 8080 或自定义端口上运行，则需将一个环境变量添加到为嵌入式 Tomcat 服务器定义端口的 Web 应用。 为此，请按照以下步骤操作：
 >
 > 1. 浏览到 [Azure 门户]并登录。
 > 

@@ -1,37 +1,42 @@
 ---
 title: 在 Visual Studio Code 中创建 Azure 应用服务
-description: 教程第 2 部分：创建 Node.js 应用
+description: 教程第 2 部分：创建 Node.js 应用并在本地运行它
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: 96c786b7cc8112c36c0aff06761417a97e30bf44
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: b2935554fb337d5f5db1a71e016638869f9d1dc4
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466801"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893630"
 ---
-# <a name="create-your-nodejs-application"></a>创建 Node.js 应用程序
+# <a name="create-and-run-a-local-nodejs-app"></a>创建并运行本地 Node.js 应用
 
 [上一步：简介和先决条件](tutorial-vscode-azure-app-service-node-01.md)
 
-在此步骤中，将使用 Express 应用程序生成器创建一个简单的 Node.js 应用，然后可以将该应用部署到 Azure。
+在此步骤中，我们使用 Express 应用程序生成器创建一个简单的 Node.js 应用。 然后，在本地运行该应用。
 
-还可以使用 [Visual Studio Code Node.js 教程](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)中的应用，在这种情况下，可以跳到[部署应用](tutorial-vscode-azure-app-service-node-03.md)。
+1. 在终端中或命令提示符处，导航到要创建应用文件夹的位置。
 
-1. 在终端中或命令提示符下，使用以下命令运行 Express 生成器，并搭建一个名为“myExpressApp”的新 Express 应用。 （`--view pug --git` 参数告知生成器使用 [pug](https://pugjs.org/api/getting-started.html) 模板引擎（以前称为 Jade）并创建 *.gitignore* 文件。）
+1. 运行以下命令，使用 Express Generator 创建一个名为 *expressApp1* 的新 Express 应用。 （`--view pug --git` 参数告知生成器使用 [pug](https://pugjs.org/api/getting-started.html) 模板引擎（以前称为 Jade）并创建 *.gitignore* 文件。）
 
     ```bash
-    npx express-generator myExpressApp --view pug -–git
+    npx express-generator expressApp1 --view pug -–git
     ```
 
-1. 通过在应用文件夹中运行 `npm install` 来安装应用程序的依赖项：
+1. 导航到应用文件夹：
 
     ```bash
-    cd myExpressApp
+    cd expressApp1
+    ```
+
+1. 安装应用程序的依赖项：
+
+    ```bash
     npm install
     ```
 
-1. 通过运行 `npm start` 启动服务器：
+1. 启动服务器：
 
     ```bash
     npm start
@@ -40,6 +45,8 @@ ms.locfileid: "74466801"
 1. 通过打开浏览器访问 [http://localhost:3000](http://localhost:3000) 来测试应用。 站点应如下所示：
 
     ![运行 Express 应用程序](media/deploy-azure/express.png)
+
+1. 在终端中按 **Ctrl**+**C**，停止服务器。
 
 > [!div class="nextstepaction"]
 > [我创建了 Node.js 应用](tutorial-vscode-azure-app-service-node-03.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=create-app)

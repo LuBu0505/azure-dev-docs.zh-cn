@@ -4,12 +4,12 @@ description: 教程步骤 1，简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b9aecefc05db95aa121e496c9c993a5bba373ef7
+ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
 ms.sourcegitcommit: a9ec05f964009409fe6e54b95c9d548f805a518e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78215327"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875804"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -31,7 +31,7 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明安装 Azure Functions Core Tools。 忽略有关 Chocolately 包管理器的一文中的注释，这些注释对于完成本教程而言并非必需。
+按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明安装 Azure Functions Core Tools。 忽略有关 Chocolatey 包管理器的文章中的注释，这些注释对于完成本教程而言并非必需。
 
 安装 Node.js 时，请使用默认选项，  不要选择用于自动安装必要工具的选项。  另外，请务必将 `-g` 选项与 `npm install` 命令一起使用，以使 Core Tools 可用于后续命令。
 

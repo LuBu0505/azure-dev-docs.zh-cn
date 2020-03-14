@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: f6ee53e25f7ce75e5e0d88688880f788fa6795f9
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440858"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089942"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -73,16 +73,16 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 请使用以下网格来确定那些支持所需应用程序类型和功能的目标。
 
-|   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|应用<br>服务<br>WildFly|Azure<br>Spring<br>云|AKS|虚拟机|
+|   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| Spring Boot/JAR 应用程序                                    |&#x2714;|        |        |        |&#x2714;|&#x2714;|
-| Spring Cloud/微服务                                      |        |        |        |&#x2714;|&#x2714;|&#x2714;|
-| Web 应用程序                                                  |        |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
-| Java EE 应用程序                                              |        |        |&#x2714;|        |&#x2714;|&#x2714;|
-| 商业应用程序服务器<br>（例如 WebLogic 或 WebSphere） |        |        |        |        |&#x2714;|&#x2714;|
-| 本地文件系统上的长期持久性                         |&#x2714;|&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
-| 应用程序服务器级聚类分析                               |        |        |        |        |&#x2714;|&#x2714;|
-| 批处理作业/计划的作业                                            |        |        |        |&#x2714;|&#x2714;|&#x2714;|
+| Spring Boot/JAR 应用程序                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Cloud/微服务                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
+| Web 应用程序                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
+| Java EE 应用程序                                              |        |        |        |&#x2714;|&#x2714;|
+| 商业应用程序服务器<br>（例如 WebLogic 或 WebSphere） |        |        |        |&#x2714;|&#x2714;|
+| 本地文件系统上的长期持久性                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
+| 应用程序服务器级聚类分析                               |        |        |        |&#x2714;|&#x2714;|
+| 批处理作业/计划的作业                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
 
 ### <a name="ongoing-responsibility-grid"></a>持续责任网格
 
@@ -127,22 +127,26 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 请使用以下行查找 Java 应用程序类型和列，找出将托管应用程序的 Azure 服务目标。
 
-|目标&nbsp;→<br><br>应用程序&nbsp;类型&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|应用<br>服务<br>WildFly|Azure<br>Spring<br>云|AKS|虚拟机|
+若要将 JBoss EAP 应用迁移到应用服务上的 Tomcat，请先将 Java EE 应用转换为在 Tomcat 上运行的 Java Web 应用 (servlet)，然后按照下面提供的指南操作。
+
+若要将 Tomcat 上的 Web 应用迁移到 Azure Spring Cloud，请先将应用转换为 Spring Cloud 微服务，然后按照下面提供的指南操作。
+
+|目标&nbsp;→<br><br>应用程序&nbsp;类型&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR 应用程序 | [可用][5] | 已计划        | 已计划 | 已计划 | 已计划        | 已计划 |
-| Spring Cloud/<br>微服务   | 空值            | 空值            | 空值     | 已计划 | 已计划        | 已计划 |
-| Web 应用程序<br>Web 应用程序     | 空值            | [可用][2] | 空值     | 空值     | [可用][3] | 已计划 |
+| Spring Boot/<br>JAR 应用程序 | [指南][5] | 指南<br>已计划 | 指南<br>已计划 | 指南<br>已计划 | 指南<br>已计划 |
+| Spring Cloud/<br>微服务   | 空值           | 空值                 | 指南<br>已计划 | 指南<br>已计划 | 指南<br>已计划 |
+| Web 应用程序<br>Web 应用程序     | 空值           | [指南][2]       | 空值                 | [指南][3]       | 指南<br>已计划 |
 
 **Java EE 应用程序**
 
 请使用以下行查找在特定应用服务器上运行的 Java EE 应用程序类型。 请使用列来查找将托管应用程序的 Azure 服务目标。
 
-|目标&nbsp;→<br><br>应用服务器&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|应用<br>服务<br>WildFly|Azure<br>Spring<br>云|AKS|虚拟机|
+|目标&nbsp;→<br><br>应用服务器&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划        |
-| WebLogic              | 空值 | 空值 | 已计划 | 空值 | 已计划 | [可用][4] |
-| WebSphere             | 空值 | 空值 | 已计划 | 空值 | 已计划 | 已计划        |
-| JBoss EAP             | 空值 | 空值 | 已计划 | 空值 | 空值     | 已计划        |
+| WildFly/<br>JBoss AS | 空值 | 空值 | 空值 | 指南<br>已计划 | 指南<br>已计划 |
+| WebLogic              | 空值 | 空值 | 空值 | [指南][6]       | [指南][4]       |
+| WebSphere             | 空值 | 空值 | 空值 | [指南][7]       | 指南<br>已计划 |
+| JBoss EAP             | 空值 | 空值 | 空值 | 空值                 | 指南<br>已计划 |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
@@ -150,3 +154,5 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
 [5]: migrate-java-se-to-java-se-app-service.md
+[6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+[7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
