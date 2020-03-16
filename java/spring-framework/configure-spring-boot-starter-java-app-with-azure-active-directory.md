@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 3a1c174662d172b38e9d2c88043be24f18332356
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c3dc7dd1df14ef7d12667c603fbaab588667ac22
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812136"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893979"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -21,13 +21,12 @@ ms.locfileid: "74812136"
 
 本文演示了如何使用 **[Spring Initializr]** 创建一个 Java 应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。
 
-本教程介绍如何执行下列操作：
+在本教程中，你将了解如何执行以下操作：
 
-> [!div class="checklist"]
-> * 使用 Spring Initializr 创建 Java 应用程序
-> * 配置 Azure Active Directory
-> * 使用 Spring Boot 类和批注保护应用程序
-> * 生成和测试 Java 试应用程序
+ * 使用 Spring Initializr 创建 Java 应用程序
+ * 配置 Azure Active Directory
+ * 使用 Spring Boot 类和批注保护应用程序
+ * 生成和测试 Java 试应用程序
 
 如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
@@ -42,17 +41,15 @@ ms.locfileid: "74812136"
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后单击 Spring Initializr 的“切换到完整版”链接。   
+1. 指定使用 Java 生成 Maven 项目，并输入应用程序的“组”名称和“项目”名称     。
 
    ![指定组和项目名称][create-spring-app-01]
 
-1. 向下滚动到“核心”  部分并选中“安全性”  的复选框，在“Web”  部分中选中“Web”  的复选框，然后向下滚动到“Azure”  部分并选中“Azure Active Directory”  的复选框。
+1. 向下滚动，为 **Spring Web**、**Azure Active Directory** 和“Spring 安全性”  添加“依赖关系”  。
+
+1. 在页面底部，单击“生成”  按钮。
 
    ![选择“安全性”、“Web”和“Azure Active Directory”起动器][create-spring-app-02]
-
-1. 滚动到页面顶部或底部，单击“生成项目”对应的按钮。 
-
-   ![生成 Spring Boot 项目][create-spring-app-03]
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -66,65 +63,63 @@ ms.locfileid: "74812136"
 
    ![创建新的 Azure Active Directory 实例][create-directory-01]
 
-1. 输入“组织名称”和“初始域名”。   复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：`wingtiptoysdirectory.onmicrosoft.com`。）完成后，单击“创建”。 
+1. 输入“组织名称”和“初始域名”。   复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：`wingtiptoysdirectory.onmicrosoft.com`。） 
+
+复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：wingtiptoysdirectory.onmicrosoft.com。）。
+
+完成后，单击“创建”。  创建新资源将需要几分钟时间。
 
    ![指定 Azure Active Directory 名称][create-directory-02]
 
-1. 在 Azure 门户工具栏的右上角选择你的帐户名称，然后单击“切换目录”。 
+1. 完成后，单击即可访问新目录。
 
    ![选择你的 Azure 帐户名称][create-directory-03]
 
-1. 从下拉菜单中选择你的新 Azure Active Directory。
+1. 复制**租户 ID**；在本教程中，稍后需使用该值来配置 *application.properties* 文件。
 
-   ![选择 Azure Active Directory][create-directory-04]
-
-1. 从门户菜单中选择“Azure Active Directory”，单击“属性”，并复制“目录 ID”；在本教程中，稍后将使用该值来配置 *application.properties* 文件。   
-
-   ![复制 Azure Active Directory ID][create-directory-05]
+   ![复制租户 ID][create-directory-05]
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>添加 Spring Boot 应用的应用程序注册
 
-1. 从门户菜单中选择“Azure Active Directory”，依次单击“应用注册”和“新建应用注册”。   
+1. 在门户菜单中单击“应用注册”，然后单击“注册应用程序”。  
 
    ![添加新的应用注册][create-app-registration-01]
 
-2. 指定应用程序的**名称**，使用 http://localhost:8080 作为**登录 URL**，然后单击“创建”。 
+1. 指定应用程序，然后单击“注册”。 
 
    ![新建应用注册][create-app-registration-02]
 
-4. 当应用注册页出现时，复制你的**应用 ID**；在本教程中，稍后你将使用此值来配置 *application.properties* 文件。 单击“设置”  ，然后单击“密钥”  。
+1. 当应用注册页出现时，复制你的**应用程序 ID** 和**租户 ID**；在本教程中，稍后需使用这两个值来配置 *application.properties* 文件。
 
    ![创建应用注册密钥][create-app-registration-03]
 
-5. 添加“说明”并指定新密钥的“持续时间”，单击“保存”；单击“保存”图标时，会自动填充密钥的值，你需要复制该密钥的值，本教程中稍后将使用该值来配置 *application.properties* 文件。     （以后无法检索此值。）
+1. 在左侧导航窗格中单击“证书和机密”。   然后，单击“新建客户端机密”。 
+
+   ![创建应用注册密钥][create-app-registration-03.5]
+
+1. 添加“说明”  ，在“过期”  列表中选择持续时间。  单击“添加”  。 系统会自动填充密钥的值。
 
    ![指定应用注册密钥参数][create-app-registration-04]
 
-6. 在应用注册的主页上，依次单击“设置”、“所需的权限”。  
+1. 复制并保存客户端机密的值，以便在本教程的后面部分配置 *application.properties* 文件。 （以后无法检索此值。）
 
-   ![应用注册 - 所需的权限][create-app-registration-05]
+   ![指定应用注册密钥参数][create-app-registration-04.5]
 
-7. 单击“Windows Azure Active Directory”。 
+1. 单击左侧导航窗格中的“API 权限”  。 
 
-   ![选择“Windows Azure Active Directory”][create-app-registration-06]
-
-8. 选中“以登录用户身份访问该目录”和“登录并读取用户个人资料”对应的框，单击“保存”。   
-
-   ![启用访问权限][create-app-registration-07]
-
-9. 在“所需的权限”页上，单击“授予权限”，并在出现提示时单击“是”。   
+1. 在“API 权限”页上，单击“授予管理员许可...”，并在出现提示时单击“是”。   
 
    ![授予访问权限][create-app-registration-08]
 
-10. 在应用注册的主页上，依次单击“设置”、“回复 URL”。  
+1. 在应用注册的主页上单击“身份验证”，然后单击“添加平台”。    然后单击“Web 应用程序”。 
 
     ![编辑回复 URL][create-app-registration-09]
 
-11. 输入“<http://localhost:8080/login/oauth2/code/azure>”作为新的回复 URL，并单击“保存”。 
+1. 输入 <http:<span></span>//localhost:8080/login/oauth2/code/azure> 作为新的“重定向 URI”  ，然后单击“配置”  。
 
     ![添加新的回复 URL][create-app-registration-10]
 
-12. 从应用注册主页面上，单击“清单”  ，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”  。
+1. 从应用注册主页面上，单击“清单”  ，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”  。
 
     ![配置应用清单][create-app-registration-11]
 
@@ -139,7 +134,7 @@ ms.locfileid: "74812136"
 
    ![添加新用户帐户][create-user-01]
 
-1. 当“用户”  面板显示时，输入**名称**和**用户名**。
+1. 当“用户”  面板显示时，输入**用户名**和**名称**。  然后单击“创建”  。
 
    ![输入用户帐户信息][create-user-02]
 
@@ -150,11 +145,13 @@ ms.locfileid: "74812136"
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
    > 
 
-1. 单击“组”  ，选择要用于在应用程序中进行身份验证的组，然后单击“选择”。  （针对在本教程中的用途，请将帐户添加到 _Users_ 组。）
+1. 单击“组”  ，然后单击“创建新组”，该组将用于在应用程序中授权。 
 
-   ![选择用户的组][create-user-03]
+1. 然后单击“未选择任何成员”。  （在本教程中，我们将创建一个名为 *users* 的组。）搜索在上一步创建的用户。  单击“选择”将该用户添加到组中。   然后，单击“创建”  以创建新组。
 
-1. 单击“显示密码”  ，然后复制密码；在本教程中，登录到应用程序时将使用此密码。 复制密码后，单击“创建”  将新的用户帐户添加到你的目录。
+   ![选择组的用户][create-user-03]
+
+1. 返回到“用户”面板，选择测试用户，单击“重置密码”，然后复制密码；在本教程的后面部分，登录到应用程序时将使用此密码。   
 
    ![显示密码][create-user-04]
 
@@ -317,7 +314,7 @@ ms.locfileid: "74812136"
 
    ![生成应用程序][build-application]
 
-1. 在 Maven 生成并启动该应用程序之后，请在 Web 浏览器中打开 <http://localhost:8080>；系统应会提示输入用户名和密码。
+1. 通过 Maven 生成并启动应用程序之后，请在 Web 浏览器中打开 http:<span></span>//localhost:8080；系统会提示你输入用户名和密码。
 
    ![登录到应用程序][application-login]
 
@@ -337,9 +334,12 @@ ms.locfileid: "74812136"
    > 未授权的用户帐户会收到“HTTP 403 未授权”消息。 
    >
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本教程中，使用 Azure Active Directory 起动器创建了新的 Java Web 应用程序，配置了新的 Azure AD 租户并在其中注册了新的应用程序，并且已将应用程序配置为使用 Spring 批注和类来保护 Web 应用。
+
+## <a name="see-also"></a>另请参阅
+* 有关新 UI 选项的信息，请参阅[新的 Azure 门户应用注册培训指南](https://docs.microsoft.com/azure/active-directory/develop/app-registrations-training-guide-for-app-registrations-legacy-users)
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -377,7 +377,9 @@ ms.locfileid: "74812136"
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
 [create-app-registration-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.png
+[create-app-registration-03.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.5.png
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
+[create-app-registration-04.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
 [create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
 [create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png
