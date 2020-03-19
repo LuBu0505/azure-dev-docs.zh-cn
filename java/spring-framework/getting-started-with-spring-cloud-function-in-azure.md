@@ -9,12 +9,12 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 12ca26bae42c17395c70448ffc5bf3f01dde9b8e
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 621fa4c79511149ef18a60fd4143490773e49271
+ms.sourcegitcommit: 1586dacf8ea29f24f3bc9ccbf0eb07638b5596d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872142"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79313255"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure 中的 Spring Cloud Function 入门
 
@@ -22,7 +22,7 @@ ms.locfileid: "76872142"
 
 [!INCLUDE [quickstarts-free-trial-note](../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用 Java 开发函数，必须安装以下软件：
 
@@ -64,7 +64,7 @@ ms.locfileid: "76872142"
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.4.0</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.4.1</azure.functions.maven.plugin.version>
     <azure.functions.java.library.version>1.3.0</azure.functions.java.library.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>
@@ -326,6 +326,10 @@ curl http://localhost:7071/api/hello -d "{\"name\":\"Azure\"}"
 ## <a name="deploy-the-function-to-azure-functions"></a>将函数部署到 Azure Functions
 
 现在可以将 Azure 函数部署到生产中了。 请记住，已在 *pom.xml* 中定义的 `<functionAppName>`、`<functionAppRegion>` 和 `<functionResourceGroup>` 属性将用于配置函数。
+
+> [!NOTE]
+> Maven 插件需要在 Azure 中进行身份验证，如果安装了 Azure CLI，请使用 `az login`，然后继续。
+> 查看[此处](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication)以了解更多身份验证选项。
 
 通过运行 Maven 来自动部署函数：
 

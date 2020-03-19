@@ -9,11 +9,11 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 2bf2630c5fef6c399e2642e1ae153630f48874a9
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.sourcegitcommit: 1586dacf8ea29f24f3bc9ccbf0eb07638b5596d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812420"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79318161"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>有关使用用于 Java 的 Azure 库进行开发的模式和最佳做法 
 
@@ -68,15 +68,15 @@ for (VirtualMachine vm : vms) {
 
 管理库根据结果的结构从查询返回特定的集合类型。
 
-- `List<T>`：易于搜索和循环访问的无序数据。
-- `Map<T>`：映射是具有唯一键的键/值对，但不一定是唯一值。 映射的示例包括应用服务 Web 应用的应用设置。
-- `Set<T>`：集具有唯一的键和值。 集的示例包括附加到虚拟机的网络，它们具有唯一的标识符（键）和唯一的网络配置（值）。
+- `List<T>`设置用户帐户 ：易于搜索和循环访问的无序数据。
+- `Map<T>`设置用户帐户 ：映射是具有唯一键的键/值对，但不一定是唯一值。 映射的示例包括应用服务 Web 应用的应用设置。
+- `Set<T>`设置用户帐户 ：集具有唯一的键和值。 集的示例包括附加到虚拟机的网络，它们具有唯一的标识符（键）和唯一的网络配置（值）。
 
 ## <a name="actionable-verbs"></a>可操作的谓词
 
 名称中包含谓词的方法在 Azure 中立即执行。 这些方法以同步方式工作，在完成之前会阻止当前线程中的执行。 
 
-| Verb   |  示例用法 |
+| 谓词   |  示例用法 |
 |--------|---------------|
 | create | `azure.virtualMachines().create(listOfVMCreatables)` |
 | apply  | `virtualMachineScaleSet.update().withCapacity(6).apply()` |

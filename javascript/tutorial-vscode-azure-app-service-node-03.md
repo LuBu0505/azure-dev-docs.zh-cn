@@ -3,12 +3,12 @@ title: 在 Visual Studio Code 中将 Node.js 应用部署到 Azure 应用服务
 description: 教程第 3 部分：部署网站
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1a8b4a37fa823b631e6b4849cf7cff6ac2ba26f3
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 7e7a6c765b79878ca3ddc86bd16349694cb7ded6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894221"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510595"
 ---
 # <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
 
@@ -36,6 +36,7 @@ ms.locfileid: "78894221"
 
 1. 响应提示，如下所述：
 
+    - 选择你的订阅帐户  。
     - 对于“输入全局唯一名称”  ，请输入在所有 Azure 中都是唯一的名称。 仅使用字母数字字符（“A-Z”、“a-z”和“0-9”）和连字符（“-”）
     - 选择“创建新的资源组”并提供一个名称，例如 `AppServiceTutorial-rg`。 
     - 选择操作系统（Windows 或 Linux）
@@ -68,7 +69,7 @@ ms.locfileid: "78894221"
 
     ![“部署到 Web 应用”图标](media/deploy-azure/deploy.png)
 
-1. 出现提示时，选择 *expressApp1* 文件夹，然后选择此前创建的 Web 应用的名称。
+1. 出现提示时，选择 expressApp1  文件夹并再次选择你的订阅帐户  ，然后选择此前创建的 Web 应用的名称。
 
 1. 部署到 Linux 时，如果系统提示你更新配置以在目标服务器上运行 `npm install`，请选择“是”。 
 

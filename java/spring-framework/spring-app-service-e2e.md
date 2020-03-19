@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 4daf41e1cf13d57a42230cd8ed6af4a2258e5e01
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872132"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139294"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>将 Spring 应用部署到使用 MySQL 的应用服务
 
@@ -19,7 +19,7 @@ ms.locfileid: "76872132"
 
 本教程以常用的 Spring PetClinic 示例应用程序为基础。 在本主题中，你将在本地测试 HSQLDB 版本的应用，然后将其部署到 [Azure 应用服务](/azure/app-service/containers)。 之后，你将配置并部署一个使用 [Azure Database for MySQL](/azure/mysql) 的版本。 最后，你将了解如何通过增加运行应用程序的辅助角色的数量来访问应用日志并进行横向扩展。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * [Azure CLI](https://docs.microsoft.com/cli/azure/overview)
 * [Java 8](http://java.oracle.com/)
@@ -115,7 +115,7 @@ export REGION=<region>
 
 Maven 将使用这些值来创建具有你提供的名称的 Azure 资源。 通过使用环境变量，可以将帐户机密保存在项目文件之外。
 
-接下来，更新 *pom.xml* 文件，以便为 Azure 部署配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.7.0` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
+接下来，更新 *pom.xml* 文件，以便为 Azure 部署配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.9.0` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
 
 ```xml
 <plugin>
@@ -230,13 +230,13 @@ cd ../../initial-mysql/spring-framework-petclinic
 </profile>
 ```
 
-接下来，更新 *pom.xml* 文件，以便为 Azure 部署和 MySQL 的使用配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.7.0` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
+接下来，更新 *pom.xml* 文件，以便为 Azure 部署和 MySQL 的使用配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.9.0` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.7.0</version>
+    <version>1.9.0</version>
     <configuration>
 
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>

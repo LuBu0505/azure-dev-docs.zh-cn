@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 03aa4ec91b8c39ccdd774a99d2e4c3af39b997b6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893699"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510605"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>在用于容器的 Azure 应用服务上部署 Spring Boot 应用程序
 
@@ -124,11 +124,11 @@ ms.locfileid: "78893699"
 
 1. 将 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 添加到 pom.xml  文件中的 `<plugins>` 集合。  此示例使用版本 1.8.0。 
 
-在 `<from>/<image>` 中指定基本映像（此处为 `openjdk:8-jre-alpine`）。 指定要从 `<to>/<image>` 中的基本映像生成的最终映像的名称。  
+   在 `<from>/<image>` 中指定基本映像（此处为 `mcr.microsoft.com/java/jre:8-zulu-alpine`）。 指定要从 `<to>/<image>` 中的基本映像生成的最终映像的名称。  
 
-身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Maven Build 中的 JAR 文件的名称和版本号。
+   身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Maven Build 中的 JAR 文件的名称和版本号。
 
-在 `<to>/<auth>` 节点中指定来自注册表窗格的用户名和密码。 例如：
+   在 `<to>/<auth>` 节点中指定来自注册表窗格的用户名和密码。 例如：
 
    ```xml
    <plugin>
@@ -137,7 +137,7 @@ ms.locfileid: "78893699"
      <version>1.8.0</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
@@ -165,7 +165,7 @@ ms.locfileid: "78893699"
 
 1. 浏览到 [Azure 门户]并登录。
 
-2. 依次单击“+ 创建资源”  菜单图标、“Web”、  “用于容器的 Web 应用”  。
+2. 依次单击“+ 创建资源”  的菜单图标、“计算”、  “用于容器的 Web 应用”  。
    
    ![在 Azure 门户中创建新的 Web 应用][LX01]
 

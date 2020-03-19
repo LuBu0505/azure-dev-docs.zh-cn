@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: eefd56cf6fc2c290d585dfe4274b7395a6d77be3
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 3e845f9d8a4069225f0f2d949f8a8de492b21771
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872172"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139243"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
 
@@ -22,7 +22,7 @@ ms.locfileid: "76872172"
 
 本教程将指导用户将这两种常用的开源技术进行结合，从而将 Spring Boot 应用程序开发和部署到 Microsoft Azure。 具体而言，将使用 [Spring Boot] 进行应用程序开发，使用 [Kubernetes] 进行容器部署，使用 [Azure Kubernetes 服务 (AKS)] 来托管应用程序   。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
@@ -117,7 +117,7 @@ ms.locfileid: "76872172"
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>1.8.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.1.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -164,13 +164,13 @@ ms.locfileid: "76872172"
 
 ```bash
    # Get the id of the service principal configured for AKS
-   CLIENT_ID=$(az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
+   CLIENT_ID=$(az.cmd aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
    
    # Get the ACR registry resource id
-   ACR_ID=$(az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
+   ACR_ID=$(az.cmd acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
    
    # Create role assignment
-   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+   az.cmd role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
 ```
 
   \- 或 -

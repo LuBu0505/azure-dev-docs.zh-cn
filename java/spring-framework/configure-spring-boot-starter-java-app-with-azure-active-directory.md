@@ -3,17 +3,17 @@ title: 如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 description: 了解如何使用 Azure Active Directory 起动器配置 Spring Boot Initializer 应用。
 services: active-directory
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 03/05/2020
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: c3dc7dd1df14ef7d12667c603fbaab588667ac22
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 9b2915f6f754a62d53ecebb9251778c76fccce9a
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893979"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139549"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
