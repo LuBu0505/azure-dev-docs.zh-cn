@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: c9d46571c22c9bee49352dd4c1f492b2c9ff60a8
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.openlocfilehash: e58e36b140c1512600497bffbbd149334904981f
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77709825"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894304"
 ---
-安装 Azure 扩展以后，请通过导航到 **Azure** 资源管理器登录到 Azure 帐户，选择“登录 Azure”  ，然后按照提示操作。 （如果已安装多个 Azure 扩展，请针对你使用的区域选择一个扩展，如应用服务、Functions 等。）
+在 VS Code 中安装 Azure 扩展以后，请通过导航到 **Azure** 资源管理器登录到 Azure 帐户，选择“登录 Azure”  ，然后按照提示操作。 （如果已安装多个 Azure 扩展，请针对你使用的区域选择一个扩展，如应用服务、Functions 等。）
 
 ![通过 VS Code 登录到 Azure](../media/deploy-azure/azure-sign-in.png)
 
@@ -19,14 +19,25 @@ ms.locfileid: "77709825"
 > [!NOTE]
 > 如果出现错误“找不到名为 [订阅 ID] 的订阅”，这可能是因为你使用了代理，因此无法访问 Azure API。  在终端中使用代理信息配置 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量：
 >
+> # <a name="bash"></a>[bash](#tab/bash)
+>
 > ```bash
-> # MacOS/Linux
 > export HTTPS_PROXY=https://username:password@proxy:8080
 > export HTTP_PROXY=http://username:password@proxy:8080
 > ```
 >
+> # <a name="powershell"></a>[PowerShell](#tab/powershell)
+>
+> ```powershell
+> $env: HTTPS_PROXY = "https://username:password@proxy:8080"
+> $env: HTTP_PROXY = "http://username:password@proxy:8080"
+> ```
+>
+> # <a name="cmd"></a>[Cmd](#tab/cmd)
+>
 > ```cmd
-> # Windows
 > set HTTPS_PROXY=https://username:password@proxy:8080
 > set HTTP_PROXY=http://username:password@proxy:8080
 > ```
+>
+> ---
