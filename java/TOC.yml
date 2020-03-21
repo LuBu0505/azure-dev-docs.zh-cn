@@ -1,9 +1,10 @@
-- name: 面向 Java 开发人员的 Azure
+- name: 面向 Java 云开发人员的 Azure
   href: index.yml
   items:
     - name: 入门
       href: java-sdk-azure-get-started.md
     - name: 快速入门
+      expanded: true
       items:
         - name: 部署 Web 应用
           items:
@@ -84,14 +85,12 @@
             - name: 必应图像搜索
               href: /azure/cognitive-services/bing-image-search/quickstarts/java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
     - name: 框架和平台
-      expanded: true
       items:
         - name: Spring Framework 与 Spring Boot
           href: /azure/java/spring-framework/index
         - name: Eclipse MicroProfile
           href: /azure/java/microprofile/index
     - name: 开发人员工具
-      expanded: true
       items:
         - name: 概述
           href: java-azure-tools.md

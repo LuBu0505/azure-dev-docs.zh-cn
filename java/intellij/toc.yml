@@ -7,10 +7,6 @@
       items:
         - name: 将 Web 应用部署到 Linux 容器
           href: azure-toolkit-for-intellij-hello-world-web-app-linux.md
-        - name: 将 Web 应用作为 Docker 容器发布
-          href: azure-toolkit-for-intellij-publish-as-docker-container.md
-        - name: 将 Spring Boot 应用作为 Docker 容器发布
-          href: azure-toolkit-for-intellij-publish-spring-boot-docker-app.md
     - name: 操作说明
       items:
         - name: 登录到 Azure 帐户
