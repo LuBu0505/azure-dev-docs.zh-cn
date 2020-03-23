@@ -1,85 +1,78 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Azure 上的 Spring
+### YamlMime:Landing
+title: “Azure 上的 Spring”集成文档
+summary: Spring 是 Pivotal 开发的开源应用程序框架，它提供简化的模块化方法来创建 Java 应用程序。 本网站中的内容将说明如何开发 Spring 应用并将其部署到云中。
 metadata:
-  document_id: null
-  title: Azure 上的 Spring
-  description: 在 Azure 上开始使用 Spring 开发应用。
-  keywords: 'Azure, Java, Maven, Spring, Boot'
+  title: “Azure 上的 Spring”集成文档
+  description: Spring 是 Pivotal 开发的开源应用程序框架，它提供简化的模块化方法来创建 Java 应用程序。 本网站中的内容将说明如何开发 Spring 应用并将其部署到云中。
+  ms.service: azure-java
   author: bmitchell287
   ms.author: brendm
-  manager: douge
-  ms.date: 02/01/2018
+  ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.technology: azure
-  ms.devlang: java
-  ms.service: multiple
-  ms.custom: seo-java-july2019
-sections:
-  - items:
-      - type: markdown
-        text: |
-          [Spring](https://spring.io/) 是 [Pivotal](https://pivotal.io) 开发的开源应用程序框架，它提供简化、模块化的方法来创建 Java 应用程序。  本网站中的快速入门和教程将演示如何开发 Spring 应用并将其部署到云中。
-  - title: 入门指南
-    items:
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            text: 适用于 Azure 的 Spring Boot 起动器
-            href: spring-boot-starters-for-azure.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/storage.svg'
-            text: Azure 存储
-            href: configure-spring-boot-starter-java-app-with-azure-storage.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ActiveDirectory.svg'
-            text: Azure Active Directory
-            href: configure-spring-boot-starter-java-app-with-azure-active-directory.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/KeyVault.svg'
-            text: Key Vault
-            href: configure-spring-boot-starter-java-app-with-azure-key-vault.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/EventHubs.svg'
-            text: Kafka 和事件中心
-            href: configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ApplicationInsights.svg'
-            text: Application Insights
-            href: configure-spring-boot-java-applicationinsights.md
-  - title: 分步教程
-    items:
-      - type: markdown
-        text: 了解如何将 Spring Boot 应用程序与 Azure 服务集成。
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="configure-spring-boot-initializer-java-app-with-redis-cache.md">如何将 Spring Boot Initializer 应用配置为使用 Redis 缓存</a>
-          - html: <a href="configure-spring-boot-starter-java-app-with-cosmos-db.md">如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用</a>
-          - html: <a href="deploy-spring-boot-java-app-with-maven-plugin.md">如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure</a>
-          - html: <a href="deploy-spring-boot-java-app-on-kubernetes.md">在 Azure 容器服务中将 Spring Boot 应用部署于 Kubernetes</a>
-          - html: <a href="deploy-spring-boot-java-app-on-linux.md">在 Azure 容器服务中将 Spring Boot Web 应用部署于 Linux</a>
-          - html: <a href="deploy-spring-boot-java-app-using-fabric8-maven-plugin.md">使用 Fabric8 Maven 插件部署 Spring Boot 应用</a>
-          - html: <a href="deploy-containerized-spring-boot-java-app-with-maven-plugin.md">如何使用适用于 Azure Web 应用的 Maven 插件将容器化 Spring Boot 应用部署到 Azure</a>
-          - html: <a href="deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md">如何使用适用于 Azure Web 应用的 Maven 插件将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务</a>
-  - title: 示例
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: '<a href="https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples">适用于 Azure 的 Spring Boot 示例</a>'
-          - html: '<a href="https://github.com/spring-guides/">Spring Guides</a>（Spring 指南）'
-  - title: 引用
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Spring Framework
-            html: '<p><a href="https://spring.io/">Spring Framework</a></p><p><a href="https://spring.io/docs">Learn Spring</a>（学习 Spring）</p><p><a href="https://spring.io/docs/reference">参考文档</a></p>'
-          - title: Spring Boot
-            html: '<p><a href="https://projects.spring.io/spring-boot/">Spring Boot</a></p><p><a href="https://start.spring.io/">Spring Initializr</a></p>'
+  ms.openlocfilehash: e7732a900c5f1684e9f0817d679f059e21be4941
+  ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "79990388"
+landingContent:
+- title: 入门指南
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 适用于 Azure 的 Spring Boot 起动器
+      url: spring-boot-starters-for-azure.md
+    - text: Spring Data Azure Cosmos DB
+      url: how-to-guides-spring-data-cosmosdb.md
+  - linkListType: get-started
+    links:
+    - text: Azure 存储
+      url: configure-spring-boot-starter-java-app-with-azure-storage.md
+    - text: Key Vault
+      url: configure-spring-boot-starter-java-app-with-azure-key-vault.md
+    - text: Kafka 和事件中心
+      url: configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md
+    - text: Application Insights
+      url: configure-spring-boot-java-applicationinsights.md
+- title: 分步教程
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 使用 Azure Active Directory 保护应用
+      url: configure-spring-boot-starter-java-app-with-azure-active-directory.md
+    - text: 将应用配置为使用 Redis 缓存
+      url: configure-spring-boot-initializer-java-app-with-redis-cache.md
+    - text: 使用 Azure Cosmos DB SQL API
+      url: configure-spring-boot-starter-java-app-with-cosmos-db.md
+    - text: 部署 Spring Boot 应用
+      url: deploy-spring-boot-java-app-with-maven-plugin.md
+    - text: 将应用部署到 AKS 中的群集
+      url: deploy-spring-boot-java-app-on-kubernetes.md
+    - text: 将应用部署到适用于容器的 Web 应用
+      url: deploy-spring-boot-java-app-on-linux.md
+    - text: 使用 Maven 部署到适用于容器的 Web 应用
+      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
+    - text: 将应用从 ACR 部署到 Azure
+      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
+- title: 代码示例
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: 适用于 Azure 的 Spring Boot 示例
+      url: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples
+    - text: Spring 指南
+      url: https://github.com/spring-guides/
+- title: Spring 资源
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Spring Framework
+      url: https://spring.io/
+    - text: Spring Cloud Azure
+      url: https://spring.io/projects/spring-cloud-azure
+    - text: 了解 Spring
+      url: https://spring.io/learn
+    - text: Spring Boot
+      url: https://spring.io/projects/spring-boot
+    - text: Spring Initializr
+      url: https://start.spring.io/

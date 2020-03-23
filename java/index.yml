@@ -1,92 +1,94 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: 面向 Java 云开发人员的 Azure
+### YamlMime:Landing
+title: 适用于 Java 云开发人员的 Azure 文档
 metadata:
-  title: 面向 Java 开发人员的 Azure - 教程和 API 参考
-  description: 使用这些面向 Java 开发人员的优良教程和工具开始开发云应用。
-  keywords: 'Azure, Java, SDK, API, Maven, Spring'
-  author: rloutlaw
+  title: 适用于 Java 云开发人员的 Azure 文档
+  ms.service: azure-java
+  author: bmitchell287
   ms.author: brendm
-  manager: douge
-  ms.date: 11/02/2017
-  ms.topic: article
-  ms.technology: azure
-  ms.devlang: java
-  ms.service: multiple
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-            html: <p>将第一个 Web 应用部署到应用服务</p>
-            image:
-              src: /media/common/i_get-started.svg
-            title: Azure Web 应用
-          - href: 'https://docs.microsoft.com/en-us/azure/spring-cloud/'
-            html: <p>用于 Spring Cloud 的托管服务</p>
-            image:
-              src: /java/media/spring.svg
-            title: Azure Spring Cloud
-          - href: /azure/java/spring-framework/
-            html: <p>将 Azure 服务与 Spring Boot 配合使用</p>
-            image:
-              src: /java/media/spring.svg
-            title: Azure 上的 Spring
-          - href: java-azure-tools.md
-            html: <p>工具和 IDE</p>
-            image:
-              src: /media/common/i_download-install.svg
-            title: IntelliJ、Maven、Eclipse 和 VS Code 插件
-          - href: jdk/index.md
-            html: <p>支持的 JDK</p>
-            image:
-              src: /media/common/i_download-install.svg
-            title: 支持的 JDK
-          - href: /java/api/?view=azure-java
-            html: <p>API 参考</p>
-            image:
-              src: /media/common/i_api-reference.svg
-            title: 用于 Java 的 Azure SDK
-  - title: 入门指南
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: /java/media/spring.svg
-            title: 使用 Maven 部署 Spring Boot 应用
-            href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
-          - image:
-              src: /java/media/spring.svg
-            title: 将微服务与 Azure Spring Cloud 配合使用
-            href: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
-          - image:
-              src: /azure/media/index/storage.svg
-            title: 从存储上传和下载 blob
-            href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-          - image:
-              src: /azure/media/index/azurefunctions.svg
-            title: 创建 Java 无服务器函数
-            href: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-          - image:
-              src: /javascript/azure/media/k8s_logo.svg
-            title: 部署到 Kubernetes
-            href: /azure/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes
-          - image:
-              src: /java/media/jenkins_logo.svg
-            title: 使用 Jenkins® 持续集成/持续交付到应用服务
-            href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-  - title: 示例
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2">使用 Linux 和 Cosmos DB 创建 Spring Boot 应用</a>'
-          - html: '<a href="https://github.com/Azure-Samples/storage-blobs-java-v10-quickstart">使用 Java 的 Azure Blob 存储</a>'
-          - html: '<a href="https://github.com/Azure-Samples/azure-cosmos-db-sql-api-async-java-getting-started">使用 SQL API 连接到 Cosmos DB</a>'
-          - html: '<a href="https://azure.microsoft.com/resources/samples/service-fabric-java-getting-started/">将 Java 微服务与 Service Fabric 配合使用</a>'
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 470233f8da8e7e0802e89eac7efc0f8594306802
+  ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "79990465"
+landingContent:
+- title: Azure 应用服务
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 将第一个 Web 应用部署到 Azure
+      url: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+- title: Azure Functions
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 创建函数并将其发布到 Azure
+      url: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+- title: 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 概述
+      url: migration-overview.md
+- title: Azure Spring Cloud
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 用于 Spring Cloud 的托管服务
+      url: /azure/spring-cloud
+- title: “Azure 上的 Spring”集成
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 将 Azure 服务与 Spring Boot 配合使用
+      url: /azure/java/spring-framework
+- title: 工具和 IDE
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: IntelliJ、Maven、Eclipse 和 VS Code
+      url: /azure/java/java-azure-tools
+- title: 支持的 JDK
+  linkLists:
+  - linkListType: download
+    links:
+    - text: 适用于 Azure 和 Azure Stack 的 Java
+      url: /azure/java/jdk/
+- title: 用于 Java 的 Azure SDK
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API 浏览器
+      url: /java/api/?view=azure-java
+- title: 入门指南
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 使用 Maven 部署 Spring Boot 应用
+      url: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+    - text: 将微服务与 Azure Spring Cloud 配合使用
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - text: 管理 Azure 存储 Blob
+      url: /azure/storage/blobs/storage-quickstart-blobs-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+    - text: 创建 Java 无服务器函数
+      url: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+    - text: 部署到 Kubernetes
+      url: /azure/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes
+    - text: 使用 Jenkins® 持续集成/持续交付到应用服务
+      url: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+- title: 代码示例
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: 在 Linux 上创建 Spring Framework 应用
+      url: /azure/java/spring-framework/spring-app-service-e2e
+    - text: 在 Linux 上创建 Spring Boot 应用
+      url: https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2
+    - text: 将会话外部化到 Redis 缓存
+      url: https://github.com/azure-samples/scaling-stateful-java-web-app-on-azure
+    - text: Azure 存储
+      url: /samples/browse/?products=azure-storage&languages=java
+    - text: 将 Cosmos DB 与 SQL API 配合使用
+      url: /samples/browse/?products=azure-cosmos-db%2Cazure-sql-database&languages=java
