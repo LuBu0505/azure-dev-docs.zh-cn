@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: Azure Toolkit for IntelliJ 文档
+summary: 借助 Azure Toolkit for IntelliJ 提供的模板和功能，可利用 IntelliJ 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。
+metadata:
+  title: Azure Toolkit for IntelliJ 文档
+  description: 了解 Azure Toolkit for IntelliJ。
+  ms.service: azure-java
+  author: bmitchell287
+  ms.author: brendm
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 4a809a74a252e5e522d5db0fef3d03c140aa5ad0
+  ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "80063867"
+landingContent:
+- title: 入门指南
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 创建用于 Azure 应用服务的 Hello World Web 应用
+      url: azure-toolkit-for-intellij-create-hello-world-web-app.md
+- title: 分步教程
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 在 Linux 容器中运行 Hello World Web 应用
+      url: azure-toolkit-for-intellij-hello-world-web-app-linux.md
+    - text: 为 HDInsight Spark Linux 群集创建 Spark 应用程序
+      url: /azure/hdinsight/hdinsight-apache-spark-intellij-tool-plugin
+- title: 管理 Azure 资源
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Redis 缓存
+      url: azure-toolkit-for-intellij-managing-redis-caches-using-azure-explorer.md
+    - text: 存储帐户
+      url: azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md
+    - text: 虚拟机
+      url: azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md
+- title: 支持的 JDK
+  linkLists:
+  - linkListType: download
+    links:
+    - text: 适用于 Azure 和 Azure Stack 的 Java
+      url: /azure/java/jdk/
+- title: 源代码
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 适用于 Java 的 Azure 工具包
+      url: https://github.com/microsoft/azure-tools-for-java
