@@ -3,26 +3,21 @@ title: 安装适用于 Azure 和 Azure Stack 的 Azul Zulu JDK
 description: 如何安装 Azul Zulu Java 开发工具包 (JDK)，以便在 Windows、Linux 和 Mac 中进行 Azure 开发
 ms.date: 04/19/2019
 ms.topic: conceptual
-ms.openlocfilehash: dad5665285b15650212ab2410c3965c9f38b727d
-ms.sourcegitcommit: 6ffa53b933da524e09911b164bba8515722bfa91
+ms.openlocfilehash: f5425bd94a0094fb16649bd3a8069599e30cdba7
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629379"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990420"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>安装适用于 Azure 和 Azure Stack 的 JDK
 
 Azul Zulu for Azure - Enterprise Edition 内部版 JDK 是适用于 Azure 和 Azure Stack 的 OpenJDK 的免费、多平台、生产就绪型发行版，由 Microsoft 及 Azul Systems 提供支持。 这些版本包含构建和运行 Java SE 应用程序所需的所有组件。
 
-有[多个支持用于每个客户端 OS 的下载包类型](https://www.azul.com/downloads/azure-only/zulu/)。 也可从以下平台的 Azure 市场库获取虚拟机映像：
-
-* [Azul Zulu：基于 Ubuntu 18.04 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
-* [Azul Zulu：基于 Windows Server 2019 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
-* [Azul Zulu：基于 Ubuntu 18.04 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
-* [Azul Zulu：基于 Windows Server 2019 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
+有[多个支持用于每个客户端 OS 的下载包类型](https://www.azul.com/downloads/azure-only/zulu/)。 也可[从 Azure 市场库获取虚拟机映像](#get-virtual-machine-images-from-the-azure-marketplace-gallery)。
 
 > [!NOTE]
-> 这些说明针对 64 位 Java 8 版 JDK。 Azul 还提供 Java Run-time Environment (JRE) 作为独立安装。 此 JRE 随附在 JDK 安装中。
+> 以下说明针对 64 位 Java 8 版 JDK。 Azul 还提供 Java Run-time Environment (JRE) 作为独立安装。 此 JRE 随附在 JDK 安装中。
 >
 > Java 11 包也在 [Azul 的 Azure 下载页](https://www.azul.com/downloads/azure-only/zulu/)上提供。
 
@@ -82,6 +77,15 @@ openjdk version "1.8.0_242"
 OpenJDK Runtime Environment (Zulu 8.44.0.11-linux64)-Microsoft-Azure-restricted (build 1.8.0_242-b20)
 OpenJDK 64-Bit Server VM (Zulu 8.44.0.11-linux64)-Microsoft-Azure-restricted (build 25.242-b20, mixed mode)
 ```
+
+## <a name="get-virtual-machine-images-from-the-azure-marketplace-gallery"></a>从 Azure 市场库获取虚拟机映像
+
+可以获取以下平台的虚拟机映像：
+
+* [Azul Zulu：基于 Ubuntu 18.04 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
+* [Azul Zulu：基于 Windows Server 2019 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
+* [Azul Zulu：基于 Ubuntu 18.04 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
+* [Azul Zulu：基于 Windows Server 2019 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
 
 ## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdks-from-a-yum-repository"></a>下载并安装 Yum 存储库中的 Azul Zulu for Azure - Enterprise Edition JDK
 

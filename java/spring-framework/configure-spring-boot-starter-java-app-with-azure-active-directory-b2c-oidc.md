@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: b554af8f375d3b054a4391a35c0b457944b4bad1
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139328"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990499"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
 
@@ -84,15 +84,15 @@ ms.locfileid: "79139328"
 
    ![添加新的应用注册](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. 指定应用程序的“名称”，添加 `http://localhost:8080/home` 作为“回复 URL”，将“应用程序 ID”作为 `${your-client-id}` 记录，然后单击“保存”。    
+2. 指定应用程序**名称**，添加 `http://localhost:8080/home` 作为“重定向 URI”。  单击“ **保存**”。  然后，记录“应用程序 ID”  作为 `${your-client-id}`。  
 
-   ![添加应用程序回复 URL](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+   ![添加应用程序重定向 URI](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. 从应用程序中选择“密钥”，单击“生成密钥”以生成 `${your-client-secret}`，然后单击“保存”。   
-
-4. 在左侧选择“用户流”，然后单击“新建用户流”。   ****
+3. 从应用程序中选择“证书和机密”，单击“生成密钥”以生成 `${your-client-secret}`，然后单击“保存”。   
 
    ![创建用户流](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
+
+4. 在左侧选择“用户流”，然后单击“新建用户流”。   ****
 
 5. 选择“注册或登录”、“配置文件编辑”和“密码重置”，分别创建用户流。    指定用户流的“名称”和“用户特性和声明”，然后单击“创建”。   
 
@@ -135,7 +135,7 @@ ms.locfileid: "79139328"
          tenant: ${your-tenant-name}
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-reply-url-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}
@@ -149,7 +149,7 @@ ms.locfileid: "79139328"
    | `azure.activedirectory.b2c.tenant` | 包含前面复制的 AD B2C 的 `${your-tenant-name`。 |
    | `azure.activedirectory.b2c.client-id` | 包含前面填写的应用程序中的 `${your-client-id}`。 |
    | `azure.activedirectory.b2c.client-secret` | 包含前面填写的应用程序中的 `${your-client-secret}`。 |
-   | `azure.activedirectory.b2c.reply-url` | 包含前面填写的应用程序中的某个“回复 URL”  。 |
+   | `azure.activedirectory.b2c.reply-url` | 包含前面填写的应用程序中的某个“重定向 URI”  。 |
    | `azure.activedirectory.b2c.logout-success-url` | 指定应用程序成功注销时的 URL。 |
    | `azure.activedirectory.b2c.user-flows` | 包含前面填写的用户流的名称。
 
