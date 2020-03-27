@@ -1,0 +1,37 @@
+items:
+  - name: Azure SDK for Go
+    href: index.yml
+  - name: 概述
+    items:
+      - name: 安装
+        href: azure-sdk-install.md
+      - name: 工具
+        href: azure-sdk-tools.md
+      - name: 身份验证
+        href: azure-sdk-authorization.md
+  - name: 快速入门
+    items:
+      - name: 虚拟机和资源模板
+        href: azure-sdk-qs-vm.md
+      - name: Azure Blob 存储
+        href: /azure/storage/blobs/storage-quickstart-blobs-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      - name: Azure Database for PostgreSQL
+        href: /azure/postgresql/connect-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      - name: Azure Database for MySQL
+        href: /azure/mysql/connect-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      - name: Azure SQL 数据库
+        href: /azure/sql-database/sql-database-connect-query-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+  - name: 示例
+    items:
+      - name: 身份验证和 Active Directory
+        href: azure-sdk-auth-aad-samples.md
+      - name: 容器
+        href: azure-sdk-containers-samples.md
+      - name: 计算和网络
+        href: azure-sdk-compute-networking-samples.md
+      - name: Azure SQL 数据库
+        href: azure-sdk-sql-database-samples.md
+      - name: 所有 Go 示例
+        href: 'http://github.com/azure-samples/azure-sdk-for-go-samples'
+  - name: 参考
+    href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go'

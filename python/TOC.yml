@@ -3,13 +3,13 @@
 - name: 概述
   items:
     - name: 关于 Python SDK
-      href: python-sdk-azure-overview.md
+      href: azure-sdk-overview.md
     - name: 开发人员工具
-      href: python-azure-tools.md
+      href: azure-tools.md
 - name: 快速入门
   items:
     - name: Python SDK
-      href: python-sdk-azure-get-started.yml
+      href: azure-sdk-get-started.yml
     - name: 应用托管
       href: quickstarts-app-hosting.md
     - name: 数据解决方案
@@ -73,13 +73,13 @@
 - name: 操作方法指南
   items:
     - name: 安装 SDK
-      href: python-sdk-azure-install.md
+      href: azure-sdk-install.md
     - name: 身份验证
-      href: python-sdk-azure-authenticate.md
+      href: azure-sdk-authenticate.md
     - name: 操作配置
-      href: python-sdk-azure-operation-config.md
+      href: azure-sdk-operation-config.md
     - name: 多云开发
-      href: python-sdk-azure-multi-cloud.md
+      href: azure-sdk-multi-cloud.md
 - name: 示例
   items:
     - name: Web 应用与无服务器

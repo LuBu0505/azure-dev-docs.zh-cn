@@ -157,6 +157,8 @@
           href: java-sdk-add-certificate-ca-store.md
         - name: Authenticate
           href: java-sdk-azure-authenticate.md
+        - name: 配置日志记录
+          href: java-sdk-azure-log.md
         - name: 将 Java 迁移到 Azure
           items:
             - name: 概述
