@@ -10,27 +10,30 @@ metadata:
   ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: b65eadb3913aea78871e621f40fbdda19005b154
-  ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+  ms.technology: azure
+  ms.service: multiple
+  ms.devlang: python
+  ms.openlocfilehash: d874f84249ed67a6597574d7ccc6c8e02d3066f0
+  ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 02/20/2020
-  ms.locfileid: "77504512"
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80306693"
 landingContent:
 - title: Azure SDK for Python 入门
   linkLists:
   - linkListType: overview
     links:
     - text: 关于 Azure SDK for Python
-      url: python-sdk-azure-overview.md
+      url: azure-sdk-overview.md
   - linkListType: download
     links:
     - text: 安装 SDK
-      url: python-sdk-azure-install.md
+      url: azure-sdk-install.md
   - linkListType: how-to-guide
     links:
     - text: 对应用程序进行身份验证
-      url: python-sdk-azure-authenticate.md
+      url: azure-sdk-authenticate.md
   - linkListType: reference
     links:
     - text: 用于 Python 的 Azure SDK API 参考
@@ -39,20 +42,24 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 生成、部署和缩放 Python Web 应用
-      url: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-    - text: 使用 Visual Studio Code 在 Azure Functions 中创建无服务器 Python 应用
+    - text: 使用 Visual Studio Code 为 HTTP 请求创建无服务器函数
       url: tutorial-vs-code-serverless-python-01.md
+    - text: 使用 Azure CLI 为 HTTP 请求创建无服务器函数
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: 在 Linux 上的 Azure 应用服务中创建 Python 应用
+      url: /azure/app-service/containers/quickstart-python
     - text: 在 Azure Kubernetes 服务中部署容器化应用
-      url: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/aks/kubernetes-walkthrough
+    - text: 使用 Azure CLI 在 Azure 中部署容器实例
+      url: /azure/container-instances/container-instances-quickstart
     - text: 通过 Azure Pipelines 生成并部署 Python 应用
-      url: /azure/devops/pipelines/languages/python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/devops/pipelines/languages/python-webapp
     - text: 向 Python Web 应用程序添加 Microsoft 登录功能
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp
   - linkListType: overview
     links:
     - text: Linux 上的 Azure 应用服务简介
-      url: /azure/app-service/containers/app-service-linux-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/app-service/containers/app-service-linux-intro
 - title: 开发人员工具入门
   linkLists:
   - linkListType: overview
@@ -72,25 +79,25 @@ landingContent:
     - text: 适用于 Visual Studio Code 的 Azure 扩展
       url: https://code.visualstudio.com/docs/azure/extensions
     - text: 安装 Azure CLI
-      url: /cli/azure/install-azure-cli?view=azure-cli-latest?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /cli/azure/install-azure-cli?view=azure-cli-latest
     - text: 使用各种分发版，在 Windows 10 上本机运行 Linux 应用程序
-      url: /windows/wsl/install-win10?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /windows/wsl/install-win10
 - title: 用于数据科学、AI 和机器学习的服务
   linkLists:
   - linkListType: overview
     links:
     - text: 关于 Azure 机器学习服务
-      url: /azure/machine-learning/service?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/machine-learning/service
     - text: 关于 Azure 认知服务
-      url: /azure/cognitive-services?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/cognitive-services
   - linkListType: quickstart
     links:
     - text: 在 Jupyter 笔记本中使用 Azure 机器学习工具
-      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks
     - text: 使用托管的 Azure HDInsights 群集进行数据处理
-      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal
     - text: 创建用于数据科学任务的 Azure 虚拟机
-      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro
     - text: 在 Azure Notebooks 中使用 Jupyter 笔记本
       url: https://notebooks.azure.com/
 - title: Azure 上的存储和数据库解决方案
@@ -98,40 +105,40 @@ landingContent:
   - linkListType: overview
     links:
     - text: 关于 Azure 上的存储解决方案
-      url: /azure/storage/common/storage-introduction?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/storage/common/storage-introduction
     - text: 可缩放的 NoSQL 与 Azure Cosmos DB
-      url: /azure/cosmos-db/introduction?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/cosmos-db/introduction
   - linkListType: quickstart
     links:
     - text: 通过 Python 在 Azure 存储中管理 Blob
-      url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/storage/blobs/storage-quickstart-blobs-python
     - text: 在 Azure 上使用 Python 创建 PostgreSQL 实例并与之连接
-      url: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/postgresql/quickstart-create-server-database-portal
     - text: 在 Azure 上使用 Python 创建 MySQL 实例并与之连接。
-      url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal
     - text: 通过 Python 在 Azure Cosmos DB 帐户上使用 SQL 查询
-      url: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/cosmos-db/create-sql-api-python
     - text: 在 Azure 中设置托管 SQL Server
-      url: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/sql-database/sql-database-connect-query-python
 - title: Azure 上的消息传送
   linkLists:
   - linkListType: overview
     links:
     - text: 使用 Azure 队列存储消息
-      url: /azure/storage/queues/storage-queues-introduction?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/storage/queues/storage-queues-introduction
     - text: 使用 Azure 服务总线进行应用程序之间的消息传递
-      url: /azure/service-bus-messaging?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/service-bus-messaging
     - text: 使用事件中心流式传输大数据
-      url: /azure/event-hubs/event-hubs-about?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/event-hubs/event-hubs-about
     - text: 使用事件网格生成基于事件的应用程序
-      url: /azure/event-grid/overview?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/event-grid/overview
   - linkListType: quickstart
     links:
     - text: 使用 Azure 队列存储
-      url: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/storage/queues/storage-python-how-to-use-queue-storage
     - text: 使用 Azure 服务总线队列
-      url: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/service-bus-messaging/service-bus-python-how-to-use-queues
     - text: 通过 Azure 事件中心实时引入数据
-      url: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/event-hubs/event-hubs-python
     - text: 使用事件网格路由自定义事件
-      url: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+      url: /azure/event-grid/custom-event-quickstart
