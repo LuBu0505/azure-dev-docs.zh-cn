@@ -32,12 +32,14 @@
               href: configure-spring-data-gremlin-java-app-with-cosmos-db.md
             - name: Azure Cosmos DB MongoDB API
               href: configure-spring-data-mongodb-with-cosmos-db.md
-            - name: 将 JDBC 用于 Azure MySQL
+            - name: 将 JDBC 与 Azure MySQL 配合使用
               href: configure-spring-data-jdbc-with-azure-mysql.md
-            - name: 将 JDBC 用于 Azure PostgreSQL
+            - name: 将 JDBC 与 Azure PostgreSQL 配合使用
               href: configure-spring-data-jdbc-with-azure-postgresql.md
-            - name: 将 JDBC 用于 Azure SQL Server
+            - name: 将 JDBC 与 Azure SQL Server 配合使用
               href: configure-spring-data-jdbc-with-azure-sql-server.md
+            - name: 将 R2DBC 与 Azure MySQL 配合使用
+              href: configure-spring-data-r2dbc-with-azure-mysql.md
             - name: 将 JPA 用于 Azure MySQL
               href: configure-spring-data-jpa-with-azure-mysql.md
             - name: 将 JPA 用于 Azure PostgreSQL
