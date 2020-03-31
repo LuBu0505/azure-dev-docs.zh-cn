@@ -1,7 +1,0 @@
-- name: Azure
-  tocHref: /azure
-  topicHref: /azure/index
-  items:
-    - name: 面向 Python 开发人员的 Azure
-      tocHref: /azure/python
-      topicHref: /azure/python/index
