@@ -5,3 +5,6 @@
     - name: Azure SDK for Go
       tocHref: /azure/developer/go
       topicHref: /azure/developer/go/index
+    - name: 面向 Python 开发人员的 Azure
+      tocHref: /azure/developer/python
+      topicHref: /azure/developer/python/index
