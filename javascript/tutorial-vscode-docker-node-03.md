@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 中部署 Node.js 应用的容器映像
 description: 教程第 3 部分：创建 Node.js 应用程序映像
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: ae39d6604f3ffe49915f6b311953cd6829ed9369
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: 47e9440852f8a3443147e3d03b5c833d8da0c36b
+ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191076"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362790"
 ---
 # <a name="create-your-nodejs-application-image"></a>创建 Node.js 应用程序映像
 
@@ -16,7 +16,7 @@ ms.locfileid: "75191076"
 
 在此步骤中，将使用 Visual Studio Code 中的 Docker 扩展添加所需的文件，以便为你的应用创建映像、生成映像并将映像推送到注册表。
 
-如果还没有适用于本演练的应用，请使用 [Visual Studio Code Node.js 教程](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)中的应用。
+如果还没有适用于本演练的应用，请使用 [Visual Studio Code Node.js 教程](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_an-express-application)中的应用。
 
 ## <a name="add-docker-files"></a>添加 Docker 文件
 
