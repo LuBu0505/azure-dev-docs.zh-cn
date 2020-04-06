@@ -1,8 +1,10 @@
 - name: Azure Toolkit for IntelliJ
   href: azure-toolkit-for-intellij.md
   items:
-    - name: 入门
+    - name: 入门 - Web 应用
       href: azure-toolkit-for-intellij-create-hello-world-web-app.md
+    - name: 入门 - Functions
+      href: azure-toolkit-for-intellij-quickstart-functions.md
     - name: 教程
       items:
         - name: 将 Web 应用部署到 Linux 容器
