@@ -1,0 +1,93 @@
+### YamlMime:Landing
+title: “Azure 上的 Ansible”文档
+summary: 了解如何使用 Ansible 自动执行云预配、配置管理和应用程序部署。
+metadata:
+  title: “Azure 上的 Ansible”文档
+  description: 了解如何使用 Ansible 自动执行云预配、配置管理和应用程序部署。
+  services: azure
+  ms.service: ansible
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 04/03/2020
+  ms.openlocfilehash: d0880d656bede1b8ad9da64694ee2b8bd4a25588
+  ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/06/2020
+  ms.locfileid: "80741855"
+landingContent:
+- title: 关于 Azure 上的 Ansible
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 Azure 上的 Ansible
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: 发行版和功能
+      url: module-version-matrix.md
+    - text: 适用于 Azure 的所有模块
+      url: https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure
+- title: 安装并配置 Ansible
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 将 Ansible 解决方案模板部署到 CentOS
+      url: solution-template-deploy.md
+    - text: 在 Linux 虚拟机上安装 Ansible
+      url: install-on-linux-vm.md
+    - text: 在 Cloud Shell 中运行 Playbook
+      url: cloudshell-run-playbook.md
+  - linkListType: tutorial
+    links:
+    - text: 配置动态库存
+      url: dynamic-inventory-configure.md
+  - linkListType: download
+    links:
+    - text: 适用于 Ansible 的 Visual Studio Code 扩展
+      url: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
+- title: 管理虚拟机
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 配置 Linux 虚拟机
+      url: vm-configure.md
+    - text: 管理 Linux 虚拟机
+      url: vm-manage.md
+    - text: 从共享映像库创建
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: 管理虚拟机规模集
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 配置虚拟机规模集
+      url: vm-scale-set-configure.md
+    - text: 将应用程序部署到虚拟机规模集
+      url: vm-scale-set-deploy-app.md
+    - text: 自动缩放虚拟机规模集
+      url: vm-scale-set-auto-scale.md
+    - text: 更新自定义映像
+      url: vm-scale-set-update-image.md
+    - text: 从共享映像库创建
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: 管理虚拟网络
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 配置对等互连
+      url: virtual-network-peering-configure.md
+    - text: 配置路由表
+      url: route-table-configure.md
+- title: 管理 AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 配置 AKS 群集
+      url: aks-configure-clusters.md
+    - text: 配置 Azure CNI 网络
+      url: aks-configure-cni-networking.md
+    - text: 配置 kubenet 网络
+      url: aks-configure-kubenet-networking.md
+    - text: 在 AKS 群集中配置 RBAC 角色
+      url: aks-configure-rbac.md
