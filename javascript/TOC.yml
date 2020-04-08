@@ -102,7 +102,7 @@
           items:
             - name: 简介和先决条件
               href: tutorial-vscode-azure-app-service-node-01.md
-            - name: 创建应用程序
+            - name: 创建应用
               href: tutorial-vscode-azure-app-service-node-02.md
             - name: 部署网站
               href: tutorial-vscode-azure-app-service-node-03.md
@@ -116,21 +116,23 @@
               href: tutorial-vscode-docker-node-01.md
             - name: 使用容器注册表
               href: tutorial-vscode-docker-node-02.md
-            - name: 创建应用映像
+            - name: 创建本地 Node.js 应用
               href: tutorial-vscode-docker-node-03.md
-            - name: 部署应用映像
+            - name: 创建应用映像
               href: tutorial-vscode-docker-node-04.md
-            - name: 进行更改并重新部署
+            - name: 部署应用映像
               href: tutorial-vscode-docker-node-05.md
-            - name: 流式传输日志
+            - name: 进行更改并重新部署
               href: tutorial-vscode-docker-node-06.md
-            - name: 清理资源
+            - name: 流式传输日志
               href: tutorial-vscode-docker-node-07.md
+            - name: 清理资源
+              href: tutorial-vscode-docker-node-08.md
         - name: 通过 Azure CLI 部署到应用服务
           items:
             - name: 简介和先决条件
               href: tutorial-vscode-azure-cli-node-01.md
-            - name: 创建应用程序
+            - name: 创建应用
               href: tutorial-vscode-azure-cli-node-02.md
             - name: 创建应用服务
               href: tutorial-vscode-azure-cli-node-03.md
@@ -202,5 +204,5 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
         - name: 所有示例
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: 引用
+    - name: 参考
       href: /javascript/api/?view=azure-node-latest
