@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 部署 Node.js 应用的容器映像
 description: 教程第 4 部分，将映像部署到 Azure 应用服务
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: b43f93ba97950c84302db2e18f69b506e44dc84e
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8fe8024adca9edda2142dc6582b6456b77ea4b8f
+ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466541"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362775"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>将映像部署到 Azure 应用服务
 
@@ -25,6 +25,8 @@ ms.locfileid: "74466541"
     - 该名称在 Azure 中必须唯一。
     - 选择现有资源组或创建一个新组。 （**资源组**实际上是 Azure 中应用程序资源的命名集合。）
     - 选择现有的应用服务计划或创建新的计划。 （**应用服务计划**定义了托管网站的物理资源。 可以在本教程中使用基本或免费计划层。）
+    - 选择新的应用服务计划的定价层。
+    - 选择新资源的位置（靠近自己的位置）。
 
 1. 部署完成后，Visual Studio Code 将显示一个通知，其中包含网站 URL：
 

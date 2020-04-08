@@ -6,18 +6,18 @@ ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 927cc72a526651be71a7983a298ca2c6718f4546
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 58863eb3d6193833e0d8506b90abe7223b87d661
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022085"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537219"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>如何将 Spring Data JPA 与 Azure Database for MySQL 配合使用
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 [Azure Database for MySQL](/azure/mysql/) 数据库中存储和检索信息。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -175,7 +175,11 @@ ms.locfileid: "76022085"
 
 1. 保存并关闭 application.properties 文件  。
 
-## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序 
+> [!NOTE]
+>  application.propertie 文件的第一个属性是 `spring.jpa.hibernate.ddl-auto=create`，这是一个休眠属性，它将在应用程序启动时自动删除并重新创建数据库架构。
+> 此配置在开发和测试期间很实用，但你不应在生产中使用它。
+
+## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序
 
 1. 使用 Maven 生成示例应用程序，例如：
 

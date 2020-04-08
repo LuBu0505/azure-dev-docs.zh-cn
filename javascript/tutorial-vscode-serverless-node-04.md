@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 部署 Azure Functions 应用程序
 description: 教程第 4 部分：将 Functions 应用部署到云。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 8cb80b25e224d6f4552ec165779cda35f990ad6a
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 78f6f044397cc29f22949525e4e7e860d5c101f9
+ms.sourcegitcommit: 56be0c2bf65c699a0ef3f15f240856219b5d299b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422536"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80329931"
 ---
 # <a name="deploy-the-functions-app"></a>部署 Functions 应用
 
@@ -45,7 +45,7 @@ ms.locfileid: "77422536"
 1. 如果需要，请对 index.js  中的函数代码进行一些更改，或使用其他触发器添加其他函数。 在本地测试之后，按照前面的步骤再次部署代码，以在云中测试这些更改。
 
     > [!TIP]
-    > 在部署时，将部署整个 Functions 应用程序，因此对所有单个功能的更改将立即部署。
+    > 在部署时，整个 Functions 应用程序将进行部署，因此对所有单个函数的更改将立即部署。
 
 > [!div class="nextstepaction"]
 > [我部署了函数应用](tutorial-vscode-serverless-node-05.md) [我遇到一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=deploy-app)

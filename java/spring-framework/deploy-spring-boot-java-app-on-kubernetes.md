@@ -1,5 +1,5 @@
 ---
-title: 在 Kubernetes 上部署 Spring Boot 应用
+title: 将 Spring Boot 应用程序部署到 Azure Kubernetes 服务
 titleSuffix: Azure Kubernetes Service
 description: 本教程将指导用户完成在 Microsoft Azure 的 Kubernetes 群集中部署 Spring Boot 应用程序的步骤。
 services: container-service
@@ -9,14 +9,14 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: 3e845f9d8a4069225f0f2d949f8a8de492b21771
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: dedd7a8c30e71b1197781838c1006745884eb67d
+ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139243"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80306787"
 ---
-# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上
+# <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>将 Spring Boot 应用程序部署到 Azure Kubernetes 服务
 
 [Kubernetes] 和 [Docker] 是开源解决方案，可帮助开发人员自动部署、缩放和管理在容器中运行的应用程序   。
 
@@ -30,6 +30,7 @@ ms.locfileid: "79139243"
 * Apache 的 [Maven] 生成工具（版本 3）。
 * [Git] 客户端。
 * [Docker] 客户端。
+* [ACR Docker 凭据帮助器](https://github.com/Azure/acr-docker-credential-helper)。
 
 > [!NOTE]
 >
@@ -121,8 +122,7 @@ ms.locfileid: "79139243"
       <java.version>1.8</java.version>
    </properties>
    ```
-
-1. 更新 *pom.xml* 文件中的 `<plugins>` 集合，使 `<plugin>` 包含 `jib-maven-plugin`。
+1. 更新 pom.xml  文件中的 `<plugins>` 集合，使 `<plugin>` 元素包含 `jib-maven-plugin` 的条目，如以下示例中所示。 请注意，我们将使用 Microsoft 容器注册表 (MCR) 中的基础映像：`mcr.microsoft.com/java/jdk:8-zulu-alpine`，其中包含 Azure 正式支持的 JDK。 有关包含正式支持的 JDK 的其他 MCR 基础映像，请参阅 [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)、[Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)、[Java SE 无头 JRE](https://hub.docker.com/_/microsoft-java-jre-headless) 以及 [Java SE JDK 和 Maven](https://hub.docker.com/_/microsoft-java-maven)。
 
    ```xml
    <plugin>
@@ -131,7 +131,7 @@ ms.locfileid: "79139243"
      <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jdk:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>

@@ -6,18 +6,18 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: e968f6a86cc8616b0ae79e5d55756acea76040a6
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 162e99db4f079c3e6e3c7a63591632ec9922231d
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422549"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537191"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>如何将 Spring Data JPA 用于 Azure PostgreSQL
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 [Azure Database for PostgreSQL](/azure/postgresql/) 数据库中存储和检索信息。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -164,7 +164,11 @@ ms.locfileid: "77422549"
 
 1. 保存并关闭 application.properties 文件  。
 
-## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序 
+> [!NOTE]
+>  application.propertie 文件的第一个属性是 `spring.jpa.hibernate.ddl-auto=create`，这是一个休眠属性，它将在应用程序启动时自动删除并重新创建数据库架构。
+> 此配置在开发和测试期间很实用，但你不应在生产中使用它。
+
+## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序
 
 1. 使用 Maven 生成示例应用程序，例如：
 
