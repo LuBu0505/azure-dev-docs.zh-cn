@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.openlocfilehash: 9eef2c48b076ae0fc84aea16bb3e5b7bba17d744
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5ba844a66be0eb1acaac2cdf5b132ab422c9a954
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812070"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612027"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -237,6 +237,7 @@ ms.locfileid: "74812070"
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
+   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    ```
    其中：
 

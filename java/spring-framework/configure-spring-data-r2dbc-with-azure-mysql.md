@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.author: judubois
-ms.openlocfilehash: f5c9f3d0cccad7f6e1a8b5ab199f841925f416cc
-ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
+ms.openlocfilehash: 32008e4ddbf2663050dd1241e1d028e66ffb7dab
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366745"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80611906"
 ---
 # <a name="how-to-use-spring-data-r2dbc-with-azure-mysql"></a>如何将 Spring Data R2DBC 用于 Azure MySQL
 
@@ -45,7 +45,7 @@ AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
 - `<YOUR_DATABASE_NAME>`设置用户帐户 ：MySQL 服务器实例的名称。 它在 Azure 中应是唯一的。
 - `<YOUR_AZURE_REGION>`：你将使用的 Azure 区域。 默认情况下，你可使用 `eastus`，但我们建议你配置一个离你居住位置更近的区域。 可键入 `az account list-locations`，获取可用区域的完整列表。
 - `<YOUR_MYSQL_PASSWORD>`：MySQL 数据库服务器的密码。 该密码应至少包含八个字符以及来自以下三个类别的字符 - 英文大写字母、英文小写字母、数字 (0-9) 和非字母数字字符（!、$、#、% 等）。
-- `<YOUR_LOCAL_IP_ADDRESS>`：你将在其中运行 Spring Boot 应用程序的本地计算机 IP 地址。 若要找到该地址，一种简便方法是使浏览器指向 [http://ipv4.icanhazip.com](http://ipv4.icanhazip.com)。
+- `<YOUR_LOCAL_IP_ADDRESS>`：你将在其中运行 Spring Boot 应用程序的本地计算机 IP 地址。 若要找到该地址，一种简便方法是使浏览器指向 [http://whatismyip.akamai.com/](http://whatismyip.akamai.com/)。
 
 然后，创建一个资源组。
 

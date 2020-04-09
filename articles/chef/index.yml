@@ -1,0 +1,51 @@
+### YamlMime:Landing
+title: “Azure 上的 Chef Software”文档
+summary: 了解如何使用 Chef Software 产品来部署和管理 Azure 资源。
+metadata:
+  title: “Azure 上的 Chef Software”文档
+  description: 了解如何使用 Chef Software 产品来部署和管理 Azure 资源。
+  services: azure
+  ms.service: chef
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 09/17/2019
+  ms.openlocfilehash: a969cf384592ad92bd5a2cf1280db725f723a0f3
+  ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/08/2020
+  ms.locfileid: "80893176"
+landingContent:
+- title: 关于 Azure 上的 Chef Software
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 Azure 上的 Chef
+      url: overview.md
+    - text: 关于 Azure 上的 Habitat
+      url: habitat-overview.md
+    - text: 关于 Azure 上的 InSpec
+      url: inspec-overview.md
+  - linkListType: architecture
+    links:
+    - text: Azure Chef 扩展
+      url: https://docs.chef.io/azure_portal.html#azure-chef-extension
+- title: 安装和配置 Chef Software 产品
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 使用 Azure 门户安装 Chef
+      url: client-install-from-azure-portal.md
+  - linkListType: download
+    links:
+    - text: Chef Azure DevOps Services 扩展
+      url: https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-chef-tasks
+    - text: Habitat Azure DevOps Services 扩展
+      url: https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-habitat-tasks
+- title: 管理虚拟机
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 创建 Windows VM
+      url: windows-vm-configure.md

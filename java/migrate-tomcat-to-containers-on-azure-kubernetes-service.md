@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: a27c009fd656ea925f7709908178738eeea8ac0a
+ms.sourcegitcommit: 2e4167c9e47cea3f2e7dc2607884b2e0d4214556
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893743"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80809209"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器
 
@@ -33,7 +33,7 @@ ms.locfileid: "78893743"
 
 若要确定正在使用的会话持久性管理器，请在应用程序和 Tomcat 配置中检查 *context.xml* 文件。 请查找 `<Manager>` 元素，然后记下 `className` 属性的值。
 
-Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如 Kubernetes。 AKS 可能会在多个 Pod 之间进行负载均衡，并随时以透明方式重启任何 Pod。不建议将可变状态持久保存到文件系统。
+Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如 Kubernetes。 AKS 可能会在多个 Pod 之间进行负载均衡，并随时以透明方式重启任何 Pod。不建议将可变状态持久保存到文件系统。
 
 如果需要会话持久性，则需使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 Pivotal 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
 
@@ -162,6 +162,8 @@ az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plug
 </GlobalNamingResources>
 ```
 
+[!INCLUDE[Tomcat datasource additional instructions](includes/migration/tomcat-datasource-additional-instructions.md)]
+
 ### <a name="build-and-push-the-image"></a>生成并推送映像
 
 若要生成映像并将其上传到 Azure 容器注册表 (ACR) 供 AKS 使用，最简单的方法是使用 `az acr build` 命令。 该命令不需要在计算机上安装 Docker。 例如，如果当前目录中有上述 Dockerfile 和应用程序包 *petclinic.war*，则可通过一个步骤生成 ACR 中的容器映像：
@@ -228,7 +230,7 @@ echo "Your public IP address is ${publicIp}."
 
 将应用程序迁移到 AKS 后，即应验证其运行是否符合预期。 完成此操作后，可以参考我们提供的一些建议，使应用程序的云原生性更好。
 
-* 考虑向分配给入口控制器或应用程序负载均衡器的 IP 地址[添加 DNS 名称](/azure/aks/ingress-static-ip#configure-a-dns-name)。
+* 考虑向分配给入口控制器或应用程序负载均衡器的 IP 地址[添加 DNS 名称](/azure/aks/ingress-static-ip#create-an-ingress-controller)。
 
 * 考虑[为应用程序添加 HELM 图表](https://helm.sh/docs/topics/charts/)。 可以通过 Helm 图表将应用程序部署参数化，供更多样化的客户使用和自定义。
 

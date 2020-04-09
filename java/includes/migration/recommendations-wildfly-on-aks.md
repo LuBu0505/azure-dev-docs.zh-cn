@@ -2,16 +2,16 @@
 author: mriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: e76f43988c408bfd1d2400ef3d28363e7827d0f9
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: ab1cd8d8671b12c44a06ae01268364741f7138f6
+ms.sourcegitcommit: 2e4167c9e47cea3f2e7dc2607884b2e0d4214556
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78897651"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80813771"
 ---
 ### <a name="recommendations"></a>建议
 
-* 考虑向分配给入口控制器或应用程序负载均衡器的 IP 地址添加 DNS 名称。 有关详细信息，请参阅[在 AKS中使用静态公共 IP 地址创建入口控制器](/azure/aks/ingress-static-ip)的[配置 DNS 名称](/azure/aks/ingress-static-ip#configure-a-dns-name)部分。
+* 考虑向分配给入口控制器或应用程序负载均衡器的 IP 地址添加 DNS 名称。 有关详细信息，请参阅[在 AKS中使用静态公共 IP 地址创建入口控制器](/azure/aks/ingress-static-ip)的[配置 DNS 名称](/azure/aks/ingress-static-ip#create-an-ingress-controller)部分。
 
 * 考虑为应用程序添加 [HELM 图表](https://helm.sh/docs/topics/charts/)。 可以通过 Helm 图表将应用程序部署参数化，供更多样化的客户使用和自定义。
 
