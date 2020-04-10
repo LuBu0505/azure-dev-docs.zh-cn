@@ -3,12 +3,12 @@ title: 通过 Visual Studio Code 使用容器注册表
 description: 教程第 2 部分：使用容器注册表
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: e6dde135a2e6482284488fb83d9f811b02249c4d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191008"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740547"
 ---
 # <a name="use-a-container-registry"></a>使用容器注册表
 
@@ -20,46 +20,38 @@ ms.locfileid: "75191008"
 
 ## <a name="create-an-azure-container-registry"></a>创建 Azure 容器注册表
 
-1. 登录到 [Azure 门户](https://portal.azure.com)，然后选择“创建资源”  。
+1. 在 Visual Studio Code 中，按 <kbd>F1</kbd> 键打开命令面板。 
 
-    ![在 Azure 门户上创建新资源](media/deploy-containers/portal-01a.png)
+1. 在搜索框中键入“注册表”，选择“Azure 容器注册表:  创建注册表”。
 
-1. 在下一页上，选择“容器”   >   “容器注册表”。
+   ![VS Code 中的 Docker 资源管理器](media/deploy-containers/docker-create-registry.jpg)
 
-    ![在 Azure 门户中创建容器注册表](media/deploy-containers/portal-01b.png)
-
-1. 在出现的“创建容器注册表”  表单中，输入适当的值：
+1. 在提示中提供以下值...
 
     - **注册表名称**在 Azure 中必须唯一，并且包含 5-50 个字母数字字符。
-    - 在**订阅**中选择自己的订阅。
+    - 选择“基本”  作为 **SKU**。
     - **资源组**仅在订阅中必须唯一。
     - 在位置“位置”  中，选择靠近你的区域。
-    - 将**管理员用户**设置为“启用”  。
-    - 选择“基本”  作为 **SKU**。
 
-    ![容器注册表表单的值](media/deploy-containers/portal-02.png)
+    Visual Studio Code 会启动在 Azure 中创建注册表的过程。 完成后，会出现如下所示的通知，确认注册表已成功创建。
 
-1. 选择“创建”  以创建注册表。
+   ![Visual Studio Code 中的一个表明已创建注册表的确认通知](media/deploy-containers/registry-created.jpg)
 
-1. 创建注册表后，请在门户上打开通知，然后对注册表选择“转到资源”  ：
+1. 打开 **Docker** 资源管理器，确保刚设置的注册表终结点在“注册表”  下可见：
 
-    ![打开新创建的注册表资源](media/deploy-containers/portal-03.png)
+   ![验证注册表是否显示在 Docker 资源管理器中](media/deploy-containers/docker-explorer-registry.jpg)
 
-1. 在注册表页上，选择“访问密钥”  并记下管理员凭据：
+## <a name="sign-in-to-azure-container-registry"></a>登录到 Azure 容器注册表
 
-    ![Azure 门户上的注册表的注册表凭据](media/deploy-containers/portal-04.png)
+虽然可以在 Docker 扩展中看到自己的 Azure 注册表，但在登录到 Azure 容器注册表 (ACR) 之前，无法向其推送映像。
 
-1. 在命令提示符下或终端中，使用以下命令登录 Docker，将 `<registry_name>` 替换为注册表名称，并将 `<username>` 和 `<password>` 替换为 Azure 门户中为管理员用户显示的值：
+1. 按“Ctrl + `”，在 VS Code 中打开集成终端。<kbd></kbd> 
+
+1. 执行以下 Azure CLI 命令，登录到 ACR。 将“<your-registry-name>”替换为刚创建的注册表的名称。
 
     ```bash
-    docker login <registry_name>.azurecr.io -u <username> -p <password>
+    az acr login --name <your-registry-name>
     ```
-
-    为提高安全性，请使用 `--password-stdin` 而不是 `-p <password>`，然后在出现提示时粘贴密码。
-
-1. 在 Visual Studio Code 中，打开 **Docker** 资源管理器，并确保刚刚设置的注册表终结点在**注册表**下可见：
-
-    ![验证注册表是否显示在 Docker 资源管理器中](media/deploy-containers/registries.png)
 
 > [!div class="nextstepaction"]
 > [我已创建了注册表](tutorial-vscode-docker-node-03.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=create-registry)

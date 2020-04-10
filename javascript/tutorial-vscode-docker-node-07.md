@@ -1,26 +1,30 @@
 ---
-title: 在从 Visual Studio Code 部署容器化 Node.js 应用后清理资源
-description: 教程第 6 部分：清理资源
+title: 将 Node.js 应用的容器化日志流式传输到 Visual Studio Code 中
+description: 教程第 7 部分：将日志流式传输到 Visual Studio Code 中
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7c235cff8b5685880fc63d7e50587980502c7e8d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 10ccf13cddfc7bb1ed7f226629072cb9baeea3a1
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467125"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740638"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="stream-logs-into-visual-studio-code"></a>将日志流式传输到 Visual Studio Code
 
-[上一步：流式传输日志](tutorial-vscode-docker-node-05.md)
+[上一步：进行更改并重新部署](tutorial-vscode-docker-node-06.md)
 
-为容器创建的应用服务包含一项可能产生费用的后备应用服务计划。 若要清理资源，请在“Azure:  应用服务”资源管理器中右键单击应用服务，然后选择“删除”。 
+在此步骤中，你将了解如何通过调用 `console.log` 来查看或“跟踪”正在运行的网站生成的任何输出。 此输出显示在 Visual Studio Code 的“输出”  窗口中。
 
-也可访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
+1.  在“Azure 应用服务”资源管理器中右键单击应用节点，然后选择“开始流式传输日志”。 
 
-## <a name="next-steps"></a>后续步骤
+    ![查看流日志](media/deploy-containers/stream-logs-command.png)
 
-[!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
+1. 出现提示时，请选择启用日志记录并重启应用程序。
+
+    ![提示启用日志记录并重启](media/deploy-azure/enable-restart.png)
+
+1. 重新启动应用后，随着与日志流建立连接，Visual Studio Code 中的  “输出”面板将打开，其中开头为消息 `Starting Live Log Stream`。
 
 > [!div class="nextstepaction"]
-> [我已完成](node-howto-deploy-containers.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=clean-up-resources)
+> [我看到了日志](tutorial-vscode-docker-node-08.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)

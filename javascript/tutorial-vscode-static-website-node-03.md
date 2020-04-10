@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 为静态 Node.js 网站创建 Azure 存储帐户
 description: 教程第 3 部分：创建 Azure 存储帐户
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 42badfc649d7cc43eb1a58ab20c8ff639eff5354
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
+ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466502"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80890829"
 ---
 # <a name="create-an-azure-storage-account"></a>创建 Azure 存储帐户
 
@@ -28,17 +28,19 @@ ms.locfileid: "74466502"
 
 1. 在提示“输入新存储帐户的名称”时，为存储帐户输入全局唯一的名称，然后按 Enter。 应用名称的有效字符包括“a-z”和“0-9”。
 
-1. 在提示“选择资源组”时，选择“创建新的资源组”  并接受默认名称。
-
-1. 在提示“选择位置”时，选择附近的[区域](https://azure.microsoft.com/regions/)。
+    > [!NOTE]
+    > 这将创建具有相同名称的存储帐户和资源组。 它会自动将存储帐户置于“美国西部”区域。 若要指定资源组和位置，请从上下文菜单中选择“创建存储帐户(高级)”选项。
 
 1. 创建存储帐户后，进度将显示在 VS Code 的“输出”  面板中：
 
-1. 完成存储帐户后，右键单击该帐户并选择“配置静态网站”  。 启用静态网站托管意味着 Azure 存储会自动为索引文档和任何其他静态资产提供服务。
+    ![VS Code 输出窗口 ](media/static-website/output-storage.png)
 
-    ![创建存储帐户](media/static-website/configure-static-website.png)
+1. 存储帐户完成后，会显示一条消息，指出已为存储帐户启用静态网站托管功能。
 
-1. 出现提示时，输入 *index.html* 作为索引文档名称和 404 错误文档名称。 我们将 *index.html* 用于错误文档，因为诸如 React、Angular和 Vue 之类的新式单页应用 (SPA) 可处理客户端中的错误。 对于经典静态网站，请使用自定义 404 错误页。
+    ![创建存储帐户](media/static-website/static-website-enabled-notification.png)
+
+    > [!IMPORTANT]
+    > 我们将 *index.html* 用于错误文档，因为诸如 React、Angular和 Vue 之类的新式单页应用 (SPA) 可处理客户端中的路由错误。 对于经典静态网站，请使用自定义 404 错误页。
 
 > [!div class="nextstepaction"]
 > [我创建了一个存储容器](tutorial-vscode-static-website-node-04.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-storage)

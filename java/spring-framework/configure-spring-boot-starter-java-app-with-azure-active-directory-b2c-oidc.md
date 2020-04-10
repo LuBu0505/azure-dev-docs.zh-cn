@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
-ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+ms.openlocfilehash: 63fa23a946841d284d229561e597ea1d9450e822
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "79990499"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740693"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
 
@@ -162,12 +162,12 @@ ms.locfileid: "79990499"
 
 8. 在应用程序的 Java 源文件夹中创建名为“controller”的文件夹。 
 
-9. 在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
+9. 在 *controller* 文件夹中创建名为 *WebController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
 10. 输入以下代码，然后保存并关闭该文件：
 
     ```java
-    package sample.aad.controller;
+    package com.example.demo.controller;
     
     import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
     import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -212,12 +212,12 @@ ms.locfileid: "79990499"
 
 11. 在应用程序的 Java 源文件夹中创建名为“security”的文件夹。 
 
-12. 在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。
+12. 在 *security* 文件夹中创建名为 *WebSecurityConfiguration.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
 13. 输入以下代码，然后保存并关闭该文件：
 
     ```java
-    package sample.aad.security;
+    package com.example.demo.security;
     
     import com.microsoft.azure.spring.autoconfigure.b2c.AADB2COidcLoginConfigurer;
     import org.springframework.security.config.annotation.web.builders.HttpSecurity;

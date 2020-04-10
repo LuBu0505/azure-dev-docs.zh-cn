@@ -5,16 +5,21 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: f6ee53e25f7ce75e5e0d88688880f788fa6795f9
-ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
+ms.openlocfilehash: e6215502b54bedf62f40a024f9e7b3acc01cdc1f
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79089942"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612016"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
 本主题概述了关于如何将 Java 应用程序迁移到 Azure 的建议策略。
+
+此迁移指南旨在介绍 Azure 方案的主流 Java，并提供高级规划建议和注意事项。 若要与 Microsoft Java on Azure 团队讨论特定的 Java 应用迁移方案，请填写以下问卷，等待我们的代表与你联系。
+
+> [!div class="nextstepaction"]
+> [Java 迁移问卷](https://aka.ms/migrate-my-Java-app-requested-thru-docs)
 
 ## <a name="identifying-application-type"></a>确定应用程序类型
 
@@ -143,10 +148,10 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 |目标&nbsp;→<br><br>应用服务器&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | 空值 | 空值 | 空值 | 指南<br>已计划 | 指南<br>已计划 |
-| WebLogic              | 空值 | 空值 | 空值 | [指南][6]       | [指南][4]       |
-| WebSphere             | 空值 | 空值 | 空值 | [指南][7]       | 指南<br>已计划 |
-| JBoss EAP             | 空值 | 空值 | 空值 | 空值                 | 指南<br>已计划 |
+| WildFly/<br>JBoss AS | 空值 | 空值 | 空值 | [指南][9] | 指南<br>已计划 |
+| WebLogic              | 空值 | 空值 | 空值 | [指南][6] | [指南][4]       |
+| WebSphere             | 空值 | 空值 | 空值 | [指南][7] | 指南<br>已计划 |
+| JBoss EAP             | 空值 | 空值 | 空值 | [指南][8] | 指南<br>已计划 |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
@@ -156,3 +161,5 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 [5]: migrate-java-se-to-java-se-app-service.md
 [6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
 [7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
+[8]: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
+[9]: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md

@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 2846dc10ff782568d596daee4baa8ecbd1195729
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 91292d50f49bde2b76084f8a09119ae74a20f72f
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894204"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612119"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>将可执行的 JAR Web 应用程序迁移到 Azure 应用服务上的 Java SE
 
@@ -20,8 +20,8 @@ ms.locfileid: "78894204"
 
 如果无法满足任何预迁移要求，请参阅以下伴随迁移指南：
 
-* 将可执行的 JAR 应用程序迁移到 Azure Kubernetes 服务（已计划）上的容器
-* 将可执行的 JAR 应用程序迁移到 Azure 虚拟机（已计划）
+* 将可执行的 JAR 应用程序迁移到 Azure Kubernetes 服务上的容器（按指南进行计划）
+* 将可执行的 JAR 应用程序迁移到 Azure 虚拟机（按指南进行计划）
 
 ## <a name="pre-migration"></a>预迁移
 
@@ -39,7 +39,7 @@ ms.locfileid: "78894204"
 
 确定任何 SQL 数据库的连接字符串。
 
-Spring Boot 应用程序的连接字符串通常出现在配置文件中。 
+Spring Boot 应用程序的连接字符串通常出现在配置文件中。
 
 下面是 *application.properties* 文件中的示例：
 
@@ -57,6 +57,8 @@ spring:
     mongodb:
       uri: mongodb://mongouser:deepsecret@mongoserver.contoso.com:27017
 ```
+
+有关详细信息，请参阅 Spring 文档中的 [JPA 存储库](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories)和 [JDBC 存储库](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.repositories)。
 
 #### <a name="jms-message-brokers"></a>JMS 消息代理
 
@@ -143,7 +145,7 @@ ibm:
 
 ### <a name="parameterize-the-configuration"></a>将配置参数化
 
-请确保所有外部资源坐标（例如数据库连接字符串）和其他可自定义的设置可以从环境变量中读取。 如果要迁移 Spring Boot 应用程序，则所有配置设置都应该已经[可外部化](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config)。
+请确保所有外部资源坐标（例如数据库连接字符串）和其他可自定义的设置可以从环境变量中读取。 如果要迁移 Spring Boot 应用程序，则所有配置设置都应该已经可外部化。 有关详细信息，请参阅 Spring Boot 文档中的[外部化配置](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config)。
 
 下面是一个从 *application.properties* 文件引用 `SERVICEBUS_CONNECTION_STRING` 环境变量的示例：
 

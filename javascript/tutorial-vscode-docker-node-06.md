@@ -1,30 +1,30 @@
 ---
-title: 将 Node.js 应用的容器化日志流式传输到 Visual Studio Code 中
-description: 教程第 5 部分：将日志流式传输到 Visual Studio Code 中
+title: 在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应用服务
+description: 教程步骤 6：用于重新生成和重新部署容器映像的简单步骤。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2ac930996bd910014565c4e329bec93015bd2a3a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466526"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740646"
 ---
-# <a name="stream-logs-into-visual-studio-code"></a>将日志流式传输到 Visual Studio Code
+# <a name="make-changes-and-redeploy"></a>进行更改并重新部署
 
-[上一步：进行更改并重新部署](tutorial-vscode-docker-node-05.md)
+[上一步：部署应用映像](tutorial-vscode-docker-node-05.md)
 
-在此步骤中，你将了解如何通过调用 `console.log` 来查看或“跟踪”正在运行的网站生成的任何输出。 此输出显示在 Visual Studio Code 的“输出”  窗口中。
+由于你不可避免地需要对应用进行更改，因此最终会重新生成并重新部署容器多次。 好在此过程很简单：
 
-1.  在“Azure 应用服务”资源管理器中右键单击应用节点，然后选择“开始流式传输日志”。 
+1. 在本地更改并测试应用。
 
-    ![查看流日志](media/deploy-containers/stream-logs-command.png)
+1. 在 Visual Studio Code 中打开命令面板  (**F1**)，然后运行 **Docker Images:Build Image** 以重建映像。 如果只更改应用代码，生成过程应该只需要数秒钟。
 
-1. 出现提示时，请选择启用日志记录并重启应用程序。
+1. 若要将映像推送到注册表，请再次打开命令面板  (**F1**)，然后运行 **Docker Images:Push**，选择刚生成的映像。 与以前一样，由于对应用代码的更改很小，因此只需推送那一层，此过程通常在数秒内完成。
 
-    ![提示启用日志记录并重启](media/deploy-azure/enable-restart.png)
+1. 在“Azure：函数”  应用服务”资源管理器中，右键单击相应的应用服务，然后选择“重启”。  重启应用服务会自动从注册表拉取最新的容器映像。
 
-1. 重新启动应用后，随着与日志流建立连接，Visual Studio Code 中的  “输出”面板将打开，其中开头为消息 `Starting Live Log Stream`。
+1. 大约 15-20 秒后，再次访问应用服务 URL，查看更新。
 
 > [!div class="nextstepaction"]
-> [我看到了日志](tutorial-vscode-docker-node-07.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)
+> [我看到了更改](tutorial-vscode-docker-node-07.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=deploy-changes)

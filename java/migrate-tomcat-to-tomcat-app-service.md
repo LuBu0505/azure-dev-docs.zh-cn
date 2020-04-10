@@ -5,23 +5,23 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: a6212433e10de774924d49e508cb010251d60b02
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 6e14e8a18f87b67eb0ecb5ce08541058a964c988
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893755"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612092"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
 
-本指南介绍在需要迁移现有 Tomcat 应用程序以使之在使用 Tomcat 8.5 或 9.0 的 Azure 应用服务上运行时应注意的事项。
+本指南介绍在需要迁移现有 Tomcat 应用程序以使之在使用 Tomcat 9.0 的 Azure 应用服务上运行时应注意的事项。
 
 ## <a name="before-you-start"></a>开始之前
 
 如果无法满足任何预迁移要求，请参阅以下伴随迁移指南：
 
 * [将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
-* 将 Tomcat 应用程序迁移到 Azure 虚拟机（已计划）
+* 将 Tomcat 应用程序迁移到 Azure 虚拟机（按指南进行计划）
 
 ## <a name="pre-migration"></a>预迁移
 
@@ -37,7 +37,7 @@ ms.locfileid: "78893755"
 ${CATALINA_HOME}/bin/version.sh
 ```
 
-若要获取 Azure 应用服务使用的当前版本，请下载 [Tomcat 8.5](https://tomcat.apache.org/download-80.cgi#8.5.50) 或 [Tomcat 9](https://tomcat.apache.org/download-90.cgi)，具体取决于你计划在 Azure 应用服务中使用的版本。
+若要获取 Azure 应用服务使用的当前版本，请下载 [Tomcat 9](https://tomcat.apache.org/download-90.cgi)，具体取决于你计划在 Azure 应用服务中使用的版本。
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -56,7 +56,7 @@ ${CATALINA_HOME}/bin/version.sh
 
 若要确定正在使用的会话持久性管理器，请在应用程序和 Tomcat 配置中检查 *context.xml* 文件。 请查找 `<Manager>` 元素，然后记下 `className` 属性的值。
 
-Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如应用服务。 由于应用服务可能会在多个实例之间进行负载均衡，并随时以透明方式重启任何实例，因此不建议将可变状态持久保存到文件系统。
+Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如应用服务。 由于应用服务可能会在多个实例之间进行负载均衡，并随时以透明方式重启任何实例，因此不建议将可变状态持久保存到文件系统。
 
 如果需要会话持久性，则需使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 Pivotal 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
 
@@ -76,7 +76,7 @@ Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/co
 
 #### <a name="determine-whether-tomcat-clustering-is-used"></a>确定是否使用了 Tomcat 聚类分析
 
-Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-8.5-doc/cluster-howto.html)。 可以改为通过 Azure 应用服务来配置和管理缩放和负载均衡，无需使用特定于 Tomcat 的功能。 可以将会话状态持久保存到备用位置，使之可以跨副本使用。 有关详细信息，请参阅[识别会话持久性机制](#identify-session-persistence-mechanism)。
+Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)。 可以改为通过 Azure 应用服务来配置和管理缩放和负载均衡，无需使用特定于 Tomcat 的功能。 可以将会话状态持久保存到备用位置，使之可以跨副本使用。 有关详细信息，请参阅[识别会话持久性机制](#identify-session-persistence-mechanism)。
 
 若要确定应用程序是否使用聚类分析，请在 *server.xml* 文件中查找 `<Host>` 或 `<Engine>` 元素内的 `<Cluster>` 元素。
 
@@ -92,17 +92,17 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>确定是否使用了 MemoryRealm
 
-[MemoryRealm](https://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/realm/MemoryRealm.html) 需要一个持久的 XML 文件。 在 Azure 应用服务上，需要将此文件上传到 */home* 目录或其子目录，或上传到装载的存储。 必须相应地修改 `pathName` 参数。
+[MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) 需要一个持久的 XML 文件。 在 Azure 应用服务上，需要将此文件上传到 */home* 目录或其子目录，或上传到装载的存储。 必须相应地修改 `pathName` 参数。
 
 若要确定当前是否在使用 `MemoryRealm`，请检查 *server.xml* 和 *context.xml* 文件，并搜索已在其中将 `className` 属性设置为 `org.apache.catalina.realm.MemoryRealm` 的 `<Realm>` 元素。
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>确定是否使用了 SSL 会话跟踪
 
-应用服务在 Tomcat 运行时外部执行会话卸载。 因此，不能使用 [SSL 会话跟踪](https://tomcat.apache.org/tomcat-8.5-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL)。 请改用另一会话跟踪模式（`COOKIE` 或 `URL`）。 如果需要 SSL 会话跟踪，请不要使用应用服务。
+应用服务在 Tomcat 运行时外部执行会话卸载。 因此，不能使用 [SSL 会话跟踪](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL)。 请改用另一会话跟踪模式（`COOKIE` 或 `URL`）。 如果需要 SSL 会话跟踪，请不要使用应用服务。
 
 #### <a name="determine-whether-accesslogvalve-is-used"></a>确定是否使用了 AccessLogValve
 
-如果使用 [AccessLogValve](https://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/AccessLogValve.html)，则应将 `directory` 参数设置为 `/home/LogFiles` 或其子目录。
+如果使用 [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html)，则应将 `directory` 参数设置为 `/home/LogFiles` 或其子目录。
 
 ## <a name="migration"></a>迁移
 
@@ -180,7 +180,9 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>迁移数据源、库和 JNDI 资源
 
-执行[这些迁移数据源的步骤](/azure/app-service/containers/configure-language-java#tomcat)。
+有关数据源配置步骤，请参阅[为 Azure 应用服务配置 Linux Java 应用](/azure/app-service/containers/configure-language-java)中的[数据源](/azure/app-service/containers/configure-language-java#data-sources)部分。
+
+[!INCLUDE[Tomcat datasource additional instructions](includes/migration/tomcat-datasource-additional-instructions.md)]
 
 按照[数据源 JAR 文件的步骤](/azure/app-service/containers/configure-language-java#finalize-configuration)迁移任何其他服务器级 classpath 依赖关系。
 
@@ -193,7 +195,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 完成上述部分后，应在 */home/tomcat/conf* 中安装可自定义的服务器配置。
 
-通过复制任何其他配置（如[领域](https://tomcat.apache.org/tomcat-8.5-doc/config/realm.html)、[JASPIC](https://tomcat.apache.org/tomcat-8.5-doc/config/jaspic.html)）完成迁移。
+复制任何其他配置（如[领域](https://tomcat.apache.org/tomcat-9.0-doc/config/realm.html)和 [JASPIC](https://tomcat.apache.org/tomcat-9.0-doc/config/jaspic.html)），完成迁移。
 
 [!INCLUDE [migrate-scheduled-jobs](includes/migration/migrate-scheduled-jobs.md)]
 

@@ -1,20 +1,20 @@
 ---
-title: 将 WebSphere 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
-description: 本指南介绍在需要迁移现有 WebSphere 应用程序以使之在 Azure Kubernetes 服务容器中的 WildFly 上运行时应注意的事项。
+title: 将 WildFly 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
+description: 本指南介绍在需要迁移现有 WildFly 应用程序以使之在 Azure Kubernetes 服务容器中的 WildFly 上运行时应注意的事项。
 author: mriem
 ms.author: manriem
 ms.topic: conceptual
-ms.date: 2/28/2020
-ms.openlocfilehash: a32784542618c3ee3a57d8cc1105837a414883ad
+ms.date: 3/16/2020
+ms.openlocfilehash: 892000065b26a11dd332481abc75f8b73d207890
 ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/02/2020
-ms.locfileid: "80612153"
+ms.locfileid: "80613107"
 ---
-# <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>将 WebSphere 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
+# <a name="migrate-wildfly-applications-to-wildfly-on-azure-kubernetes-service"></a>将 WildFly 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
 
-本指南介绍在需要迁移现有 WebSphere 应用程序以使之在 Azure Kubernetes 服务容器中的 WildFly 上运行时应注意的事项。
+本指南介绍在需要迁移现有 WildFly 应用程序以使之在 Azure Kubernetes 服务容器中的 WildFly 上运行时应注意的事项。
 
 ## <a name="pre-migration"></a>预迁移
 
@@ -22,7 +22,9 @@ ms.locfileid: "80612153"
 
 ### <a name="inventory-all-secrets"></a>清点所有机密
 
-检查生产服务器上的所有属性和配置文件中是否有机密和密码。 请确保在 WAR 中检查 *ibm-web-bnd.xml*。 还可以在应用程序中查找包含密码或凭据的配置文件。
+检查生产服务器上的所有属性和配置文件中是否有机密和密码。 请确保在 WAR 中检查 *jboss-web.xml*。 还可以在应用程序中查找包含密码或凭据的配置文件。
+
+请考虑将这些机密存储到 Azure KeyVault 中。 有关详细信息，请参阅 [Azure Key Vault 基本概念](/azure/key-vault/basic-concepts)。
 
 [!INCLUDE [inventory-all-certificates](includes/migration/inventory-all-certificates.md)]
 
@@ -36,13 +38,19 @@ ms.locfileid: "80612153"
 java -version
 ```
 
+请参阅[要求](http://docs.wildfly.org/19/Getting_Started_Guide.html#requirements)，了解使用什么版本来运行 WildFly。
+
 ### <a name="inventory-jndi-resources"></a>清点 JNDI 资源
 
 清点所有 JNDI 资源。 某些资源（如 JMS 消息代理）可能需要迁移或重新配置。
 
+### <a name="determine-whether-session-replication-is-used"></a>确定是否使用了会话复制
+
+如果应用程序依赖于会话复制，则必须更改应用程序，摆脱此依赖关系。
+
 #### <a name="inside-your-application"></a>在应用程序中
 
-检查 *WEB-INF/ibm-web-bnd.xml* 文件和/或 *WEB-INF/web.xml* 文件。
+检查 *WEB-INF/jboss-web.xml* 和/或 *WEB-INF/web.xml* 文件。
 
 ### <a name="document-datasources"></a>记录数据源
 
@@ -52,11 +60,11 @@ java -version
 * 连接池配置是什么？
 * 在哪里可以找到 JDBC 驱动程序 JAR 文件？
 
-有关详细信息，请参阅 WebSphere 文档中的 [Configuring database connectivity](https://www.ibm.com/support/knowledgecenter/SSQP76_8.10.x/com.ibm.odm.distrib.config.was/config_dc_websphere/tpc_was_create_datasrc_cpl.html)（配置数据库连接性）。
+有关详细信息，请参阅 WildFly 文档中的 [DataSource 配置](http://docs.wildfly.org/19/Admin_Guide.html#DataSource)。
 
 ### <a name="determine-whether-and-how-the-file-system-is-used"></a>确定是否使用以及如何使用文件系统
 
-使用应用程序服务器上的文件系统需要重新配置，在极少数情况下需要体系结构更改。 文件系统可供 WebSphere 模块或应用程序代码使用。 可以标识以下部分所述的部分或全部方案。
+使用应用程序服务器上的文件系统需要重新配置，在极少数情况下需要体系结构更改。 文件系统可供 WildFly 模块或应用程序代码使用。 可以标识以下部分所述的部分或全部方案。
 
 #### <a name="read-only-static-content"></a>只读静态内容
 
@@ -76,10 +84,6 @@ java -version
 
 [!INCLUDE [determine-whether-jms-queues-or-topics-are-in-use](includes/migration/determine-whether-jms-queues-or-topics-are-in-use.md)]
 
-### <a name="determine-whether-your-application-uses-websphere-specific-apis"></a>确定应用程序是否使用特定于 WebSphere 的 API
-
-如果应用程序使用特定于 WebSphere 的 API，则需重构该代码，删除那些依赖项。 例如，如果使用了 [IBM WebSphere Application Server, Release 9.0 API Specification](https://www.ibm.com/support/knowledgecenter/en/SSEQTJ_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html?view=embed)（IBM WebSphere Application Server 9.0 版 API 规范）中提到的类，则表示你已在应用程序中使用了特定于 WebSphere 的 API。
-
 [!INCLUDE [determine-whether-your-application-uses-entity-beans](includes/migration/determine-whether-your-application-uses-entity-beans.md)]
 
 [!INCLUDE [determine-whether-the-java-ee-application-client-feature-is-in-use-aks](includes/migration/determine-whether-the-java-ee-application-client-feature-is-in-use-aks.md)]
@@ -90,7 +94,7 @@ java -version
 
 ### <a name="determine-whether-jca-connectors-are-in-use"></a>确定是否使用了 JCA 连接器
 
-如果应用程序使用 JCA 连接器，则需验证是否可以在 WildFly 上使用 JCA 连接器。 如果 JCA 实现与 WebSphere 相关联，则需重构应用程序，去除该依赖关系。 如果可以使用该连接器，则需将这些 JAR 添加到服务器 classpath 中，并将所需的配置文件放在 WildFly 服务器目录中的正确位置，使其可用。
+如果应用程序使用 JCA 连接器，则需验证是否可以在 WildFly 上使用 JCA 连接器。 如果 JCA 实现与 WildFly 相关联，则需重构应用程序，摆脱该依赖关系。 如果可以使用该连接器，则需将这些 JAR 添加到服务器 classpath 中，并将所需的配置文件放在 WildFly 服务器目录中的正确位置，使其可用。
 
 [!INCLUDE [determine-whether-jaas-is-in-use](includes/migration/determine-whether-jaas-is-in-use.md)]
 
@@ -100,7 +104,7 @@ java -version
 
 ### <a name="determine-whether-your-application-is-packaged-as-an-ear"></a>确定应用程序是否打包为 EAR
 
-如果应用程序打包为 EAR 文件，请务必检查 *application.xml* 和 *application-bnd.xml* 文件并捕获其配置。
+如果将应用程序打包为 EAR 文件，请务必检查 *application.xml* 文件并捕获配置。
 
 > [!NOTE]
 > 如果希望能够独立缩放每个 Web 应用程序，以便更好地使用 AKS 资源，则应将 EAR 分解为单独的 Web 应用程序。
