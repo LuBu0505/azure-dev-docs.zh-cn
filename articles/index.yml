@@ -1,0 +1,92 @@
+### YamlMime:Hub
+title: Azure 开发人员文档
+summary: 查找在 Azure 上进行开发所需的语言和工具。
+brand: azure
+metadata:
+  title: Azure 开发人员文档
+  description: 使用你最喜爱的语言和工具在 Azure 上进行开发。 Azure 支持通过 C#、.NET、Java、JavaScript、Python、Azure PowerShell 和 Azure CLI 进行开发。
+  ms.topic: hub-page
+  author: barbkess
+  ms.author: barbkess
+  manager: barbkess
+  ms.date: 04/08/2020
+  ms.openlocfilehash: 52290f4acd28cc40c4dffe8c2c85a1c5786a43c5
+  ms.sourcegitcommit: 295cf6efadb1ba8e443e71e4e6b6ea6897eb697a
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/14/2020
+  ms.locfileid: "81275891"
+tools:
+  title: 语言
+  items:
+  - title: Python
+    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
+    url: https://docs.microsoft.com/azure/developer/python/
+  - title: .NET
+    imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
+    url: https://docs.microsoft.com/dotnet/azure/
+  - title: JavaScript
+    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
+    url: https://docs.microsoft.com/azure/javascript/
+  - title: Java
+    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
+    url: https://docs.microsoft.com/azure/java/
+  - title: Go
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg
+    url: https://docs.microsoft.com/azure/developer/go/
+additionalContent:
+  sections:
+  - title: 开发工具
+    items:
+    - title: REST API
+      url: https://docs.microsoft.com/rest/api/
+    - title: Visual Studio Code Azure 扩展
+      url: https://code.visualstudio.com/docs/azure/extensions
+    - title: .NET SDK
+      url: https://docs.microsoft.com/dotnet/azure/sdk/
+    - title: Python SDK
+      url: https://docs.microsoft.com/python/api/?view=azure-python
+    - title: JavaScript SDK
+      url: https://docs.microsoft.com/javascript/api/
+    - title: Java SDK
+      url: https://docs.microsoft.com/java/api/
+    - title: Azure 上的 Spring
+      url: https://docs.microsoft.com/azure/java/spring-framework/
+  - title: DevOps 工具
+    items:
+    - title: Azure PowerShell
+      summary: 使用 Azure PowerShell cmdlet 直接从 PowerShell 命令行管理 Azure 资源。
+      url: https://docs.microsoft.com/powershell/azure/
+    - title: Azure CLI
+      summary: 使用 Azure CLI 命令从命令行创建和管理资源。
+      url: https://docs.microsoft.com/cli/azure/
+    - title: ARM 模板
+      summary: 使用 Azure 资源管理器模板通过 JSON 文件定义和配置项目。
+      url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
+    - title: Azure DevOps
+      summary: 使用 Azure DevOps 来规划工作、协作开发代码以及生成和部署应用程序。
+      url: https://docs.microsoft.com/azure/devops/?view=azure-devops
+    - title: GitHub 操作
+      summary: 使用 GitHub Actions 从存储库中自动执行、自定义和执行软件开发工作流。
+      url: https://help.github.com/en/actions
+    - title: Jenkins
+      summary: 使用 Jenkins 为软件项目自动进行持续集成和持续交付 (CI/CD)。
+      url: https://docs.microsoft.com/azure/jenkins/
+    - title: Terraform
+      summary: 使用 Hashicorp Terraform 预配和管理云基础结构。
+      url: https://docs.microsoft.com/azure/terraform/
+    - title: Ansible
+      summary: 使用 Ansible 自动执行云预配、配置管理和应用程序部署。
+      url: https://docs.microsoft.com/azure/developer/ansible/
+    - title: Chef
+      summary: 使用 Chef 将 Azure 上的虚拟机基础结构转换为代码。
+      url: https://docs.microsoft.com/azure/developer/chef/
+    - title: Maven
+      summary: 使用 Maven 自动执行构建和管理 Java 项目的方法。 它也适用于其他语言。
+      url: https://docs.microsoft.com/java/api/overview/azure/maven/README
+    - title: Azure Toolkit for IntelliJ
+      summary: 使用 Azure Toolkit for IntelliJ 从 IntelliJ IDE 中创建、开发、测试和部署 Azure 应用程序。
+      url: https://docs.microsoft.com/azure/java/intellij/
+    - title: 用于 Eclipse 的 Azure 工具包
+      summary: 使用 Azure Toolkit for Eclipse 从 Eclipse IDE 中创建、开发、测试和部署 Azure 应用程序。
+      url: https://docs.microsoft.com/azure/java/eclipse/
