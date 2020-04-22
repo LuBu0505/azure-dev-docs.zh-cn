@@ -1,0 +1,43 @@
+### YamlMime:Landing
+title: “Azure 上的 Eclipse MicroProfile”文档
+summary: MicroProfile 是一个 Eclipse Foundation 项目，旨在通过多种实现的创新以及在共同关注的领域上展开协作（目标是标准化），来利用 Java EE 等企业 Java 技术并将其演进为分布式微服务体系结构。
+metadata:
+  title: “Azure 上的 Eclipse MicroProfile”文档
+  description: 开始使用 Eclipse MicroProfile 在 Azure 上开发应用。
+  author: brborges
+  ms.author: brborges
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: e17e2d97494e2043c9925283adb53c2449224586
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675203"
+landingContent:
+- title: 入门指南
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 部署到 Azure 容器实例
+      url: deploy-microprofile-to-container-instances.md
+    - text: 部署到 Azure Web 应用
+      url: deploy-microprofile-to-web-app-for-containers.md
+    - text: Azure Key Vault 的配置源
+      url: configure-microprofile-with-keyvault.md
+    - text: 使用 Azure DevOps 对 MicroProfile 应用程序进行 CI/CD
+      url: cicd-microprofile.md
+- title: 代码示例
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: 适用于 Azure 的 MicroProfile 示例
+      url: https://github.com/search?q=topic%3Amicroprofile+org%3AAzure-Samples+fork%3Atrue
+    - text: MicroProfile 示例
+      url: https://microprofile.io/project/eclipse/microprofile-samples
+- title: MicroProfile 资源
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: MicroProfile.io
+      url: https://microprofile.io/

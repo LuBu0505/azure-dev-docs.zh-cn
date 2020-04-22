@@ -1,0 +1,49 @@
+### YamlMime:Landing
+title: Azure Toolkit for Eclipse 文档
+summary: 使用用于 Eclipse 的 Azure 工具包提供的模板和功能，可以在 Eclipse IDE 中轻松创建、开发、测试云应用程序并将其部署到 Azure。
+metadata:
+  title: Azure Toolkit for Eclipse 文档
+  description: 了解用于 Eclipse 的 Azure 工具包插件如何帮助你创建云应用程序并将其部署到 Azure。
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 81a19bdaec147c918a95f3d53143fb0d5c403918
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675303"
+landingContent:
+- title: 入门指南
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 创建用于 Azure 应用服务的 Hello World Web 应用
+      url: create-hello-world-web-app.md
+- title: 分步教程
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 为 HDInsight Spark Linux 群集创建 Spark 应用程序
+      url: /azure/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin
+- title: 管理 Azure 资源
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Redis 缓存
+      url: managing-redis-caches-using-azure-explorer.md
+    - text: 存储帐户
+      url: managing-storage-accounts-using-azure-explorer.md
+    - text: 虚拟机
+      url: managing-virtual-machines-using-azure-explorer.md
+- title: 支持的 JDK
+  linkLists:
+  - linkListType: download
+    links:
+    - text: 适用于 Azure 和 Azure Stack 的 Java
+      url: /azure/developer/java/jdk/
+- title: 源代码
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 适用于 Java 的 Azure 工具包
+      url: https://github.com/microsoft/azure-tools-for-java

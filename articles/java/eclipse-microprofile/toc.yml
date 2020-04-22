@@ -1,0 +1,50 @@
+- name: “Azure 上的 Eclipse MicroProfile”文档
+  href: index.yml
+  items:
+    - name: Azure 扩展
+      href: 'https://github.com/Azure/azure-microprofile'
+    - name: 教程
+      expanded: true
+      items:
+        - name: 部署到 Azure 容器实例
+          href: deploy-microprofile-to-container-instances.md
+        - name: 部署到 Azure Web 应用
+          href: deploy-microprofile-to-web-app-for-containers.md
+        - name: Azure Key Vault 的配置源
+          href: configure-microprofile-with-keyvault.md
+        - name: 使用 Azure Pipelines 对 MicroProfile 应用程序进行 CI/CD
+          href: cicd-microprofile.md
+    - name: 示例
+      expanded: false
+      items:
+        - name: MicroProfile Hello Azure
+          href: 'https://github.com/azure-samples/microprofile-hello-azure'
+        - name: Azure Key Vault 的 MicroProfile 配置源
+          href: 'https://github.com/Azure-Samples/microprofile-configsource-keyvault'
+    - name: 参考
+      expanded: true
+      items:
+        - name: Eclipse MicroProfile
+          href: 'https://microprofile.io/'
+        - name: MicroProfile 实现
+          expanded: false
+          items:
+            - name: Apache TomEE
+              href: 'https://tomee.apache.org'
+            - name: IBM OpenLiberty
+              href: 'https://openliberty.io/'
+            - name: KumuluzEE Micro
+              href: 'https://ee.kumuluz.com/microprofile'
+            - name: Payara Micro
+              href: 'https://payara.fish/payara_micro'
+            - name: Red Hat WildFly Swarm (Thorntail)
+              href: 'http://wildfly-swarm.io/'
+        - name: MicroProfile 项目生成器
+          expanded: false
+          items:
+            - name: WildFly Swarm (Thorntail) 生成器
+              href: 'http://wildfly-swarm.io/generator/'
+            - name: KumuluzEE 生成器
+              href: 'https://ee.kumuluz.com/generator/'
+            - name: Jeddict
+              href: 'https://jeddict.github.io/'
