@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: gwallace
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 5bc2d73a745fd705ef73dd9ae4b0baf1f72601eb
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 76e59ccd9b97771877b6c2a919dcfaf8b12840eb
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741715"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743866"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>快速入门：使用 Ansible 在 Azure 中配置 Linux 虚拟机
 
@@ -21,8 +21,8 @@ Ansible 使用声明性语言，适用于通过 Ansible *playbook* 来自动完�
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation1.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation1.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation1.md)]
 
 ## <a name="create-a-resource-group"></a>创建资源组
 

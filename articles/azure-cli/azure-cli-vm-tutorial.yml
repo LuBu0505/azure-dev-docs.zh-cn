@@ -1,0 +1,235 @@
+### YamlMime:Tutorial
+title: 使用 Azure CLI 创建虚拟机
+metadata:
+  title: 使用 Azure CLI 创建虚拟机
+  description: 通过创建虚拟机来开始使用 Azure CLI。
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurecli
+  ms.date: 07/09/2018
+  ms.author: dbradish
+  author: dbradish-microsoft
+  manager: barbkess
+  ms.devlang: azure-cli
+  ms.topic: tutorial
+  ms.prod: azure
+  ms.technology: azurecli
+  clicktale: true
+  ms.openlocfilehash: fb231b99b0f25760b84683d160a63e62c4f36276
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82030939"
+items:
+- durationInMinutes: 1
+  content: >-
+    本教程介绍使用 Azure CLI 设置虚拟机的过程中涉及到的所有步骤。 本教程还介绍输出查询、Azure 资源重用和资源清理。
+
+
+    可以使用通过 Azure Cloud Shell 提供的交互式体验来完成本教程，也可以在本地[安装 CLI](install-azure-cli.md)。
+
+
+    使用 __ctrl-shift-v__（在 macOS 上则使用 __cmd-shift-v__）将教程文本粘贴到 Azure Cloud Shell 中。
+- durationInMinutes: 1
+  title: 登录
+  content: "如果使用 CLI 的本地安装，则需要先登录，然后才能执行任何其他步骤。\n\n```azurecli-interactive\naz login\n```\n\n按照终端中显示的步骤操作，完成身份验证过程。 "
+- durationInMinutes: 1
+  title: 创建资源组
+  content: >-
+    在 Azure 中，所有资源都分配在资源管理组中。 可以通过资源组对资源进行逻辑分组，以集合的方式更方便地使用资源。 就本教程来说，所有创建的资源都进入一个名为 `TutorialResources` 的组。
+
+
+    ```azurecli
+
+    az group create --name TutorialResources --location eastus
+
+    ```
+- durationInMinutes: 4
+  title: 创建虚拟机
+  content: "Azure 中的虚拟机有大量的依赖项。 CLI 根据指定的命令行参数为你创建这些资源。\n\n创建运行 Ubuntu 的新虚拟机，以便通过 SSH 身份验证进行登录。\n\n```azurecli-interactive\naz vm create --resource-group TutorialResources \\\n  --name TutorialVM1 \\\n  --image UbuntuLTS \\\n  --generate-ssh-keys \\\n  --output json \\\n  --verbose \n```\n\n> [!NOTE]\n> 如果已经有名为 `id_rsa` 的可用 SSH 密钥，则可使用此密钥进行身份验证，不必生成新密钥。\n\n创建 VM 后，则会看到系统因为 `--verbose` 选项而使用本地值并创建 Azure 资源。\nVM 就绪以后，就会从 Azure 服务返回 JSON，其中包括公共 IP 地址。\n\n```json\n{\n  \"fqdns\": \"\",\n  \"id\": \"...\",\n  \"location\": \"eastus\",\n  \"macAddress\": \"...\",\n  \"powerState\": \"VM running\",\n  \"privateIpAddress\": \"...\",\n  \"publicIpAddress\": <PUBLIC_IP_ADDRESS>,\n  \"resourceGroup\": \"TutorialResources\",\n  \"zones\": \"\"\n}\n```\n\n通过 SSH 进行连接，确认 VM 是否正在运行。\n\n```bash\nssh <PUBLIC_IP_ADDRESS>\n```\n\n继续操作，从 VM 注销。\n\nVM 启动以后，可以通过其他方式获取此 IP 地址。 下一部分介绍如何获取 VM 的详细信息，以及如何对其进行筛选。"
+- durationInMinutes: 3
+  title: 通过查询获取 VM 信息
+  content: "创建 VM 以后，即可检索其详细信息。 从资源获取信息的常用命令是 `show`。\n\n```azurecli-interactive\naz vm show --name TutorialVM1 --resource-group TutorialResources\n```\n\n将会看到大量的信息，可能难以直观地对其进行分析。 返回的 JSON 包含身份验证、网络接口、存储等方面的信息。 最重要的是，它包含 VM 所连接到的资源的 Azure 对象 ID。 可以通过对象 ID 直接访问这些资源，获取有关 VM 配置和功能的详细信息。 \n\n可以使用 `--query` 参数来提取所需的对象 ID。 查询以 [JMESPath 查询语言](http://jmespath.org)编写。 从获取网络接口控制器 (NIC) 对象 ID 着手。\n\n```azurecli-interactive\naz vm show --name TutorialVM1 \\\n  --resource-group TutorialResources \\\n  --query 'networkProfile.networkInterfaces[].id' \\\n  --output tsv\n```\n\n在这里，添加查询涉及到许多事项。 其中的每个部分引用输出 JSON 中的一个项，或者是一个 JMESPath 运算符。\n\n* `networkProfile` 是顶级 JSON 的一个项，使用 `networkInterfaces` 作为子项。 如果 JSON 值是一个字典，则其项是使用 `.` 运算符从父项引用。\n* `networkInterfaces` 值为数组，因此可通过 `[]` 运算符使其平展。 此运算符在每个数组元素上运行查询的其余部分。 在此示例中，它获取每个数组元素的 `id` 值。\n\n可保证输出格式 `tsv`（制表符分隔值）只包含结果数据以及由制表符和换行符组成的空格。\n由于返回的值是单个裸字符串，因此可以安全地将其直接分配给环境变量。\n\n现在请继续操作，将 NIC 对象 ID 分配给环境变量。\n\n```bash\nNIC_ID=$(az vm show -n TutorialVM1 -g TutorialResources \\\n  --query 'networkProfile.networkInterfaces[].id' \\\n  -o tsv)\n```\n\n此示例还演示了如何使用短参数。 可以使用 `-g` 而非 `--resource-group`、`-n` 而非 `--name`、`-o` 而非 `--output`。"
+- durationInMinutes: 4
+  title: 设置 CLI 输出中的环境变量
+  content: >-
+    有了 NIC ID 以后，请运行 `az network nic show` 来获取其信息。 请注意，此处不需要资源组，因为资源组名称包含在 Azure 资源 ID 内。
+
+
+    ```azurecli-interactive
+
+    az network nic show --ids $NIC_ID
+
+    ```
+
+
+
+    此命令显示 VM 的网络接口的所有信息。 该数据包括 DNS 设置、IP 信息、安全设置和 MAC 地址。 现在的目标是获取公共 IP 地址和子网对象 ID。
+
+
+    ```azurecli-interactive
+
+    az network nic show --ids $NIC_ID \
+      --query '{IP:ipConfigurations[].publicIpAddress.id, Subnet:ipConfigurations[].subnet.id}' \
+      -o json
+    ```
+
+
+    ```json
+
+    {
+      "IP": [
+        "/subscriptions/.../resourceGroups/TutorialResources/providers/Microsoft.Network/publicIPAddresses/TutorialVM1PublicIP"
+      ],
+      "Subnet": [
+        "/subscriptions/.../resourceGroups/TutorialResources/providers/Microsoft.Network/virtualNetworks/TutorialVM1VNET/subnets/TutorialVM1Subnet"
+      ]
+    }
+
+    ```
+
+
+    此命令显示的 JSON 对象包含适用于已提取值的自定义项（“IP”和“子网”）。 虽然此样式的输出可能不适用于命令行工具，但有助于人们阅读，可以与自定义脚本配合使用。
+
+
+    为了使用命令行工具，请更改该命令，删除自定义 JSON 项，并将输出更改为 `tsv`。 此样式的输出可以通过 shell `read` 命令进行处理，将结果加载到多个变量中。 由于显示不同行中的两个值，因此必须将 `read` 命令分隔符设置为空字符串而不是默认的非换行符空格。
+
+
+    ```bash
+
+    read -d '' IP_ID SUBNET_ID <<< $(az network nic show \
+      --ids $NIC_ID \
+      --query '[ipConfigurations[].publicIpAddress.id, ipConfigurations[].subnet.id]' \
+      -o tsv)
+    ```
+
+
+    不需立即使用子网 ID，但现在就应将其存储好，否则在以后还需进行第二次查找。 现在请使用公共 IP 对象 ID 来查找公共 IP 地址，然后将其存储在 shell 变量中。
+
+
+    ```bash
+
+    VM1_IP_ADDR=$(az network public-ip show --ids $IP_ID \
+      --query ipAddress \
+      -o tsv)
+    ```
+
+
+    现在已将 VM 的 IP 地址存储在 shell 变量中。 继续操作，检查其值是否与一开始连接到 VM 时所用的值相同。
+
+
+    ```bash
+
+    echo $VM1_IP_ADDR
+
+    ```
+- durationInMinutes: 2
+  title: 在现有的子网上创建新的 VM
+  content: >-
+    第二个 VM 使用现有的子网。 可以跳过一些步骤，立刻将新 VM 的公共 IP 地址存储到环境变量中去，因为该地址已在 VM 创建信息中返回。 如果稍后需要有关该 VM 的其他信息，可以随时通过 `az vm show` 命令来获取。
+
+
+    ```bash
+
+    VM2_IP_ADDR=$(az vm create -g TutorialResources \
+      -n TutorialVM2 \
+      --image UbuntuLTS \
+      --generate-ssh-keys \
+      --subnet $SUBNET_ID \
+      --query publicIpAddress \
+      -o tsv)
+    ```
+
+
+    使用存储的 IP 地址通过 SSH 连接到新创建的 VM。
+
+
+    ```bash
+
+    ssh $VM2_IP_ADDR
+
+    ```
+
+
+    继续操作，从 VM 注销。
+- durationInMinutes: 2
+  title: 清理
+  content: >-
+    教程完成以后，即可清理创建的资源。 可以使用 `delete` 命令删除单个资源，但若要删除资源组中的所有资源，最安全的方式是使用 `group delete`。
+
+
+    ```azurecli-interactive
+
+    az group delete --name TutorialResources --no-wait
+
+    ```
+
+
+    该命令删除本教程中创建的资源，可确保按正确顺序将其解除分配。 在进行删除时，可以使用 `--no-wait` 参数解除对 CLI 的阻止。 如果想要等到删除完成，或者要观察其进度，请使用 `group wait` 命令。
+
+
+    ```azurecli-interactive
+
+    az group wait --name TutorialResources --deleted
+
+    ```
+
+
+    清理完成以后，本教程即告完成。 接下来是所学内容的摘要，以及在后续步骤中将要用到的资源的链接。
+- durationInMinutes: 1
+  title: 总结
+  content: >-
+    祝贺你！ 你已了解如何使用新的或现有的资源来创建 VM，并使用了 `--query` 和 `--output` 参数来捕获需要存储在 shell 变量中的数据，最后又查看了一些为 Azure VM 创建的资源。
+
+
+    下一步取决于你打算使用 CLI 来做什么。 若要进一步深入了解本教程中介绍的功能，可以参阅各种资料。
+
+
+    ### <a name="samples"></a>示例
+
+
+    若要立刻开始执行特定的任务，请查看一些示例脚本。
+
+
+    * 使用 [Linux VM](/azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json) 和 [Windows VM](/azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json)
+
+    * 使用 [webapps](/azure/app-service/app-service-cli-samples?toc=%2Fcli%2Fazure%2Ftoc.json) 和 [Azure Functions](/azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json)
+
+    * 使用数据库 - [Azure SQL 数据库](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json)、[PostgreSQL](/azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json)、[MySQL](/azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json)、[CosmosDB](/azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json)。
+
+
+    ### <a name="in-depth-cli-documentation"></a>深入的 CLI 文档
+
+
+    也有主题对本教程中介绍的 CLI 功能进行了更深入的探讨。
+
+
+    * 详细了解[输出格式](format-output-azure-cli.md)
+
+    * 详细了解[输出查询](query-azure-cli.md)
+
+    * 详细了解 [Azure 中的授权](authenticate-azure-cli.md)
+
+
+    ### <a name="other-useful-documentation"></a>其他有用的文档
+
+
+    如果有时间，还可以学习 CLI 的更高级功能，例如[配置默认设置](azure-cli-configuration.md)或[扩展](azure-cli-extensions-overview.md)。
+
+
+    ### <a name="feedback"></a>反馈
+
+
+    如果想要提供反馈、建议或提问有关 CLI 的问题，可以通过多种方式联系我们。
+
+
+    * `az feedback` 是一个内置的 CLI 命令，用于向我们的团队提供自由格式的反馈。
+
+    * 使用 [Azure CLI 存储库](https://github.com/Azure/azure-cli)中的 CLI 提交功能请求或 Bug 报告。
+
+    * 若要提问某个问题或澄清某个问题，请在 [Azure CLI 文档存储库](https://github.com/MicrosoftDocs/azure-docs-cli/issues)中提交该问题。
+
+
+    希望你喜欢使用 Azure CLI！

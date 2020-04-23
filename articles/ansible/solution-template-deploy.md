@@ -4,12 +4,12 @@ description: 在本快速入门中，了解如何在 Azure 上托管的 CentOS �
 keywords: ansible, azure, devops, 解决方案模板, 虚拟机, azure 资源的托管标识, centos, red hat
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: ac6d5f550447c11a463fb2d002c95a1242c08afb
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 79638c8ae4bd8d1a54448d2cf8aef1a391a91e44
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741055"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743913"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>快速入门：将适用于 Azure 的 Ansible 解决方案模板部署到 CentOS
 
@@ -21,7 +21,7 @@ ms.locfileid: "80741055"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 ## <a name="deploy-the-ansible-solution-template"></a>部署 Ansible 解决方案模板
 

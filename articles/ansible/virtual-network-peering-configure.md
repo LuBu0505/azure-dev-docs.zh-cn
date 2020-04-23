@@ -4,22 +4,22 @@ description: 了解如何使用 Ansible 通过虚拟网络对等互连来连接�
 keywords: ansible, azure, devops, bash, playbook, 网络, 对等互连
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 78699a005d721b46a88a26452f5db68438793d34
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 2b5af7546900c45dde7eea0e1d57370d2ffc3991
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741765"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743883"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>教程：使用 Ansible 配置 Azure 虚拟网络对等互连
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 使用[虚拟网络 (VNet) 对等互连](/azure/virtual-network/virtual-network-peering-overview)可以无缝连接两个 Azure 虚拟网络。 对等互连后，出于连接目的，两个虚拟网络会显示为一个。 
 
 将会通过专用 IP 地址在同一虚拟网络中的 VM 之间路由流量。 同样，将会通过 Microsoft 主干基础结构在对等互连虚拟网络中的 VM 之间路由流量。 因此，不同虚拟网络中的 VM 可以相互通信。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -29,8 +29,8 @@ ms.locfileid: "80741765"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-two-resource-groups"></a>创建两个资源组
 
