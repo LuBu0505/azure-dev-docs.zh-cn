@@ -1,0 +1,35 @@
+- name: Azure SDK for Java 文档
+  href: index.yml
+  items:
+    - name: 入门
+      href: java-sdk-azure-get-started.md
+    - name: 概念
+      expanded: true
+      items:
+        - name: 模式和最佳做法
+          href: java-sdk-azure-concepts.md
+    - name: 操作指南文章
+      expanded: true
+      items:
+        - name: 添加根证书
+          href: java-sdk-add-certificate-ca-store.md
+        - name: Authenticate
+          href: java-sdk-azure-authenticate.md
+        - name: 配置日志记录
+          href: java-sdk-azure-log.md
+    - name: 示例代码
+      items:
+        - name: 虚拟机
+          href: java-sdk-azure-virtual-machine-samples.md
+        - name: Web 应用
+          href: java-sdk-azure-web-apps-samples.md
+        - name: SQL 数据库
+          href: java-sdk-azure-sql-database-samples.md
+        - name: 安全性
+          href: java-sdk-azure-security-samples.md
+        - name: 容器
+          href: java-sdk-azure-containers-samples.md
+        - name: 所有 Java 示例
+          href: /samples/browse/?products=azure&languages=java
+    - name: 参考
+      href: /java/api/?view=azure-java

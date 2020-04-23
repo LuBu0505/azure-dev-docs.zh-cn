@@ -1,0 +1,169 @@
+### YamlMime:Hub
+title: Azure for Java 开发人员文档
+summary: 使用这些面向 Java 开发人员的教程和工具开始开发云应用。
+brand: azure
+metadata:
+  title: Azure for Java 开发人员文档
+  description: 使用这些面向 Java 开发人员的教程和工具开始开发云应用。
+  ms.topic: hub-page
+  ms.date: 04/08/2020
+  ms.openlocfilehash: c037f46cd3cc03c366ef9a904c4a9178eebc5a0a
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675223"
+conceptualContent:
+  items:
+  - title: Azure for Java 快速入门
+    links:
+    - text: 将 Java SE Web 应用部署到 Linux
+      itemType: quickstart
+      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+    - text: 创建并发布无服务器函数
+      itemType: quickstart
+      url: /azure/azure-functions/functions-create-first-java-maven
+    - text: 管理存储 Blob
+      itemType: quickstart
+      url: /azure/storage/blobs/storage-quickstart-blobs-java
+    footerLink:
+      text: 查看详细信息
+      url: quickstarts/index.yml
+  - title: 工具、IDE 和支持的 JDK
+    links:
+    - text: Java 长期支持
+      itemType: get-started
+      url: fundamentals/java-jdk-long-term-support.md
+    - text: Java JDK 安装
+      itemType: get-started
+      url: fundamentals/java-jdk-install.md
+    - text: Azure 的 Java Docker 映像
+      itemType: get-started
+      url: fundamentals/java-jdk-docker-images.md
+    footerLink:
+      text: 查看详细信息
+      url: fundamentals/index.yml
+  - title: 迁移到 Azure
+    links:
+    - text: Spring 到 Azure 应用服务
+      itemType: how-to-guide
+      url: migration/migrate-java-se-to-java-se-app-service.md
+    - text: Tomcat 到 Azure 应用服务
+      itemType: how-to-guide
+      url: migration/migrate-tomcat-to-tomcat-app-service.md
+    - text: WebLogic 到 Azure 虚拟机
+      itemType: how-to-guide
+      url: migration/migrate-weblogic-to-virtual-machines.md
+    footerLink:
+      text: 查看详细信息
+      url: migration/index.yml
+  - title: 用于 Java 的 Azure SDK
+    links:
+    - text: 使用 Java 进行 Azure 开发
+      itemType: get-started
+      url: sdk/java-sdk-azure-get-started.md
+    - text: 模式和最佳做法
+      itemType: learn
+      url: sdk/java-sdk-azure-concepts.md
+    - text: Java API 浏览器
+      itemType: reference
+      url: /java/api/?view=azure-java
+    footerLink:
+      text: 查看详细信息
+      url: sdk/index.yml
+  - title: Azure 应用服务
+    links:
+    - text: 创建 Java 应用
+      itemType: quickstart
+      url: /azure/app-service/containers/quickstart-java
+    - text: 配置 Java
+      itemType: how-to-guide
+      url: /azure/app-service/containers/configure-language-java
+    - text: 使用 MySQL 部署 Spring 应用
+      itemType: tutorial
+      url: /azure/developer/java/spring-framework/spring-app-service-e2e
+  - title: Azure Spring 云
+    links:
+    - text: Azure Spring Cloud 是什么？
+      itemType: overview
+      url: /azure/spring-cloud/spring-cloud-overview
+    - text: 使用 Azure CLI 启动 Spring 应用
+      itemType: quickstart
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - text: 准备 Spring 应用以进行部署
+      itemType: tutorial
+      url: /azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment
+    footerLink:
+      text: 查看详细信息
+      url: /azure/spring-cloud
+  - title: “Azure 上的 Spring”集成
+    links:
+    - text: Spring Boot Starter
+      itemType: get-started
+      url: spring-framework/spring-boot-starters-for-azure.md
+    - text: Spring Data Azure Cosmos DB
+      itemType: how-to-guide
+      url: spring-framework/how-to-guides-spring-data-cosmosdb.md
+    - text: 部署 Spring Boot 应用
+      itemType: tutorial
+      url: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md
+    footerLink:
+      text: 查看详细信息
+      url: spring-framework/index.yml
+  - title: Azure Functions
+    links:
+    - text: 创建 Azure 函数
+      itemType: quickstart
+      url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
+    - text: 创建 Spring Cloud 函数
+      itemType: tutorial
+      url: /azure/developer/java/spring-framework/getting-started-with-spring-cloud-function-in-azure
+    - text: 开发人员指南
+      itemType: reference
+      url: /azure/azure-functions/functions-reference-java
+  - title: 监视 Java 应用
+    links:
+    - text: Application Insights 入门
+      itemType: how-to-guide
+      url: /azure/azure-monitor/app/java-in-process-agent
+    - text: ELK 入门
+      itemType: tutorial
+      url: /azure/developer/java/java-get-started-with-logzio
+    - text: 监视 Spring 应用
+      itemType: how-to-guide
+      url: /azure/spring-cloud/diagnostic-services
+  - title: 保护 Java 应用
+    links:
+    - text: 启用最终用户身份验证和授权
+      itemType: quickstart
+      url: /azure/active-directory/develop/quickstart-v2-java-webapp
+    - text: 使用 Microsoft 身份验证库
+      itemType: how-to-guide
+      url: /azure/active-directory/develop/migrate-adal-msal-java
+    - text: 管理应用机密
+      itemType: quickstart
+      url: /azure/key-vault/quick-create-java
+tools:
+  title: 工具
+  items:
+  - title: Azure Toolkit for IntelliJ
+    imageSrc: https://docs.microsoft.com/media/logos/logo_intellij.svg
+    url: toolkit-for-intellij/index.yml
+  - title: 用于 Eclipse 的 Azure 工具包
+    imageSrc: https://docs.microsoft.com/media/logos/logo_eclipse.svg
+    url: toolkit-for-eclipse/index.yml
+  - title: Eclipse Microprofile
+    imageSrc: https://docs.microsoft.com/media/logos/logo_eclipse.svg
+    url: eclipse-microprofile/index.yml
+  - title: Visual Studio Code
+    imageSrc: https://docs.microsoft.com/media/logos/logo_vs-code.svg
+    url: https://code.visualstudio.com/docs
+  - title: Azure CLI
+    imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
+    url: /cli/azure
+  - title: Maven
+    imageSrc: https://docs.microsoft.com/media/logos/logo_maven.svg
+    url: /java/api/overview/azure/maven/README
+  - title: Azure 上的 Jenkins
+    imageSrc: https://docs.microsoft.com/media/logos/logo_jenkins.svg
+    url: /jenkins

@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: “Azure 上的 Java”开发人员工具文档
+summary: 用于在 Azure 上进行 Java 开发的工具、IDE 和支持的 JDK。
+metadata:
+  title: “Azure 上的 Java”基础文档
+  description: 用于在 Azure 上进行 Java 开发的工具、IDE 和支持的 JDK
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: d229e7b7964290c78c8ab963e7c70374043c40a8
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675263"
+landingContent:
+- title: 面向 Java 云开发人员的工具
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 工具概述
+      url: java-azure-tools.md
+- title: 支持的 JDK
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Java 长期支持
+      url: java-jdk-long-term-support.md
+    - text: Java JDK 安装
+      url: java-jdk-install.md
+    - text: Azure 的 Java Docker 映像
+      url: java-jdk-docker-images.md
+- title: IDE
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visual Studio Code
+      url: https://code.visualstudio.com/docs/languages/java
+    - text: IntelliJ IDEA
+      url: /azure/developer/java/toolkit-for-intellij
+    - text: Eclipse
+      url: /azure/developer/java/toolkit-for-eclipse
+- title: Maven 插件
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 应用服务
+      url: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+    - text: Azure Functions
+      url: /java/api/overview/azure/maven/azure-functions-maven-plugin/readme
+    - text: Azure Spring Cloud
+      url: /java/api/overview/azure/maven/azure-spring-cloud-maven-plugin/readme
+- title: 日志记录
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 通过用于 Java 的 Azure SDK 配置日志记录
+      url: /azure/developer/java/sdk/java-sdk-azure-log
+    - text: 使用 Logz.io 进行监视和日志记录
+      url: java-get-started-with-logzio.md
+- title: DevOps
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure DevOps
+      url: /azure/devops/java/
+    - text: Jenkins CI/CD
+      url: /azure/jenkins/

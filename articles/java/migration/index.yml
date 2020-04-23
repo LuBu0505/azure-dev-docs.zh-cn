@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: “Java 到 Azure 的迁移”文档
+summary: 关于如何将 Java 应用程序迁移到 Azure 的建议策略。
+metadata:
+  title: “Java 到 Azure 的迁移”指南文档
+  description: 关于如何将 Java 应用程序迁移到 Azure 的建议策略
+  author: KarlErickson
+  ms.author: karler
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 772bb5caba59d9f620d22d7d5fb945a617419095
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675153"
+landingContent:
+- title: 将 Java 应用程序迁移到 Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 迁移概述
+      url: migration-overview.md
+- title: 将 Spring 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Spring 到 Azure 应用服务
+      url: migrate-java-se-to-java-se-app-service.md
+- title: 将 Tomcat 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tomcat 到 Azure 应用服务
+      url: migrate-tomcat-to-tomcat-app-service.md
+    - text: Tomcat 到 AKS 上的容器
+      url: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+- title: 将 WebLogic 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: WebLogic 到 AKS 上的 WildFly
+      url: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+    - text: WebLogic 到 Azure 虚拟机
+      url: migrate-weblogic-to-virtual-machines.md
+- title: 将 WildFly 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: WildFly 到 AKS 上的 WildFly
+      url: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
+- title: 将 WebSphere 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: WebSphere 到 AKS 上的 WildFly
+      url: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
+- title: 将 JBoss EAP 迁移到 Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: JBoss EAP 到 AKS 上的 WildFly
+      url: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md

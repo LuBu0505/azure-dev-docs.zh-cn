@@ -1,0 +1,37 @@
+### YamlMime:Landing
+title: Azure SDK for Java 文档
+summary: 在 Azure 上使用 Java 进行云开发。
+metadata:
+  title: Azure SDK for Java 文档
+  description: 在 Azure 上使用 Java 进行云开发
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675143"
+landingContent:
+- title: 面向 Java 云开发人员的 Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 使用 Java 进行 Azure 开发
+      url: java-sdk-azure-get-started.md
+  - linkListType: reference
+    links:
+    - text: Java API 浏览器
+      url: /java/api/?view=azure-java
+  - linkListType: how-to-guide
+    links:
+    - text: 添加根证书
+      url: java-sdk-add-certificate-ca-store.md
+    - text: Authenticate
+      url: java-sdk-azure-authenticate.md
+    - text: 配置日志记录
+      url: java-sdk-azure-log.md
+  - linkListType: learn
+    links:
+    - text: 模式和最佳做法
+      url: java-sdk-azure-concepts.md

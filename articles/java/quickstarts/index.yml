@@ -1,0 +1,112 @@
+### YamlMime:Landing
+title: Azure for Java 快速入门
+metadata:
+  title: Azure for Java 快速入门
+  description: 使用这些快速入门教程开始面向云开发 Java 应用。
+  ms.topic: landing-page
+  ms.date: 04/08/2020
+  ms.openlocfilehash: 4df3926c2de96a207b0f1f20445d60c4a2f4daac
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675343"
+landingContent:
+- title: 部署 Web 应用
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Linux 和 Tomcat
+      url: /azure/app-service/containers/quickstart-java
+    - text: Linux 和 Java SE
+      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+    - text: 使用 IntelliJ 部署到 Linux
+      url: /azure/developer/java/toolkit-for-intellij/create-hello-world-web-app
+    - text: 使用 Visual Studio Code 部署到 Linux
+      url: https://code.visualstudio.com/docs/java/java-webapp
+- title: 无服务器函数
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 创建函数并将其发布到 Azure
+      url: /azure/azure-functions/functions-create-first-java-maven
+    - text: 使用 IntelliJ 进行部署
+      url: /azure/developer/java/toolkit-for-intellij/quickstart-functions
+    - text: 使用 Visual Studio Code 进行部署
+      url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
+- title: Azure Spring Cloud
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 使用 Azure 门户进行启动
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - text: 使用 Azure CLI 进行启动
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-cli
+    - text: 从源代码进行启动
+      url: /azure/spring-cloud/spring-cloud-launch-from-source
+    - text: 使用 Maven 进行启动
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-maven
+- title: 存储
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 存储 Blob
+      url: /azure/storage/blobs/storage-quickstart-blobs-java
+- title: 数据库
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: SQL 数据库
+      url: /azure/sql-database/sql-database-connect-query-java
+    - text: MySQL
+      url: /azure/mysql/connect-java
+    - text: PostgreSQL
+      url: /azure/postgresql/connect-java
+- title: Cosmos DB
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: SQL API
+      url: /azure/cosmos-db/create-sql-api-java
+    - text: 表 API
+      url: /azure/cosmos-db/create-table-java
+    - text: 图形 API
+      url: /azure/cosmos-db/create-graph-java
+    - text: Cassandra API
+      url: /azure/cosmos-db/create-cassandra-java
+    - text: MongoDB API
+      url: /azure/cosmos-db/create-mongodb-java
+- title: 事件处理
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 事件中心
+      url: /azure/event-hubs/event-hubs-java-get-started-send
+    - text: 事件中心和 Kafka
+      url: /azure/event-hubs/event-hubs-quickstart-kafka-enabled-event-hubs
+- title: 服务总线消息传送
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 使用队列
+      url: /azure/service-bus-messaging/service-bus-java-how-to-use-queues
+    - text: 使用主题和订阅
+      url: /azure/service-bus-messaging/service-bus-java-how-to-use-topics-subscriptions
+    - text: JMS 和 AMQP
+      url: /azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp
+- title: IoT 中心
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 发送遥测
+      url: /azure/iot-hub/quickstart-send-telemetry-java
+    - text: 控制设备
+      url: /azure/iot-hub/quickstart-control-device-java
+- title: Caching
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 使用 Jedis 的应用缓存
+      url: /azure/azure-cache-for-redis/cache-java-get-started
+    - text: Spring Data Reactive Redis
+      url: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache
