@@ -3,16 +3,22 @@ title: 从 Visual Studio Code 将静态 Node.js 网站部署到 Azure
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 8b19b32933c2405082e2d1e2aa46c7a06af1f9d1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4795d3a80be1ffa7516f64fa5563d4960f58a31b
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467090"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026160"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>从 Visual Studio Code 将静态网站部署到 Azure
 
 在本教程中，你将使用 [Azure 存储](https://docs.microsoft.com/azure/storage)创建静态网站并将其部署到 Azure。 静态网站由 HTML、CSS、JavaScript 和其他静态文件（如图像或字体）组成。 静态站点通常是用 Angular、React 或 Vue 编写的单页应用程序（或 [SPA](https://en.wikipedia.org/wiki/Single-page_application)）。 无论你如何设计应用，你都是直接从_存储_托管和处理这些文件，而不是使用 Web 服务器。 在存储中托管比维护 Web 服务器更简单，成本更低。
+
+## <a name="walkthrough-video"></a>演练视频
+
+观看此视频，了解本文中内容的完整演练。
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-static-website-to-Azure-from-Visual-Studio-Code/player]
 
 > [!NOTE]
 > 如果你有自己的服务器代码（例如，Node.js/Express 应用），请改为按照[应用服务教程](tutorial-vscode-azure-app-service-node-01.md)进行操作。
@@ -35,4 +41,4 @@ ms.locfileid: "74467090"
 [!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
 
 > [!div class="nextstepaction"]
-> [我安装了必备项](tutorial-vscode-static-website-node-02.md) [我遇到了一个问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=getting-started)
+> [我安装了必备项](tutorial-vscode-static-website-node-02.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=getting-started)

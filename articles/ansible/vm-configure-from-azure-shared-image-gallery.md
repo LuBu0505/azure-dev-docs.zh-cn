@@ -4,20 +4,20 @@ description: 了解如何使用 Ansible，以便根据共享映像库中的通�
 keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集, 共享映像库
 ms.topic: tutorial
 ms.date: 10/14/2019
-ms.openlocfilehash: f784419736854095cc1bc5da14f3867ac3f7eb12
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741745"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743266"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>教程：使用 Ansible 从 Azure 共享映像库创建 VM 或虚拟机规模集
 
-[!INCLUDE [ansible-29-note.md](../../includes/ansible-29-note.md)]
+[!INCLUDE [ansible-29-note.md](includes/ansible-29-note.md)]
 
 [共享映像库](/azure/virtual-machines/windows/shared-image-galleries)是一项服务，你可以通过它轻松地管理、共享和组织自定义托管映像。 此功能适用于保留和共享许多映像的方案。 自定义映像可以跨订阅共享，也可以在 Azure Active Directory 租户之间共享。 映像还可以复制到多个区域，以便更快地进行部署缩放。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -30,8 +30,8 @@ ms.locfileid: "80741745"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="get-the-sample-playbooks"></a>获取示例 playbook
 

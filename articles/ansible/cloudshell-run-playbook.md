@@ -4,12 +4,12 @@ description: 本快速入门介绍如何使用 Azure Cloud Shell 中的 Bash 执
 keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: b5c136d0eb6f3c226625c8a6d6c9200f6c283101
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: e5da7532b3bed43190509168827ac88f5b7b10be
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741315"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743751"
 ---
 # <a name="quickstart-run-ansible-playbooks-via-bash-in-azure-cloud-shell"></a>快速入门：通过 Azure Cloud Shell 中的 Bash 运行 Ansible Playbook
 
@@ -17,9 +17,9 @@ Azure Cloud Shell 是一个用于管理 Azure 资源的交互式的可通过浏�
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **配置 Azure Cloud Shell** - 如果你是 Azure Cloud Shell 的新手，请参阅 [Azure Cloud Shell 中的 Bash 快速入门](https://docs.microsoft.com/azure/cloud-shell/quickstart)。
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [cloud-shell-try-it.md](../includes/cloud-shell-try-it.md)]
 
 ## <a name="automatic-credential-configuration"></a>自动凭据配置
 
@@ -42,7 +42,7 @@ export AZURE_SUBSCRIPTION_ID=<your-subscription-id>
 ## <a name="verify-the-configuration"></a>验证配置
 若要验证配置是否成功，请使用 Ansible 创建一个 Azure 资源组。
 
-[!INCLUDE [create-resource-group-with-ansible.md](../../includes/ansible-snippet-create-resource-group.md)]
+[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

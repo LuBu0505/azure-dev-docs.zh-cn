@@ -3,12 +3,12 @@ title: 用于 Python 的 Azure SDK
 description: 概述 Azure SDK for Python 的特性和功能，这些特性和功能可提高开发人员预配、使用和管理 Azure 资源时的工作效率。
 ms.date: 03/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: a7fa744884972c6e25ac85b69c6b8317d7cb5190
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.openlocfilehash: 3d24a512420610f37285a03fe6a39d81e97510ee
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80441672"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026110"
 ---
 # <a name="azure-sdk-for-python"></a>用于 Python 的 Azure SDK
 
@@ -91,7 +91,7 @@ from azure.storage.blob import BlobClient
 最后，使用该库的 API 连接到数据并将其上传。 在以下示例中，连接字符串和容器名称已在存储帐户中预配。 blob 名称是分配给已上传数据的名称：
 
 ```python
-blob = BlobClient.from_connection_string("my_connection_string", container="mycontainer", blob="my_blob")
+blob = BlobClient.from_connection_string("my_connection_string", container_name="mycontainer", blob_name="my_blob")
 
 with open("./SampleSource.txt", "rb") as data:
     blob.upload_blob(data)

@@ -1,0 +1,116 @@
+### YamlMime:Landing
+title: Azure 命令行接口 (CLI) 文档
+summary: "Azure 命令行接口 (Azure CLI) 是一组用来创建和管理 Azure 资源的命令。  \nAzure CLI 可用于各种 Azure 服务，可用来快速使用 Azure（侧重于自动化）。\n"
+metadata:
+  title: Azure CLI 概述
+  description: 有关安装 Azure CLI 以及学习如何入门的说明。
+  ms.topic: landing-page
+  ms.collection: collection
+  author: dbradish-microsoft
+  ms.author: dbradish
+  ms.date: 09/09/2019
+  ms.openlocfilehash: 804cf4efdcf88674f67f0d5e2afd2619ba1b892a
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82031349"
+landingContent:
+- title: 安装 Azure CLI
+  linkLists:
+  - linkListType: download
+    links:
+    - text: 安装概述
+      url: install-azure-cli.md
+    - text: 安装 Windows 版
+      url: install-azure-cli-windows.md
+    - text: 安装 macOS 版
+      url: install-azure-cli-macos.md
+    - text: 使用 apt 在 Linux 上安装
+      url: install-azure-cli-apt.md
+    - text: 使用 yum 在 Linux 上安装
+      url: install-azure-cli-yum.md
+    - text: 使用 zypper 在 Linux 上安装
+      url: install-azure-cli-zypper.md
+    - text: 不使用包管理器在 Linux 上安装
+      url: install-azure-cli-linux.md
+    - text: 在 Docker 中运行
+      url: run-azure-cli-docker.md
+    - text: 在 Azure Cloud Shell 中运行
+      url: https://shell.azure.com
+- title: 了解 Azure CLI 功能
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure CLI 入门
+      url: get-started-with-azure-cli.md
+    - text: Azure CLI 可以管理的服务
+      url: azure-services-the-azure-cli-can-manage.md
+    - text: 有关使用 Azure CLI 的热门文章
+      url: popular-articles-using-the-azure-cli.md
+  - linkListType: how-to-guide
+    links:
+    - text: 登录方法
+      url: authenticate-azure-cli.md
+    - text: 创建服务主体
+      url: create-an-azure-service-principal-azure-cli.md
+    - text: 查询 CLI 命令结果
+      url: query-azure-cli.md
+- title: 使用 Azure CLI 管理云资源
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 从 GitHub 部署 Web 应用程序
+      url: /azure/app-service/scripts/cli-deploy-github?toc=%2fcli%2fazure%2ftoc.json
+    - text: 创建 Postgres SQL 数据库
+      url: /azure/postgresql/quickstart-create-server-up-azure-cli?toc=%2fcli%2fazure%2ftoc.json
+    - text: 创建 Kubernetes 群集
+      url: /azure/aks/kubernetes-walkthrough?toc=%2fcli%2fazure%2ftoc.json
+  - linkListType: learn
+    links:
+    - text: 使用 Azure CLI 管理虚拟机
+      url: /learn/modules/manage-virtual-machines-with-azure-cli
+    - text: 使用 CLI 控制 Azure 服务
+      url: /learn/modules/control-azure-services-with-cli
+    - text: 将应用程序连接到 Azure 存储
+      url: /learn/modules/connect-an-app-to-azure-storage
+  - linkListType: tutorial
+    links:
+    - text: 使用 Azure CLI 在同一子网上创建虚拟机
+      url: azure-cli-vm-tutorial.yml
+- title: Azure CLI 扩展
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 CLI 扩展
+      url: azure-cli-extensions-overview.md
+  - linkListType: reference
+    links:
+    - text: 可用扩展
+      url: azure-cli-extensions-list.md
+- title: Azure CLI 参考
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 完整命令参考
+      url: /cli/azure/reference-index
+    - text: 输出格式
+      url: format-output-azure-cli.md
+    - text: 配置设置
+      url: azure-cli-configuration.md
+    - text: 发行说明
+      url: release-notes-azure-cli.md
+    - text: JMESPath 查询语言
+      url: http://jmespath.org/
+    - text: OData 查询筛选器
+      url: https://www.odata.org/getting-started/basic-tutorial/#queryData
+- title: 提供反馈并获得支持
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 请求新功能
+      url: https://github.com/Azure/azure-cli/issues/new?template=Feature_request.md
+    - text: 报告产品 bug
+      url: https://github.com/Azure/azure-cli/issues/new?template=Bug_report.md
+    - text: 从社区获得帮助
+      url: https://stackoverflow.com/questions/tagged/azure-cli
