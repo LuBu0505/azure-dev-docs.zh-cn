@@ -38,12 +38,12 @@
             - name: Payara Micro
               href: 'https://payara.fish/payara_micro'
             - name: Red Hat WildFly Swarm (Thorntail)
-              href: 'http://wildfly-swarm.io/'
+              href: 'https://thorntail.io/'
         - name: MicroProfile 项目生成器
           expanded: false
           items:
             - name: WildFly Swarm (Thorntail) 生成器
-              href: 'http://wildfly-swarm.io/generator/'
+              href: 'https://thorntail.io/generator/'
             - name: KumuluzEE 生成器
               href: 'https://ee.kumuluz.com/generator/'
             - name: Jeddict

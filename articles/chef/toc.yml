@@ -33,7 +33,7 @@
         - name: Chef Automate 概述
           href: 'https://docs.chef.io/chef_automate.html'
         - name: Chef Automate 安装指南
-          href: 'https://docs.chef.io/install_chef_automate.html'
+          href: 'https://docs.chef.io/chef_install_script'
         - name: Azure 市场上的 Chef Automate
           href: 'https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chef-software.chef-automate'
     - name: Chef Software 新闻

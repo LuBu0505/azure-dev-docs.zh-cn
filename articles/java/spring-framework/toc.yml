@@ -94,10 +94,10 @@
         - name: Spring Framework
           href: 'https://spring.io/'
         - name: 了解 Spring
-          href: 'https://spring.io/docs'
+          href: 'https://spring.io/guides'
         - name: Spring Boot
           href: 'https://projects.spring.io/spring-boot/'
         - name: Spring 项目参考
-          href: 'https://spring.io/docs/reference'
+          href: 'https://spring.io/projects'
         - name: 适用于 Azure 的 Spring Boot 起动器
           href: 'https://github.com/Microsoft/azure-spring-boot/'
