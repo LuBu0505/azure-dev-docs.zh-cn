@@ -7,12 +7,12 @@ metadata:
   description: 使用这些面向 Java 开发人员的教程和工具开始开发云应用。
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: c037f46cd3cc03c366ef9a904c4a9178eebc5a0a
-  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.openlocfilehash: d828acd15a58db94370c3f807bd51d8712ef1e2c
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81675223"
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82026180"
 conceptualContent:
   items:
   - title: Azure for Java 快速入门
@@ -20,7 +20,7 @@ conceptualContent:
     - text: 将 Java SE Web 应用部署到 Linux
       itemType: quickstart
       url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
-    - text: 创建并发布无服务器函数
+    - text: 创建无服务器函数
       itemType: quickstart
       url: /azure/azure-functions/functions-create-first-java-maven
     - text: 管理存储 Blob
@@ -82,6 +82,9 @@ conceptualContent:
     - text: 使用 MySQL 部署 Spring 应用
       itemType: tutorial
       url: /azure/developer/java/spring-framework/spring-app-service-e2e
+    footerLink:
+      text: 查看应用服务文档
+      url: /azure/app-service/containers/
   - title: Azure Spring 云
     links:
     - text: Azure Spring Cloud 是什么？
@@ -121,6 +124,9 @@ conceptualContent:
     - text: 开发人员指南
       itemType: reference
       url: /azure/azure-functions/functions-reference-java
+    footerLink:
+      text: 查看 Azure Functions 文档
+      url: /azure/azure-functions
   - title: 监视 Java 应用
     links:
     - text: Application Insights 入门
@@ -132,17 +138,23 @@ conceptualContent:
     - text: 监视 Spring 应用
       itemType: how-to-guide
       url: /azure/spring-cloud/diagnostic-services
+    footerLink:
+      text: 查看 Azure Monitor 文档
+      url: /azure/azure-monitor
   - title: 保护 Java 应用
     links:
-    - text: 启用最终用户身份验证和授权
+    - text: 启用最终用户身份验证
       itemType: quickstart
       url: /azure/active-directory/develop/quickstart-v2-java-webapp
-    - text: 使用 Microsoft 身份验证库
+    - text: Microsoft 身份验证库
       itemType: how-to-guide
       url: /azure/active-directory/develop/migrate-adal-msal-java
     - text: 管理应用机密
       itemType: quickstart
       url: /azure/key-vault/quick-create-java
+    footerLink:
+      text: 查看 Active Directory 文档
+      url: /azure/active-directory
 tools:
   title: 工具
   items:
