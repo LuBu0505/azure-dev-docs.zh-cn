@@ -1,0 +1,109 @@
+### YamlMime:Landing
+title: “Azure 上的 Jenkins”文档
+summary: 了解如何使用 Jenkins 在 Azure 上自动进行持续集成和持续交付。
+metadata:
+  title: “Azure 上的 Jenkins”文档
+  description: 了解如何使用 Jenkins 在 Azure 上自动进行持续集成和持续交付。
+  services: azure
+  ms.service: jenkins
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 02/24/2020
+  ms.openlocfilehash: 82e0f99795f46347970b3a73d9c0b78787d05cd6
+  ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/27/2020
+  ms.locfileid: "82172343"
+landingContent:
+- title: 关于 Azure 上的 Jenkins
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 关于 Azure 上的 Jenkins
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: 适用于 Azure 的 Jenkins 插件
+      url: plug-ins-for-azure.md
+  - linkListType: architecture
+    links:
+    - text: Jenkins 体系结构
+      url: /azure/architecture/reference-architectures/jenkins/
+- title: 安装并配置 Jenkins
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 创建 Jenkins 服务器
+      url: configure-on-linux-vm.md
+  - linkListType: download
+    links:
+    - text: 示例作业和脚本
+      url: https://github.com/azure/jenkins
+- title: 使用 Jenkins 和 Azure 进行缩放
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 通过 Azure 容器实例进行缩放
+      url: azure-container-instances-as-jenkins-build-agent.md
+    - text: 使用 Azure VM 代理进行缩放
+      url: scale-deployments-using-vm-agents.md
+- title: CI/CD 到 Azure Functions
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 部署到 Azure Functions
+      url: deploy-to-azure-functions.md
+- title: CI/CD 到 AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 从 GitHub 部署到 AKS
+      url: deploy-from-github-to-aks.md
+    - text: 使用蓝/绿模式部署到 AKS
+      url: deploy-to-aks-using-blue-green-deployment-pattern.md
+    - text: 使用 Azure Dev Spaces 插件进行部署
+      url: azure-dev-spaces-and-aks.md
+- title: CI/CD 到应用服务
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 在管道作业中创建 Azure 资源
+      url: deploy-to-azure-app-service-using-azure-cli.md
+    - text: 从 GitHub 部署到应用服务
+      url: deploy-from-github-to-azure-app-service.md
+  - linkListType: how-to-guide
+    links:
+    - text: 使用应用服务插件进行部署
+      url: deploy-to-azure-app-service-using-plugin.md
+- title: CI/CD 到 Azure DevOps
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 使用 Azure DevOps Services 部署到 Linux VM
+      url: deploy-to-linux-vm-using-azure-devops-services.md
+- title: CI/CD 到 Azure 存储
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 将 Azure 存储与 Jenkins C/I 解决方案配合使用
+      url: azure-storage-blobs-as-build-artifact-repository.md
+- title: CI/CD 到 Linux VM
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 在 Linux VM 上创建开发基础结构
+      url: pipeline-with-github-and-docker.md
+- title: CI/CD 到 Service Fabric
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 构建和部署 Azure Service Fabric 应用
+      url: deploy-to-service-fabric-cluster.md
+- title: CI/CD 到 Azure Spring Cloud
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 使用 Azure CLI 部署到 Azure Spring Cloud
+      url: deploy-to-azure-spring-cloud-using-azure-cli.md

@@ -4,20 +4,20 @@ description: 了解如何使用 Ansible 在 Azure 开发测试实验室中配置
 keywords: ansible, azure, devops, bash, playbook, mysql, 开发测试实验室
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: b6981ee94c4d82997c574db037befb9782465d08
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 832ff131822a5cd864c2b005c36480235a5e1971
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741205"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743668"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>教程：使用 Ansible 在 Azure 开发测试实验室中配置实验室
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 开发人员可通过 [Azure 开发测试实验室](/azure/lab-services/devtest-lab-overview)为应用自动创建 VM 环境。 这些环境可配置为用于应用开发、测试和训练。 
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -35,9 +35,9 @@ ms.locfileid: "80741205"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-resource-group"></a>创建资源组
 
@@ -75,7 +75,7 @@ Azure 资源组由示例 playbook 片段创建。 资源组是在其中部署和
 - `lab_premium_vm_count` 是实验室高级 VM 的最大数量
 - `lab_vm_size` 是实验室 VM 的容许大小
 - `gallery_image` 是容许的库映像
-- `user_owned_lab_vm_count_in_subnet` 是用户在子网中的 VM 最大数量
+- `user_owned_lab_vm_count_in_subnet` 是一个子网中的用户 VM 的最大数量
 - `lab_target_cost` 是实验室的目标成本
 
 ```yml

@@ -3,19 +3,20 @@ title: 教程 - 使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置 kuben
 description: 了解如何使用 Ansible 在 Azure Kubernetes 服务 (AKS) 群集中配置 kubenet 网络
 keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, Kubernetes
 ms.topic: tutorial
+ms.custom: fasttrack-edit
 ms.date: 10/23/2019
-ms.openlocfilehash: 1f15710de9ab6f2d058b72096f0265541c131d9f
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 7d1dc7b381c02c84b2da89c5c90d822e86a3cd1b
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741685"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026120"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>教程：使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置 kubenet 网络
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-aks.md](../../includes/open-source-devops-intro-aks.md)]
+[!INCLUDE [open-source-devops-intro-aks.md](../includes/open-source-devops-intro-aks.md)]
 
 通过 AKS，可使用以下网络模型部署群集：
 
@@ -24,7 +25,7 @@ ms.locfileid: "80741685"
 
 要详细了解 AKS 中到应用程序的网络连接，请参阅 [AKS 中应用程序的网络概念](/azure/aks/concepts-network)。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -33,9 +34,9 @@ ms.locfileid: "80741685"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-virtual-network-and-subnet"></a>创建虚拟网络和子网
 
@@ -106,9 +107,9 @@ ms.locfileid: "80741685"
 - 使用 `azure_rm_aks_version` 模块查找受支持的版本。
 - `vnet_subnet_id` 是在上一部分中创建的子网。
 - `network_profile` 定义了 kubenet 网络插件的属性。
-- `service_cidr` 用于将 AKS 群集中的内部服务分配到 IP 地址。 此 IP 地址范围应该是未在网络中的其他位置使用的地址空间。 
+- `service_cidr` 用于将 AKS 群集中的内部服务分配到 IP 地址。 此 IP 地址范围应该是未在 AKS 群集外部使用的地址空间。 但是，可对多个 AKS 群集重复使用相同的服务 CIDR。 
 - `dns_service_ip` 地址应为服务 IP 地址范围的“.10”地址。
-- `pod_cidr` 应该是未在网络环境中的其他位置使用的较大地址空间。 此地址范围必须足够大，可容纳预期要扩展到的节点数。 部署群集后，无法更改此地址范围。
+- `pod_cidr` 应该是未在网络环境中的其他位置使用的较大地址空间。 此地址范围必须足够大，可容纳预期要扩展到的节点数。 部署群集后，无法更改此地址范围。 与服务 CIDR 一样，此 IP 范围不应存在于 AKS 群集之外，但可以安全地跨群集重复使用。
 - Pod IP 地址范围用于将 /24 地址空间分配给群集中的每个节点。 在以下示例中，`pod_cidr` 192.168.0.0/16 为第一个节点分配 192.168.0.0/24，为第二个节点分配 192.168.1.0/24，为第三节点分配 192.168.2.0/24。
 - 群集扩展或升级时，Azure 会继续将 Pod IP 地址范围分配到每个新节点。
 - playbook 通过 `~/.ssh/id_rsa.pub` 加载 `ssh_key`。 若要修改，使用以“ssh-rsa”开头（不带引号）的单行格式。

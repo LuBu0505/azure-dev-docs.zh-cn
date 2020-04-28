@@ -1,0 +1,76 @@
+- name: Azure 上的 Jenkins
+  href: index.yml
+- name: 概述
+  items:
+    - name: 关于 Azure 上的 Jenkins
+      href: overview.md
+- name: 快速入门
+  expanded: true
+  items:
+    - name: 创建 Jenkins 服务器
+      href: configure-on-linux-vm.md
+- name: 教程
+  items:
+    - name: 配置
+      items:
+        - name: 通过 Azure 容器实例进行缩放
+          href: azure-container-instances-as-jenkins-build-agent.md
+          maintainContext: true
+        - name: 使用 Azure VM 代理进行缩放
+          href: scale-deployments-using-vm-agents.md
+    - name: 实现 CI/CD
+      items:
+        - name: Azure Spring Cloud
+          items:
+            - name: 使用 Azure CLI 部署到 Azure Spring Cloud
+              href: deploy-to-azure-spring-cloud-using-azure-cli.md
+        - name: AKS
+          items:
+            - name: CI/CD 到 Kubernetes
+              href: deploy-from-github-to-aks.md
+              maintainContext: true
+            - name: 使用蓝/绿模式部署到 AKS
+              href: deploy-to-aks-using-blue-green-deployment-pattern.md
+            - name: 将 CI/CD 与 Azure Dev Spaces 配合使用
+              href: azure-dev-spaces-and-aks.md
+        - name: 应用服务
+          items:
+            - name: 在管道作业中创建 Azure 资源
+              href: deploy-to-azure-app-service-using-azure-cli.md
+            - name: 将来自 GitHub 的应用部署到应用服务
+              href: deploy-from-github-to-azure-app-service.md
+        - name: 将 Jenkins 和 Azure DevOps 配合使用
+          href: deploy-to-linux-vm-using-azure-devops-services.md
+          maintainContext: true
+        - name: 部署到 Azure Functions
+          href: deploy-to-azure-functions.md
+        - name: 发布到 Azure 存储
+          href: azure-storage-blobs-as-build-artifact-repository.md
+          maintainContext: true
+        - name: CI/CD 到 Linux VM
+          href: pipeline-with-github-and-docker.md
+          maintainContext: true
+        - name: CI/CD 到 Service Fabric
+          href: deploy-to-service-fabric-cluster.md
+          maintainContext: true
+- name: 操作说明
+  items:
+    - name: 使用应用服务插件
+      href: deploy-to-azure-app-service-using-plugin.md
+- name: 示例
+  items:
+    - name: 示例作业和脚本
+      href: 'https://github.com/azure/jenkins'
+- name: 资源
+  items:
+    - name: 适用于 Azure 的 Jenkins 插件
+      href: plug-ins-for-azure.md
+    - name: Azure 路线图
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Jenkins 主页
+      href: 'https://jenkins.io/'
+    - name: Jenkins X 主页
+      href: 'https://jenkins-x.io'
+    - name: Jenkins 体系结构
+      href: /azure/architecture/reference-architectures/jenkins/
+      maintainContext: true
