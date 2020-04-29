@@ -6,12 +6,12 @@ metadata:
   description: 了解用于 Eclipse 的 Azure 工具包插件如何帮助你创建云应用程序并将其部署到 Azure。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 81a19bdaec147c918a95f3d53143fb0d5c403918
-  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.openlocfilehash: 55ffc89edfd66944e242431e33999b89b0c71f52
+  ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81675303"
+  ms.lasthandoff: 04/28/2020
+  ms.locfileid: "82209750"
 landingContent:
 - title: 入门指南
   linkLists:
@@ -40,7 +40,7 @@ landingContent:
   - linkListType: download
     links:
     - text: 适用于 Azure 和 Azure Stack 的 Java
-      url: /azure/developer/java/jdk/
+      url: /java/azure/jdk/
 - title: 源代码
   linkLists:
   - linkListType: reference

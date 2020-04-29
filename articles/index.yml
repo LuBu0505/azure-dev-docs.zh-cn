@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: be83122125d07c0bfb69c7c44a3a0fee0c069fb3
-  ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+  ms.openlocfilehash: 1068b2917cef3052b6753e0c563cbcaf9af3f542
+  ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/22/2020
-  ms.locfileid: "81743554"
+  ms.lasthandoff: 04/28/2020
+  ms.locfileid: "82209790"
 productDirectory:
   items:
   - title: Python
@@ -144,7 +144,7 @@ additionalContent:
       url: https://docs.microsoft.com/java/api/overview/azure/maven/README
     - title: Azure Toolkit for IntelliJ
       summary: 使用 Azure Toolkit for IntelliJ 从 IntelliJ IDE 中创建、开发、测试和部署 Azure 应用程序。
-      url: https://docs.microsoft.com/azure/developer/java/intellij/
+      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/
     - title: 用于 Eclipse 的 Azure 工具包
       summary: 使用 Azure Toolkit for Eclipse 从 Eclipse IDE 中创建、开发、测试和部署 Azure 应用程序。
-      url: https://docs.microsoft.com/azure/developer/java/eclipse/
+      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-eclipse/
