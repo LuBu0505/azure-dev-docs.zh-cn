@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 1a223c858874566c2fbfe7b02faec99179cd1e72
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670523"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105068"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 
@@ -107,7 +107,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包的登录说明]: ./sign-in-instructions.md
-[Microsoft Azure 存储简介]: /azure/storage/storage-introduction
+[Microsoft Azure 存储简介]: /azure/storage/common/storage-introduction
 [有关 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets

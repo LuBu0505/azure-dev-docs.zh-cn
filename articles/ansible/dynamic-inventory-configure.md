@@ -4,12 +4,12 @@ description: 了解如何使用 Ansible 管理 Azure 动态库存
 keywords: ansible, azure, devops, bash, cloudshell, 动态库存
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 31966012fb5178fe76a6eadfbd9830a5cc17ebe2
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.openlocfilehash: c777ee18663507b6e8d658a7ba027d99f9645cc9
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81743384"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104688"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>教程：使用 Ansible 配置 Azure 资源的动态库存
 
@@ -87,7 +87,7 @@ az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionI
 
 ### <a name="using-ansible-version--28"></a>使用低于 2.8 的 Ansible 版本
 
-Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible/ansible/blob/devel/contrib/inventory/azure_rm.py) 的 Python 脚本，该脚本生成 Azure 资源的动态库存。 以下步骤引导你使用 `azure_rm.py` 脚本连接到两个 Azure 测试虚拟机：
+Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible/ansible/blob/stable-2.9/contrib/inventory/azure_rm.py) 的 Python 脚本，该脚本生成 Azure 资源的动态库存。 以下步骤引导你使用 `azure_rm.py` 脚本连接到两个 Azure 测试虚拟机：
 
 1. 使用 GNU `wget` 命令检索 `azure_rm.py` 脚本：
 
@@ -124,7 +124,7 @@ Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible/ansible/blob
 
 ### <a name="ansible-version--28"></a>Ansible 版本为 2.8 及更高版本
 
-从 Ansible 2.8 开始，Ansible 便已提供 [Azure 动态库存插件](https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/inventory/azure_rm.py)。 以下步骤将引导你使用插件：
+从 Ansible 2.8 开始，Ansible 便已提供 [Azure 动态库存插件](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py)。 以下步骤将引导你使用插件：
 
 1. 库存插件需要配置文件。 配置文件必须以 `azure_rm` 结尾，且扩展名为 `yml` 或 `yaml`。 对于本教程示例，请将以下 playbook 保存为 `myazure_rm.yml`：
 

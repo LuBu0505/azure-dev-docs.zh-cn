@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 将静态 Node.js 网站部署到 Azure
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 4795d3a80be1ffa7516f64fa5563d4960f58a31b
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82026160"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138763"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>从 Visual Studio Code 将静态网站部署到 Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "82026160"
 - [Azure 存储扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage)。
 - [Node.js 和 npm](https://nodejs.org/en/download)，即 Node.js 包管理器。 （此要求仅用于生成示例项目。 如果已有应用代码，则无需安装 Node.js。）
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurestorage">安装 Azure 存储扩展</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">安装 Azure 存储扩展</a>
 
 ### <a name="azure-subscription"></a>Azure 订阅
 

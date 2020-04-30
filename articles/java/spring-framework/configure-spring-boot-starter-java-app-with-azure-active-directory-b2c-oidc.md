@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: dde59a631f225fb5fbaecf30d91503428ebb8064
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 71bc7e2e7677ce3f53c70bd68e5e73765070bd06
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671903"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104858"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
 
@@ -258,7 +258,7 @@ ms.locfileid: "81671903"
    mvn spring-boot:run
    ```
 
-3. 在 Maven 生成并启动该应用程序之后，请在 Web 浏览器中打开 <http://localhost:8080/>；系统会将你重定向到登录页。
+3. 在 Maven 生成并启动该应用程序之后，请在 Web 浏览器中打开 `http://localhost:8080/`；系统会将你重定向到登录页。
 
    ![登录页](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo1-n.png)
 

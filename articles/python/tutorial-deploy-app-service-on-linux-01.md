@@ -4,12 +4,12 @@ description: 教程步骤 1，简介、先决条件以及登录 Azure。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8995c31203b2cbd096820832beb3d6a7d165f132
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.openlocfilehash: ed0370e5e4905403ec7917410f68fb4969969a05
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80441962"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138753"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：将 Python 应用从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务
 
@@ -36,7 +36,7 @@ ms.locfileid: "80441962"
 
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - Python 和 [Python 扩展](https://marketplace.visualstudio.com/items?itemName=ms-python.python)，详见 [VS Code Python 教程 - 先决条件](https://code.visualstudio.com/docs/python/python-tutorial)。
-- [Azure 应用服务](vscode:extension/ms-azuretools.vscode-azureappservice)扩展，可以通过它在 VS Code 中与 Azure 应用服务交互。 如需常规信息，请浏览[应用服务扩展教程](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)并访问 [vscode-azureappservice GitHub 存储库](https://github.com/Microsoft/vscode-azureappservice)。
+- [Azure 应用服务](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)扩展，可以通过它在 VS Code 中与 Azure 应用服务交互。 如需常规信息，请浏览[应用服务扩展教程](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)并访问 [vscode-azureappservice GitHub 存储库](https://github.com/Microsoft/vscode-azureappservice)。
 
 ## <a name="sign-in-to-azure"></a>登录 Azure
 

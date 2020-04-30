@@ -7,12 +7,12 @@ ms.date: 02/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
-ms.openlocfilehash: ca76df9f32980fd37f92a61951ee7270a7e0a9ff
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: ece597db7475d371c54664d61498d6a89f8c76cb
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81669753"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104828"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
@@ -178,7 +178,7 @@ ms.locfileid: "81669753"
    mvn spring-boot:run
    ```
 
-1. 使用 Web 浏览器浏览到 http://localhost:8080 以测试 Web 应用；如果有可用的 Curl，也可使用以下示例所示的语法：
+1. 使用 Web 浏览器浏览到 `http://localhost:8080` 以测试 Web 应用；如果有可用的 Curl，也可使用以下示例所示的语法：
 
    ```shell
    curl http://localhost:8080

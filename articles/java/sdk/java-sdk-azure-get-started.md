@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019
-ms.openlocfilehash: 1a165468f024b375f9bf60f77c7f1ca8e7ea5b31
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: c03e458f9a91d13a3ed1c375e0b6cb0fefe15a3d
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81673993"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105208"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 
@@ -382,7 +382,7 @@ az group delete --name sampleSqlResourceGroup
 
 ## <a name="write-a-blob-into-a-new-storage-account"></a>将 Blob 写入新存储帐户
 
-将 `AzureApp.java` 中的当前 main 方法替换为以下代码。 此代码会创建一个 [Azure 存储帐户](/azure/storage/storage-introduction)，然后使用用于 Java 的 Azure 存储库在云中创建新的文本文件。
+将 `AzureApp.java` 中的当前 main 方法替换为以下代码。 此代码会创建一个 [Azure 存储帐户](/azure/storage/common/storage-introduction)，然后使用用于 Java 的 Azure 存储库在云中创建新的文本文件。
 
 ```java
 public static void main(String[] args) {

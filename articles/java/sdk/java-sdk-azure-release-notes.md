@@ -5,12 +5,12 @@ keywords: Azure,  Java, API, 参考, 说明, 更新, 弃用
 ms.assetid: 1f128cf9-f747-4344-84e1-f9964709deb8
 ms.topic: reference
 ms.date: 3/06/2016
-ms.openlocfilehash: 2475d31deb25bd446c858484b0b2b9cb2b5816a8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 69c2c29935f9333dd1d31b26b0941e0446ca5504
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671933"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105198"
 ---
 # <a name="release-notes"></a>发行说明 
 
@@ -20,7 +20,6 @@ ms.locfileid: "81671933"
 
 预览版中这些服务的任何重大更改带有 @Beta 批注。
 
-若要将代码迁移到 1.3.0，可以参考[这些说明](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.3.0.md)来针对 1.3 版本准备你的现有代码。
 
 ### <a name="generally-available-in-v13"></a>在 V1.3 中正式发布
 

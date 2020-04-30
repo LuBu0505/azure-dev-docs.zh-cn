@@ -3,12 +3,12 @@ title: 从 Visual Studio Code 中将 Docker 容器部署到 Azure 应用服务
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 1a14010d362ed3858d319a141fd24e5ea1b0e714
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: bd4110bbbef5e5f65f76cd9329b194646431f91a
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740567"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138784"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>将容器部署到 Azure 应用服务
 
@@ -24,14 +24,14 @@ ms.locfileid: "80740567"
 
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Visual Studio Code](https://code.visualstudio.com/)。
-- [Docker 扩展](vscode:extension/ms-azuretools.vscode-docker)。
-- [Azure 应用服务扩展](vscode:extension/ms-azuretools.vscode-azureappservice)。
+- [Docker 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)。
+- [Azure 应用服务扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)。
 - [Node.js 和 npm](https://nodejs.org/en/download)，即 Node.js 包管理器。
 - [Docker](https://www.docker.com/community-edition)。
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-docker">安装 Docker 扩展</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">安装 Docker 扩展</a>
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azureappservice">安装 Azure 应用服务扩展</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice">安装 Azure 应用服务扩展</a>
 
 ### <a name="azure-subscription"></a>Azure 订阅
 
