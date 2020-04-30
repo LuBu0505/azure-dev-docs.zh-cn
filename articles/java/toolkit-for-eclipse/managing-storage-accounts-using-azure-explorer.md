@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 227a997c8b1268444f6165e800279410d0085953
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81675093"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209760"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -25,7 +25,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 若要使用 Azure 资源管理器创建存储帐户，请执行以下操作：
 
-1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
+1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
 
 1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。    
 
@@ -106,7 +106,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 <!-- URL List -->
 
-[Microsoft Azure 存储简介]: /azure/storage/storage-introduction
+[Microsoft Azure 存储简介]: /azure/storage/common/storage-introduction
 [有关 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets

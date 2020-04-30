@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ff5f9f5a5add52bc05009a42aeb00855eb2703fa
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82030839"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209780"
 ---
 # <a name="azure-cli-configuration"></a>Azure CLI 配置
 
@@ -86,7 +86,7 @@ log_dir=/var/log/azure
 |---------|-----------|------|------------|
 | __core__ | output | 字符串 | 默认输出格式。 可以是 `json`、`jsonc`、`tsv` 或 `table`。 |
 | | disable\_confirm\_prompt | boolean | 启用/禁用确认提示。 |
-| | collect\_telemetry | boolean | 允许 Microsoft 收集有关 CLI 使用情况的匿名数据。 有关隐私信息，请参阅 [Azure CLI 使用条款](https://aka.ms/AzureCliLegal)。 |
+| | collect\_telemetry | boolean | 允许 Microsoft 收集有关 CLI 使用情况的匿名数据。 有关隐私信息，请参阅 [Azure CLI 使用条款](https://github.com/Azure/azure-cli/blob/dev/LICENSE)。 |
 | __logging__ | enable\_log\_file | boolean | 启用/关闭日志记录。 |
 | | log\_dir | 字符串 | 要将日志写入到的目录。 此值默认为 `${AZURE_CONFIG_DIR}/logs`。 |
 | __storage__ | connection\_string | 字符串 | `az storage` 命令使用的默认连接字符串。 |

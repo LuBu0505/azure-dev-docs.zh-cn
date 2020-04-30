@@ -6,12 +6,12 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: f235ee5a011b230e995cc86424ed593c28c6f7de
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 89e40ebd28ffc792430ba73b192a1aec1a7c49c3
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81674633"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209800"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理虚拟机
 
@@ -25,7 +25,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 若要使用 Azure 资源管理器创建虚拟机，请执行以下操作：
 
-1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
+1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
 
 2. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“虚拟机”，并单击“创建 VM”。    
 
