@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 48e1381761311a4ed9b5bd6f764af6f19f008fc1
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670013"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
@@ -40,7 +40,7 @@ ms.locfileid: "81670013"
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Azure 支持
 
-此 Spring Boot 起动器为 Azure 服务提供了自动配置支持，这些服务包括：服务总线、存储、Active Directory、Cosmos DB、Key Vault，等等。
+此 Spring Boot 起动器为服务总线、存储、Active Directory、Cosmos DB、Key Vault 等 Azure 服务提供自动配置支持。
 
 有关如何使用此起动器提供的各种 Azure 功能的示例，请参阅以下文章：
 
@@ -232,7 +232,7 @@ ms.locfileid: "81670013"
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 **上的**Spring Initializr https://start.spring.io/ 。
 
 <!-- URL List -->
 

@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 202b34a6b64d75e814a4fb586a44e471a9a9f118
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673913"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>有关使用用于 Java 的 Azure 库进行开发的模式和最佳做法 
@@ -55,7 +55,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
 
 使用 `listByResourceGroup(String groupname)` 方法可将返回列表的范围限定为特定的 [Azure 资源组](/azure/azure-resource-manager/resource-group-overview#resource-groups)。  
 
-可以像操作普通的 `List<T>` 一样搜索和循环访问返回的 `PagedList<T>` 集合：
+可以像操作普通的 `PagedList<T>` 一样搜索和循环访问返回的 `List<T>` 集合：
 
 ```java
 PagedList<VirtualMachine> vms = azure.virtualMachines().list();
@@ -68,9 +68,9 @@ for (VirtualMachine vm : vms) {
 
 管理库根据结果的结构从查询返回特定的集合类型。
 
-- `List<T>`设置用户帐户 ：易于搜索和循环访问的无序数据。
-- `Map<T>`设置用户帐户 ：映射是具有唯一键的键/值对，但不一定是唯一值。 映射的示例包括应用服务 Web 应用的应用设置。
-- `Set<T>`设置用户帐户 ：集具有唯一的键和值。 集的示例包括附加到虚拟机的网络，它们具有唯一的标识符（键）和唯一的网络配置（值）。
+- `List<T>`：易于搜索和循环访问的无序数据。
+- `Map<T>`：映射是具有唯一键的键/值对，但不一定是唯一值。 映射的示例包括应用服务 Web 应用的应用设置。
+- `Set<T>`：集具有唯一的键和值。 集的示例包括附加到虚拟机的网络，它们具有唯一的标识符（键）和唯一的网络配置（值）。
 
 ## <a name="actionable-verbs"></a>可操作的谓词
 
@@ -87,9 +87,9 @@ for (VirtualMachine vm : vms) {
 >[!NOTE]
 > `define()` 和 `update()` 是谓词，但除非后接 `create()` 或 `apply()`，否则不会阻止执行。
  
-其中某些方法存在使用 [Reactive Extensions](https://github.com/ReactiveX/RxJava) 获得的异步版本，异步版本带有 `Async` 后缀。 
+其中某些方法存在使用 `Async`Reactive Extensions[ 获得的异步版本，异步版本带有 ](https://github.com/ReactiveX/RxJava) 后缀。 
 
-某些对象的其他方法会更改 Azure 中资源的状态。 例如，`VirtualMachine` 上的 `restart()`。
+某些对象的其他方法会更改 Azure 中资源的状态。 例如，`restart()` 上的 `VirtualMachine`。
 
 ```java
 VirtualMachine vmToRestart = azure.getVirtualMachines().getById(id);
@@ -105,7 +105,7 @@ vmToRestart.restart();
 
 通过 `Creatable<T>` 对象可以定义要在代码中使用的 Azure 资源，而无需等待在订阅中创建这些资源。 管理库会将 `Creatable<T>` 对象的创建推迟到需要这些对象时。
 
-通过 `define()` 谓词为 Azure 资源生成 `Creatable<T>` 对象：
+通过 `Creatable<T>` 谓词为 Azure 资源生成 `define()` 对象：
 
 ```java
 Creatable<PublicIPAddress> publicIPAddressCreatable = azure.publicIPAddresses().define(publicIPAddressName)
@@ -120,7 +120,7 @@ Creatable<VirtualMachine> vmCreatable = azure.virtualMachines().define("creatabl
     .withNewPrimaryPublicIPAddress(publicIPAddressCreatable)
 ```
 
-在 Azure 中使用 `create()` 生成通过该对象定义的任何资源时，会在订阅中生成 `Creatable<T>` 资源。 沿用前面的 IP 地址和虚拟机示例：
+在 Azure 中使用 `Creatable<T>` 生成通过该对象定义的任何资源时，会在订阅中生成 `create()` 资源。 沿用前面的 IP 地址和虚拟机示例：
 
 ```java
 CreatedResources<VirtualMachine> virtualMachine = azure.virtualMachines().create(vmCreatable);
@@ -134,11 +134,11 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 
 ## <a name="exception-handling"></a>异常处理
 
-管理库的异常类扩展了 `com.microsoft.rest.RestException`。 在相关的 `try` 语句后面使用 `catch (RestException exception)` 块捕获管理库生成的异常。
+管理库的异常类扩展了 `com.microsoft.rest.RestException`。 在相关的 `catch (RestException exception)` 语句后面使用 `try` 块捕获管理库生成的异常。
 
 ## <a name="logs-and-trace"></a>日志和跟踪
 
-使用 `withLogLevel()` 来配置生成入口点 `Azure` 对象时管理库要提供的日志记录量。 存在以下跟踪级别：
+使用 `Azure` 来配置生成入口点 `withLogLevel()` 对象时管理库要提供的日志记录量。 存在以下跟踪级别：
 
 | 跟踪级别 | 日志记录已启用 
 | ------------ | ---------------
@@ -148,4 +148,4 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 | com.microsoft.rest.LogLevel.HEADERS | BASIC 中的所有内容，加上请求和响应标头 REST 调用
 | com.microsoft.rest.LogLevel.BODY_AND_HEADERS | BODY 和 HEADERS 日志级别中的所有内容
 
-如果需要将输出记录到 [Log4J 2](https://logging.apache.org/log4j/2.x/) 等记录框架，请绑定 [SLF4J 日志记录实现](https://www.slf4j.org/manual.html)。
+如果需要将输出记录到 [Log4J 2](https://www.slf4j.org/manual.html) 等记录框架，请绑定 [SLF4J 日志记录实现](https://logging.apache.org/log4j/2.x/)。

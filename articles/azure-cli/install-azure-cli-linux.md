@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 9a98da54f397c1fd03a7cc6b581a769afe84ef88
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031069"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI
@@ -24,7 +24,7 @@ ms.locfileid: "82031069"
 > [!NOTE]
 > 强烈建议使用包管理器安装 CLI。 使用包管理器可确保始终获得最新更新，并保证 CLI 组件的稳定性。 在手动安装之前，请检查发行版是否有对应的包。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 CLI 需要以下软件：
 
@@ -52,13 +52,13 @@ curl -L https://aka.ms/InstallAzureCli | bash
 
 若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 下面是手动安装过程中可能出现的一些常见问题。 如果遇到的问题未在本文中列出，请[在 GitHub 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
 ### <a name="curl-object-moved-error"></a>curl“对象已移动”错误
 
-如果从有关 `-L` 参数的 `curl` 收到错误，或者收到包含“对象已移动”的错误消息，请尝试使用完整 URL 而不是 `aka.ms` 重定向：
+如果从有关 `curl` 参数的 `-L` 收到错误，或者收到包含“对象已移动”的错误消息，请尝试使用完整 URL 而不是 `aka.ms` 重定向：
 
 ```bash
 curl https://azurecliprod.blob.core.windows.net/install | bash

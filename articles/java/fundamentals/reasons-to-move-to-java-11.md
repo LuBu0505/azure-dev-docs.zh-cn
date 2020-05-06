@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670633"
 ---
 # <a name="reasons-to-move-to-java-11"></a>迁移到 Java 11 的原因
@@ -83,7 +83,7 @@ Shenandoah 是 Java 12 中的一项实验性功能，但可以后向移植到 Ja
 
 #### <a name="g1gc"></a>G1GC
 
-Java 11 中的默认垃圾回收器是 G1 垃圾回收器 (G1GC)。 G1GC 的目标是在延迟和吞吐量之间取得平衡。 G1 垃圾回收器尝试在大概率满足暂停时间目标的情况下实现高吞吐量目标。 G1GC 旨在避免完全回收，但当并发回收不能以足够快的速度回收内存时，则会进行回退性的完全 GC。 完全 GC 使用与初期混合性回收相同的并行工作线程数。
+Java 11 中的默认垃圾回收器是 G1 垃圾回收器 (G1GC)。 G1GC 的目标是在延迟和吞吐量之间取得平衡。 G1 垃圾回收器尝试在大概率满足暂停时间目标的情况下实现高吞吐量目标。 G1GC 旨在避免完全回收，\'但当并发回收不能以足够快的速度回收内存时，则会进行回退性的完全 GC。 完全 GC 使用与初期混合性回收相同的并行工作线程数。
 
 #### <a name="parallel-gc"></a>并行 GC
 

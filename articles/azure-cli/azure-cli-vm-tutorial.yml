@@ -17,10 +17,10 @@ metadata:
   ms.technology: azurecli
   clicktale: true
   ms.openlocfilehash: fb231b99b0f25760b84683d160a63e62c4f36276
-  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/22/2020
+  ms.lasthandoff: 05/05/2020
   ms.locfileid: "82030939"
 items:
 - durationInMinutes: 1
@@ -179,9 +179,9 @@ items:
 
     清理完成以后，本教程即告完成。 接下来是所学内容的摘要，以及在后续步骤中将要用到的资源的链接。
 - durationInMinutes: 1
-  title: 总结
+  title: 摘要
   content: >-
-    祝贺你！ 你已了解如何使用新的或现有的资源来创建 VM，并使用了 `--query` 和 `--output` 参数来捕获需要存储在 shell 变量中的数据，最后又查看了一些为 Azure VM 创建的资源。
+    祝贺！ 你已了解如何使用新的或现有的资源来创建 VM，并使用了 `--query` 和 `--output` 参数来捕获需要存储在 shell 变量中的数据，最后又查看了一些为 Azure VM 创建的资源。
 
 
     下一步取决于你打算使用 CLI 来做什么。 若要进一步深入了解本教程中介绍的功能，可以参阅各种资料。

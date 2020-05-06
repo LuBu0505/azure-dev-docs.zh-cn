@@ -4,10 +4,10 @@ description: 在用于 Node.js 的 Azure 管理模块中使用服务主体进行
 ms.topic: article
 ms.date: 06/17/2017
 ms.openlocfilehash: 76233fb6e6d15829783ff98b3af672abc7eba226
-ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75010506"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>使用用于 Node.js 的 Azure 模块进行身份验证

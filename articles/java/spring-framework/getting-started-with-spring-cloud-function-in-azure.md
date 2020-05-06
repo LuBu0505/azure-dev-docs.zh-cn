@@ -10,10 +10,10 @@ ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: e91940e22aba03367493a23d4792db38d36f394f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673033"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure 中的 Spring Cloud Function 入门
@@ -22,7 +22,7 @@ ms.locfileid: "81673033"
 
 [!INCLUDE [quickstarts-free-trial-note](includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用 Java 开发函数，必须安装以下软件：
 
@@ -325,7 +325,7 @@ curl http://localhost:7071/api/hello -d "{\"name\":\"Azure\"}"
 
 ## <a name="deploy-the-function-to-azure-functions"></a>将函数部署到 Azure Functions
 
-现在可以将 Azure 函数部署到生产中了。 请记住，已在 *pom.xml* 中定义的 `<functionAppName>`、`<functionAppRegion>` 和 `<functionResourceGroup>` 属性将用于配置函数。
+现在可以将 Azure 函数部署到生产中了。 请记住，已在 `<functionAppName>`pom.xml`<functionAppRegion>` 中定义的 `<functionResourceGroup>`、*和* 属性将用于配置函数。
 
 > [!NOTE]
 > Maven 插件需要在 Azure 中进行身份验证，如果安装了 Azure CLI，请使用 `az login`，然后继续。

@@ -9,10 +9,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 252ef1e31a71d996cb9e3856b48232ba24b66903
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81671183"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>使用用于 Eclipse 的旧工具包创建适用于 Azure 的 Hello World Web 应用
@@ -117,10 +117,10 @@ ms.locfileid: "81671183"
        ![新建资源组对话框][08]
    * 在“名称”文本框中，为新的资源组指定名称。 
    * 在“区域”下拉菜单中，为资源组选择适当的 Azure 数据中心位置。 
-   * 可选：默认情况下，Azure 会自动将最新的 Java 8 发行版作为 JVM 部署到 Web 应用容器。 但是，可以根据 Web 应用的需要指定 JVM 的其他版本和分发版。 要指定 Web 应用的 JDK，请单击“JDK”选项卡，并选择下列选项之一： 
-     * **部署 Azure Web 应用服务提供的默认 JDK**：此选项会部署最新的 Java 发行版。
-     * **部署 Azure 上提供的第三方 JDK**：使用此选项可从 Microsoft Azure 提供的 JDK 列表中进行选择。
-     * **从此下载位置部署我自己的 JDK**：使用此选项可以指定你自己的 JDK 发行版，此发行版必须打包为 ZIP 文件并上传到可公开使用的下载位置或你有权访问的 Azure 存储帐户。
+   * 可选：默认情况下，Azure 自动将最新的 Java 8 分发版作为 JVM 部署到 Web 应用容器。 但是，可以根据 Web 应用的需要指定 JVM 的其他版本和分发版。 要指定 Web 应用的 JDK，请单击“JDK”选项卡，并选择下列选项之一： 
+     * **部署由 Azure Web 应用服务提供的默认 JDK**：此选项部署将最新的 Java 分发版。
+     * **部署 Azure 上可用的第三方 JDK**：使用此选项可从由 Microsoft Azure 提供的 JDK 列表中选择。
+     * **从此下载位置部署我自己的 JDK**：此选项可以指定自己的 JDK 分发版，此 JDK 必须打包为 ZIP 文件并上传到公开可用的下载位置或可以访问的 Azure 存储帐户。
           
        ![新建 Web 应用容器对话框][07b]
 

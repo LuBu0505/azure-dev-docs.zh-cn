@@ -5,10 +5,10 @@ keywords: ansible, azure, 开发, 密钥保管库, 安全性, 凭据, 机密, �
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.openlocfilehash: ce9adb7ea121425d410665e1f4cc225cfdb82bd8
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81755230"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>教程：通过 Ansible 将 Azure Key Vault 与 Linux 虚拟机配合使用
@@ -182,7 +182,7 @@ tasks:
 
 1. 选择“密钥权限”、“机密权限”和“证书权限”的相应选项。    对于本演示，请先选择“机密权限”，然后选择“获取”、“列出”和“设置”即可。    
 
-1. 选择“添加”  。
+1. 选择 **添加** 。
 
 1. 所选用户的新访问策略现在会显示在“访问策略”页上。 
 

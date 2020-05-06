@@ -3,7 +3,7 @@
   items:
     - name: 计算服务
       href: compute.md
-    - name: 数据
+    - name: data
       href: data.md
     - name: 存储
       href: storage.md

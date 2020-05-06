@@ -5,10 +5,10 @@ ms.date: 02/22/2018
 ms.topic: conceptual
 ms.custom: seo-python-october2019
 ms.openlocfilehash: a8425ffbc58fe0173da4b8b75611332d3f97fa04
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441742"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>多云：使用 Azure SDK for Python 连接到所有区域
@@ -109,7 +109,7 @@ resource_client = ResourceManagementClient(
 )
 ```
 
-### <a name="azure-government"></a>Azure Government
+### <a name="azure-government"></a>Azure Government 
 
 ```python
 import adal
