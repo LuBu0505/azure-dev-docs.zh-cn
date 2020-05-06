@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: d07fe2e807bd6e1fac6d0e9f883bcc8092be46bb
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030999"
 ---
 # <a name="install-azure-cli-with-zypper"></a>使用 zypper 安装 Azure CLI
@@ -56,7 +56,7 @@ ms.locfileid: "82030999"
 
 若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 下面是使用 `zypper` 安装时出现的一些常见问题。 如果遇到的问题未在本文中列出，请[在 github 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
@@ -84,7 +84,7 @@ $ sudo rpm -ivh --nodeps azure-cli-$AZ_VERSION.x86_64.rpm
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-你可能还想要显式配置 `zypper`（通过 `yast2`）以便在所有情况下都使用此代理。 为此，请以超级用户身份运行 `yast2 proxy` 命令，并填充窗体中显示的信息。 如果系统上有可用的窗口管理器，还可以使用 `YaST Control Center` 中的 `Network Services > Proxy` 窗格。
+你可能还想要显式配置 `zypper`（通过 `yast2`）以便在所有情况下都使用此代理。 为此，请以超级用户身份运行 `yast2 proxy` 命令，并填充窗体中显示的信息。 如果系统上有可用的窗口管理器，还可以使用 `Network Services > Proxy` 中的 `YaST Control Center` 窗格。
 
 有关高级配置或详细信息，请参阅 [OpenSUSE 代理配置文档](https://www.suse.com/documentation/slms1/book_slms/data/sec_wy_config_updates_proxy.html)
 

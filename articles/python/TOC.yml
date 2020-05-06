@@ -70,11 +70,11 @@
           href: tutorial-vs-code-serverless-python-07.md
         - name: 8 清理资源
           href: tutorial-vs-code-serverless-python-08.md
-- name: 操作指南
+- name: 操作方法指南
   items:
     - name: 安装 SDK
       href: azure-sdk-install.md
-    - name: 身份验证
+    - name: Authentication
       href: azure-sdk-authenticate.md
     - name: 操作配置
       href: azure-sdk-operation-config.md

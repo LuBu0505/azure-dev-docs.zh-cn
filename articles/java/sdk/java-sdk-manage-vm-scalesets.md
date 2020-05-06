@@ -7,15 +7,15 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 36fdd387653462e56ce2c93553e51da68e9d6d95
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105008"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机规模集
 
-[本示例](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)使用 [Java 管理库](https://github.com/Azure/azure-sdk-for-java)创建[虚拟机规模集](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)。 
+[本示例](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)使用 [Java 管理库](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)创建[虚拟机规模集](https://github.com/Azure/azure-sdk-for-java)。 
 
 ## <a name="run-the-sample"></a>运行示例
 

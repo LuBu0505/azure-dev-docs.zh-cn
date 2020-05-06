@@ -4,10 +4,10 @@ description: 有关适用于 Java 应用的缓存的 Azure 文档中的入门材
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.openlocfilehash: b7c3e1bef7e7a4427743eb8d95108c657adfe7ca
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673743"
 ---
 # <a name="caching-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的缓存

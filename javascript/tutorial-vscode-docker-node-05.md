@@ -4,10 +4,10 @@ description: 教程第 5 部分，将映像部署到 Azure 应用服务
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.openlocfilehash: 487110258ed3302e781cfa24a5ae9f518ebb3bda
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80740659"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>将映像部署到 Azure 应用服务

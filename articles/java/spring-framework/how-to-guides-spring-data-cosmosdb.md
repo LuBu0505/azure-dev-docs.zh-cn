@@ -6,10 +6,10 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.openlocfilehash: 838fb4efa79f5d3ef8a97977a0d239a809e2506d
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674283"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 开发人员指南
@@ -221,7 +221,7 @@ public CosmosDBConfig getConfig() {
 
 2\.2.x 版 Spring Data Cosmos DB SDK 支持响应诊断字符串和查询指标。
 
-若要启用查询指标，请在 `application.properties` 文件中将 `populateQueryMetrics` 标志设置为 **true**。 然后，扩展 `ResponseDiagnosticsProcessor` 接口并实现 `processResponseDiagnostics` 方法来记录诊断信息。 最后，将实现的实例传递给 `CosmosDbConfig.setResponseDiagnosticsProcessor` 方法。 以下代码演示示例实现。
+若要启用查询指标，请在 `populateQueryMetrics` 文件中将 **标志设置为**true`application.properties`。 然后，扩展 `ResponseDiagnosticsProcessor` 接口并实现 `processResponseDiagnostics` 方法来记录诊断信息。 最后，将实现的实例传递给 `CosmosDbConfig.setResponseDiagnosticsProcessor` 方法。 以下代码演示示例实现。
 
 ```java
 @Configuration

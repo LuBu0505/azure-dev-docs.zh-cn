@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: c5e9118a04b0dc608309093866307fdc7083f591
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030749"
 ---
 # <a name="install-azure-cli-on-windows"></a>在 Windows 上安装 Azure CLI
@@ -44,7 +44,7 @@ MSI 分发版用于在 Windows 上安装或更新 Azure CLI。 在使用 MSI 安
 
 若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 以下是在 Windows 上安装时出现的一些常见问题。 如果遇到的问题未在本文中列出，请[在 GitHub 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
@@ -71,7 +71,7 @@ MSI 分发版用于在 Windows 上安装或更新 Azure CLI。 在使用 MSI 安
 
 通过 Windows 中的“应用和功能”列表卸载 Azure CLI。 若要卸载：
 
-| 平台 | Instructions |
+| 平台 | 说明 |
 |---|---|
 | Windows 10 | “开始”>“设置”>“应用” |
 | Windows 8<br/>Windows 7 | “开始”>“控制面板”>“程序”>“卸载程序” |

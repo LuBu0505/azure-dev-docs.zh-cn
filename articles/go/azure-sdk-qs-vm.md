@@ -4,10 +4,10 @@ description: 使用 Azure SDK for Go 部署虚拟机。
 ms.date: 09/05/2018
 ms.topic: quickstart
 ms.openlocfilehash: d339681fc4eed55046f5a7c8fa45fffc948fa3bc
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319764"
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>快速入门：使用 Azure SDK for Go 从模板部署 Azure 虚拟机
@@ -74,7 +74,7 @@ az group delete -n GoVMQuickstart
 az ad sp delete --id ${CLIENT_ID_VALUE}
 ```
 
-其中你从 `quickstart.auth` 提供 `CLIENT_ID_VALUE` 的值。
+其中你从 `CLIENT_ID_VALUE` 提供 `quickstart.auth` 的值。
 
 > [!WARNING]
 > 未能删除此应用程序的服务主体将使其在 Azure Active Directory 租户中处于活动状态。

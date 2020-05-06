@@ -82,7 +82,7 @@
       displayName: 'database, nosql, mongodb, couchdb'
     - name: Batch
       href: /azure/batch/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-- name: 操作指南
+- name: 操作方法指南
   items:
     - name: 查询结果
       href: query-azure-cli.md

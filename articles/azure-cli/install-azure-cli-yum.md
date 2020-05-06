@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: a98a51e4dc3ac85d27e27ef9b9164a7f98431d31
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031109"
 ---
 # <a name="install-azure-cli-with-yum"></a>使用 yum 安装 Azure CLI
@@ -54,7 +54,7 @@ ms.locfileid: "82031109"
 
 若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 下面是使用 `yum` 安装时出现的一些常见问题。 如果遇到的问题未在本文中列出，请[在 github 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
@@ -76,7 +76,7 @@ $ scl enable rh-python36 bash
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-你可能还想要显式配置 `yum` 以便在所有情况下都使用此代理。 请确保以下行显示在 `/etc/yum.conf` 的 `[main]` 部分下：
+你可能还想要显式配置 `yum` 以便在所有情况下都使用此代理。 请确保以下行显示在 `[main]` 的 `/etc/yum.conf` 部分下：
 
 ```yum.conf
 [main]

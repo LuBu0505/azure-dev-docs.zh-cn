@@ -7,10 +7,10 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.openlocfilehash: d997b679d1a608351748b67f99977d48d95febe2
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674293"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
@@ -23,7 +23,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 本文介绍如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter 从服务总线 `queues` 和 `topics` 收发消息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 在本文中，需要满足以下先决条件：
 
@@ -202,7 +202,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     }
     ```
 
-    实现 `Serializable` 是为了使用 Spring 框架的 `JmsTemplate` 中的 `send` 方法。 否则，应定义自定义的 `MessageConverter` bean，以将内容序列化为文本格式的 json。 有关 `MessageConverter` 的详细信息，请参阅官方的 [Spring JMS Starter 项目](https://spring.io/guides/gs/messaging-jms/)。
+    实现 `Serializable` 是为了使用 Spring 框架的 `send` 中的 `JmsTemplate` 方法。 否则，应定义自定义的 `MessageConverter` bean，以将内容序列化为文本格式的 json。 有关 `MessageConverter` 的详细信息，请参阅官方的 [Spring JMS Starter 项目](https://spring.io/guides/gs/messaging-jms/)。
 
 1. 保存并关闭 User.java 文件  。
 

@@ -4,10 +4,10 @@ description: 如何安装 Azul Zulu Java 开发工具包 (JDK)，以便在 Windo
 ms.date: 04/19/2019
 ms.topic: conceptual
 ms.openlocfilehash: f5425bd94a0094fb16649bd3a8069599e30cdba7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670693"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>安装适用于 Azure 和 Azure Stack 的 JDK

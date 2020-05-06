@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: a839da7cf596c356541ee69d341f1b73ca278a44
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81672303"
 ---
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要完成文章中的步骤，需要安装用于 IntelliJ 的 Azure 工具包，该工具包需要以下软件组件：
 

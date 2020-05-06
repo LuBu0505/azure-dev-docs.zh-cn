@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 0cc1d7811223bf6f473c2c4516d0919306aa74c7
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030759"
 ---
 # <a name="install-the-azure-classic-cli"></a>安装 Azure 经典 CLI
@@ -21,7 +21,7 @@ ms.locfileid: "82030759"
 > 本主题介绍如何安装 Azure 经典 CLI。 此经典 CLI 已弃用，只能与经典部署模型配合使用。
 > 进行所有其他的部署时，请使用 [Azure CLI](/cli/azure)。
 
-快速安装 Azure 经典 CLI，以便使用一组基于 shell 的开源命令在 Microsoft Azure 中创建和管理资源。 可以通过多个选项在计算机上安装这些跨平台工具：
+快速安装 Azure 经典 CLI，以便使用一组基于 shell 的开源命令在 Microsoft Azure 中创建和管理资源。 在计算机上安装这些跨平台工具时有多个选项：
 
 * **npm 包** - 运行 npm（JavaScript 的包管理器），在 Linux 发行版或 OS 中安装 Azure 经典 CLI 包。 需要 node.js 和 npm。
 * **安装程序** - 下载安装程序，在 macOS 或 Windows 上轻松地进行安装。
@@ -78,7 +78,7 @@ azure help
 ```
 
 > [!NOTE]
-> 在某些 Linux 分发版中，可能会收到类似于“`/usr/bin/env: ‘node’: No such file or directory`”的错误。 此错误消息来自最近安装在 /usr/bin/nodejs 中的 Node.js。 若要解决此错误，请运行以下命令创建 /usr/bin/node 的符号链接：
+> 在某些 Linux 分发版中，可能会收到类似于“`/usr/bin/env: ‘node’: No such file or directory`”的错误。 此错误来自最近安装在 /usr/bin/nodejs 中的 Node.js 安装。 若要解决此错误，请运行以下命令创建 /usr/bin/node 的符号链接：
 
 ```bash
 sudo ln -s /usr/bin/nodejs /usr/bin/node
@@ -91,7 +91,7 @@ azure --version
 ```
 
 > [!NOTE]
-> 首次使用 Azure 经典 CLI 时，会看到一条消息，询问是否允许 Microsoft 收集使用情况信息。 参与为自愿性质。 如果选择参与，通过运行 `azure telemetry --disable` 即可随时停止参与。 若要随时启用参与，请运行 `azure telemetry --enable`。
+> 首次使用 Azure 经典 CLI 时，会看到一条消息，询问是否允许 Microsoft 收集使用情况信息。 参与为自愿性质。 如果选择参与，通过运行 `azure telemetry --disable`即可随时停止参与。 若要随时启用参与，请运行 `azure telemetry --enable`。
 
 ## <a name="update-the-classic-cli"></a>更新经典 CLI
 
