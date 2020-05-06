@@ -6,10 +6,10 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.openlocfilehash: c6586f0ba2e651445e95fa3606daa35ee566df87
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673473"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
@@ -78,7 +78,7 @@ Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/co
 
 Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)。 可以改为通过 Azure 应用服务来配置和管理缩放和负载均衡，无需使用特定于 Tomcat 的功能。 可以将会话状态持久保存到备用位置，使之可以跨副本使用。 有关详细信息，请参阅[识别会话持久性机制](#identify-session-persistence-mechanism)。
 
-若要确定应用程序是否使用聚类分析，请在 *server.xml* 文件中查找 `<Host>` 或 `<Engine>` 元素内的 `<Cluster>` 元素。
+若要确定应用程序是否使用聚类分析，请在 `<Cluster>`server.xml`<Host>` 文件中查找 `<Engine>` 或 *元素内的* 元素。
 
 #### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>确定在生产服务器上运行的所有外部进程/守护程序
 
@@ -88,13 +88,13 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 应用服务仅支持单个 HTTP 连接器。 如果应用程序需要其他连接器（如 AJP 连接器），请不要使用应用服务。
 
-若要确定应用程序使用的 HTTP 连接器，请在 Tomcat 配置中查找 *server.xml* 文件中的 `<Connector>` 元素。
+若要确定应用程序使用的 HTTP 连接器，请在 Tomcat 配置中查找 `<Connector>`server.xml*文件中的* 元素。
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>确定是否使用了 MemoryRealm
 
 [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) 需要一个持久的 XML 文件。 在 Azure 应用服务上，需要将此文件上传到 */home* 目录或其子目录，或上传到装载的存储。 必须相应地修改 `pathName` 参数。
 
-若要确定当前是否在使用 `MemoryRealm`，请检查 *server.xml* 和 *context.xml* 文件，并搜索已在其中将 `className` 属性设置为 `org.apache.catalina.realm.MemoryRealm` 的 `<Realm>` 元素。
+若要确定当前是否在使用 `MemoryRealm`，请检查 *server.xml* 和 *context.xml* 文件，并搜索已在其中将 `<Realm>` 属性设置为 `className` 的 `org.apache.catalina.realm.MemoryRealm` 元素。
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>确定是否使用了 SSL 会话跟踪
 
@@ -180,7 +180,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>迁移数据源、库和 JNDI 资源
 
-有关数据源配置步骤，请参阅[为 Azure 应用服务配置 Linux Java 应用](/azure/app-service/containers/configure-language-java)中的[数据源](/azure/app-service/containers/configure-language-java#data-sources)部分。
+有关数据源配置步骤，请参阅[为 Azure 应用服务配置 Linux Java 应用](/azure/app-service/containers/configure-language-java#data-sources)中的[数据源](/azure/app-service/containers/configure-language-java)部分。
 
 [!INCLUDE[Tomcat datasource additional instructions](includes/tomcat-datasource-additional-instructions.md)]
 

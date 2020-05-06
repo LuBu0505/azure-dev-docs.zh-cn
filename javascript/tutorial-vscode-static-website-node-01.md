@@ -4,10 +4,10 @@ description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
-ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82138763"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>从 Visual Studio Code 将静态网站部署到 Azure
@@ -23,7 +23,7 @@ ms.locfileid: "82138763"
 > [!NOTE]
 > 如果你有自己的服务器代码（例如，Node.js/Express 应用），请改为按照[应用服务教程](tutorial-vscode-azure-app-service-node-01.md)进行操作。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Visual Studio Code](https://code.visualstudio.com/)。

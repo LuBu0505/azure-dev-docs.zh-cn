@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 7b3ee1e284e7f771c661bb65bf8b8ab53dafd77f
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031169"
 ---
 # <a name="azure-cli-interactive-mode"></a>Azure CLI 交互模式
@@ -42,7 +42,7 @@ ms.locfileid: "82031169"
 
 ![笔势](./media/interactive-azure-cli/gestures.png)
 
-## <a name="scope"></a>范围
+## <a name="scope"></a>作用域
 
 可将交互模式限定为特定命令组，如 `vm` 或 `vm image`。
 执行此操作后，将解释此范围内的所有命令。

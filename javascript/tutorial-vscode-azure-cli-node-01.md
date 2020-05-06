@@ -4,17 +4,17 @@ description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: 7abe3bf3d59072acf8b448b66e68908b5d824a8c
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77709865"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>使用 Azure CLI 部署到 Azure 应用服务
 
 在本教程中，将使用在所有操作系统上运行的 [Azure 命令行接口 (CLI)](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest) 将 Node.js 应用程序部署到 Azure 应用服务。 使用 CLI 可以创建 Azure 资源，在 Git 存储库和 Azure 之间建立部署管道，并查看应用的 `console.log` 输出。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Node.js 和 npm 6.x 或更高版本](https://nodejs.org/en/download)，即 Node.js 包管理器。

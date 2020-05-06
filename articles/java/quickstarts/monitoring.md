@@ -4,10 +4,10 @@ description: 有关适用于 Java 应用的监视的 Azure 文档中的入门材
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.openlocfilehash: a078d3b73642bc30d97941add0a301de6097c2eb
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209830"
 ---
 # <a name="monitoring-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的监视

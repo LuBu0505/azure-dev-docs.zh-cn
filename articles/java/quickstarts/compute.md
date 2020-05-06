@@ -4,10 +4,10 @@ description: 有关适用于 Java 应用的计算服务的 Azure 文档中的入
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.openlocfilehash: 6ae76c14fb420924a786972609f4a0bc902b2475
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743548"
 ---
 # <a name="compute-services-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的计算服务

@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, 
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 9018ca465246163a00e984d013449cfef6ae0be1
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743811"
 ---
 # <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>教程：使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置基于角色的访问控制 (RBAC) 角色

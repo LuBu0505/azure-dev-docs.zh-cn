@@ -11,10 +11,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
 ms.openlocfilehash: cdd704626b51105f93c19378511f4a267cb56649
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670293"
 ---
 # <a name="cicd-for-microprofile-apps-using-azure-pipelines"></a>使用 Azure Pipelines 对 MicroProfile 应用进行 CI/CD
@@ -28,7 +28,7 @@ EXPOSE 8080
 ```
 开始 Azure Pipelines 容器化过程的方式是：先生成一个 Docker 映像，然后将该容器映像推送到 Azure 容器注册表 (ACR)。 完成此过程的方式是：先创建一个 Azure Pipelines 发布管道，然后将容器映像部署到 Web 应用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 1. 在 [Azure 门户](https://portal.azure.com)中创建 [Azure 容器注册表](https://azure.microsoft.com/services/container-registry)。
    
@@ -48,7 +48,7 @@ EXPOSE 8080
 
 每次在 Java EE 源应用中进行提交时，Azure Pipelines 中的持续集成生成管道就会自动执行所有生成任务。 在此示例中，Azure Pipelines 使用 Maven 来生成 Java MicroProfile 项目。
 
-1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” > “生成”。   
+1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” **“生成”。**  >   
    
 1. 选择“新建管道”  。
    
@@ -127,7 +127,7 @@ Azure Pipelines 将 Docker 映像推送到 Azure 容器注册表，并使用它�
 
 生成成功以后，Azure Pipelines 持续发布管道就会自动触发到目标环境（例如 Azure）的部署。 可以为开发、测试、过渡或生产之类的环境创建发布管道。
 
-1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” > “发布”。   
+1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” **“发布”。**  >   
    
 1. 选择“新建管道”  。
    

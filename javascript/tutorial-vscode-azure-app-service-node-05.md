@@ -4,10 +4,10 @@ description: 教程第 5 部分：清理资源
 ms.topic: conceptual
 ms.date: 03/04/2020
 ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "78894212"
 ---
 # <a name="clean-up-resources"></a>清理资源

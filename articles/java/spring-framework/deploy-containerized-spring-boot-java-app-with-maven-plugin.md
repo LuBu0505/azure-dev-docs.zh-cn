@@ -10,10 +10,10 @@ ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019
 ms.openlocfilehash: b926b0bd1cb401f12f927abfea112e6004988812
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81668393"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>使用用于 Azure Web 应用的 Maven 将容器化 Spring Boot 应用部署到 Azure
@@ -27,7 +27,7 @@ ms.locfileid: "81668393"
 > 适用于 Azure Web 应用的 Maven 插件当前提供预览版。 目前，仅支持 FTP 发布，但计划在未来支持其他功能。
 > 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 完成本教程中的步骤需要具备以下先决条件：
 
@@ -83,7 +83,7 @@ ms.locfileid: "81668393"
    curl http://localhost:8080
    ```
 
-1. 应当会看到显示了以下消息：**Hello Docker World**
+1. 应会显示以下消息：“Hello Docker World” 
 
 ## <a name="create-an-azure-service-principal"></a>创建 Azure 服务主体
 
@@ -169,7 +169,7 @@ ms.locfileid: "81668393"
 
 1. 在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件。
 
-1. 找到 `<containerSettings>` 元素的 `<imageName>` 子元素。
+1. 找到 `<imageName>` 元素的 `<containerSettings>` 子元素。
 
 1. 使用你的 Docker 帐户名更新 `${docker.image.prefix}` 值：
    ```xml
@@ -193,7 +193,7 @@ ms.locfileid: "81668393"
 
 ## <a name="optional-customize-your-pomxml-before-deploying-your-container-to-azure"></a>可选：在将容器部署到 Azure 之前自定义 pom.xml
 
-在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件，然后找到 `azure-webapp-maven-plugin` 的 `<plugin>` 元素。 该元素应类似于以下示例：
+在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件，然后找到 `<plugin>` 的 `azure-webapp-maven-plugin` 元素。 该元素应类似于以下示例：
 
    ```xml
    <plugin>
@@ -225,7 +225,7 @@ ms.locfileid: "81668393"
 | 元素 | 说明 |
 |---|---|
 | `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，以确保使用最新版本。 |
-| `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值  。 |
+| `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `<serverId>` 的 `azure-auth` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值  。 |
 | `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
 | `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-linux-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |
 | `<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |

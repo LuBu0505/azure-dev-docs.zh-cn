@@ -4,10 +4,10 @@ description: 教程第 3 部分：部署网站
 ms.topic: conceptual
 ms.date: 03/04/2020
 ms.openlocfilehash: 7e7a6c765b79878ca3ddc86bd16349694cb7ded6
-ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "79510595"
 ---
 # <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
