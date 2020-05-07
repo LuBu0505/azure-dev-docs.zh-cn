@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209760"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
@@ -35,7 +35,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    ![“创建新存储帐户”对话框][CS02]
 
-   * **Name**：指定要用于新存储帐户的名称。
+   * **名称**：指定要用于新存储帐户的名称。
 
    * **订阅**：指定要用于新存储帐户的 Azure 订阅。
 

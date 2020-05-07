@@ -7,7 +7,7 @@ items:
         href: azure-sdk-install.md
       - name: 工具
         href: azure-sdk-tools.md
-      - name: 身份验证
+      - name: Authentication
         href: azure-sdk-authorization.md
   - name: 快速入门
     items:

@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105068"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
@@ -35,7 +35,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
    ![“创建新存储帐户”对话框][CS02]
 
-   * **Name**：指定要用于新存储帐户的名称。
+   * **名称**：指定要用于新存储帐户的名称。
 
    * **帐户类型**：指定要创建的存储帐户的类型（例如“Blob 存储”）。 有关详细信息，请参阅[有关 Azure 存储帐户]。 
 
@@ -48,8 +48,8 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
    * **位置**：指定将创建存储帐户的位置（例如“美国西部”）。
 
    * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
-      * **新建**：指定要创建新的资源组。
-      * **使用现有项**：指定将从与 Azure 帐户关联的资源组列表中进行选择。
+      * 新建  ：指定要创建新的资源组。
+      * **使用现有**：指定将从与 Azure 帐户关联的资源组列表中进行选择。
 
 4. 指定了上述所有选项后，单击“确定”  。
 

@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
 ms.custom: seo-java-september2019
 ms.openlocfilehash: 744d0194958fd0bd5bb96e6a03a70a8ce126d7c5
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670253"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>使用用于 Java 的 Azure 库进行身份验证
@@ -111,7 +111,7 @@ authURL=https\://login.windows.net/
 graphURL=https\://graph.windows.net/
 ```
 
-- subscription：使用在 Azure CLI 2.0 中运行 `az account show` 后返回的 *id* 值。
+- subscription：使用在 Azure CLI 2.0 中运行 *后返回的*id`az account show` 值。
 - client：使用为运行应用程序而创建的服务主体的输出中的 *appId* 值。 如果应用没有服务主体，请[使用 Azure CLI 2.0 创建一个服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)。
 - key：使用 service principal create CLI 输出中的 *password* 值
 - tenant：使用 service principal create CLI 输出中的 *tenant* 值

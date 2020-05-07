@@ -10,10 +10,10 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 3a0b2e315e0eaf6c352aa2737f33da043b5feb7d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031249"
 ---
 # <a name="popular-articles-using-the-azure-cli"></a>有关使用 Azure CLI 的热门文章
@@ -125,7 +125,7 @@ Azure Monitor |操作指南 |[使用 Azure CLI 创建 Log Analytics 工作区](/
 | | | | |
 |-|-|-|-|
 Azure 德国 |入门 |[Connect to Azure Germany by using the Azure CLI](/azure/germany/germany-get-started-connect-with-cli)（使用 Azure CLI 连接到 Azure 德国） | 使用 Azure 德国，可以通过脚本管理大型订阅，以及访问当前在全球 Azure 门户中不可用的功能。
-Azure Government|入门 |[连接到具有 Azure CLI 的 Azure 政府](/azure/azure-government/documentation-government-get-started-connect-with-cli)|访问并开始管理 Azure 政府中的资源。
+Azure Government |入门 |[连接到具有 Azure CLI 的 Azure 政府](/azure/azure-government/documentation-government-get-started-connect-with-cli)|访问并开始管理 Azure 政府中的资源。
 
 ## <a name="see-also"></a>另请参阅
 

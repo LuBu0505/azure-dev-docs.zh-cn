@@ -9,10 +9,10 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
 ms.openlocfilehash: ef39aa09fb3f10f34d70fb5b0a72cd8a55f0859e
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669123"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>如何将 Spring Boot Starter 与 Azure 存储 API 配合使用
@@ -21,7 +21,7 @@ ms.locfileid: "81669123"
 
 本文逐步讲解如何通过 Azure 存储 API 使用 **Spring Initializr** 创建自定义应用程序，然后使用该应用程序访问 Azure 存储。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
@@ -40,7 +40,7 @@ ms.locfileid: "81669123"
 
    > [!NOTE]
    >
-   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：*com.contoso.wingtiptoysdemo*。  
+   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：**com.contoso.wingtiptoysdemo**。  
    >
 
 1. 向下滚动到“Azure”部分，并选中“Azure 存储”对应的框。  

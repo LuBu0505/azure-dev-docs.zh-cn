@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209780"
 ---
 # <a name="azure-cli-configuration"></a>Azure CLI 配置
@@ -78,7 +78,7 @@ log_dir=/var/log/azure
 
 ## <a name="cli-configuration-values-and-environment-variables"></a>CLI 配置值和环境变量
 
-下表包含可在配置文件中放置的所有节和选项名称。 将其相应环境变量设置为 `AZURE_{section}_{name}`（全大写）。 例如，在 `AZURE_BATCHAI_STORAGE_ACCOUNT` 变量中设置 `batchai` 的 `storage_account` 默认值。
+下表包含可在配置文件中放置的所有节和选项名称。 将其相应环境变量设置为 `AZURE_{section}_{name}`（全大写）。 例如，在 `storage_account` 变量中设置 `batchai` 的 `AZURE_BATCHAI_STORAGE_ACCOUNT` 默认值。
 
 如果提供了默认值，则任何命令都不再需要该参数， 而是改用默认值。
 

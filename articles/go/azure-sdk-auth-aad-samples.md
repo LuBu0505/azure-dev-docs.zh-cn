@@ -4,10 +4,10 @@ description: Azure SDK for Go 中用于使用 Azure Active Directory (AAD) 和�
 ms.date: 09/05/2018
 ms.topic: sample
 ms.openlocfilehash: ccada2ed6812bf5139f8c1c34c16059e83b02f52
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319664"
 ---
 # <a name="azure-sdk-for-go-samples-for-authentication-and-aad"></a>用于身份验证和 AAD 的 Azure SDK for Go 示例

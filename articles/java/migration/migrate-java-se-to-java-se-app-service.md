@@ -6,10 +6,10 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.openlocfilehash: 9576a3831afb00b10b9bec3531c2dbc1dc60f29f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81672183"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>将可执行的 JAR Web 应用程序迁移到 Azure 应用服务上的 Java SE
@@ -147,7 +147,7 @@ ibm:
 
 请确保所有外部资源坐标（例如数据库连接字符串）和其他可自定义的设置可以从环境变量中读取。 如果要迁移 Spring Boot 应用程序，则所有配置设置都应该已经可外部化。 有关详细信息，请参阅 Spring Boot 文档中的[外部化配置](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config)。
 
-下面是一个从 *application.properties* 文件引用 `SERVICEBUS_CONNECTION_STRING` 环境变量的示例：
+下面是一个从 `SERVICEBUS_CONNECTION_STRING`application.properties*文件引用* 环境变量的示例：
 
 ```properties
 spring.jms.servicebus.connection-string=${SERVICEBUS_CONNECTION_STRING}

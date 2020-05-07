@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集,
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: fedd2cff7d9e4a51c681d06e86899ef9e8227454
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743838"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中配置虚拟机规模集

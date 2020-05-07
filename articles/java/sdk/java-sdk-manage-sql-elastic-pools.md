@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 1bc80d0f4c6ad0beff86bfa22fec59b3389ced03
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105028"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>通过 Java 应用程序管理弹性池中的 Azure SQL 数据库
@@ -72,7 +72,7 @@ SqlDatabase anotherDatabase = sqlServer.databases().define(anotherDatabaseName).
 elasticPool.update().withExistingDatabase(anotherDatabase).apply();            
 ```
 
-API 的第一个语句会在 [S0 层](/azure/sql-database/sql-database-service-tiers)中创建 `anotherDatabase`。 将 `anotherDatabase` 移到弹性池会根据池的设置来分配数据库资源。
+API 的第一个语句会在 `anotherDatabase`S0 层[中创建 ](/azure/sql-database/sql-database-service-tiers)。 将 `anotherDatabase` 移到弹性池会根据池的设置来分配数据库资源。
 
 ## <a name="remove-a-database-from-an-elastic-pool"></a>从弹性池中删除数据库
 ```java
