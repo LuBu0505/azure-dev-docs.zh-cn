@@ -7,10 +7,10 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.openlocfilehash: d7f90939701bfbcdcd895b8baf3cabcae4d5efa9
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670753"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>教程：开始使用用于在 Azure 上运行的 Java 应用的 Logz.io 进行监视和日志记录

@@ -4,17 +4,17 @@ description: 使用适用于 Node.js 的 Azure 模块开始进行身份验证和
 ms.date: 06/17/2017
 ms.topic: conceptual
 ms.openlocfilehash: 600c10c052a3aa95eb4dc04de0166a6974ede060
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77709894"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>用于 Node.js 的 Azure 模块入门
 
 本指南逐步讲解如何安装 Azure Node.js 模块，使用服务主体在 Azure 中进行身份验证，以及运行可在 Azure 订阅中创建资源并连接到 Azure 云服务的示例代码。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)
 - [Node.js](https://nodejs.org)
@@ -36,7 +36,7 @@ npm install --save azure ms-rest-azure azure-arm-compute azure-arm-network azure
 
 Node.js 应用程序需要 Azure 订阅中的读取和创建权限才能运行本指南中的示例代码。 创建一个服务主体，并将应用程序配置为使用该服务主体的凭据运行。 服务主体是与标识关联的非交互式帐户，该帐户仅拥有运行应用所需的特权。
 
-[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 需要在密码参数而非 `MY_SECURE_PASSWORD` 中提供[安全密码](/azure/active-directory/active-directory-passwords-policy)。
+[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 需要在密码参数而非 [ 中提供](/azure/active-directory/active-directory-passwords-policy)安全密码`MY_SECURE_PASSWORD`。
 
 ```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD

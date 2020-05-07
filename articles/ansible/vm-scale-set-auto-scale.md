@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, 缩放, 自动缩放, 虚拟�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: f50ac83b03d957e0d6649a5803ee90982a532935
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743872"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中自动缩放虚拟机规模集

@@ -4,10 +4,10 @@ description: 教程第 3 部分：创建应用服务
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: 827bcde79336304f424a283ccbdc4a4282a50bf7
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77709884"
 ---
 # <a name="create-the-app-service"></a>创建应用服务

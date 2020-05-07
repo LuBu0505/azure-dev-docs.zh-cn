@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 7e50a18346eb9bd2bee50bf2ea2d65cd94381292
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82104968"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>通过 Java 应用程序跨多个地区创建虚拟机
@@ -149,7 +149,7 @@ for (String publicIpCreatableKey : publicIpCreatableKeys) {
 
 使用返回的 `CreatedResources<VirtualMachine>` 对象可访问执行 `create()` 方法期间在 Azure 订阅中创建的所有资源，而不仅仅是返回的 `VirtualMachine` 类型。 将 `createdRelatedResources()` 中的返回值强制转换为正确的类型。 
 
-在[库概念文章](java-sdk-azure-concepts.md)中详细了解 `Creatable<T>` 和 `CreatedResources` 的用法。
+在`Creatable<T>`库概念文章`CreatedResources`中详细了解 [ 和 ](java-sdk-azure-concepts.md) 的用法。
 
 ## <a name="delete-the-resource-group"></a>删除资源组 
 

@@ -4,10 +4,10 @@ description: 使用 Azure Toolkit for IntelliJ 创建一个简单的 HTTP 触发
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.openlocfilehash: ff0733e275f89ffa349f8455455df93587ff4fdf
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674813"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>快速入门：使用 IntelliJ IDEA 创建 Azure Functions 项目

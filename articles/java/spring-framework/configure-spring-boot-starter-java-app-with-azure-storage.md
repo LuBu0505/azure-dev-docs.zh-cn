@@ -8,17 +8,17 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.openlocfilehash: e9546d2e65d198fe9ab92e5d588df8797fd97e16
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669233"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
 本文逐步讲解如何使用 **Spring Initializr** 创建自定义应用程序，然后将 Azure Storage Starter 添加到应用程序，再使用应用程序将 Blob 上传到 Azure 存储帐户。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 

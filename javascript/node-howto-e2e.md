@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
 ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77002518"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
@@ -17,7 +17,7 @@ ms.locfileid: "77002518"
 
 本教程使用一个通过 [Scotch.io](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular) 创建并发布的简单待办事项应用。 这是一个单页 MEAN 应用，因此，它使用 MongoDB 作为数据库，使用 Node/Express 作为 REST API/Web 服务器，使用 Angular.js 1.x 作为前端 UI。 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要遵循本演示教程，需要安装以下软件：
 
@@ -489,7 +489,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 > [!NOTE]
 > 有关 Azure 应用计划的定价详细信息和规范，请参阅[应用服务定价](https://azure.microsoft.com/pricing/details/app-service/)一文
 
-几分钟后，Web 应用即会迁移到请求的硬件，可开始利用相关的资源。 除了扩展资源以外，还可以运行上述同一命令来缩减资源：指定 `--sku` 选项，以更低的价格提供更少的资源。
+几分钟后，Web 应用即会迁移到请求的硬件，可开始利用相关的资源。 除了扩展资源以外，还可以运行上述同一命令来纵向缩减资源：指定 `--sku` 选项，以更低的价格提供更少的资源。
 
 除了纵向扩展虚拟机规格以外，只要 Web 应用是无状态的，就还可以选择通过添加更多的底层虚拟机实例进行横向扩展。  前面创建的应用服务计划仅包含单个虚拟机（辅助角色），因此，所有传入流量最终会受到一个实例的可用资源限制的束缚。  若要再添加一个虚拟机实例，可运行上述同一命令，但不要纵向扩展 SKU，而是横向扩展辅助角色虚拟机的数目。
 
