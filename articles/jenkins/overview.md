@@ -4,12 +4,12 @@ description: 在 Azure 中托管 Jenkins 生成和部署自动化服务器，并
 keywords: jenkins, azure, devops, 概述
 ms.topic: overview
 ms.date: 10/23/2019
-ms.openlocfilehash: f630dd601cc384588ae4d3af1a051b5c706de0b6
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171123"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861300"
 ---
 # <a name="azure-and-jenkins"></a>Azure 和 Jenkins
 
@@ -34,7 +34,7 @@ ms.locfileid: "82171123"
 配置 [Azure 服务主体](/azure/azure-resource-manager/resource-group-overview)后，Jenkins 作业和管道可以使用此凭据执行以下操作：
 
 - 在使用 [Azure 存储插件](/azure/storage/common/storage-introduction)的 [Azure 存储](https://plugins.jenkins.io/windows-azure-storage)中，安全存储并存档生成项目。 查看 [Jenkins 存储操作方法](azure-storage-blobs-as-build-artifact-repository.md)了解详细信息。
-- 使用 [Azure CLI](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli) 管理和配置 Azure 资源。
+- 使用 [Azure CLI](deploy-to-azure-app-service-using-azure-cli.md) 管理和配置 Azure 资源。
 
 ## <a name="deploy-your-code-into-azure-services"></a>将代码部署到 Azure 服务
 
