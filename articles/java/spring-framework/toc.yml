@@ -39,6 +39,10 @@
               href: configure-spring-data-jdbc-with-azure-sql-server.md
             - name: 将 R2DBC 与 Azure MySQL 配合使用
               href: configure-spring-data-r2dbc-with-azure-mysql.md
+            - name: 将 R2DBC 与 Azure PostgreSQL 配合使用
+              href: configure-spring-data-r2dbc-with-azure-postgresql.md
+            - name: 将 R2DBC 与 Azure SQL 数据库配合使用
+              href: configure-spring-data-r2dbc-with-azure-sql-server.md
             - name: 将 JPA 用于 Azure MySQL
               href: configure-spring-data-jpa-with-azure-mysql.md
             - name: 将 JPA 用于 Azure PostgreSQL
