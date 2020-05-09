@@ -41,24 +41,24 @@ ms.locfileid: "82031309"
 
 ### <a name="appservice"></a>应用服务
 
-* `az functionapp create`设置用户帐户 ：更改了为 .NET Linux 函数应用设置 linuxFxVersion 的方式。 这应会修复一个阻止创建 .NET Linux 消耗应用的 Bug
+* `az functionapp create`：更改了为 .NET Linux 函数应用设置 linuxFxVersion 的方式。 这应会修复一个阻止创建 .NET Linux 消耗应用的 Bug
 * [中断性变更] `az webapp create`：修复了在使用 az webapp create 时保留现有 AppSettings 的问题
 * [中断性变更] `az webapp up`：修复了结合 -g 标志使用 az webapp up 命令创建资源组时的问题
 * [中断性变更] `az webapp config`：修复了使用 az webapp config connection-string list 显示非 JSON 输出值时的问题
 
 ### <a name="arm"></a>ARM
 
-* `az deployment create/validate`设置用户帐户 ：添加了参数 `--no-prompt`，支持跳过有关 ARM 模板缺少参数的提示
-* `az deployment group/mg/sub/tenant validate`设置用户帐户 ：支持部署参数文件中的注释
-* `az deployment`设置用户帐户 ：为参数 `--handle-extended-json-format` 删除了 `is_preview`
-* `az deployment group/mg/sub/tenant cancel`设置用户帐户 ：支持 ARM 模板的取消部署
-* `az deployment group/mg/sub/tenant validate`设置用户帐户 ：改进了部署验证失败时显示的错误消息
-* `az deployment-scripts`设置用户帐户 ：为 DeploymentScripts 添加了新命令
-* `az resource tag`设置用户帐户 ：添加了参数 `--is-incremental`，支持以增量方式将标记添加到资源
+* `az deployment create/validate`：添加了参数 `--no-prompt`，支持跳过有关 ARM 模板缺少参数的提示
+* `az deployment group/mg/sub/tenant validate`：支持部署参数文件中的注释
+* `az deployment`：为参数 `--handle-extended-json-format` 删除了 `is_preview`
+* `az deployment group/mg/sub/tenant cancel`：支持 ARM 模板的取消部署
+* `az deployment group/mg/sub/tenant validate`：改进了部署验证失败时显示的错误消息
+* `az deployment-scripts`：为 DeploymentScripts 添加了新命令
+* `az resource tag`：添加了参数 `--is-incremental`，支持以增量方式将标记添加到资源
 
 ### <a name="aro"></a>ARO
 
-* `az aro`设置用户帐户 ：添加了 Azure RedHat OpenShift V4 aro 命令模块
+* `az aro`：添加了 Azure RedHat OpenShift V4 aro 命令模块
 
 ### <a name="batch"></a>Batch
 
@@ -66,11 +66,11 @@ ms.locfileid: "82031309"
 
 ### <a name="compute"></a>计算
 
-* `az sig image-version create`设置用户帐户 ：添加了存储帐户类型 Premium_LRS
-* `az vmss update`设置用户帐户 ：修复了终止通知更新问题
-* `az vm/vmss create`设置用户帐户 ：添加了对专用映像版本的支持
+* `az sig image-version create`：添加了存储帐户类型 Premium_LRS
+* `az vmss update`：修复了终止通知更新问题
+* `az vm/vmss create`：添加了对专用映像版本的支持
 * SIG API 版本 2019-12-01
-* `az sig image-version create`设置用户帐户 ：添加了 --target-region-encryption
+* `az sig image-version create`：添加了 --target-region-encryption
 * 修复了在连续运行时由于 keyvault 名称在全局内存中缓存中重复而出现的测试失败
 
 ### <a name="cosmosdb"></a>CosmosDB
@@ -90,7 +90,7 @@ ms.locfileid: "82031309"
 ### <a name="network"></a>网络
 
 * 弃用了 public ip update 命令的 sku
-* `az network private-endpoint`设置用户帐户 ：支持专用 DNS 区域组
+* `az network private-endpoint`：支持专用 DNS 区域组
 * 为 vnet/subnet 参数启用了本地上下文功能
 * 修复了 test_nw_flow_log_delete 中错误的用法示例
 
@@ -119,10 +119,10 @@ ms.locfileid: "82031309"
 ### <a name="storage"></a>存储
 
 * 将 azure-mgmt-storage 升级到 9.0.0
-* `az storage logging off`设置用户帐户 ：支持对存储帐户关闭日志记录功能
-* `az storage account update`设置用户帐户 ：为 CMK 启用了密钥自动轮换
-* `az storage account encryption-scope create/update/list/show`设置用户帐户 ：添加了对自定义加密范围的支持
-* `az storage container create`设置用户帐户 ：添加了 --default-encryption-scope 和 --deny-encryption-scope-override 以设置容器级别的加密范围
+* `az storage logging off`：支持对存储帐户关闭日志记录功能
+* `az storage account update`：为 CMK 启用了密钥自动轮换
+* `az storage account encryption-scope create/update/list/show`：添加了对自定义加密范围的支持
+* `az storage container create`：添加了 --default-encryption-scope 和 --deny-encryption-scope-override 以设置容器级别的加密范围
 
 ### <a name="survey"></a>调查
 
@@ -147,7 +147,7 @@ ms.locfileid: "82031309"
 ### <a name="acr"></a>ACR
 
 * 'az acr task update'：null 指针异常
-* `az acr import`设置用户帐户 ：修改帮助和错误消息以阐明 --source 和 --registry 的用法
+* `az acr import`：修改帮助和错误消息以阐明 --source 和 --registry 的用法
 * 为参数 'registry_name' 添加了验证程序
 * `az acr login`：删除了 '--expose-token' 上的预览标志
 * [中断性变更] 'az acr task create/update' 分支参数已删除
@@ -563,11 +563,11 @@ ms.locfileid: "82031309"
 ### <a name="policy"></a>策略
 
 * 增加了新命令 `az policy metadata`，用以检索丰富的策略元数据资源
-* `az policy remediation create`设置用户帐户 ：通过 `--resource-discovery-mode` 参数指定在修正之前是否应当重新评估符合性
+* `az policy remediation create`：通过 `--resource-discovery-mode` 参数指定在修正之前是否应当重新评估符合性
 
 ### <a name="profile"></a>配置文件
 
-* `az account get-access-token`设置用户帐户 ：增加了 `--tenant` 参数，用以直接为租户获取令牌，不需要指定订阅
+* `az account get-access-token`：增加了 `--tenant` 参数，用以直接为租户获取令牌，不需要指定订阅
 
 ### <a name="rbac"></a>RBAC
 
@@ -582,16 +582,16 @@ ms.locfileid: "82031309"
 * `sql dw create`：弃用了 `--zone-redundant` 和 `--read-replica-count` 参数。 这些参数不适用于数据仓库。
 * [重大更改] `az sql db create`：删除了记录为“az sql db create --sample-name”的允许值的“WideWorldImportersStd”和“WideWorldImportersFull”。 这些示例数据库总是会导致创建失败。
 * 增加了新命令 `sql db classification show/list/update/delete` 和 `sql db classification recommendation list/enable/disable`，用以管理 SQL 数据库的敏感度分类。
-* `az sql db audit-policy`设置用户帐户 ：针对空的审核操作和组进行了修复
+* `az sql db audit-policy`：针对空的审核操作和组进行了修复
 
 ### <a name="storage"></a>存储
 
 * 增加了新命令组 `az storage share-rm`，用以使用 Microsoft.Storage 资源提供程序执行 Azure 文件共享管理操作。
 * 修复了问题 #11415：`az storage blob update` 的权限错误
 * 集成了 Azcopy 10.3.3 并支持 Win32。
-* `az storage copy`设置用户帐户 ：增加了 `--include-path`、`--include-pattern`、`--exclude-path` 和 `--exclude-pattern` 参数
-* `az storage remove`设置用户帐户 ：将 `--inlcude` 和 `--exclude` 参数更改成了 `--include-path`、`--include-pattern`、`--exclude-path` 和 `--exclude-pattern` 参数
-* `az storage sync`设置用户帐户 ：增加了 `--include-pattern`、`--exclude-path` 和 `--exclude-pattern` 参数
+* `az storage copy`：增加了 `--include-path`、`--include-pattern`、`--exclude-path` 和 `--exclude-pattern` 参数
+* `az storage remove`：将 `--inlcude` 和 `--exclude` 参数更改成了 `--include-path`、`--include-pattern`、`--exclude-path` 和 `--exclude-pattern` 参数
+* `az storage sync`：增加了 `--include-pattern`、`--exclude-path` 和 `--exclude-pattern` 参数
 
 ### <a name="servicefabric"></a>ServiceFabric
 
@@ -609,7 +609,7 @@ ms.locfileid: "82031309"
 ### <a name="storage"></a>存储
 
 * 将 azure-mgmt-storage 版本升级到 7.1.0
-* `az storage account create`设置用户帐户 ：添加了 `--encryption-key-type-for-table` 和 `--encryption-key-type-for-queue` 以支持表和队列加密服务
+* `az storage account create`：添加了 `--encryption-key-type-for-table` 和 `--encryption-key-type-for-queue` 以支持表和队列加密服务
 
 ## <a name="january-07-2020"></a>2020 年 1 月 7 日
 
@@ -670,7 +670,7 @@ ms.locfileid: "82031309"
 
 ### <a name="storage"></a>存储
 
-* `az storage account create`设置用户帐户 ：删除了 --enable-hierarchical-namespace 参数的 preview 标志
+* `az storage account create`：删除了 --enable-hierarchical-namespace 参数的 preview 标志
 * 将 azure-mgmt-storage 版本更新为 7.0.0，以便使用 api 版本 2019-06-01
 * 添加了新参数 `--enable-delete-retention` 和 `--delete-retention-days`，支持管理存储帐户 blob-service-properties 的删除保留策略。
 
@@ -929,7 +929,7 @@ ms.locfileid: "82031309"
 
 ### <a name="appservice"></a>应用服务
 
-* `az appservice plan create`设置用户帐户 ：添加了对在 appservice plan create 上设置“persitescaling”的支持。
+* `az appservice plan create`：添加了对在 appservice plan create 上设置“persitescaling”的支持。
 * 修复了 webapp config ssl bind 操作从资源中删除现有标记的问题
 * 为 `az functionapp deployment source config-zip` 添加了 `--build-remote` 标志，以支持在函数应用部署过程中执行远程生成操作。
 * 已将函数应用上的默认节点版本更改为 ~10（适用于 Windows）
@@ -937,7 +937,7 @@ ms.locfileid: "82031309"
 
 ### <a name="arm"></a>ARM
 
-* `az deployment/group deployment validate`设置用户帐户 ：添加了 `--handle-extended-json-format` 参数，以便在部署时支持 json 模板中的多行和注释。
+* `az deployment/group deployment validate`：添加了 `--handle-extended-json-format` 参数，以便在部署时支持 json 模板中的多行和注释。
 * 已将 azure-mgmt-resource 升级到 2019-07-01
 
 ### <a name="backup"></a>备份
@@ -946,11 +946,11 @@ ms.locfileid: "82031309"
 
 ### <a name="compute"></a>计算
 
-* `az vm create`设置用户帐户 ：添加了在将加速网络和现有 NIC 一起指定时的警告。
-* `az vm create`设置用户帐户 ：添加了 `--vmss` 以指定虚拟机应分配到的现有虚拟机规模集。
-* `az vm/vmss create`设置用户帐户 ：添加了映像别名文件的本地副本，以便可以在受限的网络环境中对其进行访问。
-* `az vmss create`设置用户帐户 ：添加了 `--orchestration-mode` 以指定规模集如何管理虚拟机。
-* `az vm/vmss update`设置用户帐户 ：添加了 `--ultra-ssd-enabled` 以允许更新超级 SSD 设置。
+* `az vm create`：添加了在将加速网络和现有 NIC 一起指定时的警告。
+* `az vm create`：添加了 `--vmss` 以指定虚拟机应分配到的现有虚拟机规模集。
+* `az vm/vmss create`：添加了映像别名文件的本地副本，以便可以在受限的网络环境中对其进行访问。
+* `az vmss create`：添加了 `--orchestration-mode` 以指定规模集如何管理虚拟机。
+* `az vm/vmss update`：添加了 `--ultra-ssd-enabled` 以允许更新超级 SSD 设置。
 * [重大更改] `az vm extension set`：修复了用户无法使用 `--ids` 在 VM 上设置扩展的 bug。
 * 添加了新命令 `az vm image terms accept/cancel/show` 以管理 Azure 市场映像条款。
 * 已将 VMAccessForLinux 更新为版本 1.5
@@ -959,10 +959,10 @@ ms.locfileid: "82031309"
 
 * [重大更改] `az sql container create`：已将 `--partition-key-path` 更改为必需的参数
 * [重大更改] `az gremlin graph create`：已将 `--partition-key-path` 更改为必需的参数
-* `az sql container create`设置用户帐户 ：添加了 `--unique-key-policy` 和 `--conflict-resolution-policy`
-* `az sql container create/update`设置用户帐户 ：已更新 `--idx` 默认架构
-* `gremlin graph create`设置用户帐户 ：添加了 `--conflict-resolution-policy`
-* `gremlin graph create/update`设置用户帐户 ：已更新 `--idx` 默认架构
+* `az sql container create`：添加了 `--unique-key-policy` 和 `--conflict-resolution-policy`
+* `az sql container create/update`：已更新 `--idx` 默认架构
+* `gremlin graph create`：添加了 `--conflict-resolution-policy`
+* `gremlin graph create/update`：已更新 `--idx` 默认架构
 * 修复了帮助消息中的拼写错误
 * 数据库：添加了弃用信息
 * 集合：添加了弃用信息
@@ -988,12 +988,12 @@ ms.locfileid: "82031309"
 
 ### <a name="network"></a>网络
 
-* `az network private-dns link vnet create/update`设置用户帐户 ：支持跨租户虚拟网络链接。
+* `az network private-dns link vnet create/update`：支持跨租户虚拟网络链接。
 * [重大更改] `az network vnet subnet list`：`--resource-group` 和 `--vnet-name` 现在已更改为必需。
-* `az network public-ip prefix create`设置用户帐户 ：添加了对在创建时指定 IP 地址版本（IPv4、IPv6）的支持
+* `az network public-ip prefix create`：添加了对在创建时指定 IP 地址版本（IPv4、IPv6）的支持
 * 已将 azure-mgmt-network 升级到 7.0.0，并将 api-version 升级到 2019-09-01
-* `az network vrouter`设置用户帐户 ：添加了对新服务虚拟路由器和虚拟路由器对等互连的支持
-* `az network express-route gateway connection`设置用户帐户 ：添加了对 `--internet-security` 的支持
+* `az network vrouter`：添加了对新服务虚拟路由器和虚拟路由器对等互连的支持
+* `az network express-route gateway connection`：添加了对 `--internet-security` 的支持
 
 ### <a name="profile"></a>配置文件
 
@@ -1006,7 +1006,7 @@ ms.locfileid: "82031309"
 
 ### <a name="servicefabric"></a>ServiceFabric
 
-* `az sf cluster create`设置用户帐户 ：通过将 service fabric linux 和 windows template.json 计算 vmss 从标准修改为托管磁盘解决了问题
+* `az sf cluster create`：通过将 service fabric linux 和 windows template.json 计算 vmss 从标准修改为托管磁盘解决了问题
 
 ### <a name="sql"></a>SQL
 
@@ -1014,7 +1014,7 @@ ms.locfileid: "82031309"
 
 ### <a name="storage"></a>存储
 
-* `az storage account create/update`设置用户帐户 ：添加了 --enable-files-adds 参数和 Azure Active Directory 属性参数组，以支持 Azure 文件存储 Active Directory 域服务身份验证
+* `az storage account create/update`：添加了 --enable-files-adds 参数和 Azure Active Directory 属性参数组，以支持 Azure 文件存储 Active Directory 域服务身份验证
 * 扩展了 `az storage account keys list/renew` 以支持列出或重新生成存储帐户的 Kerberos 密钥。
 
 ## <a name="october-15-2019"></a>2019 年 10 月 15 日
@@ -1220,9 +1220,9 @@ ms.locfileid: "82031309"
 ### <a name="signalr"></a>SignalR
 
 * 添加了新命令：
-  * `signalr cors`设置用户帐户 ：管理 SignalR CORS
-  * `signalr restart`设置用户帐户 ：重新启动 SignalR 服务
-  * `signalr update`设置用户帐户 ：更新 SignalR 服务
+  * `signalr cors`：管理 SignalR CORS
+  * `signalr restart`：重新启动 SignalR 服务
+  * `signalr update`：更新 SignalR 服务
 * 为 `signalr create` 添加了 `--service-mode` 参数
 
 ### <a name="storage"></a>存储
@@ -1515,13 +1515,13 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="cosmosdb"></a>CosmosDB
 * [已弃用] 已弃用 `cosmosdb list-keys` 命令
 * 添加了 `cosmosdb keys list` 命令 - 替代 `cosmosdb list-keys`
-* `cosmsodb create/update`设置用户帐户 ：为 --location 添加了新格式，以允许设置 "isZoneRedundant" 属性。 已弃用旧格式
+* `cosmsodb create/update`：为 --location 添加了新格式，以允许设置 "isZoneRedundant" 属性。 已弃用旧格式
 
 ### <a name="eventgrid"></a>EventGrid
 * 为域 CRUD 操作添加了 `eventgrid domain` 命令
 * 为域主题 CRUD 操作添加了 `eventgrid domain topic` 命令
 * 为 `eventgrid [topic|event-subscription] list` 添加了 `--odata-query` 参数以便使用 OData 语法筛选结果
-* `event-subscription create/update`设置用户帐户 ：添加了 servicebusqueue 作为 `--endpoint-type` 参数的新值
+* `event-subscription create/update`：添加了 servicebusqueue 作为 `--endpoint-type` 参数的新值
 * [中断性变更] 删除了对带有 `eventgrid event-subscription [create|update]` 的 `--included-event-types All` 的支持
 
 ### <a name="hdinsight"></a>HDInsight
@@ -2687,12 +2687,12 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 允许对经典 NSG 使用 `network watcher flow-log show/configure`
 * 添加 `network watcher run-configuration-diagnostic` 命令
 * 修复了`network watcher test-connectivity` 命令，并添加了 `--method`、`--valid-status-codes` 和 `--headers` 属性
-* `network express-route create/update`设置用户帐户 ：添加了 `--allow-global-reach` 标志
-* `network vnet subnet create/update`设置用户帐户 ：添加了对 `--delegation` 的支持
+* `network express-route create/update`：添加了 `--allow-global-reach` 标志
+* `network vnet subnet create/update`：添加了对 `--delegation` 的支持
 * 添加了 `network vnet subnet list-available-delegations` 命令
-* `network traffic-manager profile create/update`设置用户帐户 ：为 Monitor 配置添加了对 `--interval`、`--timeout` 和 `--max-failures` 的支持。已弃用了选项 `--monitor-path`、`--monitor-port` 和 `--monitor-protocol`，并改用 `--path`、`--port` 和 `--protocol`
-* `network lb frontend-ip create/update`设置用户帐户 ：修复了用于设置专用 IP 分配方法的逻辑。如果提供了专用 IP 地址，则分配是静态的。如果未提供专用 IP 地址，或者为专用 IP 地址提供了空字符串，则分配是动态的。
-* `dns record-set * create/update`设置用户帐户 ：添加了对 `--target-resource` 的支持
+* `network traffic-manager profile create/update`：为 Monitor 配置添加了对 `--interval`、`--timeout` 和 `--max-failures` 的支持。已弃用了选项 `--monitor-path`、`--monitor-port` 和 `--monitor-protocol`，并改用 `--path`、`--port` 和 `--protocol`
+* `network lb frontend-ip create/update`：修复了用于设置专用 IP 分配方法的逻辑。如果提供了专用 IP 地址，则分配是静态的。如果未提供专用 IP 地址，或者为专用 IP 地址提供了空字符串，则分配是动态的。
+* `dns record-set * create/update`：添加了对 `--target-resource` 的支持
 * 添加了 `network interface-endpoint` 命令用于查询接口终结点对象
 * 添加了 `network profile show/list/delete` 用于对网络配置文件进行部分管理
 * 添加了 `network express-route peering connection` 命令用于管理 ExpressRoute 之间的对等连接
@@ -4616,7 +4616,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="container"></a>容器
 
-* `create`设置用户帐户 ：修复了某个环境变量中不允许等于号的问题
+* `create`：修复了某个环境变量中不允许等于号的问题
 
 
 ### <a name="data-lake-store"></a>Data Lake Store
@@ -4629,14 +4629,14 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="network"></a>网络
 
-* `lb`设置用户帐户 ：修复了某些子资源名称在省略时无法正确解析的问题
-* `application-gateway {subresource} delete`设置用户帐户 ：修复了不遵循 `--no-wait` 的问题
-* `application-gateway http-settings update`设置用户帐户 ：修复了无法关闭 `--connection-draining-timeout` 的问题
+* `lb`：修复了某些子资源名称在省略时无法正确解析的问题
+* `application-gateway {subresource} delete`：修复了不遵循 `--no-wait` 的问题
+* `application-gateway http-settings update`：修复了无法关闭 `--connection-draining-timeout` 的问题
 * 修复了 `az network vpn-connection ipsec-policy add` 包含意外关键字参数 `sa_data_size_kilobyes` 的错误
 
 ### <a name="profile"></a>配置文件
 
-* `account list`设置用户帐户 ：添加了 `--refresh` 以用于从服务器同步最新订阅
+* `account list`：添加了 `--refresh` 以用于从服务器同步最新订阅
 
 ### <a name="storage"></a>存储
 
@@ -4644,7 +4644,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="vm"></a>VM
 
-* `availability-set`设置用户帐户 ：公开了转换时的容错域计数
+* `availability-set`：公开了转换时的容错域计数
 * 公开了 `list-skus` 命令
 * 支持在不创建角色分配的情况下分配标识
 * 附加数据磁盘时应用存储 SKU
