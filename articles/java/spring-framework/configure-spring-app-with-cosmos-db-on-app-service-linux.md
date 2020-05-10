@@ -6,12 +6,12 @@ ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.service: cosmos-db
 ms.topic: article
-ms.openlocfilehash: 4c1f415b5d664986e00f6cf8b12d63b214b55088
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 5e5dfdf4aab983678195827d33451fbe626100c0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81673803"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82104918"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>如何将 Spring 和 Cosmos DB 与 Linux 上的应用服务配合使用
 
@@ -136,7 +136,7 @@ set REGION=<put-your-REGION-here>
     mvn package spring-boot:run
     ```
 
-4. 待应用程序启动以后，可访问以下 Spring Todo 应用，对部署进行验证：[http://localhost:8080/](http://localhost:8080/)。
+4. 在应用程序启动以后，可在 `http://localhost:8080/` 上访问 Spring Todo 应用，对部署进行验证。
 
  ![在本地运行的 Spring 应用][SCDB01]
 

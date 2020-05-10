@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: f88ad0bf2103db2bb63a4e230ea730493f4865c7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 783197c2a98ef76d1a30126144cb44ebdf474fdc
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668783"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82166689"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>将 Spring Boot 应用程序部署到 Azure Kubernetes 服务
 
@@ -118,7 +118,7 @@ ms.locfileid: "81668783"
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>2.1.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -143,7 +143,7 @@ ms.locfileid: "81668783"
 1. 导航到 Spring Boot 应用程序的完成项目目录，然后运行以下命令以生成映像并将映像推送到注册表：
 
    ```cmd
-   mvn compile jib:build
+   az acr login && mvn compile jib:build
    ```
 
 > [!NOTE]
@@ -153,38 +153,13 @@ ms.locfileid: "81668783"
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>使用 Azure CLI 在 AKS 上创建 Kubernetes 群集
 
-1. 在 Azure Kubernetes 服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集，将 wingtiptoys-akscluster 作为群集名称，wingtiptoys-kubernetes 作为 DNS 前缀     ：
+1. 在 Azure Kubernetes 服务中创建 Kubernetes 群集。 以下命令在 wingtiptoys-kubernetes 资源组中创建 kubernetes 群集（将 wingtiptoys-akscluster 作为群集名称，附加了 Azure 容器注册表 `wingtiptoysregistry`，并将 wingtiptoys-kubernetes 作为 DNS 前缀     ）：
    ```azurecli
    az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \ 
+    --attach-acr wingtiptoysregistry \
     --dns-name-prefix=wingtiptoys-kubernetes --generate-ssh-keys
    ```
    此命令可能需要一段时间才能完成。
-
-1. 将 Azure 容器注册表 (ACR) 与 Azure Kubernetes 服务 (AKS) 配合使用时，需要向 Azure Kubernetes 服务授予对 Azure 容器注册表的拉取访问权限。 创建 Azure Kubernetes 服务时，Azure 会创建一个默认的服务主体。 请在 bash 或 Powershell 中运行以下脚本以授予 AKS 对 ACR 的访问权限，可以在[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]中查看更多详细信息。
-
-```bash
-   # Get the id of the service principal configured for AKS
-   CLIENT_ID=$(az.cmd aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
-   
-   # Get the ACR registry resource id
-   ACR_ID=$(az.cmd acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
-   
-   # Create role assignment
-   az.cmd role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
-```
-
-  \- 或 -
-
-```PowerShell
-   # Get the id of the service principal configured for AKS
-   $CLIENT_ID = az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv
-   
-   # Get the ACR registry resource id
-   $ACR_ID = az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv
-   
-   # Create role assignment
-   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
-```
 
 1. 使用 Azure CLI 安装 `kubectl`。 Linux 用户可能必须将 `sudo` 作为此命令的前缀，因为它将 Kubernetes CLI 部署到 `/usr/local/bin`。
    ```azurecli
@@ -246,6 +221,18 @@ ms.locfileid: "81668783"
    ```
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
+   
+
+> [!IMPORTANT]
+> 如果 AKS 群集使用 RBAC，则必须先创建 *ClusterRoleBinding*，然后才能正确访问仪表板。 默认情况下，Kubernetes 仪表板是使用最小读取访问权限部署的，并且显示 RBAC 访问错误。 Kubernetes 仪表板当前不支持使用用户提供的凭据来确定访问权限级别，而是使用授予给服务帐户的角色。 群集管理员可以选择向 *kubernetes-dashboard* 服务帐户授予更多访问权限，但这可能会导致需要进行权限提升。 还可以集成 Azure Active Directory 身份验证来提供更精细的访问权限级别。
+> 
+> 若要创建绑定，请使用 [kubectl create clusterrolebinding] 命令。 下面的示例演示如何创建一个示例绑定，但是，此示例绑定不会应用任何其他身份验证组件，并可能导致使用不安全。 Kubernetes 仪表板将对有权访问该 URL 的任何人开放。 请勿公开 Kubernetes 仪表板。
+>
+> ```console
+> kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+> ```
+> 
+> 有关使用不同身份验证方法的详细信息，请参阅有关[仪表板身份验证]的 Kubernetes 仪表板 wiki。
 
 1. 在浏览器中打开 Kubernetes 配置网站后，选择“部署容器化应用”的链接  ：
 
@@ -320,7 +307,8 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 有关使用 Azure Dev Spaces 直接在 Azure Kubernetes 服务 (AKS) 中迭代运行和调试容器的详细信息，请参阅[通过 Java 开始使用 Azure Dev Spaces]
 
 <!-- URL List -->
-
+[kubectl-create-clusterrolebinding]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-clusterrolebinding-em-
+[仪表板身份验证]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure Kubernetes 服务 (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
 [面向 Java 开发人员的 Azure]: /azure/developer/java/
@@ -346,7 +334,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->
-[使用 Azure 容器注册表从 Azure Kubernetes 服务进行身份验证]: /azure/container-registry/container-registry-auth-aks/
+[Authenticate with Azure Container Registry from Azure Kubernetes Service]: /azure/container-registry/container-registry-auth-aks/
 [Visual Studio Code Java 教程]: https://code.visualstudio.com/docs/java/java-kubernetes/
 [通过 Java 开始使用 Azure Dev Spaces]: /azure/dev-spaces/get-started-java
 <!-- IMG List -->

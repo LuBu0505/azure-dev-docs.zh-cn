@@ -11,12 +11,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d24300d02df1fdd079c7ba3c5f2ef3370db3c5e8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 6ec30d83352984181caff4984769ff62d07e4164
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670573"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105108"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>将基于 Java 的 MicroProfile 服务部署到用于容器的 Azure Web 应用
 
@@ -127,7 +127,7 @@ public class API {
 
 1. 运行 `docker run -it --rm -p 8080:8080 <docker.registry>/<docker.name>:latest`，例如，如果 `docker.registry` 是 `jogilescr.azurecr.io`，`docker.name` 是 `samples/docker-helloworld`，则运行 `docker run -it --rm -p 8080:8080 jogilescr.azurecr.io/samples/docker-helloworld:latest`。
 
-1. 尝试在 Web 浏览器中访问 [http://localhost:8080/microprofile/api/helloworld](http://localhost:8080/microprofile/api/helloworld) 和 [http://localhost:8080/health](http://localhost:8080/health)。 如果看到了预期的“Hello, world!” 响应（以及 [/health](http://localhost:8080/health) 终结点的运行状况相关信息），则表示已在本地计算机上成功部署了该 MicroProfile 应用程序。
+1. 尝试在 Web 浏览器中访问 `http://localhost:8080/microprofile/api/helloworld` 和 `http://localhost:8080/health`。 如果看到了预期的“Hello, world!” 响应（以及 `/health` 终结点的运行状况相关信息），则表示已在本地计算机上成功部署了该 MicroProfile 应用程序。
 
 ## <a name="pushing-to-the-azure-container-registry"></a>推送到 Azure 容器注册表
 

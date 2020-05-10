@@ -3,12 +3,12 @@ title: 在 Visual Studio Code 中创建 Azure 应用服务
 description: 教程第 2 部分：创建 Node.js 应用并在本地运行它
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: b2935554fb337d5f5db1a71e016638869f9d1dc4
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 86d3801b31f1a0c5fb988940a7c9f550a991f0d2
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893630"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105188"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>创建并运行本地 Node.js 应用
 
@@ -42,7 +42,7 @@ ms.locfileid: "78893630"
     npm start
     ```
 
-1. 通过打开浏览器访问 [http://localhost:3000](http://localhost:3000) 来测试应用。 站点应如下所示：
+1. 通过打开浏览器访问 `http://localhost:3000` 来测试应用。 站点应如下所示：
 
     ![运行 Express 应用程序](media/deploy-azure/express.png)
 

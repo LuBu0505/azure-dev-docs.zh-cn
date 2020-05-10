@@ -2,12 +2,12 @@
 author: mriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 59e277b0ae4a05566e2dbcd0d7a0a4a15c22eed9
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 1c7059df89281156861a935d451aca4db6f44418
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81672983"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82109736"
 ---
 ### <a name="build-and-push-the-docker-image-to-azure-container-registry"></a>构建 Docker 映像并将其推送到 Azure 容器注册表
 
@@ -49,7 +49,7 @@ docker build -t ${MY_ACR}.azurecr.io/${MY_APP_NAME}
 docker run -it -p 8080:8080 ${MY_ACR}.azurecr.io/${MY_APP_NAME}
 ```
 
-现在可以通过 [http://localhost:8080](http://localhost:8080) 访问应用程序。
+现在可以在 `http://localhost:8080` 上访问你的应用程序。
 
 登录到 Azure 容器注册表：
 

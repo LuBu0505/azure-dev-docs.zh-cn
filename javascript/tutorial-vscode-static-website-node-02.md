@@ -4,12 +4,12 @@ description: 教程第 2 部分：创建示例应用
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 69c0e7d6f43829546e5f23ec63a4ac35b71d7e78
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 81593d61126b34f002513deb02d9bf634a7e9dd6
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422521"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105128"
 ---
 # <a name="create-the-app"></a>创建应用
 
@@ -42,7 +42,7 @@ ms.locfileid: "77422521"
     npm start
     ```
 
-1. 将浏览器打开到 [http://localhost:4200](http://localhost:4200) 以验证该应用正在运行：
+1. 打开浏览器访问 `http://localhost:4200` 以验证该应用正在运行：
 
     ![正在运行的示例 Angular 应用](media/static-website/local-app-angular.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "77422521"
     npm start
     ```
 
-1. 将浏览器打开到 [http://localhost:3000](http://localhost:3000) 以验证该应用正在运行：
+1. 打开浏览器访问 `http://localhost:3000` 以验证该应用正在运行：
 
     ![正在运行的示例 React 应用](media/static-website/local-app-react.png)
 
@@ -102,7 +102,7 @@ ms.locfileid: "77422521"
      npm run serve
      ```
 
-1. 将浏览器打开到 [http://localhost:8080](http://localhost:8080) 以验证该应用正在运行：
+1. 打开浏览器访问 `http://localhost:8080` 以验证该应用正在运行：
 
     ![正在运行的示例 Vue 应用](media/static-website/local-app-vue.png)
 
@@ -137,7 +137,7 @@ ms.locfileid: "77422521"
      npm run dev
      ```
 
-1. 将浏览器打开到 [http://localhost:5000](http://localhost:5000) 以验证该应用正在运行：
+1. 打开浏览器访问 `http://localhost:5000` 以验证该应用正在运行：
 
     ![正在运行的示例 Vue 应用](media/static-website/local-app-svelte.png)
 

@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 655e536d1194370fb0ade4fbd6b06da9f36201fd
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671343"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82138806"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -65,9 +65,9 @@ ms.locfileid: "81671343"
 
 1. 输入“组织名称”和“初始域名”。   复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：`wingtiptoysdirectory.onmicrosoft.com`。） 
 
-复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：wingtiptoysdirectory.onmicrosoft.com。）。
+    复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：wingtiptoysdirectory.onmicrosoft.com。）。
 
-完成后，单击“创建”。  创建新资源将需要几分钟时间。
+    完成后，单击“创建”。  创建新资源将需要几分钟时间。
 
    ![指定 Azure Active Directory 名称][create-directory-02]
 
@@ -95,7 +95,7 @@ ms.locfileid: "81671343"
 
 1. 在左侧导航窗格中单击“证书和机密”。   然后，单击“新建客户端机密”。 
 
-   ![创建应用注册密钥][create-app-registration-03.5]
+   ![创建应用注册密钥][create-app-registration-03-5]
 
 1. 添加“说明”  ，在“过期”  列表中选择持续时间。  单击“添加”  。 系统会自动填充密钥的值。
 
@@ -103,11 +103,11 @@ ms.locfileid: "81671343"
 
 1. 复制并保存客户端机密的值，以便在本教程的后面部分配置 *application.properties* 文件。 （以后无法检索此值。）
 
-   ![指定应用注册密钥参数][create-app-registration-04.5]
+   ![指定应用注册密钥参数][create-app-registration-04-5]
 
 1. 单击左侧导航窗格中的“API 权限”  。 
 
-1. 在“API 权限”页上，单击“授予管理员许可...”，并在出现提示时单击“是”。   
+1. 单击“Microsoft Graph”并选中“以登录用户的身份访问目录”和“登录并读取用户个人资料”。    单击“授予权限...”，然后在出现提示时单击“是”   。
 
    ![授予访问权限][create-app-registration-08]
 
@@ -377,9 +377,9 @@ ms.locfileid: "81671343"
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
 [create-app-registration-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.png
-[create-app-registration-03.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.5.png
+[create-app-registration-03-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03-5.png
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
-[create-app-registration-04.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.5.png
+[create-app-registration-04-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04-5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
 [create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
 [create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png
@@ -397,3 +397,5 @@ ms.locfileid: "81671343"
 [build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
 [update-password]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/update-password.png
+
+

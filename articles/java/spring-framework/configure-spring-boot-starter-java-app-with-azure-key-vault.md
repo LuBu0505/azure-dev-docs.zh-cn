@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 5c0dddfc8f6ef4b631c3ee999a3f8742921c1b9a
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 2df574104376ec1900c7dc5cbd4f0a49ef1f4732
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81669853"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82138733"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>如何使用适用于 Azure Key Vault 的 Spring Boot 起动器
 
@@ -122,32 +122,16 @@ ms.locfileid: "81669853"
    }
    ```
 
-2. 从应用程序注册创建 Azure 服务主体，例如：
-   ```shell
-   az ad sp create-for-rbac --name "vgeduser"
-   ```
-   其中：
-
-   | 参数 | 说明 |
-   |---|---|
-   | `name` | 指定 Azure 服务主体的名称。 |
-
-   Azure CLI 将返回包含 *appId* 和 *password* 的 JSON 状态消息，稍后要使用此信息分别作为客户端 ID 和客户端密码，例如：
-
-   ```json
-   {
-     "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
-     "displayName": "vgeduser",
-     "name": "http://vgeduser",
-     "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
-     "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
-   }
-   ```
-
-3. 在资源组中创建新的 Key Vault，例如：
+2. 在资源组中创建新的 Key Vault，例如：
 
    ```azurecli
-   az keyvault create --name vgedkeyvault --resource-group vged-rg2 --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   az keyvault create --resource-group vged-rg2 \
+       --name vgedkeyvault \
+       --enabled-for-deployment true \
+       --enabled-for-disk-encryption true \
+       --enabled-for-template-deployment true \
+       --sku standard --query properties.vaultUri \
+       --location westus
    ```
 
    其中：
@@ -155,56 +139,25 @@ ms.locfileid: "81669853"
    | 参数 | 说明 |
    |---|---|
    | `name` | 指定 Key Vault 的唯一名称。 |
-   | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
    | `enabled-for-deployment` | 指定 [Key Vault 部署选项](/cli/azure/keyvault)。 |
    | `enabled-for-disk-encryption` | 指定 [Key Vault 加密选项](/cli/azure/keyvault)。 |
    | `enabled-for-template-deployment` | 指定 [Key Vault 加密选项](/cli/azure/keyvault)。 |
    | `sku` | 指定 [Key Vault SKU 选项](/cli/azure/keyvault)。 |
    | `query` | 指定要从响应中检索的值，即完成本教程所需的 Key Vault URI。 |
+   | `location` | 指定要在其中托管资源组的 [Azure 区域](https://azure.microsoft.com/regions/)。 |
 
    Azure CLI 将显示稍后要使用的 Key Vault URI，例如：  
 
-   ```azurecli
+   ```output
    "https://vgedkeyvault.vault.azure.net"
-
    ```
 
-4. 针对前面创建的 Azure 服务主体设置访问策略，例如：
+3. 在新的 Key Vault 中存储一个机密，例如：
 
    ```azurecli
-   az keyvault set-policy --name vgedkeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
-   ```
-
-   其中：
-
-   | 参数 | 说明 |
-   |---|---|
-   | `name` | 指定前面创建的 Key Vault 名称。 |
-   | `secret-permission` | 指定 Key Vault 的[安全策略](/cli/azure/keyvault)。 |
-   | `spn` | 指定前面创建的应用程序注册的 GUID。 |
-
-   Azure CLI 将显示安全策略的创建结果，例如：  
-
-   ```json
-   {
-     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
-     "location": "westus",
-     "name": "vgedkeyvault",
-     "properties": {
-       ...
-       ... (A long list of values will be displayed here.)
-       ...
-     },
-     "resourceGroup": "vged-rg2",
-     "tags": {},
-     "type": "Microsoft.KeyVault/vaults"
-   }
-   ```
-
-5. 在新的 Key Vault 中存储一个机密，例如：
-
-   ```azurecli
-   az keyvault secret set --vault-name "vgedkeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   az keyvault secret set --vault-name "vgedkeyvault" \
+       --name "connectionString" \
+       --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
 
    其中：
@@ -250,8 +203,7 @@ ms.locfileid: "81669853"
 
    ```yaml
    azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
-   azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
-   azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
+   azure.keyvault.enabled=true
    ```
 
    其中：
@@ -259,10 +211,8 @@ ms.locfileid: "81669853"
    |          参数          |                                 说明                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
    |    `azure.keyvault.uri`     |           指定创建 Key Vault 时使用的 URI。           |
-   | `azure.keyvault.client-id`  |  指定创建服务主体时使用的 *appId* GUID。   |
-   | `azure.keyvault.client-key` | 指定创建服务主体时使用的 *password* GUID。 |
-
-
+    
+    
 4. 导航到项目的主源代码文件，例如： */src/main/java/com/vged/secrets*。
 
 5. 在文本编辑器中打开应用程序的主 Java 文件；例如：*SecretsApplication.java*，并向文件中添加以下行：
@@ -274,8 +224,11 @@ ms.locfileid: "81669853"
    import org.springframework.boot.autoconfigure.SpringBootApplication;
    import org.springframework.beans.factory.annotation.Value;
    import org.springframework.boot.CommandLineRunner;
-
+   import org.springframework.web.bind.annotation.GetMapping;
+   import org.springframework.web.bind.annotation.RestController;
+   
    @SpringBootApplication
+   @RestController
    public class SecretsApplication implements CommandLineRunner {
 
       @Value("${connectionString}")
@@ -284,39 +237,104 @@ ms.locfileid: "81669853"
       public static void main(String[] args) {
          SpringApplication.run(SecretsApplication.class, args);
       }
-
+   
+      @GetMapping("get")
+      public String get() {
+         return connectionString;
+      }
+   
       public void run(String... varl) throws Exception {
          System.out.println(String.format("\nConnection String stored in Azure Key Vault:\n%s\n",connectionString));
       }
    }
    ```
-   此代码示例从 Key Vault 中检索连接字符串，并将其显示到命令行。
+   此代码示例从密钥保管库中检索连接字符串，并将其显示到 url `https://{your-appservice-name}.azurewebsites.net/get`。
 
 6. 保存并关闭该 Java 文件。
 
-## <a name="build-and-test-your-app"></a>生成并测试应用
+7. 禁用测试并使用 Maven 生成 JAR 文件。
+    
+   ```bash
+   mvn clean package -Dmaven.test.skip=true
+   ```
 
-使用以下过程测试应用程序。
+## <a name="configure-maven-plugin-for-azure-app-service"></a>配置适用于 Azure 应用服务的 Maven 插件
 
-1. 导航到 Spring Boot 应用的 *pom.xml* 文件所在的目录：
+本部分将帮助你配置 Spring Boot 项目，使你的应用能够部署到 Azure 应用服务上。
 
-1. 使用 Maven 生成 Spring Boot 应用程序，例如：
+1.  访问指向[配置适用于 Azure 应用服务的 Maven 插件]的链接。
+    
+    此链接指向的部分说明了如何创建新 Azure 应用服务。 如果要将应用部署到现有 Azure 应用服务，可以通过命令 `mvn azure-webapp:config` 重新配置部署，并选择“Application”部分进行配置。
+    
+    ```bash
+    [INFO] Scanning for projects...                                                     
+    [INFO]                                                                              
+    [INFO] ----------------------< com.wingtiptoys:secrets >-----------------------     
+    [INFO] Building secrets 0.0.1-SNAPSHOT                                              
+    [INFO] --------------------------------[ jar ]---------------------------------     
+    [INFO]                                                                              
+    [INFO] --- azure-webapp-maven-plugin:1.9.0:config (default-cli) @ secrets ---       
+    Please choose which part to config                                                  
+    1. Application                                                                      
+    2. Runtime                                                                          
+    3. DeploymentSlot                                                                   
+    Enter index to use: 1                                                              
+    Define value for appName(Default: ********):                                      
+    Define value for resourceGroup(Default: ********):                                 
+    Define value for region(Default: ********):                                           
+    Define value for pricingTier(Default: P1v2):                                        
+    1. b1                                                                               
+    2. b2                                                                               
+    3. b3                                                                               
+    4. d1                                                                               
+    5. f1                                                                               
+    6. p1v2 [*]                                                                         
+    7. p2v2                                                                             
+    8. p3v2                                                                             
+    9. s1                                                                               
+    10. s2                                                                              
+    11. s3                                                                              
+    Enter index to use:                                                                 
+    Please confirm webapp properties                                                                                                          
+    ```
+    
+    还可以直接编辑 *pom.xml* 中 `<azure-webapp-maven-plugin>` 的 `<configuration>` 部分。 将 `<resourceGroup>`、`<appName>` 和 `<region>` 值修改为适用于你的特定应用服务的值。
+
+2. 将标识分配给应用服务，并记下要在下一步中使用的 `principalId`。
+
+   ```bash
+   az webapp identity assign --name your-appservice-name \
+      --resource-group vged-rg2
+   ```
+   
+3. 向 MSI 授予权限。
+
+   ```bash
+   az keyvault set-policy --name vgedkeyvault \
+       --object-id your-managed-identity-objectId \
+       --secret-permissions get list
+   ```
+
+## <a name="deploy-the-app-to-azure-and-run-app-service"></a>将应用部署到 Azure 并运行应用服务
+
+现在，可以在 Azure 上部署你的 Web 应用了。 为此，请按照以下步骤操作：
+
+1. 如果对 *pom.xml* 文件进行了任何更改，请使用 Maven 重新生成 JAR 文件。
 
    ```bash
    mvn clean package
    ```
-
-   Maven 将显示生成结果。
-
-   ![Spring Boot 应用程序生成状态][build-application-01]
-
-1. 使用 Maven 运行 Spring Boot 应用程序；该应用程序将显示 Key Vault 中的连接字符串。 例如：
+   
+2. 使用 Maven 在 Azure 上部署你的应用。
 
    ```bash
-   mvn spring-boot:run
+   mvn azure-webapp:deploy
    ```
+   
+3. 重新启动应用服务。
 
-   ![Spring Boot 运行时消息][build-application-02]
+4. 请在浏览器中访问 URL `https://{your-appservice-name}.azurewebsites.net/get` 以获取 `connectionString`。
+   
 
 ## <a name="summary"></a>总结
 
@@ -345,6 +363,8 @@ ms.locfileid: "81669853"
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
+有关将托管标识用于应用服务的详细信息，请参阅[将托管标识用于应用服务]。
+
 <!-- URL List -->
 
 [Key Vault 文档]: /azure/key-vault/
@@ -356,6 +376,8 @@ ms.locfileid: "81669853"
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[将托管标识用于应用服务]: /azure/app-service/overview-managed-identity
+[配置适用于 Azure 应用服务的 Maven 插件]: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service
 
 <!-- IMG List -->
 

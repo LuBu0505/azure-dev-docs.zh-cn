@@ -3,12 +3,12 @@ title: 使用 Azure CLI 创建要部署到 Azure 的 Node.js 应用
 description: 教程第 2 部分：创建应用代码。
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: dba089c58cf6413263348b7bdeb975852c2e6a2f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 160b543abee59bdd7504aa356a3b11eb7bde3da8
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467178"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105158"
 ---
 # <a name="create-the-app-code-using-express"></a>使用 Express 创建应用代码
 
@@ -35,7 +35,7 @@ ms.locfileid: "74467178"
     npm start
     ```
 
-1. 打开浏览器访问 [http://localhost:3000](http://localhost:3000) 以查看正在运行的应用：
+1. 打开浏览器访问 `http://localhost:3000` 以查看正在运行的应用：
 
     ![在本地运行 Express 应用](media/azure-cli/local-app.png)
 

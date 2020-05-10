@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: buhollan
-ms.openlocfilehash: 6cb841a9cf9563c3b7b3db86d907eac757c5d31d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c95177d6b4cb101b764acd8f8dad54f937a495eb
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82072662"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82109505"
 ---
 1. 在终端命令提示符处，转到要创建应用文件夹的位置。
 
@@ -37,7 +37,7 @@ ms.locfileid: "82072662"
     npm start
     ```
 
-1. 打开浏览器并访问 [http://localhost:3000](http://localhost:3000)，对应用进行测试。 站点应如下所示：
+1. 打开浏览器并访问 `http://localhost:3000`，对应用进行测试。 站点应如下所示：
 
     ![运行 Express 应用程序](../media/deploy-azure/express.png)
 

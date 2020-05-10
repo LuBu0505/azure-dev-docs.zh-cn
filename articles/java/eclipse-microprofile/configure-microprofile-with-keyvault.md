@@ -10,12 +10,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: c147bcafec87342b799f884ddc59c7c902a80a2e
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: e68df202d49b7215eb4bdbff7a42e0900499484c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670263"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105178"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>使用 Azure Key Vault 配置 MicroProfile
 
@@ -125,7 +125,7 @@ az keyvault secret set --name demo-key      \
 
 1. 尝试使用 `mvn clean package payara-micro:start` 运行服务器
 
-1. 尝试在 Web 浏览器中访问 [http://localhost:8080/keyvault-configsource/api/config](http://localhost:8080/keyvault-configsource/api/config) - 应会看到一个简单的响应，其中演示了正在从 Azure Key Vault 读取值。
+1. 尝试在 Web 浏览器中访问 `http://localhost:8080/keyvault-configsource/api/config` - 应会看到一个简单的响应，其中演示了正在从 Azure Key Vault 读取值。
 
 ## <a name="summary"></a>总结
 

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5e6204d773ee8e140832361ad587e850e36b75f6
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668813"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82166670"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上
 
@@ -97,15 +97,11 @@ ms.locfileid: "81668813"
 
    ![创建新的 Azure 容器注册表][AR01]
 
-1. 显示“创建容器注册表”  页面时，请输入注册表名称  、订阅  、资源组  和位置  。 为“管理员用户”选择“启用”   。 然后单击“创建”  。
+1. 显示“创建容器注册表”  页面时，请输入注册表名称  、订阅  、资源组  和位置  。 然后单击“创建”  。
 
    ![配置 Azure 容器注册表设置][AR03]
 
-1. 创建容器注册表后，在 Azure 门户中导航到你的容器注册表，并单击“访问密钥”  。 记下用户名和密码，以供后续步骤中使用。
-
-   ![Azure 容器注册表访问密钥][AR04]
-
-## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a>配置 Maven 以使用你的 Azure 容器注册表访问密钥
+## <a name="configure-maven-to-build-image-to-your-azure-container-registry"></a>配置 Maven 以将映像生成到 Azure 容器注册表
 
 1. 导航到 Spring Boot 应用程序的已完成项目目录（例如：“C:\SpringBoot\gs-spring-boot-docker\complete”  或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”  ），并使用文本编辑器打开 pom.xml  文件。
 
@@ -113,37 +109,29 @@ ms.locfileid: "81668813"
 
    ```xml
    <properties>
-      <jib-maven-plugin.version>1.7.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
-      <username>wingtiptoysregistry</username>
-      <password>{put your Azure Container Registry access key here}</password>
    </properties>
    ```
 
-1. 将 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 添加到 pom.xml  文件中的 `<plugins>` 集合。  此示例使用版本 1.8.0。
+1. 将 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 添加到 pom.xml  文件中的 `<plugins>` 集合。  此示例使用版本 2.2.0。
 
    在 `<from>/<image>` 中指定基本映像（此处为 `mcr.microsoft.com/java/jre:8-zulu-alpine`）。 指定要从 `<to>/<image>` 中的基本映像生成的最终映像的名称。  
 
    身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Maven Build 中的 JAR 文件的名称和版本号。
 
-   在 `<to>/<auth>` 节点中指定来自注册表窗格的用户名和密码。 例如：
-
    ```xml
    <plugin>
      <artifactId>jib-maven-plugin</artifactId>
      <groupId>com.google.cloud.tools</groupId>
-     <version>1.8.0</version>
+     <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
             <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
-            <auth>
-               <username>${username}</username>
-               <password>${password}</password>
-            </auth>
         </to>
      </configuration>
    </plugin>
@@ -152,12 +140,12 @@ ms.locfileid: "81668813"
 1. 导航到 Spring Boot 应用程序的已完成项目目录，然后运行以下命令以重新生成应用程序，并将容器推送到 Azure 容器注册表：
 
    ```bash
-   mvn compile jib:build
+   az acr login -n wingtiptoysregistry && mvn compile jib:build
    ```
 
 > [!NOTE]
->
-> 使用 Jib 将映像推送到 Azure 容器注册表时，该映像不会使用 Dockerfile  。有关详细信息，请参阅[此](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)文档。
+> 1. 命令 `az acr login ...` 将尝试登录到 Azure 容器注册表，否则你将需要为 jib-maven-plugin 提供 `<username>` 和 `<password>`。请参阅 jib 中的[身份验证方法](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#authentication-methods)。
+> 2. 使用 Jib 将映像推送到 Azure 容器注册表时，该映像不会使用 Dockerfile  。有关详细信息，请参阅[此](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)文档。
 >
 
 ## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a>在 Azure 应用服务中使用容器映像创建 Linux 上的 Web 应用
@@ -300,7 +288,6 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [SB02]: media/deploy-spring-boot-java-app-on-linux/SB02.png
 [AR01]: media/deploy-spring-boot-java-app-on-linux/AR01.png
 [AR03]: media/deploy-spring-boot-java-app-on-linux/AR03.png
-[AR04]: media/deploy-spring-boot-java-app-on-linux/AR04.png
 [LX01]: media/deploy-spring-boot-java-app-on-linux/LX01.png
 [LX02]: media/deploy-spring-boot-java-app-on-linux/LX02.png
 [LX02-A]: media/deploy-spring-boot-java-app-on-linux/LX02-A.png
