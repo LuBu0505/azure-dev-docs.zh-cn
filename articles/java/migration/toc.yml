@@ -3,8 +3,12 @@
   items:
     - name: 概述
       href: migration-overview.md
-    - name: Spring 到 Azure 应用服务
-      href: migrate-java-se-to-java-se-app-service.md
+    - name: Spring Boot 到 Azure 应用服务
+      href: migrate-spring-boot-to-app-service.md
+    - name: Spring Boot 到 AKS
+      href: migrate-spring-boot-to-azure-kubernetes-service.md
+    - name: Spring Cloud 到 Azure Spring Cloud
+      href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Tomcat 到 Azure 应用服务
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: Tomcat 到 AKS 上的容器

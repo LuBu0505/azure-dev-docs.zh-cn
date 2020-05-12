@@ -7,12 +7,12 @@ metadata:
   description: 使用这些面向 Java 开发人员的教程和工具开始开发云应用。
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 020812c47c46e062b9d5fe10f9b52ae95d020af8
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 53d335ee809749a2788ba0d9e94c99f3d972f496
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "82643671"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82988959"
 conceptualContent:
   items:
   - title: Azure for Java 快速入门
@@ -47,7 +47,7 @@ conceptualContent:
     links:
     - text: Spring 到 Azure 应用服务
       itemType: how-to-guide
-      url: migration/migrate-java-se-to-java-se-app-service.md
+      url: migration/migrate-spring-boot-to-app-service.md
     - text: Tomcat 到 Azure 应用服务
       itemType: how-to-guide
       url: migration/migrate-tomcat-to-tomcat-app-service.md

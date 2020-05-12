@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 1068b2917cef3052b6753e0c563cbcaf9af3f542
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 2afe0deb03a1aff2b40c2d739f873bd6a2bbcf0c
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "82209790"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82988708"
 productDirectory:
   items:
   - title: Python
@@ -124,9 +124,9 @@ additionalContent:
     - title: Azure DevOps
       summary: 使用 Azure DevOps 来规划工作、协作开发代码以及生成和部署应用程序。
       url: https://docs.microsoft.com/azure/devops/?view=azure-devops
-    - title: GitHub 操作
-      summary: 使用 GitHub Actions 从存储库中自动执行、自定义和执行软件开发工作流。
-      url: https://help.github.com/en/actions
+    - title: Azure 和 GitHub 协同工作
+      summary: 使用 GitHub 和 GitHub Actions 从存储库中自动执行、自定义和执行软件开发工作流。
+      url: https://docs.microsoft.com/azure/developer/github
     - title: Jenkins
       summary: 使用 Jenkins 为软件项目自动进行持续集成和持续交付 (CI/CD)。
       url: https://docs.microsoft.com/azure/jenkins/
