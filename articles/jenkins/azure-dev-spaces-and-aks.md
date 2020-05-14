@@ -4,12 +4,12 @@ description: 了解如何在持续集成管道中使用 Azure Dev Spaces 插件�
 keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes 服务
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 2528d362a9c95aecd00b938fdeed2756c8643fd4
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861250"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369931"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>教程：将 Azure Dev Spaces 用于 Azure Kubernetes 服务
 
@@ -202,7 +202,7 @@ ms.locfileid: "82861250"
 
 ### <a name="add-credentials-to-jenkins"></a>将凭据添加到 Jenkins
 
-1. Jenkins 需要 Azure 服务主体用于身份验证和访问 Azure 资源。 若要创建服务主体，请参阅“部署到 Azure 应用服务”教程中的 [创建服务主体](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#create-service-principal) 部分。 请务必保存来自 `create-for-rbac` 的输出的副本，因为你需要该信息来完成下一步。 输出将如下所示：
+1. Jenkins 需要 Azure 服务主体用于身份验证和访问 Azure 资源。 若要创建服务主体，请参阅“部署到 Azure 应用服务”教程中的 [创建服务主体](deploy-from-github-to-azure-app-service.md#create-service-principal) 部分。 请务必保存来自 `create-for-rbac` 的输出的副本，因为你需要该信息来完成下一步。 输出将如下所示：
 
     ```json
     {
@@ -220,7 +220,7 @@ ms.locfileid: "82861250"
 
     ![将服务主体凭据添加到 Jenkins](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    “说明”是可选的  。 有关详细说明，请参阅“部署到 Azure 应用服务”教程中的[将服务主体添加到 Jenkins](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#add-service-principal-to-jenkins)  部分。 
+    “说明”是可选的  。 有关详细说明，请参阅“部署到 Azure 应用服务”教程中的[将服务主体添加到 Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins)  部分。 
 
 
 

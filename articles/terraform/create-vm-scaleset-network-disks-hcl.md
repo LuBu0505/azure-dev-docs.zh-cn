@@ -3,12 +3,12 @@ title: 教程 - 使用 Terraform 创建 Azure 虚拟机规模集
 description: 了解如何使用 Terraform 配置 Azure 虚拟机规模集并对其进行版本控制。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: e2b60c4b0aa35f85c7799e8c2ef065d26549fd7f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: bb6175c92d0487bd5707b721ebc39ce4b727fed6
+ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171653"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83153724"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>教程：使用 Terraform 创建 Azure 虚拟机规模集
 
@@ -82,7 +82,7 @@ ms.locfileid: "82171653"
 
    variable "tags" {
     description = "A map of the tags to use for the resources that are deployed"
-    type        = "map"
+    type        = map
 
     default = {
       environment = "codelab"

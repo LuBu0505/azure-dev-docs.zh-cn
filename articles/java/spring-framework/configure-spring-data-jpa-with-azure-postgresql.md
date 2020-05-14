@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 77addcc8b35dc15fe6bc64722e0a5d61b67bd4a5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 723d98afd5f82a733011db207f8f462888c95e57
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668953"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369799"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>如何将 Spring Data JPA 用于 Azure PostgreSQL
 
@@ -93,7 +93,7 @@ ms.locfileid: "81668953"
    | 参数 | 说明 |
    |---|---|
    | `host` | 指定本文上文中所述的完全限定的 PostgreSQL 服务器名称。 |
-   | `host` | 指定 PostgreSQL 服务器端口，默认情况下为 `5432`。 |
+   | `port` | 指定 PostgreSQL 服务器端口，默认情况下为 `5432`。 |
    | `username` | 指定本文上文中所述的 PostgreSQL 管理员和缩短的服务器名称。 |
    | `dbname` | 现在，指定要使用默认的 `postgres` 数据库。 |
 

@@ -2,13 +2,13 @@
 author: edburns
 ms.author: edburns
 ms.date: 1/21/2020
-ms.openlocfilehash: 501d7da2e7af8b092018ec4827a0169b0253bcf8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 53ed325e26e6929106bd102341f3f446332e26f2
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672933"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988848"
 ---
 ### <a name="determine-whether-your-application-contains-os-specific-code"></a>确定应用程序是否包含特定于 OS 的代码
 
-如果应用程序包含的代码有主机 OS 的依赖项，则需重构该代码，删除那些依赖项。
+[!INCLUDE [determine-whether-your-application-contains-os-specific-code-no-title](determine-whether-your-application-contains-os-specific-code-no-title.md)]
