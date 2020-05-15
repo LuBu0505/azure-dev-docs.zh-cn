@@ -202,7 +202,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     }
     ```
 
-    实现 `Serializable` 是为了使用 Spring 框架的 `send` 中的 `JmsTemplate` 方法。 否则，应定义自定义的 `MessageConverter` bean，以将内容序列化为文本格式的 json。 有关 `MessageConverter` 的详细信息，请参阅官方的 [Spring JMS Starter 项目](https://spring.io/guides/gs/messaging-jms/)。
+    实现 `Serializable` 是为了使用 Spring 框架的 `JmsTemplate` 中的 `send` 方法。 否则，应定义自定义的 `MessageConverter` bean，以将内容序列化为文本格式的 json。 有关 `MessageConverter` 的详细信息，请参阅官方的 [Spring JMS Starter 项目](https://spring.io/guides/gs/messaging-jms/)。
 
 1. 保存并关闭 User.java 文件  。
 

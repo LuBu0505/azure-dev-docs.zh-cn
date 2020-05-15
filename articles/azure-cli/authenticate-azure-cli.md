@@ -42,7 +42,7 @@ az login -u <username> -p <password>
 ```
 
 > [!IMPORTANT]
-> 如果想要避免在控制台中显示自己的密码并以交互方式使用 `az login`，请在 `read -s` 下面使用 `bash` 命令。
+> 如果想要避免在控制台中显示自己的密码并以交互方式使用 `az login`，请在 `bash` 下面使用 `read -s` 命令。
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
@@ -78,7 +78,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 ```
 
 > [!IMPORTANT]
-> 如果想要避免在控制台中显示自己的密码并以交互方式使用 `az login`，请在 `read -s` 下面使用 `bash` 命令。
+> 如果想要避免在控制台中显示自己的密码并以交互方式使用 `az login`，请在 `bash` 下面使用 `read -s` 命令。
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>

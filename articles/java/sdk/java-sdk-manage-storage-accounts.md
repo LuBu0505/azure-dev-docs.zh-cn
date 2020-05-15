@@ -15,7 +15,7 @@ ms.locfileid: "82104988"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>从 Java 应用程序管理 Azure 存储帐户
 
-[本示例](https://github.com/Azure-Samples/storage-java-manage-storage-accounts)通过 [Java 管理库](/azure/storage/common/storage-introduction)创建一个 [Azure 存储](https://github.com/Azure/azure-sdk-for-java)帐户并使用帐户访问密钥。 
+[本示例](https://github.com/Azure-Samples/storage-java-manage-storage-accounts)通过 [Java 管理库](https://github.com/Azure/azure-sdk-for-java)创建一个 [Azure 存储](/azure/storage/common/storage-introduction)帐户并使用帐户访问密钥。 
 
 ## <a name="run-the-sample"></a>运行示例
 
@@ -101,7 +101,7 @@ azure.storageAccounts().deleteByResourceGroup(rgName,accountName);
 | 示例中使用的类 | 说明
 |-------|-------|
 | [StorageAccount](/java/api/com.microsoft.azure.management.storage.storageaccount)  | Azure 存储帐户的表示形式。 使用类中的方法获取有关存储帐户的信息。
-| [StorageAccountKey](/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` 返回存储帐户密钥。 使用 `regenerateKey` 中的 `StorageAccount` 方法来更新密钥。
+| [StorageAccountKey](/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` 返回存储帐户密钥。 使用 `StorageAccount` 中的 `regenerateKey` 方法来更新密钥。
 
 ## <a name="next-steps"></a>后续步骤
 

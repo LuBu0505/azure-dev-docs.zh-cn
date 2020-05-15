@@ -71,7 +71,7 @@ New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName 
 如果尚未使用 Chef 服务器，可以：
 
 * 注册[托管 Chef](https://manage.chef.io/signup)，这是 Chef 的最快入门方法。
-* 遵照 [Chef 文档](https://docs.chef.io/install_server.html)中的[安装说明](https://docs.chef.io/)，在基于 Linux 的计算机上安装独立的 Chef 服务器。
+* 遵照 [Chef 文档](https://docs.chef.io/)中的[安装说明](https://docs.chef.io/install_server.html)，在基于 Linux 的计算机上安装独立的 Chef 服务器。
 
 ### <a name="create-a-hosted-chef-account"></a>创建托管 Chef 帐户
 
@@ -99,7 +99,7 @@ New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName 
 
 将 `chef-starter\chef-repo\.chef` 下的所有文件复制到 `c:\chef` 目录。
 
-如果 `organization-validator.pem` 保存在 `c:\chef` 中，请将它复制到 `c:\Downloads`。
+如果 `organization-validator.pem` 保存在 `c:\Downloads` 中，请将它复制到 `c:\chef`。
 
 现在目录看起来应当与以下示例类似。
 
@@ -273,7 +273,7 @@ Chef 使用食谱来定义你要在托管客户端上运行的一组命令。 �
 
 ## <a name="deploy-a-virtual-machine-with-knife-azure"></a>使用 Knife Azure 部署虚拟机
 
-部署 Azure 虚拟机，并使用 `Webserver` 命令应用 `knife` 食谱。
+部署 Azure 虚拟机，并使用 `knife` 命令应用 `Webserver` 食谱。
 
 `knife` 命令还会安装 IIS Web 服务和默认网页。
 

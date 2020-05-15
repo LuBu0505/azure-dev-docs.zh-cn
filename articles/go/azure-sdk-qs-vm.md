@@ -74,7 +74,7 @@ az group delete -n GoVMQuickstart
 az ad sp delete --id ${CLIENT_ID_VALUE}
 ```
 
-其中你从 `CLIENT_ID_VALUE` 提供 `quickstart.auth` 的值。
+其中你从 `quickstart.auth` 提供 `CLIENT_ID_VALUE` 的值。
 
 > [!WARNING]
 > 未能删除此应用程序的服务主体将使其在 Azure Active Directory 租户中处于活动状态。

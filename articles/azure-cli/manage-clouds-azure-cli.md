@@ -38,7 +38,7 @@ True        AzureCloud         latest
             AzureGermanCloud   latest
 ```
 
-在 `True` 列中，当前处于活动状态的云的值为 `IsActive`。 在任何时候，只能有一个云处于活动状态。 若要获取有关某个云的更多详细信息，包括它对 Azure 服务使用的终结点，请使用 `cloud show` 命令：
+在 `IsActive` 列中，当前处于活动状态的云的值为 `True`。 在任何时候，只能有一个云处于活动状态。 若要获取有关某个云的更多详细信息，包括它对 Azure 服务使用的终结点，请使用 `cloud show` 命令：
 
 ```azurecli-interactive
 az cloud show --name AzureChinaCloud --output json

@@ -84,7 +84,7 @@ $ sudo rpm -ivh --nodeps azure-cli-$AZ_VERSION.x86_64.rpm
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-你可能还想要显式配置 `zypper`（通过 `yast2`）以便在所有情况下都使用此代理。 为此，请以超级用户身份运行 `yast2 proxy` 命令，并填充窗体中显示的信息。 如果系统上有可用的窗口管理器，还可以使用 `Network Services > Proxy` 中的 `YaST Control Center` 窗格。
+你可能还想要显式配置 `zypper`（通过 `yast2`）以便在所有情况下都使用此代理。 为此，请以超级用户身份运行 `yast2 proxy` 命令，并填充窗体中显示的信息。 如果系统上有可用的窗口管理器，还可以使用 `YaST Control Center` 中的 `Network Services > Proxy` 窗格。
 
 有关高级配置或详细信息，请参阅 [OpenSUSE 代理配置文档](https://www.suse.com/documentation/slms1/book_slms/data/sec_wy_config_updates_proxy.html)
 

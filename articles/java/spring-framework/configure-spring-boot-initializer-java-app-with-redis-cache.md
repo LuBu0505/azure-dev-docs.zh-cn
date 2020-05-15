@@ -205,7 +205,7 @@ ms.locfileid: "82104828"
 
 若要详细了解如何在 Azure 上开始将 Redis 缓存与 Java 配合使用，请参阅[如何将 Azure Redis 缓存与 Java 配合使用][Redis Cache with Java]。
 
-**Spring Framework[Spring Framework]** 。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，**Spring Initializr[Spring Initializr]** 。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序  。
 
 <!-- URL List -->
 

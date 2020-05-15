@@ -19,7 +19,7 @@ ms.locfileid: "80892986"
 
 ## <a name="chef-extension-on-azure"></a>Azure 上的 Chef 扩展
 
-在 [Azure 门户](https://docs.microsoft.com/azure/chef/chef-extension-portal)中使用 [Chef 扩展](https://go.microsoft.com/fwlink/p/?LinkID=525040)预配一个虚拟机，其中 Chef 客户端作为后台服务运行。 预配后，这些虚拟机即可由 Chef 服务器进行管理。
+在 [Azure 门户](https://go.microsoft.com/fwlink/p/?LinkID=525040)中使用 [Chef 扩展](https://docs.microsoft.com/azure/chef/chef-extension-portal)预配一个虚拟机，其中 Chef 客户端作为后台服务运行。 预配后，这些虚拟机即可由 Chef 服务器进行管理。
 
 ## <a name="chef-cloud-shell"></a>Chef Cloud Shell
 

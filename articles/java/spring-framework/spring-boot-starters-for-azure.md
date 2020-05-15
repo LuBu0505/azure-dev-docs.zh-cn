@@ -232,7 +232,7 @@ ms.locfileid: "81670013"
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 **上的**Spring Initializr https://start.spring.io/ 。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
 
 <!-- URL List -->
 

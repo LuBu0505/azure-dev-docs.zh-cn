@@ -221,7 +221,7 @@ public CosmosDBConfig getConfig() {
 
 2\.2.x 版 Spring Data Cosmos DB SDK 支持响应诊断字符串和查询指标。
 
-若要启用查询指标，请在 `populateQueryMetrics` 文件中将 **标志设置为**true`application.properties`。 然后，扩展 `ResponseDiagnosticsProcessor` 接口并实现 `processResponseDiagnostics` 方法来记录诊断信息。 最后，将实现的实例传递给 `CosmosDbConfig.setResponseDiagnosticsProcessor` 方法。 以下代码演示示例实现。
+若要启用查询指标，请在 `application.properties` 文件中将 `populateQueryMetrics` 标志设置为 **true**。 然后，扩展 `ResponseDiagnosticsProcessor` 接口并实现 `processResponseDiagnostics` 方法来记录诊断信息。 最后，将实现的实例传递给 `CosmosDbConfig.setResponseDiagnosticsProcessor` 方法。 以下代码演示示例实现。
 
 ```java
 @Configuration

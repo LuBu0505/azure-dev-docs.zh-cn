@@ -149,7 +149,7 @@ for (String publicIpCreatableKey : publicIpCreatableKeys) {
 
 使用返回的 `CreatedResources<VirtualMachine>` 对象可访问执行 `create()` 方法期间在 Azure 订阅中创建的所有资源，而不仅仅是返回的 `VirtualMachine` 类型。 将 `createdRelatedResources()` 中的返回值强制转换为正确的类型。 
 
-在`Creatable<T>`库概念文章`CreatedResources`中详细了解 [ 和 ](java-sdk-azure-concepts.md) 的用法。
+在[库概念文章](java-sdk-azure-concepts.md)中详细了解 `Creatable<T>` 和 `CreatedResources` 的用法。
 
 ## <a name="delete-the-resource-group"></a>删除资源组 
 

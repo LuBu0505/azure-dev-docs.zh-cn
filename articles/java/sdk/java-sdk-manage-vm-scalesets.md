@@ -15,7 +15,7 @@ ms.locfileid: "82105008"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机规模集
 
-[本示例](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)使用 [Java 管理库](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)创建[虚拟机规模集](https://github.com/Azure/azure-sdk-for-java)。 
+[本示例](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)使用 [Java 管理库](https://github.com/Azure/azure-sdk-for-java)创建[虚拟机规模集](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)。 
 
 ## <a name="run-the-sample"></a>运行示例
 

@@ -36,7 +36,7 @@ npm install --save azure ms-rest-azure azure-arm-compute azure-arm-network azure
 
 Node.js 应用程序需要 Azure 订阅中的读取和创建权限才能运行本指南中的示例代码。 创建一个服务主体，并将应用程序配置为使用该服务主体的凭据运行。 服务主体是与标识关联的非交互式帐户，该帐户仅拥有运行应用所需的特权。
 
-[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 需要在密码参数而非 [ 中提供](/azure/active-directory/active-directory-passwords-policy)安全密码`MY_SECURE_PASSWORD`。
+[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 需要在密码参数而非 `MY_SECURE_PASSWORD` 中提供[安全密码](/azure/active-directory/active-directory-passwords-policy)。
 
 ```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD

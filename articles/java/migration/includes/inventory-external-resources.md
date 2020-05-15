@@ -15,15 +15,15 @@ ms.locfileid: "81671623"
 
 #### <a name="inside-your-application"></a>在应用程序中
 
-检查 *META-INF/context.xml* 文件。 查找 `<Resource>` 元素中的 `<Context>` 元素。
+检查 *META-INF/context.xml* 文件。 查找 `<Context>` 元素中的 `<Resource>` 元素。
 
 #### <a name="on-the-application-servers"></a>在应用程序服务器上
 
 检查 *$CATALINA_BASE/conf/context.xml* 和 *$CATALINA_BASE/conf/server.xml* 文件，以及在 *$CATALINA_BASE/conf/[engine-name]/[host-name]* 目录中发现的 *.xml* 文件。
 
-在 *context.xml* 文件中，JNDI 资源将由顶级 `<Resource>` 元素中的 `<Context>` 元素描述。
+在 *context.xml* 文件中，JNDI 资源将由顶级 `<Context>` 元素中的 `<Resource>` 元素描述。
 
-在 *server.xml* 文件中，JNDI 资源将由 `<Resource>` 元素中的 `<GlobalNamingResources>` 元素描述。
+在 *server.xml* 文件中，JNDI 资源将由 `<GlobalNamingResources>` 元素中的 `<Resource>` 元素描述。
 
 #### <a name="datasources"></a>Datasources
 

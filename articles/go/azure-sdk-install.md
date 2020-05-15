@@ -30,7 +30,7 @@ ms.locfileid: "80319794"
 
 ## <a name="vendor-the-azure-sdk-for-go"></a>引用 (Vendor) Azure SDK for Go
 
-可以通过 [dep](https://github.com/golang/dep) 引用 Azure SDK for Go。 出于稳定原因，我们建议引用它。 若要在自己的项目中使用 `dep`，请将 `github.com/Azure/azure-sdk-for-go` 添加到 `[[constraint]]` 的 `Gopkg.toml` 节。 例如，若要引用版本 `14.0.0`，请添加以下条目：
+可以通过 [dep](https://github.com/golang/dep) 引用 Azure SDK for Go。 出于稳定原因，我们建议引用它。 若要在自己的项目中使用 `dep`，请将 `github.com/Azure/azure-sdk-for-go` 添加到 `Gopkg.toml` 的 `[[constraint]]` 节。 例如，若要引用版本 `14.0.0`，请添加以下条目：
 
 ```toml
 [[constraint]]

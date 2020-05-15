@@ -76,7 +76,7 @@ $ scl enable rh-python36 bash
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-你可能还想要显式配置 `yum` 以便在所有情况下都使用此代理。 请确保以下行显示在 `[main]` 的 `/etc/yum.conf` 部分下：
+你可能还想要显式配置 `yum` 以便在所有情况下都使用此代理。 请确保以下行显示在 `/etc/yum.conf` 的 `[main]` 部分下：
 
 ```yum.conf
 [main]

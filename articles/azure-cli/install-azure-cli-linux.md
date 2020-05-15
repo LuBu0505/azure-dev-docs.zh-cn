@@ -58,7 +58,7 @@ curl -L https://aka.ms/InstallAzureCli | bash
 
 ### <a name="curl-object-moved-error"></a>curl“对象已移动”错误
 
-如果从有关 `curl` 参数的 `-L` 收到错误，或者收到包含“对象已移动”的错误消息，请尝试使用完整 URL 而不是 `aka.ms` 重定向：
+如果从有关 `-L` 参数的 `curl` 收到错误，或者收到包含“对象已移动”的错误消息，请尝试使用完整 URL 而不是 `aka.ms` 重定向：
 
 ```bash
 curl https://azurecliprod.blob.core.windows.net/install | bash

@@ -33,7 +33,7 @@ ms.locfileid: "82861300"
 
 配置 [Azure 服务主体](/azure/azure-resource-manager/resource-group-overview)后，Jenkins 作业和管道可以使用此凭据执行以下操作：
 
-- 在使用 [Azure 存储插件](/azure/storage/common/storage-introduction)的 [Azure 存储](https://plugins.jenkins.io/windows-azure-storage)中，安全存储并存档生成项目。 查看 [Jenkins 存储操作方法](azure-storage-blobs-as-build-artifact-repository.md)了解详细信息。
+- 在使用 [Azure 存储插件](https://plugins.jenkins.io/windows-azure-storage)的 [Azure 存储](/azure/storage/common/storage-introduction)中，安全存储并存档生成项目。 查看 [Jenkins 存储操作方法](azure-storage-blobs-as-build-artifact-repository.md)了解详细信息。
 - 使用 [Azure CLI](deploy-to-azure-app-service-using-azure-cli.md) 管理和配置 Azure 资源。
 
 ## <a name="deploy-your-code-into-azure-services"></a>将代码部署到 Azure 服务

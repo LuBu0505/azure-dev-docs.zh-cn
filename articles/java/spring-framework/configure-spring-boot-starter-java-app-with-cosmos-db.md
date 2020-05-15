@@ -58,7 +58,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
-请执行以下步骤，通过 Azure 支持创建一个新的 Spring Boot 应用程序项目。 也可使用 [azure-spring-boot](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) 存储库中的 [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot) 示例， 然后即可直接跳到[生成并测试应用](#build-and-test-your-app)。
+请执行以下步骤，通过 Azure 支持创建一个新的 Spring Boot 应用程序项目。 也可使用 [azure-spring-boot](https://github.com/microsoft/azure-spring-boot) 存储库中的 [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) 示例， 然后即可直接跳到[生成并测试应用](#build-and-test-your-app)。
 
 1. 浏览到 <https://start.spring.io/>。
 
@@ -84,7 +84,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
     `/users/example/home/wingtiptoysdata/pom.xml`
 
-1. 在文本编辑器中打开 pom.xml 文件，然后将以下内容添加到  *元素中*`<dependencies>`：
+1. 在文本编辑器中打开 pom.xml 文件，然后将以下内容添加到 `<dependencies>` 元素中  ：
 
     ```xml
     <dependency>
@@ -426,7 +426,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-**Spring Framework[Spring Framework]** 。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，**Spring Initializr[Spring Initializr]** 。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序  。
 
 <!-- URL List -->
 

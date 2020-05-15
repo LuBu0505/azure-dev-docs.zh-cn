@@ -40,7 +40,7 @@ ms.locfileid: "81669123"
 
    > [!NOTE]
    >
-   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：**com.contoso.wingtiptoysdemo**。  
+   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：*com.contoso.wingtiptoysdemo*。  
    >
 
 1. 向下滚动到“Azure”部分，并选中“Azure 存储”对应的框。  

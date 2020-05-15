@@ -48,7 +48,7 @@ EXPOSE 8080
 
 每次在 Java EE 源应用中进行提交时，Azure Pipelines 中的持续集成生成管道就会自动执行所有生成任务。 在此示例中，Azure Pipelines 使用 Maven 来生成 Java MicroProfile 项目。
 
-1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” **“生成”。**  >   
+1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” > “生成”。   
    
 1. 选择“新建管道”  。
    
@@ -127,7 +127,7 @@ Azure Pipelines 将 Docker 映像推送到 Azure 容器注册表，并使用它�
 
 生成成功以后，Azure Pipelines 持续发布管道就会自动触发到目标环境（例如 Azure）的部署。 可以为开发、测试、过渡或生产之类的环境创建发布管道。
 
-1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” **“发布”。**  >   
+1. 在 Azure DevOps 项目页的左侧导航栏中选择“管道” > “发布”。   
    
 1. 选择“新建管道”  。
    

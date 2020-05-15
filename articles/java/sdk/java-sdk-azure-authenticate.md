@@ -111,7 +111,7 @@ authURL=https\://login.windows.net/
 graphURL=https\://graph.windows.net/
 ```
 
-- subscription：使用在 Azure CLI 2.0 中运行 *后返回的*id`az account show` 值。
+- subscription：使用在 Azure CLI 2.0 中运行 `az account show` 后返回的 *id* 值。
 - client：使用为运行应用程序而创建的服务主体的输出中的 *appId* 值。 如果应用没有服务主体，请[使用 Azure CLI 2.0 创建一个服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)。
 - key：使用 service principal create CLI 输出中的 *password* 值
 - tenant：使用 service principal create CLI 输出中的 *tenant* 值
