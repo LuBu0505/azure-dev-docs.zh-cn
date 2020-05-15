@@ -2,19 +2,19 @@
 title: Azure 中的 Spring Cloud Function 入门
 description: 了解如何使用 Azure 中的 Spring Cloud Function。
 documentationcenter: java
-author: jdubois
+author: judubois
 manager: brborges
 ms.author: judubois
 ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 10c36b30b1c0f175571c675951f63734495cd291
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.openlocfilehash: e91940e22aba03367493a23d4792db38d36f394f
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153919"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81673033"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure 中的 Spring Cloud Function 入门
 
@@ -71,7 +71,7 @@ ms.locfileid: "83153919"
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
     <functionResourceGroup>my-resource-group</functionResourceGroup>
     <start-class>com.example.HelloFunction</start-class>
-    <wrapper.version>1.0.24.RELEASE</wrapper.version>
+    <wrapper.version>1.0.22.RELEASE</wrapper.version>
 </properties>
 ```
 
@@ -217,7 +217,9 @@ package com.example;
 
 import com.example.model.Greeting;
 import com.example.model.User;
-import com.microsoft.azure.functions.*;
+import com.microsoft.azure.functions.ExecutionContext;
+import com.microsoft.azure.functions.HttpMethod;
+import com.microsoft.azure.functions.HttpRequestMessage;
 import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
@@ -228,16 +230,12 @@ import java.util.Optional;
 public class HelloHandler extends AzureSpringBootRequestHandler<User, Greeting> {
 
     @FunctionName("hello")
-    public HttpResponseMessage execute(
+    public Greeting execute(
             @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<User>> request,
             ExecutionContext context) {
 
         context.getLogger().info("Greeting user name: " + request.getBody().get().getName());
-        return request
-                .createResponseBuilder(HttpStatus.OK)
-                .body(handleRequest(request.getBody().get(), context))
-                .header("Content-Type", "application/json")
-                .build();
+        return handleRequest(request.getBody().get(), context);
     }
 }
 ```
@@ -327,7 +325,7 @@ curl http://localhost:7071/api/hello -d "{\"name\":\"Azure\"}"
 
 ## <a name="deploy-the-function-to-azure-functions"></a>将函数部署到 Azure Functions
 
-现在可以将 Azure 函数部署到生产中了。 请记住，已在 `<functionAppName>`pom.xml`<functionAppRegion>` 中定义的 `<functionResourceGroup>`、*和* 属性将用于配置函数。
+现在可以将 Azure 函数部署到生产中了。 请记住，已在 *pom.xml* 中定义的 `<functionAppName>`、`<functionAppRegion>` 和 `<functionResourceGroup>` 属性将用于配置函数。
 
 > [!NOTE]
 > Maven 插件需要在 Azure 中进行身份验证，如果安装了 Azure CLI，请使用 `az login`，然后继续。
