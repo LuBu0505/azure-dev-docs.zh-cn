@@ -1,15 +1,31 @@
 - name: 面向 Python 开发人员的 Azure
   href: index.yml
-- name: 概述
+- name: 使用 Azure 进行云开发
   items:
-    - name: 关于 Python SDK
+    - name: 什么是 Azure？
+      href: cloud-development-overview.md
+    - name: 预配、访问和管理资源
+      href: cloud-development-provisioning.md
+    - name: Azure 开发流程
+      href: cloud-development-flow.md
+- name: 设置适用于 Azure 的开发环境
+  href: configure-local-development-environment.md
+- name: Azure SDK for Python 入门
+  items:
+    - name: 概述
       href: azure-sdk-overview.md
-    - name: 开发人员工具
-      href: azure-tools.md
-- name: 快速入门
+    - name: 安装 SDK 库
+      href: azure-sdk-install.md
+    - name: 示例：创建资源组
+      href: azure-sdk-example-resource-group.md
+    - name: 示例：使用 Azure 存储
+      href: azure-sdk-example-storage.md
+    - name: 示例：使用代码预配 Web 应用
+      href: azure-sdk-example-web-app.md
+    - name: 示例：预配虚拟机
+      href: azure-sdk-example-virtual-machines.md
+- name: Azure 服务快速入门
   items:
-    - name: Python SDK
-      href: azure-sdk-get-started.yml
     - name: 应用托管
       href: quickstarts-app-hosting.md
     - name: 数据解决方案
@@ -22,9 +38,9 @@
       href: quickstarts-messaging.md
     - name: 安全性和集成
       href: quickstarts-security-integration.md
-- name: 教程
+- name: 特定于方案的教程
   items:
-    - name: 使用 VS Code 部署到应用服务
+    - name: 使用 VS Code 部署 Web 应用
       items:
         - name: 1 简介和先决条件
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -52,7 +68,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5 清理资源
           href: tutorial-deploy-containers-05.md
-    - name: 使用 VS Code 部署 Azure Functions
+    - name: 使用 VS Code 部署无服务器 Azure Functions
       items:
         - name: 1 简介和先决条件
           href: tutorial-vs-code-serverless-python-01.md
@@ -70,13 +86,15 @@
           href: tutorial-vs-code-serverless-python-07.md
         - name: 8 清理资源
           href: tutorial-vs-code-serverless-python-08.md
-- name: 操作方法指南
+- name: 操作指南
   items:
-    - name: 安装 SDK
-      href: azure-sdk-install.md
-    - name: Authentication
+    - name: 使应用向 Azure 进行身份验证
       href: azure-sdk-authenticate.md
-    - name: 操作配置
+    - name: 管理服务主体
+      href: how-to-manage-service-principals.md
+    - name: 向安全主体分配角色权限
+      href: how-to-assign-role-permissions.md
+    - name: 配置 REST API 参数
       href: azure-sdk-operation-config.md
     - name: 多云开发
       href: azure-sdk-multi-cloud.md
