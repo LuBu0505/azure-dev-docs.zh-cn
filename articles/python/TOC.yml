@@ -129,4 +129,6 @@
     - name: 所有示例
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
 - name: 参考
-  href: /python/api/?view=azure-python
+  items:
+    - name: Azure SDK
+      href: sdk.md
