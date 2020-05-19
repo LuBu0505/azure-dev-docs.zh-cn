@@ -5,18 +5,20 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 2/28/2020
-ms.openlocfilehash: 279051f626c09e63637fdf99b323857f2751b813
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8f9dfe5168246dff64192ec802651a7fba022fc6
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673313"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988828"
 ---
 # <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>将 WebSphere 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
 
 本指南介绍在需要迁移现有 WebSphere 应用程序以使之在 Azure Kubernetes 服务容器中的 WildFly 上运行时应注意的事项。
 
 ## <a name="pre-migration"></a>预迁移
+
+若要确保迁移成功，请在开始之前完成以下各节中所述的评估和清点步骤。
 
 [!INCLUDE [inventory-server-capacity-aks](includes/inventory-server-capacity-aks.md)]
 
@@ -26,15 +28,7 @@ ms.locfileid: "81673313"
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-### <a name="validate-that-the-supported-java-version-works-correctly"></a>验证支持的 Java 版本是否正常运行
-
-使用 Azure Kubernetes 服务上的 WildFly 需要 Java 的特定版本。 因此，需验证应用程序能否使用该受支持的版本正确运行。 如果当前服务器使用受支持的 JDK（如 Oracle JDK 或 IBM OpenJ9），则此验证尤其重要。
-
-若要获取当前的版本，请登录到生产服务器并运行以下命令：
-
-```bash
-java -version
-```
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-wildfly](includes/validate-that-the-supported-java-version-works-correctly-wildfly.md)]
 
 ### <a name="inventory-jndi-resources"></a>清点 JNDI 资源
 
@@ -58,17 +52,9 @@ java -version
 
 使用应用程序服务器上的文件系统需要重新配置，在极少数情况下需要体系结构更改。 文件系统可供 WebSphere 模块或应用程序代码使用。 可以标识以下部分所述的部分或全部方案。
 
-#### <a name="read-only-static-content"></a>只读静态内容
+[!INCLUDE [static-content](includes/static-content.md)]
 
-如果应用程序当前提供静态内容，则需为其提供一个备用位置。 可能需要考虑将静态内容移到 Azure Blob 存储，并添加 Azure CDN，方便用户在全球范围内快速下载。 有关详细信息，请参阅 [Azure 存储中的静态网站托管](/azure/storage/blobs/storage-blob-static-website)和[快速入门：将 Azure 存储帐户与 Azure CDN 集成](/azure/cdn/cdn-create-a-storage-account-with-cdn)。
-
-#### <a name="dynamically-published-static-content"></a>动态发布的静态内容
-
-如果应用程序允许那些通过应用程序上传/生成但在创建后不可变的静态内容，则可将上述 Azure Blob 存储和 Azure CDN 与 Azure 函数配合使用，以便处理上传和 CDN 刷新操作。 我们提供了一个示例实现，用于[通过 Azure Functions 进行静态内容的上传和 CDN 预加载操作](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn)。
-
-#### <a name="dynamic-or-internal-content"></a>动态或内部内容
-
-对于经常由应用程序写入和读取的文件（如临时数据文件），或者仅对应用程序可见的静态文件，可以将 Azure 存储共享作为持久卷进行装载。 有关详细信息，请参阅[在 Azure Kubernetes 服务中动态创建永久性卷并将其用于 Azure 文件存储](/azure/aks/azure-files-dynamic-pv)。
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 [!INCLUDE [determine-whether-your-application-relies-on-scheduled-jobs](includes/determine-whether-your-application-relies-on-scheduled-jobs.md)]
 

@@ -7,25 +7,20 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 80ccbbc84e4d23ff9083777f38615eb5d676e484
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 057f261de707adac2ab3ef9ac52834a9848362b6
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82766156"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369990"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>将 Spring Data R2DBC 用于 Azure SQL 数据库
 
 本主题演示了如何通过使用 [r2dbc-mssql GitHub 存储库](https://github.com/r2dbc/r2dbc-mssql)中适用于 Microsoft SQL Server 的 R2DBC 实现创建一个示例应用程序，该应用程序使用 [Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) 在 [Azure SQL 数据库](https://docs.microsoft.com/azure/sql-database/)中存储和检索信息。
 
-[R2DBC](https://r2dbc.io/) 将响应式 API 引入传统的关系数据库。 可以将它与 Spring WebFlux 配合使用，创建使用非阻止式 API 的完全响应式 Spring Boot 应用程序。 它提供的可伸缩性优于经典的“一个连接一个线程”方法。
+[R2DBC](https://r2dbc.io/) 将反应式 API 引入传统的关系数据库。 可以将它与 Spring WebFlux 配合使用，创建使用非阻止式 API 的完全响应式 Spring Boot 应用程序。 它提供的可伸缩性优于经典的“一个连接一个线程”方法。
 
-## <a name="prerequisites"></a>先决条件
-
-- 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)。
-- [Azure Cloud Shell](/azure/cloud-shell/quickstart) 或 [Azure CLI](/cli/azure/install-azure-cli)。 建议使用 Azure Cloud Shell，这样你便可自动登录且有权访问所需的所有工具。
-- [Java 8](https://www.azul.com/downloads/zulu/)（Azure Cloud Shell 中已随附）。
-- 用来测试功能的 [cURL](https://curl.haxx.se) 或类似的 HTTP 实用工具。
+[!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
 ## <a name="prepare-the-working-environment"></a>准备工作环境
 
@@ -35,7 +30,7 @@ ms.locfileid: "82766156"
 AZ_RESOURCE_GROUP=r2dbc-workshop
 AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
 AZ_LOCATION=<YOUR_AZURE_REGION>
-AZ_SQL_SERVER_USERNAME=r2dbc
+AZ_SQL_SERVER_USERNAME=spring
 AZ_SQL_SERVER_PASSWORD=<YOUR_AZURE_SQL_PASSWORD>
 AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
 ```
@@ -99,35 +94,29 @@ az sql server firewall-rule create \
 
 ### <a name="configure-a-azure-sql-database"></a>配置 Azure SQL 数据库
 
-你在前面创建的 Azure SQL 数据库服务器为空。 它没有任何可以与 Spring Boot 应用程序配合使用的数据库。 创建一个名为 `r2dbc`的新数据库：
+你在前面创建的 Azure SQL 数据库服务器为空。 它没有任何可以与 Spring Boot 应用程序配合使用的数据库。 创建一个名为 `demo`的新数据库：
 
 ```azurecli
 az sql db create \
     --resource-group $AZ_RESOURCE_GROUP \
-    --name r2dbc \
+    --name demo \
     --server $AZ_DATABASE_NAME \
     | jq
 ```
 
-## <a name="create-a-reactive-spring-boot-application"></a>创建响应式 Spring Boot 应用程序
-
-若要创建一个响应式 Spring Boot 应用程序，可使用 [Spring Initializr](https://start.spring.io/)。 要创建的应用程序使用：
-
-- Spring Boot 2.3.0 M4。
-- Java 8（但它也可与 Java 11 等新版本一起使用）。
-- 这些依赖项：Spring Reactive Web（也称为 Spring WebFlux）和 Spring Data R2DBC。
+[!INCLUDE [spring-data-create-reactive.md](includes/spring-data-create-reactive.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
 
 通过在命令行中输入以下命令，生成此应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-r2dbc-workshop -d bootVersion=2.3.0.M4 -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RC1 -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>添加响应式 Azure SQL 数据库驱动程序实现
 
-打开所生成项目的 pom.xml  文件，以添加来自 [r2dbc-mssql GitHub 存储库](https://github.com/r2dbc/r2dbc-mssql)的响应式 Azure SQL 数据库驱动程序。
+打开所生成项目的 pom.xml 文件，以添加来自 [r2dbc-mssql GitHub 存储库](https://github.com/r2dbc/r2dbc-mssql)的响应式 Azure SQL 数据库驱动程序。
 
 在 `spring-boot-starter-webflux` 依赖项后，添加以下代码片段：
 
@@ -141,13 +130,13 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>将 Spring Boot 配置为使用 Azure SQL 数据库
 
-打开 src/main/resources/application.properties  文件，添加以下内容：
+打开 src/main/resources/application.properties 文件，添加以下内容：
 
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
 
-spring.r2dbc.url=r2dbc:pool:mssql://$AZ_DATABASE_NAME.database.windows.net:1433/r2dbc
-spring.r2dbc.username=r2dbc@$AZ_DATABASE_NAME
+spring.r2dbc.url=r2dbc:pool:mssql://$AZ_DATABASE_NAME.database.windows.net:1433/demo
+spring.r2dbc.username=spring@$AZ_DATABASE_NAME
 spring.r2dbc.password=$AZ_SQL_SERVER_PASSWORD
 ```
 
@@ -169,27 +158,14 @@ spring.r2dbc.password=$AZ_SQL_SERVER_PASSWORD
 
 ### <a name="create-the-database-schema"></a>创建数据库架构
 
-在主 `DemoApplication` 类中配置新的 Spring Bean，它将创建数据库架构：
-
-```java
-    @Bean
-    public ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
-        ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
-        initializer.setConnectionFactory(connectionFactory);
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator(new ClassPathResource("schema.sql"));
-        initializer.setDatabasePopulator(populator);
-        return initializer;
-    }
-```
-
-此 Spring Bean 使用名为 schema.sql  的文件，因此请在 src/main/resources  文件夹中创建该文件：
+[!INCLUDE [spring-data-r2dbc-create-schema.md](includes/spring-data-r2dbc-create-schema.md)]
 
 ```sql
 DROP TABLE IF EXISTS todo;
 CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
 ```
 
-使用以下命令停止应用程序并再次运行它。 现在，该应用程序将使用之前创建的 `r2dbc` 数据库，并在其中创建一个 `todo` 表。
+停止正在运行的应用程序并重启它。 现在，该应用程序将使用之前创建的 `demo` 数据库，并在其中创建一个 `todo` 表。
 
 ```bash
 ./mvnw spring-boot:run
@@ -203,151 +179,7 @@ CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), detail
 
 接下来添加 Java 代码，以便使用 R2DBC 在 Azure SQL 数据库服务器中存储和检索数据。
 
-在 `DemoApplication` 类之后创建一个新的 `Todo` Java 类：
-
-```java
-package com.example.demo;
-
-import org.springframework.data.annotation.Id;
-
-public class Todo {
-
-    public Todo() {
-    }
-
-    public Todo(String description, String details, boolean done) {
-        this.description = description;
-        this.details = details;
-        this.done = done;
-    }
-
-    @Id
-    private Long id;
-
-    private String description;
-
-    private String details;
-
-    private boolean done;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-}
-```
-
-此类是映射在之前创建的 `todo` 表上的域模型。
-
-若要管理该类，你需要一个存储库。 在同一包中定义一个新的 `TodoRepository` 接口：
-
-```java
-package com.example.demo;
-
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
-
-public interface TodoRepository extends ReactiveCrudRepository<Todo, Long> {
-}
-```
-
-此存储库是 Spring Data R2DBC 管理的响应式存储库。
-
-创建可存储和检索数据的控制器，完成该应用程序。 在同一包中实现 `TodoController` 类，并添加以下代码：
-
-```java
-package com.example.demo;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-@RestController
-@RequestMapping("/")
-public class TodoController {
-
-    private final TodoRepository todoRepository;
-
-    public TodoController(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
-
-    @PostMapping("/")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Todo> createTodo(@RequestBody Todo todo) {
-        return todoRepository.save(todo);
-    }
-
-    @GetMapping("/")
-    public Flux<Todo> getTodos() {
-        return todoRepository.findAll();
-    }
-}
-```
-
-最后，暂停应用程序并再次启动它：
-
-```bash
-./mvnw spring-boot:run
-```
-
-## <a name="test-the-application"></a>测试应用程序
-
-若要测试应用程序，可使用 cURL。
-
-首先，在数据库中创建一个新的 todo 项：
-
-```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
-```
-
-此命令应返回创建的项：
-
-```json
-{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}
-```
-
-接下来，使用新的 cURL 请求检索数据：
-
-```bash
-curl http://127.0.0.1:8080
-```
-
-此命令会返回“todo”项列表，其中包括已创建的项：
-
-```json
-[{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}]
-```
+[!INCLUDE [spring-data-r2dbc-create-application.md](includes/spring-data-r2dbc-create-application.md)]
 
 下面是这些 cURL 请求的屏幕截图：
 
@@ -355,25 +187,10 @@ curl http://127.0.0.1:8080
 
 祝贺你！ 你已创建了一个完全响应式 Spring Boot 应用程序，该应用程序使用 R2DBC 在 Azure SQL 数据库中存储和检索数据。
 
-## <a name="clean-up-resources"></a>清理资源
-
-若要清理本快速入门中使用的所有资源，请删除该资源组：
-
-```azurecli
-az group delete \
-    --name $AZ_RESOURCE_GROUP \
-    --yes
-```
-
-## <a name="next-steps"></a>后续步骤
-
-若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
-
-> [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+[!INCLUDE [spring-data-conclusion.md](includes/spring-data-conclusion.md)]
 
 ### <a name="additional-resources"></a>其他资源
 
-有关 Spring Data R2DBC 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/r2dbc/docs/1.0.x/reference/html/#reference)。
+有关 Spring Data R2DBC 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/r2dbc/docs/current/reference/html/#reference)。
 
 若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](/azure/developer/java/) 和[使用 Azure DevOps 和 Java](/azure/devops/)。

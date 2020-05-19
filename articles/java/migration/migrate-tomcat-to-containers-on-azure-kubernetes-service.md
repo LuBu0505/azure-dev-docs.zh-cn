@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1d7348530a163981f5c0a5f6cd6af26d01c55848
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8a6245f496b3a1371c43f764081f50b7b3f13dbd
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671593"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988761"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器
 
@@ -18,16 +18,16 @@ ms.locfileid: "81671593"
 
 ## <a name="pre-migration"></a>预迁移
 
+若要确保迁移成功，请在开始之前完成以下各节中所述的评估和清点步骤。
+
 [!INCLUDE [inventory-external-resources](includes/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- AKS-specific addendum to inventory-persistence-usage -->
-#### <a name="dynamic-or-internal-content"></a>动态或内部内容
-
-对于经常由应用程序写入和读取的文件（如临时数据文件），或者仅对应用程序可见的静态文件，可以将 Azure 存储共享作为持久卷进行装载。 有关详细信息，请参阅[在 Azure Kubernetes 服务中动态创建永久性卷并将其用于 Azure 文件存储](/azure/aks/azure-files-dynamic-pv)。
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 ### <a name="identify-session-persistence-mechanism"></a>识别会话持久性机制
 

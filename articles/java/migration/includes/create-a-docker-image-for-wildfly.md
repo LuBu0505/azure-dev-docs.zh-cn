@@ -2,19 +2,19 @@
 author: mriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 6d6f0f701e9507f5dee065c14b48b30be423e100
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 08389c5802d2f6fef5360ac09adb11bb6494beb6
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672843"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988846"
 ---
 ### <a name="create-a-docker-image-for-wildfly"></a>创建 WildFly 的 Docker 映像
 
 若要创建 Dockerfile，需要符合以下先决条件：
 
-* 支持的 JDK
-* 安装 WildFly
+* 受支持的 JDK。
+* 安装 WildFly。
 * JVM 运行时选项。
 * 可以通过某种方法传入环境变量（如果适用）。
 

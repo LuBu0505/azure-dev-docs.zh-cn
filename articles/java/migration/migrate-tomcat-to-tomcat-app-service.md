@@ -5,31 +5,31 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: c6586f0ba2e651445e95fa3606daa35ee566df87
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 6d2d18a6dbf87a97b806876a534a103dbbf88420
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673473"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988779"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
 
 本指南介绍在需要迁移现有 Tomcat 应用程序以使之在使用 Tomcat 9.0 的 Azure 应用服务上运行时应注意的事项。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="pre-migration"></a>预迁移
+
+若要确保迁移成功，请在开始之前完成以下各节中所述的评估和清点步骤。
 
 如果无法满足任何预迁移要求，请参阅以下伴随迁移指南：
 
 * [将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
 * 将 Tomcat 应用程序迁移到 Azure 虚拟机（按指南进行计划）
 
-## <a name="pre-migration"></a>预迁移
-
 ### <a name="switch-to-a-supported-platform"></a>切换到受支持的平台
 
 应用服务在特定版本的 Java 上提供特定版本的 Tomcat。 若要确保兼容性，请在继续执行其余步骤之前，将应用程序迁移到当前环境中支持的 Tomcat 和 Java 版本之一。 务必全面测试生成的配置。 请在此类测试中使用最新且稳定的 Linux 发布版。
 
-[!INCLUDE [note-obtain-your-current-java-version](includes/note-obtain-your-current-java-version.md)]
+[!INCLUDE [note-obtain-your-current-java-version-app-service](includes/note-obtain-your-current-java-version-app-service.md)]
 
 若要获取当前的 Tomcat 版本，请登录到生产服务器并运行以下命令：
 
@@ -43,9 +43,11 @@ ${CATALINA_HOME}/bin/version.sh
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
+### <a name="inventory-certificates"></a>清点证书
+
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
 #### <a name="dynamic-or-internal-content"></a>动态或内部内容
@@ -72,13 +74,13 @@ Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/co
 
 #### <a name="determine-whether-your-application-contains-os-specific-code"></a>确定应用程序是否包含特定于 OS 的代码
 
-如果应用程序包含的代码有主机 OS 的依赖项，则需重构该代码，删除那些依赖项。 例如，可能需要将文件系统路径中使用的 `/` 或 `\` 替换为 [`File.Separator`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#separator) 或 [`Paths.get`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Paths.html#get-java.lang.String-java.lang.String...-)。
+[!INCLUDE [determine-whether-your-application-contains-os-specific-code-no-title](includes/determine-whether-your-application-contains-os-specific-code-no-title.md)]
 
 #### <a name="determine-whether-tomcat-clustering-is-used"></a>确定是否使用了 Tomcat 聚类分析
 
 Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)。 可以改为通过 Azure 应用服务来配置和管理缩放和负载均衡，无需使用特定于 Tomcat 的功能。 可以将会话状态持久保存到备用位置，使之可以跨副本使用。 有关详细信息，请参阅[识别会话持久性机制](#identify-session-persistence-mechanism)。
 
-若要确定应用程序是否使用聚类分析，请在 `<Cluster>`server.xml`<Host>` 文件中查找 `<Engine>` 或 *元素内的* 元素。
+若要确定应用程序是否使用聚类分析，请在 *server.xml* 文件中查找 `<Host>` 或 `<Engine>` 元素内的 `<Cluster>` 元素。
 
 #### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>确定在生产服务器上运行的所有外部进程/守护程序
 
@@ -88,27 +90,27 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 应用服务仅支持单个 HTTP 连接器。 如果应用程序需要其他连接器（如 AJP 连接器），请不要使用应用服务。
 
-若要确定应用程序使用的 HTTP 连接器，请在 Tomcat 配置中查找 `<Connector>`server.xml*文件中的* 元素。
+若要确定应用程序使用的 HTTP 连接器，请在 Tomcat 配置中查找 *server.xml* 文件中的 `<Connector>` 元素。
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>确定是否使用了 MemoryRealm
 
-[MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) 需要一个持久的 XML 文件。 在 Azure 应用服务上，需要将此文件上传到 */home* 目录或其子目录，或上传到装载的存储。 必须相应地修改 `pathName` 参数。
+[MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) 需要一个持久的 XML 文件。 在 Azure 应用服务上，需要将此文件上传到 /home 目录或其子目录之一，或上传到装载的存储。 然后需要相应地修改 `pathName` 参数。
 
-若要确定当前是否在使用 `MemoryRealm`，请检查 *server.xml* 和 *context.xml* 文件，并搜索已在其中将 `<Realm>` 属性设置为 `className` 的 `org.apache.catalina.realm.MemoryRealm` 元素。
+若要确定当前是否在使用 `MemoryRealm`，请检查 *server.xml* 和 *context.xml* 文件，并搜索已在其中将 `className` 属性设置为 `org.apache.catalina.realm.MemoryRealm` 的 `<Realm>` 元素。
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>确定是否使用了 SSL 会话跟踪
 
-应用服务在 Tomcat 运行时外部执行会话卸载。 因此，不能使用 [SSL 会话跟踪](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL)。 请改用另一会话跟踪模式（`COOKIE` 或 `URL`）。 如果需要 SSL 会话跟踪，请不要使用应用服务。
+应用服务在 Tomcat 运行时外部执行会话卸载，因此无法使用 [SSL 会话跟踪](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL)。 请改用另一会话跟踪模式（`COOKIE` 或 `URL`）。 如果需要 SSL 会话跟踪，请不要使用应用服务。
 
 #### <a name="determine-whether-accesslogvalve-is-used"></a>确定是否使用了 AccessLogValve
 
-如果使用 [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html)，则应将 `directory` 参数设置为 `/home/LogFiles` 或其子目录。
+如果使用 [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html)，则应将 `directory` 参数设置为 `/home/LogFiles` 或其子目录之一。
 
 ## <a name="migration"></a>迁移
 
 ### <a name="parameterize-the-configuration"></a>将配置参数化
 
-在预迁移中，你可能已在 *server.xml* 和 *context.xml* 文件中标识了机密和外部依赖项（如数据源）。 对于这样标识的每个项，请将任何用户名、密码、连接字符串或 URL 替换为环境变量。
+在预迁移步骤中，你可能已在 server.xml 和 context.xml 文件中标识了一些机密和外部依赖项（如数据源） 。 对于标识的每个项，请将任何用户名、密码、连接字符串或 URL 替换为环境变量。
 
 例如，假设 *context.xml* 文件包含以下元素：
 
@@ -180,7 +182,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>迁移数据源、库和 JNDI 资源
 
-有关数据源配置步骤，请参阅[为 Azure 应用服务配置 Linux Java 应用](/azure/app-service/containers/configure-language-java#data-sources)中的[数据源](/azure/app-service/containers/configure-language-java)部分。
+有关数据源配置步骤，请参阅[为 Azure 应用服务配置 Linux Java 应用](/azure/app-service/containers/configure-language-java)中的[数据源](/azure/app-service/containers/configure-language-java#data-sources)部分。
 
 [!INCLUDE[Tomcat datasource additional instructions](includes/tomcat-datasource-additional-instructions.md)]
 
@@ -211,10 +213,10 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 * 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/containers/how-to-serve-content-from-azure-storage)。
 
-* 如果 */home* 目录中的配置包含连接字符串、SSL 密钥和其他机密信息，请考虑结合使用 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 和/或[参数注入与应用程序设置](/azure/app-service/configure-common#configure-app-settings)（如果可能）。
+* 如果 /home 目录中的配置包含连接字符串、SSL 密钥和其他机密信息，请考虑结合使用 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 和/或[参数注入与应用程序设置](/azure/app-service/configure-common#configure-app-settings)（如果可能）。
 
 * 请考虑[使用部署槽位](/azure/app-service/deploy-staging-slots)实现可靠的部署，不需停机。
 
-* 设计和实施 DevOps 策略。 若要在提高开发速度的同时保持可靠性，请考虑[通过 Azure Pipelines 自动进行部署和测试](/azure/devops/pipelines/ecosystems/java-webapp)。 如果使用部署槽位，则可[自动部署到槽位](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)并进行后续的槽位交换。
+* 设计和实施 DevOps 策略。 若要在提高开发速度的同时保持可靠性，请考虑[通过 Azure Pipelines 自动进行部署和测试](/azure/devops/pipelines/ecosystems/java-webapp)。 如果使用部署槽位，则可[自动部署到槽位](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)，然后进行槽位交换。
 
 * 设计和实施业务连续性和灾难恢复策略。 对于关键应用程序，请考虑[多区域部署体系结构](/azure/architecture/reference-architectures/app-service-web-app/multi-region)。

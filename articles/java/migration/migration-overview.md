@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: e6215502b54bedf62f40a024f9e7b3acc01cdc1f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670603"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988700"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -80,7 +80,7 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 |   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| Spring Boot/JAR 应用程序                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Boot/JAR 应用程序                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/微服务                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
 | Web 应用程序                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
 | Java EE 应用程序                                              |        |        |        |&#x2714;|&#x2714;|
@@ -88,6 +88,8 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 | 本地文件系统上的长期持久性                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | 应用程序服务器级聚类分析                               |        |        |        |&#x2714;|&#x2714;|
 | 批处理作业/计划的作业                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
+| VNet 集成/混合连接                              |预览 |预览 |        |&#x2714;|&#x2714;|
+| Azure 区域可用性                | [详细信息][10] | [详细信息][10] | [详细信息][11] |[详细信息][12]|[详细信息][13]|
 
 ### <a name="ongoing-responsibility-grid"></a>持续责任网格
 
@@ -98,14 +100,14 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 > [!NOTE]
 > 这并不是一个详尽的责任列表。
 
-|   | 应用服务 | Azure Spring Cloud | AKS | 虚拟机 |
+|                                                                       | 应用服务 | Azure Spring Cloud | AKS | 虚拟机 |
 |---|---|---|---|---|
 | 更新库<br>（包括漏洞修正）                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | 更新应用程序服务器<br>（包括漏洞修正）    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
 | 更新 Java 运行时<br>（包括漏洞修正）          | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
-| 触发 Kubernetes 更新<br>（由 Azure 通过手动触发器执行） | 空值         | 空值         | &#x1F449;   | 空值       |
-| 协调非后向兼容的 Kubernetes API 变更                  | 空值         | 空值         | &#x1F449;   | 空值       |
-| 更新容器基础映像<br>（包括漏洞修正）      | 空值         | 空值         | &#x1F449;   | 空值       |
+| 触发 Kubernetes 更新<br>（由 Azure 通过手动触发器执行） | 空值         | ![Azure][1] | &#x1F449;   | 空值       |
+| 协调非后向兼容的 Kubernetes API 变更                  | 空值         | ![Azure][1] | &#x1F449;   | 空值       |
+| 更新容器基础映像<br>（包括漏洞修正）      | 空值         | ![Azure][1] | &#x1F449;   | 空值       |
 | 更新操作系统<br>（包括漏洞修正）      | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | 检测和重启失败的实例                                   | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | 针对更新实施清空和滚动重启                       | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
@@ -138,8 +140,8 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 |目标&nbsp;→<br><br>应用程序&nbsp;类型&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR 应用程序 | [指南][5] | 指南<br>已计划 | 指南<br>已计划 | 指南<br>已计划 | 指南<br>已计划 |
-| Spring Cloud/<br>微服务   | 空值           | 空值                 | 指南<br>已计划 | 指南<br>已计划 | 指南<br>已计划 |
+| Spring Boot/<br>JAR 应用程序 | [指南][5] | 指南<br>已计划 | 指南<br>已计划 | [指南][14]      | 指南<br>已计划 |
+| Spring Cloud/<br>微服务   | 空值           | 空值                 | [指南][15]      | 指南<br>已计划 | 指南<br>已计划 |
 | Web 应用程序<br>Web 应用程序     | 空值           | [指南][2]       | 空值                 | [指南][3]       | 指南<br>已计划 |
 
 **Java EE 应用程序**
@@ -158,8 +160,14 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
-[5]: migrate-java-se-to-java-se-app-service.md
+[5]: migrate-spring-boot-to-app-service.md
 [6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
 [7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
 [8]: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
 [9]: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
+[10]: https://azure.microsoft.com/global-infrastructure/services/?products=app-service-linux
+[11]: https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud
+[12]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
+[13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
+[14]: migrate-spring-boot-to-azure-kubernetes-service.md
+[15]: migrate-spring-cloud-to-azure-spring-cloud.md
