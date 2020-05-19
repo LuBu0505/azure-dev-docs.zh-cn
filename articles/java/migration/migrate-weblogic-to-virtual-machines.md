@@ -5,18 +5,20 @@ author: edburns
 ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 10edb96e4e0781945da85d5a872b14178db3122f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b9d9a4ea8ef81af5c67b91281e892b4626f42f62
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673513"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988895"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>将 WebLogic 应用程序迁移到 Azure 虚拟机
 
 本指南介绍在需要迁移现有 WebLogic 应用程序以使之在 Azure 虚拟机上运行时应注意的事项。
 
 ## <a name="pre-migration"></a>预迁移
+
+若要确保迁移成功，请在开始之前完成以下各节中所述的评估和清点步骤。
 
 ### <a name="define-what-you-mean-by-migration-complete"></a>定义“迁移完成”的含义
 
@@ -40,11 +42,11 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-[!INCLUDE [validate-that-the-supported-java-version-works-correctly](includes/validate-that-the-supported-java-version-works-correctly.md)]
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-weblogic](includes/validate-that-the-supported-java-version-works-correctly-weblogic.md)]
 
 [!INCLUDE [inventory-jndi-resources](includes/inventory-jndi-resources.md)]
 
-[!INCLUDE [domain-configuration](includes/domain-configuration.md)]
+[!INCLUDE [inspect-your-domain-configuration](includes/inspect-your-domain-configuration.md)]
 
 [!INCLUDE [determine-whether-session-replication-is-used](includes/determine-whether-session-replication-is-used.md)]
 
@@ -74,7 +76,11 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 
 [!INCLUDE [determine-whether-wlst-is-used](includes/determine-whether-wlst-is-used.md)]
 
-[!INCLUDE [validate-whether-and-how-the-file-system-is-used](includes/validate-whether-and-how-the-file-system-is-used.md)]
+### <a name="determine-whether-and-how-the-file-system-is-used"></a>确定是否使用以及如何使用文件系统
+
+在持久性、启动和关闭方面，VM 文件系统与本地文件系统的操作方式相同。 尽管如此，仍然必须了解文件系统需求，确保 VM 有足够的存储大小和性能。
+
+[!INCLUDE [static-content](includes/static-content.md)]
 
 [!INCLUDE [determine-the-network-topology](includes/determine-the-network-topology.md)]
 
