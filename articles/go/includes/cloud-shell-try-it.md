@@ -16,4 +16,4 @@ Azure Cloud Shell 是在 Azure 上运行的交互式 shell。 其中已预装并
 |-----------------------------------------------|---|
 | 单击代码块右上角的“试用”。  | ![本文中的 Cloud Shell](../media/cloud-shell-try-it/cli-try-it.png) |
 | 在浏览器中打开 Cloud Shell。 | [![https://shell.azure.com/bash](../media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com/bash) |
-| 单击 [Azure 门户](https://portal.azure.com)右上角菜单上的“Cloud Shell”  按钮。 | ![门户中的 Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png) |
+| 单击 [Azure 门户](https://portal.azure.com)右上角菜单上的“Cloud Shell”按钮。 | ![门户中的 Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png) |

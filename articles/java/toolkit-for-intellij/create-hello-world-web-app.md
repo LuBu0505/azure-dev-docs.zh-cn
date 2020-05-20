@@ -44,7 +44,7 @@ ms.locfileid: "81672363"
 
    ![“IntelliJ Azure 登录”命令][I01]
 
-3. 在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](sign-in-instructions.md)）。   
+3. 在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](sign-in-instructions.md)）。  
 
    ![“Azure 登录”窗口，其中已选择“设备登录”][I02]
 

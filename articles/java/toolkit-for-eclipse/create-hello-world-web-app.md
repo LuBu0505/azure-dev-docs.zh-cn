@@ -43,7 +43,7 @@ ms.locfileid: "81671013"
 1. 若要登录到 Azure 帐户，请依次单击“工具”、“Azure”、“登录”。   
    ![用于 Azure 登录的 Eclipse 菜单][I01]
 
-1. 在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](sign-in-instructions.md)）。   
+1. 在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](sign-in-instructions.md)）。  
 
    ![“Azure 登录”窗口，其中已选择“设备登录”][I02]
 

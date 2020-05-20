@@ -130,7 +130,7 @@ ms.locfileid: "82104828"
 
    `/users/example/home/myazuredemo/src/main/java/com/contoso/myazuredemo/controller`
 
-1. 在 controller  文件夹中创建一个名为 HelloController.java  的新文件。 在文本编辑器中打开该文件，然后向其添加以下代码：
+1. 在 controller 文件夹中创建一个名为 HelloController.java 的新文件。 在文本编辑器中打开该文件，然后向其添加以下代码：
 
    ```java
    package com.contoso.myazuredemo;
@@ -205,7 +205,7 @@ ms.locfileid: "82104828"
 
 若要详细了解如何在 Azure 上开始将 Redis 缓存与 Java 配合使用，请参阅[如何将 Azure Redis 缓存与 Java 配合使用][Redis Cache with Java]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序  。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 

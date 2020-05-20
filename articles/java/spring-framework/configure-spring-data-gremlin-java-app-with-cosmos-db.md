@@ -92,7 +92,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定想要使用 Java 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，指定 **Spring Boot** 版本（2.0 或以上），然后单击“生成项目”。    
+1. 指定想要使用 Java 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，指定 **Spring Boot** 版本（2.0 或以上），然后单击“生成项目”。   
 
    ![Spring Initializr 的基本选项][SI01]
 
@@ -160,7 +160,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    |---|---|
    | `endpoint` | 指定数据库的 Gremlin URI，此 URI 派生自前面在本教程中创建 Azure Cosmos DB 时指定的唯一“ID”。  |
    | `port` | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443**。 |
-   | `username` | 指定前面在本教程中添加图形时使用的唯一“数据库 ID”和“图形 ID”；必须使用以下语法输入这些值："/dbs/ **{数据库ID}** /colls/ **{图形 ID}** "。   |
+   | `username` | 指定前面在本教程中添加图形时使用的唯一“数据库 ID”和“图形 ID”；必须使用以下语法输入这些值："/dbs/ **{数据库ID}** /colls/ **{图形 ID}** "。  |
    | `password` | 指定前面在本教程中复制的主要或辅助“访问密钥”。  |
    | `telemetryAllowed` | 若要启用遥测，请指定 **true**；否则指定 **false**。
 
@@ -535,7 +535,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序  。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 
