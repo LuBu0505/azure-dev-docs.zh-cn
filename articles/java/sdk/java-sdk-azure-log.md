@@ -109,7 +109,7 @@ Log4j2 示例：
 
 ## <a name="configure-logback"></a>配置 Logback
 
-[Logback](https://logback.qos.ch/manual/introduction.html) 是一种常用的记录框架，也是 SLF4J 的本机实现。 若要配置 Logback，在项目的 ./src/main/resources  目录中创建一个名为 logback.xml  的新 XML 文件。 可在 [Logback 项目网站](https://logback.qos.ch/manual/configuration.html)上查找有关配置选项的详细信息。
+[Logback](https://logback.qos.ch/manual/introduction.html) 是一种常用的记录框架，也是 SLF4J 的本机实现。 若要配置 Logback，在项目的 ./src/main/resources 目录中创建一个名为 logback.xml  的新 XML 文件。 可在 [Logback 项目网站](https://logback.qos.ch/manual/configuration.html)上查找有关配置选项的详细信息。
 
 下面是一个 Logback 配置示例：
 

@@ -34,13 +34,13 @@ ms.locfileid: "81669123"
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后单击 Spring Initializr 的“切换到完整版”链接。   
+1. 指定要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后单击 Spring Initializr 的“切换到完整版”链接。  
 
    ![Spring Initializr 的基本选项](media/configure-spring-boot-starter-java-app-with-azure-storage/spring-initializr-basic.png)
 
    > [!NOTE]
    >
-   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：*com.contoso.wingtiptoysdemo*。  
+   > Spring Initializr 将使用“组”和“项目”名称创建包名称，例如：*com.contoso.wingtiptoysdemo*。 
    >
 
 1. 向下滚动到“Azure”部分，并选中“Azure 存储”对应的框。  
