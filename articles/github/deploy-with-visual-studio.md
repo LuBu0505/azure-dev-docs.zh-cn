@@ -1,17 +1,17 @@
 ---
 title: 使用 Visual Studio 从 GitHub 部署应用
 description: 用于从 GitHub 部署应用的 Visual Studio 和 Visual Studio Code 资源
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 2becd3c8f0db0ee8b580d011e5545a38e56a720e
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 83965deb66a509dfe00e15870d725dcb62c5df35
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990039"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631698"
 ---
 # <a name="use-visual-studio-or-visual-studio-code-to-deploy-apps-from-github"></a>使用 Visual Studio 或 Visual Studio Code 从 GitHub 部署应用 
 

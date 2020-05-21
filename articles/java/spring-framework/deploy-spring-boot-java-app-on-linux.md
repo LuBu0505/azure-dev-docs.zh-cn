@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e4c0c2ffb45303262b16179a726a8eb0526b3971
+ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82166670"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426113"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上
 
@@ -42,8 +42,8 @@ ms.locfileid: "82166670"
 1. 打开命令提示符，创建本地目录以存放应用程序，并更改为以下目录；例如：
 
    ```bash
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   mkdir SpringBoot
+   cd SpringBoot
    ```
 
 1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到创建的目录中；例如：
