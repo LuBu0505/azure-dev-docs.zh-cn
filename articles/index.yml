@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 2afe0deb03a1aff2b40c2d739f873bd6a2bbcf0c
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.openlocfilehash: 193bcf51848ac6fbf3c1f3fb263313bbde2784f8
+  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82988708"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83631565"
 productDirectory:
   items:
   - title: Python
@@ -124,7 +124,7 @@ additionalContent:
     - title: Azure DevOps
       summary: 使用 Azure DevOps 来规划工作、协作开发代码以及生成和部署应用程序。
       url: https://docs.microsoft.com/azure/devops/?view=azure-devops
-    - title: Azure 和 GitHub 协同工作
+    - title: Azure 和 GitHub 集成
       summary: 使用 GitHub 和 GitHub Actions 从存储库中自动执行、自定义和执行软件开发工作流。
       url: https://docs.microsoft.com/azure/developer/github
     - title: Jenkins
@@ -141,7 +141,7 @@ additionalContent:
       url: https://docs.microsoft.com/azure/developer/chef/
     - title: Maven
       summary: 使用 Maven 自动执行构建和管理 Java 项目的方法。 它也适用于其他语言。
-      url: https://docs.microsoft.com/java/api/overview/azure/maven/README
+      url: https://github.com/Microsoft/azure-maven-plugins#readme
     - title: Azure Toolkit for IntelliJ
       summary: 使用 Azure Toolkit for IntelliJ 从 IntelliJ IDE 中创建、开发、测试和部署 Azure 应用程序。
       url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/

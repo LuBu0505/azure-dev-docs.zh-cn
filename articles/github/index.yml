@@ -1,20 +1,20 @@
 ### YamlMime:Landing
-title: GitHub 和 Azure 协同工作
+title: Azure 和 GitHub 集成
 summary: 了解 GitHub 和 Azure 如何协同工作，以便生成和部署应用。
 metadata:
-  title: GitHub 和 Azure 协同工作
+  title: Azure 和 GitHub 集成
   description: 了解 GitHub 和 Azure 如何协同工作，以便生成和部署应用。
   ms.service: azure
   ms.topic: landing-page
-  author: KathrynEE
-  ms.author: kaelli
+  author: N-Usha
+  ms.author: ushan
   ms.date: 05/05/2020
-  ms.openlocfilehash: ea8d295dcd5c5a51261cbcbe223a5b89400740ba
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.openlocfilehash: a1ece0966a985e0532f2eb751b8a489d4d01d887
+  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82990359"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83631686"
 landingContent:
 - title: 适用于 Azure 的 GitHub Actions
   linkLists:
@@ -24,7 +24,7 @@ landingContent:
       url: github-actions.md
 - title: “部署到 Azure”
   linkLists:
-  - linkListType: deploy
+  - linkListType: how-to-guide
     links:
     - text: 将应用从 GitHub 部署到 Azure
       url: deploy-to-azure.md

@@ -1,4 +1,4 @@
-- name: Azure 和 GitHub 协同工作
+- name: Azure 和 GitHub 集成
   href: index.yml
   items:
     - name: 适用于 Azure 的 GitHub Actions
