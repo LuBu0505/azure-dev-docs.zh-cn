@@ -12,7 +12,7 @@
   href: configure-local-development-environment.md
 - name: Azure SDK for Python 入门
   items:
-    - name: 概述
+    - name: 概述和使用模式
       href: azure-sdk-overview.md
     - name: 安装 SDK 库
       href: azure-sdk-install.md
