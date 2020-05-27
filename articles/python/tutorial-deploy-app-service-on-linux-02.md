@@ -4,12 +4,12 @@ description: 教程步骤 2，设置应用程序
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b53b774cb7747b8f6cca10d493f820bef5306fcc
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: bb515e1d785aa0e8a38e4fc1014915db56b89d94
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441942"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631728"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:对应用进行部署到 Azure 应用服务的准备
 
@@ -17,7 +17,7 @@ ms.locfileid: "80441942"
 
 本文介绍如何为本教程准备要部署到 Azure 应用服务的应用。 可以使用现有应用，也可以创建或下载应用。
 
-如果已经有一个要使用的应用，请确保有一个 *requirements.txt* 文件，该文件介绍依赖项，包括 Flask 或 Django 之类的框架。
+如果已经有一个要使用的应用，请确保有一个 *requirements.txt* 文件，该文件介绍依赖项，包括 Flask 或 Django 之类的框架。 你可以使用自己选择的任何框架。
 
 如果还没有应用，请使用以下选项之一。 确保验证该应用是否能够在本地运行。
 
@@ -58,7 +58,7 @@ ms.locfileid: "80441942"
     $env:FLASK_APP = "hello:myapp"
     ```
 
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
     set FLASK_APP=hello:myapp

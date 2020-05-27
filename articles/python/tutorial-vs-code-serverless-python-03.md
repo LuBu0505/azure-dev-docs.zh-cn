@@ -2,14 +2,14 @@
 title: 步骤 3：在 VS Code 中检查用于 Azure Functions 的 Python 代码文件
 description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代码。
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84e438cf1aaf94c1341964d17e17055d066140d6
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441332"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708531"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3：在 Visual Studio Code 中检查 Python 代码文件
 
@@ -75,11 +75,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        return func.HttpResponse(f"Hello {name}!")
+        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
-             "Please pass a name on the query string or in the request body",
-             status_code=400
+             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             status_code=200
         )
 ```
 
@@ -88,7 +88,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 - 必须导入 `azure.functions` 模块；导入日志记录模块为可选操作，但建议你执行它。
 - 必需的 `main` Python 函数接收名为 `req` 的 `func.HttpRequest` 对象，并返回类型为 `func.HttpResponse` 的值。 若要详细了解这些对象的功能，可参阅 [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) 和 [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python)。
 - 然后，`main` 的主体会处理请求并生成响应。 在这种情况下，代码会在 URL 中查找 `name` 参数。 如果这样做失败，它会检查请求正文是否包含 JSON（使用 `func.HttpRequest.get_json`），以及 JSON 是否包含 `name` 值（使用 `get_json` 返回的 JSON 对象的 `get` 方法）。
-- 如果找到一个名称，代码会返回追加了该名称的字符串“Hello”，否则会返回错误消息。
+- 如果找到名称，此代码会返回字符串“Hello”，并在后面追加名称，否则会返回通用消息。
 
 > [!div class="nextstepaction"]
 > [我检查了代码文件 - 转到步骤 4 >>>](tutorial-vs-code-serverless-python-04.md)

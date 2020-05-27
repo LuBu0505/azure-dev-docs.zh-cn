@@ -1,27 +1,33 @@
 ---
 title: 使用 GitHub Actions 部署到 Azure
 description: 在存储库中创建工作流，以生成、测试、打包、发布和部署到 Azure。
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 16ebc2d8013b2199911c0648f4bb8364c4d6de06
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369925"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631669"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>使用 GitHub Actions 部署到 Azure
 
-使用适用于 Azure 的 GitHub Actions 将工作流自动部署到 Azure。 若要开始使用，请参阅以下 GitHub Actions： 
+使用 [GitHub Actions](https://help.github.com/articles/about-github-actions)，开发人员可以生成自动化软件开发生命周期工作流。  
 
-- [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) 操作，作用是部署到 Azure Web 应用和用于容器的 Azure Web 应用 
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings)，作用是在 Azure WebApp（Windows 或 Linux）或其任何部署槽位上使用 JSON 语法批量配置应用设置、连接字符串和其他常规设置。
+借助适用于 Azure 的 GitHub Actions，可以创建工作流，从而在存储库中设置工作流来生成、测试、打包、发布和部署到 Azure。 [详细了解其他所有与 Azure 的集成](https://aka.ms/GitHubonAzure)。
+
+立即开始使用[免费 Azure 帐户](https://azure.com/free/open-source)！
 
 > [!NOTE]   
 > 本文中提供的链接指向 GitHub 文章或 GitHub 存储库。 
+
+- [Azure/webapps-deploy 操作](https://github.com/Azure/webapps-deploy)，作用是部署到 Azure Web 应用和用于容器的 Azure Web 应用 
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings)，作用是在 Azure WebApp（Windows 或 Linux）或其任何部署槽位上使用 JSON 语法批量配置应用设置、连接字符串和其他常规设置。
+
+
 
 ## <a name="key-concepts"></a>关键概念
 
@@ -39,9 +45,11 @@ GitHub Actions 包括预配置的模板和市场操作。
 - [使用 GitHub 市场中的操作](https://help.github.com/en/actions/getting-started-with-github-actions/using-actions-from-github-marketplace)  
 - [GitHub 市场操作，部署到 Azure](https://github.com/marketplace?type=actions&query=Azure)  
   
-有关适用于 Azure 的所有 GitHub Actions 的链接，请参阅以下页面： 
+有关适用于 Azure 的 GitHub Actions，请参阅以下页面： 
    
 - [Azure 操作](https://github.com/marketplace?query=Azure&type=actions)  
+- [要部署到 Azure 的起动器操作工作流](https://github.com/Azure/actions-workflow-samples)
+
 
 ## <a name="connect-to-azure"></a>连接到 Azure
 
@@ -51,9 +59,9 @@ GitHub Actions 包括预配置的模板和市场操作。
 - [Azure CLI](https://github.com/Azure/CLI)  
 
 
-## <a name="starter-templates-and-end-to-end-cicd-workflow-samples"></a>起动器模板和端到端 CI/CD 工作流示例 
+## <a name="sample-apps-with-cicd-workflow-samples"></a>包含 CI/CD 工作流示例的示例应用 
 
-以下示例提供了端到端工作流，用于将 Web 应用部署到 Azure。 
+下面的几个示例展示了端到端工作流，用于生成任何语言、任何生态系统的 Web 应用，并将其部署到 Azure。 
 
 - [使用 ASP.NET 支持部署 Web 应用](https://github.com/Azure-Samples/dotnet-sample)  
 - [部署 ASP.NET Core 应用](https://github.com/Azure-Samples/dotnet_core_sample)  
@@ -67,6 +75,8 @@ GitHub Actions 包括预配置的模板和市场操作。
 ## <a name="deploy-a-web-app"></a>部署 Web 应用
 
 - [Azure Web 应用](https://github.com/Azure/webapps-deploy)  
+使用操作来配置应用设置和连接字符串：
+
 - [用于容器的 Azure Web 应用](https://github.com/Azure/webapps-container-deploy)  
 - [Azure 应用服务设置](https://github.com/Azure/appservice-settings)  
 
@@ -78,6 +88,7 @@ GitHub Actions 包括预配置的模板和市场操作。
 ## <a name="build-and-deploy-containerized-apps"></a>生成和部署容器化应用
 
 - [Docker 登录](https://github.com/Azure/docker-login)  
+- [部署到 Azure 容器实例](https://github.com/Azure/aci-deploy)
 
 ## <a name="deploy-to-kubernetes"></a>部署到 Kubernetes
 
@@ -100,6 +111,10 @@ GitHub Actions 包括预配置的模板和市场操作。
 - [Azure SQL 数据库](https://github.com/Azure/sql-action)  
 - [Azure MySQL 操作](https://github.com/Azure/mysql-action)  
 
+## <a name="deploy-machine-learning-models"></a>部署机器学习模型
+
+- [Azure 机器学习部署](https://github.com/Azure/aml-deploy)  
+
 ## <a name="trigger-a-run-in-azure-pipelines"></a>触发 Azure Pipelines 中的运行
 
 - [Azure Pipelines](https://github.com/Azure/pipelines)  
@@ -113,6 +128,6 @@ GitHub Actions 包括预配置的模板和市场操作。
 
 以下 GitHub 资源可用于支持使用 GitHub 将应用部署到 Azure。  
 
-- [适用于 Azure 市场的 GitHub Actions](https://github.com/marketplace?query=Azure&type=actions)
+- [适用于 Azure 的 GitHub Actions 市场](https://github.com/marketplace?query=Azure&type=actions)
 - [学习实验室，使用 Azure 进行持续交付](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
 - [要部署到 Azure 的起动器操作工作流](https://github.com/Azure/actions-workflow-samples)

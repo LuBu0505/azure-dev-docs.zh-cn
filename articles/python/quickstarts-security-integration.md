@@ -1,14 +1,14 @@
 ---
 title: Azure 上的 Python 应用的安全和集成快速入门
 description: Azure 文档中适用于保护 Python 应用的入门材料列表。
-ms.date: 03/17/2020
+ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: c5b2a6d2e2a4b6486674711204871216a7fa6416
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 275f723861ebde4ddbd3419eaa88fb51d4669ca4
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441972"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403706"
 ---
 # <a name="security-and-integration-for-python-apps-on-azure"></a>Azure 上的 Python 应用的安全和集成
 

@@ -1,33 +1,123 @@
 ---
-title: 使用用于 Python 的 Azure 管理库对应用进行身份验证
+title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 使用 Azure 管理 SDK 库通过 Azure 服务对 Python 应用进行身份验证
-ms.date: 01/16/2020
+ms.date: 05/12/2020
 ms.topic: conceptual
-ms.custom: seo-python-october2019
-ms.openlocfilehash: e972d0159f97feddf4dd773d69b422634c3966c1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8dd434c0a18c0a263573188e04a54f48afcf2b0d
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441792"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403690"
 ---
-# <a name="authenticate-by-using-the-azure-management-libraries-for-python"></a>使用用于 Python 的 Azure 管理库进行身份验证
+# <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何通过 Azure 服务对 Python 应用进行身份验证
 
-本文介绍如何使用 Python SDK 管理库通过服务主体借助 Azure Active Directory (Azure AD) 对应用程序进行身份验证。 服务主体是在 Azure AD 中注册的应用程序的标识，它允许应用程序根据其权限访问或修改资源。
+使用 Azure SDK for Python 编写应用代码时，可使用以下模式访问 Azure 资源：
 
-若要注册应用程序，必须首先使用适用于组织的租户创建 Active Directory。 可以按照[在 Azure Active Directory 中创建新租户](/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)中的说明来这样操作。 Active Directory 准备就绪后，请按[操作方法：使用门户创建可访问资源的 Azure AD 应用程序和服务主体](/azure/active-directory/develop/howto-create-service-principal-portal)一文的说明操作，以便注册应用程序、[检索服务主体的租户和应用程序（客户端）ID](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)，以及设置[应用程序机密](/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)，从而通过 Python 代码进行身份验证。
+1. 获取凭据（通常是一次性操作）。
+1. 使用凭据为资源获取 SDK 提供的客户端对象。
+1. 尝试通过客户端对象访问或修改资源，该对象将生成对资源的 REST API 的 HTTP 请求。
 
-获得这些值后，可以使用这些凭据通过 Python SDK 库以多种方式进行身份验证。 每个方法的结果是从代码访问其他资源时使用的 SDK 客户端对象。
+对 REST API 的请求是 Azure 对凭据对象所描述的应用标识进行身份验证的点。 然后，Azure 会检查该标识是否有权执行请求的操作。 如果该标识没有授权，则操作失败。 （授予权限取决于资源的类型，如 Azure Key Vault、Azure 存储等。有关详细信息，请参阅该资源类型的文档。）
 
-强烈建议在 [Azure KeyVault](/azure/key-vault/) 中存储租户 ID、客户端 ID 和机密，使这些值不会出现在系统或源代码管理中的任何位置。 只要需要，就可以轻松地检索这些值。
+这些过程中涉及的标识（即，凭据对象所描述的标识）通常由表示用户、组、服务或应用的安全主体定义。 本文中介绍的一些身份验证方法使用显式主体，这通常称为“服务主体”。
+
+但对于大多数云应用程序，我们建议使用第一部分中所述的 `DefaultAzureCredential` 对象，因为它已完全无需处理应用程序的服务主体。
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
-## <a name="authenticate-with-a-json-file"></a><a name="mgmt-auth-file"></a>使用 JSON 文件进行身份验证
+## <a name="authenticate-with-defaultazurecredential"></a>使用 DefaultAzureCredential 进行身份验证
 
-在此方法中，我们创建一个 JSON 文件（其中包含服务主体所需的凭据），然后根据该文件中的信息创建 SDK 客户端对象。
+```python
+import os
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
 
-1. 使用以下格式创建 JSON 文件（名称可随意，例如 *app_credentials.json*）。 将四个占位符替换为你的 Azure 订阅 ID、Azure AD 租户 ID、应用程序（客户端）ID 和机密：
+# Obtain the credential object
+credential = DefaultAzureCredential()
+
+# Create the SDK client object to access Key Vault secrets.
+vault_url = os.environ["KEY_VAULT_URL"]
+secret_client = SecretClient(vault_url=vault_url, credential=credential)
+
+# Attempt to retrieve a secret value. The operation fails if the principal
+# cannot be authenticated or is not authorized for the operation in question.
+retrieved_secret = client.get_secret("secret-name-01")
+```
+
+[`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) 库中的 [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) 类提供最简单且建议使用的身份验证方法。
+
+前面的代码在访问 Azure Key Vault 时使用 `DefaultAzureCredential`，其中 Key Vault 的 URL 在名为 `KEY_VAULT_URL` 的环境变量中可用。 此代码明确实现本文开头所述的模式：获取凭据对象，创建 SDK 客户端对象，然后尝试使用该客户端对象执行操作。
+
+同样，在最后一步之前不会进行身份验证和授权。 创建 SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) 对象不涉及与相关资源的通信；`SecretClient` 对象只是围绕基础 Azure REST API 的包装器，仅存在于应用的运行时内存中。 仅当调用 [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) 方法时，客户端对象才会生成对 Azure 的相应 REST API 调用。 然后，`get_secret` 的 Azure 终结点会对调用方的标识进行身份验证并检查授权。
+
+代码部署到 Azure 并在 Azure 上运行时，`DefaultAzureCredential` 会自动使用系统分配（“托管”）的标识，你可以在托管该标识的任何服务中为应用启用该标识。 例如，对于部署到 Azure 应用服务的 Web 应用，可通过 Azure 门户中的“标识” > “系统分配”选项或使用 Azure CLI 中的 `az webapp identity assign` 命令启用其托管标识。 还会使用 Azure 门户或 Azure CLI 将特定资源（例如，Azure 存储或 Azure Key Vault）的权限分配给该标识。 在这些情况下，此 Azure 托管的标识将最大限度地提高安全性，因为你从不在代码中处理显式服务主体。
+
+在本地运行代码时，`DefaultAzureCredential` 会自动使用名为 `AZURE_TENANT_ID`、`AZURE_CLIENT_ID` 和 `AZURE_CLIENT_SECRET` 的环境变量所描述的服务主体。 然后，在调用 API 终结点时，SDK 客户端对象会在 HTTP 请求标头中（以安全的方式）包含这些值。 不需要更改代码。 有关创建服务主体和设置环境变量的详细信息，请参阅[为 Azure 配置本地 Python 开发环境 - 配置身份验证](configure-local-development-environment.md#configure-authentication)。
+
+在这两种情况下，必须向所涉及的标识分配适当资源的权限，各个服务的文档中对此进行了介绍。 有关前面代码所需的 Key Vault 权限的详细信息，请参阅[使用访问控制策略提供 Key Vault 身份验证](/azure/key-vault/general/group-permissions-for-apps)。
+
+<a name="cli-auth-note"></a>
+> [!IMPORTANT]
+> 在将来，如果服务主体环境变量不可用，`DefaultAzureCredential` 将使用通过 `az login` 登录到 Azure CLI 的标识。 如果你是订阅的所有者或管理员，则此功能的实际作用是，无需分配任何特定权限，你的代码就可以访问该订阅中的大多数资源。 此行为对于试验非常方便。 但是，我们强烈建议你在开始编写生产代码时使用特定服务主体并分配特定权限，因为你将了解如何将确切的权限分配给不同的标识，以及在部署到生产环境之前可以在测试环境中准确验证这些权限。
+
+### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>将 DefaultAzureCredential 与 SDK 管理库配合使用
+
+```python
+# WARNING: this code presently fails!
+
+from azure.identity import DefaultAzureCredential
+
+# azure.mgmt.resource is an Azure SDK management library
+from azure.mgmt.resource import SubscriptionClient
+
+# Attempt to retrieve the subscription ID
+credential = DefaultAzureCredential()
+subscription_client = SubscriptionClient(credential)
+
+# The following line produces a "no attribute 'signed_session'" error:
+subscription = next(subscription_client.subscriptions.list())
+
+print(subscription.subscription_id)
+```
+
+目前，`DefaultAzureCredential` 仅适用于 Azure SDK 客户端（“数据平面”）库，不适用于名称以 `azure-mgmt` 开头的 Azure SDK 管理库，如此代码示例中所示。 调用 `subscription_client.subscriptions.list()` 失败，并出现相当模糊的错误，“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，当前 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
+
+直到稍后在 2020 年更新这些库，才可以通过以下两种方法解决该错误：
+
+1. 使用本文后续部分中所述的其他身份验证方法之一，这些方法非常适用于仅使用 SDK 管理库且不会部署到云的代码，在这种情况下，你只能依赖于本地服务主体。
+
+1. 使用 Azure SDK 工程团队成员提供的 [CredentialWrapper 类 (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d)，而不是 `DefaultAzureCredential`。 Microsoft 发布更新的管理库后，就可以直接切换回 `DefaultAzureCredential`。 此方法的优点是，可以将同一凭据同时用于 SDK 客户端和管理库，并且它在本地和云中都有效。
+
+    假定已将 cred_wrapper.py 的副本下载到项目文件夹中，则前面的代码将如下所示：
+
+    ```python
+    from cred_wrapper import CredentialWrapper
+    from azure.mgmt.resource import SubscriptionClient
+
+    credential = CredentialWrapper()
+    subscription_client = SubscriptionClient(credential)
+    subscription = next(subscription_client.subscriptions.list())
+    print(subscription.subscription_id)
+    ```
+
+    更新管理库后，就可以直接使用 `DefaultAzureCredential`。
+
+## <a name="other-authentication-methods"></a>其他身份验证方法
+
+尽管 `DefaultAzureCredential` 是大多数情况下建议使用的身份验证方法，但其他方法也可用，有以下注意事项：
+
+- 大多数方法适用于显式服务主体，并且不会利用部署到云的代码的托管标识。 与生产代码一起使用时，必须为云应用程序管理和维护不同的服务主体。
+
+- 某些方法（例如基于 CLI 的身份验证）仅适用于本地脚本，不能与生产代码一起使用。
+
+部署到云的应用程序的服务主体在 Active Directory 订阅中进行管理。 有关详细信息，请参阅[如何管理服务主体](how-to-manage-service-principals.md)。
+
+### <a name="authenticate-with-a-json-file"></a>使用 JSON 文件进行身份验证
+
+在此方法中，创建一个 JSON 文件（其中包含服务主体所需的凭据）。 然后使用该文件创建 SDK 客户端对象。 此方法既可在本地使用，也可在云中使用。 
+
+1. 使用以下格式创建 JSON 文件：
 
     ```json
     {
@@ -44,148 +134,190 @@ ms.locfileid: "80441792"
     }
     ```
 
+    将四个占位符替换为你的 Azure 订阅 ID、租户 ID、客户端 ID 和客户端密码。
+
     > [!TIP]
-    > 可以先使用 [az login](/cli/azure/reference-index#az-login) 命令登录到 Azure，然后使用 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令，以便使用已准备到位的订阅 ID 检索凭据文件：
-    >
-    > ```azurecli
-    > az login
-    > az ad sp create-for-rbac --sdk-auth > credentials.json
-    > ```
-    >
-    > 然后，可以替换特定应用程序的 `tenantId`、`clientId` 和 `clientSecret` 值，而不是使用常规用途值。
+    > 如[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-for-development)中所述，可以将 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令与 `--sdk-auth` 参数一起使用，以直接生成此 JSON 格式。
 
-1. 将此文件保存在可供代码访问的安全位置。
+1. 使用名称（如 credentials.json）将此文件保存在可供代码访问的安全位置。 若要保护凭据，请确保从源代码管理中省略此文件，并且不要将其与其他开发人员共享。 也就是说，服务主体的租户 ID、客户端 ID 和客户端密码应始终在开发工作站上保持隔离。
 
-1. 使用 [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) 方法来创建客户端对象，并将 `<path_to_file>` 替换为 JSON 文件的路径：
+1. 创建一个名为 `AZURE_AUTH_LOCATION` 且值为 JSON 文件的路径的环境变量：
+
+    # <a name="bash"></a>[bash](#tab/bash)
+
+    ```bash
+    AZURE_AUTH_LOCATION="../credentials.json"
+    ```
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```cmd
+    set AZURE_AUTH_LOCATION=../credentials.json
+    ```
+
+    这些示例假定 JSON 文件名为 credentials.json，并且位于项目的父文件夹中。
+
+    ---
+
+1. 使用 [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) 方法来创建客户端对象：
 
     ```python
     from azure.common.client_factory import get_client_from_auth_file
-    from azure.mgmt.compute import ComputeManagementClient
+    from azure.mgmt.resource import SubscriptionClient
 
-    client = get_client_from_auth_file(ComputeManagementClient, auth_path=<path_to_file>)
+    # This form of get_client_from_auth_file relies on the AZURE_AUTH_LOCATION
+    # environment variable.
+    subscription_client = get_client_from_auth_file(SubscriptionClient)
+
+    subscription = next(subscription_client.subscriptions.list())
+    print(subscription.subscription_id)
     ```
 
-1. 也可在名为 `AZURE_AUTH_LOCATION` 的环境变量中存储文件的路径，省略 `auth_path` 参数。
-
-## <a name="authenticate-with-a-json-dictionary"></a>使用 JSON 字典进行身份验证
-
-如上一部分所述，可以在变量中生成必要的 JSON 并改为调用 [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-)，而不是使用文件。 在这种情况下，应始终将租户 ID、客户端 ID 和机密存储在安全位置，如 [Azure KeyVault](/azure/key-vault/)。
+也可以使用 `auth_path` 参数在代码中直接指定路径，在这种情况下，不需要环境变量：
 
 ```python
-   from azure.common.client_factory import get_client_from_auth_file
-   from azure.mgmt.compute import ComputeManagementClient
-
-    # Retrieve tenant_id, client_id, and client_secret from Azure KeyVault
-
-   config_dict = {
-       "subscriptionId": "bfc42d3a-65ca-11e7-95cf-ecb1d756380e",
-        "tenantId": tenant_id,
-       "clientId": client_id,
-       "clientSecret": client_secret,
-       "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-       "resourceManagerEndpointUrl": "https://management.azure.com/",
-       "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-       "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-       "galleryEndpointUrl": "https://gallery.azure.com/",
-       "managementEndpointUrl": "https://management.core.windows.net/"
-   }
-   client = get_client_from_json_dict(ComputeManagementClient, config_dict)
+subscription_client = get_client_from_auth_file(SubscriptionClient, auth_path="../credentials.json")
 ```
 
-## <a name="authenticate-with-token-credentials"></a><a name="mgmt-auth-token"></a>使用令牌凭据进行身份验证
-
-假设你从安全存储（例如 [Azure KeyVault](/azure/key-vault/)）检索凭据，请先创建一个 [ServicePrincipalCredentials] 对象，然后使用这些凭据和订阅 ID 创建客户端的实例：
+### <a name="authenticate-with-a-json-dictionary"></a>使用 JSON 字典进行身份验证
 
 ```python
-from azure.mgmt.compute import ComputeManagementClient
+import os
+from azure.common.client_factory import get_client_from_json_dict
+from azure.mgmt.resource import SubscriptionClient
+
+# Retrieve the IDs and secret to use in the JSON dictionary
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
+
+config_dict = {
+   "subscriptionId": subscription_id,
+    "tenantId": tenant_id,
+   "clientId": client_id,
+   "clientSecret": client_secret,
+   "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+   "resourceManagerEndpointUrl": "https://management.azure.com/",
+   "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+   "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+   "galleryEndpointUrl": "https://gallery.azure.com/",
+   "managementEndpointUrl": "https://management.core.windows.net/"
+}
+
+subscription_client = get_client_from_json_dict(SubscriptionClient, config_dict)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+如上一部分所述，可以通过变量生成必要的 JSON 数据并调用 [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-)，而不是使用文件。 此代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-for-development)中所述的环境变量。 对于部署到云的代码，可以在服务器 VM 上创建这些环境变量，也可以在使用平台服务（如 Azure 应用服务和 Azure Functions）时将这些环境变量用作应用程序设置。
+
+还可以将值存储在 Azure Key Vault 中，并在运行时（而不是使用环境变量）检索这些值。
+
+### <a name="authenticate-with-token-credentials"></a>使用令牌凭据进行身份验证
+
+```python
+import os
+from azure.mgmt.resource import SubscriptionClient
 from azure.common.credentials import ServicePrincipalCredentials
 
-# Retrieve credentials from secure storage. Never hard-code credentials into code.
+# Retrieve the IDs and secret to use with ServicePrincipalCredentials
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
 
-credentials = ServicePrincipalCredentials(tenant = <tenant_id>,
-    client_id = <client_id>, secret = <secret>)
+credential = ServicePrincipalCredentials(tenant=tenant_id, client_id=client_id, secret=client_secret)
 
-client = ComputeManagementClient(credentials, <subscription_id>)
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
 ```
 
-如果需要更多的控制，请使用[适用于 Python 的 Azure Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-python) 和 SDK ADAL 包装器：
+在此方法中，将使用从安全存储（例如，Azure Key Vault 或环境变量）中获取的凭据创建 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) 对象。 前面的代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-for-development)中所述的环境变量。
+
+使用此方法，可以通过为客户端对象指定 `base_url` 参数来使用 [Azure 主权或国家云](/azure/active-directory/develop/authentication-national-cloud)，而不是 Azure 公有云：
 
 ```python
-from azure.mgmt.compute import ComputeManagementClient
-import adal
+from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
+
+#...
+
+subscription_client = SubscriptionClient(credentials, base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
+```
+
+主权云常量可在 [msrestazure.azure_cloud 库](https://github.com/Azure/msrestazure-for-python/blob/master/msrestazure/azure_cloud.py)中找到。
+
+### <a name="authenticate-with-token-credentials-and-an-adal-context"></a>使用令牌凭据和 ADAL 上下文进行身份验证
+
+如果在使用令牌凭据时需要更多的控制，请使用[适用于 Python 的 Azure Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-python) 和 SDK ADAL 包装器：
+
+```python
+import os, adal
+from azure.mgmt.resource import SubscriptionClient
 from msrestazure.azure_active_directory import AdalAuthentication
 from msrestazure.azure_cloud import AZURE_PUBLIC_CLOUD
 
-# Retrieve credentials from secure storage. Never hard-code credentials into code.
+# Retrieve the IDs and secret to use with ServicePrincipalCredentials
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
 
 LOGIN_ENDPOINT = AZURE_PUBLIC_CLOUD.endpoints.active_directory
 RESOURCE = AZURE_PUBLIC_CLOUD.endpoints.active_directory_resource_id
 
-context = adal.AuthenticationContext(LOGIN_ENDPOINT + '/' + TENANT_ID)
+context = adal.AuthenticationContext(LOGIN_ENDPOINT + '/' + tenant_id)
 
-credentials = AdalAuthentication(context.acquire_token_with_client_credentials,
-    RESOURCE, <client_id>, <secret>)
+credential = AdalAuthentication(context.acquire_token_with_client_credentials,
+    RESOURCE, client_id, client_secret)
 
-client = ComputeManagementClient(credentials, <subscription_id>)
-```
+subscription_client = SubscriptionClient(credential)
 
-> [!NOTE]
-> 如果使用 Azure 主权云，请在创建管理客户端时指定相应的基 URL（使用 `msrestazure.azure_cloud` 中的常量）：
->
-> ```python
-> client = ComputeManagementClient(credentials, subscription_id,
->     base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
-> ```
-
-### <a name="authenticate-with-token-credentials-deprecated"></a><a name="mgmt-auth-legacy"></a>使用令牌凭据进行身份验证（已弃用）
-
-在[适用于 Python 的 Azure Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-python) 发布之前，你使用 `UserPassCredentials` 类。 此类被视为已过时，不应继续使用，因为它不支持双重身份验证。
-
-```python
-from azure.common.credentials import UserPassCredentials
-
-# DEPRECATED - legacy purposes only - use ADAL instead
-credentials = UserPassCredentials(
-    'user@domain.com',
-    'my_smart_password'
-)
-```
-
-## <a name="authenticate-with-azure-managed-identities"></a><a name="mgmt-auth-msi"></a>使用 Azure 托管标识进行身份验证
-
-Azure 中的资源可以通过 Azure 托管标识这种简单的方式进行身份验证，无需使用特定凭据。
-
-若要使用托管标识，必须从另一 Azure 资源（例如某个 Azure 函数或虚拟机）连接到 Azure。 若要了解如何为资源配置托管标识，请参阅[配置 Azure 资源的托管标识](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm)和[如何使用 Azure 资源的托管标识](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in)。
-
-```python
-from msrestazure.azure_active_directory import MSIAuthentication
-from azure.mgmt.resource import ResourceManagementClient, SubscriptionClient
-
-# Create MSI Authentication
-credentials = MSIAuthentication()
-
-# Create a Subscription Client
-subscription_client = SubscriptionClient(credentials)
 subscription = next(subscription_client.subscriptions.list())
-subscription_id = subscription.subscription_id
-
-# Create a Resource Management client
-client = ResourceManagementClient(credentials, subscription_id)
-
-# List resource groups as an example. The only limit is what role and policy are assigned to this MSI token.
-for resource_group in client.resource_groups.list():
-    print(resource_group.name)
+print(subscription.subscription_id)
 ```
 
-## <a name="cli-based-authentication-development-purposes-only"></a><a name="mgmt-auth-cli"></a>基于 CLI 的身份验证（仅限开发目的）
+如果需要 adal 库，请运行 `pip install adal`。
 
-在你运行 `az login` 后，SDK 即可使用 Azure CLI 的活动订阅创建客户端。 可以让 SDK 使用默认订阅 ID，也可以使用 [az account](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) 来设置订阅
+使用此方法，可以使用 [Azure 主权或国家云](/azure/active-directory/develop/authentication-national-cloud)，而不是 Azure 公有云。
 
-此选项只应该用于开发目的。
+```python
+from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
+
+# ...
+
+LOGIN_ENDPOINT = AZURE_CHINA_CLOUD.endpoints.active_directory
+RESOURCE = AZURE_CHINA_CLOUD.endpoints.active_directory_resource_id
+```
+
+只需将 `AZURE_PUBLIC_CLOUD` 替换为 [msrestazure.azure_cloud 库](https://github.com/Azure/msrestazure-for-python/blob/master/msrestazure/azure_cloud.py)中的相应主权云常量。
+
+### <a name="cli-based-authentication-development-purposes-only"></a>基于 CLI 的身份验证（仅限开发目的）
 
 ```python
 from azure.common.client_factory import get_client_from_cli_profile
-from azure.mgmt.compute import ComputeManagementClient
+from azure.mgmt.resource import SubscriptionClient
 
-client = get_client_from_cli_profile(ComputeManagementClient)
+subscription_client = get_client_from_cli_profile(SubscriptionClient)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
 ```
+
+在此方法中，将使用通过 Azure CLI 命令 `az login` 登录的用户的凭据创建客户端对象。
+
+可以让 SDK 使用默认订阅 ID，也可以使用 [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) 来设置订阅
+
+此方法应仅用于早期试验和开发目的，因为已登录的用户通常拥有所有者或管理员权限，并且无需任何其他权限即可访问大多数资源。 有关详细信息，请参阅有关[将 CLI 凭据与 `DefaultAzureCredential` 配合使用](#cli-auth-note)的上一条注释。
+
+### <a name="deprecated-authenticate-with-userpasscredentials"></a>不推荐使用：使用 UserPassCredentials 进行身份验证
+
+在[适用于 Python 的 Azure Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-python) 发布之前，必须使用现已弃用的 [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials?view=azure-python) 类。 此类不支持双因素身份验证，不应再使用。
+
+## <a name="see-also"></a>另请参阅
+
+- [为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)
+- [示例：将 Azure SDK 与 Azure 存储配合使用](azure-sdk-example-storage.md)
