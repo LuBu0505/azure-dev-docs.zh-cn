@@ -3,12 +3,12 @@ title: 使用 Azure SDK for Python 预配虚拟机
 description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 816419d99647ed23173d6c9ff707c256b384968f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f21495cc42f3bb228e460f1c591c9aa037dd8123
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404980"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862780"
 ---
 # <a name="example-use-the-azure-sdk-to-provision-a-virtual-machine"></a>示例：使用 Azure SDK 预配虚拟机
 
@@ -35,7 +35,7 @@ ms.locfileid: "83404980"
     azure-mgmt-resource
     azure-mgmt-network
     azure-mgmt-compute
-    azure-core-cli
+    azure-cli-core
     ```
 
 1. 在激活了虚拟环境的终端或命令提示符下，安装 requirements.txt 中列出的管理库：

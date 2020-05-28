@@ -4,12 +4,12 @@ description: 如何使用 Azure 构建 JAMstack 应用（JavaScript、API 和标
 ms.topic: article
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 6c804185859611f4534d5fa4e62b8e2585d14aa5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: abe56482d616a5dfcc3dc25a8ab7949bc5164fe0
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "74467240"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862790"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>使用 Node.js 在 Azure 上构建 JAMstack（静态站点）Web 应用
 
@@ -22,7 +22,7 @@ ms.locfileid: "74467240"
 - 选择要用于前端开发的任何库，如 Angular。 然后，将这些静态 HTML、CSS 和 JavaScript 文件上传到 Azure Blob 存储，该存储用于提供内置的 Web 服务器。
 - 创建反向代理，以便所有流量都通过一个 URL 域。
 
-可以观看 Build 2019 大会的[使用 JavaScript、Visual Studio Code 和 Azure 进行高效的前端开发](https://mybuild.techcommunity.microsoft.com/sessions/77038?source=sessions#top-anchor)分会的过程演示。
+可以观看 Build 2019 大会的[使用 JavaScript、Visual Studio Code 和 Azure 进行高效的前端开发](https://azure.microsoft.com/resources/videos/build-2019-productive-front-end-development-with-javascript-visual-studio-code-and-azure/)分会的过程演示。
 
 > [!VIDEO https://medius.studios.ms/Embed/Video-nc/B19-BRK3021?latestplayer=true]
 
