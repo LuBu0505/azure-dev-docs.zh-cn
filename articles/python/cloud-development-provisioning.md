@@ -3,12 +3,12 @@ title: 在 Azure 上预配、访问和管理资源
 description: 概述了用于处理 Azure 资源的方法，包括 Azure 门户、Azure CLI 和 Azure SDK。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 585c40523ba2be311af2d65fc3d4cbb679ba6f60
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404970"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759920"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>在 Azure 上预配、访问和管理资源
 

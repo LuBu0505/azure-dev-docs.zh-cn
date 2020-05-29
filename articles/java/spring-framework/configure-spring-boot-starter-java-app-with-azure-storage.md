@@ -7,18 +7,18 @@ ms.date: 12/19/2018
 ms.service: storage
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e9546d2e65d198fe9ab92e5d588df8797fd97e16
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 7375373696b59320100e8109b75cb1fdef6ed64b
+ms.sourcegitcommit: 5322c817033e6e20064f53f0fbedcf1f455f54d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669233"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83825200"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
 本文逐步讲解如何使用 **Spring Initializr** 创建自定义应用程序，然后将 Azure Storage Starter 添加到应用程序，再使用应用程序将 Blob 上传到 Azure 存储帐户。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
@@ -38,23 +38,23 @@ ms.locfileid: "81669233"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“存储”、“存储帐户”。   
+1. 依次单击“+创建资源”、“存储”、“存储帐户”。  
 
    ![创建 Azure 存储帐户][IMG01]
 
-1. 在“创建存储帐户”  页中，输入以下信息：
+1. 在“创建存储帐户”页中，输入以下信息：
 
-   * 选择“订阅”。 
-   * 选择“资源组”或创建新资源组。 
-   * 输入独一无二的“存储帐户名称”  ，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为**名称**，则 URI 将为 *wingtiptoysstorage.core.windows.net*。
-   * 指定存储帐户的“位置”。 
-1. 指定上面列出的选项后，请单击“查看 + 创建”  。 
-1. 查看具体细节，然后单击“创建”以创建存储帐户。 
-1. 部署完成后，单击“转到资源”。 
-1. 单击“容器”  。
-1. 单击“+ 容器”。 
+   * 选择“订阅”。
+   * 选择“资源组”或创建新资源组。
+   * 输入独一无二的“存储帐户名称”，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为**名称**，则 URI 将为 *wingtiptoysstorage.core.windows.net*。
+   * 指定存储帐户的“位置”。
+1. 指定上面列出的选项后，请单击“查看 + 创建”。 
+1. 查看具体细节，然后单击“创建”以创建存储帐户。
+1. 部署完成后，单击“转到资源”。
+1. 单击“容器”。
+1. 单击“+ 容器”。
    * 为该容器命名。
-   * 从下拉列表中选择“Blob”。 
+   * 从下拉列表中选择“Blob”。
 
    ![创建 Blob 容器][IMG02]
 
@@ -69,19 +69,19 @@ ms.locfileid: "81669233"
 1. 指定以下选项：
 
    * 生成 **Maven** 项目。
-   * 指定“Java”。 
+   * 指定“Java”。
    * 指定一个其值大于或等于 2.0 的 **Spring Boot** 版本。
-   * 指定应用程序的“组”和“项目”名称。  
+   * 指定应用程序的“组”和“项目”名称。 
    * 添加 **Web** 依赖项。
 
       ![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.storage    。
+   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.storage 。
    >
 
-1. 指定上面列出的选项后，请单击“生成”  。
+1. 指定上面列出的选项后，请单击“生成”。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -91,7 +91,7 @@ ms.locfileid: "81669233"
 
 以下过程将 Spring Boot 应用程序配置为使用 Azure 存储。
 
-1. 在应用的根目录中找到 pom.xml 文件，例如  ：
+1. 在应用的根目录中找到 pom.xml 文件，例如：
 
    `C:\SpringBoot\storage\pom.xml`
 
@@ -105,13 +105,11 @@ ms.locfileid: "81669233"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-azure-starter-storage</artifactId>
-      <version>1.0.0.M2</version>
+      <version>1.2.5</version>
    </dependency>
    ```
 
-   ![编辑 pom.xml 文件][SI03]
-
-1. 保存并关闭 pom.xml 文件  。
+1. 保存并关闭 pom.xml 文件。
 
 ## <a name="create-an-azure-credential-file"></a>创建 Azure 凭据文件
 
@@ -202,13 +200,14 @@ ms.locfileid: "81669233"
 
    `/users/example/home/storage/src/main/resources/application.properties`
 
-2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为存储帐户的相应属性  ：
+2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为存储帐户的相应属性：
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
-   spring.cloud.azure.region=West US
+   spring.cloud.azure.region=westUS
    spring.cloud.azure.storage.account=wingtiptoysstorage
+   blob=azure-blob://containerName/blobName
    ```
    其中：
 
@@ -218,9 +217,9 @@ ms.locfileid: "81669233"
    |    `spring.cloud.azure.resource-group`    |           指定包含 Azure 存储帐户的 Azure 资源组。            |
    |        `spring.cloud.azure.region`        | 指定你在创建 Azure 存储帐户时指定的地理区域。 |
    |   `spring.cloud.azure.storage.account`    |            指定之前在本教程中创建的 Azure 存储帐户。             |
-
-
-3. 保存并关闭 application.properties 文件  。
+   |                   `blob`                  |           指定要存储数据的容器和 Blob 的名称。         |
+    
+3. 保存并关闭 application.properties 文件。
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>添加示例代码以实现 Azure 存储的基本功能
 
@@ -254,17 +253,17 @@ ms.locfileid: "81669233"
 
 1. 保存并关闭主应用程序 Java 文件。
 
-### <a name="add-a-web-controller-class"></a>添加 Web 控制器类
+### <a name="add-a-blob-controller-class"></a>添加 Blob 控制器类
 
-1. 在应用的包目录中创建新的名为 *WebController.java* 的 Java 文件，例如：
+1. 在应用的包目录中创建名为 *BlobController.java* 的新 Java 文件，例如：
 
-   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\WebController.java`
+   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
    -或-
 
-   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/WebController.java`
+   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. 在文本编辑器中打开 Web 控制器 Java 文件，然后将以下行添加到文件中。  将 *wingtiptoys* 更改为你的资源组，将 *storage* 更改为你的项目名称。
+1. 在文本编辑器中打开 Blob 控制器 Java 文件，然后将以下行添加到文件中。  将 *wingtiptoys* 更改为你的资源组，将 *storage* 更改为你的项目名称。
 
    ```java
    package com.wingtiptoys.storage;
@@ -273,43 +272,39 @@ ms.locfileid: "81669233"
    import org.springframework.core.io.Resource;
    import org.springframework.core.io.WritableResource;
    import org.springframework.util.StreamUtils;
-   import org.springframework.web.bind.annotation.GetMapping;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
+   import org.springframework.web.bind.annotation.*;
 
    import java.io.IOException;
    import java.io.OutputStream;
    import java.nio.charset.Charset;
 
    @RestController
-   public class WebController {
-
-      @Value("blob://test/myfile.txt")
-      private Resource blobFile;
-
-      @GetMapping(value = "/")
-      public String readBlobFile() throws IOException {
-         return StreamUtils.copyToString(
-            this.blobFile.getInputStream(),
-            Charset.defaultCharset()) + "\n";
-      }
-
-      @PostMapping(value = "/")
-      public String writeBlobFile(@RequestBody String data) throws IOException {
-         try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
-            os.write(data.getBytes());
-         }
-         return "File was updated.\n";
-      }
+   @RequestMapping("blob")
+   public class BlobController {
+   
+       @Value("${blob}")
+       private Resource blobFile;
+   
+       @GetMapping
+       public String readBlobFile() throws IOException {
+           return StreamUtils.copyToString(
+                   this.blobFile.getInputStream(),
+                   Charset.defaultCharset());
+       }
+   
+       @PostMapping
+       public String writeBlobFile(@RequestBody String data) throws IOException {
+           try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
+               os.write(data.getBytes());
+           }
+           return "file was updated";
+       }
    }
    ```
 
-   在 `@Value("blob://[container]/[blob]")` 语法分别定义容器和 Blob 的名称的位置，需存储数据。
+1. 保存并关闭 Blob 控制器 Java 文件。
 
-1. 保存并关闭 Web 控制器 Java 文件。
-
-1.  打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
+1. 打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
 
    `cd C:\SpringBoot\storage`
 
@@ -329,7 +324,7 @@ ms.locfileid: "81669233"
    a. 发送一个要求更新文件内容的 POST 请求：
 
       ```shell
-      curl -X POST -H "Content-Type: text/plain" -d "Hello World" http://localhost:8080/
+      curl -d 'new message' -H 'Content-Type: text/plain' localhost:8080/blob
       ```
 
       此时会看到响应，指出文件已更新。
@@ -373,4 +368,3 @@ ms.locfileid: "81669233"
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
 [SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png
-[SI03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-03.png

@@ -3,12 +3,12 @@ title: 通过 Azure SDK for Python 预配和使用 Azure 存储
 description: 使用 Azure SDK for Python 库预配 Azure 存储帐户中的 blob 容器，然后将文件上传到该容器。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b26dd4c5708231c807ea57979bed6bdcd9de25f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 904ca66f6e4c065fa0705d2e35b8a7bb46396a0d
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405100"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759940"
 ---
 # <a name="example-use-the-azure-sdk-with-azure-storage"></a>示例：将 Azure SDK 与 Azure 存储配合使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "83405100"
 
 如果尚未设置，请按照[为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)中的所有说明进行操作。
 
-请确保创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
+务必创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
 
 ## <a name="2-install-the-needed-management-libraries"></a>2:安装所需的管理库
 
@@ -282,7 +282,7 @@ az storage container create --account-name pythonsdkstorage12345 -n blob-contain
         blob_client.upload_blob(data)
     ```
 
-1. 尝试运行以下代码：
+1. 尝试运行代码（有意失败）：
 
     ```bash
     python use_blob_auth.py
@@ -316,7 +316,7 @@ az storage container create --account-name pythonsdkstorage12345 -n blob-contain
 
     此命令中的 `--scope` 参数还使用 AZURE_CLIENT_ID 和 AZURE_SUBSCRIPTION_ID 环境变量，你应该通过按照[配置适用于 Azure 的本地 Python 开发环境](configure-local-development-environment.md)在本地环境中为服务主体设置这些变量。
 
-1. 再次运行代码，以验证代码现在是否正常工作。 如果再次看到权限错误，请等待一分钟以便传播权限，然后重试该代码。
+1. 权限传播需要花费时间，因此请等待一两分钟，然后再次运行该代码，验证它现在是否正常工作。 如果再次看到权限错误，请等待更长的时间，然后重试代码。
 
 有关作用域和角色分配的更多信息，请参阅[如何分配角色权限](how-to-assign-role-permissions.md)。
 

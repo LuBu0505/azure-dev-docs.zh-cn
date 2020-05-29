@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631669"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862800"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>使用 GitHub Actions 部署到 Azure
 
@@ -23,11 +23,6 @@ ms.locfileid: "83631669"
 
 > [!NOTE]   
 > 本文中提供的链接指向 GitHub 文章或 GitHub 存储库。 
-
-- [Azure/webapps-deploy 操作](https://github.com/Azure/webapps-deploy)，作用是部署到 Azure Web 应用和用于容器的 Azure Web 应用 
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings)，作用是在 Azure WebApp（Windows 或 Linux）或其任何部署槽位上使用 JSON 语法批量配置应用设置、连接字符串和其他常规设置。
-
-
 
 ## <a name="key-concepts"></a>关键概念
 
@@ -53,10 +48,11 @@ GitHub Actions 包括预配置的模板和市场操作。
 
 ## <a name="connect-to-azure"></a>连接到 Azure
 
-有关连接到 Azure 的示例工作流，请参阅以下 GitHub 操作：  
+有关连接到 Azure 并运行基于 Az CLI 或 Az PowerShell 的脚本的示例工作流，请参阅以下 GitHub 操作：  
 
 - [Azure 登录](https://github.com/Azure/login)  
-- [Azure CLI](https://github.com/Azure/CLI)  
+- [Azure CLI](https://github.com/Azure/CLI)
+- [Azure PowerShell](https://github.com/Azure/powershell)
 
 
 ## <a name="sample-apps-with-cicd-workflow-samples"></a>包含 CI/CD 工作流示例的示例应用 
@@ -69,15 +65,22 @@ GitHub Actions 包括预配置的模板和市场操作。
 - [部署 Java Web 应用](https://github.com/Azure-Samples/java-spring-petclinic)  
 - [部署 Java Spring 应用](https://github.com/Azure-Samples/Java-application-petstore-ee7)  
 - [部署 Python Web 应用](https://github.com/Azure-Samples/pythonSample_thecatsaidno)  
-- [使用 Docker 进行部署](https://github.com/Azure-Samples/Node_express_container)  
+- [使用 Docker 部署容器化 Web 应用](https://github.com/Azure-Samples/Node_express_container)
 
 
 ## <a name="deploy-a-web-app"></a>部署 Web 应用
 
-- [Azure Web 应用](https://github.com/Azure/webapps-deploy)  
+部署到 Azure Web 应用和用于容器的 Azure Web 应用：
+
+- [Azure/webapps-deploy 操作](https://github.com/Azure/webapps-deploy)
+
+部署静态 Web 应用：
+- [Azure/static-web-apps-deploy](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular)
+
+
 使用操作来配置应用设置和连接字符串：
 
-- [用于容器的 Azure Web 应用](https://github.com/Azure/webapps-container-deploy)  
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) 
 - [Azure 应用服务设置](https://github.com/Azure/appservice-settings)  
 
 ## <a name="deploy-a-serverless-app"></a>部署无服务器应用
