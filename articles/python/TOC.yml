@@ -8,19 +8,19 @@
       href: cloud-development-provisioning.md
     - name: Azure 开发流程
       href: cloud-development-flow.md
-- name: 设置适用于 Azure 的开发环境
-  href: configure-local-development-environment.md
-- name: Azure SDK for Python 入门
+- name: 开始在 Azure 上使用 Python
   items:
-    - name: 概述和使用模式
+    - name: Azure 库概述
       href: azure-sdk-overview.md
-    - name: 安装 SDK 库
-      href: azure-sdk-install.md
-    - name: 示例：创建资源组
+    - name: 设置开发环境
+      href: configure-local-development-environment.md
+    - name: 库使用模式
+      href: azure-sdk-library-usage-patterns.md
+    - name: 示例：预配资源组
       href: azure-sdk-example-resource-group.md
-    - name: 示例：使用 Azure 存储
+    - name: 示例：预配和使用 Azure 存储
       href: azure-sdk-example-storage.md
-    - name: 示例：使用代码预配 Web 应用
+    - name: 示例：预配和部署 Web 应用
       href: azure-sdk-example-web-app.md
     - name: 示例：预配虚拟机
       href: azure-sdk-example-virtual-machines.md
@@ -88,6 +88,8 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: 操作指南
   items:
+    - name: 安装库包
+      href: azure-sdk-install.md
     - name: 使应用向 Azure 进行身份验证
       href: azure-sdk-authenticate.md
     - name: 管理服务主体
@@ -128,7 +130,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: 所有示例
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: 参考
-  items:
-    - name: Azure SDK
-      href: sdk.md
+- name: 库 API 参考
+  href: sdk-library-api-reference.md

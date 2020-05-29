@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 title: 面向 Python 开发人员的 Azure
 summary: >
-  Azure 为 Python 开发人员提供了广泛的服务，包括应用托管、存储、开源数据库（如 mySQL 和 PostgreSQL）、数据科学、机器学习和 AI。 Azure SDK for Python 可帮助开发人员在使用这些服务时提高工作效率。
+  Azure 为 Python 开发人员提供了广泛的服务，包括应用托管、存储、开源数据库（如 mySQL 和 PostgreSQL）、数据科学、机器学习和 AI。 用于 Python 的 Azure 库 (SDK) 可帮助开发人员在使用这些服务时提高工作效率。
 metadata:
   title: 面向 Python 开发人员的 Azure
   description: 开始使用 Python 和 Azure 进行开发。
@@ -13,12 +13,12 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: ef9b2de52a63454d89a74698852fc68118ccfdf2
-  ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+  ms.openlocfilehash: 4f128432052206091b1cced8447bd64c4e288133
+  ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83403551"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84146045"
 landingContent:
 - title: 开始在 Azure 上使用 Python
   linkLists:
@@ -32,42 +32,20 @@ landingContent:
       url: configure-local-development-environment.md
   - linkListType: overview
     links:
-    - text: 关于 Azure SDK for Python
+    - text: 了解用于 Python 的 Azure 库
       url: azure-sdk-overview.md
   - linkListType: how-to-guide
     links:
-    - text: 安装 SDK 库
+    - text: 使用 Python 库
       url: azure-sdk-install.md
   - linkListType: tutorial
     links:
-    - text: 从代码使用 Azure SDK
+    - text: 在代码中使用 Azure 库
       url: azure-sdk-example-resource-group.md
   - linkListType: reference
     links:
-    - text: 用于 Python 的 Azure SDK API 参考
-      url: /python/api?view=azure-python
-- title: 在 Azure 中托管应用程序
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 使用 Visual Studio Code 为 HTTP 请求创建无服务器函数
-      url: tutorial-vs-code-serverless-python-01.md
-    - text: 使用 Azure CLI 为 HTTP 请求创建无服务器函数
-      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
-    - text: 在 Linux 上的 Azure 应用服务中创建 Python 应用
-      url: /azure/app-service/containers/quickstart-python
-    - text: 在 Azure Kubernetes 服务中部署容器化应用
-      url: /azure/aks/kubernetes-walkthrough
-    - text: 使用 Azure CLI 在 Azure 中部署容器实例
-      url: /azure/container-instances/container-instances-quickstart
-    - text: 通过 Azure Pipelines 生成并部署 Python 应用
-      url: /azure/devops/pipelines/languages/python-webapp
-    - text: 向 Python Web 应用程序添加 Microsoft 登录功能
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp
-  - linkListType: overview
-    links:
-    - text: Linux 上的 Azure 应用服务简介
-      url: /azure/app-service/containers/app-service-linux-intro
+    - text: 用于 Python 的 Azure 库 API 参考
+      url: sdk-library-api-reference.md
 - title: 开发人员工具入门
   linkLists:
   - linkListType: overview
@@ -90,6 +68,28 @@ landingContent:
       url: /cli/azure/install-azure-cli?view=azure-cli-latest
     - text: 使用各种分发版，在 Windows 10 上本机运行 Linux 应用程序
       url: /windows/wsl/install-win10
+- title: 在 Azure 中托管应用程序
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 使用 Visual Studio Code 为 HTTP 请求创建无服务器函数
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: 使用 Azure CLI 为 HTTP 请求创建无服务器函数
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: 在 Linux 上的 Azure 应用服务中创建 Python 应用
+      url: /azure/app-service/containers/quickstart-python
+    - text: 在 Azure Kubernetes 服务中部署容器化应用
+      url: /azure/aks/kubernetes-walkthrough
+    - text: 使用 Azure CLI 在 Azure 中部署容器实例
+      url: /azure/container-instances/container-instances-quickstart
+    - text: 通过 Azure Pipelines 生成并部署 Python 应用
+      url: /azure/devops/pipelines/languages/python-webapp
+    - text: 向 Python Web 应用程序添加 Microsoft 登录功能
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp
+  - linkListType: overview
+    links:
+    - text: Linux 上的 Azure 应用服务简介
+      url: /azure/app-service/containers/app-service-linux-intro
 - title: 用于数据科学、AI 和机器学习的服务
   linkLists:
   - linkListType: overview
