@@ -24,20 +24,22 @@
       href: azure-sdk-example-web-app.md
     - name: 示例：预配虚拟机
       href: azure-sdk-example-virtual-machines.md
-- name: Azure 服务快速入门
+- name: 探索特定的 Azure 服务
   items:
     - name: 应用托管
       href: quickstarts-app-hosting.md
     - name: 数据解决方案
       href: quickstarts-data-solutions.md
+    - name: 标识和安全
+      href: quickstarts-identity-security.md
     - name: 机器学习
       href: quickstarts-machine-learning.md
-    - name: Azure 认知服务
+    - name: AI（认知服务）
       href: quickstarts-cognitive-services.md
-    - name: 消息传递
-      href: quickstarts-messaging.md
-    - name: 安全性和集成
-      href: quickstarts-security-integration.md
+    - name: 消息传送和 IoT
+      href: quickstarts-messaging-iot.md
+    - name: 其他服务
+      href: quickstarts-other-services.md
 - name: 特定于方案的教程
   items:
     - name: 使用 VS Code 部署 Web 应用
