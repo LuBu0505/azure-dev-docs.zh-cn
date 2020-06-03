@@ -18,8 +18,10 @@
       href: azure-sdk-library-usage-patterns.md
     - name: 示例：预配资源组
       href: azure-sdk-example-resource-group.md
-    - name: 示例：预配和使用 Azure 存储
+    - name: 示例：预配 Azure 存储
       href: azure-sdk-example-storage.md
+    - name: 示例：使用 Azure 存储
+      href: azure-sdk-example-storage-use.md
     - name: 示例：预配和部署 Web 应用
       href: azure-sdk-example-web-app.md
     - name: 示例：预配虚拟机
