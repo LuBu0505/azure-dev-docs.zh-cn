@@ -3,12 +3,12 @@ title: 教程 - 使用 Terraform 创建 Azure 虚拟机规模集
 description: 了解如何使用 Terraform 配置 Azure 虚拟机规模集并对其进行版本控制。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: bb6175c92d0487bd5707b721ebc39ce4b727fed6
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.openlocfilehash: 23b57d5b7161c318a154bfa2afcf133aa545a233
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153724"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329575"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>教程：使用 Terraform 创建 Azure 虚拟机规模集
 
@@ -32,7 +32,7 @@ ms.locfileid: "83153724"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **安装 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](install-configure.md)一文中的指导
+- **安装 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](getting-started-cloud-shell.md)一文中的指导
 
 - **创建 SSH 密钥对**：有关详细信息，请参阅[如何创建和使用适用于 Azure 中 Linux VM 的 SSH 公钥和私钥对](/azure/virtual-machines/linux/mac-create-ssh-keys)。
 
@@ -80,9 +80,9 @@ ms.locfileid: "83153724"
     description = "The location where resources will be created"
    }
 
-   variable "tags" {
+   variable "tags" = {
     description = "A map of the tags to use for the resources that are deployed"
-    type        = map
+    type        = map(string)
 
     default = {
       environment = "codelab"

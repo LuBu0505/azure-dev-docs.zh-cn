@@ -4,12 +4,12 @@ description: 了解如何使用 Azure Kubernetes 服务和 Terraform 创建 Kube
 keywords: azure devops terraform aks kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 45a27dcd8751484f71c7a89f08109d2303ea121e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 01355f79f4c50d8599bf1c9cfab7c72257860f25
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171143"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329615"
 ---
 # <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>教程：使用 Terraform 和 Azure Kubernetes 服务 (AKS) 创建 Kubernetes 群集
 
@@ -28,7 +28,7 @@ ms.locfileid: "82171143"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **配置 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](install-configure.md)一文中的指导
+- **配置 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](getting-started-cloud-shell.md)一文中的指导
 
 - **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)一文的“创建服务主体”部分中的指导  。 记下 appId、displayName、password 和 tenant 的值。
 

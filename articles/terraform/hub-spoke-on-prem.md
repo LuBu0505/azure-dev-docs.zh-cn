@@ -3,12 +3,12 @@ title: 教程 - 在 Azure 中使用 Terraform 创建本地虚拟网络
 description: 了解如何在 Azure 中实现包含本地资源的本地虚拟网络 (VNet)。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: cbce485076be459882609f8f38ab51d085e2b3e1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0f336a9dae0c063cb8498f0aae4db3d82d1dbcac
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170953"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329595"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建本地虚拟网络
 
@@ -80,7 +80,7 @@ ms.locfileid: "82170953"
       resource_group_name = azurerm_resource_group.onprem-vnet-rg.name
       address_space       = ["192.168.0.0/16"]
 
-      tags {
+      tags = {
         environment = local.prefix-onprem
       }
     }
@@ -105,7 +105,7 @@ ms.locfileid: "82170953"
         resource_group_name = azurerm_resource_group.onprem-vnet-rg.name
         allocation_method   = "Dynamic"
 
-        tags {
+        tags = {
             environment = local.prefix-onprem
         }
     }
@@ -142,7 +142,7 @@ ms.locfileid: "82170953"
             destination_address_prefix = "*"
         }
 
-        tags {
+        tags = {
             environment = "onprem"
         }
     }
@@ -183,7 +183,7 @@ ms.locfileid: "82170953"
         disable_password_authentication = false
       }
 
-      tags {
+      tags = {
         environment = local.prefix-onprem
       }
     }
@@ -214,7 +214,7 @@ ms.locfileid: "82170953"
         private_ip_address_allocation = "Dynamic"
         subnet_id                     = azurerm_subnet.onprem-gateway-subnet.id
       }
-      depends_on = ["azurerm_public_ip.onprem-vpn-gateway1-pip"]
+      depends_on = [azurerm_public_ip.onprem-vpn-gateway1-pip]
 
     }
     ```

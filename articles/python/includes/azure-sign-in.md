@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 90ac4162e1a6032bcb1f3cfab7f249e4538314f7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: cbcc292bf0b59adf35789bbd24ca37b0301a2ad7
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441472"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84268791"
 ---
 安装 Azure 扩展以后，请通过导航到 **Azure** 资源管理器登录到 Azure 帐户，选择“登录 Azure”  ，然后按照提示操作。 （如果已安装多个 Azure 扩展，请针对你使用的区域选择一个扩展，如应用服务、Functions 等。）
 
@@ -19,14 +19,14 @@ ms.locfileid: "80441472"
 > [!NOTE]
 > 如果出现错误“找不到名为 [订阅 ID] 的订阅”，这可能是因为你使用了代理，因此无法访问 Azure API。  在终端中使用代理信息配置 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量：
 >
-> ```bash
-> # macOS/Linux
-> export HTTPS_PROXY=https://username:password@proxy:8080
-> export HTTP_PROXY=http://username:password@proxy:8080
-> ```
->
 > ```cmd
 > # Windows
 > set HTTPS_PROXY=https://username:password@proxy:8080
 > set HTTP_PROXY=http://username:password@proxy:8080
+> ```
+>
+> ```bash
+> # macOS/Linux
+> export HTTPS_PROXY=https://username:password@proxy:8080
+> export HTTP_PROXY=http://username:password@proxy:8080
 > ```
