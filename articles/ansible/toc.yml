@@ -7,13 +7,13 @@
 - name: 快速入门
   expanded: true
   items:
+    - name: 入门 - Cloud Shell
+      href: getting-started-cloud-shell.md
     - name: 将 Ansible 解决方案模板部署到 CentOS
       href: solution-template-deploy.md
     - name: 在 Linux 虚拟机上安装 Ansible
       href: install-on-linux-vm.md
       maintainContext: true
-    - name: 在 Cloud Shell 中运行 Playbook
-      href: cloudshell-run-playbook.md
     - name: 使用 Linux 虚拟机
       expanded: true
       items:
