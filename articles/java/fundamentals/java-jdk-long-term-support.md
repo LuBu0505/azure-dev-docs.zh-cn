@@ -4,16 +4,20 @@ description: 开发和运行 Java 应用程序所需的 Azure 支持的下载内
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-september2019
-ms.openlocfilehash: 02915383dd72a18959dbb5ba0f925a0e10b691d7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 4722c64e3b328cb5b63b6b976bd25e5b91341117
+ms.sourcegitcommit: 367217792f3b16c769e2c39372358bc6b9c9c044
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670643"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292785"
 ---
-# <a name="java-long-term-support-for-azure-and-azure-stack"></a>针对 Azure 和 Azure Stack 的 Java 长期支持
+# <a name="java-long-term-support-and-medium-term-support-for-azure-and-azure-stack"></a>针对 Azure 和 Azure Stack 的 Java 长期支持和中期支持
 
 Azure 和 Azure Stack 的 Java 开发人员可以使用 [Azul Zulu for Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) JDK 内部版生成并运行生产性 Java 应用程序，而不会产生额外的支持费用。 可以在 Azure 上根据需要使用任何 Java 运行时，但在使用 Zulu 时，可以获得免费的维护更新，还可以向 Microsoft 提交支持问题。
+
+指定为长期支持 (LTS) 的版本是由 Oracle 和 OpenJDK 社区指定的相同 LTS 版本。 对于 LTS 版本，我们根据需要至少提供 8 年对 bug 修补程序、安全更新程序和其他（“生产支持”）修补程序的访问权限，另外还提供 2 年旨在建议和帮助用户迁移到较新 JDK 版本的额外支持（“扩展支持”）。
+
+对于设计为中期支持 (MTS) 的那些版本，我们将在下一 LTS 版本正式推出后至少提供 1.5 年的生产支持，另外还提供 1 年的额外扩展支持。
 
 > [!div class="nextstepaction"]
 > [下载并安装 Java](java-jdk-install.md)
@@ -24,9 +28,13 @@ Azure 和 Azure Stack 的 Java 开发人员可以使用 [Azul Zulu for Azure - E
 * [Java 8](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts)
 * [Java 7](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts)
 
-## <a name="technical-preview"></a>Technical Preview
+## <a name="medium-term-support-mts"></a>中期支持 (MTS)
 
 * [Java 13](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13)
+
+## <a name="technical-preview"></a>Technical Preview
+
+* [Java 14](https://www.azul.com/downloads/azure-only/zulu/?version=java-14)
 
 ## <a name="what-is-the-zulu-openjdk-for-azure"></a>适用于 Azure 的 Zulu OpenJDK 是什么？
 
@@ -34,7 +42,7 @@ Azul Zulu for Azure - Enterprise Edition 内部版 OpenJDK 是适用于 Azure �
 
 * 是 OpenJDK 的 100% 开源内部版本，已经打包为 Java 开发工具包 (JDK)、Java Runtime Environment (JRE) 和无头 JRE。 这些二进制文件是 Java Standard Edition (SE) 的完全兼容且合规的商业版本，可以与 Azure 和 Azure Stack 上的 Java 应用程序或组件配合使用。
 * 与长期支持（包括 Bug 修复、性能增强功能以及安全修补程序）一起提供。
-* 用于在 Windows、Linux 和 MacOS 上开发和运行 Java 应用程序。
+* 用于在 Windows、Linux 和 macOS 上开发和运行 Java 应用程序。
 * 在 Docker Hub 上以容器映像的形式提供，在 Azure 市场上以虚拟机（Windows 和 Linux）的形式提供。
 * 由 Microsoft Azure 用来支持许多 Azure 服务，例如：
   * 应用服务 Windows
@@ -48,18 +56,17 @@ Azul Zulu for Azure - Enterprise Edition 内部版 OpenJDK 是适用于 Azure �
 
 ## <a name="supported-java-versions-and-update-schedule"></a>支持的 Java 版本和更新计划
 
-Azul Systems 为 Java 的所有长期支持 (LTS) 版本（从 Java SE 7、8、11 开始）提供完全支持的 [Azul Zulu for Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) 内部版。 详见 [Azul 新闻稿](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack)。
+Azul Systems 为 Java 的所有长期支持 (LTS) 和中期支持 (MTS) 版本（包括 Java SE 7、8、11、13）提供完全支持的 [Azul Zulu for Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) 内部版。 有关详细信息，请参阅 [Azul 新闻稿](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack)和 [Azul 产品支持生命周期](https://www.azul.com/products/azul_support_roadmap/)路线图。
 
-|Java SE LTS  |支持截止时间  |
+|Java SE 版本  |支持截止时间  |
 |---------|----------|
-|[![支持的 Java 版本 - Java 7](media/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts) |2023 年 7 月 |
-|[![支持的 Java 版本 - Java 8](media/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts) |2025 年 3 月|
-|[![支持的 Java 版本 - Java 11](media/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts) |2026 年 9 月|
-|[![支持的 Java 版本 - Java 13](media/supported-java-versions-java-13.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13) |**预览**|
+|[![支持的 Java 版本 - LTS - Java 7](media/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts) |2023 年 7 月 - LTS|
+|[![支持的 Java 版本 - LTS - Java 8](media/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts) |2030 年 12 月 - LTS|
+|[![支持的 Java 版本 - LTS - Java 11](media/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts) |2027 年 9 月 - LTS|
+|[![支持的 Java 版本 - MTS - Java 13](media/supported-java-versions-java-13.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13) |2023 年 3 月 - MTS|
+|[![支持的 Java 版本 - 预览版 - Java 14](media/supported-java-versions-java-14.png)](https://www.azul.com/downloads/azure-only/zulu/?version=java-14) |**预览**|
 
-这些 JDK 发布版本有季度安全更新和 Bug 修复，并根据需要提供关键的带外更新和修补程序。  此支持包括后向移植在新版 Java（例如 Java 11）中报告的针对 Java 7 和 8 的安全更新和 Bug 修复，确保旧版 Java 的持续稳定性和安全性。  Azure 客户可以获取这些安全更新和平台 Bug 修复，不需支付任何计划外 Java SE 订阅费用。
-
-Azul Systems 为这些版本保留了一个 [Java SE 路线图](https://www.azul.com/products/azul_support_roadmap/)。
+这些 LTS 和 MTS JDK 版本提供季度安全更新程序和 Bug 修补程序，并根据需要提供关键的带外更新和修补程序。  此支持包括后向移植在新版 Java（例如 Java 11）中报告的针对 Java 7 和 8 的安全更新和 Bug 修复，确保旧版 Java 的持续稳定性和安全性。  Azure 客户可以获取这些安全更新和平台 Bug 修复，不需支付任何计划外 Java SE 订阅费用。
 
 ## <a name="benefits-for-developers"></a>为开发人员带来的好处
 
@@ -68,8 +75,8 @@ Azul Zulu for Azure - Enterprise Edition JDK 发布版具有以下特点：
 1. 由 Microsoft 和 Azul Systems 提供支持
 
    * Zulu 二进制文件已做好生产准备，由 Microsoft 和 Azul Systems 提供支持
-   * Zulu 为 Java 7、8、11 提供免费长期支持 (LTS)。 （还将为 Java 17 提供 LTS）。 可以只在需要的时候升级 Java 版本。
-   * Java 7 的支持截止时间是 2023 年 7 月。 在 2024 年之后仍会支持 Java 8 和 11。
+   * Zulu 为 Java 7、8、11 提供免费长期支持 (LTS)，并为 Java 13 提供中期支持 (MTS)。 （还将为 Java 17 提供 LTS）。 可以只在需要的时候升级 Java 版本。
+   * Java 7 的支持截止时间是 2023 年 7 月。 Java 8 和 11 在 2027 年 9 月之前仍会受支持。 Java 13 在 2023 年 3 月之前仍会受支持。
    * Microsoft 致力于在为许多 Azure 服务提供支持的计算机上以内部方式运行 Zulu。
 
 2. 生产就绪
@@ -77,9 +84,9 @@ Azul Zulu for Azure - Enterprise Edition JDK 发布版具有以下特点：
    * 100% 开源（就其内部版 OpenJDK 来说）。
    * 可随时替换许多 Java SE 发行版。
    * JDK、JRE 和 JRE-headless
-   * Java 7、8 和 11
-   * 经 OpenJDK 社区技术兼容性工具包 (TCK) 验证符合 Java SE 规范。
-   * 开发人员会继续收到 Java SE 的生产更新，包括 Java SE 7、8 和 11 的 Bug 修复、性能增强功能以及安全修补程序。
+   * Java 7、8、11 和 13。
+   * 经 OpenJDK 社区技术兼容性工具包 (TCK) 验证，已符合 Java SE 规范。
+   * 开发人员会继续收到 Java SE 的生产更新，包括 Java SE 7、8、11 和 13 的 Bug 修补程序、性能增强功能以及安全修补程序。
 
 3. 多平台支持。 Zulu 支持的二进制文件适用于多个平台和版本，包括：
 
@@ -115,9 +122,9 @@ Azul Zulu for Azure - Enterprise Edition JDK 发布版具有以下特点：
 4. 免费
 
    * Microsoft 免费提供在 Azure 上生成和缩放 Java 应用所需的一切。 你可以通过 Zulu 接收针对 Java 应用的免费安全更新和平台 Bug 修复，不需任何费用。
-   * Zulu Java 8、11 和 12（预览版）提供 [Java Flight Recorder 和 Mission Control](java-jdk-flight-recorder-and-mission-control.md)。
+   * Zulu Java 8、11 和更高版本中提供 [Java Flight Recorder 和 Mission Control](java-jdk-flight-recorder-and-mission-control.md)。
 
-5. 非 LTS 版本的技术预览
+5. 非 LTS/MTS 版本的技术预览版
 
    * 可以通过技术预览以渐进方式对短期版本中提供的新功能进行测试，这些短期版本最终会成为 Java 17 LTS。
 

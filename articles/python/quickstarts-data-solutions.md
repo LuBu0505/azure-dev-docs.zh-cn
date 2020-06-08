@@ -1,20 +1,23 @@
 ---
-title: Azure 上的 Python 应用的数据解决方案快速入门
-description: Azure 文档中适用于 Python 应用的数据解决方案的入门材料列表。
-ms.date: 05/12/2020
+title: Azure 上的 Python 应用的数据解决方案入门
+description: Azure 文档中适用于 Python 应用的数据解决方案的入门材料索引。
+ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3bbea82b3f4197cc8176cfde78ce2d63dba47504
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 9880025bcbe2d019d04469e6cff0b415cbbdc744
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403740"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202886"
 ---
 # <a name="data-solutions-for-python-apps-on-azure"></a>Azure 上的 Python 应用的数据解决方案
 
-以下文章有助于 Azure 上各种数据解决方案的入门：
+以下文章有助于你开始使用 Azure 上的各种数据解决方案。
+
+## <a name="sql-databases"></a>SQL 数据库
 
 - PostgreSQL：
+  - [使用 Python 连接到 Azure Database for PostgreSQL 并查询其中的数据](/azure/postgresql/connect-python)
   - [在 Azure 应用服务中使用 PostgreSQL 运行 Python (Django) Web 应用](/azure/app-service/containers/tutorial-python-postgresql-app)
 
 - MySQL：
@@ -23,15 +26,44 @@ ms.locfileid: "83403740"
 - Azure SQL：
   - [使用 Python 查询 Azure SQL 数据库](/azure/sql-database/sql-database-connect-query-python)
 
+- **Maria DB**：
+  - [如何将应用程序连接到 Azure Database for MariaDB](/azure/mariadb/howto-connection-string)
+
+## <a name="tables-blobs-files-nosql"></a>表、Blob、文件、NoSQL
+
 - 表和 NoSQL：
   - [使用 Python 和 Azure Cosmos DB 生成表 API 应用](/azure/cosmos-db/create-table-python)
   - [使用 Azure Cosmos DB SQL API 帐户生成 Python 应用程序](/azure/cosmos-db/create-sql-api-python)
+  - [使用 Python SDK 和 Azure Cosmos DB 构建 Cassandra 应用](/azure/cosmos-db/create-cassandra-python)
+  - [使用 Python 和 Azure 门户在 Azure Cosmos DB 中创建图形数据库](/azure/cosmos-db/create-graph-python)
+  -[使用 Azure Cosmos DB 的用于 MongoDB 的 API 构建 Python 应用](/azure/cosmos-db/create-mongodb-flask)
 
-- **Blob 存储**：
+- **Blob 和文件存储**：
   - [使用 Python 管理 Azure 存储 Blob](/azure/storage/blobs/storage-quickstart-blobs-python)
+  - [使用 Python 针对 Azure 文件进行开发](/azure/storage/files/storage-python-how-to-use-file-storage)
 
 - Redis 缓存：
   - [创建使用 Azure Redis 缓存的 Python 应用](/azure/azure-cache-for-redis/cache-python-get-started)
 
-- 无服务器数据集成：
+## <a name="big-data-and-analytics"></a>大数据和分析
+
+- **大数据分析（Azure Data Lake 分析）** ：
+  - [使用 Python 管理 Azure Data Lake Analytics](/azure/data-lake-analytics/data-lake-analytics-manage-use-python-sdk)
+  - [使用 Python 针对 Azure Data Lake Analytics 开发 U-SQL 程序](/azure/data-lake-analytics/data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode)
+
+- **大数据业务流程（Azure 数据工厂）** ：
   - [使用 Python 创建数据工厂和管道](/azure/data-factory/quickstart-create-data-factory-python)
+  - [通过在 Azure Databricks 中运行 Python 活动转换数据](/azure/data-factory/transform-data-databricks-python)
+
+- **大数据流式处理和事件引入（Azure 事件中心）** ：
+  - [使用 Python 向/从事件中心发送/接收事件](/azure/event-hubs/get-started-python-send-v2)
+  - [事件中心捕获演练：Python](/azure/event-hubs/event-hubs-capture-python)
+  - [使用 Python 将事件中心数据捕获到 Azure 存储中并读取该数据](/azure/event-hubs/get-started-capture-python-v2)
+
+- **Hadoop (Azure HDInsights)** ：
+  - [使用适用于 Visual Studio Code 的 Spark & Hive Tools](/azure/hdinsight/hdinsight-for-vscode)
+
+- **基于 Spark 的分析 (Azure Databricks)** ：
+  - [从 Excel、Python 或 R 连接到 Azure Databricks](/azure/azure-databricks/connect-databricks-excel-python-r)
+  - [使用 Azure 门户在 Azure Databricks 上运行 Spark 作业](/azure/azure-databricks/quickstart-create-databricks-workspace-portal)
+  - [教程：Azure Data Lake Storage Gen2、Azure Databricks 和 Spark](/azure/storage/blobs/data-lake-storage-use-databricks-spark)

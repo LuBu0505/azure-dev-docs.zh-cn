@@ -1,35 +1,26 @@
 ---
-title: Azure 上的 Python 应用的认知服务快速入门
-description: Azure 文档中适用于 Python 应用的认知服务的入门材料列表。
-ms.date: 05/12/2020
+title: 适用于 Azure 上的 Python 应用的 AI 认知服务入门
+description: Azure 文档中适用于 Python 应用的 AI 认知服务的入门材料索引。
+ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4b07e886fdb58f9a8abad48a6bd905cdf935e131
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 7192826524f647560f502fa0d01d136c0de945d1
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403744"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202808"
 ---
-# <a name="cognitive-services-for-python-apps-on-azure"></a>Azure 上的 Python 应用的认知服务
+# <a name="ai-service-for-python-apps-on-azure"></a>适用于 Azure 上的 Python 应用的 AI 服务
 
-以下文章有助于你开始使用 Azure 认知服务，以便应用能够轻松使用广泛的 AI 功能：
+Azure 认知服务使广泛的 AI 功能可以轻松提供给计算机视觉和图像处理、语言分析和翻译、语音、决策和全面搜索等领域的应用程序。
 
-- **概览**：
-  - [用于 Python 的 Azure 认知服务模块](/python/api/overview/azure/cognitive-services?view=azure-python)
+由于 Azure 认知服务不断发展，因此查找 Python 入门材料的最佳方式是从 [Azure 认知服务中心页](/azure/cognitive-services/)开始。 选择一种感兴趣的服务，然后展开“快速入门”节点。 在“快速入门”下，查找有关使用客户端库或 REST API 的子部分。 这些子部分中的文章包括 Python（如果受支持）。
 
-- 图像处理：  
-  - [使用计算机视觉 REST API 和 Python 分析远程图像](/azure/cognitive-services/Computer-vision/Quickstarts/python-analyze)
-  - [使用自定义视觉 Python SDK 创建图像分类项目](/azure/cognitive-services/custom-vision-service/python-tutorial)
+> [!div class="nextstepaction"]
+> [转到认知服务中心页 >>>](/azure/cognitive-services/)
 
-- 面部识别：  
-  - [通过 Python 进行面部识别](/azure/cognitive-services/face/quickstarts/python-sdk)
+另请参阅以下有关 Azure 认知搜索的文章，Azure 认知搜索所在的文档部分不同于认知服务所在的文档部分：
 
-- 语言、文本分析和搜索：
-  - [用于 Python 的语言理解 (LUIS) 创作](/azure/cognitive-services/luis/sdk-authoring)
-  - [使用适用于 Python 的文本分析客户端库](/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk)
-  - [使用适用于 Python 的内容审查器客户端库](/azure/cognitive-services/content-moderator/python-sdk-quickstart)
-  - [使用必应自动建议 REST API 和 Python 建议搜索查询](/azure/cognitive-services/bing-autosuggest/quickstarts/python)
-  - [搜索中心页面](/azure/cognitive-services/bing-web-search/index)
+- [使用 Jupyter 笔记本通过 Python 创建 Azure 认知搜索索引](/azure/search/search-get-started-python)。
+- [使用 Python 和 AI 从 Azure Blob 生成可搜索的内容](/azure/search/cognitive-search-tutorial-blob-python)
 
-- 语音服务
-  - [语音服务中心页面](/azure/cognitive-services/speech-service/index)
