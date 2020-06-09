@@ -7,10 +7,8 @@
 - name: 快速入门
   expanded: true
   items:
-    - name: 安装和配置 Terraform
-      href: install-configure.md
-    - name: 创建 Linux VM
-      href: create-linux-virtual-machine-with-infrastructure.md
+    - name: 入门 - Cloud Shell
+      href: getting-started-cloud-shell.md
 - name: 教程
   items:
     - name: 安装和配置
@@ -31,16 +29,6 @@
       items:
         - name: 部署 Azure Cosmos DB
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
-    - name: 基础结构
-      items:
-        - name: 使用 Terraform 模块创建 VM 群集
-          href: create-vm-cluster-module.md
-        - name: 使用 Terraform 和 HCL 创建 VM 群集
-          href: create-vm-cluster-with-infrastructure.md
-        - name: 为 VM 规模集预配基础结构
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: 从 Packer 自定义映像预配 VM 规模集
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
     - name: 网络
       items:
         - name: 中心和辐射拓扑
@@ -62,9 +50,21 @@
         - name: 安装 Terraform Visual Studio Code 扩展
           href: configure-vs-code-extension-for-terraform.md
         - name: 使用 Yeoman 创建 Terraform 基模板
-          href: create-a-base-template-using-yeoman.md
+          href: create-base-template-using-yeoman.md
         - name: 使用 Terratest 测试 Terraform 模块
           href: test-modules-using-terratest.md
+    - name: 虚拟机
+      items:
+        - name: 具有基础结构的虚拟机
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: 具有 Terraform 模块的虚拟机群集
+          href: create-vm-cluster-module.md
+        - name: 使用 Terraform 和 HCL 创建虚拟机群集
+          href: create-vm-cluster-with-infrastructure.md
+        - name: 具有基础结构的虚拟机规模集
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: 从 Packer 映像创建虚拟机规模集
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: 示例
   items:
     - name: 配置模板

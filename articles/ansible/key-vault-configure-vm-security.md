@@ -4,12 +4,12 @@ description: 了解如何使用 Ansible 通过 Azure Key Vault 配置 VM 安全�
 keywords: ansible, azure, 开发, 密钥保管库, 安全性, 凭据, 机密, 密钥, 证书, 适用于 azure 的 ansible 模块, 资源组, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ce9adb7ea121425d410665e1f4cc225cfdb82bd8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81755230"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84145965"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>教程：通过 Ansible 将 Azure Key Vault 与 Linux 虚拟机配合使用
 
@@ -39,15 +39,15 @@ ms.locfileid: "81755230"
 
 通过 Azure CLI 获取在使用适用于 Azure 的 Ansible 模块时所需的 Azure 订阅信息。 
 
-1. 使用 `az account show` 命令获取 Azure 订阅 ID 和 Azure 订阅租户 ID。 对于 `<Subscription>` 占位符，请指定 Azure 订阅名称或 Azure 订阅 ID。 此命令会显示与默认 Azure 订阅关联的许多键值。 如果有多个订阅，可能需要通过 [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) 命令设置当前订阅。 记下该命令的输出中的  ID 值和 tenantID  值。
+1. 使用 `az account show` 命令获取 Azure 订阅 ID 和 Azure 订阅租户 ID。 对于 `<Subscription>` 占位符，请指定 Azure 订阅名称或 Azure 订阅 ID。 此命令会显示与默认 Azure 订阅关联的许多键值。 如果有多个订阅，可能需要通过 [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) 命令设置当前订阅。 记下该命令的输出中的 ID 值和 tenantID 值。
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. 如果没有 Azure 订阅的服务主体，请 [通过 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 记下该命令的输出中的 appId  值。
+1. 如果没有 Azure 订阅的服务主体，请 [通过 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 记下该命令的输出中的 appId 值。
 
-1. 使用 `az ad sp show` 命令获取服务主体的对象 ID。 对于 `<ApplicationID>` 占位符，请指定服务主体 appId。 `--query` 参数指示哪一个值要输出到 stdout  。 在此示例中，它是服务主体对象 ID。
+1. 使用 `az ad sp show` 命令获取服务主体的对象 ID。 对于 `<ApplicationID>` 占位符，请指定服务主体 appId。 `--query` 参数指示哪一个值要输出到 stdout。 在此示例中，它是服务主体对象 ID。
 
     ```azurecli
     az ad sp show --id <ApplicationID> --query objectId
@@ -105,10 +105,10 @@ ms.locfileid: "81755230"
         msg: "New resource group = {{ kv_rg }}"
 ```
 
-注意： 
+注意：
 
 - 在此演示中，密钥保管库是作为资源组中的唯一资源创建的。 常见做法是将密钥保管库与使用它的资源分开。 这种模式可防止在删除其他资源时意外删除密钥保管库。
-- 由于密钥保管库名称必须在 Azure 中独一无二，因此本演示创建一个随机的后缀  值。 此值将追加到密钥保管库资源组和密钥保管库（在下一部分创建）的名称后面。 `Prepare random postfix` 任务中的代码会生成此随机后缀值，此值被赋予 `rpfx` 变量。
+- 由于密钥保管库名称必须在 Azure 中独一无二，因此本演示创建一个随机的后缀值。 此值将追加到密钥保管库资源组和密钥保管库（在下一部分创建）的名称后面。 `Prepare random postfix` 任务中的代码会生成此随机后缀值，此值被赋予 `rpfx` 变量。
 - 在 `Set facts` 任务中，`lookup` 命令用于检索作为环境变量存储的 Azure 订阅 ID。
 - [azure_rm_resourcegroup 模块](https://docs.ansible.com/ansible/latest/modules/azure_rm_resourcegroup_module.html)用于创建新资源组。
 - playbook 末尾的 `debug` 任务会显示新资源组的名称。
@@ -150,7 +150,7 @@ tasks:
 
 ```
 
-注意： 
+注意：
 
 - [azure_rm_keyvault 模块](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvault_module.html)用于创建密钥保管库。
 - 在将访问策略作为密钥保管库的一部分创建时，已经提供了对象 ID 和租户 ID。 这些值定义特定服务主体（与某个 Azure 订阅关联的服务主体）的访问策略。 但是，当你浏览到 Azure 门户并尝试查看密钥保管库的机密时，可能会出现错误消息。 这些消息可能类似于“此密钥保管库的访问策略中未启用操作‘列出’。” 和“你无权查看这些内容。” 收到这些消息表明作为 Active Directory 用户的你没有访问权限。 下一部分说明如何将针对你自己的访问策略添加到密钥保管库。
@@ -162,33 +162,33 @@ tasks:
 
 1. 浏览到 [Azure 门户](https://portal.azure.com)。
 
-1. 在页面的主搜索框中输入“`key vaults`”，然后在“服务”下选择“密钥保管库”。  
+1. 在页面的主搜索框中输入“`key vaults`”，然后在“服务”下选择“密钥保管库”。 
 
 1. 选择在上一部分创建的密钥保管库。 （名称已从 playbook 输出到 stdout。）
 
-1. 选择“访问策略”。 
+1. 选择“访问策略”。
 
 1. 此时会显示单个访问策略，其中包含表示指定服务主体的 Azure Active Directory ID。
 
-1. 选择“添加访问策略”。 
+1. 选择“添加访问策略”。
 
-1. 选择“选择主体”。 
+1. 选择“选择主体”。
 
-1. 在“主体”选项卡的搜索框中，输入你的电子邮件地址。 
+1. 在“主体”选项卡的搜索框中，输入你的电子邮件地址。
 
 1. 从筛选的列表中选择相应的条目。
 
-1. 所选用户的信息将复制到“所选成员”  列表。 选择“选择”  。
+1. 所选用户的信息将复制到“所选成员”列表。 选择“选择”。
 
-1. 选择“密钥权限”、“机密权限”和“证书权限”的相应选项。    对于本演示，请先选择“机密权限”，然后选择“获取”、“列出”和“设置”即可。    
+1. 选择“密钥权限”、“机密权限”和“证书权限”的相应选项。   对于本演示，请先选择“机密权限”，然后选择“获取”、“列出”和“设置”即可。   
 
 1. 选择 **添加** 。
 
-1. 所选用户的新访问策略现在会显示在“访问策略”页上。 
+1. 所选用户的新访问策略现在会显示在“访问策略”页上。
 
-1. 选择“保存”。 
+1. 选择“保存”。
 
-1. 选择门户右上角的“通知”。  等到访问策略已更新后，转到下一步。
+1. 选择门户右上角的“通知”。 等到访问策略已更新后，转到下一步。
 
 ## <a name="create-a-key-vault-secret"></a>创建密钥保管库机密
 
@@ -213,11 +213,11 @@ tasks:
         secret_value: "{{ kv_secret_value }}"
 ```
 
-注意： 
+注意：
 
 - [azure_rm_keyvaultsecret 模块](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html)用于创建密钥保管库机密。
-- 为了简单起见，本演示包含 `secret_name` 和 `secret_value`。 不过，就像你的项目的任何源代码一样，playbook 是基础结构即代码 (IaC) 文件。 因此，在生产环境中使用时，这样的值不应存储在纯文本文件中。
-- 运行此代码后，密钥保管库的“机密”  选项卡会列出新添加的名为 `testsecret` 的机密。 若要查看它，请依次选择机密、当前版本和“显示机密值”。 
+- 为了简单起见，本演示包含 `secret_name` 和 `secret_value`。 不过，playbook 就像项目的任何源代码一样，是“基础结构即代码”(IaC) 文件。 因此，在生产环境中使用时，这样的值不应存储在纯文本文件中。
+- 运行此代码后，密钥保管库的“机密”选项卡会列出新添加的名为 `testsecret` 的机密。 若要查看它，请依次选择机密、当前版本和“显示机密值”。
 
 ## <a name="get-a-key-vault-secret"></a>获取密钥保管库机密
 
@@ -238,11 +238,11 @@ tasks:
         var: output['secrets'][0]['secret']
 ```
 
-注意： 
+注意：
 
 - **azure_rm_keyvaultsecret_info 模块**用于获取密钥保管库机密。 只有在使用适用于 Azure 模块的 Ansible 集合的情况下，此模块才可用。 
 - 如果在运行此代码片段时收到错误，请确保已遵循[“先决条件”部分](#prerequisites)中的所有说明。
-- 为了简单起见，本演示包含 `secret_name` 和 `secret_value`。 不过，就像你的项目的任何源代码一样，playbook 是基础结构即代码 (IaC) 文件。 因此，在生产环境中使用时，这样的值不应存储在纯文本文件中。
+- 为了简单起见，本演示包含 `secret_name` 和 `secret_value`。 不过，playbook 就像项目的任何源代码一样，是“基础结构即代码”(IaC) 文件。 因此，在生产环境中使用时，这样的值不应存储在纯文本文件中。
 
 ## <a name="run-the-complete-playbook"></a>运行完整的 playbook
 
@@ -425,9 +425,9 @@ tasks:
 
 ```
 
-注意： 
+注意：
 
-- 虚拟机的管理员  密码设置为密钥保管库机密。
+- 虚拟机的管理员密码设置为密钥保管库机密。
 - 能否一次运行整个 playbook 取决于你的测试环境。 在创建密钥之前，可能需要手动将自己添加到密钥保管库的访问策略。 此任务在[创建密钥保管库](#create-a-key-vault)和[将自己添加到密钥保管库访问策略](#add-yourself-to-key-vault-access-policy)部分进行了介绍。
 - 可以看到，我们使用了许多不同的 Ansible 模块来创建 Azure 虚拟机及其所有构成组件。 若要详细了解各种用于创建虚拟机的 Ansible 模块，请使用以下列表：
     - [Azure 资源组模块 (azure_rm_resourcegroup)](https://docs.ansible.com/ansible/latest/modules/azure_rm_resourcegroup_module.html)

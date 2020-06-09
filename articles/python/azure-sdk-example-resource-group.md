@@ -1,18 +1,18 @@
 ---
-title: 使用 Azure SDK for Python 预配资源组
+title: 使用用于 Python 的 Azure 库预配资源组
 description: 使用 Azure SDK for Python 中的资源管理库通过 Python 代码创建资源组。
-ms.date: 05/12/2020
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 99b2f721cf2c215d2ba9ea97cf78250fc65f165a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 0d0ff5bf8a2417e38f9fd066b226ed26da87322b
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631576"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329675"
 ---
-# <a name="example-use-the-azure-sdk-to-provision-a-resource-group"></a>示例：使用 Azure SDK 预配资源组
+# <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>示例：使用 Azure 库预配资源组
 
-此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来预配资源组。
+此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来预配资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）
 
 除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
 
@@ -20,9 +20,9 @@ ms.locfileid: "83631576"
 
 如果尚未设置，请按照[为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)中的所有说明进行操作。
 
-请确保创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
+务必创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
 
-## <a name="2-install-the-resource-management-library"></a>2:安装资源管理库
+## <a name="2-install-the-azure-library-packages"></a>2:安装 Azure 库包
 
 创建一个具有以下内容的名为 *requirements.txt* 的文件：
 
@@ -33,7 +33,7 @@ azure-cli-core
 
 在激活了虚拟环境的终端或命令提示符下，安装下列要求：
 
-```bash
+```cmd
 pip install -r requirements.txt
 ```
 
@@ -52,7 +52,7 @@ resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
 # Provision the resource group.
 rg_result = resource_client.resource_groups.create_or_update(
-    "PythonSDKExample-ResourceGroup-rg",
+    "PythonAzureExample-ResourceGroup-rg",
     {
         "location": "centralus"
     }
@@ -75,16 +75,20 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 # provisioned by the time the call returns.
 
 # Optional line to delete the resource group
-#resource_client.resource_groups.delete("PythonSDKExample-ResourceGroup-rg")
+#resource_client.resource_groups.delete("PythonAzureExample-ResourceGroup-rg")
 ```
 
 此代码使用基于 CLI 的身份验证方法 (`get_client_from_cli_profile`)，因为它演示了你可能会使用 Azure CLI 直接执行的操作。 在这两种情况下，使用相同的身份验证标识。
 
 若要在生产脚本中使用此类代码，应改为使用 `DefaultAzureCredential`（推荐）或基于服务主体的方法，如[如何使用 Azure 服务对 Python 应用进行身份验证](azure-sdk-authenticate.md)中所述。
 
+### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
+
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
+
 ## <a name="4-run-the-script"></a>4：运行脚本
 
-```bash
+```cmd
 python provision_rg.py
 ```
 
@@ -97,13 +101,13 @@ python provision_rg.py
 - Azure CLI：运行以下命令：
 
     ```azurecli
-    az group show -n PythonSDKExample-ResourceGroup-rg
+    az group show -n PythonAzureExample-ResourceGroup-rg
     ```
 
 ## <a name="6-clean-up-resources"></a>6：清理资源
 
 ```azurecli
-az group delete -n PythonSDKExample-ResourceGroup-rg
+az group delete -n PythonAzureExample-ResourceGroup-rg
 ```
 
 如果不需要保留在此示例中预配的资源组，请运行此命令。 资源组不会在你的订阅中产生任何持续的费用，但最好清除你不会主动使用的任何组。
@@ -115,10 +119,13 @@ az group delete -n PythonSDKExample-ResourceGroup-rg
 以下 Azure CLI 命令完成了与 Python 脚本相同的预配步骤：
 
 ```azurecli
-az group create -n PythonSDKExample-ResourceGroup-rg -l centralus
+az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
 ```
 
-## <a name="next-step"></a>后续步骤
+## <a name="see-also"></a>另请参阅
 
-> [!div class="nextstepaction"]
-> [示例：使用 Azure 存储 >>>](azure-sdk-example-storage.md)
+- [示例：预配 Azure 存储](azure-sdk-example-storage.md)
+- [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
+- [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
+- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
+- [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

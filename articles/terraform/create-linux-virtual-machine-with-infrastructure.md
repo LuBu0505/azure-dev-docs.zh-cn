@@ -1,19 +1,19 @@
 ---
-title: 快速入门 - 使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
+title: 教程 - 使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 description: 了解如何使用 Terraform 在 Azure 中创建和管理完整的 Linux 虚拟机环境。
 keywords: azure devops terraform linux vm 虚拟机
-ms.topic: quickstart
-ms.date: 05/11/2020
-ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.topic: tutorial
+ms.date: 05/31/2020
+ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153713"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329435"
 ---
-# <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>快速入门：使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
+# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 
-使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](install-configure.md)。
+使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](getting-started-cloud-shell.md)。
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -25,22 +25,17 @@ ms.locfileid: "83153713"
 
 我们来详细地了解 Terraform 模板的每个部分。 还可以看到完整版本的 [Terraform 模板](#complete-terraform-script)，可以复制并粘贴这些模板。
 
-`provider` 部分告知 Terraform 使用 Azure 提供程序。 若要获取 `subscription_id`、`client_id`、`client_secret` 和 `tenant_id`的值，请参阅[安装并配置 Terraform](install-configure.md)。 
+`provider` 部分告知 Terraform 使用 Azure 提供程序。 若要获取 `subscription_id`、`client_id`、`client_secret` 和 `tenant_id`的值，请参阅[安装并配置 Terraform](getting-started-cloud-shell.md)。
 
 > [!TIP]
 > 如果要为值创建环境变量，或要使用 [Azure Cloud Shell Bash 体验](/azure/cloud-shell/overview)，则无需在此节中包括变量声明。
 
 ```hcl
 provider "azurerm" {
-    # The "feature" block is required for AzureRM provider 2.x. 
+    # The "feature" block is required for AzureRM provider 2.x.
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
-    
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
 
@@ -83,10 +78,9 @@ resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = azurerm_resource_group.myterraformgroup.name
     virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
-    address_prefix       = "10.0.2.0/24"
+    address_prefixes       = ["10.0.2.0/24"]
 }
 ```
-
 
 ## <a name="create-public-ip-address"></a>创建公共 IP 地址
 
@@ -163,7 +157,6 @@ resource "azurerm_network_interface_security_group_association" "example" {
 }
 ```
 
-
 ## <a name="create-storage-account-for-diagnostics"></a>创建存储帐户以进行诊断
 
 若要为 VM 存储启动诊断，需要一个存储帐户。 这些启动诊断可帮助你排查问题和监视 VM 状态。 你创建的存储帐户仅用于存储启动诊断数据。 由于每个存储帐户必须具有唯一名称，以下部分会生成一些随机文本：
@@ -203,6 +196,13 @@ resource "azurerm_storage_account" "mystorageaccount" {
  `ssh_keys` 部分提供了 SSH 密钥数据。 在 `key_data` 字段中提供公共 SSH 密钥。
 
 ```hcl
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+
+output "tls_private_key" { value = "tls_private_key.example_ssh.private_key_pem" }
+
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
     location              = "eastus"
@@ -229,7 +229,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("/home/azureuser/.ssh/authorized_keys")
+        public_key     = tls_private_key.example_ssh.public_key_openssh
     }
 
     boot_diagnostics {
@@ -253,11 +253,6 @@ provider "azurerm" {
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 
 # Create a resource group if it doesn't exist
@@ -287,7 +282,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = azurerm_resource_group.myterraformgroup.name
     virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
-    address_prefix       = "10.0.1.0/24"
+    address_prefixes       = ["10.0.1.0/24"]
 }
 
 # Create public IPs
@@ -372,6 +367,13 @@ resource "azurerm_storage_account" "mystorageaccount" {
     }
 }
 
+# Create (and display) an SSH key
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+output "tls_private_key" { value = "${tls_private_key.example_ssh.private_key_pem}" }
+
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
@@ -399,7 +401,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("/home/azureuser/.ssh/authorized_keys")
+        public_key     = tls_private_key.example_ssh.public_key_openssh
     }
 
     boot_diagnostics {
@@ -411,10 +413,6 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     }
 }
 ```
-
-注意：
-
-- 关于 `admin_ssh_key` 块，Azure VM 代理要求将 SSH 密钥写入以下路径：`/home/{username}/.ssh/authorized_keys`。 若要在 Windows 上运行此示例，可能需要确保此目录结构存在。 有关 `admin_ssh_key` 块的详细信息，请参阅 [Terraform.io 上的 azurerm_linux_virtual_machine 文档](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html)。
 
 ## <a name="build-and-deploy-the-infrastructure"></a>构建并部署基础结构
 

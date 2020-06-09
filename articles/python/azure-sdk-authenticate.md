@@ -1,21 +1,21 @@
 ---
-title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
-description: 使用 Azure 管理 SDK 库通过 Azure 服务对 Python 应用进行身份验证
+title: 如何使 Python 应用程序向 Azure 服务进行身份验证
+description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8dd434c0a18c0a263573188e04a54f48afcf2b0d
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403690"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329425"
 ---
-# <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何通过 Azure 服务对 Python 应用进行身份验证
+# <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何使 Python 应用向 Azure 服务进行身份验证
 
-使用 Azure SDK for Python 编写应用代码时，可使用以下模式访问 Azure 资源：
+使用用于 Python 的 Azure 库编写应用代码时，请使用以下模式访问 Azure 资源：
 
 1. 获取凭据（通常是一次性操作）。
-1. 使用凭据为资源获取 SDK 提供的客户端对象。
+1. 使用该凭据为资源获取相应的客户端对象。
 1. 尝试通过客户端对象访问或修改资源，该对象将生成对资源的 REST API 的 HTTP 请求。
 
 对 REST API 的请求是 Azure 对凭据对象所描述的应用标识进行身份验证的点。 然后，Azure 会检查该标识是否有权执行请求的操作。 如果该标识没有授权，则操作失败。 （授予权限取决于资源的类型，如 Azure Key Vault、Azure 存储等。有关详细信息，请参阅该资源类型的文档。）
@@ -33,10 +33,15 @@ import os
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-# Obtain the credential object
+# Obtain the credential object. When run locally, DefaultAzureCredential relies
+# on environment variables named AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 credential = DefaultAzureCredential()
 
-# Create the SDK client object to access Key Vault secrets.
+# Create the client object using the credential
+#
+# **NOTE**: SecretClient here is only an example; the same process
+# applies to all other Azure client libraries.
+
 vault_url = os.environ["KEY_VAULT_URL"]
 secret_client = SecretClient(vault_url=vault_url, credential=credential)
 
@@ -137,17 +142,11 @@ print(subscription.subscription_id)
     将四个占位符替换为你的 Azure 订阅 ID、租户 ID、客户端 ID 和客户端密码。
 
     > [!TIP]
-    > 如[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-for-development)中所述，可以将 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令与 `--sdk-auth` 参数一起使用，以直接生成此 JSON 格式。
+    > 如[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)中所述，可以将 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令与 `--sdk-auth` 参数一起使用，以直接生成此 JSON 格式。
 
 1. 使用名称（如 credentials.json）将此文件保存在可供代码访问的安全位置。 若要保护凭据，请确保从源代码管理中省略此文件，并且不要将其与其他开发人员共享。 也就是说，服务主体的租户 ID、客户端 ID 和客户端密码应始终在开发工作站上保持隔离。
 
 1. 创建一个名为 `AZURE_AUTH_LOCATION` 且值为 JSON 文件的路径的环境变量：
-
-    # <a name="bash"></a>[bash](#tab/bash)
-
-    ```bash
-    AZURE_AUTH_LOCATION="../credentials.json"
-    ```
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -155,9 +154,16 @@ print(subscription.subscription_id)
     set AZURE_AUTH_LOCATION=../credentials.json
     ```
 
-    这些示例假定 JSON 文件名为 credentials.json，并且位于项目的父文件夹中。
+    # <a name="bash"></a>[bash](#tab/bash)
+
+    ```bash
+    AZURE_AUTH_LOCATION="../credentials.json"
+    ```
 
     ---
+
+    这些示例假定 JSON 文件名为 credentials.json，并且位于项目的父文件夹中。
+
 
 1. 使用 [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) 方法来创建客户端对象：
 
@@ -211,7 +217,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-如上一部分所述，可以通过变量生成必要的 JSON 数据并调用 [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-)，而不是使用文件。 此代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-for-development)中所述的环境变量。 对于部署到云的代码，可以在服务器 VM 上创建这些环境变量，也可以在使用平台服务（如 Azure 应用服务和 Azure Functions）时将这些环境变量用作应用程序设置。
+如上一部分所述，可以通过变量生成必要的 JSON 数据并调用 [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-)，而不是使用文件。 此代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)中所述的环境变量。 对于部署到云的代码，可以在服务器 VM 上创建这些环境变量，也可以在使用平台服务（如 Azure 应用服务和 Azure Functions）时将这些环境变量用作应用程序设置。
 
 还可以将值存储在 Azure Key Vault 中，并在运行时（而不是使用环境变量）检索这些值。
 
@@ -236,7 +242,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-在此方法中，将使用从安全存储（例如，Azure Key Vault 或环境变量）中获取的凭据创建 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) 对象。 前面的代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-for-development)中所述的环境变量。
+在此方法中，将使用从安全存储（例如，Azure Key Vault 或环境变量）中获取的凭据创建 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) 对象。 前面的代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)中所述的环境变量。
 
 使用此方法，可以通过为客户端对象指定 `base_url` 参数来使用 [Azure 主权或国家云](/azure/active-directory/develop/authentication-national-cloud)，而不是 Azure 公有云：
 
@@ -320,4 +326,8 @@ print(subscription.subscription_id)
 ## <a name="see-also"></a>另请参阅
 
 - [为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)
-- [示例：将 Azure SDK 与 Azure 存储配合使用](azure-sdk-example-storage.md)
+- [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：预配和使用 Azure 存储](azure-sdk-example-storage.md)
+- [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
+- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
+- [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

@@ -1,18 +1,18 @@
 ---
-title: 使用 Azure SDK 预配和部署 Web 应用
-description: 使用 Azure SDK for Python 中的管理库来预配 Web 应用，然后从 GitHub 存储库部署应用代码。
-ms.date: 05/12/2020
+title: 使用 Azure SDK 库预配和部署 Web 应用
+description: 使用用于 Python 的 Azure SDK 库中的管理库来预配 Web 应用，然后从 GitHub 存储库部署应用代码。
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8387039792c330829c1483ea16e7b98444d93284
-ms.sourcegitcommit: 486b55521d7c27666dbb8035bc46fb60d1cbcf0a
+ms.openlocfilehash: 8196e86b4a4311b48b47975fd47bb04f11a1fe23
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550938"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329635"
 ---
-# <a name="example-use-the-azure-sdk-to-provision-and-deploy-a-web-app"></a>示例：使用 Azure SDK 预配和部署 Web 应用
+# <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>示例：使用 Azure 库预配和部署 Web 应用
 
-此示例演示如何在 Python 脚本中使用 Azure SDK 管理库，以在 Azure App Service 上预配 Web 应用，以及从 GitHub 存储库部署应用代码
+此示例演示如何在 Python 脚本中使用 Azure SDK 管理库，以在 Azure 应用服务上预配 Web 应用，以及从 GitHub 存储库部署应用代码。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）
 
 除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
 
@@ -20,9 +20,9 @@ ms.locfileid: "83550938"
 
 如果尚未设置，请按照[为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)中的所有说明进行操作。
 
-请确保创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
+务必创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
 
-## <a name="2-install-the-needed-management-libraries"></a>2:安装所需的管理库
+## <a name="2-install-the-needed-azure-library-packages"></a>2:安装所需的 Azure 库包
 
 创建一个具有以下内容的名为 *requirements.txt* 的文件：
 
@@ -34,7 +34,7 @@ azure-cli-core
 
 在激活了虚拟环境的终端或命令提示符下，安装下列要求：
 
-```bash
+```cmd
 pip install -r requirements.txt
 ```
 
@@ -44,18 +44,18 @@ pip install -r requirements.txt
 
 ![在 GitHub 上创建示例存储库分支](media/azure-sdk-example-web-app/fork-github-repository.png)
 
-然后创建一个名为 `REPO_URL` 且带有分支 URL 的环境变量。 下一节中的代码取决于此环境变量：
-
-# <a name="bash"></a>[bash](#tab/bash)
-
-```bash
-REPO_URL=<url_of_your_fork>
-```
+然后创建一个名为 `REPO_URL` 且带有分支 URL 的环境变量。 下一部分中的代码示例取决于此环境变量：
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```cmd
 set REPO_URL=<url_of_your_fork>
+```
+
+# <a name="bash"></a>[bash](#tab/bash)
+
+```bash
+REPO_URL=<url_of_your_fork>
 ```
 
 ---
@@ -75,7 +75,7 @@ subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.
-RESOURCE_GROUP_NAME = 'PythonSDKExample-WebApp-rg'
+RESOURCE_GROUP_NAME = 'PythonAzureExample-WebApp-rg'
 LOCATION = "centralus"
 
 # Step 1: Provision the resource group.
@@ -96,8 +96,8 @@ print(f"Provisioned resource group {rg_result.name}")
 # latter to create a reasonably unique name. If you've already provisioned a
 # web app and need to re-run the script, set the WEB_APP_NAME environment 
 # variable to that name instead.
-SERVICE_PLAN_NAME = 'PythonSDKExample-WebApp-plan'
-WEB_APP_NAME = os.environ.get("WEB_APP_NAME", f"PythonSDKExample-WebApp-{random.randint(1,100000):05}")
+SERVICE_PLAN_NAME = 'PythonAzureExample-WebApp-plan'
+WEB_APP_NAME = os.environ.get("WEB_APP_NAME", f"PythonAzureExample-WebApp-{random.randint(1,100000):05}")
 
 # Obtain the client object
 app_service_client = get_client_from_cli_profile(WebSiteManagementClient)
@@ -149,8 +149,8 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 REPO_URL = 'https://github.com/kraigb/python-docs-hello-world'
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
-    WEB_APP_NAME, 
-    { 
+    WEB_APP_NAME,
+    {
         "location": "GitHub",
         "repo_url": REPO_URL,
         "branch": "master"
@@ -166,9 +166,14 @@ print(f"Set source control on web app to {sc_result.branch} branch of {sc_result
 
 若要在生产脚本中使用此类代码，应改为使用 `DefaultAzureCredential`（推荐）或基于服务主体的方法，如[如何使用 Azure 服务对 Python 应用进行身份验证](azure-sdk-authenticate.md)中所述。
 
+### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
+
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
+- [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient?view=azure-python)
+
 ## <a name="5-run-the-script"></a>5：运行脚本
 
-```bash
+```cmd
 python provision_deploy_web_app.py
 ```
 
@@ -177,19 +182,19 @@ python provision_deploy_web_app.py
 1. 通过运行以下命令访问部署的网站：
 
     ```azurecli
-    az webapp browse -n PythonSDKExample-WebApp-12345
+    az webapp browse -n PythonAzureExample-WebApp-12345
     ```
 
-    将“PythonSDKExample-WebApp-12345”替换为 Web 应用的特定名称。
+    将“PythonAzureExample-WebApp-12345”替换为 Web 应用的具体名称。
 
     应会看到“Hello World!” 显示在浏览器中。
 
-1. 访问 [Azure 门户](https://portal.azure.com)，选择“资源组”，并检查是否列出了“PythonSDKExample-WebApp-rg”。 然后导航到该列表以验证预期资源是否存在，即应用服务计划和应用服务。
+1. 访问 [Azure 门户](https://portal.azure.com)，选择“资源组”，并检查是否列出了“PythonAzureExample-WebApp-rg”。 然后导航到该列表以验证预期资源是否存在，即应用服务计划和应用服务。
 
 ## <a name="7-clean-up-resources"></a>7:清理资源
 
 ```azurecli
-az group delete -n PythonSDKExample-WebApp-rg
+az group delete -n PythonAzureExample-WebApp-rg
 ```
 
 如果不需要保留预配在此示例中的资源，并想要避免订阅中的持续费用，则运行此命令。
@@ -200,39 +205,39 @@ az group delete -n PythonSDKExample-WebApp-rg
 
 以下 Azure CLI 命令完成了与 Python 脚本相同的预配步骤：
 
-# <a name="bash"></a>[bash](#tab/bash)
+# <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-az group create -l centralus -n PythonSDKExample-WebApp-rg
+az group create -l centralus -n PythonAzureExample-WebApp-rg
 
-az appservice plan create -n PythonSDKExample-WebApp-plan --is-linux --sku F1
+az appservice plan create -n PythonAzureExample-WebApp-plan --is-linux --sku F1
 
-az webapp create -g PythonSDKExample-WebApp-rg -n PythonSDKExample-WebApp-12345 \
-    --plan PythonSDKExample-WebApp-plan --runtime "python|3.8"
+az webapp create -g PythonAzureExample-WebApp-rg -n PythonAzureExample-WebApp-12345 ^
+    --plan PythonAzureExample-WebApp-plan --runtime "python|3.8"
 
 # You can use --deployment-source-url with the first create command. It's shown here
 # to match the sequence of the Python code.
 
-az webapp create -n PythonSDKExample-WebApp-12345 --plan PythonSDKExample-WebApp-plan \
+az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan ^
     --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
 
 # Replace <your_fork> with the specific URL of your forked repository.
 ```
 
-# <a name="cmd"></a>[cmd](#tab/cmd)
+# <a name="bash"></a>[bash](#tab/bash)
 
 ```azurecli
-az group create -l centralus -n PythonSDKExample-WebApp-rg
+az group create -l centralus -n PythonAzureExample-WebApp-rg
 
-az appservice plan create -n PythonSDKExample-WebApp-plan --is-linux --sku F1
+az appservice plan create -n PythonAzureExample-WebApp-plan --is-linux --sku F1
 
-az webapp create -g PythonSDKExample-WebApp-rg -n PythonSDKExample-WebApp-12345 ^
-    --plan PythonSDKExample-WebApp-plan --runtime "python|3.8"
+az webapp create -g PythonAzureExample-WebApp-rg -n PythonAzureExample-WebApp-12345 \
+    --plan PythonAzureExample-WebApp-plan --runtime "python|3.8"
 
 # You can use --deployment-source-url with the first create command. It's shown here
 # to match the sequence of the Python code.
 
-az webapp create -n PythonSDKExample-WebApp-12345 --plan PythonSDKExample-WebApp-plan ^
+az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan \
     --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
 
 # Replace <your_fork> with the specific URL of your forked repository.
@@ -240,7 +245,10 @@ az webapp create -n PythonSDKExample-WebApp-12345 --plan PythonSDKExample-WebApp
 
 ---
 
-## <a name="next-step"></a>后续步骤
+## <a name="see-also"></a>另请参阅
 
-> [!div class="nextstepaction"]
-> [示例：预配虚拟机 >>>](azure-sdk-example-virtual-machines.md)
+- [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：预配 Azure 存储](azure-sdk-example-storage.md)
+- [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
+- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
+- [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

@@ -3,12 +3,12 @@ title: 管理 Azure 开发的本地服务主体
 description: 如何使用 Azure 门户或 Azure CLI 管理为本地开发创建的服务主体。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: b2e0c913b08c98994226d7a9de39ae83ae50ec21
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404880"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146185"
 ---
 # <a name="how-to-manage-service-principals"></a>如何管理服务主体
 
@@ -18,7 +18,7 @@ ms.locfileid: "83404880"
 
 ## <a name="basics-of-azure-authorization"></a>Azure 授权的基础知识
 
-每当代码尝试对 Azure 资源执行任何操作（通过 Azure SDK 中的类执行）时，Azure 都可确保应用程序已被授权执行该操作。 可以使用 [Azure 门户](https://portal.azure.com)或 Azure CLI 向应用程序标识授予特定的基于角色或基于资源的权限。 （当应用程序的安全受到威胁时，此过程可避免向该应用程序授予多余的权限，以防止权限被利用。）
+每当代码尝试对 Azure 资源执行任何操作（通过 Azure 库中的类执行）时，Azure 都会确保该应用程序已被授权执行该操作。 可以使用 [Azure 门户](https://portal.azure.com)或 Azure CLI 向应用程序标识授予特定的基于角色或基于资源的权限。 （当应用程序的安全受到威胁时，此过程可避免向该应用程序授予多余的权限，以防止权限被利用。）
 
 当部署到 Azure 时，应用程序的标识通常与在托管该应用程序的服务（如启用托管标识时的 Azure 应用服务、Azure Functions、虚拟机等）中为其提供的名称相同。 但在本地运行代码时，不会涉及此类托管服务，因此需要使用其他合适的名称来表示 Azure。
 
@@ -51,4 +51,4 @@ ms.locfileid: "83404880"
 
 另请参阅：
 
-- [使用 Azure SDK 对 Azure 进行身份验证](azure-sdk-authenticate.md)
+- [使用 Azure 库向 Azure 进行身份验证](azure-sdk-authenticate.md)

@@ -1,14 +1,14 @@
 ---
 title: 在 Azure 上预配、访问和管理资源
-description: 概述了用于处理 Azure 资源的方法，包括 Azure 门户、Azure CLI 和 Azure SDK。
-ms.date: 05/12/2020
+description: 概述用于处理 Azure 资源的方法，包括 Azure 门户、Azure CLI 和 Azure 库 (SDK)。
+ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
-ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
+ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759920"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146196"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>在 Azure 上预配、访问和管理资源
 
@@ -26,7 +26,10 @@ ms.locfileid: "83759920"
 
 可以使用以上任何一种补充方法或所有方法来创建、配置和管理所需的任何 Azure 资源。 事实上，你通常会在开发项目过程中使用这三个方法，并且需要熟悉每一种方法。
 
-在此开发人员中心，我们主要介绍如何使用使用 Azure SDK 的 CLI 和 Python 代码，因为每个服务的相关文档都详细介绍了门户的使用。
+在此开发人员中心，我们主要介绍如何使用那些使用 Azure 库的 CLI 和 Python 代码，因为门户的使用在每个服务的相关文档中都有详细介绍。
+
+> [!NOTE]
+> 用于 Python 的 Azure 库有时会被称为用于 Python 的 Azure SDK。 不过，除了这些库（通过 Python 包管理器 pip 获取）之外，并不存在任何其他 SDK 组件。
 
 ## <a name="azure-portal"></a>Azure 门户
 
@@ -48,11 +51,11 @@ ms.locfileid: "83759920"
 
 若要代替本地 CLI 或 PowerShell，可以直接通过 [https://shell.azure.com/](https://shell.azure.com/) 使用 Azure Cloud Shell。 但是，因为 Cloud Shell 不是本地环境，所以它更适合一次性操作而非自动化操作。
 
-## <a name="azure-rest-api-and-azure-sdk"></a>Azure REST API 和 Azure SDK
+## <a name="azure-rest-api-and-azure-libraries"></a>Azure REST API 和 Azure 库
 
 [Azure REST API](/rest/api/?view=Azure) 是 Azure 的编程接口，通过 HTTP 上的安全 REST 提供，因为 Azure 的数据中心本质上都连接到 Internet。 为每个资源分配一个唯一的 URL，该 URL 支持特定于资源的 API，但受制于严格的身份验证协议和访问策略。 （实际上，Azure 门户和 Azure CLI 最终通过 REST API 完成其工作。）
 
-对于开发人员而言，[Azure SDK](https://azure.microsoft.com/downloads/) 提供特定于语言的库，这些库将 REST API 功能转换成更方便的编程模式，如类和对象。 对于 Python，始终使用 `pip install` 安装各个 SDK 库，而不是将 SDK 作为一个整体安装。
+对于开发人员而言，Azure 库提供特定于语言的库，这些库将 REST API 功能转换成更方便的编程模式，如类和对象。 对于 Python，始终要使用 `pip install` 来安装各个 SDK 库，而不是将一个单独的 SDK 作为整体安装。 （有关其他语言，请参阅 [Azure SDK 下载](https://azure.microsoft.com/downloads/)。）
 
 优点：精确控制所有操作，包括一种更直接的方法，即使用一个操作的输出作为另一个操作的输入。 对于 Python 开发人员，允许在熟悉的语言模式下工作，而不是使用 CLI。 也可以从应用程序代码中使用，以自动执行管理方案。
   

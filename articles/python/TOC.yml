@@ -16,16 +16,20 @@
       href: configure-local-development-environment.md
     - name: 库使用模式
       href: azure-sdk-library-usage-patterns.md
-    - name: 示例：预配资源组
-      href: azure-sdk-example-resource-group.md
-    - name: 示例：预配 Azure 存储
-      href: azure-sdk-example-storage.md
-    - name: 示例：使用 Azure 存储
-      href: azure-sdk-example-storage-use.md
-    - name: 示例：预配和部署 Web 应用
-      href: azure-sdk-example-web-app.md
-    - name: 示例：预配虚拟机
-      href: azure-sdk-example-virtual-machines.md
+    - name: 示例
+      items:
+        - name: 预配资源组
+          href: azure-sdk-example-resource-group.md
+        - name: 预配 Azure 存储
+          href: azure-sdk-example-storage.md
+        - name: 使用 Azure 存储
+          href: azure-sdk-example-storage-use.md
+        - name: 预配和部署 Web 应用
+          href: azure-sdk-example-web-app.md
+        - name: 预配和查询数据库
+          href: azure-sdk-example-database.md
+        - name: 预配虚拟机
+          href: azure-sdk-example-virtual-machines.md
 - name: 探索特定的 Azure 服务
   items:
     - name: 应用托管
@@ -100,6 +104,8 @@
       href: how-to-manage-service-principals.md
     - name: 向安全主体分配角色权限
       href: how-to-assign-role-permissions.md
+    - name: 配置日志记录
+      href: azure-sdk-logging.md
     - name: 配置 REST API 参数
       href: azure-sdk-operation-config.md
     - name: 多云开发

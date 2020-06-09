@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988700"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202826"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -74,9 +74,9 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 以下部分说明哪些服务目标满足应用程序要求，以及它们涉及的责任。
 
-### <a name="feature-grid"></a>功能网格
+### <a name="hosting-options-grid"></a>托管选项网格
 
-请使用以下网格来确定那些支持所需应用程序类型和功能的目标。
+使用以下网格可识别适用于你的应用程序类型的潜在目标。 如你所见，AKS 和虚拟机支持所有应用程序类型，但它们要求你的团队承担更多的责任，如下一部分所示。
 
 |   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|

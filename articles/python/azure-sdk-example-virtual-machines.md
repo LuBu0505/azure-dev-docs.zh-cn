@@ -1,25 +1,23 @@
 ---
-title: 使用 Azure SDK for Python 预配虚拟机
+title: 使用用于 Python 的 Azure SDK 库预配虚拟机
 description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机。
-ms.date: 05/12/2020
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: f21495cc42f3bb228e460f1c591c9aa037dd8123
-ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
+ms.openlocfilehash: 297e45b2d694d723b84f84f6457577503155a598
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862780"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329645"
 ---
-# <a name="example-use-the-azure-sdk-to-provision-a-virtual-machine"></a>示例：使用 Azure SDK 预配虚拟机
+# <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 
-此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来创建包含 Linux 虚拟机的资源组。
-
-此示例中没有客户端库，因为虚拟机仅具有一个管理接口。
+此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来创建包含 Linux 虚拟机的资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）
 
 除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
 
 > [!NOTE]
-> 通过代码预配虚拟机是一个多步骤过程，其中涉及预配虚拟机所需的多个其他资源。 如果只是从命令行运行此类代码，使用 [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) 命令会更容易，该命令会使用你选择忽略的任何设置的默认值自动预配这些辅助资源。 仅需资源组、VM 名称、映像名称和登录凭据这些参数。 有关详细信息，请参阅[使用 Azure CLI 快速创建虚拟机](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create)。
+> 通过代码预配虚拟机是一个多步骤过程，其中涉及预配虚拟机所需的多个其他资源。 如果只是从命令行运行此类代码，使用 [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) 命令会更容易，该命令会自动预配这些辅助资源（对于你选择省略的任何设置，会使用其默认值）。 仅需资源组、VM 名称、映像名称和登录凭据这些参数。 有关详细信息，请参阅[使用 Azure CLI 快速创建虚拟机](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create)。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1：设置本地开发环境
 
@@ -27,7 +25,7 @@ ms.locfileid: "83862780"
 
 务必创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
 
-## <a name="2-install-the-needed-sdk-libraries"></a>2:安装所需的 SDK 库
+## <a name="2-install-the-needed-azure-library-packages"></a>2:安装所需的 Azure 库包
 
 1. 创建一个 requirements.txt 文件，其中列出了此示例中使用的管理库：
 
@@ -40,7 +38,7 @@ ms.locfileid: "83862780"
 
 1. 在激活了虚拟环境的终端或命令提示符下，安装 requirements.txt 中列出的管理库：
 
-    ```bash
+    ```cmd
     pip install -r requirements.txt
     ```
 
@@ -65,7 +63,7 @@ resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.
-RESOURCE_GROUP_NAME = "PythonSDKExample-VM-rg"
+RESOURCE_GROUP_NAME = "PythonAzureExample-VM-rg"
 LOCATION = "centralus"
 
 # Provision the resource group.
@@ -204,9 +202,15 @@ print(f"Provisioned virtual machine {vm_result.name}")
 
 若要在生产脚本中使用此类代码（例如，自动执行 VM 管理），请使用 `DefaultAzureCredential`（推荐）或基于服务主体的方法，如[如何使用 Azure 服务对 Python 应用进行身份验证](azure-sdk-authenticate.md)中所述。
 
+### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
+
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
+- [NetworkManagementClient (azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient?view=azure-python)
+- [ComputeManagementClient (azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient?view=azure-python)
+
 ## <a name="4-run-the-script"></a>4.运行脚本
 
-```bash
+```cmd
 python provision_vm.py
 ```
 
@@ -214,73 +218,73 @@ python provision_vm.py
 
 ## <a name="5-verify-the-resources"></a>5.验证资源
 
-打开 [Azure 门户](https://portal.azure.com)，导航到“PythonSDKExample-VM-rg”资源组，并记下虚拟机、虚拟磁盘、网络安全组、公共 IP 地址、网络接口和虚拟网络：
+打开 [Azure 门户](https://portal.azure.com)，导航到“PythonAzureExample-VM-rg”资源组，并记下虚拟机、虚拟磁盘、网络安全组、公共 IP 地址、网络接口和虚拟网络：
 
 ![显示虚拟机和相关资源的新资源组的 Azure 门户页面](media/azure-sdk-example-virtual-machines/portal-vm-resources.png)
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>有关参考：等效 Azure CLI 命令
-
-# <a name="bash"></a>[bash](#tab/bash)
-
-```azurecli
-# Provision the resource group
-
-az group create -n PythonSDKExample-VM-rg -l centralus
-
-# Provision a virtual network and subnet
-
-az network vnet create -g PythonSDKExample-VM-rg -n python-example-vnet \
-    --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet \
-    --subnet-prefix 10.0.0.0/24
-
-# Provision a public IP address
-
-az network public-ip create -g PythonSDKExample-VM-rg -n python-example-ip \
-    --allocation-method Dynamic --version IPv4
-
-# Provision a network interface client
-
-az network nic create -g PythonSDKExample-VM-rg --vnet-name python-example-vnet \
-    --subnet python-example-subnet -n python-example-nic \
-    --public-ip-address python-example-ip
-
-# Provision the virtual machine
-
-az vm create -g PythonSDKExample-VM-rg -n ExampleVM -l "centralus" \
-    --nics python-example-nic --image UbuntuLTS \
-    --admin-username azureuser --admin-password ChangePa$$w0rd24
-
-```
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
 # Provision the resource group
 
-az group create -n PythonSDKExample-VM-rg -l centralus
+az group create -n PythonAzureExample-VM-rg -l centralus
 
 # Provision a virtual network and subnet
 
-az network vnet create -g PythonSDKExample-VM-rg -n python-example-vnet ^
+az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
     --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
     --subnet-prefix 10.0.0.0/24
 
 # Provision a public IP address
 
-az network public-ip create -g PythonSDKExample-VM-rg -n python-example-ip ^
+az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
     --allocation-method Dynamic --version IPv4
 
 # Provision a network interface client
 
-az network nic create -g PythonSDKExample-VM-rg --vnet-name python-example-vnet ^
+az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
     --subnet python-example-subnet -n python-example-nic ^
     --public-ip-address python-example-ip
 
 # Provision the virtual machine
 
-az vm create -g PythonSDKExample-VM-rg -n ExampleVM -l "centralus" ^
+az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
     --nics python-example-nic --image UbuntuLTS ^
     --admin-username azureuser --admin-password ChangePa$$w0rd24
+```
+
+# <a name="bash"></a>[bash](#tab/bash)
+
+```azurecli
+# Provision the resource group
+
+az group create -n PythonAzureExample-VM-rg -l centralus
+
+# Provision a virtual network and subnet
+
+az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet \
+    --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet \
+    --subnet-prefix 10.0.0.0/24
+
+# Provision a public IP address
+
+az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip \
+    --allocation-method Dynamic --version IPv4
+
+# Provision a network interface client
+
+az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet \
+    --subnet python-example-subnet -n python-example-nic \
+    --public-ip-address python-example-ip
+
+# Provision the virtual machine
+
+az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" \
+    --nics python-example-nic --image UbuntuLTS \
+    --admin-username azureuser --admin-password ChangePa$$w0rd24
+
 ```
 
 ---
@@ -288,12 +292,18 @@ az vm create -g PythonSDKExample-VM-rg -n ExampleVM -l "centralus" ^
 ## <a name="6-clean-up-resources"></a>6：清理资源
 
 ```azurecli
-az group delete -n PythonSDKExample-VM-rg
+az group delete -n PythonAzureExample-VM-rg
 ```
 
 如果不需要保留在此示例中创建的资源，并想要避免订阅中的持续费用，则运行此命令。
 
 ## <a name="see-also"></a>另请参阅
+
+- [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：预配 Azure 存储](azure-sdk-example-storage.md)
+- [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
+- [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
+- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
 
 以下资源容器使用 Python 创建虚拟机的更全面的示例：
 

@@ -1,21 +1,21 @@
 ---
-title: 连接到所有区域 - Azure SDK for Python 多云
-description: 在所有区域上使用 Azure
-ms.date: 05/04/2020
+title: 使用用于 Python 的 Azure 库连接到所有区域 - 多云
+description: 如何使用 msrestazure 的 azure_cloud 模块连接到不同主权区域中的 Azure
+ms.date: 05/27/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b585cc6853c338ca1d1f97b8e477818368342f8e
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f24e2261c8002f3f34d28ee02e0f409e8632f825
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403674"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146175"
 ---
-# <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>多云：使用 Azure SDK for Python 连接到所有区域
+# <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>多云：使用用于 Python 的 Azure 库连接到所有区域
 
-可以使用用于 Python 的 Azure SDK 连接到[提供](https://azure.microsoft.com/regions/services) Azure 的所有区域。
+可使用用于 Python 的 Azure 库连接到所有[提供](https://azure.microsoft.com/regions/services) Azure 的区域。
 
-默认情况下，用于 Python 的 Azure SDK 配置为连接到全局 Azure。
+默认情况下，这些 Azure 库配置为连接到全局 Azure。
 
 ## <a name="using-pre-declared-cloud-definition"></a>使用预声明的云定义
 
