@@ -1,7 +1,0 @@
-- name: Azure
-  tocHref: /azure
-  topicHref: /azure/index
-  items:
-    - name: 面向 JavaScript 和 Node.js 开发人员的 Azure
-      tocHref: /azure/javascript
-      topicHref: /azure/javascript/index
