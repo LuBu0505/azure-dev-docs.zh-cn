@@ -1,7 +1,6 @@
 - name: 面向移动开发人员的 Azure 文档
   href: index.yml
 - name: 概述
-  expanded: true
   items:
     - name: 选择移动开发框架
       href: choose-mobile-framework.md

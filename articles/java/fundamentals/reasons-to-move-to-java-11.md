@@ -8,12 +8,12 @@ tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8f35aea0447f8681fb4f456dbafe500a608f6420
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670633"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790777"
 ---
 # <a name="reasons-to-move-to-java-11"></a>迁移到 Java 11 的原因
 
@@ -168,7 +168,7 @@ Epsilon 适用于生存期短的服务和已知没有垃圾的应用程序。
 （在线）。 请访问： http://openjdk.java.net/jeps/318 。 （在 2019 年 11 月 13 日访问）。
 
 <a id="ref12">\[12\]</a> Oracle Corporation：\"JDK-8146115:Improve docker container detection and resource configuration usage\"（JDK-8146115：改进 Docker 容器检测和资源配置使用情况），2019 年 9 月 16 日。
-（在线）。 请访问： https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=JDK-8146115 。
+（在线）。 请访问： https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8146115 。
 （在 2019 年 11 月 13 日访问）。
 
 <a id="ref13">\[13\]</a> Oracle Corporation：\"JEP 238:Multi-Release JAR Files\"（JEP 238：多发行版 JAR 文件），2017 年 6 月 22 日。 （在线）。 请访问： http://openjdk.java.net/jeps/238 。 （在 2019 年 11 月 13 日访问）。
@@ -184,7 +184,7 @@ Epsilon 适用于生存期短的服务和已知没有垃圾的应用程序。
 <a id="ref17">\[17\]</a> Oracle Corporation：\"JEP 312:Thread-Local Handshakes\"（JEP 312：线程本地握手），2019 年 8 月 21 日。
 （在线）。 请访问： https://openjdk.java.net/jeps/312 。 （在 2019 年 11 月 13 日访问）。
 
-<a id="ref18">\[18\]</a> Oracle Corporation：\"JDK-8198756:Lazy allocation of compiler threads\"（JDK-8198756：延迟分配编译器线程），2018 年 10 月 29 日。 （在线）。 请访问： https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=8198756 。
+<a id="ref18">\[18\]</a> Oracle Corporation：\"JDK-8198756:Lazy allocation of compiler threads\"（JDK-8198756：延迟分配编译器线程），2018 年 10 月 29 日。 （在线）。 请访问： https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8198756 。
 （在 2019 年 11 月 13 日访问）。
 
 <a id="ref19">\[19\]</a> Oracle Corporation：\"JEP 193:Variable Handles\"（JEP 193：变量句柄），2017 年 8 月 17 日。 （在线）。 请访问： https://openjdk.java.net/jeps/193 。 （在 2019 年 11 月 13 日访问）。

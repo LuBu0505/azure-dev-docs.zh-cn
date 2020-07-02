@@ -3,13 +3,13 @@ title: 教程 - 使用 Ansible 在 Azure 中配置 Azure Kubernetes 服务 (AKS)
 description: 了解如何在 Azure 中使用 Ansible 创建和管理 Azure Kubernetes 服务群集
 keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, Kubernetes
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: 7f68399fe2bf8dfe60a80ffdaff714b5c609b166
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 06/17/2020
+ms.openlocfilehash: 7d36f9bd68e6be1963821820cee7e8acf0465acc
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743703"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069414"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中配置 Azure Kubernetes 服务 (AKS) 群集
 
@@ -51,7 +51,7 @@ ms.locfileid: "81743703"
     client_id: "your_client_id"
     client_secret: "your_client_secret"
     aks_version: aks_version
-tasks:
+  tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
       name: "{{ resource_group }}"

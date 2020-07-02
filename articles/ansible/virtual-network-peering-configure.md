@@ -4,12 +4,12 @@ description: 了解如何使用 Ansible 通过虚拟网络对等互连来连接�
 keywords: ansible, azure, devops, bash, playbook, 网络, 对等互连
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 2b5af7546900c45dde7eea0e1d57370d2ffc3991
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 4dfda10693ad86131ec529d7ac06070098a40a5e
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743883"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453688"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>教程：使用 Ansible 配置 Azure 虚拟网络对等互连
 
@@ -80,7 +80,7 @@ ms.locfileid: "81743883"
 - 在虚拟网络中创建子网
 
 ```yml
-  - name: Ceate second virtual network
+  - name: Create second virtual network
     azure_rm_virtualnetwork:
       resource_group: "{{ resource_group_secondary }}"
       name: "{{ vnet_name2 }}"
@@ -184,7 +184,7 @@ ms.locfileid: "81743883"
       name: "{{ vnet_name1 }}"
       address_prefix: "10.0.0.0/24"
       virtual_network: "{{ vnet_name1 }}"
-  - name: Ceate second virtual network
+  - name: Create second virtual network
     azure_rm_virtualnetwork:
       resource_group: "{{ resource_group_secondary }}"
       name: "{{ vnet_name2 }}"
@@ -267,7 +267,7 @@ changed: [localhost]
 TASK [Add subnet] 
 changed: [localhost]
 
-TASK [Ceate second virtual network] 
+TASK [Create second virtual network] 
 changed: [localhost]
 
 TASK [Add subnet] 

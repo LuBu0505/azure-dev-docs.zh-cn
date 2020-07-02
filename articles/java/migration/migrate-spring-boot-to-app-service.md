@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: e4a12380521828ac69aead376ae7ff5797e300ab
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 46fa281fdbaf53e35a73701fa2c17ae2ed3e2d90
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990299"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507623"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>将 Spring Boot 应用程序迁移到 Azure 应用服务
 
@@ -33,15 +33,19 @@ ms.locfileid: "82990299"
 
 ### <a name="inventory-external-resources"></a>清点外部资源
 
-标识外部资源，如数据源、JMS 消息代理和其他服务的 URL。 在 Spring Boot 应用程序中，通常可在通常名为 *application.properties* 或 *application.yml* 的文件的 *src/main/directory* 中找到此类资源的配置。 此外，请查看生产部署的环境变量，了解任何相关的配置设置。
+标识外部资源，如数据源、JMS 消息代理和其他服务的 URL。 在 Spring Boot 应用程序中，通常可在通常名为 application.properties 或 application.yml 的文件的 src/main/directory 文件夹中找到此类资源的配置  。 此外，请查看生产部署的环境变量，了解任何相关的配置设置。
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
 [!INCLUDE [identify-jms-brokers-in-spring](includes/identify-jms-brokers-in-spring.md)]
 
-确定所使用的一个或多个代理后，请找到相应的设置（通常在 Spring Boot 的 *application.properties* 和 *application.yml* 文件中）。
+确定正在使用的一个或多个代理后，请找到相应的设置。 在 Spring Boot 应用程序中，通常可以在应用程序目录的 application.properties 和 application.yml 文件中找到它们 。
 
 [!INCLUDE [jms-broker-settings-examples-in-spring](includes/jms-broker-settings-examples-in-spring.md)]
+
+[!INCLUDE [identify-external-caches-azure-spring-cloud](includes/identify-external-caches-azure-spring-cloud.md)]
+
+[!INCLUDE [inventory-identity-providers-spring-boot](includes/inventory-identity-providers-spring-boot.md)]
 
 #### <a name="all-other-external-resources"></a>所有其他的外部资源
 
@@ -53,9 +57,7 @@ ms.locfileid: "82990299"
 
 检查生产部署上的所有属性和配置文件以及所有环境变量中是否有机密字符串和密码。 在 Spring Boot 应用程序中，此类字符串可能位于 *application.properties* 或 *application.yml* 中。
 
-#### <a name="inventory-certificates"></a>清点证书
-
-[!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
+[!INCLUDE [inventory-certificates-h4](includes/inventory-certificates-h4.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
@@ -146,6 +148,8 @@ spring.jms.servicebus.idle-timeout=10000
 ![应用服务应用程序配置](media/migrate-spring-boot-to-app-service/app-service-parameterized-spring-boot-app-settings.png)
 
 [!INCLUDE [migrate-scheduled-jobs](includes/migrate-scheduled-jobs.md)]
+
+[!INCLUDE [migrate-identity-provider-app-service.md](includes/migrate-identity-provider-app-service.md)]
 
 ### <a name="restart-and-smoke-test"></a>重启和冒烟测试
 

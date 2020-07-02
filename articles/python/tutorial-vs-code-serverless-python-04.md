@@ -4,12 +4,12 @@ description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Co
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8d6b27b9390f347a464b9daded05b9c3b9a3352c
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: 761ffab12712f5c90127665addb65201016be2c8
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256402"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370688"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4：在本地调试 Azure Functions Python 代码
 
@@ -34,7 +34,7 @@ ms.locfileid: "84256402"
     > [!TIP]
     > 如果你无法访问该 URL 并在企业代理后运行（很可能已设置 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量），可将名为 `NO_PROXY` 的环境变量设置为 `localhost,127.0.0.1`，然后重试。
 
-1. 现在，请尝试添加一个要使用的名称参数，例如 `http://localhost:7071/api/HttpExample?name=VS%20Code`，然后浏览器窗口会显示“Hello Visual Studio Code!”消息，表示你已运行该代码路径。
+1. 现在，请尝试添加一个要使用的名称参数，例如 `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`，然后浏览器窗口会显示“Hello Visual Studio Code!”消息，表示你已运行该代码路径。
 
 1. 若要在 JSON 请求正文中传递名称值，可以使用 curl 之类的内联了 JSON 的工具：
 

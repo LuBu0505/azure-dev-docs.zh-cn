@@ -5,12 +5,12 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.openlocfilehash: 6c2781914e65d28a57f2f80ed287921eab3b76ae
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: bb355fdd8436d6483ebd1ffeead4c522c9895e16
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369989"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507674"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>将 Spring Boot 应用程序迁移到 Azure Kubernetes 服务
 
@@ -64,7 +64,7 @@ ms.locfileid: "83369989"
 
 ### <a name="inventory-external-resources"></a>清点外部资源
 
-标识外部资源，如数据源、JMS 消息代理和其他服务的 URL。 在 Spring Boot 应用程序中，通常可在通常名为 application.properties 或 application.yml 的文件的 src/main/directory 文件夹中找到此类资源的配置  。
+标识外部资源，如数据源、JMS 消息代理和其他服务的 URL。 在 Spring Boot 应用程序中，通常可在通常名为 application.properties 或 application.yml 的文件的 src/main/directory 文件夹中找到此类资源的配置  。 此外，请查看生产部署的环境变量，了解任何相关的配置设置。
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
