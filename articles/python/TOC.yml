@@ -16,6 +16,8 @@
       href: configure-local-development-environment.md
     - name: 库使用模式
       href: azure-sdk-library-usage-patterns.md
+    - name: 库包索引
+      href: azure-sdk-library-package-index.md
     - name: 示例
       items:
         - name: 预配资源组
@@ -106,10 +108,10 @@
       href: how-to-assign-role-permissions.md
     - name: 配置日志记录
       href: azure-sdk-logging.md
-    - name: 配置 REST API 参数
-      href: azure-sdk-operation-config.md
-    - name: 多云开发
-      href: azure-sdk-multi-cloud.md
+    - name: 配置代理
+      href: azure-sdk-configure-proxy.md
+    - name: 使用主权域
+      href: azure-sdk-sovereign-domain.md
 - name: 示例
   items:
     - name: Web 应用与无服务器
