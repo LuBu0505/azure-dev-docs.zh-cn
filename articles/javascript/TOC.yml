@@ -1,6 +1,10 @@
 - name: 面向 JavaScript 和 Node.js 开发人员的 Azure
   href: index.yml
   items:
+    - name: 开始在 Azure 上使用 JavaScript
+      items:
+        - name: 设置开发环境
+          href: configure-local-development-environment.md
     - name: 快速入门
       expanded: true
       items:
