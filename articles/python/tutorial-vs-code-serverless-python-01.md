@@ -4,12 +4,12 @@ description: 教程步骤 1，简介和先决条件。
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.openlocfilehash: e05402123da0c95a7e3abed8d0f525ad0c065bbe
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708581"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069369"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -18,6 +18,8 @@ ms.locfileid: "83708581"
 Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，也不需发布 Web 应用。 用于 Visual Studio Code 的 Azure Functions 扩展可以自动处理许多配置问题，大大简化了使用 Functions 的过程。
 
 如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 请使用每篇文章末尾的“我遇到了问题”按钮来提交反馈。
+
+有关演示视频，请观看虚拟 PyCon 2020 中的<a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">使用 VS Code 生成 Azure Functions</a> (youtube.com)。 你可能还会对<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">通过 Azure Functions 轻松处理数据</a> (youtube.com) 会话感兴趣，该会话时间比较长。 
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -42,7 +44,7 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 安装以下软件：
 
-- Azure Functions 所需要的 Python 3.6、3.7 或 3.8。 从 [python.org](https://www.python.org/downloads) 安装 Python安装时，请选择“向 PATH 添加 Python 3.x”并通过选择“立即安装”选项来使用默认选项 。 在 Windows 上，还需在此过程结束时选择“禁用路径长度限制”。
+- Azure Functions 所需的 Python 3.6、3.7 或 3.8 的 64 位版本。 从 [python.org](https://www.python.org/downloads) 安装 Python安装时，请选择“向 PATH 添加 Python 3.x”并通过选择“立即安装”选项来使用默认选项 。 在 Windows 上，还需在此过程结束时选择“禁用路径长度限制”。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Python 扩展](https://marketplace.visualstudio.com/items?itemName=ms-python.python)，详见 [Visual Studio Code Python 教程 - 先决条件](https://code.visualstudio.com/docs/python/python-tutorial)。
 - [Azure Functions 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)。 如需常规信息，请访问 [vscode-azurefunctions GitHub 存储库](https://github.com/Microsoft/vscode-azurefunctions)。

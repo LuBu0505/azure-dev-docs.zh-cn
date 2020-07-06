@@ -7,18 +7,18 @@ ms.service: multiple
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
-ms.openlocfilehash: 5377aed7ee541f1954a95f992ffee03a7cb569a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0dc5459ab4898deecebbc199e62f5dccc8ee6f7d
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672803"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790737"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>将根证书添加到 Java CA 证书存储
 
 使用 Azure 服务（例如 Azure 服务总线）的应用程序需要信任 Baltimore CyberTrust 根证书。 此证书可能已安装在系统中，但如果未安装，可遵循本教程中的步骤，使用 Oracle 的 **keytool** 将所需的证书颁发机构 (CA) 根证书添加到要用于 Azure 服务的 Java CA 证书 (cacerts) 存储。
 
-Oracle 的 keytool 实用工具是一个密钥和证书管理工具，可让开发人员管理用于 Java 的受信任证书列表。  可以在压缩 JDK 并将其添加到 Azure 项目的 *approot* 文件夹之前使用 keytool 来添加 CA 证书，也可以运行使用 keytool 的启动任务来添加证书。
+Oracle 的 keytool 实用工具是一个密钥和证书管理工具，可让开发人员管理用于 Java 的受信任证书列表。 可以在压缩 JDK 并将其添加到 Azure 项目的 *approot* 文件夹之前使用 keytool 来添加 CA 证书，也可以运行使用 keytool 的启动任务来添加证书。
 
 Azure 已在 2013 年 4 月 15 日开始从 GTE CyberTrust 全局根证书迁移到 Baltimore CyberTrust 根证书。 以下步骤说明如何使用 keytool 将 Baltimore CyberTrust 根证书添加到 Java CA 证书 (cacerts) 存储。
 
@@ -44,7 +44,7 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
 
 ## <a name="to-add-a-root-certificate-to-the-cacerts-store"></a>将根证书添加到 cacerts 存储
 
-1. 从 <https://cacert.omniroot.com/bc2025.crt> 下载 Baltimore CyberTrust 根证书，并将其保存到 *jdk\jre\lib\security* 文件夹中扩展名为 *.cer* 的某个本地文件。 本示例假设下载的 Baltimore CyberTrust 根证书文件为 *bc2025.cer*。
+1. 从 <https://cacert.omniroot.com/bc2025.crt> 下载 Baltimore CyberTrust 根证书，并将其保存到 *jdk\jre\lib\security* 文件夹中扩展名为 *.crt* 的某个本地文件。 本示例假设下载的 Baltimore CyberTrust 根证书文件为 *bc2025.crt*。
 
    > [!NOTE]
    > 该 Baltimore CyberTrust 根证书的序列号为 `02:00:00:b9`，SHA1 指纹为 `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`。
@@ -52,7 +52,7 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
 2. 使用以下命令将该证书导入 cacerts 存储：
 
    ```shell
-   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.cer
+   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.crt
    ```
 
    其中：

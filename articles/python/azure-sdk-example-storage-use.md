@@ -1,14 +1,14 @@
 ---
-title: 通过用于 Python 的 Azure SDK 预配和使用 Azure 存储
+title: 通过用于 Python 的 Azure SDK 使用 Azure 存储
 description: 使用用于 Python 的 Azure SDK 库访问 Azure 存储帐户中预配的 Blob 容器，然后将文件上传到该容器。
-ms.date: 05/29/2020
+ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 50d9b781e0ec3a1a9f752a9ec193720d99b88f4d
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
+ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329655"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812665"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>示例：将 Azure 库与 Azure 存储配合使用
 
@@ -47,11 +47,11 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4：通过应用代码使用 Blob 存储
 
-以下部分（编号为 4a 和 4b）演示了用于访问 Blob 容器的两种方法。
+以下部分（编号为 4a 和 4b）演示了用于访问 Blob 容器的两种方法，该容器已进行预配，请参见[示例：预配 Azure 存储](azure-sdk-example-storage.md)中所示的资源。
 
-[第一种方法 (4a)](#4a-use-blob-storage-with-authentication) 使用 `DefaultAzureCredential` 对应用进行身份验证，如[如何对 Python 应用进行身份验证](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)中所述。 使用此方法时，必须先将相应的权限分配给应用标识，这是建议的做法。
+[第一种方法（下面的 4a 部分）](#4a-use-blob-storage-with-authentication)使用 `DefaultAzureCredential` 对应用进行身份验证，如[如何对 Python 应用进行身份验证](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)中所述。 使用此方法时，必须先将相应的权限分配给应用标识，这是建议的做法。
 
-[第二种方法 (4b)](#4b-use-blob-storage-with-a-connection-string) 使用连接字符串直接访问存储帐户。 尽管此方法看起来更简单，但它有两个重大缺点：
+[第二种方法（下面的 4b 部分）](#4b-use-blob-storage-with-a-connection-string)使用连接字符串直接访问存储帐户。 尽管此方法看起来更简单，但它有两个重大缺点：
 
 - 连接字符串在本质上使用存储帐户（而不是该帐户中的单个资源）来验证连接代理。 因此，连接字符串提供的授权范围超出了所需的权限。
 
@@ -116,7 +116,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     由于你使用的本地服务主体不具有访问 blob 容器的权限，你会看到以下错误：“此请求无权使用此权限执行此操作”。
 
-1. 若要将容器的权限授予服务主体，请使用 Azure CLI 命令 [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)（此命令较长！）：
+1. 使用 Azure CLI 命令 [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)（此命令较长！）将容器权限授予服务主体：
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -199,5 +199,5 @@ az group delete -n PythonAzureExample-Storage-rg
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
 - [示例：预配 Azure 存储](azure-sdk-example-storage.md)
-- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
+- [示例：预配和查询数据库](azure-sdk-example-database.md)
 - [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

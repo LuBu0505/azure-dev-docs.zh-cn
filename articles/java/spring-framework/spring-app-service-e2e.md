@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 7e90cd39bb50f5e83ee9bc3551252fe12086e750
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: 19eb7a5633f51400e139ba8dd7ad0a1f5999a213
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861190"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507443"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>将 Spring 应用部署到使用 MySQL 的应用服务
 
@@ -86,7 +86,7 @@ set TOMCAT_HOME=<Tomcat install directory>
 ```
 ---
 
-然后，更新 *pom.xml* 文件，以便为 Tomcat WAR 文件部署配置 Maven。 将以下 XML 添加为现有 `<plugins>` 元素的子级。 如有必要，请将 `1.7.11` 更改为 [Cargo Maven 2 Plugin](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin) 的当前版本。
+然后，更新 pom.xml 文件以部署 WAR 文件。 将以下 XML 添加为现有 `<plugins>` 元素的子级。 如有必要，请将 `1.7.11` 更改为 [Cargo Maven 2 Plugin](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin) 的当前版本。
 
 ```xml
 <plugin>
@@ -370,7 +370,7 @@ MySQL 现已可供使用。
 
 接下来，我们会将连接信息添加到应用的 MySQL 版本，然后将其部署到应用服务。
 
-更新 pom.xml  文件，使 MySQL 成为有效配置。 从 HSQLDB 配置文件中删除 `<activation>` 元素，改为将其放入 MySQL 配置文件中，如下所示。 代码片段的其余部分显示现有配置。 请注意，Maven 将使用你以前设置环境变量的方式来配置你的 MySQL 访问权限。
+更新 pom.xml 文件，使 MySQL 成为有效配置。 从 HSQLDB 配置文件中删除 `<activation>` 元素，改为将其放入 MySQL 配置文件中，如下所示。 代码片段的其余部分显示现有配置。 请注意，Maven 将使用你以前设置环境变量的方式来配置你的 MySQL 访问权限。
 
 ```xml
 <profile>

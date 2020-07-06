@@ -2,14 +2,14 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: d4b9becdce2b78e928b97b7d980024eac5871df2
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: e1bd45413368abe253ff4ac7733bbdcd3d0a4cc3
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369837"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507482"
 ---
-在 `DemoApplication` 类之后创建一个新的 `Todo` Java 类：
+使用以下代码，在 `DemoApplication` 类旁创建一个新的 `Todo` Java 类：
 
 ```java
 package com.example.demo;
@@ -72,7 +72,7 @@ public class Todo {
 
 此类是映射在之前创建的 `todo` 表上的域模型。
 
-若要管理该类，你需要一个存储库。 在同一包中定义一个新的 `TodoRepository` 接口：
+若要管理该类，你需要一个存储库。 使用以下代码，在同一包中定义一个新的 `TodoRepository` 接口：
 
 ```java
 package com.example.demo;
@@ -118,7 +118,7 @@ public class TodoController {
 }
 ```
 
-最后，暂停应用程序并再次启动它：
+最后，使用以下命令暂停应用程序并再次启动它：
 
 ```bash
 ./mvnw spring-boot:run
@@ -128,28 +128,28 @@ public class TodoController {
 
 若要测试应用程序，可使用 cURL。
 
-首先，在数据库中创建一个新的 todo 项：
+首先，使用以下命令在数据库中创建一个新的待办事项：
 
 ```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
+curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
+    http://127.0.0.1:8080
 ```
 
-此命令应返回创建的项：
+此命令应返回创建的项，如下所示：
 
 ```json
 {"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}
 ```
 
-接下来，使用新的 cURL 请求检索数据：
+接下来，通过以下命令使用新的 cURL 请求来检索数据：
 
 ```bash
 curl http://127.0.0.1:8080
 ```
 
-此命令会返回“todo”项列表，其中包括已创建的项：
+此命令将返回待办事项列表，其中包括已创建的项，如下所示：
 
 ```json
 [{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}]

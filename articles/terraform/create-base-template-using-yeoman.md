@@ -2,13 +2,13 @@
 title: 教程 - 使用 Yeoman 在 Azure 中创建 Terraform 基模板
 description: 了解如何使用 Yeoman 在 Azure 中创建 Terraform 基模板。
 ms.topic: tutorial
-ms.date: 04/25/2020
-ms.openlocfilehash: 1c60af3f4ebdac75dc5c4c56b76ee271002f29d6
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 05/25/2020
+ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
+ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329945"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85418215"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>教程：使用 Yeoman 在 Azure 中创建 Terraform 基模板
 
@@ -282,7 +282,7 @@ Yeoman 模板在当前目录中生成文件。 由于此原因，需创建一个
 
     ![Rake 生成](media/create-a-base-template-using-yeoman/ymg-rake-build.png)
 
-1. 运行以下命令运行文本：
+1. 运行以下命令以运行测试：
 
     ```bash
     rake e2e

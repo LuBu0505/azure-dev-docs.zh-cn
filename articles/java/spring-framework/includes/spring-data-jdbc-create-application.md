@@ -2,14 +2,14 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: a1ba753cb0c5c3b9c07f9597df71bc7e53394eae
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 012043df3cf07de098d1a7f3a6715374814d1d9b
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369973"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507688"
 ---
-在 `DemoApplication` 类之后创建一个新的 `Todo` Java 类：
+在 `DemoApplication` 类旁创建新的 `Todo` Java 类并添加以下代码：
 
 ```java
 package com.example.demo;
@@ -116,7 +116,7 @@ public class TodoController {
 }
 ```
 
-最后，暂停应用程序并再次启动它：
+最后，使用以下命令暂停应用程序并再次启动它：
 
 ```bash
 ./mvnw spring-boot:run
@@ -126,28 +126,28 @@ public class TodoController {
 
 若要测试应用程序，可使用 cURL。
 
-首先，在数据库中创建一个新的 todo 项：
+首先，使用以下命令在数据库中创建一个新的待办事项：
 
 ```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
+curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done": "true"}' \
+    http://127.0.0.1:8080
 ```
 
-此命令应返回创建的项：
+此命令应返回创建的项，如下所示：
 
 ```json
 {"id":1,"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done":true}
 ```
 
-接下来，使用新的 cURL 请求检索数据：
+接下来，使用新的 cURL 请求检索数据，如下所示：
 
 ```bash
 curl http://127.0.0.1:8080
 ```
 
-此命令会返回“todo”项列表，其中包括已创建的项：
+此命令会返回待办事项列表，其中包括已创建的项，如下所示：
 
 ```json
 [{"id":1,"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done":true}]

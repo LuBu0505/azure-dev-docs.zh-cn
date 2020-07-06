@@ -3,12 +3,12 @@ title: 在 Azure 上预配、访问和管理资源
 description: 概述用于处理 Azure 资源的方法，包括 Azure 门户、Azure CLI 和 Azure 库 (SDK)。
 ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.openlocfilehash: bc2fb2138c5ea5cf5438f2d892483b094e78eb8d
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146196"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942416"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>在 Azure 上预配、访问和管理资源
 
@@ -49,7 +49,7 @@ ms.locfileid: "84146196"
 
 还可以使用 [Azure PowerShell](/powershell/) 来代替 Azure CLI，尽管 Python 开发人员通常更熟悉 Azure CLI 的 Linux 样式命令。
 
-若要代替本地 CLI 或 PowerShell，可以直接通过 [https://shell.azure.com/](https://shell.azure.com/) 使用 Azure Cloud Shell。 但是，因为 Cloud Shell 不是本地环境，所以它更适合一次性操作而非自动化操作。
+若要代替本地 CLI 或 PowerShell，可以直接通过 [https://shell.azure.com/](https://shell.azure.com/) 使用 Azure Cloud Shell。 Cloud Shell 很方便，因为它会在打开后通过 Azure 自动进行身份验证，并且具有与通过 Azure 门户打开它相同的功能。 但是，以后与 Cloud Shell 不是本地环境，因此它更适合于通过门户执行的单一操作而不是通过脚本化自动化等执行的操作。
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>Azure REST API 和 Azure 库
 
@@ -71,9 +71,9 @@ ms.locfileid: "84146196"
 
 在 Azure 资源模型中，你可以想像，随着时间的推移，你将为不同应用程序跨多个 Azure 服务预配许多不同的资源。 可以使用三个层次结构级别来组织这些资源：
 
-1. 订阅：每个 Azure 订阅都有自己的计费帐户，通常表示组织中的不同团队或部门。 通常情况下，可以为同一订阅中的任何给定应用程序预配所需的所有资源，以便它们可以从共享身份验证等功能中获益。 但是，因为所有资源都可以通过公共 URL 和必要的授权令牌进行访问，所以当然可以将资源分布到多个订阅。
+1. **订阅**：每个 Azure 订阅都有自己的计费帐户，通常表示组织中的不同团队或部门。 通常情况下，可以为同一订阅中的任何给定应用程序预配所需的所有资源，以便它们可以从共享身份验证等功能中获益。 但是，因为所有资源都可以通过公共 URL 和必要的授权令牌进行访问，所以当然可以将资源分布到多个订阅。
 
-1. 资源组：在订阅内，资源组是其他资源的容器，可以作为一个组进行管理。 （因此，资源组通常与特定项目相关。）事实上，在预配资源时，必须指定所属的组。 新项目的第一步通常是创建相应的资源组。 删除资源组会取消分配其包含的所有资源，而无需单独删除每个资源。 相信我们，如果忽视对资源组的组织，那么当你后面不记得哪个资源属于哪个项目时，可能会遇到很多麻烦！
+1. **资源组**：在订阅内，资源组是其他资源的容器，可以作为一个组进行管理。 （因此，资源组通常与特定项目相关。）事实上，在预配资源时，必须指定其所属的组。 新项目的第一步通常是创建相应的资源组。 删除资源组会取消分配其包含的所有资源，而无需单独删除每个资源。 相信我们，如果忽视对资源组的组织，那么当你后面不记得哪个资源属于哪个项目时，可能会遇到很多麻烦！
 
 1. 资源命名：在资源组中，你可以使用任何你喜欢的命名策略来表达资源之间的共性或关系。 由于名称通常在资源的 URL 中使用，因此可能会对可使用的字符有限制。 （例如，某些名称只允许使用字母和数字，而其他名称则允许使用连字符和下划线。）
 

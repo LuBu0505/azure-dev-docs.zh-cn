@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: a7bcf09da47e9af41f404bfdd2454b25f94eb7b4
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.openlocfilehash: 15d839ff8c05dbe4ffb990e31a883794c30d5649
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202846"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942396"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>使用 GitHub Actions 部署到 Azure
 
@@ -92,6 +92,7 @@ GitHub Actions 包括预配置的模板和市场操作。
 
 - [Docker 登录](https://github.com/Azure/docker-login)  
 - [部署到 Azure 容器实例](https://github.com/Azure/aci-deploy)
+- [容器扫描操作](https://github.com/Azure/container-scan)
 
 ## <a name="deploy-to-kubernetes"></a>部署到 Kubernetes
 

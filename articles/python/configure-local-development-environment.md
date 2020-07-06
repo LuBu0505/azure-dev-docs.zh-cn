@@ -3,12 +3,12 @@ title: 为 Azure 开发配置本地 Python 环境
 description: 如何设置适用于 Azure 的本地 Python 开发环境，包括 Visual Studio Code、Azure SDK 库以及库身份验证所需的凭据。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
+ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256452"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421493"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>为 Azure 配置本地 Python 开发环境
 
@@ -21,6 +21,8 @@ ms.locfileid: "84256452"
 - 查看每个项目[使用 Python 虚拟环境](#use-python-virtual-environments)的过程。
 
 配置好工作站后，只需添加最少的配置即可完成此开发中心和 Azure 文档中其他部分的各种快速入门和教程。
+
+这种用于本地开发的设置独立于在 Azure 上组成应用程序云环境的[预配资源](cloud-development-flow.md)。 在开发过程中，你可以在本地开发环境中运行可访问这些云资源的代码，但你的代码尚未部署到云中的[适用托管服务](quickstarts-app-hosting.md)。 该部署步骤稍后再介绍， [Azure 开发流](cloud-development-flow.md)一文中有详细说明。
 
 ## <a name="install-components"></a>安装组件
 

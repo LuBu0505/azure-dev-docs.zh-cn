@@ -3,12 +3,12 @@ title: 使用用于 Python 的 Azure 库预配 Azure 存储
 description: 使用 Azure SDK for Python 库预配 Azure 存储帐户中的 blob 容器，然后将文件上传到该容器。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffc65746be0a7e002263010df4fe3048e0c321d1
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329665"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716095"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>示例：将 Azure 库与 Azure 存储配合使用
 
@@ -165,22 +165,22 @@ python provision_blob.py
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-Storage-rg -l centralus
 
-# Provision the storage account
+rem Provision the storage account
 
 az storage account create -g PythonAzureExample-Storage-rg -l centralus ^
     -n pythonazurestorage12345 --kind StorageV2 --sku Standard_LRS
 
-# Retrieve the connection string
+rem Retrieve the connection string
 
 az storage account show-connection-string -g PythonAzureExample-Storage-rg ^
     -n pythonazurestorage12345
 
-# Provision the blob container; NOTE: this command assumes you have an environment variable
-# named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
+rem Provision the blob container; NOTE: this command assumes you have an environment variable
+rem named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
 
 set AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 az storage container create --account-name pythonazurestorage12345 -n blob-container-01
@@ -229,5 +229,5 @@ az group delete -n PythonAzureExample-Storage-rg
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
-- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
+- [示例：预配和查询数据库](azure-sdk-example-database.md)
 - [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

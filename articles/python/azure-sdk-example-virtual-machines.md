@@ -3,12 +3,12 @@ title: 使用用于 Python 的 Azure SDK 库预配虚拟机
 description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 297e45b2d694d723b84f84f6457577503155a598
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 4b11caa66eb297225b4b61000575a8a9c48edb19
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329645"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716085"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 
@@ -227,28 +227,28 @@ python provision_vm.py
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-VM-rg -l centralus
 
-# Provision a virtual network and subnet
+rem Provision a virtual network and subnet
 
 az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
     --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
     --subnet-prefix 10.0.0.0/24
 
-# Provision a public IP address
+rem Provision a public IP address
 
 az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
     --allocation-method Dynamic --version IPv4
 
-# Provision a network interface client
+rem Provision a network interface client
 
 az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
     --subnet python-example-subnet -n python-example-nic ^
     --public-ip-address python-example-ip
 
-# Provision the virtual machine
+rem Provision the virtual machine
 
 az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
     --nics python-example-nic --image UbuntuLTS ^
@@ -303,7 +303,7 @@ az group delete -n PythonAzureExample-VM-rg
 - [示例：预配 Azure 存储](azure-sdk-example-storage.md)
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
-- [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)
+- [示例：预配和查询数据库](azure-sdk-example-database.md)
 
 以下资源容器使用 Python 创建虚拟机的更全面的示例：
 

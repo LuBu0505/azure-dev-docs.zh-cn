@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 1dda447182867d6646e6b9637852f08b1d6fb124
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: fbde7d54010bc68bf89ea757f08432a46e8f6fbb
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631647"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507764"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>将 Spring Data R2DBC 用于 Azure SQL 数据库
 
@@ -22,93 +22,13 @@ ms.locfileid: "83631647"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
-## <a name="prepare-the-working-environment"></a>准备工作环境
-
-首先，使用以下命令设置一些环境变量：
-
-```bash
-AZ_RESOURCE_GROUP=r2dbc-workshop
-AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
-AZ_LOCATION=<YOUR_AZURE_REGION>
-AZ_SQL_SERVER_USERNAME=spring
-AZ_SQL_SERVER_PASSWORD=<YOUR_AZURE_SQL_PASSWORD>
-AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
-```
-
-使用以下值替换占位符，在本文中将使用这些值：
-
-- `<YOUR_DATABASE_NAME>`：Azure SQL 数据库服务器的名称。 它在 Azure 中应是唯一的。
-- `<YOUR_AZURE_REGION>`：将使用的 Azure 区域。 默认情况下可以使用 `eastus`，但我们建议你配置一个离居住位置更近的区域。 可输入 `az account list-locations`，获取可用区域的完整列表。
-- `<AZ_SQL_SERVER_PASSWORD>`：Azure SQL 数据库服务器的密码。 该密码应该至少有八个字符。 这些字符应该属于以下类别中的三个类别：英文大写字母、英文小写字母、数字 (0-9)和非字母数字字符（!, $, #, % 等）。
-- `<YOUR_LOCAL_IP_ADDRESS>`：你将在其中运行 Spring Boot 应用程序的本地计算机的 IP 地址。 若要找到该地址，一种简便方法是使浏览器指向 [whatismyip.akamai.com](http://whatismyip.akamai.com/)。
-
-接下来，创建一个资源组：
-
-```azurecli
-az group create \
-    --name $AZ_RESOURCE_GROUP \
-    --location $AZ_LOCATION \
-    | jq
-```
-
-> [!NOTE]
-> 我们使用默认安装在 [Azure Cloud Shell](https://shell.azure.com/) 上的 `jq` 实用工具来显示 JSON 数据，提高其可读性。
-> 如果你不喜欢该实用工具，可安全地删除要使用的所有命令的 `| jq` 部分。
-
-## <a name="create-an-azure-sql-database-instance"></a>创建 Azure SQL 数据库实例
-
-首先，我们将创建一个托管的 Azure SQL 数据库服务器。
-
-> [!NOTE]
-> 可以在[快速入门：创建 Azure SQL 数据库单一数据库](/azure/sql-database/sql-database-single-database-get-started)中阅读有关创建 Azure SQL 数据库服务器的更多详细信息。
-
-在 [Azure Cloud Shell](https://shell.azure.com/) 中运行以下脚本：
-
-```azurecli
-az sql server create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME \
-    --location $AZ_LOCATION \
-    --admin-user $AZ_SQL_SERVER_USERNAME \
-    --admin-password $AZ_SQL_SERVER_PASSWORD \
-    | jq
-```
-
-此命令创建 Azure SQL 数据库服务器。
-
-### <a name="configure-a-firewall-rule-for-your-azure-sql-database-server"></a>为 Azure SQL 数据库服务器配置防火墙规则
-
-Azure SQL 数据库实例在默认情况下受保护。 它们有不允许任何传入连接的防火墙。 为了能够使用数据库，需要添加一项防火墙规则，允许本地 IP 地址访问数据库服务器。
-
-由于我们已在本文开头配置了本地 IP 地址，因此可通过运行以下命令来打开服务器的防火墙：
-
-```azurecli
-az sql server firewall-rule create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME-database-allow-local-ip \
-    --server $AZ_DATABASE_NAME \
-    --start-ip-address $AZ_LOCAL_IP_ADDRESS \
-    --end-ip-address $AZ_LOCAL_IP_ADDRESS \
-    | jq
-```
-
-### <a name="configure-a-azure-sql-database"></a>配置 Azure SQL 数据库
-
-你在前面创建的 Azure SQL 数据库服务器为空。 它没有任何可以与 Spring Boot 应用程序配合使用的数据库。 创建一个名为 `demo`的新数据库：
-
-```azurecli
-az sql db create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name demo \
-    --server $AZ_DATABASE_NAME \
-    | jq
-```
+[!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
 [!INCLUDE [spring-data-create-reactive.md](includes/spring-data-create-reactive.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
 
-通过在命令行中输入以下命令，生成此应用程序：
+运行以下命令在命令行上生成应用程序：
 
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
@@ -118,7 +38,7 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 
 打开所生成项目的 pom.xml 文件，以添加来自 [r2dbc-mssql GitHub 存储库](https://github.com/r2dbc/r2dbc-mssql)的响应式 Azure SQL 数据库驱动程序。
 
-在 `spring-boot-starter-webflux` 依赖项后，添加以下代码片段：
+在 `spring-boot-starter-webflux` 依赖项后，添加以下文本：
 
 ```xml
 <dependency>
@@ -130,7 +50,7 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>将 Spring Boot 配置为使用 Azure SQL 数据库
 
-打开 src/main/resources/application.properties 文件，添加以下内容：
+打开 src/main/resources/application.properties 文件，添加以下文本：
 
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
@@ -140,13 +60,12 @@ spring.r2dbc.username=spring@$AZ_DATABASE_NAME
 spring.r2dbc.password=$AZ_SQL_SERVER_PASSWORD
 ```
 
-- 将两个 `$AZ_DATABASE_NAME` 变量替换为在本文开头部分配置的值。
-- 将 `$AZ_SQL_SERVER_PASSWORD` 变量替换为在本文开头部分配置的值。
+将这两个 `$AZ_DATABASE_NAME` 变量和 `$AZ_SQL_SERVER_PASSWORD` 变量替换为在本文开头部分配置的值。
 
 > [!NOTE]
 > 为了提高性能，`spring.r2dbc.url` 属性配置为通过 [r2dbc-pool](https://github.com/r2dbc/r2dbc-pool) 使用连接池。
 
-现在，我们应该能够使用提供的 Maven 包装器启动应用程序：
+现在，你应能够使用提供的 Maven 包装器启动应用程序，如下所示：
 
 ```bash
 ./mvnw spring-boot:run
@@ -165,7 +84,7 @@ DROP TABLE IF EXISTS todo;
 CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
 ```
 
-停止正在运行的应用程序并重启它。 现在，该应用程序将使用之前创建的 `demo` 数据库，并在其中创建一个 `todo` 表。
+停止正在运行的应用程序并使用以下命令重启。 现在，该应用程序将使用之前创建的 `demo` 数据库，并在其中创建一个 `todo` 表。
 
 ```bash
 ./mvnw spring-boot:run

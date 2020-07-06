@@ -2,16 +2,16 @@
 author: yevster
 ms.author: yebronsh
 ms.date: 4/15/2020
-ms.openlocfilehash: b53308d4a9db52a25665d0daa74be678e726c499
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 3ff76d977c231b4b238f9dbec7f3bfaddfe5e484
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990179"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507591"
 ---
 ### <a name="ensure-console-logging-and-configure-diagnostic-settings"></a>确保控制台日志记录并配置诊断设置
 
-配置日志记录，使 Azure Spring Cloud 中的所有应用程序都记录到控制台而不是文件。
+配置日志记录，使所有输出都路由到控制台而不是文件。
 
 将应用程序部署到 Azure Spring Cloud 后，[添加诊断设置](/azure/spring-cloud/diagnostic-services)以使记录的事件可供使用，例如通过 Azure Monitor 日志分析。
 

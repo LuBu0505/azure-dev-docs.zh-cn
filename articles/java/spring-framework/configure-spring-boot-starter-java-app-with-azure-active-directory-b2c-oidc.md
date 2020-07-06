@@ -5,18 +5,18 @@ services: active-directory-b2c
 documentationcenter: java
 author: panli
 manager: kevinzha
-ms.author: panli
-ms.date: 02/06/2020
+ms.author: edburns
+ms.date: 06/04/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: c06c1205d1ef1f8dc7eec674c846cf53c6a2e5e8
-ms.sourcegitcommit: 996212c5a141d724d26f3899e91d194b08b2dc0b
+ms.openlocfilehash: 4a6463df852511ab37af772598f9ae525d8a02e9
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82985171"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069421"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
 
@@ -32,12 +32,11 @@ ms.locfileid: "82985171"
 > * 使用 Spring Boot 类和批注保护应用程序
 > * 生成和测试 Java 试应用程序
 
-如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
+[Azure Active Directory](https://azure.microsoft.com/services/active-directory) 是 Microsoft 的云规模企业标识解决方案。 [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory/external-identities/b2c/) 是 Azure Active Directory 功能集的补充，借助它可以管理客户、消费者和公民对你的企业对消费者 (B2C) 应用程序的访问。
 
 ## <a name="prerequisites"></a>先决条件
 
-为完成本文介绍的步骤，需要满足以下先决条件：
-
+* Azure 订阅。 如果还没有此订阅，请在开始之前创建[一个免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
@@ -45,195 +44,272 @@ ms.locfileid: "82985171"
 
 1. 浏览到 <https://start.spring.io/>。
 
-2. 指定要使用 **Java** 生成 **Maven** 项目，输入应用程序的“组”名称和“项目”名称，然后选择 Spring Initializr 的“Web”和“安全性”模块。   
+2. 根据本指南填写相应值。 请注意，标签和布局可能与此处显示的图像不同。
 
-   ![指定组和项目名称](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
+    * 在“项目”下，选择“Maven 项目”。
+    * 在“语言”下，选择“Java”。
+    * 在“Spring Boot”下，选择“2.2.7”。
+    * 在“组”、“项目”和“名称”下，使用简短的描述性字符串，输入相同的值。 在键入时，UI 可能会自动填充其中一部分内容。
+    * 在“依赖项”窗格中，选择“添加依赖项”。 使用 UI 添加“Spring Web”和“Spring 安全性”的依赖关系。
 
+   ![填写值以生成项目](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
 
-3. 出现提示时，单击“`Generate Project`”，将项目下载到本地计算机中的路径。
+3. 选择“生成项目”，然后将项目下载到本地计算机上的一个路径下。 将下载的文件移动到以项目命名的目录中，并将文件解压缩。 文件布局应如下所示，其中 `yourProject` 的值已替换为你为“组”输入的值。
 
-## <a name="create-azure-active-directory-instance"></a>创建 Azure Active Directory 实例
+    ```
+    .
+    ├── HELP.md
+    ├── mvnw
+    ├── mvnw.cmd
+    ├── pom.xml
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── yourProject
+        │   │       └── yourProject
+        │   │           └── YourProjectApplication.java
+        │   └── resources
+        │       ├── application.properties
+        │       ├── static
+        │       └── templates
+        └── test
+            └── java
+                └── yourProject
+                    └── yourProject
+                        └── YourProjectApplicationTests.java
+    ```
+
+## <a name="create-and-initialize-an-azure-active-directory-instance"></a>创建并初始化 Azure Active Directory 实例
 
 ### <a name="create-the-active-directory-instance"></a>创建 Active Directory 实例
 
 1. 登录到 <https://portal.azure.com>。
 
-2. 依次单击“+创建资源”、“标识”和“全部查看”。    搜索“Azure Active Directory B2C”。
+2. 依次选择“+创建资源”、“标识”和“全部查看”  。 搜索“Azure Active Directory B2C”。
 
-   ![创建新的 Azure Active Directory B2C 实例](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
+    ![创建新的 Azure Active Directory B2C 实例](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
 
-3. 单击“创建”。
+3. 选择“创建”。
 
-   ![获取 B2C 租户名称](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-5-n.png)
+    ![获取 B2C 租户名称](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-5-n.png)
 
 4. 选择“创建新的 Azure AD B2C 租户”。
 
-   ![创建新的 Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-2-n.png)
+    ![创建新的 Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-2-n.png)
 
-5. 输入“组织名称”和“初始域名”，并保存该域名供以后引用。  单击“创建”。
+5. 为“组织名称”和“初始域名”提供适当的值，然后选择“创建”。
 
-   ![选择 Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-3-n.png)
+    ![选择 Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-3-n.png)
 
-6. Active Directory 创建完成后，导航到新目录。  或者搜索 `b2c` 并单击 `Azure AD B2C` 服务。
+6. Active Directory 创建完成后，导航到新目录。 或搜索 `b2c` 并选择“Azure AD B2C”。
 
-   ![找到 Azure Active Directory B2C 实例](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-4-n.ng.png)
+    ![找到 Azure Active Directory B2C 实例](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-4-n.ng.png)
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>添加 Spring Boot 应用的应用程序注册
 
-1. 从门户菜单中选择“Azure AD B2C”，单击“应用程序”，然后单击“添加”。  
+1. 在左侧的“管理”窗格中，选择“应用程序”，然后选择“添加”。
 
-   ![添加新的应用注册](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
+    ![添加新的应用注册](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. 指定应用程序**名称**，添加 `http://localhost:8080/home` 作为“重定向 URI”。 单击“ **保存**”。  然后，记录“应用程序 ID”作为 `${your-client-id}`。  
+2. 在“名称”字段中，输入上面的“组”的值，然后将“包括 web 应用/web API”控件设置为“是”。
 
-   ![添加应用程序重定向 URI](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+3. 将“回复 URL”设置为 `http://localhost:8080/home`。
 
-3. 选择“证书和机密”，并单击“新建客户端机密”以生成密钥 。
+4. 将其他字段保留为其默认值。
 
-   ![创建用户流](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
+5. 选择“创建”。 可能需要等一会儿应用程序才会显示。
 
-4. 在左侧选择“用户流”，然后单击“新建用户流”。 
+    ![添加应用程序重定向 URI](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-5. 选择“注册或登录”、“配置文件编辑”和“密码重置”，创建用户流  。 有关详细信息，请参阅[教程：在 Azure Active Directory B2C 中创建用户流](/azure/active-directory-b2c/tutorial-create-user-flows)。 AAD B2C 支持本地帐户以及社交标识提供者。 有关创建 GitHub 标识提供者的示例，请参阅[使用 Azure Active Directory B2C 设置通过 GitHub 帐户注册与登录](/azure/active-directory-b2c/identity-provider-github)。
-请确保选择“显示名称”，使其包含在声明令牌中。
+6. 选择“概述”，然后选择“应用程序”。
 
-   ![创建用户流](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c-create-userflow.png)
+7. 在应用程序表中，选择有你项目名称的那一行。
+
+8. 在“常规”窗格中选择“密钥”，然后选择“生成密钥”。
+
+9. 将“应用密钥”设置为 `yourGroupIdkey`，将 `yourGroupId` 替换为你在上面为“组”输入的值。
+
+10. 选择“保存”。 等待“应用密钥”部分中显示出密钥，然后复制它以供稍后使用。
+
+    > [!NOTE]
+    > 如果离开“密钥”部分再返回，密钥值会消失。 在这种情况下，必须再创建一个密钥并复制它以供稍后使用。
+    > 有时，生成的密钥可能会包含无法在 application.yml 文件中包含的字符，如反斜杠或反撇号。 在这种情况下，请丢弃该密钥，并重新生成一个密钥。
+
+    ![创建机密](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
+
+11. 选择“概述”。
+
+12. 在左侧窗格的“策略”部分中，选择“用户流”，然后选择“新用户流”。
+
+13. 现在需要离开本教程，去执行另一个教程，并在完成后返回本教程。 下面是转到其他教程时需要记住的一些事项。
+
+    * 从要求你选择“新用户流”的步骤开始。
+    * 当此教程提到 `webapp1` 时，请改为使用你为“组”输入的值。
+    * 当选择要从流中返回的声明时，请确保选中“显示名称”。 如果没有此声明，本教程中生成的应用将无法正常运行。
+    * 当系统要求运行用户流时，前面指定的重定向 url 尚未激活。 仍可以运行这些流，但重定向不会成功。 这是正常情况。
+    * 当到达“后续步骤”时，请返回本教程。
+
+    执行[教程：在 Azure Active Directory B2C 中创建用户流](/azure/active-directory-b2c/tutorial-create-user-flows)中列出的所有步骤，创建用于“注册和登录”、“配置文件编辑”和“密码重置”的用户流。
+
+    AAD B2C 支持本地帐户以及社交标识提供者。 有关创建 GitHub 标识提供者的示例，请参阅[使用 Azure Active Directory B2C 设置通过 GitHub 帐户注册与登录](/azure/active-directory-b2c/identity-provider-github)。
 
 ## <a name="configure-and-compile-your-app"></a>配置并编译你的应用
 
-1. 将本教程中之前创建并下载的项目存档中的文件提取到某个目录中。
+现已创建 AAD B2C 实例和一些用户流，接下来将 Spring 应用连接到 AAD B2C 实例。
 
-2. 导航到项目的父文件夹，并在文本编辑器中打开 `pom.xml` Maven 项目文件。
+1. 从命令行中，通过 cd 转到从“Spring 启动器”下载的 .zip 文件解压缩出来的目录。
 
-3. 将 Spring OAuth2 安全性的依赖项添加到 `pom.xml`：
+2. 导航到项目的父文件夹，并在文本编辑器中打开 pom.xml Maven 项目文件。
 
-   ```xml
-   <dependency>
-       <groupId>com.microsoft.azure</groupId>
-       <artifactId>azure-active-directory-b2c-spring-boot-starter</artifactId>
-       <version>2.2.4</version>
-   </dependency>
-   <dependency>
-       <groupId>org.springframework.boot</groupId>
-       <artifactId>spring-boot-starter-thymeleaf</artifactId>
-   </dependency>
-   <dependency>
-       <groupId>org.thymeleaf.extras</groupId>
-       <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-   </dependency>
-   ```
+3. 将 Spring OAuth2 安全性的依赖项添加到 pom.xml：
+
+    ```xml
+    <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-active-directory-b2c-spring-boot-starter</artifactId>
+        <version>See Below</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        <version>See Below</version>
+    </dependency>
+    <dependency>
+        <groupId>org.thymeleaf.extras</groupId>
+        <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        <version>See Below</version>
+    </dependency>
+    ```
+
+    对于 `azure-active-directory-b2c-spring-boot-starter`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) 来查找最新版本。 截至本文撰写时，最新版本是 `2.2.4`。
+
+    对于 `spring-boot-starter-thymeleaf`，使用与前面选择的Spring Boot 版本相对应的版本，例如 `2.2.7.RELASE`。
+
+    对于 `thymeleaf-extras-springsecurity5`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) 来查找最新版本。 截至本文撰写时，最新版本是 `3.0.4.RELEASE`。
 
 4. 保存并关闭 pom.xml 文件。
 
-5. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.yml* 文件。
+    * 通过运行 `mvn -DskipTests clean install` 验证依赖项是否正确。 如果看不到 `BUILD SUCCESS`，请在继续操作之前排查和解决该问题。
+
+5. 导航到项目中的 src/main/resources 文件夹，并在文本编辑器中创建 application.yml 文件。
 
 6. 使用之前创建的值指定用于应用注册的设置，例如：
 
-   ```yaml
-   azure:
-     activedirectory:
-       b2c:
-         tenant: ${your-tenant-name} # This is also the first part of your domain name before "onmicrosoft.com".
-         client-id: ${your-client-id}
-         client-secret: ${your-client-secret}
-         reply-url: ${your-redirect-uri-from-aad} # This should be an absolute URL.
-         logout-success-url: ${you-logout-success-url}
-         user-flows:
-           sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}
-           profile-edit: ${your-profile-edit-user-flow}     # optional
-           password-reset: ${your-password-reset-user-flow} # optional
-   ```
-   其中：
+    ```yaml
+    azure:
+      activedirectory:
+        b2c:
+          tenant: ejb0518domain
+          client-id: ejb0518
+          client-secret: '<yourAppKey>'
+          reply-url: http://localhost:8080/home
+          logout-success-url: http://localhost:8080/home
+          user-flows:
+            sign-up-or-sign-in: B2C_1_signupsignin1
+            profile-edit: B2C_1_profileediting1
+            password-reset: B2C_1_passwordreset1
+    ```
 
-   | 参数 | 说明 |
-   |---|---|
-   | `azure.activedirectory.b2c.tenant` | 包含前面复制的 AD B2C 的 `${your-tenant-name`。 |
-   | `azure.activedirectory.b2c.client-id` | 包含前面填写的应用程序中的 `${your-client-id}`。 |
-   | `azure.activedirectory.b2c.client-secret` | 包含前面填写的应用程序中的 `${your-client-secret}`。 |
-   | `azure.activedirectory.b2c.reply-url` | 包含前面填写的应用程序中的某个“重定向 URI”。 |
-   | `azure.activedirectory.b2c.logout-success-url` | 指定应用程序成功注销时的 URL。 |
-   | `azure.activedirectory.b2c.user-flows` | 包含前面填写的用户流的名称。
+    请注意，`client-secret` 值要用单引号引起来。 这是必需的，因为在 YAML 中显示时，`<yourAppKey>` 的值几乎都会包含一些需要由单引号引起来的字符。
 
-   > [!NOTE]
-   > 
-   > 如需 *application.yml* 文件中提供的值的完整列表，请参阅 GitHub 上的 [Azure Active Directory B2C Spring Boot 示例][AAD B2C Spring Boot 示例]。
-   >
+    > [!NOTE]
+    > 截至本文撰写时，可在 application.yml 中使用的 Active Directory B2C Spring 集成值的完整列表如下所示：
+    >
+    > ```
+    > azure:
+    >   activedirectory:
+    >     b2c:
+    >       tenant:
+    >       oidc-enabled:
+    >       client-id:
+    >       client-secret:
+    >       reply-url:  # should be absolute url.
+    >       logout-success-url:
+    >       user-flows:
+    >         sign-up-or-sign-in:
+    >         profile-edit: # optional
+    >         password-reset: # optional
+    > ```
+    >
+    > Application.yml 文件可通过 GitHub 上的 [Azure Active Directory B2C Spring Boot 示例](https://github.com/microsoft/azure-spring-boot/blob/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/application.yml)获取。
 
 7. 保存并关闭 application.yml 文件。
 
-8. 在应用程序的 Java 源文件夹中创建名为“controller”的文件夹。
+8. 在 src/main/java/<yourGroupId>/<yourGroupId>中创建一个名为“controller”的文件夹，并将 `<yourGroupId>` 替换为之前为“组”输入的值。
 
 9. 在 *controller* 文件夹中创建名为 *WebController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
-10. 输入以下代码，然后保存并关闭该文件：
+10. 输入以下代码，适当更改 `yourGroupId`，然后保存并关闭该文件：
 
     ```java
-    package com.example.demo.controller;
-    
+    package yourGroupId.yourGroupId.controller;
+
     import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
     import org.springframework.security.oauth2.core.user.OAuth2User;
     import org.springframework.stereotype.Controller;
     import org.springframework.ui.Model;
     import org.springframework.web.bind.annotation.GetMapping;
-    
+
     @Controller
     public class WebController {
-    
+
         private void initializeModel(Model model, OAuth2AuthenticationToken token) {
             if (token != null) {
                 final OAuth2User user = token.getPrincipal();
-    
+
                 model.addAttribute("grant_type", user.getAuthorities());
                 model.addAllAttributes(user.getAttributes());
             }
         }
-    
+
         @GetMapping(value = "/")
         public String index(Model model, OAuth2AuthenticationToken token) {
             initializeModel(model, token);
-    
+
             return "home";
         }
-    
+
         @GetMapping(value = "/greeting")
         public String greeting(Model model, OAuth2AuthenticationToken token) {
             initializeModel(model, token);
-    
+
             return "greeting";
         }
-    
+
         @GetMapping(value = "/home")
         public String home(Model model, OAuth2AuthenticationToken token) {
             initializeModel(model, token);
-    
+
             return "home";
         }
     }
     ```
 
-11. 在应用程序的 Java 源文件夹中创建名为“security”的文件夹。
+    由于控制器中的每个方法都调用 `initializeModel()`，且该方法调用 `model.addAllAttributes(user.getAttributes());`，所以 src/main/resources/templates 中的任何 HTML 页面都能访问这些属性中的任何一个，例如 `${name}`、`${grant_type}` 或 `${auth_time}`。 从 `user.getAttributes()` 返回的值实际上是用于身份验证的 `id_token` 的声明。 [Microsoft 标识平台 ID 令牌](/azure/active-directory/develop/id-tokens#payload-claims)中列出了可用声明的完整列表。
+
+11. 在 src/main/java/<yourGroupId>/<yourGroupId>中创建名为“security”的文件夹，并将 `yourGroupId` 替换为之前为“组”输入的值。
 
 12. 在 *security* 文件夹中创建名为 *WebSecurityConfiguration.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
-13. 输入以下代码，然后保存并关闭该文件：
+13. 输入以下代码，适当更改 `yourGroupId`，然后保存并关闭该文件：
 
     ```java
-    package com.example.demo.security;
-    
+    package yourGroupId.yourGroupId.security;
+
     import com.microsoft.azure.spring.autoconfigure.b2c.AADB2COidcLoginConfigurer;
     import org.springframework.security.config.annotation.web.builders.HttpSecurity;
     import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
     import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-    
+
     @EnableWebSecurity
     public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-    
+
         private final AADB2COidcLoginConfigurer configurer;
-    
+
         public WebSecurityConfiguration(AADB2COidcLoginConfigurer configurer) {
             this.configurer = configurer;
         }
-    
+
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
@@ -246,7 +322,8 @@ ms.locfileid: "82985171"
         }
     }
     ```
-14. 从 [Azure AD B2C Spring Boot 示例](https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/templates)复制 `greeting.html` 和 `home.html`，并将 `${your-profile-edit-user-flow}` 和 `${your-password-reset-user-flow}` 分别替换为此前填写的用户流名称。
+
+14. 将 greeting.html 和 home.html 文件从 [Azure AD B2C Spring Boot 示例](https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/templates)复制到 src/main/resources/templates 中，并将 `${your-profile-edit-user-flow}` 和 `${your-password-reset-user-flow}` 替换为之前创建的用户流的名称。
 
 ## <a name="build-and-test-your-app"></a>生成并测试应用
 
@@ -254,22 +331,23 @@ ms.locfileid: "82985171"
 
 2. 使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：
 
-   ```shell
-   mvn clean package
-   mvn spring-boot:run
-   ```
+    > [!NOTE]
+    > 本地 spring boot 应用运行时所参照的系统时钟所反映的时间必须准确，这一点非常重要。 使用 OAuth 2.0 时，可允许非常小的时钟偏差。 即使是 3 分钟的偏差都可能导致发生类似于 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z` 的错误，从而导致登录失败。 截至本文撰写时，[time.gov](https://time.gov/) 会提供一个指示器，指示时钟与实际时间之间的偏差。 应用已成功运行，时间偏差为 +0.019 秒。
+
+    ```shell
+    mvn -DskipTests clean package
+    mvn -DskipTests spring-boot:run
+    ```
 
 3. 在 Maven 生成并启动该应用程序之后，请在 Web 浏览器中打开 `http://localhost:8080/`；系统会将你重定向到登录页。
 
-   ![登录页](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo1-n.png)
+    ![登录页](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo1-n.png)
 
-4. 单击名称为 `${your-sign-up-or-in}` 用户流的链接，系统会将你重定向到 Azure AD B2C 以启动身份验证过程。
+4. 选择与登录相关的文本的链接。 系统应会重定向到 Azure AD B2C 以启动身份验证过程。
 
-   ![Azure AD B2C 登录](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo2-n.png)
+5. 成功登录后，应该会在浏览器中看到示例 `home page`。
 
-4. 成功登录后，应该会在浏览器中看到示例 `home page`。
-
-   ![成功登录](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo3-n.png)
+    ![成功登录](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo3-n.png)
 
 ## <a name="summary"></a>总结
 

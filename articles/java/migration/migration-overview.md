@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202826"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507463"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -78,7 +78,7 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 使用以下网格可识别适用于你的应用程序类型的潜在目标。 如你所见，AKS 和虚拟机支持所有应用程序类型，但它们要求你的团队承担更多的责任，如下一部分所示。
 
-|   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
+|   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟<br>机|
 |---|---|---|---|---|---|---|
 | Spring Boot/JAR 应用程序                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/微服务                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -100,7 +100,7 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 > [!NOTE]
 > 这并不是一个详尽的责任列表。
 
-|                                                                       | 应用服务 | Azure Spring Cloud | AKS | 虚拟机 |
+|                                                                       | 应用<br>服务 | Azure<br>Spring<br>云 | AKS | 虚拟<br>机 |
 |---|---|---|---|---|
 | 更新库<br>（包括漏洞修正）                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | 更新应用程序服务器<br>（包括漏洞修正）    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
@@ -140,9 +140,9 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 |目标&nbsp;→<br><br>应用程序&nbsp;类型&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟机|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR 应用程序 | [指南][5] | 指南<br>已计划 | 指南<br>已计划 | [指南][14]      | 指南<br>已计划 |
-| Spring Cloud/<br>微服务   | 空值           | 空值                 | [指南][15]      | 指南<br>已计划 | 指南<br>已计划 |
-| Web 应用程序<br>Web 应用程序     | 空值           | [指南][2]       | 空值                 | [指南][3]       | 指南<br>已计划 |
+| Spring Boot/<br>JAR 应用程序 | [指南][5] | 指南<br>已计划 | [指南][16] | [指南][14]      | 指南<br>已计划 |
+| Spring Cloud/<br>微服务   | 空值           | 空值                 | [指南][15] | 指南<br>已计划 | 指南<br>已计划 |
+| Web 应用程序<br>Web 应用程序     | 空值           | [指南][2]       | 空值            | [指南][3]       | 指南<br>已计划 |
 
 **Java EE 应用程序**
 
@@ -171,3 +171,4 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 [13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
+[16]: migrate-spring-boot-to-azure-spring-cloud.md

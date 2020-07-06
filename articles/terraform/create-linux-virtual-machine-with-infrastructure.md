@@ -3,15 +3,15 @@ title: 教程 - 使用 Terraform 在 Azure 中创建带有基础结构的 Linux 
 description: 了解如何使用 Terraform 在 Azure 中创建和管理完整的 Linux 虚拟机环境。
 keywords: azure devops terraform linux vm 虚拟机
 ms.topic: tutorial
-ms.date: 05/31/2020
-ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 06/14/2020
+ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329435"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779649"
 ---
-# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
+# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 
 使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](getting-started-cloud-shell.md)。
 
@@ -463,10 +463,10 @@ Plan: 7 to add, 0 to change, 0 to destroy.
 terraform apply
 ```
 
-Terraform 完成后，VM 基础结构即已准备完毕。 可使用 [az vm show](/cli/azure/vm) 获取 VM 的 公共 IP 地址：
+Terraform 完成后，VM 基础结构即已准备完毕。 可使用 [az vm show](/cli/azure/vm#az-vm-show) 获取 VM 的 公共 IP 地址：
 
 ```azurecli-interactive
-az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -o tsv
 ```
 
 然后，可以通过 SSH 连接到 VM：

@@ -1,226 +1,97 @@
 ---
-title: 如何将 Spring Data JDBC 用于 Azure SQL 数据库
+title: 将 Spring Data JDBC 用于 Azure SQL 数据库
 description: 了解如何将 Spring Data JDBC 用于 Azure SQL 数据库。
-services: sql-database
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 05/18/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
+ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: ccbc2c78877e5c687cd463e49b84475495368fa3
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 3d46e9954c9b9d21dd50368b27c7dde3d4a7efbf
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668793"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507689"
 ---
-# <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>如何将 Spring Data JDBC 用于 Azure SQL 数据库
+# <a name="use-spring-data-jdbc-with-azure-sql-database"></a>将 Spring Data JDBC 用于 Azure SQL 数据库
 
-## <a name="overview"></a>概述
+本主题演示如何创建示例应用程序，使其使用 [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) 在 [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) 中存储和检索信息。
 
-本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 数据库连接 (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) 在 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)中存储和检索信息。
+[JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) 是标准的 Java API，用于连接到传统的关系数据库。
 
-## <a name="prerequisites"></a>先决条件
+[!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
-为完成本文介绍的步骤，需要满足以下先决条件：
+[!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
-* [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
-* 用来测试功能的 [Curl](https://curl.haxx.se/) 或类似的 HTTP 实用工具。
-* [Git](https://git-scm.com/downloads) 客户端。
+### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
 
-## <a name="create-an-azure-sql-database"></a>创建 Azure SQL 数据库
+运行以下命令在命令行上生成应用程序：
 
-### <a name="create-a-sql-database-server-using-the-azure-portal"></a>使用 Azure 门户创建 SQL 数据库服务器
-
-> [!NOTE]
-> 
-> 可以在[在 Azure 门户中创建 Azure SQL 数据库](/azure/sql-database/sql-database-get-started-portal)中阅读有关创建 Azure SQL 数据库的更多详细信息。
-
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
-
-1. 依次单击“+创建资源”、“数据库”和“SQL 数据库”。   
-
-   ![创建 SQL 数据库][SQL01]
-
-1. 指定以下信息：
-
-   * **数据库名称**：为 SQL 数据库选择一个唯一名称；这将在你稍后指定的 SQL 服务器中创建。
-   * **订阅**：指定要使用的 Azure 订阅。
-   * **资源组**：指定是要创建新资源组，还是选择现有资源组。
-   * **选择源**：对于本教程，请选择 `Blank database` 以创建新数据库。
-
-   ![指定 SQL 数据库属性][SQL02]
-   
-1. 依次单击“服务器”、“新建”   ，然后指定以下信息：
-
-   - **服务器名称**：为 SQL 服务器选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoyssql.database.windows.net*。
-   - **服务器管理员登录名**：指定数据库管理员名称。
-   - **密码**和**确认密码**：指定数据库管理员的密码。
-   - **位置**：指定最靠近你的数据库的地理区域。
-
-
-1. 输入上述所有信息后，请单击“确定”  。
-
-1. 单击“审阅并创建”  。
-
-1. 检查设置，并单击“创建”。 
-
-### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>使用 Azure 门户为 SQL Server 配置防火墙规则
-
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
-
-1. 单击“所有资源”  ，然后单击你刚才创建的 SQL Server。
-
-1. 在左侧导航窗格中，单击“概览”部分，并单击“设置服务器防火墙”  
-
-   ![显示防火墙设置][SQL06]
-
-1. 在“防火墙和虚拟网络”  部分中，通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。）
-
-   ![配置防火墙设置][SQL07]
-
-### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>使用 Azure 门户检索 SQL Server 的连接字符串
-
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
-
-1. 单击“所有资源”  ，然后单击你刚才创建的 SQL 数据库。
-
-1. 单击“连接字符串”  ，然后单击“JDBC”  并复制 JDBC 文本字段中的值。
-
-   ![检索 JDBC 连接字符串][SQL09]
-
-### <a name="create-test-table-in-database"></a>在数据库中创建测试表
-若要对此数据库运行客户端应用程序，请使用以下 SQL 命令来创建新表。
-
-``` SQL
-IF NOT EXISTS (SELECT 1 FROM sysobjects WHERE NAME='pet' and XTYPE='U')
-  CREATE TABLE pet (
-    id      INT           IDENTITY  PRIMARY KEY,
-    name    VARCHAR(255),
-    species VARCHAR(255)
-  );
-
+```bash
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
-## <a name="configure-the-sample-application"></a>配置示例应用程序
+### <a name="configure-spring-boot-to-use-azure-sql-database"></a>将 Spring Boot 配置为使用 Azure SQL 数据库
 
-1. 打开一个命令 shell 并使用 git 命令克隆示例项目，如以下示例所示：
+打开 src/main/resources/application.properties 文件，添加以下文本：
 
-   ```shell
-   git clone https://github.com/Azure-Samples/spring-data-jdbc-on-azure.git
-   ```
+```properties
+logging.level.org.springframework.jdbc.core=DEBUG
 
-1. 修改 POM 文件，使之包含以下依赖项：
+spring.datasource.url=jdbc:sqlserver://$AZ_DATABASE_NAME.database.windows.net:1433;database=demo;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+spring.datasource.username=spring@$AZ_DATABASE_NAME
+spring.datasource.password=$AZ_SQL_SERVER_PASSWORD
 
+spring.datasource.initialization-mode=always
 ```
- <dependency>
-    <groupId>com.microsoft.sqlserver</groupId>
-    <artifactId>mssql-jdbc</artifactId>
-    <version>7.4.1.jre11</version>
- </dependency>
+
+将这两个 `$AZ_DATABASE_NAME` 变量和 `$AZ_SQL_SERVER_PASSWORD` 变量替换为在本文开头部分配置的值。
+
+> [!WARNING]
+> 配置属性 `spring.datasource.initialization-mode=always` 意味着 Spring Boot 将在每次服务器启动时使用我们稍后将创建的 `schema.sql` 文件来自动生成数据库架构。 这非常适合测试，但请记住，这会在每次重启时删除数据，因此你不应在生产中使用。
+
+现在，你应能够使用提供的 Maven 包装器启动应用程序，如下所示：
+
+```bash
+./mvnw spring-boot:run
 ```
-1. 在示例项目的 *resources* 目录中找到 *application.properties* 文件，或者创建此文件（若此文件尚不存在）。
 
-1. 在文本编辑器中打开 *application.properties* 文件，在文件中添加或配置以下行，并将示例值替换为上文中的相应值：
+下面是首次运行的应用程序的屏幕截图：
 
-   ```yaml
-   spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
-   spring.datasource.url=jdbc:sqlserver://wingtiptoyssql.database.windows.net:1433;database=wingtiptoys;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-   spring.datasource.username=wingtiptoysuser@wingtiptoyssql
-   spring.datasource.password=********
-    ```
-   其中：
+[![正在运行的应用程序](media/configure-spring-data-jdbc-with-azure-sql-server/create-sql-server-01.png)](media/configure-spring-data-jdbc-with-azure-sql-server/create-sql-server-01.png#lightbox)
 
-   | 参数 | 说明 |
-   |---|---|
-   | `spring.datasource.url` | 指定上文中所述的 SQL JDBC 字符串的编辑后版本。 |
-   | `spring.datasource.username` | 指定本文上文中所述的 SQL 管理员名称，并将缩短的服务器名称追加到其末尾。 |
-   | `spring.datasource.password` | 指定本文上文中所述的 SQL 管理员密码。 |
+### <a name="create-the-database-schema"></a>创建数据库架构
 
-1. 保存并关闭 application.properties 文件  。
+Spring Boot 会自动执行 src/main/resources/schema.sql，以便创建数据库架构。 创建该文件并添加以下内容：
 
-## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序 
+```sql
+DROP TABLE IF EXISTS todo;
+CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
+```
 
-1. 使用 Maven 生成示例应用程序，例如：
+停止正在运行的应用程序并使用以下命令重启。 现在，该应用程序将使用之前创建的 `demo` 数据库，并在其中创建一个 `todo` 表。
 
-   ```shell
-   mvn clean package -P sql
-   ```
+```bash
+./mvnw spring-boot:run
+```
 
-1. 启动示例应用程序；例如：
+## <a name="code-the-application"></a>编写应用程序代码
 
-   ```shell
-   java -jar target/spring-data-jdbc-on-azure-0.1.0-SNAPSHOT.jar
-   ```
+接下来添加 Java 代码，该代码使用 JDBC 在 Azure SQL 数据库服务器中存储和检索数据。
 
-1. 在命令提示符下使用 `curl` 创建新记录，如以下示例所示：
+[!INCLUDE [spring-data-jdbc-create-application.md](includes/spring-data-jdbc-create-application.md)]
 
-   ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
-   ```
+下面是这些 cURL 请求的屏幕截图：
 
-   或者：
+[![使用 cURL 进行测试](media/configure-spring-data-jdbc-with-azure-sql-server/create-sql-server-02.png)](media/configure-spring-data-jdbc-with-azure-sql-server/create-sql-server-02.png#lightbox)
 
-``` shell
-   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
-   ```
+祝贺你！ 你已创建了一个 Spring Boot 应用程序，该应用程序使用 JDBC 在 Azure SQL Database 中存储和检索数据。
 
-   你的应用程序应返回如下所示的值：
-
-   ```shell
-   Added Pet(id=1, name=dog, species=canine).
-
-   Added Pet(id=2, name=cat, species=feline).
-   ```
-
-1. 在命令提示符下使用 `curl` 检索所有现有记录，如以下示例所示：
-
-   ```shell
-   curl -s http://localhost:8080/pets
-   ```
-    
-   你的应用程序应返回如下所示的值：
-
-   ```json
-   [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
-   ```
-
-## <a name="summary"></a>总结
-
-在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JDBC 在 Azure SQL 数据库中存储和检索信息。
-
-## <a name="next-steps"></a>后续步骤
-
-若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
-
-> [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+[!INCLUDE [spring-data-conclusion.md](includes/spring-data-conclusion.md)]
 
 ### <a name="additional-resources"></a>其他资源
 
-有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
+有关 Spring Data JDBC 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)。
 
-<!-- URL List -->
-
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
-[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
-[使用 Azure DevOps 和 Java]: /azure/devops/
-[MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Data]: https://spring.io/projects/spring-data
-[Spring Initializr]: https://start.spring.io/
-[Spring Framework]: https://spring.io/
-
-<!-- IMG List -->
-
-[SQL01]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-01.png
-[SQL02]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-02.png
-[SQL03]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-03.png
-[SQL04]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-04.png
-[SQL05]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-05.png
-[SQL06]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-06.png
-[SQL07]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-07.png
-[SQL08]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-08.png
-[SQL09]: media/configure-spring-data-jdbc-with-azure-sql-server/create-azure-sql-09.png
+若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](/azure/developer/java/) 和[使用 Azure DevOps 和 Java](/azure/devops/)。

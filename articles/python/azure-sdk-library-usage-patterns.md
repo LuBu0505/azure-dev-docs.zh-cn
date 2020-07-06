@@ -1,18 +1,18 @@
 ---
 title: 用于 Python 的 Azure 库的使用模式
 description: 用于 Python 的 Azure SDK 库的常见使用模式概述
-ms.date: 05/26/2020
+ms.date: 06/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: f712dc41233b8301e370c9eb63786d8e2d7f8c70
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: d1cd1b1c965fdf5b6907c9842260d4c029d625f5
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256272"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942406"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>用于 Python 的 Azure 库的使用模式
 
-用于 Python 的 Azure SDK 完全由[用于 Python 的 Azure SDK 索引页](https://azure.github.io/azure-sdk/releases/latest/all/python.html)上列出的多个独立库组成。
+用于 Python 的 Azure SDK 完全由 [Python SDK 包索引](azure-sdk-library-package-index.md)页上列出的多个独立库组成。
 
 所有库共享某些常见特征和用法模式，例如，为对象参数安装和使用内联 JSON。
 
@@ -34,7 +34,80 @@ pip install azure-storage-blob
 
 还可以使用 `pip` 卸载库和安装特定版本，包括预览版。 有关详细信息，请参阅[如何安装用于 Python 的 Azure 库包](azure-sdk-install.md)。
 
-## <a name="inline-json-pattern-for-object-arguments"></a>用于对象参数的内联 JSON 模式
+## <a name="asynchronous-operations"></a>异步操作
+
+通过客户端和管理客户端对象调用的许多操作（如 [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)）会返回一个类型 `AzureOperationPoller[<type>]` 的对象，其中 `<type>` 是特定于操作的。
+
+[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) 返回类型意味着操作是异步的。 相应地，必须调用该轮询器的 `result` 方法，以等待操作的实际结果变为可用。
+
+下面的代码摘自[示例：预配和部署 web 应用](azure-sdk-example-web-app.md)，展示了使用轮询器等待结果的示例：
+
+```python
+poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
+    WEB_APP_NAME,
+    {
+        "location": LOCATION,
+        "server_farm_id": plan_result.id,
+        "site_config": {
+            "linux_fx_version": "python|3.8"
+        }
+    }
+)
+
+web_app_result = poller.result()
+```
+
+在这种情况下，`create_or_update` 的返回值为类型 `AzureOperationPoller[Site]`，这意味着 `poller.result()` 的返回值是一个 [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python) 对象。
+
+## <a name="exceptions"></a>例外
+
+通常情况下，如果操作未能按预期执行（包括对 Azure REST API 的 HTTP 请求失败），Azure 库将引发异常。 对于应用代码，可以在库操作周围使用 `try...except` 块。
+
+有关可能引发的异常类型的详细信息，请参阅相关操作的文档。
+
+## <a name="logging"></a>日志记录
+
+最新的 Azure 库使用 Python 标准 `logging` 库生成日志输出。 可以为单个库、库组或所有库设置日志记录级别。 注册日志记录流处理程序后，便可为特定客户端对象或特定操作启用日志记录。 有关详细信息，请参阅 [Azure 库中的日志记录](azure-sdk-logging.md)。
+
+## <a name="proxy-configuration"></a>代理配置
+
+若要指定代理，可以使用环境变量或可选参数。 有关详细信息，请参阅[如何配置代理](azure-sdk-configure-proxy.md)。
+
+## <a name="optional-arguments-for-client-objects-and-methods"></a>用于客户端对象和方法的可选参数
+
+在库参考文档中，经常会在客户端对象构造函数或特定操作方法的签名中看到 `**kwargs` 或 `**operation_config**` 参数。 这些占位符指示相关的对象或方法可能支持其他命名的自变量。 通常，参考文档中会指示可以使用的特定参数。 此外，通常还支持一些常规参数，后面部分中对此进行了介绍。
+
+### <a name="arguments-for-libraries-based-on-azurecore"></a>基于 azure.core 的库的参数
+
+这些参数适用于 [Python - 新库](https://azure.github.io/azure-sdk/releases/latest/#python)中列出的那些库。
+
+| 名称                       | 类型 | 默认     | 说明 |
+| ---                        | ---  | ---         | ---         |
+| logging_enable             | bool | False       | 启用日志记录。 有关详细信息，请参阅 [Azure 库中的日志记录](azure-sdk-logging.md)。 |
+| proxies                    | dict | {}          | 代理服务器 URL。 有关详细信息，请参阅[如何配置代理](azure-sdk-configure-proxy.md)。 |
+| use_env_settings           | bool | True        | 如果为 True，表明允许为代理使用 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量。 如果为 False，则忽略环境变量。 有关详细信息，请参阅[如何配置代理](azure-sdk-configure-proxy.md)。 |
+| connection_timeout         | int  | 300         | 建立与 Azure REST API 终结点的连接时所产生的超时时间，以秒计算。 |
+| read_timeout               | int  | 300         | 完成 Azure REST API 操作（即等待响应）时所产生的超时时间，以秒计算。 |
+| retry_total                | int  | 10          | 允许的 REST API 调用重试次数。 使用 `retry_total=0` 禁用重试操作。 |
+| retry_mode                 | 枚举 | 指数 | 以线性或指数方式应用重试计时。 如果设置为“单次”，则按固定间隔时间进行重试。 如果设置为“指数”，则每次重试距离上一次重试的时间是上一次间隔时间的两倍。 |
+
+单个库不一定支持其中的参数，请始终查阅每个库的参考文档，了解具体信息。
+
+### <a name="arguments-for-non-core-libraries"></a>非核心库的参数
+
+| 名称               | 类型 | 默认 | 说明 |
+| ---                | ---  | ---     | ---         |
+| 验证             | bool | True    | 验证 SSL 证书。 |
+| cert               | str  | 无    | 用于客户端验证的本地证书的路径。 |
+| timeout            | int  | 30      | 用于建立服务器连接的超时值（以秒为单位）。 |
+| allow_redirects    | bool | False   | 启用重定向。 |
+| max_redirects      | int  | 30      | 允许的最大重定向次数。 |
+| proxies            | dict | {}      | 代理服务器 URL。 有关详细信息，请参阅[如何配置代理](azure-sdk-configure-proxy.md)。 |
+| use_env_proxies    | bool | False   | 启用从本地环境变量读取代理设置。 |
+| retries            | int  | 10      | 允许的总重试次数。 |
+| enable_http_logger | bool | False   | 以调试模式启用 HTTP 日志。 |
+
+## <a name="inline-json-pattern-for-object-arguments"></a>对象参数的内联 JSON 模式
 
 Azure 库中的许多操作可用于将对象参数表示为离散对象或内联 JSON。
 
@@ -126,6 +199,7 @@ operation = keyvault_client.vaults.create_or_update(
 - [示例：创建资源组](azure-sdk-example-resource-group.md)
 - [示例：使用 Azure 存储](azure-sdk-example-storage.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
+- [示例：预配和查询数据库](azure-sdk-example-database.md)
 - [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)
 
 可以按任意顺序尝试使用这些示例，因为它们既不是按顺序编写的，也不是相互依赖的。

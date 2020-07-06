@@ -3,16 +3,16 @@ title: 如何安装用于 Python 的 Azure SDK 库包
 description: 如何使用 pip 安装、卸载和验证 Azure SDK for Python 库。 包含有关安装特定版本和预览包的详细信息。
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: f50de734ab1d007c9e5efac8cd6559a2c03d83f5
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: 9dbe783f9f91431b684e7e4a6c2ea5b9ff5a6a2a
+ms.sourcegitcommit: 39da5bec7ef824a34aa04514afc1141b75466547
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256252"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84741439"
 ---
 # <a name="how-to-install-azure-library-packages-for-python"></a>如何安装用于 Python 的 Azure 库包
 
-用于 Python 的 Azure SDK 完全由[用于 Python 的 Azure SDK 索引页](https://azure.github.io/azure-sdk/releases/latest/all/python.html)上列出的多个单独库组成。 请使用 `pip install` 来安装项目所需的特定库包。
+用于 Python 的 Azure SDK 完全由[包索引](azure-sdk-library-package-index.md)中列出的多个单独库组成。 请使用 `pip install` 来安装项目所需的特定库包。
 
 利用这些库，可在 Azure 服务上预配和管理资源（使用其名称中有 `-mgmt` 的管理库），并从应用代码连接到这些资源（使用客户端库）。
 
@@ -77,3 +77,4 @@ pip uninstall azure-storage-blob
 ```
 
 若要卸载库，请使用 `pip uninstall <library>`。
+

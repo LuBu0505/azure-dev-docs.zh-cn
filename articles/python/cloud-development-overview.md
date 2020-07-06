@@ -3,12 +3,12 @@ title: 使用 Azure 进行云开发 - 什么是 Azure？
 description: 概述了如何在 Microsoft Azure 上开发云应用，首先从介绍数据中心、服务和资源之间的关系开始。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 815da765aaed1e8364c37f621f17f279212bf77f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404950"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370708"
 ---
 # <a name="cloud-development-on-azure"></a>在 Azure 上进行云开发
 
@@ -16,7 +16,7 @@ ms.locfileid: "83404950"
 
 ## <a name="what-is-azure-data-centers-services-and-resources"></a>什么是 Azure？ 数据中心、服务和资源
 
-Microsoft 首席执行官 Satya Nadella 经常将 Azure 称为“世界计算机”。 如你所知，计算机是由操作系统管理的硬件集合，这提供了一个平台，你可以在此平台上生成软件，有助于人们将系统的计算能力应用于任意数量的任务。 （正因为此，我们使用“应用”一词来描述此类软件。）
+Microsoft 首席执行官 Satya Nadella 经常将 Azure 称为“世界计算机”。 如你所知，计算机是由操作系统管理的硬件集合，它提供了一个平台，你可以在此平台上生成软件，帮助人们将系统的计算能力应用于任意数量的任务。 （正因为此，我们使用“应用”一词来描述此类软件。）
 
 对于 Azure，计算机的硬件不是一台计算机，而是[全世界数十个海量数据中心](https://azure.microsoft.com/global-infrastructure/regions/)中包含的虚拟化服务器计算机的巨型池。 然后，Azure“操作系统”由服务组成，这些服务根据应用需求来动态分配和取消分配此资源池的不同部分。 每个分配（计算能力（CPU 核心和内存）、存储、数据库、网络等）都被称为“资源”。 而且，每个离散资源相应地分配有一个唯一对象标识符（即 GUID）和唯一 URL。
 

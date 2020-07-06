@@ -1,255 +1,84 @@
 ---
-title: 如何将 Spring Data JPA 与 Azure Database for MySQL 配合使用
-description: 了解如何配置 Spring Data JPA 并将其与 Azure Database for MySQL 配合使用。
+title: 将 Spring Data JPA 与 Azure Database for MySQL 配合使用
+description: 了解如何将 Spring Data JPA 与 Azure Database for MySQL 数据库配合使用。
 documentationcenter: java
-ms.date: 11/27/2019
+ms.date: 06/16/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
-ms.topic: conceptual
-ms.openlocfilehash: 8620c7d5306e221479baad4cc2a73cc9cb04947d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.author: judubois
+ms.topic: article
+ms.openlocfilehash: af4239b1757051a01be5625ff815aa189d42bbbc
+ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668823"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133670"
 ---
-# <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>如何将 Spring Data JPA 与 Azure Database for MySQL 配合使用
+# <a name="use-spring-data-jpa-with-azure-database-for-mysql"></a>将 Spring Data JPA 与 Azure Database for MySQL 配合使用
 
-本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Java 持久性 API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) 在 [Azure Database for MySQL](/azure/mysql/) 数据库中存储和检索信息。
+本主题演示如何创建示例应用程序，使其使用 [Spring Data JPA](https://spring.io/projects/spring-data-jpa) 在 [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) 中存储和检索信息。
 
-## <a name="prerequisites"></a>先决条件
+[Java 持久性 API (JPA)](https://en.wikipedia.org/wiki/Java_Persistence_API) 是用于对象关系映射的标准 Java API。
 
-为完成本文介绍的步骤，需要满足以下先决条件：
+[!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
-* Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
-* 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
-* [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
-* 用来测试功能的 [Curl](https://curl.haxx.se/) 或类似的 HTTP 实用工具。
-* [mysql](https://dev.mysql.com/downloads/) 命令行实用工具。
-* [Git](https://git-scm.com/downloads) 客户端。
+[!INCLUDE [spring-data-mysql-setup.md](includes/spring-data-mysql-setup.md)]
 
-## <a name="create-a-azure-database-for-mysql-server"></a>创建 Azure Database for MySQL 服务器
+### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
 
-### <a name="create-a-server-using-the-azure-portal"></a>使用 Azure 门户创建服务器
+通过在命令行中输入以下命令，生成此应用程序：
 
-> [!NOTE]
-> 
-> 可以在[在 Azure 门户中创建 Azure Database for MySQL 服务器](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)中阅读有关创建 MySQL 数据库的更多详细信息。
+```bash
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+```
 
-1. 浏览到 [Azure 门户](https://portal.azure.com)并登录。
+### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>将 Spring Boot 配置为使用 Azure Database for MySQL
 
-1. 依次选择“+创建资源”、“数据库”和“Azure Database for MySQL”。   
+打开 src/main/resources/application.properties 文件，添加以下内容。 确保将这两个 `$AZ_DATABASE_NAME` 变量和 `$AZ_MYSQL_PASSWORD` 变量替换为在本文开头部分配置的值。
 
-   ![创建 MySQL 数据库][MYSQL01]
+```properties
+logging.level.org.hibernate.SQL=DEBUG
 
-1. 输入以下信息：
+spring.datasource.url=jdbc:mysql://$AZ_DATABASE_NAME.mysql.database.azure.com:3306/demo?serverTimezone=UTC
+spring.datasource.username=spring@$AZ_DATABASE_NAME
+spring.datasource.password=$AZ_MYSQL_PASSWORD
 
-   - **订阅**：指定要使用的 Azure 订阅。
-   - **资源组**：指定是要创建新资源组，还是选择现有资源组。
-   - **服务器名称**：为 MySQL 服务器选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoysmysql.mysql.database.azure.com*。
-   - **选择源**：对于本教程，请选择 `Blank` 以创建新数据库。
-   - **服务器管理员登录名**：指定数据库管理员名称。
-   - **密码**和**确认密码**：指定数据库管理员的密码。
-   - **位置**：指定最靠近你的数据库的地理区域。
-   - **版本**：指定最新的数据库版本。
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create-drop
+```
 
-   ![创建 MySQL 数据库属性][MYSQL02]
-
-1. 输入上述所有信息后，单击“查看 + 创建”  。
-
-### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>使用 Azure 门户为服务器配置防火墙规则
-
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
-
-1. 单击“所有资源”  ，然后单击你刚才创建的 MySQL 数据库。
-
-1. 单击“连接安全性”  ，在“防火墙规则”  中通过为规则指定一个唯一名称来创建新规则，输入将需要访问你的数据库的 IP 地址范围，然后单击“保存”  。 （在本练习中，IP 地址是开发人员计算机（客户端）的 IP 地址。  可以将其用作“起始 IP 地址”  和“结束 IP 地址”  。 另请参阅标题“使用 mysql 命令行实用程序创建数据库”下的注释  。）
-
-   ![配置连接安全性][MYSQL04]
-
-### <a name="retrieve-the-connection-string-for-your-server-using-the-azure-portal"></a>使用 Azure 门户检索服务器的连接字符串
-
-1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
-
-1. 单击“所有资源”  ，然后单击刚创建的 Azure Database for MySQL 资源。
-
-1. 单击“连接字符串”  ，然后复制“JDBC”  文本字段中的值。
-
-   ![检索 JDBC 连接字符串][MYSQL05]
-
-### <a name="create-a-database-using-the-mysql-command-line-utility"></a>使用 `mysql` 命令行实用程序创建数据库
-
-1. 打开一个命令 shell，通过输入 `mysql` 命令连接到 Azure Database for MySQL 服务器，如以下示例所示：
-
-   ```shell
-   mysql --host wingtiptoysmysql.mysql.database.azure.com --user wingtiptoysuser@wingtiptoysmysql -p
-   ```
-   其中：
-
-   | 参数 | 说明 |
-   |---|---|
-   | `host` | 指定本文上文中所述的完全限定的 MySQL 服务器名称。 |
-   | `user` | 指定本文上文中所述的 MySQL 管理员和缩短的服务器名称。 |
-   | `p` | 指定等待至提示输入密码。 |
-
-
-   MySQL 服务器应当如以下示例所示进行响应：
-
-   ```shell
-   Welcome to the MySQL monitor.  Commands end with ; or \g.
-   Your MySQL connection id is 64552
-   Server version: 5.6.39.0 MySQL Community Server (GPL)
-   
-   Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
-   
-   Oracle is a registered trademark of Oracle Corporation and/or its
-   affiliates. Other names may be trademarks of their respective
-   owners.
-   
-   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-   
-   mysql>
-   ```
-   > 注意：如果出现一条错误消息指示服务器无法识别此 IP 地址，则客户端正在使用的 IP 地址将显示在错误中。  请返回并按前面所述分配该地址：*使用 Azure 门户为服务器配置防火墙规则*。
-
-1. 通过输入 `mysql` 命令创建名为 *mysqldb* 的数据库，如以下示例所示：
-
-   ```SQL
-   CREATE DATABASE mysqldb;
-   ```
-
-   MySQL 服务器应当如以下示例所示进行响应：
-
-   ```shell
-   Query OK, 1 row affected (0.30 sec)
-   ```
-
-1. 可选：可以通过输入 `mysql` 命令验证数据库是否已创建，如以下示例所示：
-
-   ```SQL
-   SHOW DATABASES;
-   ```
-
-   MySQL 服务器应当如以下示例所示进行响应：
-
-   ```shell
-   +--------------------+
-   | Database           |
-   +--------------------+
-   | information_schema |
-   | mysql              |
-   | mysqldb            |
-   | performance_schema |
-   | sys                |
-   +--------------------+
-   ```
-
-1. 输入 `\q` 以退出 `mysql` 实用工具。
-
-## <a name="configure-the-sample-application"></a>配置示例应用程序
-
-1. 打开一个命令 shell 并使用 git 命令克隆示例项目，如以下示例所示：
-
-   ```shell
-   git clone https://github.com/Azure-Samples/spring-data-jpa-on-azure.git
-   ```
-
-1. 在示例项目的 *resources* 目录中找到 *application.properties* 文件，或者创建此文件（若此文件尚不存在）。
-
-1. 在文本编辑器中打开 *application.properties* 文件，在文件中添加或配置以下行，并将示例值替换为上文中的相应值：
-
-   ```yaml
-   spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
-   spring.datasource.url=jdbc:mysql://wingtiptoysmysql.mysql.database.azure.com:3306/mysqldb?useSSL=true&requireSSL=false
-   spring.datasource.username=wingtiptoysuser@wingtiptoysmysql
-   spring.datasource.password=********
-    ```
-   其中：
-
-   | 参数 | 说明 |
-   |---|---|
-   | `spring.jpa.database-platform` | 指定 JPA 数据库平台。 |
-   | `spring.datasource.url` | 指定本文上文中所述的 MySQL JDBC 字符串。 |
-   | `spring.datasource.username` | 指定本文上文中所述的 MySQL 管理员名称，并将缩短的服务器名称追加到其末尾。 |
-   | `spring.datasource.password` | 指定本文上文中所述的 MySQL 管理员密码。 |
-
-1. 保存并关闭 application.properties 文件  。
+> [!WARNING]
+> 配置属性 `spring.jpa.hibernate.ddl-auto=create-drop` 意味着 Spring Boot 会在应用程序启动时自动创建数据库架构，并在关闭时尝试将其删除。 此属性很适合用于测试，但不应在生产中使用！
 
 > [!NOTE]
->  application.propertie 文件的第一个属性是 `spring.jpa.hibernate.ddl-auto=create`，这是一个休眠属性，它将在应用程序启动时自动删除并重新创建数据库架构。
-> 此配置在开发和测试期间很实用，但你不应在生产中使用它。
+> 我们将 `?serverTimezone=UTC` 追加到配置属性 `spring.datasource.url` 中，以指示 JDBC 驱动程序在连接到数据库时使用 UTC 日期格式（或协调世界时）。 否则，Java 服务器将不使用与数据库相同的日期格式，这将导致错误。
 
-## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序
+现在，我们应该能够使用提供的 Maven 包装器启动应用程序：
 
-1. 使用 Maven 生成示例应用程序，例如：
+```bash
+./mvnw spring-boot:run
+```
 
-   ```shell
-   mvn clean package -P mysql
-   ```
+下面是首次运行的应用程序的屏幕截图：
 
-1. 启动示例应用程序；例如：
+[![正在运行的应用程序](media/configure-spring-data-jpa-with-azure-mysql/create-mysql-01.png)](media/configure-spring-data-jpa-with-azure-mysql/create-mysql-01.png#lightbox)
 
-   ```shell
-   java -jar target/spring-data-jpa-on-azure-0.1.0-SNAPSHOT.jar
-   ```
+## <a name="code-the-application"></a>编写应用程序代码
 
-1. 在命令提示符下使用 `curl` 创建新记录，如以下示例所示：
+接下来添加 Java 代码，以便使用 JPA 在 MySQL 服务器中存储并检索数据。
 
-   ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+[!INCLUDE [spring-data-jpa-create-application.md](includes/spring-data-jpa-create-application.md)]
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
-   ```
+下面是这些 cURL 请求的屏幕截图：
 
-   你的应用程序应返回如下所示的值：
+[![使用 cURL 进行测试](media/configure-spring-data-jpa-with-azure-mysql/create-mysql-02.png)](media/configure-spring-data-jpa-with-azure-mysql/create-mysql-02.png#lightbox)
 
-   ```shell
-   Added Pet(id=1, name=dog, species=canine).
+祝贺你！ 你已创建了一个 Spring Boot 应用程序，该应用程序使用 JPA 在 Azure Database for MySQL 中存储和检索数据。
 
-   Added Pet(id=2, name=cat, species=feline).
-   ```
-
-1. 在命令提示符下使用 `curl` 检索所有现有记录，如以下示例所示：
-
-   ```shell
-   curl -s http://localhost:8080/pets
-   ```
-    
-   你的应用程序应返回如下所示的值：
-
-   ```json
-   [{"id":1,"name":"dog","species":"canine"},{"id":2,"name":"cat","species":"feline"}]
-   ```
-
-## <a name="summary"></a>总结
-
-在本教程中，我们创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 JPA 在 Azure Database for MySQL 中存储和检索信息。
-
-## <a name="next-steps"></a>后续步骤
-
-若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
-
-> [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+[!INCLUDE [spring-data-conclusion.md](includes/spring-data-conclusion.md)]
 
 ### <a name="additional-resources"></a>其他资源
 
-有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
+有关 Spring Data JPA 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)。
 
-<!-- URL List -->
-
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
-[免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
-[使用 Azure DevOps 和 Java]: /azure/devops/
-[MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Data]: https://spring.io/projects/spring-data
-[Spring Initializr]: https://start.spring.io/
-[Spring Framework]: https://spring.io/
-
-<!-- IMG List -->
-
-[MYSQL01]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-01.png
-[MYSQL02]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-02.png
-[MYSQL04]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-04.png
-[MYSQL05]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-05.png
+若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](/azure/developer/java/) 和[使用 Azure DevOps 和 Java](/azure/devops/)。
