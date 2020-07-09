@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 4a6463df852511ab37af772598f9ae525d8a02e9
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.openlocfilehash: dfd5dc1e81a5d25f1bb08f373bafae7e3c2fe61e
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069421"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018635"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
 
@@ -231,7 +231,7 @@ ms.locfileid: "85069421"
     >         password-reset: # optional
     > ```
     >
-    > Application.yml 文件可通过 GitHub 上的 [Azure Active Directory B2C Spring Boot 示例](https://github.com/microsoft/azure-spring-boot/blob/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/application.yml)获取。
+    > Application.yml 文件可通过 GitHub 上的 [Azure Active Directory B2C Spring Boot 示例](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/application.yml)获取。
 
 7. 保存并关闭 application.yml 文件。
 
@@ -323,7 +323,7 @@ ms.locfileid: "85069421"
     }
     ```
 
-14. 将 greeting.html 和 home.html 文件从 [Azure AD B2C Spring Boot 示例](https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/templates)复制到 src/main/resources/templates 中，并将 `${your-profile-edit-user-flow}` 和 `${your-password-reset-user-flow}` 替换为之前创建的用户流的名称。
+14. 将 greeting.html 和 home.html 文件从 [Azure AD B2C Spring Boot 示例](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/templates)复制到 src/main/resources/templates 中，并将 `${your-profile-edit-user-flow}` 和 `${your-password-reset-user-flow}` 替换为之前创建的用户流的名称。
 
 ## <a name="build-and-test-your-app"></a>生成并测试应用
 
