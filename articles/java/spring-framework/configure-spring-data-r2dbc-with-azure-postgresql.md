@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: bd3208cc68b863afe2ce39e83d62d358a4baea96
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.openlocfilehash: 6bc835ef46a85ec3988c2d7e750447054be9e9bc
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370728"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018663"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-postgresql"></a>将 Spring Data R2DBC 与 Azure Database for PostgreSQL 配合使用
 
@@ -21,6 +21,10 @@ ms.locfileid: "85370728"
 [R2DBC](https://r2dbc.io/) 将反应式 API 引入传统的关系数据库。 可以将它与 Spring WebFlux 配合使用，创建使用非阻止式 API 的完全响应式 Spring Boot 应用程序。 它提供的可伸缩性优于经典的“一个连接一个线程”方法。
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
+
+## <a name="sample-application"></a>示例应用程序
+
+在本文中，我们将对示例应用程序进行编码。 如果希望加快进程，可通过 [https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-postgresql](https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-postgresql) 获得已编码的应用程序。
 
 [!INCLUDE [spring-data-postgresql-setup.md](includes/spring-data-postgresql-setup.md)]
 
@@ -31,7 +35,7 @@ ms.locfileid: "85370728"
 使用以下命令在命令行上生成应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-postgresql-driver-implementation"></a>添加响应式 PostgreSQL 驱动程序实现

@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: de4a913e7cd4e96c8223ddd005a9d3014780d0fe
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 22c8cb54921121cf1afeb45c1ae99eb53cfcfed9
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631630"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018546"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>将 Spring Data JDBC 与 Azure Database for MySQL 配合使用
 
@@ -22,6 +22,10 @@ ms.locfileid: "83631630"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
+## <a name="sample-application"></a>示例应用程序
+
+在本文中，我们将对示例应用程序进行编码。 如果希望加快进程，可通过 [https://github.com/Azure-Samples/quickstart-spring-data-jdbc-mysql](https://github.com/Azure-Samples/quickstart-spring-data-jdbc-mysql) 获得已编码的应用程序。
+
 [!INCLUDE [spring-data-mysql-setup.md](includes/spring-data-mysql-setup.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
@@ -29,7 +33,7 @@ ms.locfileid: "83631630"
 通过在命令行中输入以下命令，生成此应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>将 Spring Boot 配置为使用 Azure Database for MySQL

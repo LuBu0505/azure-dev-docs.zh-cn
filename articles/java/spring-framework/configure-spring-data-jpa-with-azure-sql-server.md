@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 933a8140ba3e9c71a5beeb0ff36b16c4937117a1
-ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
+ms.openlocfilehash: bb25b52bd68c71d9a51a4a33fe278fe5a0148a05
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133642"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018536"
 ---
 # <a name="use-spring-data-jpa-with-azure-sql-database"></a>将 Spring Data JPA 用于 Azure SQL 数据库
 
@@ -22,6 +22,10 @@ ms.locfileid: "85133642"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
+## <a name="sample-application"></a>示例应用程序
+
+在本文中，我们将对示例应用程序进行编码。 如果希望加快进程，可通过 [https://github.com/Azure-Samples/quickstart-spring-data-jpa-sql-server](https://github.com/Azure-Samples/quickstart-spring-data-jpa-sql-server) 获得已编码的应用程序。
+
 [!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
@@ -29,7 +33,7 @@ ms.locfileid: "85133642"
 通过在命令行中输入以下命令，生成此应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>将 Spring Boot 配置为使用 Azure SQL 数据库
@@ -38,6 +42,7 @@ curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,sqlserver 
 
 ```properties
 logging.level.org.hibernate.SQL=DEBUG
+
 spring.datasource.url=jdbc:sqlserver://$AZ_DATABASE_NAME.database.windows.net:1433;database=demo;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
 spring.datasource.username=spring@$AZ_DATABASE_NAME
 spring.datasource.password=$AZ_SQL_SERVER_PASSWORD

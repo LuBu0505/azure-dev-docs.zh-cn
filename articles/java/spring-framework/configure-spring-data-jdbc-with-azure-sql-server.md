@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 3d46e9954c9b9d21dd50368b27c7dde3d4a7efbf
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.openlocfilehash: cd0823246482f37822fab6326628e9aab01ebfbd
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507689"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018511"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>将 Spring Data JDBC 用于 Azure SQL 数据库
 
@@ -22,6 +22,10 @@ ms.locfileid: "84507689"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
+## <a name="sample-application"></a>示例应用程序
+
+在本文中，我们将对示例应用程序进行编码。 如果希望加快进程，可通过 [https://github.com/Azure-Samples/quickstart-spring-data-jdbc-sql-server](https://github.com/Azure-Samples/quickstart-spring-data-jdbc-sql-server) 获得已编码的应用程序。
+
 [!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>使用 Spring Initializr 生成应用程序
@@ -29,7 +33,7 @@ ms.locfileid: "84507689"
 运行以下命令在命令行上生成应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>将 Spring Boot 配置为使用 Azure SQL 数据库
