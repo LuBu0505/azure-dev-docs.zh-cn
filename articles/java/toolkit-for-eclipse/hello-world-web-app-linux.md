@@ -8,12 +8,13 @@ ms.date: 12/20/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 9048fe69be5f12b19b547e275fd801733849a87f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: f5606cb8b1e61358e610c8ff1bcadc837e44a539
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82209820"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378281"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>使用 Azure Toolkit for Eclipse 将 Hello World Web 应用部署到云中的 Linux 容器
 
@@ -35,11 +36,11 @@ ms.locfileid: "82209820"
 
 1. 按照 [Azure Toolkit for Eclipse 的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)一文中的步骤启动 Eclipse 并登录到 Azure 帐户。
 
-1. 依次单击“文件”菜单、“新建”和“动态 Web 项目”。   
+1. 依次单击“文件”菜单、“新建”和“动态 Web 项目”。  
    
    ![创建新项目][file-new-project]
 
-1. 在“新建动态 Web 项目”对话框中指定项目名称和位置，然后单击“完成”   。
+1. 在“新建动态 Web 项目”对话框中指定项目名称和位置，然后单击“完成” 。
    
    ![指定项目名称][project-name]
 
@@ -56,37 +57,37 @@ ms.locfileid: "82209820"
 
    登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。
 
-1. 依次单击“+ 创建资源”  菜单图标、“容器”、  “容器注册表”  。
+1. 依次单击“+ 创建资源”菜单图标、“容器”、“容器注册表”。
    
    ![创建新的 Azure 容器注册表][create-container-registry-01]
 
-1. 当显示“创建容器注册表”  页时，输入你的“注册表名称”  和“资源组”  ，为“管理员用户”  选择“启用”  ，然后单击“创建”  。
+1. 当显示“创建容器注册表”页时，输入你的“注册表名称”和“资源组”，为“管理员用户”选择“启用”，然后单击“创建”。
 
    ![配置 Azure 容器注册表设置][create-container-registry-02]
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>在 Docker 容器中部署 Web 应用
 
-1. 右键单击项目资源管理器中的项目，选择“Azure”，然后单击“添加 Docker 支持”   。
+1. 右键单击项目资源管理器中的项目，选择“Azure”，然后单击“添加 Docker 支持” 。
 
    将使用默认配置自动创建 Docker 文件。
 
    ![添加 Docker 支持][add-docker-support]
 
-1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“发布到用于容器的 Web 应用”   。
+1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“发布到用于容器的 Web 应用” 。
 
    ![发布到用于容器的 Web 应用][run-on-web-app-for-containers]
 
-1. 显示“在用于容器的 Web 应用上运行”对话框时，填写必要信息  ：
+1. 显示“在用于容器的 Web 应用上运行”对话框时，填写必要信息：
 
    * **Docker 文件**：指定向项目添加 Docker 支持时创建的 Docker 文件的路径。 
 
-   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。   
+   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。  
 
    * **映像和标记**：指定容器映像名称；通常使用以下语法：“*registry*.azurecr.io/*appname*:latest”，其中： 
-      * 注册表是上文所述的容器注册表  
-      * appname 是 Web 应用的名称  
+      * 注册表是上文所述的容器注册表 
+      * appname 是 Web 应用的名称 
 
-   * **用于容器的 Web 应用**：选择“使用现有”或“新建”，指定是将容器部署到现有 Web 应用还是创建新的 Web 应用   。  指定的“应用名称”  将创建 Web 应用的 URL，例如 *wingtiptoys.azurewebsites.net*。
+   * **用于容器的 Web 应用**：选择“使用现有”或“新建”，指定是将容器部署到现有 Web 应用还是创建新的 Web 应用 。  指定的“应用名称”将创建 Web 应用的 URL，例如 *wingtiptoys.azurewebsites.net*。
 
    * **资源组**：指定是要使用现有资源组还是创建新的资源组。 
 
@@ -94,7 +95,7 @@ ms.locfileid: "82209820"
 
    ![在用于容器的 Web 应用上运行][run-on-web-app-linux]
 
-1. 配置完上面列出的设置后，单击“确定”，将 Web 应用发布到 Azure  。
+1. 配置完上面列出的设置后，单击“确定”，将 Web 应用发布到 Azure。
 
 1. 发布 Web 应用以后，即可浏览到此前为 Web 应用指定的 URL，例如 *wingtiptoys.azurewebsites.net*。
 

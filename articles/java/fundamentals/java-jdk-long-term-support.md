@@ -3,13 +3,13 @@ title: 面向 Azure 开发的 Java JDK 和中长期支持
 description: 本文提供开发和运行 Java 应用程序所需的有关 Azure 支持的下载内容和声明。
 ms.date: 04/09/2019
 ms.topic: conceptual
-ms.custom: seo-java-september2019
-ms.openlocfilehash: 86d4d94e27b7cc088ec7d818695b1b97565f2ff0
-ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
+ms.custom: seo-java-september2019, devx-track-java
+ms.openlocfilehash: 5bffb4e4d2f68ef61ea96ededdf51ea98bb72d2a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85418205"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379831"
 ---
 # <a name="java-long-term-support-and-medium-term-support-on-azure-and-azure-stack"></a>Azure 和 Azure Stack 上的 Java 长期支持和中期支持
 

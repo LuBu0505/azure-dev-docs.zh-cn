@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: ae3443ca54dc37e54b9c0bc5151cf35f5220a7ea
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 2f95eecf230db14292c6e449ab419af6f0c338c0
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671653"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86407970"
 ---
-|  |  |
+| 示例  | 说明 |
 |---------|---------|
 | [管理 Azure 容器注册表][1] | 创建新的 Azure 容器注册表并添加新的映像。 | 
 | [管理 Azure 容器服务][2] | 使用 Kubernetes 业务流程创建 Azure 容器服务。 | 

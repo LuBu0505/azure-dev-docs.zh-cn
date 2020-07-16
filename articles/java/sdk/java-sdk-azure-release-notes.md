@@ -5,12 +5,13 @@ keywords: Azure,  Java, API, 参考, 说明, 更新, 弃用
 ms.assetid: 1f128cf9-f747-4344-84e1-f9964709deb8
 ms.topic: reference
 ms.date: 3/06/2016
-ms.openlocfilehash: 69c2c29935f9333dd1d31b26b0941e0446ca5504
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 41f3d66c911c6bd383920dc31e65e9e2ae9941a6
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105198"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379451"
 ---
 # <a name="release-notes"></a>发行说明 
 

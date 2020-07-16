@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 4447c9d2b09d0d004b8c858aceb31e6c7cee9493
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: c5830ab871b78e586b502e0c6e2331700fa0149d
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673983"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379951"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>用于 IntelliJ 的 Azure 工具包的登录说明
 
@@ -30,23 +31,23 @@ ms.locfileid: "81673983"
 
 1. 使用 IntelliJ IDEA 打开项目。
 
-2. 打开边栏中的“Azure 资源管理器”，然后单击顶部栏中的“Azure 登录”图标（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 登录”）。   
+2. 打开边栏中的“Azure 资源管理器”，然后单击顶部栏中的“Azure 登录”图标（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 登录”）。  
 
    ![“IntelliJ Azure 登录”命令][I01]
 
-3. 在“Azure 登录”窗口中选择“设备登录名”，然后单击“登录”。   
+3. 在“Azure 登录”窗口中选择“设备登录名”，然后单击“登录”。  
 
    ![“Azure 登录”窗口，其中已选择“设备登录”][I02]
 
-4. 在“Azure 设备登录”对话框中单击“复制并打开”。  
+4. 在“Azure 设备登录”对话框中单击“复制并打开”。 
 
    ![“Azure 登录”对话框窗口][I03]
 
-5. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。  
+5. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。 
 
    ![设备登录浏览器][I04]
 
-6. 在“选择订阅”对话框中选择要使用的订阅，并单击“确定”。  
+6. 在“选择订阅”对话框中选择要使用的订阅，并单击“确定”。 
 
    ![“选择订阅”对话框][I05]
 
@@ -56,34 +57,34 @@ ms.locfileid: "81673983"
 
 1. 使用 IntelliJ IDEA 打开项目。
 
-1. 打开边栏中的“Azure 资源管理器”，然后单击顶部栏中的“Azure 登录”图标（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 登录”）。   
+1. 打开边栏中的“Azure 资源管理器”，然后单击顶部栏中的“Azure 登录”图标（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 登录”）。  
    ![“IntelliJ Azure 登录”命令][A01]
 
-1. 在“Azure 登录”窗口中选择“服务主体”，然后单击“新建”。   
+1. 在“Azure 登录”窗口中选择“服务主体”，然后单击“新建”。  
 
    ![已选中“服务主体”的“Azure 登录”窗口][A02]
 
-1. 在“Azure 设备登录”对话框中单击“复制并打开”。  
+1. 在“Azure 设备登录”对话框中单击“复制并打开”。 
 
    ![“Azure 登录”对话框窗口][A03]
 
-1. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。  
+1. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。 
 
    ![设备登录浏览器][A04]
 
-1. 在“创建身份验证文件”窗口中选择要使用的订阅，选择目标目录，并单击“启动”。  
+1. 在“创建身份验证文件”窗口中选择要使用的订阅，选择目标目录，并单击“启动”。 
 
    ![“创建身份验证文件”窗口][A05]
 
-1. 成功创建文件后，请在“服务主体创建状态”对话框中单击“确定”。  
+1. 成功创建文件后，请在“服务主体创建状态”对话框中单击“确定”。 
 
    ![“服务主体创建状态”对话框][A06]
 
-1. 在“Azure 登录”窗口中单击“登录”。   
+1. 在“Azure 登录”窗口中单击“登录”。  
 
    ![“Azure 登录”对话框][A07]
 
-1. 在“选择订阅”对话框中选择要使用的订阅，并单击“确定”。  
+1. 在“选择订阅”对话框中选择要使用的订阅，并单击“确定”。 
 
    ![“选择订阅”对话框][A08]
 
@@ -93,7 +94,7 @@ ms.locfileid: "81673983"
 
 通过上述步骤配置帐户后，每次启动 IntelliJ IDEA 时都会自动登录。 但是，若要注销 Azure 帐户，请执行以下操作。
 
-* 在 IntelliJ IDEA 中打开“Azure 资源管理器”边栏，单击“Azure 注销”图标并进行确认（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 注销”）。  
+* 在 IntelliJ IDEA 中打开“Azure 资源管理器”边栏，单击“Azure 注销”图标并进行确认（或者在 IDEA 菜单中选择“工具”>“Azure”>“Azure 注销”）。 
 
    ![“IntelliJ Azure 注销”命令][L01]
 

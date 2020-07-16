@@ -9,12 +9,13 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 30c225ed4d8e17860fe169e326f994c70ebe7d85
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-java
+ms.openlocfilehash: 5cfdbb3542222a7ff9547b25836237d5d0991ddb
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370718"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378471"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure 中的 Spring Cloud Function 入门
 
@@ -64,7 +65,7 @@ ms.locfileid: "85370718"
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.5.0</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.6.0</azure.functions.maven.plugin.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
@@ -348,7 +349,7 @@ mvn azure-functions:deploy
 现在使用 cURL 访问正在运行的函数，正如在上一部分所做的那样。 请将 `your-function-name` 替换为实际的函数名称：
 
 ```bash
-curl https:/your-function-name.azurewebsites.net/api/hello -d "{\"name\":\"Azure\"}"
+curl https://your-function-name.azurewebsites.net/api/hello -d "{\"name\":\"Azure\"}"
 ```
 
 与上一部分一样，此函数会使用仍为 JSON 格式的 `Greeting` 对象进行回应：

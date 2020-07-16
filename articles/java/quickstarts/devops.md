@@ -3,12 +3,13 @@ title: Azure 上适用于 Java 应用的 DevOps 快速入门
 description: 有关适用于 Java 应用的 DevOps 的 Azure 文档中的入门材料列表。
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2920259ca64addb86a58c166f5a1ce1863ff9e9b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 62c755665008f83cc6a644f8bf702d6b1486cf6a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673693"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379631"
 ---
 # <a name="devops-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的 DevOps
 

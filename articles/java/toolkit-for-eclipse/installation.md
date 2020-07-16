@@ -7,12 +7,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: b269be52157516b97905b0a917fec856127a761f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 867fd12dbcf5963de36f500b96a577be141e967a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674333"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378271"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
@@ -36,7 +37,7 @@ ms.locfileid: "81674333"
 
     [![拖到正在运行的 Eclipse* 工作区。*需要 Eclipse Marketplace 客户端](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "拖到正在运行的 Eclipse* 工作区。*需要 Eclipse Marketplace 客户端")
 
-2. 否则，也可在“帮助/Eclipse Marketplace”中搜索并安装**用于 Eclipse 插件的 Azure 工具包**。 
+2. 否则，也可在“帮助/Eclipse Marketplace”中搜索并安装**用于 Eclipse 插件的 Azure 工具包**。
 
     ![市场](media/installation/marketplace.png)
 
@@ -44,17 +45,17 @@ ms.locfileid: "81674333"
 
 1. 启动 Eclipse。
 
-1. 单击“帮助”  菜单，然后单击“安装新软件”  ，如下图所示。
+1. 单击“帮助”菜单，然后单击“安装新软件”，如下图所示。
 
    ![安装用于 Eclipse 的 Azure 工具包][01]
 
-1. 在“可用软件”  对话框的“使用”  文本框中，键入 `http://dl.microsoft.com/eclipse/`，然后按 Enter  键。
+1. 在“可用软件”对话框的“使用”文本框中，键入 `http://dl.microsoft.com/eclipse/`，然后按 Enter 键。
 
-1. 在“名称”窗格中，选中“用于 Java 的 Azure 工具包”，并取消选中“在安装过程中访问所有更新站点以查找所需的软件”。    屏幕应与下图中所示类似：
+1. 在“名称”窗格中，选中“用于 Java 的 Azure 工具包”，并取消选中“在安装过程中访问所有更新站点以查找所需的软件”。   屏幕应与下图中所示类似：
 
    ![安装用于 Eclipse 的 Azure 工具包][02]
 
-1. 如果展开“用于 Eclipse 的 Azure 工具包”，会看到一个要安装的组件的列表，例如： 
+1. 如果展开“用于 Eclipse 的 Azure 工具包”，会看到一个要安装的组件的列表，例如：
 
    | Feature | 说明 | 
    |---|---| 
@@ -66,13 +67,13 @@ ms.locfileid: "81674333"
    | **Microsoft JDBC Driver 6.1 for SQL Server** | 提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Microsoft Azure SQL 数据库。 | 
    | **Microsoft Azure Java 库包** | 提供用于访问 Microsoft Azure 服务（例如存储、服务总线、服务运行时等）的 API。 | 
 
-1. 单击“下一步”。  （如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。） 
+1. 单击“下一步”。 （如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。）
 
-1. 在“安装详细信息”对话框中，单击“下一步”。  
+1. 在“安装详细信息”对话框中，单击“下一步”。 
 
    ![查看安装详细信息][03]
 
-1. 在“查看许可证”对话框中，查看许可协议条款。  如果接受许可协议条款，请单击“我接受许可协议条款”，并单击“完成”。   （剩余步骤假定你接受许可协议条款。 如果不接受许可协议条款，请退出安装过程。）
+1. 在“查看许可证”对话框中，查看许可协议条款。 如果接受许可协议条款，请单击“我接受许可协议条款”，并单击“完成”。  （剩余步骤假定你接受许可协议条款。 如果不接受许可协议条款，请退出安装过程。）
 
    ![查看许可证][04]
 
@@ -80,7 +81,7 @@ ms.locfileid: "81674333"
 
    ![安装进度][05]
 
-1. 如果系统提示重新启动 Eclipse 以完成安装，请单击“是”。 
+1. 如果系统提示重新启动 Eclipse 以完成安装，请单击“是”。
 
    ![重新启动提示][06]
 

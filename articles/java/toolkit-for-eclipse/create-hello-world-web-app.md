@@ -12,12 +12,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 25c46576e6c1c379d10cd5ce350ca73c5e28ab93
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: ea650fdf86f0a614303f94f67792f2c05827576e
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671013"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378391"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>使用 Eclipse 创建适用于 Azure 应用服务的 Hello World Web 应用
 
@@ -40,28 +41,28 @@ ms.locfileid: "81671013"
 
     [![拖到正在运行的 Eclipse* 工作区。*需要 Eclipse Marketplace 客户端](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "拖到正在运行的 Eclipse* 工作区。*需要 Eclipse Marketplace 客户端")
 
-1. 若要登录到 Azure 帐户，请依次单击“工具”、“Azure”、“登录”。   
+1. 若要登录到 Azure 帐户，请依次单击“工具”、“Azure”、“登录”。  
    ![用于 Azure 登录的 Eclipse 菜单][I01]
 
 1. 在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](sign-in-instructions.md)）。  
 
    ![“Azure 登录”窗口，其中已选择“设备登录”][I02]
 
-1. 在“Azure 设备登录”对话框中单击“复制并打开”。  
+1. 在“Azure 设备登录”对话框中单击“复制并打开”。 
 
    ![“Azure 登录”对话框窗口][I03]
 
-1. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。  
+1. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。 
 
    ![设备登录浏览器][I04]
 
-1. 最后，在“选择订阅”对话框中选择要使用的订阅，然后单击“确定”。  
+1. 最后，在“选择订阅”对话框中选择要使用的订阅，然后单击“确定”。 
 
    ![“选择订阅”对话框][I05]
 
 ## <a name="creating-web-app-project"></a>创建 Web 应用项目
 
-1. 依次单击“文件”、“新建”和“动态 Web 项目”。    （如果在单击“文件”、“新建”后未看到“动态 Web 项目”作为可用项目列出，则执行以下操作：依次单击“文件”、“新建”、“项目...”，展开“Web”，单击“动态 Web 项目”，并单击“下一步”。）         
+1. 依次单击“文件”、“新建”和“动态 Web 项目”。   （如果在单击“文件”、“新建”后未看到“动态 Web 项目”作为可用项目列出，则执行以下操作：依次单击“文件”、“新建”、“项目...”，展开“Web”，单击“动态 Web 项目”，并单击“下一步”。）        
 
    ![创建新的动态 Web 项目][file-new-dynamic-web-project]
 
@@ -69,17 +70,17 @@ ms.locfileid: "81671013"
    
    ![“新建动态 Web 项目”属性][dynamic-web-project-properties]
 
-3. 单击“完成”  。
+3. 单击“完成”。
 
-4. 在 Eclipse 的项目资源管理器视图中，展开“MyWebApp”。  右键单击“WebContent”，单击“新建”，并单击“JSP 文件”。   
+4. 在 Eclipse 的项目资源管理器视图中，展开“MyWebApp”。 右键单击“WebContent”，单击“新建”，并单击“JSP 文件”。  
 
    ![新建 JSP 文件][create-new-jsp-file]
 
-5. 在“新建 JSP 文件”对话框中，将文件命名为“index.jsp”，将父文件夹保留为“MyWebApp/WebContent”，然后单击“下一步”。    
+5. 在“新建 JSP 文件”对话框中，将文件命名为“index.jsp”，将父文件夹保留为“MyWebApp/WebContent”，然后单击“下一步”。   
 
    ![“新建 JSP 文件”对话框][new-jsp-file-dialog]
 
-6. 基于本教程的目的，在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，并单击“完成”。   
+6. 基于本教程的目的，在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，并单击“完成”。  
 
    ![选择 JSP 模板][select-jsp-template]
 
@@ -93,31 +94,31 @@ ms.locfileid: "81671013"
 
 ## <a name="deploying-web-app-to-azure"></a>将 Web 应用部署到 Azure
 
-1. 在 Eclipse 的“项目资源管理器”视图中，右键单击项目，选择“Azure”，然后选择“发布为 Azure Web 应用”   。
+1. 在 Eclipse 的“项目资源管理器”视图中，右键单击项目，选择“Azure”，然后选择“发布为 Azure Web 应用” 。
    
    ![发布为 Azure Web 应用][publish-as-azure-web-app]
 
-1. 当“部署 Web 应用”对话框显示时，可选择以下某个选项： 
+1. 当“部署 Web 应用”对话框显示时，可选择以下某个选项：
 
    * 选择现有的 Web 应用（如果存在）。
 
       ![选择应用服务][select-app-service]
 
-   * 单击“创建新 Web 应用”  。
+   * 单击“创建新 Web 应用”。
 
       ![创建应用服务][create-app-service]
 
-      在“创建应用服务”对话框中为 Web 应用指定必要信息，然后单击“创建”   。
+      在“创建应用服务”对话框中为 Web 应用指定必要信息，然后单击“创建” 。
 
       在这里可以配置运行时环境、应用设置、服务计划和资源组。
 
       ![“创建应用服务”对话框][create-app-service-dialog]
 
-1. 选择 Web 应用，然后单击“部署”  。
+1. 选择 Web 应用，然后单击“部署”。
 
    ![部署应用服务][deploy-app-service]
 
-1. 工具包在成功部署 Web 应用后会在“Azure 活动日志”选项卡下显示“已发布”状态   ，这是已部署 Web 应用的 URL 超链接。
+1. 工具包在成功部署 Web 应用后会在“Azure 活动日志”选项卡下显示“已发布”状态 ，这是已部署 Web 应用的 URL 超链接。
 
    ![发布状态][publish-status]
 

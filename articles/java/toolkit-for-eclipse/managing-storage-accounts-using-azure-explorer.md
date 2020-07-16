@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 19f529b6d04e73c18648b77b2ac83a31ca1a455f
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82209760"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378131"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -27,17 +28,17 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
 
-1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。    
+1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。   
 
    ![“创建存储帐户”命令][CS01]
 
-1. 在“创建存储帐户”  对话框中，指定以下选项：
+1. 在“创建存储帐户”对话框中，指定以下选项：
 
    ![“创建新存储帐户”对话框][CS02]
 
-   * **名称**：指定要用于新存储帐户的名称。
+   * 名称：指定要用于新存储帐户的名称。
 
-   * **订阅**：指定要用于新存储帐户的 Azure 订阅。
+   * 订阅：指定要用于新存储帐户的 Azure 订阅。
 
    * **资源组**：指定虚拟机的资源组。 选择以下选项之一：
       * **新建**：指定要创建新的资源组。
@@ -51,17 +52,17 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    * **复制**：指定存储帐户的复制（例如“区域冗余”）。 有关详细信息，请参阅 [Azure 存储复制]。
 
-1. 指定了上述所有选项后，单击“创建”  。
+1. 指定了上述所有选项后，单击“创建”。
 
 ## <a name="create-a-storage-container-in-eclipse"></a>在 Eclipse 中创建存储容器
 
 若要使用 Azure 资源管理器创建存储容器，请执行以下操作：
 
-1. 在 **Azure 资源管理器**视图中，右键单击要在其中创建容器的存储帐户，并单击“创建 Blob 容器”。 
+1. 在 **Azure 资源管理器**视图中，右键单击要在其中创建容器的存储帐户，并单击“创建 Blob 容器”。
 
    ![“创建 blob 容器”命令][CC01]
 
-1. 在“创建 Blob 容器”  对话框中，指定容器的名称，并单击“确定”  。 有关命名存储容器的详细信息，请参阅[命名和引用容器、Blob 和元数据]。
+1. 在“创建 Blob 容器”对话框中，指定容器的名称，并单击“确定”。 有关命名存储容器的详细信息，请参阅[命名和引用容器、Blob 和元数据]。
 
    ![“创建 blob 容器”对话框][CC02]
 
@@ -69,11 +70,11 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 若要使用 Azure 资源管理器删除存储容器，请执行以下操作：
 
-1. 在 **Azure 资源管理器**视图中，右键单击存储容器，并单击“删除”。 
+1. 在 **Azure 资源管理器**视图中，右键单击存储容器，并单击“删除”。
 
    ![“删除存储容器”命令][DC01]
 
-1. 在确认窗口中，单击“确定”。 
+1. 在确认窗口中，单击“确定”。
 
    ![删除存储容器确认窗口][DC02]
 
@@ -81,11 +82,11 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 若要使用 Azure 资源管理器删除存储帐户，请执行以下操作：
 
-1. 在 **Azure 资源管理器**视图中，右键单击存储帐户，并单击“删除”。 
+1. 在 **Azure 资源管理器**视图中，右键单击存储帐户，并单击“删除”。
 
    ![“删除存储帐户”命令][DS01]
 
-1. 在确认窗口中，单击“确定”。 
+1. 在确认窗口中，单击“确定”。
 
    ![删除存储帐户确认窗口][DS02]
 

@@ -3,12 +3,13 @@ title: 安装适用于 Azure 和 Azure Stack 的 Azul Zulu JDK
 description: 如何安装 Azul Zulu Java 开发工具包 (JDK)，以便在 Windows、Linux 和 Mac 中进行 Azure 开发
 ms.date: 04/19/2019
 ms.topic: conceptual
-ms.openlocfilehash: f5425bd94a0094fb16649bd3a8069599e30cdba7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: e0d628f6aa21bf888e7e7d84fccbd7d6173db8aa
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670693"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405688"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>安装适用于 Azure 和 Azure Stack 的 JDK
 

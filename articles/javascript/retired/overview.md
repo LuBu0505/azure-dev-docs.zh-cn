@@ -3,16 +3,16 @@ title: 用于 JavaScript 的 Azure 模块
 description: 用于 JavaScript 的 Azure 管理和服务模块概述
 ms.date: 06/17/2017
 ms.topic: article
-ms.openlocfilehash: 193e2d3c92a9c2b8e3970e7a130246947a7cc4da
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: 2d01dcc2095bc91fb9695c0299b603b86c4719f0
+ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791463"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86286444"
 ---
 # <a name="azure-modules-for-javascript"></a>用于 JavaScript 的 Azure 模块
 
-使用用于 JavaScript 的 Azure 模块，通过 JavaScript 应用程序管理 Azure 资源并连接到服务。 可在项目中将该代码作为 npm 模块](/api/?view=azure-node-latest.md) 使用。
+使用用于 JavaScript 的 Azure 模块，通过 JavaScript 应用程序管理 Azure 资源并连接到服务。 代码以 [npm 模块](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest)的形式提供，方便在项目中使用。
 
 ## <a name="manage-azure-resources"></a>管理 Azure 资源
 
@@ -75,7 +75,7 @@ msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (
 });
 ```
 
-查看[安装说明](/api/?view=azure-node-latest)了解模块的完整列表，并查看[入门文章](../index.yml)来设置身份验证并针对自己的 Azure 订阅运行示例代码来创建和更新资源。
+查看[安装说明](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest)了解模块的完整列表，并查看[入门文章](../index.yml)来设置身份验证并针对自己的 Azure 订阅运行示例代码来创建和更新资源。
 
 ## <a name="connect-to-azure-services"></a>连接到 Azure 服务
 

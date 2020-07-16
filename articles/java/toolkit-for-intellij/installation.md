@@ -7,12 +7,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 64da0248a34392be88bf83343929b7f4eecc6b9c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 15e3bdc3f001b3fe93a96b27bf7fc44c7aaa8f3a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673833"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379921"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>安装 Azure Toolkit for IntelliJ
 
@@ -25,7 +26,7 @@ ms.locfileid: "81673833"
 > <https://github.com/microsoft/azure-tools-for-java> 
 > 
 
-可以通过两种方法来安装用于 IntelliJ 的 Azure 工具包：一种是使用“设置”对话框，另一种是使用开始屏幕上的“配置”菜单。   两种安装方法都会在以下步骤中演示。
+可以通过两种方法来安装用于 IntelliJ 的 Azure 工具包：一种是使用“设置”对话框，另一种是使用开始屏幕上的“配置”菜单。  两种安装方法都会在以下步骤中演示。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -56,15 +57,15 @@ ms.locfileid: "81673833"
 
 1. 启动 IntelliJ IDEA。
 
-1. IntelliJ IDEA 打开后，单击“文件”，并单击“设置”。  
+1. IntelliJ IDEA 打开后，单击“文件”，并单击“设置”。 
    
    ![打开 IntelliJ IDEA 的“设置”对话框][01a]
 
-1. 在“设置”对话框中，单击“插件”，并单击“浏览存储库”。  
+1. 在“设置”对话框中，单击“插件”，并单击“浏览存储库”。 
    
    ![IntelliJ IDEA 的“设置”对话框][02a]
 
-1. 在“浏览存储库”对话框的搜索框中键入“Azure”。  突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。  
+1. 在“浏览存储库”对话框的搜索框中键入“Azure”。 突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。 
    
    ![搜索 Azure Toolkit for IntelliJ][03]
    
@@ -72,15 +73,15 @@ ms.locfileid: "81673833"
    
    ![安装进度][04]
 
-1. 安装完成后，单击“重新启动 IntelliJ IDEA”。 
+1. 安装完成后，单击“重新启动 IntelliJ IDEA”。
    
    ![重新启动 IntelliJ IDEA][05]
 
-1. 单击“确定”关闭“设置”对话框。 
+1. 单击“确定”关闭“设置”对话框。
    
    ![关闭 IntelliJ IDEA 的“设置”对话框][06]
 
-1. 当系统提示是重新启动 IntelliJ IDEA 还是推迟时，请单击“重新启动”。 
+1. 当系统提示是重新启动 IntelliJ IDEA 还是推迟时，请单击“重新启动”。
    
 1   ![重新启动 IntelliJ IDEA][07]
 
@@ -88,15 +89,15 @@ ms.locfileid: "81673833"
 
 1. 启动 IntelliJ IDEA。
 
-1. IntelliJ IDEA 开始屏幕出现后，单击“配置”，并单击“插件”。  
+1. IntelliJ IDEA 开始屏幕出现后，单击“配置”，并单击“插件”。 
    
    ![安装 IntelliJ IDEA 插件][01b]
 
-1. 在“插件”对话框中，单击“浏览存储库”。  
+1. 在“插件”对话框中，单击“浏览存储库”。 
    
    ![浏览 IntelliJ IDEA 插件存储库][02b]
 
-1. 在“浏览存储库”对话框的搜索框中键入“Azure”。  突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。  
+1. 在“浏览存储库”对话框的搜索框中键入“Azure”。 突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。 
    
    ![搜索 Azure Toolkit for IntelliJ][03]
    
@@ -104,11 +105,11 @@ ms.locfileid: "81673833"
    
    ![安装进度][04]
 
-1. 安装完成后，单击“重新启动 IntelliJ IDEA”。 
+1. 安装完成后，单击“重新启动 IntelliJ IDEA”。
    
    ![重新启动 IntelliJ IDEA][05]
 
-1. 当系统提示是重新启动 IntelliJ IDEA 还是推迟时，请单击“重新启动”。 
+1. 当系统提示是重新启动 IntelliJ IDEA 还是推迟时，请单击“重新启动”。
    
    ![重新启动 IntelliJ IDEA][07]
 

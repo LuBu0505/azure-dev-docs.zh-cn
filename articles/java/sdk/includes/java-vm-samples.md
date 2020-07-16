@@ -1,13 +1,14 @@
 ---
-ms.openlocfilehash: 5d005f5a4906e5e2a55189d073383ab77f6c1860
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a6e51b3fca9e2ae633a69b6372d7f622d2697812
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674183"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405748"
 ---
-| **创建虚拟机** || 
+| 示例  | 说明 |
 |---|---|
+| **创建虚拟机** ||
 | [管理虚拟机][1] | 创建、修改、启动、停止和删除虚拟机。 |
 | [从自定义映像创建虚拟机][2] | 创建自定义虚拟机映像并使用它创建新的虚拟机。 | 
 | [通过快照使用专用 VHD 创建虚拟机][3] | 通过虚拟机的 OS 和数据磁盘创建快照，通过快照创建托管磁盘，然后通过附加托管磁盘来创建虚拟机。 |  

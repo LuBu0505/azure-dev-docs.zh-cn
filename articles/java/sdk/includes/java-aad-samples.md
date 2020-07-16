@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 7efca5bce2ffeaaa9930bb91d0787b8643391f4a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: d19bb343e8db9e80f3919264944b9d526e698f0f
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671893"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86407977"
 ---
-|  |  |
+| 示例  | 说明 |
 |---------|---------|
 | [将 Azure AD 集成到 Java Web 应用程序][1] | 在 Java Web 应用中设置 OAuth2 身份验证。
 | [在 Web 应用程序中调用 Azure AD Graph API][2] | 从 Azure AD Graph API 读取目录数据和执行查询 |
