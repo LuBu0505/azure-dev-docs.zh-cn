@@ -3,14 +3,14 @@ title: 通过用于 Python 的 Azure SDK 使用 Azure 存储
 description: 使用用于 Python 的 Azure SDK 库访问 Azure 存储帐户中预配的 Blob 容器，然后将文件上传到该容器。
 ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
-ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
+ms.openlocfilehash: 41c2c586678084e30f9f5b2bff3c773b46f5463d
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812665"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405728"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>示例：将 Azure 库与 Azure 存储配合使用
+# <a name="example-access-azure-storage-using-the-azure-libraries-for-pyhon"></a>示例：使用用于 Python 的 Azure 库访问 Azure 存储
 
 此示例演示了如何在 Python 应用程序代码中使用 Azure 客户端库，以便将文件上传到 Blob 存储容器。 该示例假设你已预配了[示例：预配 Azure 存储](azure-sdk-example-storage.md)中所示的资源。
 

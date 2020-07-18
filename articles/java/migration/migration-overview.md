@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507463"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405708"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -78,7 +79,7 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 使用以下网格可识别适用于你的应用程序类型的潜在目标。 如你所见，AKS 和虚拟机支持所有应用程序类型，但它们要求你的团队承担更多的责任，如下一部分所示。
 
-|   |应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟<br>机|
+|目标&nbsp;→<br><br>应用程序&nbsp;类型&nbsp;↓|应用<br>服务<br>Java SE|应用<br>服务<br>Tomcat|Azure<br>Spring<br>云|AKS|虚拟<br>机|
 |---|---|---|---|---|---|---|
 | Spring Boot/JAR 应用程序                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/微服务                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -95,12 +96,12 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 
 请使用以下网格来了解迁移后每个目标施加给团队的责任。
 
-团队对使用“&#x1F449;”指示的任务持续承担责任。 建议你通过一个稳定且高度自动化的过程来履行所有此类责任。 
+团队对使用“&#x1F449;”指示的任务持续承担责任。 建议你通过一个稳定且高度自动化的过程来履行所有此类责任。
 
 > [!NOTE]
 > 这并不是一个详尽的责任列表。
 
-|                                                                       | 应用<br>服务 | Azure<br>Spring<br>云 | AKS | 虚拟<br>机 |
+|目标&nbsp;→<br><br>任务&nbsp;↓                            | 应用<br>服务 | Azure<br>Spring<br>云 | AKS | 虚拟<br>机 |
 |---|---|---|---|---|
 | 更新库<br>（包括漏洞修正）                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | 更新应用程序服务器<br>（包括漏洞修正）    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |

@@ -1,16 +1,16 @@
 ---
-title: 如何使 Python 应用程序向 Azure 服务进行身份验证
+title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329425"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377991"
 ---
-# <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何使 Python 应用向 Azure 服务进行身份验证
+# <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何通过 Azure 服务对 Python 应用进行身份验证
 
 使用用于 Python 的 Azure 库编写应用代码时，请使用以下模式访问 Azure 资源：
 
@@ -86,13 +86,15 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-目前，`DefaultAzureCredential` 仅适用于 Azure SDK 客户端（“数据平面”）库，不适用于名称以 `azure-mgmt` 开头的 Azure SDK 管理库，如此代码示例中所示。 调用 `subscription_client.subscriptions.list()` 失败，并出现相当模糊的错误，“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，当前 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
+目前，`DefaultAzureCredential` 仅适用于 Azure SDK 客户端（“数据平面”）库以及 Azure SDK 管理库预览版（名称以 `azure-mgmt` 开头），如该代码示例中所示。 就是说，使用当前版本库时，调用 `subscription_client.subscriptions.list()` 会失败，并出现相当不明确的错误：“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，当前 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
 
-直到稍后在 2020 年更新这些库，才可以通过以下两种方法解决该错误：
+如博客文章中所述，你可以[引入 Azure 管理库的新预览版](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/)，使用预览版管理库来规避该错误。
+
+也可以使用以下方法：
 
 1. 使用本文后续部分中所述的其他身份验证方法之一，这些方法非常适用于仅使用 SDK 管理库且不会部署到云的代码，在这种情况下，你只能依赖于本地服务主体。
 
-1. 使用 Azure SDK 工程团队成员提供的 [CredentialWrapper 类 (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d)，而不是 `DefaultAzureCredential`。 Microsoft 发布更新的管理库后，就可以直接切换回 `DefaultAzureCredential`。 此方法的优点是，可以将同一凭据同时用于 SDK 客户端和管理库，并且它在本地和云中都有效。
+1. 使用 Azure SDK 工程团队成员提供的 [CredentialWrapper 类 (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d)，而不是 `DefaultAzureCredential`。 一旦更新的管理库不再处于预览状态，便可以直接切换回 `DefaultAzureCredential`。 此方法的优点是，可以将同一凭据同时用于 SDK 客户端和管理库，并且它在本地和云中都有效。
 
     假定已将 cred_wrapper.py 的副本下载到项目文件夹中，则前面的代码将如下所示：
 
@@ -106,7 +108,7 @@ print(subscription.subscription_id)
     print(subscription.subscription_id)
     ```
 
-    更新管理库后，就可以直接使用 `DefaultAzureCredential`。
+    同样，一旦更新的管理库不再处于预览状态，便可以直接使用 `DefaultAzureCredential`。
 
 ## <a name="other-authentication-methods"></a>其他身份验证方法
 

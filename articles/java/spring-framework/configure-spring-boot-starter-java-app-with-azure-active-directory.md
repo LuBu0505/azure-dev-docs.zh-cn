@@ -8,12 +8,13 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138806"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379421"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -41,13 +42,13 @@ ms.locfileid: "82138806"
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定使用 Java 生成 Maven 项目，并输入应用程序的“组”名称和“项目”名称     。
+1. 指定使用 Java 生成 Maven 项目，并输入应用程序的“组”名称和“项目”名称   。
 
    ![指定组和项目名称][create-spring-app-01]
 
-1. 向下滚动，为 **Spring Web**、**Azure Active Directory** 和“Spring 安全性”  添加“依赖关系”  。
+1. 向下滚动，为 **Spring Web**、**Azure Active Directory** 和“Spring 安全性”添加“依赖关系”。
 
-1. 在页面底部，单击“生成”  按钮。
+1. 在页面底部，单击“生成”按钮。
 
    ![选择“安全性”、“Web”和“Azure Active Directory”起动器][create-spring-app-02]
 
@@ -59,15 +60,15 @@ ms.locfileid: "82138806"
 
 1. 登录到 <https://portal.azure.com>。
 
-1. 依次单击“+创建资源”、“标识”和“Azure Active Directory”。   
+1. 依次单击“+创建资源”、“标识”和“Azure Active Directory”。  
 
    ![创建新的 Azure Active Directory 实例][create-directory-01]
 
-1. 输入“组织名称”和“初始域名”。   复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：`wingtiptoysdirectory.onmicrosoft.com`。） 
+1. 输入“组织名称”和“初始域名”。  复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：`wingtiptoysdirectory.onmicrosoft.com`。） 
 
     复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：wingtiptoysdirectory.onmicrosoft.com。）。
 
-    完成后，单击“创建”。  创建新资源将需要几分钟时间。
+    完成后，单击“创建”。 创建新资源将需要几分钟时间。
 
    ![指定 Azure Active Directory 名称][create-directory-02]
 
@@ -81,11 +82,11 @@ ms.locfileid: "82138806"
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>添加 Spring Boot 应用的应用程序注册
 
-1. 在门户菜单中单击“应用注册”，然后单击“注册应用程序”。  
+1. 在门户菜单中单击“应用注册”，然后单击“注册应用程序”。 
 
    ![添加新的应用注册][create-app-registration-01]
 
-1. 指定应用程序，然后单击“注册”。 
+1. 指定应用程序，然后单击“注册”。
 
    ![新建应用注册][create-app-registration-02]
 
@@ -93,11 +94,11 @@ ms.locfileid: "82138806"
 
    ![创建应用注册密钥][create-app-registration-03]
 
-1. 在左侧导航窗格中单击“证书和机密”。   然后，单击“新建客户端机密”。 
+1. 在左侧导航窗格中单击“证书和机密”。  然后，单击“新建客户端机密”。
 
    ![创建应用注册密钥][create-app-registration-03-5]
 
-1. 添加“说明”  ，在“过期”  列表中选择持续时间。  单击“添加”  。 系统会自动填充密钥的值。
+1. 添加“说明”，在“过期”列表中选择持续时间。  单击“添加”。 系统会自动填充密钥的值。
 
    ![指定应用注册密钥参数][create-app-registration-04]
 
@@ -105,53 +106,49 @@ ms.locfileid: "82138806"
 
    ![指定应用注册密钥参数][create-app-registration-04-5]
 
-1. 单击左侧导航窗格中的“API 权限”  。 
+1. 单击左侧导航窗格中的“API 权限”。 
 
-1. 单击“Microsoft Graph”并选中“以登录用户的身份访问目录”和“登录并读取用户个人资料”。    单击“授予权限...”，然后在出现提示时单击“是”   。
+1. 单击“Microsoft Graph”并选中“以登录用户的身份访问目录”和“登录并读取用户个人资料”。   单击“授予权限...”，然后在出现提示时单击“是” 。
 
    ![授予访问权限][create-app-registration-08]
 
-1. 在应用注册的主页上单击“身份验证”，然后单击“添加平台”。    然后单击“Web 应用程序”。 
+1. 在应用注册的主页上单击“身份验证”，然后单击“添加平台”。   然后单击“Web 应用程序”。
 
     ![编辑回复 URL][create-app-registration-09]
 
-1. 输入 <http:<span></span>//localhost:8080/login/oauth2/code/azure> 作为新的“重定向 URI”  ，然后单击“配置”  。
+1. 输入 <http:<span></span>//localhost:8080/login/oauth2/code/azure> 作为新的“重定向 URI”，然后单击“配置”。
 
     ![添加新的回复 URL][create-app-registration-10]
 
-1. 从应用注册主页面上，单击“清单”  ，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”  。
+1. 从应用注册主页面上，单击“清单”，将 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存”。
 
     ![配置应用清单][create-app-registration-11]
 
     > [!NOTE]
-    > 
-    > 有关 `oauth2AllowImplicitFlow` 参数和其他应用程序设置的详细信息，请参阅 [Azure Active Directory 应用程序清单][AAD app manifest]。 
-    >
+    > 有关 `oauth2AllowImplicitFlow` 参数和其他应用程序设置的详细信息，请参阅 [Azure Active Directory 应用程序清单][AAD app manifest]。
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>将用户帐户添加到你的目录，并将该帐户添加到某个组
 
-1. 从你的 Active Directory 的“概述”  页面上，单击“所有用户”  ，然后单击“新建用户”  。
+1. 从你的 Active Directory 的“概述”页面上，单击“所有用户”，然后单击“新建用户”。
 
    ![添加新用户帐户][create-user-01]
 
-1. 当“用户”  面板显示时，输入**用户名**和**名称**。  然后单击“创建”  。
+1. 当“用户”面板显示时，输入**用户名**和**名称**。  然后单击“创建”。
 
    ![输入用户帐户信息][create-user-02]
 
    > [!NOTE]
-   > 
    > 在输入用户名时，需要指定本教程前文中的目录 URL，例如：
    >
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
-   > 
 
-1. 单击“组”  ，然后单击“创建新组”，该组将用于在应用程序中授权。 
+1. 单击“组”，然后单击“创建新组”，该组将用于在应用程序中授权。
 
-1. 然后单击“未选择任何成员”。  （在本教程中，我们将创建一个名为 *users* 的组。）搜索在上一步创建的用户。  单击“选择”将该用户添加到组中。   然后，单击“创建”  以创建新组。
+1. 然后单击“未选择任何成员”。 （在本教程中，我们将创建一个名为 *users* 的组。）搜索在上一步创建的用户。  单击“选择”将该用户添加到组中。  然后，单击“创建”以创建新组。
 
    ![选择组的用户][create-user-03]
 
-1. 返回到“用户”面板，选择测试用户，单击“重置密码”，然后复制密码；在本教程的后面部分，登录到应用程序时将使用此密码。   
+1. 返回到“用户”面板，选择测试用户，单击“重置密码”，然后复制密码；在本教程的后面部分，登录到应用程序时将使用此密码。 
 
    ![显示密码][create-user-04]
 
@@ -174,7 +171,7 @@ ms.locfileid: "82138806"
    </dependency>
    ```
 
-1. 保存并关闭 pom.xml 文件  。
+1. 保存并关闭 pom.xml 文件。
 
 1. 导航到项目中的 *src/main/resources* 文件夹，并在文本编辑器中打开 *application.properties* 文件。
 
@@ -193,21 +190,20 @@ ms.locfileid: "82138806"
    # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
+
    其中：
 
    | 参数 | 说明 |
    |---|---|
-   | `azure.activedirectory.tenant-id` | 包含前面复制的 Active Directory“目录 ID”。  |
-   | `spring.security.oauth2.client.registration.azure.client-id` | 包含前面填写的、应用注册的“应用程序 ID”。  |
-   | `spring.security.oauth2.client.registration.azure.client-secret` | 包含前面填写的、应用注册密钥中的“值”。  |
+   | `azure.activedirectory.tenant-id` | 包含前面复制的 Active Directory“目录 ID”。 |
+   | `spring.security.oauth2.client.registration.azure.client-id` | 包含前面填写的、应用注册的“应用程序 ID”。 |
+   | `spring.security.oauth2.client.registration.azure.client-secret` | 包含前面填写的、应用注册密钥中的“值”。 |
    | `azure.activedirectory.active-directory-groups` | 包含用于授权的 Active Directory 组列表。 |
 
    > [!NOTE]
-   > 
-   > 如需 *application.properties* 文件中提供的值的完整列表，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。
-   >
+   > 如需 application.properties 文件中提供的值的完整列表，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。
 
-1. 保存并关闭 application.properties 文件  。
+1. 保存并关闭 application.properties 文件。
 
 1. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。
 
@@ -236,10 +232,10 @@ ms.locfileid: "82138806"
       }
    }
    ```
+
    > [!NOTE]
-   > 
    > 为 `@PreAuthorize("hasRole('')")` 方法指定的组名称必须包含 *application.properties* 文件的 `azure.activedirectory.active-directory-groups` 字段中指定的某个组。
-   > 
+   >
    > 还可以为不同的请求映射指定不同的授权设置，例如：
    >
    > ``` java
@@ -262,7 +258,6 @@ ms.locfileid: "82138806"
    >    }
    > }
    > ```
-   >    
 
 1. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。
 
@@ -319,20 +314,16 @@ ms.locfileid: "82138806"
    ![登录到应用程序][application-login]
 
    > [!NOTE]
-   > 
    > 如果这是新用户帐户的首次登录，可能会提示你更改密码。
-   > 
+   >
    > ![更改密码][update-password]
-   > 
 
 1. 成功登录后，控制器中应会显示“Hello World”示例文本。
 
    ![成功登录][hello-world]
 
    > [!NOTE]
-   > 
-   > 未授权的用户帐户会收到“HTTP 403 未授权”消息。 
-   >
+   > 未授权的用户帐户会收到“HTTP 403 未授权”消息。
 
 ## <a name="summary"></a>总结
 
@@ -360,7 +351,7 @@ ms.locfileid: "82138806"
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[AAD Spring Boot Sample]: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-backend-sample
+[AAD Spring Boot Sample]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-backend
 
 <!-- IMG List -->
 

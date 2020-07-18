@@ -10,12 +10,13 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: eb13be08f7fc5eb7b907360571fbc1db1abf0d26
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 85d0ff61efef01049fd17ae0a30fd67ff28109d8
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669163"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379171"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -23,7 +24,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 本文演示如何使用 Azure 门户创建 Azure Cosmos DB，如何使用 **[Spring Initializr]** 创建自定义 Spring Boot 应用程序，以及如何将[用于 Azure 的 Spring Boot Cosmos DB Starter] 添加到自定义应用程序，以使用 Spring Data 和 Cosmos DB SQL API 在 Azure Cosmos DB 中执行数据的存储和检索操作。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 为遵循本文介绍的步骤，需要以下先决条件：
 
@@ -32,43 +33,42 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>使用 Azure 门户创建 Azure Cosmos DB
 
-1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“创建资源”  。
+1. 浏览到位于 <https://portal.azure.com/> 的 Azure 门户，然后单击“创建资源”。
 
-1. 单击“数据库”，然后单击“Azure Cosmos DB”   。
+1. 单击“数据库”，然后单击“Azure Cosmos DB” 。
 
     ![Azure 门户][AZ02]
 
-1. 在“Azure Cosmos DB”页面上，输入以下信息  ：
+1. 在“Azure Cosmos DB”页面上，输入以下信息：
 
-    * 选择要用于数据库的订阅  。
-    * 指定是否为数据库创建新的“资源组”，或选择现有资源组  。
-    * 输入一个唯一的帐户名，作为数据库的 URI  。 例如：*wingtiptoysdata*。
+    * 选择要用于数据库的订阅。
+    * 指定是否为数据库创建新的“资源组”，或选择现有资源组。
+    * 输入一个唯一的帐户名，作为数据库的 URI。 例如：*wingtiptoysdata*。
     * 为 API 选择 **Core (SQL)** 。
-    * 为数据库指定“位置”  。
+    * 为数据库指定“位置”。
 
-    指定这些选项后，单击“查看 + 创建”，查看具体细节，然后单击“创建”  。 
+    指定这些选项后，单击“查看 + 创建”，查看具体细节，然后单击“创建”。
 
     ![Azure 门户][AZ03]
 
-1. 创建数据库之后，它将在 Azure 的“仪表板”、“所有资源”和“Azure Cosmos DB”页面下列出    。 在任意这些位置单击数据库可打开缓存的属性页面。
+1. 创建数据库之后，它将在 Azure 的“仪表板”、“所有资源”和“Azure Cosmos DB”页面下列出  。 在任意这些位置单击数据库可打开缓存的属性页面。
 
-1. 当显示数据库的属性页面时，单击“密钥”  ，然后复制数据库的 URI 和访问密钥；在 Spring Boot 应用程序中会用到这些值。
+1. 当显示数据库的属性页面时，单击“密钥”，然后复制数据库的 URI 和访问密钥；在 Spring Boot 应用程序中会用到这些值。
 
     ![Azure 门户][AZ05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
-请执行以下步骤，通过 Azure 支持创建一个新的 Spring Boot 应用程序项目。 也可使用 [azure-spring-boot](https://github.com/microsoft/azure-spring-boot) 存储库中的 [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) 示例， 然后即可直接跳到[生成并测试应用](#build-and-test-your-app)。
+请执行以下步骤，通过 Azure 支持创建一个新的 Spring Boot 应用程序项目。 也可使用 [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) 存储库中的 [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmosdb) 示例， 然后即可直接跳到[生成并测试应用](#build-and-test-your-app)。
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定你希望使用 Java 生成 Maven 项目，指定 Spring Boot 版本，输入应用程序的“组”名称和“项目”名称，在依赖项中添加“Azure 支持”，然后单击“生成项目”按钮        。
+1. 指定你希望使用 Java 生成 Maven 项目，指定 Spring Boot 版本，输入应用程序的“组”名称和“项目”名称，在依赖项中添加“Azure 支持”，然后单击“生成项目”按钮      。
 
     ![Spring Initializr 的基本选项][SI01]
 
     > [!NOTE]
-    >
-    > Spring Initializr 使用“组”名称和“项目”名称创建程序包名称，例如：com.example.wintiptoysdata    。
+    > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.example.wingtiptoysdata 。
 
 1. 出现提示时，将项目下载到本地计算机中的路径，然后提取文件。
 
@@ -76,7 +76,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="configure-your-spring-boot-application-to-use-the-azure-spring-boot-starter"></a>配置 Spring Boot 应用程序，以使用 Azure Spring Boot Starter
 
-1. 在应用的目录中找到 pom.xml 文件，例如  ：
+1. 在应用的目录中找到 pom.xml 文件，例如：
 
     `C:\SpringBoot\wingtiptoysdata\pom.xml`
 
@@ -102,11 +102,11 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
     </properties>
     ```
 
-1. 保存并关闭 pom.xml 文件  。
+1. 保存并关闭 pom.xml 文件。
 
 ## <a name="configure-your-spring-boot-application-to-use-your-azure-cosmos-db"></a>配置 Spring Boot 应用程序以使用 Azure Cosmos DB
 
-1. 在应用的“资源”目录中找到 application.properties 文件，例如   ：
+1. 在应用的“资源”目录中找到 application.properties 文件，例如 ：
 
     `C:\SpringBoot\wingtiptoysdata\src\main\resources\application.properties`
 
@@ -114,7 +114,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
     `/users/example/home/wingtiptoysdata/src/main/resources/application.properties`
 
-1. 在文本编辑器中打开 application.properties 文件，将以下行添加到文件中，然后将示例值替换为数据库的相应属性  ：
+1. 在文本编辑器中打开 application.properties 文件，将以下行添加到文件中，然后将示例值替换为数据库的相应属性：
 
     ```text
     # Specify the DNS URI of your Azure Cosmos DB.
@@ -127,7 +127,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
     azure.cosmosdb.database=wingtiptoysdata
     ```
 
-1. 保存并关闭 application.properties 文件  。
+1. 保存并关闭 application.properties 文件。
 
 ## <a name="add-sample-code-to-implement-basic-database-functionality"></a>添加示例代码以实现数据库的基本功能
 
@@ -135,9 +135,9 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ### <a name="define-a-base-class-for-storing-user-data"></a>定义一个用于存储用户数据的基类
 
-1. 在与主应用程序 Java 文件相同的目录中创建一个名为 User.java 的新文件  。
+1. 在与主应用程序 Java 文件相同的目录中创建一个名为 User.java 的新文件。
 
-1.  在文本编辑器中打开 User.java 文件，然后将以下行添加到文件中，以定义在数据库中存储和检索值的通用用户类：
+1. 在文本编辑器中打开 User.java 文件，然后将以下行添加到文件中，以定义在数据库中存储和检索值的通用用户类：
 
     ```java
     package com.example.wingtiptoysdata;
@@ -206,13 +206,13 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
     }
     ```
 
-1. 保存并关闭 User.java 文件  。
+1. 保存并关闭 User.java 文件。
 
 ### <a name="define-a-data-repository-interface"></a>定义数据存储库接口
 
-1. 在与主应用程序 Java 文件相同的目录中创建一个名为 UserRepository.java 的新文件  。
+1. 在与主应用程序 Java 文件相同的目录中创建一个名为 UserRepository.java 的新文件。
 
-1.  在文本编辑器中打开 UserRepository.java 文件，然后将以下行添加到文件中，以定义可扩展默认 `ReactiveCosmosRepository` 接口的用户存储库接口：
+1. 在文本编辑器中打开 UserRepository.java 文件，然后将以下行添加到文件中，以定义可扩展默认 `ReactiveCosmosRepository` 接口的用户存储库接口：
 
     ```java
     package com.example.wingtiptoysdata;
@@ -229,7 +229,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
     `ReactiveCosmosRepository` 接口替换上一 Starter 版本中的 `DocumentDbRepository` 接口。 新接口提供同步和响应式 API，用于基本的保存、删除和查找操作。
 
-1. 保存并关闭 UserRepository.java 文件  。
+1. 保存并关闭 UserRepository.java 文件。
 
 ### <a name="modify-the-main-application-class"></a>修改主应用程序类
 
@@ -324,7 +324,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="build-and-test-your-app"></a>生成并测试应用
 
-1.  打开命令提示符并导航到 pom.xml 文件所在的文件夹，例如：
+1. 打开命令提示符并导航到 pom.xml 文件所在的文件夹，例如：
 
     `cd C:\SpringBoot\wingtiptoysdata`
 
@@ -432,9 +432,9 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 [Azure Cosmos DB 文档]: /azure/cosmos-db/
 [面向 Java 开发人员的 Azure]: /azure/developer/java/
-[Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
+[Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Spring Data for Azure Cosmos DB SQL API]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[用于 Azure 的 Spring Boot Cosmos DB Starter]: https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-starters/azure-cosmosdb-spring-boot-starter
+[用于 Azure 的 Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmosdb
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [使用 Azure DevOps 和 Java]: https://azure.microsoft.com/services/devops/java/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

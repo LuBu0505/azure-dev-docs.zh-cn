@@ -1,15 +1,15 @@
 ---
 title: 使用用于 Python 的 Azure 库连接到所有区域 - 多云
 description: 如何使用 msrestazure 的 azure_cloud 模块连接到不同主权区域中的 Azure
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c8dc34260f4a37090af8c8408f7da70cf1de1f23
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947494"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377901"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>多云：使用用于 Python 的 Azure 库连接到所有区域
 
@@ -17,9 +17,18 @@ ms.locfileid: "84947494"
 
 默认情况下，这些 Azure 库配置为连接到全局 Azure。
 
-## <a name="using-pre-declared-cloud-definition"></a>使用预声明的云定义
+## <a name="using-pre-defined-sovereign-cloud-constants"></a>使用预定义的主权云常量
 
-使用 `msrestazure`（0.4.11 及更高版本）的 `azure_cloud` 模块：
+预定义的主权云常量由 `msrestazure` (0.4.11+) 的 `azure_cloud` 模块提供：
+
+- `AZURE_PUBLIC_CLOUD`
+- `AZURE_CHINA_CLOUD`
+- `AZURE_US_GOV_CLOUD`
+- `AZURE_GERMAN_CLOUD`
+
+若要在你的所有代码中应用某个常量，请使用上一列表中的一个值来定义名为 `AZURE_CLOUD` 的环境变量。 （`AZURE_PUBLIC_CLOUD` 是默认值。）
+
+若要在特定操作内应用常量，请从 `msrest.azure_cloud` 导入所需的常量，并在创建凭据和客户端对象时使用它：
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
@@ -33,16 +42,9 @@ client = ResourceManagementClient(credentials,
     subscription_id, base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
 ```
   
-可用的云定义如下：
-
-- `AZURE_PUBLIC_CLOUD`
-- `AZURE_CHINA_CLOUD`
-- `AZURE_US_GOV_CLOUD`
-- `AZURE_GERMAN_CLOUD`
-
 ## <a name="using-your-own-cloud-definition"></a>使用你自己的云定义
 
-在此代码中，你结合使用 `get_cloud_from_metadata_endpoint` 与私有云的 Azure 资源管理器终结点（如在 Azure Stack 上生成的终结点）：
+以下代码将 `get_cloud_from_metadata_endpoint` 与私有云的 Azure 资源管理器终结点（如基于 Azure Stack 构建的终结点）配合使用：
 
 ```python
 from msrestazure.azure_cloud import get_cloud_from_metadata_endpoint
@@ -59,7 +61,7 @@ client = ResourceManagementClient(credentials, subscription_id,
 
 ## <a name="using-adal"></a>使用 ADAL
 
-若要连接到另一个区域，必须考虑以下事项：
+连接到另一个区域时，请考虑以下问题：
 
 - 用于请求令牌（身份验证）的终结点是什么？
 - 我要在其中使用此令牌（使用情况）的终结点是什么？

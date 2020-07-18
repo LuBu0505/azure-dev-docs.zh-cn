@@ -3,14 +3,15 @@ title: Azure 上适用于 Java 应用的消息传送和事件处理快速入门
 description: 有关适用于 Java 应用的消息传送和事件处理的 Azure 文档中的入门材料列表。
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fc45140d68493bd80093f361b478e485cc2ed42f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: d5455c05872c67853b526fd30ecb4aee3c75954c
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673643"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405638"
 ---
-# <a name="caching-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的缓存
+# <a name="messaging-and-eventing-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的消息传送和事件处理
 
 以下文章可帮助你开始使用 Azure 上的各种消息传送和事件处理选项：
 

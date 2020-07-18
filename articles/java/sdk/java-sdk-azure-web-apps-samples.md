@@ -7,20 +7,21 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 43633e5c-9fb1-4807-ba63-e24c126754e2
-ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 30884958dd4c829cf7b268715de7c79f3a786724
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: 585cb33b6eabc5e353ddda37f687bcf0bacc6901
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674173"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405698"
 ---
 # <a name="azure-management-libraries-for-java---web-app-samples"></a>用于 Java 的 Azure 管理库 - Web 应用示例 
 
 下表提供了可用于创建和配置 Web 应用的 Java 源代码的链接。
 
-| **创建应用** ||
+| 示例 | 说明 |
 |---|---|
+| **创建应用** ||
 | [创建 Web 应用并通过 FTP 或 GitHub 进行部署][1] | 从 GitHub 通过本地 Git、FTP 和持续集成部署 Web 应用。 |
 | [创建 Web 应用并管理部署槽][2] | 创建 Web 应用并部署到过渡槽，然后在槽之间交换部署。 |
 | **配置应用** ||
