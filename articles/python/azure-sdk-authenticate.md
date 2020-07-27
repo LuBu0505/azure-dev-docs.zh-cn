@@ -3,12 +3,12 @@ title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1694f85b2ad41a12865bb3d367b1b8498ab474bb
+ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377991"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86945815"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何通过 Azure 服务对 Python 应用进行身份验证
 
@@ -69,7 +69,7 @@ retrieved_secret = client.get_secret("secret-name-01")
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>将 DefaultAzureCredential 与 SDK 管理库配合使用
 
 ```python
-# WARNING: this code presently fails!
+# WARNING: this code presently fails with current release libraries!
 
 from azure.identity import DefaultAzureCredential
 
@@ -86,7 +86,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-目前，`DefaultAzureCredential` 仅适用于 Azure SDK 客户端（“数据平面”）库以及 Azure SDK 管理库预览版（名称以 `azure-mgmt` 开头），如该代码示例中所示。 就是说，使用当前版本库时，调用 `subscription_client.subscriptions.list()` 会失败，并出现相当不明确的错误：“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，当前 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
+如此代码示例中所示，`DefaultAzureCredential` 目前仅适用于 Azure SDK 客户端（“数据平面”）库和 Azure SDK 管理库预览版，其中这些预览版是名称以 `azure-mgmt` 开头的库的最新预览版。 就是说，使用当前版本库时，调用 `subscription_client.subscriptions.list()` 会失败，并出现相当不明确的错误：“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，当前 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
 
 如博客文章中所述，你可以[引入 Azure 管理库的新预览版](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/)，使用预览版管理库来规避该错误。
 
