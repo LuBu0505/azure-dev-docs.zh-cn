@@ -15,8 +15,13 @@
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: Tomcat 到 AKS 上的容器
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
-    - name: WebLogic 到 Azure 虚拟机
-      href: migrate-weblogic-to-virtual-machines.md
+    - name: WebLogic 到 Azure
+      expanded: true
+      items:
+        - name: WebLogic 到 Azure 虚拟机
+          href: migrate-weblogic-to-virtual-machines.md
+        - name: 使用通过 LDAP 的 AAD 从 WebLogic 到 Azure
+          href: migrate-weblogic-with-aad-ldap.md
     - name: WildFly 到 AKS 上的 WildFly
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
     - name: WebLogic 到 AKS 上的 WildFly
