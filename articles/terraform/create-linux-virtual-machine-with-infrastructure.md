@@ -4,16 +4,16 @@ description: 了解如何使用 Terraform 在 Azure 中创建和管理完整的 
 keywords: azure devops terraform linux vm 虚拟机
 ms.topic: tutorial
 ms.date: 06/14/2020
-ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
-ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
+ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779649"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334432"
 ---
 # <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 
-使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](getting-started-cloud-shell.md)。
+使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](get-started-cloud-shell.md)。
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -25,7 +25,7 @@ ms.locfileid: "84779649"
 
 我们来详细地了解 Terraform 模板的每个部分。 还可以看到完整版本的 [Terraform 模板](#complete-terraform-script)，可以复制并粘贴这些模板。
 
-`provider` 部分告知 Terraform 使用 Azure 提供程序。 若要获取 `subscription_id`、`client_id`、`client_secret` 和 `tenant_id`的值，请参阅[安装并配置 Terraform](getting-started-cloud-shell.md)。
+`provider` 部分告知 Terraform 使用 Azure 提供程序。 若要获取 `subscription_id`、`client_id`、`client_secret` 和 `tenant_id`的值，请参阅[安装并配置 Terraform](get-started-cloud-shell.md)。
 
 > [!TIP]
 > 如果要为值创建环境变量，或要使用 [Azure Cloud Shell Bash 体验](/azure/cloud-shell/overview)，则无需在此节中包括变量声明。

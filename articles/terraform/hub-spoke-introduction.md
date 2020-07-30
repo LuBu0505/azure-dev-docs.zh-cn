@@ -3,12 +3,12 @@ title: 教程 - 使用 Terraform 在 Azure 中创建中心辐射型混合网络�
 description: 了解如何使用 Terraform 在 Azure 中创建完整的混合网络参考体系结构。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 8e9a120168f922194f903cc9a6f4be7c933ee62b
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 4c85ef46ed6fc5d6002f8eb0d1b0dc0e47992e6d
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329345"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334312"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建中心辐射型混合网络拓扑
 
@@ -32,7 +32,7 @@ ms.locfileid: "84329345"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **安装并配置 Terraform**：若要在 Azure 中预配 VM 和其他基础结构，请[安装并配置 Terraform](getting-started-cloud-shell.md)
+- **安装并配置 Terraform**：若要在 Azure 中预配 VM 和其他基础结构，请[安装并配置 Terraform](get-started-cloud-shell.md)
 
 ## <a name="hub-and-spoke-topology-architecture"></a>中心辐射型拓扑体系结构
 

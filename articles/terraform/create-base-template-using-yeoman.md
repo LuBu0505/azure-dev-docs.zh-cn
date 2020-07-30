@@ -3,12 +3,12 @@ title: 教程 - 使用 Yeoman 在 Azure 中创建 Terraform 基模板
 description: 了解如何使用 Yeoman 在 Azure 中创建 Terraform 基模板。
 ms.topic: tutorial
 ms.date: 05/25/2020
-ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
-ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
+ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85418215"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334462"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>教程：使用 Yeoman 在 Azure 中创建 Terraform 基模板
 
@@ -27,7 +27,7 @@ ms.locfileid: "85418215"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Visual Studio Code**：针对平台[下载 Visual Studio Code](https://code.visualstudio.com/download)。
-- **Terraform**：[安装 Terraform](getting-started-cloud-shell.md) 以运行 Yeoman 创建的模块。
+- **Terraform**：[安装 Terraform](get-started-cloud-shell.md) 以运行 Yeoman 创建的模块。
 - **Docker**：[安装 Docker](https://www.docker.com/get-started) 以运行 Yeoman 生成器创建的模块。
 - **Go 编程语言**：[安装 Go](https://golang.org/)，因为 Yeoman 生成的测试用例是使用 Go 语言的代码。
 
@@ -141,7 +141,7 @@ Yeoman 模板在当前目录中生成文件。 由于此原因，需创建一个
     - 测试用例以 Go 编写。
     - 测试中的所有代码均为端到端测试。
     - 端到端测试尝试预配 `fixture` 下定义的所有项。 将 `template_output.go` 文件中的结果与预定义的期望值进行比较。
-    - `Gopkg.lock` 和 `Gopkg.toml`：定义依赖项。 
+    - `Gopkg.lock` 和 `Gopkg.toml`：定义依赖项。
 
 有关适用于 Azure 的 Yeoman 生成器 https://github.com/Azure/generator-az-terra-module 的详细信息，请参阅 [Terratest 文档](https://terratest.gruntwork.io/docs/)。
 
