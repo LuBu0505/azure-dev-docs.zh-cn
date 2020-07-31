@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 408483ef614ca546e8f0af2331d126ff35148ed0
-  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+  ms.openlocfilehash: 60455122c0ab21dc646938661c4f9489c969bd0d
+  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85790615"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87260384"
 productDirectory:
   items:
   - title: Python
@@ -37,17 +37,17 @@ productDirectory:
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-01?tabs=bash
-      text: 创建和部署静态网站
+      text: 开发静态网站
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
-      text: 将 Node.js 应用部署到 Azure 应用服务
+      text: 部署到 Azure 应用服务
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-serverless-node-01?tabs=bash
-      text: 部署 Azure Functions 应用程序
+      text: 部署无服务器应用程序
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01?tabs=bash
-      text: 使用 Docker 容器部署 Node.js 应用
+      text: 部署 Docker 容器
     - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-      text: 将 MongoDB Web 应用迁移到 Azure Cosmos DB
+      text: 将 MongoDB 应用迁移到 Azure Cosmos DB
     - url: https://docs.microsoft.com/azure/developer/javascript/
-      text: 在 JavaScript 开发人员中心查看详细信息
+      text: 请在开发人员中心了解更多信息
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
     links:

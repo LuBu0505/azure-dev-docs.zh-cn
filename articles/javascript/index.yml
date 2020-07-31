@@ -1,64 +1,94 @@
 ### YamlMime:Landing
-title: Azure SDK for JavaScript 文档
+title: 面向 JavaScript 开发人员的 Azure
 summary: >
   了解用于 JavaScript 和 Node.js 的 Azure SDK、其入门方法以及其为开发人员提供的功能。 开始使用各种有用的 Azure 功能（例如应用程序托管）、DevOps 任务、持久性存储和数据库，以及物联网设备的使用。
 metadata:
   title: 面向 JavaScript 和 Node.js 开发人员的 Azure
   description: 通过教程、工具和 SDK 参考，开始在浏览器或 Node.js 中使用 Azure SDK for JavaScript 来开发应用。
-  author: sptramer
-  ms.author: sttramer
-  ms.date: 09/15/2019
+  author: diberry
+  ms.author: diberry
+  ms.date: 07/23/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 3ce57713de241e8741c8dd947b1ced5160376119
-  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  ms.devlang: javascript
+  ms.openlocfilehash: 946afb0fff0d5a32647b94c8e4bee5fc6f328586
+  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85793078"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87260374"
 landingContent:
-- title: Azure SDK for JavaScript 入门
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 在 Azure 应用服务中快速部署 Node.js 示例
-      url: https://aka.ms/try-azure-node
-    - text: 浏览所有可用的 Azure SDK for JavaScript 示例
-      url: /samples/browse/?languages=javascript,nodejs
-- title: 在 Azure 上托管应用程序
+- title: Azure 入门
   linkLists:
   - linkListType: overview
     links:
-    - text: 关于 Azure 应用服务
+    - text: 设置本地开发环境
+      url: configure-local-development-environment.md
+  - linkListType: quickstart
+    links:
+    - text: 快速部署到 Azure 应用服务
+      url: https://aka.ms/try-azure-node
+    - text: 浏览示例
+      url: /samples/browse/?languages=javascript,nodejs
+  - linkListType: learn
+    links:
+    - text: 生成 Node.js 应用程序
+      url: /learn/paths/build-javascript-applications-nodejs/
+  - linkListType: reference
+    links:
+    - text: API 参考文档
+      url: /javascript/api/overview/azure/?view=azure-node-latest
+    - text: 最新 SDK
+      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
+- title: 使用 Visual Studio Code 部署
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 静态 Web 应用程序
+      url: tutorial-vscode-static-website-node-01.md
+    - text: 无服务器应用程序
+      url: tutorial-vscode-serverless-node-01.md
+    - text: 完全堆栈应用程序
+      url: tutorial-vscode-azure-app-service-node-01.md
+    - text: 容器化应用程序
+      url: tutorial-vscode-docker-node-01.md
+- title: 使用 Azure CLI 进行部署
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Deno 应用
+      url: tutorial-visual-studio-code-azure-app-service-deno-01.md
+- title: 主机
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 应用服务
       url: /azure/app-service/overview
   - linkListType: architecture
     links:
-    - text: 找到适用于你的托管选项
+    - text: 查找适当的托管选项
       url: /azure/architecture/guide/technology-choices/compute-decision-tree
+- title: DevOps
+  linkLists:
   - linkListType: quickstart
     links:
-    - text: 从 Visual Studio Code 部署静态 Web 应用程序
-      url: tutorial-vscode-static-website-node-01.md
-    - text: 在 Visual Studio Code 中通过 Azure Functions 部署无服务器应用程序
-      url: tutorial-vscode-serverless-node-01.md
-    - text: 从 Visual Studio Code 部署完整堆栈 Node.js 应用程序
-      url: tutorial-vscode-azure-app-service-node-01.md
-    - text: 通过 Azure CLI 将 Deno 应用程序部署到应用服务
-      url: tutorial-visual-studio-code-azure-app-service-deno-01.md
-    - text: 从 Visual Studio Code 部署容器化应用程序
-      url: tutorial-vscode-docker-node-01.md
-- title: 在 Azure 中生成、部署和监视应用程序
+    - text: 设置 Azure Pipelines 中的 CI/CD
+      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
+- title: 监视
   linkLists:
   - linkListType: overview
     links:
-    - text: 说明是 Azure Monitor？
+    - text: Azure Monitor
       url: /azure/azure-monitor/overview?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
   - linkListType: quickstart
     links:
-    - text: 在 Azure Pipelines 中为 Node.js 应用程序设置 CI/CD
+    - text: Azure Pipelines 中的 CI/CD
       url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-    - text: 通过 Azure Monitor 监视部署的应用程序
+    - text: 监视部署的应用程序
       url: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 通过消息传递服务连接应用程序和设备
+- title: 消息传送服务
   linkLists:
   - linkListType: quickstart
     links:
@@ -66,25 +96,19 @@ landingContent:
       url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
     - text: 通过 Azure 存储队列传递消息
       url: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: Azure 上的存储和数据库解决方案
+- title: 存储空间和数据库
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 在 Azure 存储中使用 Blob
-      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: 迁移 MongoDB 应用程序以使用 Azure CosmosDB
+    - text: 从 MongoDB 迁移到 Azure Cosmos DB
       url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 使用物联网设备
+    - text: 使用 Blob
+      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+- title: 物联网 (IoT) 设备
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 通过 Azure IoT 中心管理设备
+    - text: 管理设备
       url: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: 通过 Azure 事件中心处理来自设备的数据
+    - text: 处理数据
       url: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: Azure SDK for JavaScript 参考
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Azure SDK for JavaScript API 参考
-      url: /javascript/api/overview/azure/
