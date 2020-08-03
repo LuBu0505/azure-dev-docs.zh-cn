@@ -50,7 +50,9 @@
       href: quickstarts-other-services.md
 - name: 特定于方案的教程
   items:
-    - name: 使用 VS Code 部署 Web 应用
+    - name: 部署 Web 应用和数据库（门户）
+      href: tutorial-python-postgresql-app-portal.md
+    - name: 部署 Web 应用 (VS Code)
       items:
         - name: 1 简介和先决条件
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -66,7 +68,7 @@
           href: tutorial-deploy-app-service-on-linux-06.md
         - name: 7 清理资源
           href: tutorial-deploy-app-service-on-linux-07.md
-    - name: 使用 VS Code 部署容器
+    - name: 部署容器 (VS Code)
       items:
         - name: 1 简介和先决条件
           href: tutorial-deploy-containers-01.md
@@ -78,7 +80,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5 清理资源
           href: tutorial-deploy-containers-05.md
-    - name: 使用 VS Code 部署无服务器 Azure Functions
+    - name: 部署无服务器函数 (VS Code)
       items:
         - name: 1 简介和先决条件
           href: tutorial-vs-code-serverless-python-01.md

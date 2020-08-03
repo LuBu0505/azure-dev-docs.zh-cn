@@ -8,7 +8,9 @@
   expanded: true
   items:
     - name: 入门 - Cloud Shell
-      href: getting-started-cloud-shell.md
+      href: get-started-cloud-shell.md
+    - name: 入门 - PowerShell
+      href: get-started-powershell.md
 - name: 教程
   items:
     - name: 安装和配置

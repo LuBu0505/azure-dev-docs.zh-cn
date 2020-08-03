@@ -43,7 +43,15 @@
         - name: 实时故障报告
           href: diagnostics.md
     - name: 推送通知
-      href: push-notifications.md
+      items:
+        - name: 通过发送推送通知联系用户
+          href: push-notifications.md
+        - name: 使用 Azure 通知中心向 Xamarin.Forms 应用发送推送通知
+          href: notification-hubs-backend-service-xamarin-forms.md
+        - name: 使用 Azure 通知中心向 React Native 应用发送推送通知
+          href: notification-hubs-backend-service-react-native.md
+        - name: 使用 Azure 通知中心向 Flutter 应用发送推送通知
+          href: notification-hubs-backend-service-flutter.md
     - name: 机器学习
       items:
         - name: Azure 认知服务

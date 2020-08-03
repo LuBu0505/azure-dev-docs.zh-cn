@@ -90,6 +90,10 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: 语音识别
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: 日志记录和指标
+          items:
+            - name: 使用 Azure SDK 进行日志记录
+              href: node-sdk-logging.md
     - name: 教程
       items:
         - name: 使用 VS Code 部署 Azure Functions
@@ -220,5 +224,7 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
         - name: 所有示例
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: 参考
-      href: /javascript/api/?view=azure-node-latest
+    - name: 库 API 参考
+      href: /javascript/api/overview/azure/?view=azure-node-latest
+    - name: 最新 SDK
+      href: 'https://azure.github.io/azure-sdk/releases/latest/index.html#javascript'
