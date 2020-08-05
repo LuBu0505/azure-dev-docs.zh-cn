@@ -3,12 +3,12 @@ title: 教程 - 使用 Terraform 创建 Azure 虚拟机规模集
 description: 了解如何使用 Terraform 配置 Azure 虚拟机规模集并对其进行版本控制。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: ce6922fe8bb5671afece009cd0228e8a3ff191da
-ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
+ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85327197"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334402"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>教程：使用 Terraform 创建 Azure 虚拟机规模集
 
@@ -32,7 +32,7 @@ ms.locfileid: "85327197"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **安装 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](getting-started-cloud-shell.md)一文中的指导
+- **安装 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)一文中的指导
 
 - **创建 SSH 密钥对**：有关详细信息，请参阅[如何创建和使用适用于 Azure 中 Linux VM 的 SSH 公钥和私钥对](/azure/virtual-machines/linux/mac-create-ssh-keys)。
 
@@ -40,7 +40,7 @@ ms.locfileid: "85327197"
 
 1. 浏览到 [Azure 门户](https://portal.azure.com)。
 
-1. 打开 [Azure Cloud Shell](/azure/cloud-shell/overview)。 如果事先未选择环境，请选择“Bash”作为环境。 
+1. 打开 [Azure Cloud Shell](/azure/cloud-shell/overview)。 如果事先未选择环境，请选择“Bash”作为环境。
 
     ![Cloud Shell 提示符](./media/create-vm-scaleset-network-disks-hcl/azure-portal-cloud-shell-button-min.png)
 
@@ -198,9 +198,9 @@ ms.locfileid: "85327197"
 
    ![公共 IP 地址的虚拟机规模集完全限定域名](./media/create-vm-scaleset-network-disks-hcl/fqdn.png)
 
-1. 在 Azure 门户上的主菜单中，选择“资源组”。 
+1. 在 Azure 门户上的主菜单中，选择“资源组”。
 
-1. 在“资源组”选项卡上，选择“myResourceGroup”查看 Terraform 创建的资源。  
+1. 在“资源组”选项卡上，选择“myResourceGroup”查看 Terraform 创建的资源。
    ![虚拟机规模集网络资源](./media/create-vm-scaleset-network-disks-hcl/resource-group-resources.png)
 
 ## <a name="add-a-virtual-machine-scale-set"></a>添加虚拟机规模集
@@ -378,7 +378,7 @@ ms.locfileid: "85327197"
 
 1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
 
-1. 创建 Terraform 计划，以可视化虚拟机规模集部署。 （需要指定所选的密码以及资源的位置。）
+1. 创建 Terraform 计划，以可视化虚拟机规模集部署。 （需要指定密码和资源的位置。）
 
     ```bash
     terraform plan

@@ -4,12 +4,12 @@ description: 了解如何使用将应用程序网关作为入口控制器的 Azu
 keywords: azure devops terraform application gateway ingress aks kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 433cf2e73e4672d73e036ebc1e25b6c1cc98795e
-ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
+ms.openlocfilehash: a98d9af5c8d3bd63451f007f66a8793d9f38a61d
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85327211"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334442"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>教程：在 Azure Kubernetes 服务中创建应用程序网关入口控制器
 
@@ -32,11 +32,11 @@ ms.locfileid: "85327211"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **配置 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](getting-started-cloud-shell.md)一文中的指导
+- **配置 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)一文中的指导
 
 - **Azure 资源组**：如果没有用于演示的 Azure 资源组，请[创建 Azure 资源组](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 记下资源组名称和位置，因为这些值将在演示中使用。
 
-- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)一文的“创建服务主体”部分中的指导  。 记下 appId、displayName 和 password 的值。
+- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName` 和 `password` 的值。
 
 - **获取服务主体对象 ID**：在 Cloud Shell 中运行以下命令：`az ad sp list --display-name <displayName>`
 
@@ -544,11 +544,11 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
 
     记下所选的存储帐户，因为稍后需要用到。
 
-1. 在存储帐户页上，选择“访问密钥”。 
+1. 在存储帐户页上，选择“访问密钥”。
 
     ![存储帐户菜单](./media/terraform-k8s-cluster-appgw-with-tf-aks/storage-account.png)
 
-1. 记下“密钥 1”密钥值。   （选择密钥右侧的图标将值复制到剪贴板。）
+1. 记下“密钥 1”密钥值。 （选择密钥右侧的图标将值复制到剪贴板。）
 
     ![存储帐户访问密钥](./media/terraform-k8s-cluster-appgw-with-tf-aks/storage-account-access-key.png)
 
@@ -614,7 +614,7 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
 
     ![“Terraform apply”结果示例](./media/terraform-k8s-cluster-appgw-with-tf-aks/terraform-apply-complete.png)
 
-1. 在 Azure 门户的左侧菜单中选择“资源组”，查看为选定资源组中的新 Kubernetese 群集创建的资源。 
+1. 在 Azure 门户的左侧菜单中选择“资源组”，查看为选定资源组中的新 Kubernetese 群集创建的资源。
 
     ![Cloud Shell 提示符](./media/terraform-k8s-cluster-appgw-with-tf-aks/k8s-resources-created.png)
 
@@ -657,7 +657,7 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
     kubectl get nodes
     ```
 
-    应会看到工作节点的详细信息，并且这些节点的状态为“就绪”，如下图所示： 
+    应会看到工作节点的详细信息，并且这些节点的状态为“就绪”，如下图所示：
 
     ![使用 kubectl 工具可以验证 Kubernetes 群集的运行状况](./media/terraform-k8s-cluster-appgw-with-tf-aks/kubectl-get-nodes.png)
 

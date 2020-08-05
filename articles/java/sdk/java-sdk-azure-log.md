@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5dbe0235143621587b111f4537a49b36f88115f1
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
+ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379441"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87400615"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>通过用于 Java 的 Azure SDK 配置日志记录
 
@@ -26,17 +26,30 @@ ms.locfileid: "86379441"
 
 ## <a name="declare-a-logging-framework"></a>声明记录框架
 
-在你实现这些记录器之前，必须将相关框架声明为项目中的一个依赖项。 有关详细信息，请参阅 [SLF4J 用户手册](http://www.slf4j.org/manual.html#projectDep)。
+在你实现这些记录器之前，必须将相关框架声明为项目中的一个依赖项。 有关详细信息，请参阅 [SLF4J 用户手册](https://www.slf4j.org/manual.html#projectDep)。
 
-## <a name="configure-log4j-or-log4j-2"></a>配置 Log4j 或 Log4j 2
+以下各节提供了常见记录框架的配置示例。
 
-可在属性文件或 XML 文件中配置 Log4j 和 Log4j 2 日志记录。 有关 Log4j 和 Log4j 2 日志记录的详细信息，请参阅 [Apache Log4j 2 手册](https://logging.apache.org/log4j/2.x/manual/configuration.html)。
+## <a name="use-log4j"></a>使用 Log4j
 
-### <a name="use-a-properties-file"></a>使用属性文件
+以下示例显示了 Log4j 记录框架的配置。 有关详细信息，请参阅 [Log4j 文档](https://logging.apache.org/log4j/1.2/)。
 
-在项目的 ./src/main/resource  目录中，创建一个名为 log4j.properties 或 log4j2.properties 的新文件（后者用于 Logj4 2）   。 使用以下示例开始操作。
+**通过添加 Maven 依赖项启用 Log4j**
 
-Log4j 示例：
+在项目的 pom.xml 文件中，添加以下内容：
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>[1.0,)</version> <!-- Version number 1.0 and above -->
+</dependency>
+```
+
+**使用属性文件启用 Log4j**
+
+在项目的 ./src/main/resource 目录中创建 log4j.properties 文件，然后添加以下内容 ：
 
 ```properties
 log4j.rootLogger=INFO, A1
@@ -46,47 +59,70 @@ log4j.appender.A1.layout.ConversionPattern=%m%n
 log4j.logger.com.azure.core=ERROR
 ```
 
-Log4j2 示例：
+**使用 XML 文件启用 Log4j**
 
-```properties
-appender.console.type = Console
-appender.console.name = LogToConsole
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %msg%n
-logger.app.name=com.azure.core
-logger.app.level=ERROR
-```
-
-### <a name="use-an-xml-file"></a>使用 XML 文件
-
-你也可使用 XML 文件来配置 Log4j 和 Log4j2。 在项目的 ./src/main/resource  目录中，创建一个名为 log4j.xml 或 log4j2.xml 的新文件（后者用于 Logj4 2）   。 使用以下示例开始操作。
-
-Log4j 示例：
+在项目的 ./src/main/resource 目录中创建 log4j.xml 文件，然后添加以下内容 ：
 
 ```xml
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
 
-  <appender name="console" class="org.apache.log4j.ConsoleAppender">
-    <param name="Target" value="System.out"/>
-    <layout class="org.apache.log4j.PatternLayout">
-    <param name="ConversionPattern" value="%m%n" />
-    </layout>
-  </appender>
-  <logger name="com.azure.core" additivity="true">
-    <level value="ERROR" />
-    <appender-ref ref="console" />
-  </logger>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n" />
+        </layout>
+    </appender>
+    <logger name="com.azure.core">
+        <level value="ERROR" />
+        <appender-ref ref="console" />
+    </logger>
 
-  <root>
-    <priority value ="info"></priority>
-    <appender-ref ref="console"></appender>
-  </root>
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
 
 </log4j:configuration>
 ```
 
-Log4j2 示例：
+## <a name="use-log4j-2"></a>使用 Log4j 2
+
+以下示例显示了 Log4j 2 记录框架的配置。 有关详细信息，请参阅 [Log4j 2 文档](https://logging.apache.org/log4j/2.x/manual/configuration.html)。
+
+通过添加 Maven 依赖项启用 Log4j 2
+
+在项目的 pom.xml 文件中，添加以下内容：
+
+```
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>[2.0,)</version> <!-- Version number 2.0 and above -->
+</dependency>
+```
+
+使用属性文件启用 Log4j 2
+
+在项目的 ./src/main/resource 目录中创建 log4j2.properties 文件，然后添加以下内容 ：
+
+```properties
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %msg%n
+logger.app.name=com.azure.core
+logger.app.level=ERROR
+
+rootLogger.level = info
+rootLogger.appenderRefs = stdout
+rootLogger.appenderRef.stdout.ref = STDOUT
+```
+
+使用 XML 文件启用 Log4j 2
+
+在项目的 ./src/main/resource 目录中创建 log4j2.xml 文件，然后添加以下内容 ：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,14 +144,28 @@ Log4j2 示例：
 </Configuration>
 ```
 
-## <a name="configure-logback"></a>配置 Logback
+## <a name="use-logback"></a>使用 Logback
 
-[Logback](https://logback.qos.ch/manual/introduction.html) 是一种常用的记录框架，也是 SLF4J 的本机实现。 若要配置 Logback，在项目的 ./src/main/resources 目录中创建一个名为 logback.xml  的新 XML 文件。 可在 [Logback 项目网站](https://logback.qos.ch/manual/configuration.html)上查找有关配置选项的详细信息。
+以下示例显示了 Logback 记录框架的基本配置。 有关详细信息，请参阅 [Logback 文档](https://logback.qos.ch/manual/configuration.html)。
 
-下面是一个 Logback 配置示例：
+通过添加 Maven 依赖项启用 Logback
+
+在项目的 pom.xml 文件中，添加以下内容：
+
+```
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>[0.2.5,)</version> <!-- Version number 0.2.5 and above -->
+</dependency>
+```
+
+使用 XML 文件启用 Logback
+
+在项目的 ./src/main/resource 目录中创建 logback.xml 文件，然后添加以下内容 ：
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
@@ -131,9 +181,19 @@ Log4j2 示例：
 </configuration>
 ```
 
-下面是一个控制台日志记录的简单 Logback 配置：
+## <a name="use-logback-in-a-spring-boot-application"></a>在 Spring Boot 应用程序中使用 Logback
 
-```xml
+以下示例显示了在 Spring 中使用 Logback 的一些配置。 你通常会将日志记录配置添加到项目的 ./src/main/resources 目录的 logback.xml 文件中 。 Spring 查看此文件的各种配置，包括日志记录。 有关详细信息，请参阅 [Logback 文档](https://logback.qos.ch/manual/configuration.html)。
+
+可配置应用程序以从任何文件中读取 Logback 配置。 若要将 logback.xml 文件链接到 Spring 应用程序，请在项目的 ./src/main/resources 目录中创建 application.properties 文件，然后添加以下内容  ：
+
+```properties
+logging.config=classpath:logback.xml
+```
+
+若要创建 Logback 配置以使日志记录到控制台，请将以下内容添加到 logback.xml 文件：
+
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="Console"
@@ -151,7 +211,7 @@ Log4j2 示例：
 </configuration>
 ```
 
-下面是一个文件的日志记录配置，该文件每小时滚动更新一次并以 GZIP 文件格式存档：
+若要将日志配置为记录到每小时滚动更新一次并以 gzip 格式存档的文件中，请将以下内容添加到 logback.xml 文件：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,14 +237,6 @@ Log4j2 示例：
 </configuration>
 ```
 
-### <a name="configure-logback-for-a-spring-boot-application"></a>为 Spring Boot 应用程序配置 Logback
-
-Spring 在 application.properties  文件中查找项目配置（包括日志记录），该文件位于 ./src/main/resources  目录中。 在 application.properties  文件中，添加以下行，将 logback.xml  链接到 Spring Boot 应用程序：
-
-```properties
-logging.config=classpath:logback.xml
-```
-
 ## <a name="configure-fallback-logging-for-temporary-debugging"></a>为临时调试配置回退日志记录
 
 在无法使用 SLF4J 记录器重新部署应用程序的情况下，你可在 Azure Core 1.3.0 或更高版本中使用内置于 Java 适用的 Azure 客户端库的回退记录器。 若你要启用此记录器，则必须首先确认你没有 SLF4J 记录器（因为优先使用该记录器），然后设置 `AZURE_LOG_LEVEL` 环境变量。 设置该环境变量后，你需重启应用程序以开始生成日志。
@@ -200,6 +252,6 @@ logging.config=classpath:logback.xml
 
 ## <a name="next-steps"></a>后续步骤
 
-- [为 Azure 应用服务中的应用启用诊断日志记录](/azure/app-service/troubleshoot-diagnostic-logs) 
+- [在 Azure 应用服务中为应用启用诊断日志记录](/azure/app-service/troubleshoot-diagnostic-logs) 
 - [查看 Azure 安全日志记录和审核选项](/azure/security/fundamentals/log-audit)
 - [了解如何使用 Azure 平台日志](/azure/azure-monitor/platform/platform-logs-overview)

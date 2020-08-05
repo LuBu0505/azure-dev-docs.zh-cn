@@ -3,12 +3,12 @@ title: 教程 - 配置 Azure Terraform Visual Studio Code 扩展
 description: 了解如何在 Visual Studio Code 中安装和使用 Azure Terraform 扩展。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 9fd6d6b93537795109117198aa20063b556b8368
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 7bbddd2d455e53354829557b99c19a8fb3e3dbf7
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329565"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334482"
 ---
 # <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>教程：配置 Azure Terraform Visual Studio Code 扩展
 
@@ -25,7 +25,7 @@ ms.locfileid: "84329565"
 ## <a name="prerequisites"></a>先决条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**：[安装和配置 Terraform](getting-started-cloud-shell.md)。
+- **Terraform**：[安装和配置 Terraform](get-started-cloud-shell.md)。
 - **Visual Studio Code**：安装适合环境的 [Visual Studio Code](https://code.visualstudio.com/download) 版本。
 
 ## <a name="prepare-your-dev-environment"></a>准备开发环境
@@ -63,7 +63,7 @@ ms.locfileid: "84329565"
 
 1. 启动 Visual Studio Code。
 
-1. 选择“扩展”。 
+1. 选择“扩展”。
 
     ![“扩展”按钮](media/configure-vs-code-extension-for-terraform/tf-vscode-extensions-button.png)
 
@@ -78,7 +78,7 @@ ms.locfileid: "84329565"
 
 #### <a name="verify-the-terraform-extension-is-installed-in-visual-studio-code"></a>验证 Visual Studio Code 中是否已安装 Terraform 扩展
 
-1. 选择“扩展”。 
+1. 选择“扩展”。
 
 1. 在搜索文本框中输入 `@installed`。
 
@@ -122,10 +122,10 @@ ms.locfileid: "84329565"
 
     ![另存为 main.tf](media/configure-vs-code-extension-for-terraform/tf-save-as-main.png)
 
-1. 选择“保存”。 
+1. 选择“保存”。
 1. 在菜单栏中，选择“文件”>“打开文件夹”  。 导航到并选择所创建的新文件夹。
 
-### <a name="run-terraform-init-command"></a>运行 Terraform init 命令 
+### <a name="run-terraform-init-command"></a>运行 Terraform init 命令
 
 1. 启动 Visual Studio Code。
 
@@ -135,9 +135,9 @@ ms.locfileid: "84329565"
 
 1. 从菜单栏中，选择“视图”>“命令面板...”>“Azure Terraform:  Init”。
 
-1. 当确认对话框出现时，请选择“确定”。 
+1. 当确认对话框出现时，请选择“确定”。
 
-    ![是否要打开 Cloud Shell?](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
+    ![用于打开 Cloud Shell 的确认对话框](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. 首次从新文件夹启动 Cloud Shell 时，系统将提示你创建一个 Web 应用程序。 选择“打开”  。
 
@@ -150,7 +150,7 @@ ms.locfileid: "84329565"
     >[!NOTE]
     >在此示例中，选择了 Bash (Linux)。
 
-1. 如果尚未设置 Azure 存储帐户，则显示以下屏幕。 选择“创建存储”。 
+1. 如果尚未设置 Azure 存储帐户，则显示以下屏幕。 选择“创建存储”。
 
     ![尚未装载任何存储](media/configure-vs-code-extension-for-terraform/tf-you-have-no-storage-mounted.png)
 
@@ -172,7 +172,7 @@ ms.locfileid: "84329565"
 
     ![直观呈现计划](media/configure-vs-code-extension-for-terraform/tf-graph.png)
 
-### <a name="run-terraform-plan-command"></a>运行 Terraform plan 命令 
+### <a name="run-terraform-plan-command"></a>运行 Terraform plan 命令
 
 Terraform plan 命令用于检查一组更改的执行计划是否按预期执行  。
 
@@ -183,7 +183,7 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
     ![Terraform 计划](media/configure-vs-code-extension-for-terraform/tf-terraform-plan.png)
 
-### <a name="run-terraform-apply-command"></a>运行 Terraform apply 命令 
+### <a name="run-terraform-apply-command"></a>运行 Terraform apply 命令
 
 如果对 Terraform plan 命令的计划感到满意，则可运行 apply 命令   。
 
@@ -210,13 +210,13 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 >[!NOTE]
 >暂时将 Azure 门户窗口保持在打开状态；我们将在下一步中用到它。
 
-### <a name="run-terraform-destroy-command"></a>运行 Terraform destroy 命令 
+### <a name="run-terraform-destroy-command"></a>运行 Terraform destroy 命令
 
 1. 从菜单栏中，选择“视图” > “命令面板” > “Azure Terraform: 销毁”    。
 
     ![Terraform destroy](media/configure-vs-code-extension-for-terraform/tf-terraform-destroy.png)
 
-1. 输入“yes”。 
+1. 输入“yes”。
 
     ![Terraform destroy 是](media/configure-vs-code-extension-for-terraform/tf-terraform-destroy-yes.png)
 
@@ -263,7 +263,7 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
 1. 输入 `az login`，按 **<Enter**，然后根据屏幕说明操作。
 
-### <a name="module-test-lint"></a>模块测试：lint 
+### <a name="module-test-lint"></a>模块测试：lint
 
 1. 从菜单栏中，选择“视图”>“命令面板”>“Azure Terraform:  执行测试”。
 
@@ -271,9 +271,9 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
     ![选择测试类型](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
 
-1. 当确认对话框出现时，选择“确定”，然后按屏幕说明操作。 
+1. 当确认对话框出现时，选择“确定”，然后按屏幕说明操作。
 
-    ![是否要打开 CloudShell?](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
+    ![用于打开 Cloud Shell 的确认对话框](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >执行“lint”或“端到端”测试时，Azure 使用容器服务来预配用于执行实际测试的测试计算机   。 因此，测试结果通常需要几分钟时间才能返回。
@@ -290,9 +290,9 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
     ![选择测试类型](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
 
-1. 当确认对话框出现时，选择“确定”，然后按屏幕说明操作。 
+1. 当确认对话框出现时，选择“确定”，然后按屏幕说明操作。
 
-    ![是否要打开 CloudShell?](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
+    ![用于打开 Cloud Shell 的确认对话框](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >执行“lint”或“端到端”测试时，Azure 使用容器服务来预配用于执行实际测试的测试计算机   。 因此，测试结果通常需要几分钟时间才能返回。

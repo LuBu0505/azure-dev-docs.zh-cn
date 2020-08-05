@@ -7,16 +7,12 @@
 - name: 快速入门
   expanded: true
   items:
-    - name: 入门 - Cloud Shell
+    - name: 入门 - Azure Cloud Shell
       href: get-started-cloud-shell.md
-    - name: 入门 - PowerShell
+    - name: 入门 - Windows 和 PowerShell
       href: get-started-powershell.md
-- name: 教程
+- name: 操作指南
   items:
-    - name: 安装和配置
-      items:
-        - name: 在 Azure 存储中存储 Terraform 状态
-          href: store-state-in-azure-storage.md
     - name: 应用服务
       items:
         - name: Terraform 和 Azure 提供程序部署槽位
@@ -31,6 +27,30 @@
       items:
         - name: 部署 Azure Cosmos DB
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
+    - name: 工具
+      items:
+        - name: 安装 Terraform Visual Studio Code 扩展
+          href: configure-vs-code-extension-for-terraform.md
+        - name: 使用 Yeoman 创建 Terraform 基模板
+          href: create-base-template-using-yeoman.md
+    - name: 虚拟机
+      items:
+        - name: 具有基础结构的虚拟机
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: 具有 Terraform 模块的虚拟机群集
+          href: create-vm-cluster-module.md
+        - name: 使用 Terraform 和 HCL 创建虚拟机群集
+          href: create-vm-cluster-with-infrastructure.md
+        - name: 具有基础结构的虚拟机规模集
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: 从 Packer 映像创建虚拟机规模集
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+- name: 教程
+  items:
+    - name: 安装和配置
+      items:
+        - name: 在 Azure 存储中存储 Terraform 状态
+          href: store-state-in-azure-storage.md
     - name: 网络
       items:
         - name: 中心和辐射拓扑
@@ -47,26 +67,16 @@
               href: hub-spoke-spoke-network.md
             - name: 6. 验证网络拓扑连接
               href: hub-spoke-validation.md
-    - name: 工具
+    - name: 测试 Terraform 项目
       items:
-        - name: 安装 Terraform Visual Studio Code 扩展
-          href: configure-vs-code-extension-for-terraform.md
-        - name: 使用 Yeoman 创建 Terraform 基模板
-          href: create-base-template-using-yeoman.md
-        - name: 使用 Terratest 测试 Terraform 模块
-          href: test-modules-using-terratest.md
-    - name: 虚拟机
-      items:
-        - name: 具有基础结构的虚拟机
-          href: create-linux-virtual-machine-with-infrastructure.md
-        - name: 具有 Terraform 模块的虚拟机群集
-          href: create-vm-cluster-module.md
-        - name: 使用 Terraform 和 HCL 创建虚拟机群集
-          href: create-vm-cluster-with-infrastructure.md
-        - name: 具有基础结构的虚拟机规模集
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: 从 Packer 映像创建虚拟机规模集
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+        - name: 1. Terraform 测试概述
+          href: best-practices-testing-overview.md
+        - name: 2. 集成测试
+          href: best-practices-integration-testing.md
+        - name: 3. 合规性测试
+          href: best-practices-compliance-testing.md
+        - name: 4. 端到端测试
+          href: best-practices-end-to-end-testing.md
 - name: 示例
   items:
     - name: 配置模板

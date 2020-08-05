@@ -9,14 +9,14 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5cfdb7bd0965248e98e0719099c657bcf5f884bd
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7b6d393f44034794494f4e77a6365bf0d7bf6c1d
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378041"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334422"
 ---
-# <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-intellij"></a>使用用于 IntelliJ 的 Azure 工具包将 Hello World Web 应用部署到云中的 Linux 容器
+# <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>使用 Azure Toolkit for IntelliJ 将 Java 应用部署到用于容器的 Web 应用
 
 [Docker] 容器广泛用于部署 Web 应用程序。 开发人员可在其中将其所有项目文件和依赖项整合成单个包，以便部署到服务器。 用于 IntelliJ 的 Azure 工具包可以添加用于将容器部署到 Microsoft Azure 的功能，为 Java 开发人员简化了部署过程。
 
@@ -36,23 +36,23 @@ ms.locfileid: "86378041"
 
 1. 启动 IntelliJ，并按照[用于 IntelliJ 的 Azure 工具包的登录说明](sign-in-instructions.md)一文中的步骤登录 Azure 帐户。
 
-1. 依次单击“文件”菜单、“新建”、“项目”    。
+1. 依次单击“文件”菜单、“新建”、“项目”  。
    
    ![创建新项目][file-new-project]
 
-1. 在“新建项目”对话框中，选择 Maven，然后选择 maven-archetype-webapp，然后单击“下一步”     。
+1. 在“新建项目”对话框中，选择 Maven，然后选择 maven-archetype-webapp，然后单击“下一步”   。
    
    ![选择 Maven archetype webapp][maven-archetype-webapp]
    
-1. 为 Web 应用指定 GroupId 和 ArtifactId，然后单击“下一步”    。
+1. 为 Web 应用指定 GroupId 和 ArtifactId，然后单击“下一步”  。
    
    ![指定 GroupId 和 ArtifactId][groupid-and-artifactid]
 
-1. 自定义任何 Maven 设置或接受默认设置，然后单击“下一步”  。
+1. 自定义任何 Maven 设置或接受默认设置，然后单击“下一步”。
    
    ![指定 Maven 设置][maven-options]
 
-1. 指定项目名称和位置，并单击“完成”  。
+1. 指定项目名称和位置，并单击“完成”。
    
    ![指定项目名称][project-name]
 
@@ -69,37 +69,37 @@ ms.locfileid: "86378041"
 
    登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。
 
-1. 依次单击“+ 创建资源”  菜单图标、“容器”、  “容器注册表”  。
+1. 依次单击“+ 创建资源”菜单图标、“容器”、“容器注册表”。
    
    ![创建新的 Azure 容器注册表][create-container-registry-01]
 
-1. 当显示“创建容器注册表”  页时，输入你的“注册表名称”  和“资源组”  ，为“管理员用户”  选择“启用”  ，然后单击“创建”  。
+1. 当显示“创建容器注册表”页时，输入你的“注册表名称”和“资源组”，为“管理员用户”选择“启用”，然后单击“创建”。
 
    ![配置 Azure 容器注册表设置][create-container-registry-02]
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>在 Docker 容器中部署 Web 应用
 
-1. 右键单击项目资源管理器中的项目，选择“Azure”，然后单击“添加 Docker 支持”   。
+1. 右键单击项目资源管理器中的项目，选择“Azure”，然后单击“添加 Docker 支持” 。
 
    将使用默认配置自动创建 Docker 文件。
 
    ![添加 Docker 支持][add-docker-support]
 
-1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“在用于容器的 Web 应用上运行”   。
+1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“在用于容器的 Web 应用上运行” 。
 
    ![在用于容器的 Web 应用上运行][run-on-web-app-for-containers]
 
-1. 显示“在用于容器的 Web 应用上运行”对话框时，填写必要信息  ：
+1. 显示“在用于容器的 Web 应用上运行”对话框时，填写必要信息：
 
-   * **Name**：指定在 Azure Toolkit 中显示的易记名称。 
+   * 名称：指定在 Azure Toolkit 中显示的易记名称。 
 
-   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。   
+   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。
 
    * **映像和标记**：指定容器映像名称；通常使用以下语法：“*registry*.azurecr.io/*appname*:latest”，其中： 
-      * 注册表是上文所述的容器注册表  
-      * appname 是 Web 应用的名称  
+      * 注册表是上文所述的容器注册表 
+      * appname 是 Web 应用的名称 
 
-   * **使用现有的 Web 应用**或**创建新的 Web 应用**：指定是将容器部署到现有 Web 应用还是创建新的 Web 应用。 指定的“应用名称”  将创建 Web 应用的 URL，例如 *wingtiptoys.azurewebsites.net*。
+   * “使用现有的 Web 应用”或“创建新的 Web 应用”：用于指定是将容器部署到现有 Web 应用还是创建新的 Web 应用 。 指定的“应用名称”将创建 Web 应用的 URL，例如 *wingtiptoys.azurewebsites.net*。
 
    * **资源组**：指定是要使用现有资源组还是创建新的资源组。 
 
@@ -107,7 +107,7 @@ ms.locfileid: "86378041"
 
    ![在用于容器的 Web 应用上运行][run-on-web-app-linux]
 
-1. 配置完上面列出的设置后，单击“运行”  。 成功部署 Web 应用以后，状态会显示在“运行”窗口中。 
+1. 配置完上面列出的设置后，单击“运行”。 成功部署 Web 应用以后，状态会显示在“运行”窗口中。
 
    ![成功部署的 Web 应用][successfully-deployed]
 
@@ -117,11 +117,11 @@ ms.locfileid: "86378041"
 
 ## <a name="optional-modify-your-web-app-publish-settings"></a>可选：修改 Web 应用发布设置
 
-1. 发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。 可通过单击 Web 应用的下拉菜单来修改这些设置，然后单击“编辑配置”  。
+1. 发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。 可通过单击 Web 应用的下拉菜单来修改这些设置，然后单击“编辑配置”。
 
    ![“编辑配置”菜单][edit-configuration-menu]
 
-1. 出现“运行/调试配置”对话框后，可修改任意默认设置，然后单击“确定”   。
+1. 出现“运行/调试配置”对话框后，可修改任意默认设置，然后单击“确定” 。
 
    ![“编辑配置”对话框][edit-configuration-dialog]
 
