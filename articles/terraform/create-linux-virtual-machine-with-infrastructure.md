@@ -1,17 +1,17 @@
 ---
-title: 教程 - 使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
+title: 使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 description: 了解如何使用 Terraform 在 Azure 中创建和管理完整的 Linux 虚拟机环境。
 keywords: azure devops terraform linux vm 虚拟机
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/14/2020
-ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 518e5f619e142b3bed0ff539ff2b448c6f3e5b48
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334432"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478347"
 ---
-# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
+# <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 
 使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](get-started-cloud-shell.md)。
 
