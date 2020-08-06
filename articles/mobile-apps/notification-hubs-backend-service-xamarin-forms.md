@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 2949f71649df692baabe16975882f93d3c6829ce
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 85b8bbc6e0a84e7da47b11eef4f22714912af72f
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401397"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810660"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>教程：使用 Azure 通知中心通过后端服务向 Xamarin.Forms 应用发送推送通知  
 
@@ -54,17 +54,17 @@ ms.locfileid: "87401397"
 
 * 有效的 [Apple 开发人员帐户](https://developer.apple.com)。
 * [已注册到开发人员帐户的物理 iOS 设备](https://help.apple.com/developer-account/#/dev40df0d9fa)（运行 iOS 13.0 及更高版本）。
-* 在“密钥链”中安装的 p12 [开发证书](https://help.apple.com/developer-account/#/dev04fd06d56)，让你可以在[物理设备上运行应用](https://help.apple.com/xcode/mac/current/#/dev5a825a1ca)。 
+* 在“密钥链”中安装的 p12 [开发证书](https://help.apple.com/developer-account/#/dev04fd06d56)，让你可以在[物理设备上运行应用](https://help.apple.com/xcode/mac/current/#/dev5a825a1ca)。
 
 > [!NOTE]
-> IOS 模拟器不支持远程通知，因此在 iOS 上浏览此示例时需要使用物理设备。 但是，无需在 Android 和 iOS 上都运行应用以完成本教程。 
+> IOS 模拟器不支持远程通知，因此在 iOS 上浏览此示例时需要使用物理设备。 但是，无需在 Android 和 iOS 上都运行应用以完成本教程。
 
 可以遵循此首要原则示例中的步骤，而不需要事先体验。 不过，如能熟悉以下方面则会更有帮助。
 
 * [Azure 开发人员门户](https://developer.apple.com)
 * [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase 控制台](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](/azure/notification-hubs/ios-sdk-get-started.md)
+* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) 和 [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)。
 
 提供的步骤适用于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)但使用 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 的用户也可按此操作。
@@ -117,15 +117,15 @@ ms.locfileid: "87401397"
 
 ## <a name="related-links"></a>相关链接
 
-* [Azure 通知中心概述](/azure/notification-hubs/notification-hubs-push-notification-overview.md)
+* [Azure 通知中心概述](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
 * [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
 * [在 Windows 上安装 Xamarin](https://docs.microsoft.com/xamarin/get-started/installation/windows)
 * [用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub 上的通知中心 SDK](https://github.com/Azure/azure-notificationhubs)
-* [使用应用程序后端注册](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
-* [注册管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management.md)
-* [使用标记](/azure/notification-hubs/notification-hubs-tags-segment-push-message.md)
-* [使用自定义模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md)
+* [使用应用程序后端注册](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [注册管理](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [使用标记](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [使用自定义模板](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>后续步骤
 

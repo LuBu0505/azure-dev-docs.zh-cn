@@ -1,17 +1,17 @@
 ---
-title: 教程 - 结合使用 Azure 部署槽位和 Terraform 来预配基础结构
+title: 结合使用 Azure 部署槽位和 Terraform 来预配基础结构
 description: 了解如何将 Terraform 与 Azure 提供程序部署槽位配合使用。
 keywords: azure devops terraform deployment slots
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8f5597684a9d61474685f8117fa584405fa0979e
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171953"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478477"
 ---
-# <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>教程：结合使用 Azure 部署槽位和 Terraform 来预配基础结构
+# <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>结合使用 Azure 部署槽位和 Terraform 来预配基础结构
 
 可以使用 [Azure 部署槽位](/azure/app-service/deploy-staging-slots)交换应用的不同版本。 该功能有助于最大程度地降低中断部署造成的影响。 
 

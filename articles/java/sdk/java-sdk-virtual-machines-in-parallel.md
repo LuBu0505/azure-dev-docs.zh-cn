@@ -7,19 +7,19 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 78f50ce1c0110a9329d259d951e665a65bcbafeb
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: a0e93cd355560c62c91cee61df843564e738dd25
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379401"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438350"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>通过 Java 应用程序跨多个地区创建虚拟机
 
 [本示例](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel)使用[用于 Java 的 Azure 管理库](https://github.com/Azure/azure-sdk-for-java)跨不同的 Azure 区域并行创建虚拟机。
 
 > [!IMPORTANT]
-> 本示例在四个区域总共创建 48 个运行 Ubuntu 16.04 LTS、[大小为 STANDARD_DS3_V2](/azure/virtual-machines/virtual-machines-windows-sizes) 的 VM。 在退出之前，示例代码会删除这些虚拟机。 在针对默认的 VM 数目运行本示例之前，请务必[检查服务限制和配额](/azure/azure-subscription-service-limits)。
+> 本示例在四个区域总共创建 48 个运行 Ubuntu 16.04 LTS、[大小为 STANDARD_DS3_V2](https://docs.microsoft.com/azure/virtual-machines/sizes) 的 VM。 在退出之前，示例代码会删除这些虚拟机。 在针对默认的 VM 数目运行本示例之前，请务必[检查服务限制和配额](/azure/azure-subscription-service-limits)。
 
 ## <a name="run-the-sample"></a>运行示例
 

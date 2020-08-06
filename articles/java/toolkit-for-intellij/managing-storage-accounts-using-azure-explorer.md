@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f88b144e869742d4d48ec67a770e3af55cd8a2cd
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: a692081032781a530d80c8fa2ff77792611e2673
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377941"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438463"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 
@@ -90,8 +90,8 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Azure 中的 Windows 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure 中的 Linux 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Windows 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

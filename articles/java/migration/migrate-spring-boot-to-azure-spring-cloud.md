@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 5/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c779a85f49ccd7507882fbd123a329addca60a7c
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7bc4a5188181f3b4b6d98b5308a5027a42bbac5e
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379741"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810580"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-spring-cloud"></a>将 Spring Boot 应用程序迁移到 Azure Spring Cloud
 
@@ -134,7 +134,7 @@ az spring-cloud app update -n <application name> --is-public true
 
 * 请考虑将应用程序与 Spring Cloud 注册表配合使用。 这将允许其他已部署的微服务和客户端动态发现你的应用程序。 有关详细信息，请参阅[教程：准备 Java Spring 应用以进行部署](/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment)。 然后修改任何应用程序客户端，以使用 Spring Client 负载均衡器。 这允许客户端获取应用程序的所有正在运行的实例地址，并查找在其他实例损坏或无响应时可以使用的实例。 有关详细信息，请参阅 Spring 博客中的 [Spring 使用技巧：Spring Cloud Loadbalancer](https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer)。
 
-* 请考虑添加 [Spring Cloud 网关](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/current/reference/html/)实例，而不是公开你的应用程序。 Spring Cloud 网关为 Azure Spring Cloud 实例中部署的所有应用程序/微服务提供单一终结点。 如果已部署 Spring Cloud 网关，请确保将其配置为将流量路由到新部署的应用程序。
+* 请考虑添加 [Spring Cloud 网关](https://cloud.spring.io/spring-cloud-gateway/reference/html/)实例，而不是公开你的应用程序。 Spring Cloud 网关为 Azure Spring Cloud 实例中部署的所有应用程序/微服务提供单一终结点。 如果已部署 Spring Cloud 网关，请确保将其配置为将流量路由到新部署的应用程序。
 
 * 请考虑添加一个 Spring Cloud Config 服务器来集中管理和版本控制所有 Spring Cloud 微服务的配置。 首先，创建一个 Git 存储库来容纳配置，并配置 Azure Spring Cloud 实例以使用该配置。 有关详细信息，请参阅[教程：为服务设置 Spring Cloud 配置服务器实例](/azure/spring-cloud/spring-cloud-tutorial-config-server)。 然后使用以下步骤迁移配置：
 

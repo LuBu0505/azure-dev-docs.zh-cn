@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: ddc35adf00b41dd421cbcd64437a7366bf4c74b1
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 1fbfd29cce90222334309cd24339eb196a3aaa36
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810640"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>教程：使用 Azure 通知中心通过后端服务向 React Native 应用发送推送通知  
 
@@ -64,7 +64,7 @@ ms.locfileid: "87401381"
 * [Azure 开发人员门户](https://developer.apple.com)
 * [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase 控制台](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](/azure/notification-hubs/ios-sdk-get-started.md)
+* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
 * [React 本机](https://reactnative.dev/docs/getting-started)。
 
 提供的步骤适用于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) 和 [Visual Studio Code](https://code.visualstudio.com/download)，但使用 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 的用户也可按此操作。
@@ -117,16 +117,16 @@ ms.locfileid: "87401381"
 
 ## <a name="related-links"></a>相关链接
 
-* [Azure 通知中心概述](/azure/notification-hubs/notification-hubs-push-notification-overview.md)
+* [Azure 通知中心概述](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
 * [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
 * [安装 Visual Studio Code](https://code.visualstudio.com/download)
 * [设置 React Native 开发环境](https://reactnative.dev/docs/environment-setup)
 * [用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub 上的通知中心 SDK](https://github.com/Azure/azure-notificationhubs)
-* [使用应用程序后端注册](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
-* [注册管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management.md)
-* [使用标记](/azure/notification-hubs/notification-hubs-tags-segment-push-message.md)
-* [使用自定义模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md)
+* [使用应用程序后端注册](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [注册管理](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [使用标记](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [使用自定义模板](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>后续步骤
 

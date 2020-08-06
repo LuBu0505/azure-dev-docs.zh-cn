@@ -3,12 +3,13 @@ title: 管理 Azure 开发的本地服务主体
 description: 如何使用 Azure 门户或 Azure CLI 管理为本地开发创建的服务主体。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e29ee999472d0d9d141cfad728e62f1fe518e85b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146185"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478356"
 ---
 # <a name="how-to-manage-service-principals"></a>如何管理服务主体
 

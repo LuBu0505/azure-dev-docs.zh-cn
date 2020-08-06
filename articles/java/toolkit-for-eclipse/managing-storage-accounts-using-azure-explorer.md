@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 19f529b6d04e73c18648b77b2ac83a31ca1a455f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b3772c4d51852f9d77f63b2c998983a43cf00f4e
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378131"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438330"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -113,8 +113,8 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
 [命名和引用容器、Blob 和元数据]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Azure 中的 Windows 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure 中的 Linux 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Windows 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

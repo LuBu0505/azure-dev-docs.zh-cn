@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 624de3b00000bf553cb2e36b46c6497690d5638e
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: b9c5f45dfa95af43ec3b56ca9c86957fcd1b7b88
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401337"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810650"
 ---
 # <a name="tutorial-send-push-notifications-to-flutter-apps-using-azure-notification-hubs-via-a-backend-service"></a>教程：使用 Azure 通知中心通过后端服务向 Flutter 应用发送推送通知  
 
@@ -66,7 +66,7 @@ ms.locfileid: "87401337"
 * [Azure 开发人员门户](https://developer.apple.com)。
 * [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)。
 * [Google Firebase 控制台](https://console.firebase.google.com/u/0/)。
-* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](/azure/notification-hubs/ios-sdk-get-started.md)
+* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
 * 用于跨平台开发的 [Flutter](https://flutter.dev) 和 [Dart](https://dart.dev)。
 * 用于 Android 和 iOS 本机开发的 [Kotlin](https://kotlinlang.org) 和 [Swift](https://developer.apple.com/swift)。
 
@@ -120,15 +120,15 @@ ms.locfileid: "87401337"
 
 ## <a name="related-links"></a>相关链接
 
-* [Azure 通知中心概述](/azure/notification-hubs/notification-hubs-push-notification-overview.md)
+* [Azure 通知中心概述](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
 * [在 macOS 上安装 Flutter](https://flutter.dev/docs/get-started/install/macos)
 * [在 Windows 上安装 Flutter](https://flutter.dev/docs/get-started/install/windows)
 * [用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub 上的通知中心 SDK](https://github.com/Azure/azure-notificationhubs)
-* [使用应用程序后端注册](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
-* [注册管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management.md)
-* [使用标记](/azure/notification-hubs/notification-hubs-tags-segment-push-message.md)
-* [使用自定义模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md)
+* [使用应用程序后端注册](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [注册管理](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [使用标记](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [使用自定义模板](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>后续步骤
 
