@@ -1,18 +1,18 @@
 ---
-title: 教程 - 将 Azure Cosmos DB 部署到 Azure 容器实例
+title: 将 Azure Cosmos DB 部署到 Azure 容器实例
 description: 了解如何使用 Terraform 将 Azure Cosmos DB 部署到 Azure 容器实例
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/26/2020
-ms.openlocfilehash: d0a175d3b465de640c151bd2b8ce339f0b5ade5b
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4534de7d57b86adefee36f5f6c0f455126a033c3
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334362"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478597"
 ---
-# <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>教程：将 Azure Cosmos DB 部署到 Azure 容器实例
+# <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>将 Azure Cosmos DB 部署到 Azure 容器实例
 
-在本教程中，请使用 Terraform 创建 Azure 资源。 本文中的相关步骤将引导你逐步创建以下资源：
+在本文中，请使用 Terraform 创建 Azure 资源。 本文中的相关步骤将引导你逐步创建以下资源：
 
 > [!div class="checklist"]
 > * Azure Cosmos DB 实例
@@ -170,7 +170,7 @@ ms.locfileid: "87334362"
 
 如果不再需要本教程中创建的资源，请将其删除。
 
-运行 [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) 命令以删除在本教程中创建的 Azure 资源：
+运行 [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) 命令，删除在本文中创建的 Azure 资源：
 
 ```bash
 terraform destroy -auto-approve

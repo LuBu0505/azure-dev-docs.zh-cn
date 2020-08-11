@@ -1,18 +1,18 @@
 ---
-title: 教程 - 使用 Yeoman 在 Azure 中创建 Terraform 基模板
+title: 使用 Yeoman 在 Azure 中创建 Terraform 基模板
 description: 了解如何使用 Yeoman 在 Azure 中创建 Terraform 基模板。
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: e43c28232009f3dec274ad2c1749d9ab5d88957b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334462"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478527"
 ---
-# <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>教程：使用 Yeoman 在 Azure 中创建 Terraform 基模板
+# <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>使用 Yeoman 在 Azure 中创建 Terraform 基模板
 
-在本教程中，你将了解如何使用 [Terraform](/azure/terraform/) 和 [Yeoman](https://yeoman.io/) 的组合。 Terraform 是一种用于在 Azure 上创建基础结构的工具。 通过 Yeoman 可以轻松创建 Terraform 模块。
+在本文中，你将了解如何结合使用 [Terraform](/azure/terraform/) 和 [Yeoman](https://yeoman.io/)。 Terraform 是一种用于在 Azure 上创建基础结构的工具。 通过 Yeoman 可以轻松创建 Terraform 模块。
 
 本文介绍如何执行以下任务：
 > [!div class="checklist"]
@@ -32,7 +32,7 @@ ms.locfileid: "87334462"
 - **Go 编程语言**：[安装 Go](https://golang.org/)，因为 Yeoman 生成的测试用例是使用 Go 语言的代码。
 
 >[!NOTE]
->本教程中的大多数过程涉及命令行接口。 介绍的步骤适用于所有操作系统和命令行工具。 对于这些示例，已为本地环境选择 PowerShell，为 cloud shell 环境选择 Git Bash。
+>本文中的大多数过程都涉及到命令行接口。 介绍的步骤适用于所有操作系统和命令行工具。 对于这些示例，已为本地环境选择 PowerShell，为 cloud shell 环境选择 Git Bash。
 
 ## <a name="prepare-your-environment"></a>准备环境
 

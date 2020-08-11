@@ -1,20 +1,20 @@
 ---
-title: 教程 - 使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规模集
+title: 使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规模集
 description: 了解如何使用 Terraform 通过 Packer 生成的自定义映像配置 Azure 虚拟机规模集，并对其进行版本控制
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 541d294a3098e2da7c76855de4db0c425b408e0e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334392"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478467"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>教程：使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规模集
+# <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规模集
 
 [Azure 虚拟机规模集](/azure/virtual-machine-scale-sets)允许配置相同的 VM。 VM 实例的数目可以根据需求或计划进行调整。 有关详细信息，请参阅[自动缩放 Azure 门户中的虚拟机规模集](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal)
 
-在本教程中，你将了解如何执行以下操作：
+在本文中，学习如何：
 
 > [!div class="checklist"]
 > * 设置 Terraform 部署。
@@ -158,14 +158,14 @@ terraform apply
 
 
 ## <a name="create-an-azure-image-by-using-packer"></a>使用 Packer 创建 Azure 映像
-按照教程[如何使用 Packer 在 Azure 中创建 Linux 虚拟机映像](/azure/virtual-machines/linux/build-image-with-packer)中所述的步骤创建自定义 Linux 映像。
+按照[如何使用 Packer 在 Azure 中创建 Linux 虚拟机映像](/azure/virtual-machines/linux/build-image-with-packer)一文中所述的步骤创建自定义 Linux 映像。
  
-按照本教程创建已取消设置且已安装 Nginx 的 Ubuntu 映像。
+按照本文创建已取消设置且已安装 Nginx 的 Ubuntu 映像。
 
 ![创建 Packer 映像后即可拥有一个映像](./media/create-vm-scaleset-network-disks-using-packer-hcl/packerimagecreated.png)
 
 > [!NOTE]
-> 为达到本教程的目的，Packer 映像中将运行一个用于安装 Nginx 的命令。 创建期间也可以运行自己的脚本。
+> 为达到本文的目的，Packer 映像中将运行一个用于安装 Nginx 的命令。 创建期间也可以运行自己的脚本。
 
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>编辑基础结构以添加虚拟机规模集
 
@@ -442,7 +442,7 @@ terraform apply
 
 ## <a name="clean-up-the-environment"></a>清理环境
 
-以下命令可删除在本教程中创建的资源：
+以下命令可删除在本文中创建的资源：
 
 ```bash
 terraform destroy

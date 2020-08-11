@@ -1,21 +1,21 @@
 ---
-title: 教程 - 使用 Terraform 和 Azure Kubernetes 服务 (AKS) 创建 Kubernetes 群集
+title: 使用 Terraform 和 Azure Kubernetes 服务 (AKS) 创建 Kubernetes 群集
 description: 了解如何使用 Azure Kubernetes 服务和 Terraform 创建 Kubernetes 群集。
 keywords: azure devops terraform aks kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 6056b6990e820d863404eea7394adc483de0cd3c
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0f0d8eb512f4ba6d2e4245ad61dcb41d969cf4b8
+ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334446"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87525802"
 ---
-# <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>教程：使用 Terraform 和 Azure Kubernetes 服务 (AKS) 创建 Kubernetes 群集
+# <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>使用 Terraform 和 Azure Kubernetes 服务 (AKS) 创建 Kubernetes 群集
 
 [Azure Kubernetes 服务 (AKS)](/azure/aks/) 管理托管的 Kubernetes 环境。 使用 AKS 可以部署和管理容器化应用程序，而无需具备容器业务流程方面的专业知识。 使用 AKS 还可在应用不离线的情况下进行许多常见的维护操作。 这些操作包括按需预配、更新和缩放资源。
 
-本教程介绍如何执行以下任务：
+本文介绍如何执行以下任务：
 
 > [!div class="checklist"]
 > * 使用 HCL（HashiCorp 语言）定义 Kubernetes 群集
@@ -147,7 +147,7 @@ ms.locfileid: "87334446"
         default_node_pool {
             name            = "agentpool"
             node_count      = var.agent_count
-            vm_size         = "Standard_DS1_v2"
+            vm_size         = "Standard_D2_v2"
         }
 
         service_principal {
@@ -160,6 +160,11 @@ ms.locfileid: "87334446"
             enabled                    = true
             log_analytics_workspace_id = azurerm_log_analytics_workspace.test.id
             }
+        }
+        
+        network_profile {
+        load_balancer_sku = "Standard"
+        network_plugin = "kubenet"
         }
 
         tags = {
@@ -334,7 +339,7 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
 
     ![“Terraform plan”结果示例](./media/create-k8s-cluster-with-tf-and-aks/terraform-plan-complete.png)
 
-1. 运行 `terraform apply` 命令，以应用该计划来创建 Kubernetes 群集。 创建 Kubernetes 群集的过程可能需要花费几分钟时间，从而导致 Cloud Shell 会话超时。如果 Cloud Shell 会话超时，可以遵循“在 Cloud Shell 超时后进行恢复”部分中的步骤来完成本教程。
+1. 运行 `terraform apply` 命令，以应用该计划来创建 Kubernetes 群集。 创建 Kubernetes 群集的过程可能需要花费几分钟时间，从而导致 Cloud Shell 会话超时。如果 Cloud Shell 会话超时，可按照“在 Cloud Shell 超时后进行恢复”部分中的步骤来完成此过程。
 
     ```bash
     terraform apply out.plan

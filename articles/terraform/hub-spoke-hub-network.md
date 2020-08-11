@@ -3,18 +3,18 @@ title: 教程 - 在 Azure 中使用 Terraform 创建中心虚拟网络
 description: 了解如何在 Azure 中创建中心虚拟网络，用于充当其他网络之间的常用连接点。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: deef7a1462662b8f9f6ebbca013929102fa4ba95
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ed2b391075dc04b7ef16d3f305ef4ff86abed4ae
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329695"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478567"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建中心虚拟网络
 
-中心虚拟网络充当到本地网络的连接的中心点。 虚拟网络承载由辐射型虚拟网络中托管的工作负载占用的共享服务。 出于演示目的，本教程中不实施共享服务。
+中心虚拟网络充当到本地网络的连接的中心点。 虚拟网络承载由辐射型虚拟网络中托管的工作负载占用的共享服务。 出于演示目的，本文不实施共享服务。
 
-本教程涵盖以下任务：
+本文涵盖以下任务：
 
 > [!div class="checklist"]
 > * 使用 HashiCorp 配置语言 (HCL) 在中心辐射型拓扑中实现中心虚拟网络。

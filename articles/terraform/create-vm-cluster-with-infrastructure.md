@@ -1,19 +1,19 @@
 ---
-title: 教程 - 使用 Terraform 和 HCL 创建 Azure VM 群集
+title: 使用 Terraform 和 HCL 创建 Azure VM 群集
 description: 了解如何使用 Terraform 和 HCL 在 Azure 中创建具有负载均衡器的 Linux 虚拟机群集。
 keywords: azure devops terraform vm virtual machine cluster
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 7f19d28270f911cac7bc96a9159f1b927ceb0235
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: f970bdd0f3d37d32cae9e556094c199cfb82df2e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170473"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478480"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>教程：使用 Terraform 和 HCL 创建 Azure VM 群集
+# <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>使用 Terraform 和 HCL 创建 Azure VM 群集
 
-在本教程中，你将了解如何使用 [HCL](https://www.terraform.io/docs/configuration/syntax.html) 创建小型计算群集。 
+在本文中，你将了解如何使用 [HCL](https://www.terraform.io/docs/configuration/syntax.html) 创建小型计算群集。 
 
 你将了解如何执行以下任务：
 
@@ -236,7 +236,7 @@ Terraform 确定在配置文件中指定状态所需的操作。
 
 ## <a name="4-apply-the-terraform-execution-plan"></a>4.应用 Terraform 执行计划
 
-本教程的最后一个步骤是使用 [terraform apply 命令](https://www.terraform.io/docs/commands/apply.html) 应用 `terraform plan` 命令生成的系列操作。
+本文的最后一个步骤是使用 [terraform apply 命令](https://www.terraform.io/docs/commands/apply.html) 应用 `terraform plan` 命令生成的一系列操作。
 
 如果需要应用最新的执行计划，请运行以下命令：
 

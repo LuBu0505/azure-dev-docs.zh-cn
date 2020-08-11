@@ -1,17 +1,17 @@
 ---
-title: 快速入门 - 在 PowerShell 中开始使用 Terraform
+title: 快速入门 - 在 Windows 和 PowerShell 中开始使用 Terraform
 description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azure 资源。
 keywords: azure devops terraform 安装 配置 windows init 计划 应用 执行 登录 rbac 服务主体 自动化脚本 powershell
 ms.topic: quickstart
 ms.date: 07/27/2020
-ms.openlocfilehash: 40663f23d79066354cb7a78318eba7a8998676c5
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400655"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478577"
 ---
-# <a name="quickstart-get-started-with-terraform-using-powershell"></a>快速入门：在 PowerShell 中开始使用 Terraform
+# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>快速入门：在 Windows 和 PowerShell 中开始使用 Terraform
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 

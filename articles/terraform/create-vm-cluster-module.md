@@ -1,19 +1,19 @@
 ---
-title: 教程 - 使用模块注册表通过 Terraform 创建 Azure VM 群集
+title: 使用模块注册表通过 Terraform 创建 Azure VM 群集
 description: 了解如何使用 Terraform 模块在 Azure 中创建 Windows 虚拟机群集。
 keywords: azure devops terraform vm virtual machine cluster module registry
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 771f8a1ce86aa36f7dfa9cf3f97f50e41ca23efa
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334382"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478447"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>教程：使用模块注册表通过 Terraform 创建 Azure VM 群集
+# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>使用模块注册表通过 Terraform 创建 Azure VM 群集
 
-本文介绍如何使用 Terraform [Azure 计算模块](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)创建小型 VM 群集。 本教程介绍如何执行下列操作： 
+本文介绍如何使用 Terraform [Azure 计算模块](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)创建小型 VM 群集。 本文介绍如何执行以下操作：
 
 > [!div class="checklist"]
 > * 使用 Azure 设置身份验证
@@ -30,7 +30,7 @@ ms.locfileid: "87334382"
 ## <a name="set-up-authentication-with-azure"></a>使用 Azure 设置身份验证
 
 > [!TIP]
-> 如果在 [Azure Cloud Shell](/azure/cloud-shell/overview) 中[使用 Terraform 环境变量](get-started-cloud-shell.md)或运行此教程，请跳过此步骤。
+> 如果在 [Azure Cloud Shell](/azure/cloud-shell/overview) 中[使用 Terraform 环境变量](get-started-cloud-shell.md)或运行此示例，请跳过此步骤。
 
  查看[安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)，以创建 Azure 服务主体。 通过此服务主体使用以下代码将新文件 `azureProviderAndCreds.tf` 填充到空目录中：
 

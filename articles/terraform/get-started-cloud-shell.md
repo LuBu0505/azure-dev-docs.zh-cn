@@ -4,12 +4,12 @@ description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azur
 keywords: azure devops terraform 安装 配置 cloud shell init 计划 应用 执行 门户 登录 rbac 服务主体 自动化脚本
 ms.topic: quickstart
 ms.date: 07/26/2020
-ms.openlocfilehash: 381313edf386ac33dca137191c9eefef48f92931
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335238"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478587"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>快速入门：在 Azure Cloud Shell 中开始使用 Terraform
  
@@ -35,7 +35,7 @@ ms.locfileid: "87335238"
 
 1. 如果以前未使用过 Cloud Shell，请配置环境和存储设置。 本文使用 Bash 环境。
 
-说明：
+**注释**：
 - Cloud Shell 会自动安装最新版本的 Terraform。 此外，Terraform 还会自动使用来自当前 Azure 订阅的信息。 因此，无需进行安装或配置。
 
 ## <a name="authenticate-to-azure"></a>向 Azure 进行身份验证
@@ -55,7 +55,7 @@ Terraform 支持多种向 Azure 进行身份验证的选项。 本文介绍以�
 az login
 ```
 
-说明：
+**注释**：
 
 - 成功登录后，`az login` 会显示与已登录 Microsoft 帐户相关联的 Azure 订阅的列表。
 - 对于每个可用 Azure 订阅，都会显示一个属性列表。 `isDefault` 属性标识所使用的 Azure 订阅。 若要了解如何切换到另一个 Azure 订阅，请参阅[设置当前的 Azure 订阅](#set-the-current-azure-subscription)一节。
@@ -74,7 +74,7 @@ az login
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-说明：
+**注释**：
 
 - 成功完成后，`az ad sp create-for-rbac` 会显示多个值。 下一步中将使用 `name`、`password` 和 `tenant` 值。
 - 如果丢失了密码，则无法对其进行检索。 因此，应将密码存储在安全的位置。 如果忘记了密码，则需要[重置服务主体凭据](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)。
@@ -107,7 +107,7 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     az account set --subscription="<subscription_id>"
     ```
 
-    说明：
+    **注意**：
 
     - 调用 `az account set` 不会显示切换到指定的 Azure 订阅的结果。 但是，可以使用 `az account show` 来确认当前的 Azure 订阅是否已更改。
 
@@ -154,7 +154,7 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     }
     ```
 
-    说明：
+    **注意**：
 
     - `provider` 块指定使用 [Azure 提供程序 (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html)。
     - 在 `azurerm` 提供程序块中设置了 `version` 和 `features` 属性。 作为注释语句，其用法是特定于版本的。 有关如何为环境设置这些属性的详细信息，请参阅 [AzureRM 提供程序的 v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)。
@@ -174,13 +174,13 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     terraform init
     ```
 
-1. 使用 Terraform 可以预览要通过 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 完成的操作。
+1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以创建执行计划并预览其结果。
 
     ```bash
     terraform plan
     ```
 
-    说明：
+    **注释**：
 
     - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。
     - 使用 `terraform plan` 命令，可以在对实际资源进行任何更改之前验证执行计划是否符合预期。
@@ -200,7 +200,7 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    说明：
+    **注释**：
 
     - 如果成功，`az group show` 会显示新创建的资源组的各种属性。
 
@@ -232,11 +232,11 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-说明：
-
-- 为了实现自动化，运行 `terraform apply <filename>` 不需要确认。
-- 如果决定使用此功能，请阅读[安全警告部分](https://www.terraform.io/docs/commands/plan.html#security-warning)。
-
+    **注意**：
+    
+    - 为了实现自动化，运行 `terraform apply <filename>` 不需要确认。
+    - 如果决定使用此功能，请阅读[安全警告部分](https://www.terraform.io/docs/commands/plan.html#security-warning)。
+    
 ## <a name="clean-up-resources"></a>清理资源
 
 如果不再需要本教程中创建的资源，请将其删除。
@@ -247,7 +247,7 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
     ```
 
-    注意：
+    **注释**：
     - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 这使你可以在对实际资源进行任何更改之前验证执行计划是否符合预期。
     - `-destroy` 参数会生成一个用于销毁资源的计划。
     - 使用可选 `-out` 参数可以为计划指定输出文件。 应始终使用 `-out` 参数，因为它可以确保你查看的正是所应用的计划。

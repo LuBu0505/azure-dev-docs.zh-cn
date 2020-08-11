@@ -3,20 +3,20 @@ title: 教程 - 在 Azure 中使用 Terraform 创建中心虚拟网络设备
 description: 了解如何创建中心虚拟网络 (VNet)，用于充当其他网络之间的常用连接点。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 49af4bde3568185e1915edb49be3040ece89676f
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 71599c3d62ba3c3e0c6132cdf5197b87927cec91
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329306"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478557"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建中心虚拟网络设备
 
 VPN 设备是用于向本地网络提供外部连接的设备  。 VPN 设备可以是硬件设备或软件解决方案。 软件解决方案的一个示例为 Windows Server 2012 中的路由和远程访问服务 (RRAS)。 有关 VPN 设备的详细信息，请参阅[关于站点到站点 VPN 网关连接的 VPN 设备](/azure/vpn-gateway/vpn-gateway-about-vpn-devices)。
 
-Azure 支持各种网络虚拟设备，可供选择。 本教程使用 Ubuntu 映像。 若要详细了解 Azure 中支持的多种设备解决方案，请参阅[网络设备主页](https://azure.microsoft.com/solutions/network-appliances/)。
+Azure 支持各种网络虚拟设备，可供选择。 本文使用 Ubuntu 映像。 若要详细了解 Azure 中支持的多种设备解决方案，请参阅[网络设备主页](https://azure.microsoft.com/solutions/network-appliances/)。
 
-本教程涵盖以下任务：
+本文涵盖以下任务：
 
 > [!div class="checklist"]
 > * 使用 HCL（HashiCorp 语言）在中心辐射型拓扑中实现中心 VNet

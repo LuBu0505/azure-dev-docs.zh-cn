@@ -1,16 +1,16 @@
 ---
-title: 教程 - 配置 Azure Terraform Visual Studio Code 扩展
+title: 配置 Azure Terraform Visual Studio Code 扩展
 description: 了解如何在 Visual Studio Code 中安装和使用 Azure Terraform 扩展。
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/26/2019
-ms.openlocfilehash: 7bbddd2d455e53354829557b99c19a8fb3e3dbf7
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 6ac6cada3e7a411d940f5207fa6cfa10f4fea0de
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334482"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478547"
 ---
-# <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>教程：配置 Azure Terraform Visual Studio Code 扩展
+# <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>配置 Azure Terraform Visual Studio Code 扩展
 
 借助 Azure Terraform Visual Studio Code 扩展，可以通过编辑器使用 Terraform。 使用此扩展，你可以创作、测试和运行 Terraform 配置。 此扩展还支持资源图表可视化效果。
 
@@ -166,7 +166,7 @@ ms.locfileid: "87334482"
 
 ### <a name="visualize-the-plan"></a>直观呈现计划
 
-在本教程的前面部分，你已安装 GraphViz。 Terraform 可使用 GraphViz 来生成配置或执行计划的视觉对象表示形式。 Azure Terraform Visual Studio Code 扩展通过 visualize 命令实现此功能  。
+在本文的前面部分，你已安装 GraphViz。 Terraform 可使用 GraphViz 来生成配置或执行计划的视觉对象表示形式。 Azure Terraform Visual Studio Code 扩展通过 visualize 命令实现此功能  。
 
 - 从菜单栏中，选择“视图”>“命令面板”>“Azure Terraform:  可视化”。
 

@@ -1,23 +1,23 @@
 ---
-title: 教程 - 在 Azure Kubernetes 服务中创建应用程序网关入口控制器
+title: 在 Azure Kubernetes 服务中创建应用程序网关入口控制器
 description: 了解如何使用将应用程序网关作为入口控制器的 Azure Kubernetes 服务创建 Kubernetes 群集。
 keywords: azure devops terraform application gateway ingress aks kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: a98d9af5c8d3bd63451f007f66a8793d9f38a61d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4e34942257baa1e530a7ed0990a6d30a5297dadf
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334442"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478517"
 ---
-# <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>教程：在 Azure Kubernetes 服务中创建应用程序网关入口控制器
+# <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中创建应用程序网关入口控制器
 
 [Azure Kubernetes 服务 (AKS)](/azure/aks/) 管理托管的 Kubernetes 环境。 使用 AKS 可以快速轻松地部署和管理容器化应用程序，而无需具备容器业务流程方面的专业知识。 AKS 还可以消除操作和维护任务使应用程序脱机而造成的负担。 使用 AKS 可以按需完成预配、升级和缩放资源等任务。
 
 入口控制器为 Kubernetes 服务提供各种功能。 这些功能包括反向代理、可配置的流量路由和 TLS 终止。 Kubernetes 入口资源用于配置各个 Kubernetes 服务的入口规则。 借助入口控制器和入口规则，使用单个 IP 地址就能将流量路由到 Kubernetes 群集中的多个服务。 上述所有功能由 Azure [应用程序网关](/azure/Application-Gateway/)提供，因此，应用程序网关是 Azure 上的 Kubernetes 的理想入口控制器。 
 
-本教程介绍如何执行以下任务：
+本文介绍如何执行以下任务：
 
 > [!div class="checklist"]
 > * 使用将应用程序网关作为入口控制器的 AKS 来创建 [Kubernetes](https://www.redhat.com/en/topics/containers/what-is-kubernetes) 群集。
@@ -604,7 +604,7 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
 
     ![“Terraform plan”结果示例](./media/terraform-k8s-cluster-appgw-with-tf-aks/terraform-plan-complete.png)
 
-1. 运行 `terraform apply` 命令，以应用该计划来创建 Kubernetes 群集。 创建 Kubernetes 群集的过程可能需要花费几分钟时间，从而导致 Cloud Shell 会话超时。如果 Cloud Shell 会话超时，可以遵循“在 Cloud Shell 超时后进行恢复”部分中的步骤来完成本教程。
+1. 运行 `terraform apply` 命令，以应用该计划来创建 Kubernetes 群集。 创建 Kubernetes 群集的过程可能需要花费几分钟时间，从而导致 Cloud Shell 会话超时。如果 Cloud Shell 会话超时，可按照“在 Cloud Shell 超时后进行恢复”部分中的步骤来完成此过程。
 
     ```bash
     terraform apply out.plan

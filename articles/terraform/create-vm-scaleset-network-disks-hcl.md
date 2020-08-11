@@ -1,20 +1,20 @@
 ---
-title: 教程 - 使用 Terraform 创建 Azure 虚拟机规模集
+title: 使用 Terraform 创建 Azure 虚拟机规模集
 description: 了解如何使用 Terraform 配置 Azure 虚拟机规模集并对其进行版本控制。
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 75481c04038b13d81fa273e53bd1950c84fa5053
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334402"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478497"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>教程：使用 Terraform 创建 Azure 虚拟机规模集
+# <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>使用 Terraform 创建 Azure 虚拟机规模集
 
 [Azure 虚拟机规模集](/azure/virtual-machine-scale-sets)允许配置相同的 VM。 VM 实例的数目可以根据需求或计划进行调整。 有关详细信息，请参阅[自动缩放 Azure 门户中的虚拟机规模集](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal)
 
-在本教程中，你将了解如何执行以下操作：
+在本文中，学习如何：
 
 > [!div class="checklist"]
 > * 设置 Terraform 部署
@@ -512,7 +512,7 @@ SSH *jumpbox* 是为了访问网络中的其他服务器而“跳转”的单个
 
 ## <a name="environment-cleanup"></a>环境清理
 
-若要删除本教程中创建的 Terraform 资源，请在 Cloud Shell 中输入以下命令：
+若要删除本文中创建的 Terraform 资源，请在 Cloud Shell 中输入以下命令：
 
 ```bash
 terraform destroy

@@ -4,12 +4,13 @@ description: 了解如何使用持续集成和部署管道中的 Azure CLI 将�
 keywords: jenkins, azure, devops, azure sping cloud, azure cli
 ms.topic: tutorial
 ms.date: 01/07/2020
-ms.openlocfilehash: c9341ef89e43f14111b6e656daebadcd4790322d
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0135dbfa67f1de2b0602ae06b7ab970c2b560d59
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861210"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478307"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 
@@ -191,7 +192,7 @@ ms.locfileid: "82861210"
 ## <a name="create-a-jenkinsfile"></a>创建 Jenkinsfile
 1. 在你自己的存储库 (https://github.com/&lt ;your GitHub id&gt; /piggymetrics) 的根目录中创建 **Jenkinsfile**。
 
-2. 按如下所示更新文件。 确保替换 **\<resource group name>** 和 **\<service name>** 的值。 将 **azure_service_principal** 替换为正确的 ID（如果你在 Jenkins 中添加凭据时使用了其他值）。 
+2. 按如下所示更新文件。 确保替换 \<resource group name> 和 \<service name> 的值 。 将 **azure_service_principal** 替换为正确的 ID（如果你在 Jenkins 中添加凭据时使用了其他值）。 
 
    ```groovy
        node {
