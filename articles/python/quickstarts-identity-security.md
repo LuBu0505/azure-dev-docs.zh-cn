@@ -3,12 +3,13 @@ title: Azure 上用于 Python 应用的 Azure 标识和安全功能快速入门
 description: Azure 文档中有关 Python 应用身份验证、标识和安全性的入门材料的索引。
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 88ff44e93864377c40af66d4f4e71d45843f220b
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: bbb815e57b5b97f245ef750e2227ec9dfea81e89
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84207630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983029"
 ---
 # <a name="identity-and-security-for-python-apps-on-azure"></a>Azure 上用于 Python 应用的标识和安全功能
 

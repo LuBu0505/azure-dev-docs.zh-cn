@@ -3,13 +3,13 @@ title: 步骤 3：在 VS Code 中检查用于 Azure Functions 的 Python 代码�
 description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代码。
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 84e438cf1aaf94c1341964d17e17055d066140d6
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 61d7074b49cf84bbc63180f9a4549f59f12bb006
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708531"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982839"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3：在 Visual Studio Code 中检查 Python 代码文件
 

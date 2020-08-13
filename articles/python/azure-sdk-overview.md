@@ -3,12 +3,13 @@ title: 使用用于 Python 的 Azure 库 (SDK)
 description: 概述了用于 Python 的 Azure 库的特性和功能，这些特性和功能可提高开发人员预配、使用和管理 Azure 资源时的工作效率。
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffa626db0518967e2659eeb5b89ece4bc15c1ce2
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.custom: devx-track-python
+ms.openlocfilehash: dce4485a65da75d0918805ef55fafe71d55ce0a6
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983279"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>使用用于 Python 的 Azure 库 (SDK)
 

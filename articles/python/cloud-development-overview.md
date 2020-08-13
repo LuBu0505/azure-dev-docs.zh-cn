@@ -3,12 +3,13 @@ title: 使用 Azure 进行云开发 - 什么是 Azure？
 description: 概述了如何在 Microsoft Azure 上开发云应用，首先从介绍数据中心、服务和资源之间的关系开始。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-python
+ms.openlocfilehash: e776ce3aa84921dcfcb1be1e8613ae7332fe61a8
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370708"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983169"
 ---
 # <a name="cloud-development-on-azure"></a>在 Azure 上进行云开发
 

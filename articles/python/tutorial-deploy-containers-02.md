@@ -3,13 +3,13 @@ title: 步骤 2：使用 Visual Studio Code 将容器映像部署到 Azure 应�
 description: 教程步骤 2，将实际的 Docker 映像从容器注册表部署到 Azure 应用服务。
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 8005ba428d99051d9b5b86ed4f5222c1cd9ba673
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 1a8afac614f930e3d26424d5d776ff5d97019324
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441342"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983529"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:将容器映像部署到 Azure 应用服务
 

@@ -2,13 +2,14 @@
 title: 面向 Python 开发人员的 Azure 工具
 description: 面向使用 Azure 的 Python 开发人员的 IDE 集成和命令行接口。
 ms.topic: conceptual
-ms.date: 02/19/2020
-ms.openlocfilehash: 04616841d9e345a29209814f7a32576b54fc25da
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/06/2020
+ms.custom: devx-track-python
+ms.openlocfilehash: cd81a4dcceb4d13630fd5cad60162729028eb91e
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441622"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982569"
 ---
 # <a name="azure-tools-for-python-developers"></a>面向 Python 开发人员的 Azure 工具
 
@@ -41,4 +42,3 @@ Azure SDK for Python 提供一个 API，你可以在 Python 代码中通过该 A
 Windows 上的 Visual Studio 通过 Python 开发和数据科学工作负载（Visual Studio 2017 及更高版本）及免费的针对 Visual Studio 的 Python 工具扩展（Visual Studio 2015 及更低版本）提供对 Python 语言的开源支持。 使用 Python 和 C++ 的开发人员最常使用 Visual Studio，因为它提供了一流的跨语言开发和调试支持。
 
 [在 Visual Studio 中安装 Python 支持](https://docs.microsoft.com/visualstudio/python/installation)
-

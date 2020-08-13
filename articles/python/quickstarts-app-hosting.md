@@ -3,12 +3,13 @@ title: 开始在 Azure 上托管 Python 应用
 description: Azure 文档中适用于托管 Python 应用代码的入门材料的索引。
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: f4e880901b057b7ad4c958c4acf3239d2ef79db5
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1fa1f47355c6dac81d94f2a10f92b65c471be432
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256242"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147348"
 ---
 # <a name="hosting-python-apps-on-azure"></a>在 Azure 上托管 Python 应用
 
@@ -21,8 +22,8 @@ ms.locfileid: "84256242"
   - [使用 Visual Studio Code 将 Azure Functions 连接到 Azure 存储](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python)
   
 - **Web 应用托管和监视**：
-  - [在 Linux 上的 Azure 应用服务中创建 Python 应用](/azure/app-service/containers/quickstart-python)
-  - [为 Azure 应用服务配置 Linux Python 应用](/azure/app-service/containers/how-to-configure-python)
+  - [在 Linux 上的 Azure 应用服务中创建 Python 应用](/azure/app-service/quickstart-python)
+  - [为 Azure 应用服务配置 Linux Python 应用](/azure/app-service/configure-language-python)
   - [为 Python 应用程序设置 Azure Monitor](/azure/azure-monitor/app/opencensus-python)
 
 - 容器托管：

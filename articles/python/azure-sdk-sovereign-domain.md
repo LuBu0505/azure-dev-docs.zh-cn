@@ -3,13 +3,13 @@ title: 使用用于 Python 的 Azure 库连接到所有区域 - 多云
 description: 如何使用 msrestazure 的 azure_cloud 模块连接到不同主权区域中的 Azure
 ms.date: 07/13/2020
 ms.topic: conceptual
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.custom: devx-track-python
+ms.openlocfilehash: caf3f90fb9d21535dd6bf8974a6bdc719f3758ab
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377901"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983173"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>多云：使用用于 Python 的 Azure 库连接到所有区域
 

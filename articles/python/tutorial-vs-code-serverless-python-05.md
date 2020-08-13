@@ -3,13 +3,13 @@ title: 步骤 5：使用 VS Code 通过 Python 部署 Azure Functions
 description: 教程步骤 5，将 Python 函数代码部署到 Azure，学习如何在本地项目和 Azure 之间流式传输日志并同步设置。
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 3e51760f6f779ef244d5788a3df852bc98924946
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 950dda297f131f9ae9e2029f79cecae7455e0c07
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708611"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982849"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5：在 Python 中部署 Azure Functions
 

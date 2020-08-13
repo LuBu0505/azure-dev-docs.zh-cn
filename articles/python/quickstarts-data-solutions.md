@@ -3,12 +3,13 @@ title: Azure 上的 Python 应用的数据解决方案入门
 description: Azure 文档中适用于 Python 应用的数据解决方案的入门材料索引。
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9880025bcbe2d019d04469e6cff0b415cbbdc744
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: bdd55f180b6ba72386bee64fb8f6bfd0b916af02
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202886"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147338"
 ---
 # <a name="data-solutions-for-python-apps-on-azure"></a>Azure 上的 Python 应用的数据解决方案
 
@@ -18,7 +19,7 @@ ms.locfileid: "84202886"
 
 - PostgreSQL：
   - [使用 Python 连接到 Azure Database for PostgreSQL 并查询其中的数据](/azure/postgresql/connect-python)
-  - [在 Azure 应用服务中使用 PostgreSQL 运行 Python (Django) Web 应用](/azure/app-service/containers/tutorial-python-postgresql-app)
+  - [在 Azure 应用服务中使用 PostgreSQL 运行 Python (Django) Web 应用](/azure/app-service/tutorial-python-postgresql-app)
 
 - MySQL：
   - [使用 Python 通过 Azure Database for MySQL 连接并查询数据](/azure/mysql/connect-python)

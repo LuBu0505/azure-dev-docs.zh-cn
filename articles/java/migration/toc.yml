@@ -20,8 +20,10 @@
       items:
         - name: WebLogic 到 Azure 虚拟机
           href: migrate-weblogic-to-virtual-machines.md
-        - name: 使用通过 LDAP 的 AAD 从 WebLogic 到 Azure
+        - name: 通过 LDAP 使用 AAD 的 WebLogic
           href: migrate-weblogic-with-aad-ldap.md
+        - name: 使用应用程序网关的 WebLogic
+          href: migrate-weblogic-with-app-gateway.md
     - name: WildFly 到 AKS 上的 WildFly
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
     - name: WebLogic 到 AKS 上的 WildFly

@@ -3,12 +3,13 @@ title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1694f85b2ad41a12865bb3d367b1b8498ab474bb
-ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
+ms.custom: devx-track-python
+ms.openlocfilehash: 08636d4a9b8b0b93b6e448b919a14cbfc3ae2a96
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86945815"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982669"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>如何通过 Azure 服务对 Python 应用进行身份验证
 

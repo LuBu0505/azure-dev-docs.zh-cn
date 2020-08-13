@@ -3,13 +3,13 @@ title: 步骤 4：在 Linux 上的 Azure 应用服务上为 Python 应用配置�
 description: 教程步骤 4，指导应用服务如何启动 Web 应用，包括有关 Django、Flask 和其他框架的特定说明。
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256442"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147378"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4：在 Azure 应用服务上为 Python 应用配置自定义启动文件
 
@@ -17,7 +17,7 @@ ms.locfileid: "84256442"
 
 本文介绍了如何在 Azure 应用服务上为 Python 应用配置自定义启动文件。
 
-可能需要根据应用构建情况，按照 Azure 文档中[为 Linux 上的应用服务配置 Python 应用](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)一文的说明为应用创建自定义启动命令文件。
+可能需要根据应用构建情况，按照 Azure 文档中[为 Linux 上的应用服务配置 Python 应用](/azure/app-service/configure-language-python)一文的说明为应用创建自定义启动命令文件。
 
 自定义启动命令的具体用例如下：
 

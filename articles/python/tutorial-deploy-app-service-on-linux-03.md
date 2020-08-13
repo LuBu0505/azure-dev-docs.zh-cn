@@ -3,13 +3,13 @@ title: 步骤 3：从 Visual Studio Code 创建应用服务
 description: 教程步骤 3，从 VS Code 扩展创建应用服务。
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: dea4ace359c8d072af8ab9ed33451bc8077249b7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: de70e026398797cbbb406924ed2a3184f627de92
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441912"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983622"
 ---
 # <a name="3-create-the-app-service-from-visual-studio-code"></a>3：从 Visual Studio Code 创建应用服务
 

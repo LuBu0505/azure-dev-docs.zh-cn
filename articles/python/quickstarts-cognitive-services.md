@@ -3,12 +3,13 @@ title: 适用于 Azure 上的 Python 应用的 AI 认知服务入门
 description: Azure 文档中适用于 Python 应用的 AI 认知服务的入门材料索引。
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7192826524f647560f502fa0d01d136c0de945d1
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: 531dfcca27b7dff29f97b6b9ee58e9d330ac9696
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202808"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983049"
 ---
 # <a name="ai-service-for-python-apps-on-azure"></a>适用于 Azure 上的 Python 应用的 AI 服务
 

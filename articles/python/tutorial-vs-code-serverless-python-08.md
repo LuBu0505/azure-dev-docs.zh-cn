@@ -3,13 +3,13 @@ title: 步骤 8：清理 Azure Functions 中与 Python 代码配合使用的资�
 description: 教程步骤 8，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 151f063e87de6d8db528a20a5e0df958ec9a3afd
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 5f4faaa5d4b4c15755d9ee7bdba2dddf7810da15
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708621"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982749"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:为 Azure Functions 清理 Azure 资源
 

@@ -3,12 +3,13 @@ title: Azure 开发流程
 description: 概述了 Azure 上的云开发周期，包括预配、编码、测试、部署和管理。
 ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: 644cafc60619a1920e256c4c4f32f1b3308caa83
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1f3ba98815f572dc6efe6ea0c4195142e204478e
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453738"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983229"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Azure 开发流：预配、编码、测试、部署和管理
 

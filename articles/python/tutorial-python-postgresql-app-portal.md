@@ -4,17 +4,17 @@ description: 在 Azure 上预配 Web 应用和 PostgreSQL 数据库，然后从 
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
-ms.custom: tracking-python
-ms.openlocfilehash: f3c667ab720a3e8c82b59dc439b8033697b4fc2a
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-python
+ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810590"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147388"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
-通过 Azure 门户，可以将数据驱动的 Python [Django](https://www.djangoproject.com/) Web 应用部署到 [Azure 应用服务](/azure/app-service/containers/app-service-linux-intro)，并将其连接到 [Azure Database for PostgreSQL](/azure/postgresql/) 数据库。 你可以从可在以后任何时候纵向扩展的免费定价层着手。
+通过 Azure 门户，可以将数据驱动的 Python [Django](https://www.djangoproject.com/) Web 应用部署到 [Azure 应用服务](/azure/app-service/overview#app-service-on-linux)，并将其连接到 [Azure Database for PostgreSQL](/azure/postgresql/) 数据库。 你可以从可在以后任何时候纵向扩展的免费定价层着手。
 
 在本例中，Web 应用代码来自 GitHub 存储库，你可以配置 Web 应用以便从 GitHub 进行持续部署。 配置后，可以在本地计算机上执行进一步的开发，并将更改提交到存储库。 然后，Azure 上的 Web 应用会自动部署这些更改。
 
@@ -27,7 +27,7 @@ ms.locfileid: "87810590"
 > - 查看诊断日志
 > - 在 Azure 门户中管理 Web 应用
 
-你还可以使用[本教程中基于 Azure CLI 的版本](/azure/app-service/containers/tutorial-python-postgresql-app?tabs=bash%2Cclone)。
+你还可以使用[本教程中基于 Azure CLI 的版本](/azure/app-service/tutorial-python-postgresql-app)。
 
 ## <a name="fork-the-sample-repository"></a>创建示例存储库分支
 
@@ -137,7 +137,7 @@ ms.locfileid: "87810590"
 
 ## <a name="connect-the-database"></a>连接数据库
 
-在本节中，为 Web 应用创建它连接 `pollsdb` 数据库所需的设置。 这些设置在应用代码中显示为环境变量。 （有关详细信息，请参阅[访问环境变量](/azure/app-service/containers/how-to-configure-python#access-environment-variables)。）
+在本节中，为 Web 应用创建它连接 `pollsdb` 数据库所需的设置。 这些设置在应用代码中显示为环境变量。 （有关详细信息，请参阅[访问环境变量](/azure/app-service/configure-language-python#access-environment-variables)。）
 
 1. 切换回上一节中所创建的 Web 应用的浏览器选项卡或窗口。
 
@@ -182,7 +182,7 @@ ms.locfileid: "87810590"
 
 1. 选择“继续”以选择该存储库，然后选择“完成” 。 Azure 应在数秒内部署代码并启动应用。
 
-    应用服务将通过在每个子文件夹中查找 wsgi.py 文件来检测 Django 项目。 应用服务找到该文件后，就会加载 Django Web 应用。 有关详细信息，请参阅[配置内置的 Python 映像](/azure/app-service/containers/how-to-configure-python)。
+    应用服务将通过在每个子文件夹中查找 wsgi.py 文件来检测 Django 项目。 应用服务找到该文件后，就会加载 Django Web 应用。 有关详细信息，请参阅[配置内置的 Python 映像](/azure/app-service/configure-language-python)。
 
 [存在问题？请告诉我们。](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -279,4 +279,4 @@ ms.locfileid: "87810590"
 了解应用服务如何运行 Python 应用：
 
 > [!div class="nextstepaction"]
-> [配置 Python 应用](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)
+> [配置 Python 应用](/azure/app-service/configure-language-python)

@@ -3,13 +3,13 @@ title: 教程：将 Python 应用从 Visual Studio Code 部署到 Linux 上的 A
 description: 教程步骤 1，简介、先决条件以及登录 Azure。
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 444dd9737d52de58f71ef9a01aeca6a203e97a92
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 88335c081375e0a3830de7676e137f5b1038a98c
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069382"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147398"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：将 Python 应用从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务
 
@@ -20,7 +20,7 @@ ms.locfileid: "85069382"
 有关演示视频，请观看虚拟 PyCon 2020 中的<a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">使用 VS Code 和 Azure 应用服务生成 WebApps</a> (youtube.com)。
 
 > [!TIP]
-> [Linux 上的 Azure 应用服务](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)在预定义的 Docker 容器中运行源代码。 该容器通过 Python 3.7 来运行应用，使用 [Gunicorn](https://gunicorn.org) Web 服务器。 此容器的特征详见[为 Linux 上的应用服务配置 Python 应用](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)一文。 容器定义本身位于 [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7)。
+> [Linux 上的 Azure 应用服务](/azure/app-service/overview#app-service-on-linux)在预定义的 Docker 容器中运行源代码。 该容器通过 Python 3.7 来运行应用，使用 [Gunicorn](https://gunicorn.org) Web 服务器。 此容器的特征详见[为 Linux 上的应用服务配置 Python 应用](/azure/app-service/configure-language-python)一文。 容器定义本身位于 [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7)。
 
 ## <a name="prerequisites"></a>先决条件
 

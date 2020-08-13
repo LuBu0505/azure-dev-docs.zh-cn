@@ -10,12 +10,12 @@ metadata:
   ms.date: 04/03/2020
   ms.topic: landing-page
   ms.custom: seo-azure-migrate
-  ms.openlocfilehash: 8e1d7912ff2910e717fba1f3518dcf3a55847ee4
-  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
+  ms.openlocfilehash: 9441fc04c0ec04b07870221168a235b6bc67c585
+  ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87260324"
+  ms.lasthandoff: 08/10/2020
+  ms.locfileid: "88052224"
 landingContent:
 - title: 将 Java 应用程序迁移到 Azure
   linkLists:
@@ -49,8 +49,10 @@ landingContent:
       url: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
     - text: WebLogic 到 Azure 虚拟机
       url: migrate-weblogic-to-virtual-machines.md
-    - text: 使用通过 LDAP 的 AAD 从 WebLogic 到 Azure
+    - text: 通过 LDAP 使用 AAD 的 WebLogic
       url: migrate-weblogic-with-aad-ldap.md
+    - text: 使用应用程序网关的 WebLogic
+      url: migrate-weblogic-with-app-gateway.md
 - title: 将 WildFly 迁移到 Azure
   linkLists:
   - linkListType: how-to-guide

@@ -3,13 +3,13 @@ title: 步骤 7：使用 VS Code 通过 Python 添加 Azure Functions 的存储�
 description: 教程步骤 7，通过在 Python 中添加绑定将消息写入 Azure 存储。
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: f374e3155adc2d8681d8d39a579e0bd9fb3f5370
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 211d1534d617b649b574f9f3d23e8c5ffd5ac414
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708601"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982805"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:在 Python 中添加 Azure Functions 的存储绑定
 

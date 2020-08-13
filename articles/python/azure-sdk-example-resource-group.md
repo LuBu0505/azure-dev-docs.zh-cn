@@ -3,12 +3,13 @@ title: 使用用于 Python 的 Azure 库预配资源组
 description: 使用 Azure SDK for Python 中的资源管理库通过 Python 代码创建资源组。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1a87e53253eff5679245ac5528fac3bb10e2bc8d
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453698"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982609"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>示例：使用 Azure 库预配资源组
 
