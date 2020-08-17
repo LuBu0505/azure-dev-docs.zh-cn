@@ -8,16 +8,116 @@
       href: cloud-development-provisioning.md
     - name: Azure 开发流程
       href: cloud-development-flow.md
-- name: 开始在 Azure 上使用 Python
+- name: 部署无服务器函数
   items:
-    - name: Azure 库概述
+    - name: 创建函数
+      items:
+        - name: 使用 Visual Studio Code
+          items:
+            - name: 1 简介和先决条件
+              href: tutorial-vs-code-serverless-python-01.md
+            - name: 2 创建 Python 函数
+              href: tutorial-vs-code-serverless-python-02.md
+            - name: 3 检查代码文件
+              href: tutorial-vs-code-serverless-python-03.md
+            - name: 4 本地调试
+              href: tutorial-vs-code-serverless-python-04.md
+            - name: 5 部署到 Azure
+              href: tutorial-vs-code-serverless-python-05.md
+            - name: 6 添加第二个函数
+              href: tutorial-vs-code-serverless-python-06.md
+            - name: 7 添加存储绑定
+              href: tutorial-vs-code-serverless-python-07.md
+            - name: 8 清理资源
+              href: tutorial-vs-code-serverless-python-08.md
+        - name: 使用 Azure CLI
+          href: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - name: 连接到 Azure 存储
+      items:
+        - name: 使用 Visual Studio Code
+          href: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
+        - name: 使用 Azure CLI
+          href: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
+- name: 部署 web 应用和数据库
+  items:
+    - name: 简单的 Flask 应用
+      items:
+        - name: 使用 Visual Studio Code
+          items:
+            - name: 1 简介和先决条件
+              href: tutorial-deploy-app-service-on-linux-01.md
+            - name: 2 准备应用程序
+              href: tutorial-deploy-app-service-on-linux-02.md
+            - name: 3 创建应用服务
+              href: tutorial-deploy-app-service-on-linux-03.md
+            - name: 4 配置启动文件
+              href: tutorial-deploy-app-service-on-linux-04.md
+            - name: 5 部署应用
+              href: tutorial-deploy-app-service-on-linux-05.md
+            - name: 6 流式传输日志
+              href: tutorial-deploy-app-service-on-linux-06.md
+            - name: 7 清理资源
+              href: tutorial-deploy-app-service-on-linux-07.md
+        - name: 使用 Azure CLI
+          href: /azure/app-service/quickstart-python
+    - name: Django 应用 + PostgreSQL
+      items:
+        - name: 使用 Azure 门户
+          href: tutorial-python-postgresql-app-portal.md
+        - name: 使用 Azure CLI
+          href: /azure/app-service/tutorial-python-postgresql-app
+    - name: 设置 CI/CD
+      href: /azure/devops/pipelines/languages/python-webapp
+    - name: 配置 Linux 主机
+      href: /azure/app-service/configure-language-python
+    - name: 添加登录
+      href: /azure/active-directory/develop/quickstart-v2-python-webapp
+    - name: 存储和检索机密
+      href: /azure/key-vault/quick-create-python
+    - name: 设置 Azure monitor
+      href: /azure/azure-monitor/app/opencensus-python
+- name: 部署容器
+  items:
+    - name: 使用 Visual Studio Code
+      items:
+        - name: 1 简介和先决条件
+          href: tutorial-deploy-containers-01.md
+        - name: 2 部署容器映像
+          href: tutorial-deploy-containers-02.md
+        - name: 3 进行更改并重新部署
+          href: tutorial-deploy-containers-03.md
+        - name: 4 流式传输日志
+          href: tutorial-deploy-containers-04.md
+        - name: 5 清理资源
+          href: tutorial-deploy-containers-05.md
+    - name: 部署 Kubernetes 群集
+      href: /azure/aks/kubernetes-walkthrough
+- name: 部署机器学习模型
+  href: quickstarts-machine-learning.md
+- name: 部署数据和存储
+  href: quickstarts-data-solutions.md
+- name: 使用 Azure 库 (SDK)
+  items:
+    - name: 概述
       href: azure-sdk-overview.md
     - name: 设置开发环境
       href: configure-local-development-environment.md
     - name: 库使用模式
       href: azure-sdk-library-usage-patterns.md
-    - name: 库包索引
+    - name: 身份验证
+      items:
+        - name: 使应用向 Azure 进行身份验证
+          href: azure-sdk-authenticate.md
+        - name: 管理服务主体
+          href: how-to-manage-service-principals.md
+        - name: 向安全主体分配角色权限
+          href: how-to-assign-role-permissions.md
+    - name: 安装包
+      href: azure-sdk-install.md
+    - name: 包索引
       href: azure-sdk-library-package-index.md
+    - name: 库 API 参考
+      href: sdk-library-api-reference.md
     - name: 示例
       items:
         - name: 预配资源组
@@ -32,7 +132,15 @@
           href: azure-sdk-example-database.md
         - name: 预配虚拟机
           href: azure-sdk-example-virtual-machines.md
-- name: 探索特定的 Azure 服务
+    - name: 配置日志记录
+      href: azure-sdk-logging.md
+    - name: 配置代理
+      href: azure-sdk-configure-proxy.md
+    - name: 使用主权域
+      href: azure-sdk-sovereign-domain.md
+- name: 面向 Python 开发人员的工具
+  href: azure-tools.md
+- name: 探索支持 Python 的服务
   items:
     - name: 应用托管
       href: quickstarts-app-hosting.md
@@ -48,101 +156,35 @@
       href: quickstarts-messaging-iot.md
     - name: 其他服务
       href: quickstarts-other-services.md
-- name: 特定于方案的教程
-  items:
-    - name: 部署 Web 应用和数据库（门户）
-      href: tutorial-python-postgresql-app-portal.md
-    - name: 部署 Web 应用 (VS Code)
-      items:
-        - name: 1 简介和先决条件
-          href: tutorial-deploy-app-service-on-linux-01.md
-        - name: 2 准备应用程序
-          href: tutorial-deploy-app-service-on-linux-02.md
-        - name: 3 创建应用服务
-          href: tutorial-deploy-app-service-on-linux-03.md
-        - name: 4 配置启动文件
-          href: tutorial-deploy-app-service-on-linux-04.md
-        - name: 5 部署应用
-          href: tutorial-deploy-app-service-on-linux-05.md
-        - name: 6 流式传输日志
-          href: tutorial-deploy-app-service-on-linux-06.md
-        - name: 7 清理资源
-          href: tutorial-deploy-app-service-on-linux-07.md
-    - name: 部署容器 (VS Code)
-      items:
-        - name: 1 简介和先决条件
-          href: tutorial-deploy-containers-01.md
-        - name: 2 部署容器映像
-          href: tutorial-deploy-containers-02.md
-        - name: 3 进行更改并重新部署
-          href: tutorial-deploy-containers-03.md
-        - name: 4 流式传输日志
-          href: tutorial-deploy-containers-04.md
-        - name: 5 清理资源
-          href: tutorial-deploy-containers-05.md
-    - name: 部署无服务器函数 (VS Code)
-      items:
-        - name: 1 简介和先决条件
-          href: tutorial-vs-code-serverless-python-01.md
-        - name: 2 创建 Python 函数
-          href: tutorial-vs-code-serverless-python-02.md
-        - name: 3 检查代码文件
-          href: tutorial-vs-code-serverless-python-03.md
-        - name: 4 本地调试
-          href: tutorial-vs-code-serverless-python-04.md
-        - name: 5 部署到 Azure
-          href: tutorial-vs-code-serverless-python-05.md
-        - name: 6 添加第二个函数
-          href: tutorial-vs-code-serverless-python-06.md
-        - name: 7 添加存储绑定
-          href: tutorial-vs-code-serverless-python-07.md
-        - name: 8 清理资源
-          href: tutorial-vs-code-serverless-python-08.md
-- name: 操作指南
-  items:
-    - name: 安装库包
-      href: azure-sdk-install.md
-    - name: 使应用向 Azure 进行身份验证
-      href: azure-sdk-authenticate.md
-    - name: 管理服务主体
-      href: how-to-manage-service-principals.md
-    - name: 向安全主体分配角色权限
-      href: how-to-assign-role-permissions.md
-    - name: 配置日志记录
-      href: azure-sdk-logging.md
-    - name: 配置代理
-      href: azure-sdk-configure-proxy.md
-    - name: 使用主权域
-      href: azure-sdk-sovereign-domain.md
 - name: 示例
   items:
     - name: Web 应用与无服务器
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps'
+      href: /samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps
     - name: 数据库
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database'
+      href: /samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database
     - name: 存储
       items:
         - name: Azure 存储
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-storage'
+          href: /samples/browse/?languages=python&products=azure-storage
         - name: Redis 缓存
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-redis-cache'
+          href: /samples/browse/?languages=python&products=azure-redis-cache
     - name: 标识与安全性
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-active-directory%2Cazure-key-vault'
+      href: /samples/browse/?languages=python&products=azure-active-directory%2Cazure-key-vault
     - name: IoT
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central'
+      href: /samples/browse/?languages=python&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central
     - name: 数据科学
       items:
         - name: 机器学习服务
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-machine-learning-service'
+          href: /samples/browse/?languages=python&products=azure-machine-learning-service
         - name: Databricks
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-databricks'
+          href: /samples/browse/?languages=python&products=azure-databricks
         - name: HDInsight
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-hdinsight'
+          href: /samples/browse/?languages=python&products=azure-hdinsight
     - name: AI 与认知服务
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cognitive-services'
+      href: /samples/browse/?languages=python&products=azure-cognitive-services
     - name: 搜索
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
+      href: /samples/browse/?languages=python&products=azure-search
     - name: 所有示例
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python'
+      href: /samples/browse/?languages=python
 - name: 库 API 参考
   href: sdk-library-api-reference.md
