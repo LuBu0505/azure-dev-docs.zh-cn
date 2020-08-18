@@ -6,16 +6,16 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3f3f4cd3a7714b45a68abe4d92c489581d1c1d5f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
+ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379721"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88052248"
 ---
-# <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>将 WebLogic 应用程序迁移到 Azure 虚拟机
+# <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>将 WebLogic Server 应用程序迁移到 Azure 虚拟机
 
-本指南介绍在需要迁移现有 WebLogic 应用程序以使之在 Azure 虚拟机上运行时应注意的事项。
+本指南介绍在需要迁移现有 WebLogic 应用程序以使之在 Azure 虚拟机上运行时应注意的事项。  要简要了解 Azure 市场中可用的 WebLogic Server 解决方案，请参阅 [Azure 上的 Oracle WebLogic Server 是指什么？](/azure/virtual-machines/workloads/oracle/oracle-weblogic)
 
 ## <a name="pre-migration"></a>预迁移
 
@@ -29,7 +29,7 @@ ms.locfileid: "86379721"
 
 ### <a name="determine-whether-the-pre-built-marketplace-offers-are-a-good-starting-point"></a>确定是否可以从预生成的市场套餐着手
 
-Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 Azure 市场，为迁移到 Azure 提供坚实的基础。 请参阅 [Oracle Fusion Middleware](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/) 文档以获取套餐列表，选择与现有部署最匹配的套餐。 可以[在 Oracle 文档中](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/select-required-oracle-weblogic-server-offer-azure-marketplace.html#GUID-187739C5-EE7A-47C6-B3BA-C0A0333DC398)看到套餐列表
+Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 Azure 市场，为迁移到 Azure 提供坚实的基础。 请参阅 [Oracle Fusion Middleware](https://docs.oracle.com/en/middleware/standalone/weblogic-server/wlazu/) 文档以获取套餐列表，选择与现有部署最匹配的套餐。 可在名为 [Azure 上的 Oracle WebLogic Server 是指什么？](/azure/virtual-machines/workloads/oracle/oracle-weblogic)的概述文章中查看套餐列表
 
 如果不好从现有的套餐着手，则需使用 Azure 虚拟机资源以手动方式重新生成部署。 有关详细信息，请参阅[什么是 IaaS？](https://azure.microsoft.com/overview/what-is-iaas/)。
 
@@ -99,7 +99,7 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 
 以下套餐适用于基于 Azure 虚拟机的 WebLogic。
 
-在部署套餐的过程中，系统会要求你选择 WebLogic Server 节点的虚拟机大小。 在选择 VM 大小时，请务必考虑有关大小调整的所有方面（内存、处理器、磁盘）。 有关详细信息，请参阅[有关套餐的文档](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/deploy-oracle-weblogic-server-administration-server-single-node.html)和[有关虚拟机大小调整的 Azure 文档](/azure/cloud-services/cloud-services-sizes-specs)
+在部署套餐的过程中，系统会要求你选择 WebLogic Server 节点的虚拟机大小。 在选择 VM 大小时，请务必考虑有关大小调整的所有方面（内存、处理器、磁盘）。 有关详细信息，请参阅[介绍虚拟机大小调整的 Azure 文档](/azure/cloud-services/cloud-services-sizes-specs)
 
 #### <a name="weblogic-server-single-node-with-no-admin-server"></a>没有管理服务器的 WebLogic Server 单一节点
 
@@ -107,7 +107,7 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 
 #### <a name="weblogic-server-single-node-with-admin-server"></a>具有管理服务器的 WebLogic Server 单一节点
 
-此套餐预配单个 VM，并在其上安装 WebLogic Server 12.1.2.3。 它创建一个域并启动管理服务器。
+此套餐会预配一个 VM，并在其上安装 WebLogic Server。 它创建一个域并启动管理服务器。
 
 #### <a name="weblogic-server-n-node-cluster"></a>WebLogic Server N 节点群集
 
@@ -119,7 +119,7 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 
 ### <a name="provision-the-offer"></a>预配套餐
 
-选择了要开始使用的套餐后，请按[套餐文档](https://wls-eng.github.io/arm-oraclelinux-wls/)中的说明预配该套餐。 请确保选择与现有域名匹配的域名。 你甚至可以将域密码与现有域密码匹配。
+选择了要开始使用的套餐后，请按[套餐文档](https://docs.oracle.com/en/middleware/standalone/weblogic-server/wlazu/)中的说明预配该套餐。 请确保选择与现有域名匹配的域名。 你甚至可以将域密码与现有域密码匹配。
 
 ### <a name="migrate-the-domains"></a>迁移域
 
@@ -136,6 +136,8 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 ### <a name="connect-the-jms-sources"></a>连接 JMS 源
 
 连接数据库后，可以按照 WebLogic 文档的 [Fusion Middleware Administering JMS Resources for Oracle WebLogic Server](https://docs.oracle.com/middleware/12213/wls/JMSAD/toc.htm)（Fusion Middleware：管理 Oracle WebLogic Server 的 JMS 资源）中的说明配置 JMS。
+
+[!INCLUDE [account-for-authentication-and-authorization](includes/account-for-authentication-and-authorization.md)]
 
 ### <a name="account-for-logging"></a>考虑日志记录
 
@@ -158,6 +160,8 @@ Oracle 和 Microsoft 进行了合作，将一组 Azure 解决方案模板引入 
 * 使用 Azure 存储提供装载到虚拟机的静态内容。 有关详细信息，请参阅[在虚拟机中附加或拆离数据磁盘](/azure/lab-services/devtest-lab-attach-detach-data-disk)。
 
 * 通过 Azure DevOps 将应用程序部署到已迁移的 WebLogic 群集。 有关详细信息，请参阅 [Azure DevOps 入门文档](/azure/devops/get-started/?view=azure-devops)。
+
+* 如果使用 Azure 应用程序网关来部署 WebLogic Server，请按照[教程：使用 Azure 应用程序网关作为负载均衡器将 WebLogic Server 群集迁移到 Azure](migrate-weblogic-with-app-gateway.md) 中的步骤操作，你可能需要在应用程序网关上执行其他配置。  有关详细信息，请参阅[应用程序网关配置概述](/azure/application-gateway/configuration-overview)。
 
 * 通过高级负载均衡服务增强网络拓扑。 有关详细信息，请参阅[在 Azure 中使用负载均衡服务](/azure/traffic-manager/traffic-manager-load-balancing-azure)。
 

@@ -7,13 +7,10 @@
 - name: 快速入门
   expanded: true
   items:
-    - name: 入门 - Cloud Shell
+    - name: 使用 Azure Cloud Shell 配置 Ansible
       href: getting-started-cloud-shell.md
-    - name: 将 Ansible 解决方案模板部署到 CentOS
-      href: solution-template-deploy.md
-    - name: 在 Linux 虚拟机上安装 Ansible
+    - name: 使用 Azure CLI 配置 Ansible
       href: install-on-linux-vm.md
-      maintainContext: true
     - name: 使用 Linux 虚拟机
       expanded: true
       items:

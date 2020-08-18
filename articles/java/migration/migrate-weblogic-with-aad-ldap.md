@@ -3,14 +3,14 @@ title: 使用 Azure Active Directory 进行最终用户授权和身份验证，�
 description: 本指南介绍如何配置 Oracle WebLogic Server 以通过 LDAP 与 Azure Active Directory 域服务连接
 author: edburns
 ms.author: edburns
-ms.topic: conceptual
-ms.date: 07/09/2020
-ms.openlocfilehash: 0f3b8f7e2535bc91629f056cf59bc0d2658aba19
-ms.sourcegitcommit: 1f78e54deb85c6063b887286a13a967d1d186b50
+ms.topic: tutorial
+ms.date: 08/10/2020
+ms.openlocfilehash: b828fc2bc41b0e4e557472e7efd00498e68933db
+ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118437"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88052214"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>用于将 WebLogic Server 上的 Java 应用迁移到 Azure 的最终用户授权和身份验证
 
@@ -35,7 +35,7 @@ Java EE 开发人员希望[标准平台安全机制](https://javaee.github.io/tu
 ## <a name="prerequisites"></a>先决条件
 
 * 一个有效的 Azure 订阅。
-  * 如果你没有 Azure 订阅，请[创建一个帐户](https://azure.microsoft.com/free/)。
+  * 如果没有 Azure 订阅，可以[创建一个免费帐户](https://azure.microsoft.com/free/)。
 * 能够部署 [Oracle WebLogic Server Azure 应用程序](/azure/virtual-machines/workloads/oracle/oracle-weblogic)中列出的 WLS Azure 应用程序之一。
 
 ## <a name="migration-context"></a>迁移上下文
@@ -46,6 +46,7 @@ Java EE 开发人员希望[标准平台安全机制](https://javaee.github.io/tu
 * 如果你的场景涉及本地 Active Directory 林，请考虑使用 Azure AD 实现混合标识解决方案。  有关详细信息，请参阅[混合标识文档](/azure/active-directory/hybrid/)
 * 如果已部署本地 Active Directory 域服务 (AD DS)，请访问[自我管理型 Azure Active Directory 域服务、Azure Active Directory 和托管型 Azure Active Directory 域服务的比较](/azure/active-directory-domain-services/compare-identity-solutions)，以探索迁移路径。
 * 如果你正在针对云进行优化，本指南将介绍如何从头开始使用 Azure AD DS LDAP 和 WLS。
+* 有关将 WebLogic Server 迁移到 Azure 虚拟机的全面调查，请参阅[将 WebLogic Server 应用程序迁移到 Azure 虚拟机](migrate-weblogic-to-virtual-machines.md)。
 
 ## <a name="azure-active-directory-configuration"></a>Azure Active Directory 配置
 
@@ -115,6 +116,38 @@ Java EE 开发人员希望[标准平台安全机制](https://javaee.github.io/tu
 
 考虑到上述变化，请完成[为 Azure Active Directory 域服务托管域配置安全 LDAP](/azure/active-directory-domain-services/tutorial-configure-ldaps)。  我们现在可以收集必要的值以提供给 WLS 配置。
 
+### <a name="disable-weak-tls-v1"></a>禁用安全性弱的 TLS v1
+
+默认情况下，Azure Active Directory 域服务 (Azure AD DS) 会启用对 TLS v1 的使用，这被视为安全性较弱，在 WebLogic Server 14 及更高版本中不受支持。 
+
+本部分介绍如何禁用 TLS v1 密码。
+
+首先，获取用于启用 LDAP 的 Azure 域服务实例的资源 ID。 以下示例在名为 `aadds-rg` 的资源组中获取名为 `aaddscontoso.com` 的 Azure 域服务实例的 ID。
+
+```azurecli
+AADDS_ID=$(az resource show --resource-group aadds-rg --resource-type "Microsoft.AAD/DomainServices" --name aaddscontoso.com --query "id" --output tsv)
+```
+
+运行以下命令来禁用 TLS v1：
+
+```azurecli
+az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1=Disabled
+```
+
+输出将为 `"tlsV1": "Disabled"` 显示 `domainSecuritySettings`，如下例所示：
+
+```text
+"domainSecuritySettings": {
+      "ntlmV1": "Enabled",
+      "syncKerberosPasswords": "Enabled",
+      "syncNtlmPasswords": "Enabled",
+      "syncOnPremPasswords": "Enabled",
+      "tlsV1": "Disabled"
+}
+```
+
+有关详细信息，请参阅[禁用弱密码和密码哈希同步来保护 Azure Active Directory 域服务托管域](/azure/active-directory-domain-services/secure-your-domain)。
+
 ## <a name="wls-configuration"></a>WLS 配置
 
 本节帮助你从先前部署的 Azure AD DS 收集参数值。
@@ -149,9 +182,9 @@ Java EE 开发人员希望[标准平台安全机制](https://javaee.github.io/tu
 
 1. 访问 WLS 管理控制台。
 1. 在左侧导航器中，展开树以选择“安全领域” -> “myrealm” -> “提供程序”  。
-1. 如果集成成功，你将发现 AAD 提供程序，例如 `AzureActiveDirectoryProvider`。
+1. 如果集成成功，你将发现 Azure AD 提供程序，例如 `AzureActiveDirectoryProvider`。
 1. 在左侧导航器中，展开树以选择“安全领域” -> “myrealm” -> “用户和组”  。
-1. 如果集成成功，你将从 AAD 提供程序发现用户。
+1. 如果集成成功，你将从 Azure AD 提供程序发现用户。
 
 ### <a name="lock-down-and-secure-ldap-access-over-the-internet"></a>锁定通过 Internet 进行的安全 LDAP 访问
 
@@ -163,5 +196,7 @@ Java EE 开发人员希望[标准平台安全机制](https://javaee.github.io/tu
 
 ## <a name="next-steps"></a>后续步骤
 
+了解将 WebLogic Server 应用迁移到 Azure 的其他方面。
+
 > [!div class="nextstepaction"]
-> [将 WebLogic 应用程序迁移到 Azure 虚拟机](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)
+> [将 WebLogic Server 应用程序迁移到 Azure 虚拟机](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)

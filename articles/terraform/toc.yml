@@ -7,9 +7,9 @@
 - name: 快速入门
   expanded: true
   items:
-    - name: 入门 - Azure Cloud Shell
+    - name: 使用 Azure Cloud Shell 配置 Terraform
       href: get-started-cloud-shell.md
-    - name: 入门 - Windows 和 PowerShell
+    - name: 使用 Azure PowerShell 配置 Terraform
       href: get-started-powershell.md
 - name: 操作指南
   items:

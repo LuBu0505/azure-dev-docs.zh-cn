@@ -7,7 +7,7 @@
 - name: 快速入门
   expanded: true
   items:
-    - name: 创建 Jenkins 服务器
+    - name: 使用 Azure CLI 配置 Jenkins
       href: configure-on-linux-vm.md
 - name: 教程
   items:

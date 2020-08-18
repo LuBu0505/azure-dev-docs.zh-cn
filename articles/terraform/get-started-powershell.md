@@ -3,19 +3,32 @@ title: 快速入门 - 在 Windows 和 PowerShell 中开始使用 Terraform
 description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azure 资源。
 keywords: azure devops terraform 安装 配置 windows init 计划 应用 执行 登录 rbac 服务主体 自动化脚本 powershell
 ms.topic: quickstart
-ms.date: 07/27/2020
-ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478577"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026153"
 ---
 # <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>快速入门：在 Windows 和 PowerShell 中开始使用 Terraform
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 本文介绍如何在 PowerShell 中开始使用 [Azure 上的 Terraform](https://www.terraform.io/docs/providers/azurerm/index.html)。
+
+在本文中，学习如何：
+> [!div class="checklist"]
+> * 安装最新版本的 PowerShell
+> * 安装新的 PowerShell Az 模块
+> * 安装 Azure CLI
+> * 安装 Terraform
+> * 创建 Azure 服务主体来进行身份验证
+> * 使用服务主体登录到 Azure 
+> * 设置环境变量，以便 Terraform 正确地对 Azure 订阅进行身份验证
+> * 编写 Terraform 脚本以创建 Azure 资源组
+> * 创建并应用 Terraform 执行计划
+> * 使用 `terraform plan -destroy` 标志来撤消执行计划
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -119,6 +132,16 @@ ms.locfileid: "87478577"
     Connect-AzAccount -Credential $spCredential -Tenant "<azure_subscription_tenant_id>" -ServicePrincipal
     ```
 
+## <a name="set-environment-variables"></a>设置环境变量
+
+为了让 Terraform 使用预期的 Azure 订阅，请设置环境变量。 你可以在 Windows 系统级别或在特定的 PowerShell 会话中设置环境变量。 如果要为特定会话设置环境变量，请使用以下代码。 将占位符替换为你的环境的相应值。
+
+```powershell
+$env:ARM_CLIENT_ID=<service_principle_app_id>
+$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
+$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+```
+
 ## <a name="create-a-terraform-configuration-file"></a>创建 Terraform 配置文件
 
 在本节中，你将编写用于创建 Azure 资源组的 Terraform 配置文件。
@@ -162,16 +185,6 @@ ms.locfileid: "87478577"
     - 在 `azurerm` 提供程序块中设置了 `version` 和 `features` 属性。 作为注释语句，其用法是特定于版本的。 有关设置这些属性的详细信息，请参阅 [AzureRM 提供程序的 v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)。
     - 唯一的[资源声明](https://www.terraform.io/docs/configuration/resources.html)适用于资源类型 [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html)。 Azure_resource_group 的两个必需参数是名称和位置。
 
-## <a name="set-environment-variables"></a>设置环境变量
-
-为了让 Terraform 使用预期的 Azure 订阅，请设置环境变量。 你可以在 Windows 系统级别或在特定的 PowerShell 会话中设置环境变量。 如果要为特定会话设置环境变量，请使用以下代码。 将占位符替换为你的环境的相应值。
-
-```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
-```
-
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>创建并应用 Terraform 执行计划
 
 在本节中，你将创建一个执行计划，并将其应用于云基础结构。
@@ -205,7 +218,9 @@ $env:ARM_TENANT_ID=<azure_subscription_tenant_id>
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
     ```
 
-    如果成功，该命令会显示新创建的资源组的各种属性。
+    **注释**：
+
+    - 如果成功，该命令会显示新创建的资源组的各种属性。
 
 ## <a name="clean-up-resources"></a>清理资源
 
