@@ -3,19 +3,29 @@ title: 快速入门 - 在 Azure Cloud Shell 中开始使用 Terraform
 description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azure 资源。
 keywords: azure devops terraform 安装 配置 cloud shell init 计划 应用 执行 门户 登录 rbac 服务主体 自动化脚本
 ms.topic: quickstart
-ms.date: 07/26/2020
-ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 736c805b8dd8c95d1950537b754059cca9fc5712
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478587"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026136"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>快速入门：在 Azure Cloud Shell 中开始使用 Terraform
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 本文介绍如何开始使用 [Azure 上的 Terraform](https://www.terraform.io/docs/providers/azurerm/index.html)。
+
+在本文中，学习如何：
+> [!div class="checklist"]
+> * 使用 `az login` 对 Azure 进行身份验证
+> * 使用 Azure CLI 创建 Azure 服务主体
+> * 使用服务主体对 Azure 进行身份验证
+> * 设置当前的 Azure 订阅 - 有多个订阅时使用
+> * 编写 Terraform 脚本以创建 Azure 资源组
+> * 创建并应用 Terraform 执行计划
+> * 使用 `terraform plan -destroy` 标志来撤消执行计划
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -166,7 +176,7 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
 
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>创建并应用 Terraform 执行计划
 
-创建配置文件后，本节介绍如何创建执行计划并将其应用于云基础结构。
+在本节中，你将创建一个执行计划，并将其应用于云基础结构。
 
 1. 使用 [Terraform init](https://www.terraform.io/docs/commands/init.html) 初始化 Terraform 部署。 此步骤将下载创建 Azure 资源组所需的 Azure 模块。
 
@@ -174,27 +184,24 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     terraform init
     ```
 
-1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以创建执行计划并预览其结果。
+1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以基于 Terraform 配置文件创建一个执行计划。
 
     ```bash
-    terraform plan
+    terraform plan -out QuickstartTerraformTest.tfplan
     ```
 
-    **注释**：
+    注意：
+    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 此模式允许你在对实际资源进行任何更改之前验证执行计划是否符合预期。
+    - 使用可选 `-out` 参数可以为计划指定输出文件。 使用 `-out` 参数可以确保所查看的计划与所应用的计划完全一致。
+    - 若要详细了解如何使执行计划和安全性持久化，请参阅[安全警告一节](https://www.terraform.io/docs/commands/plan.html#security-warning)。
 
-    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。
-    - 使用 `terraform plan` 命令，可以在对实际资源进行任何更改之前验证执行计划是否符合预期。
-    - 使用可选 `-out` 参数可以为计划指定输出文件。 有关使用 `-out` 参数的详细信息，请参阅[为稍后的部署保存执行计划](#persist-an-execution-plan-for-later-deployment)部分。
-
-1. 使用 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 应用执行计划。
+1. 运行 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 以应用执行计划。
 
     ```bash
-    terraform apply
+    terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. Terraform 会显示在应用该执行计划后将发生的情况，并会要求你确认运行该计划。 输入 `yes` 并按 **Enter** 键确认执行命令。
-
-1. 在确认执行计划后，请使用 [az group show](/cli/azure/group?#az-group-show) 来测试资源组是否已成功创建。
+1. 应用执行计划后，可使用 [az group show](/cli/azure/group?#az-group-show) 测试资源组是否已成功创建。
 
     ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
@@ -204,39 +211,6 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
 
     - 如果成功，`az group show` 会显示新创建的资源组的各种属性。
 
-## <a name="persist-an-execution-plan-for-later-deployment"></a>为稍后的部署保存执行计划
-
-在上一部分中，你已了解如何运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 来创建执行计划。 然后，你了解了如何使用 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 应用该计划。 如果步骤是按顺序执行的交互式步骤，此模式适用。
-
-对于更复杂的情况，可以将执行计划保存到文件中。 稍后（或者甚至从其他计算机上）可以应用该执行计划。
-
-如果你使用此功能，我们建议你阅读[自动运行 Terraform](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation) 一文。
-
-以下步骤说明了有关使用此功能的基本模式：
-
-1. 运行 [terraform init](https://www.terraform.io/docs/commands/init.html)。
-
-    ```bash
-    terraform init
-    ```
-
-1. 在使用 `-out` 参数的情况下运行 `terraform plan`。
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-1. 运行 `terraform apply`（在该命令中指定来自上一步的文件的名称）。
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-    **注意**：
-    
-    - 为了实现自动化，运行 `terraform apply <filename>` 不需要确认。
-    - 如果决定使用此功能，请阅读[安全警告部分](https://www.terraform.io/docs/commands/plan.html#security-warning)。
-    
 ## <a name="clean-up-resources"></a>清理资源
 
 如果不再需要本教程中创建的资源，请将其删除。
@@ -248,9 +222,9 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     ```
 
     **注释**：
-    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 这使你可以在对实际资源进行任何更改之前验证执行计划是否符合预期。
+    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 此模式允许你在对实际资源进行任何更改之前验证执行计划是否符合预期。
     - `-destroy` 参数会生成一个用于销毁资源的计划。
-    - 使用可选 `-out` 参数可以为计划指定输出文件。 应始终使用 `-out` 参数，因为它可以确保你查看的正是所应用的计划。
+    - 使用可选 `-out` 参数可以为计划指定输出文件。 使用 `-out` 参数可以确保所查看的计划与所应用的计划完全一致。
     - 若要详细了解如何使执行计划和安全性持久化，请参阅[安全警告一节](https://www.terraform.io/docs/commands/plan.html#security-warning)。
 
 1. 运行 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 以应用执行计划。

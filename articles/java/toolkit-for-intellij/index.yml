@@ -3,15 +3,15 @@ title: Azure Toolkit for IntelliJ 文档
 summary: 借助适用于 IntelliJ 的 Azure 工具包提供的模板和功能，可利用 IntelliJ 集成开发环境 (IDE) 轻松地创建、开发、测试和部署 Azure 应用程序。
 metadata:
   title: Azure Toolkit for IntelliJ 文档
-  description: 了解 Azure Toolkit for IntelliJ。
+  description: 使用 Azure Toolkit for IntelliJ，通过 IntelliJ IDE 创建、开发、测试和部署 Azure 应用程序。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: f816ad75074b92b0b2b8025c5e541b5ef7988b65
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: f69096bead0650bbb5a40959f55cdf0967dade8e
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675383"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88241009"
 landingContent:
 - title: 入门指南
   linkLists:

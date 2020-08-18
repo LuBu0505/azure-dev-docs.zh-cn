@@ -3,14 +3,14 @@ title: 教程 - 使用 Jenkins 和 Azure CLI 部署到 Azure 应用服务
 description: 了解如何使用 Azure CLI 通过 Jenkins 管道将 Java Web 应用部署到 Azure
 keywords: jenkins, azure, devops, 应用服务, cli
 ms.topic: tutorial
-ms.date: 04/25/2020
+ms.date: 08/08/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 63a5097358001e0312af13053e3d7310fe413cc7
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.openlocfilehash: b26adfa3fd4639efa5de20ffcf93f1730a992a12
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478337"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162066"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 部署到 Azure 应用服务
 
@@ -26,13 +26,13 @@ ms.locfileid: "87478337"
 
 ## <a name="create-and-configure-jenkins-instance"></a>创建和配置 Jenkins 实例
 
-如果尚没有 Jenkins 主服务器，可以使用 [Jenkins 解决方案模板](configure-on-linux-vm.md)进行安装。 在默认情况下，该模板会安装所需的 [Azure 凭据](https://plugins.jenkins.io/azure-credentials)插件。 
+如果尚没有 Jenkins 主服务器，则[在 Linux VM 上安装 Jenkins](configure-on-linux-vm.md)。
 
-使用 Azure 凭据插件可将 Microsoft Azure 服务主体凭据存储在 Jenkins 中。 1\.2 版中已添加相应支持，以便 Jenkins 管道获取 Azure 凭据。 
+使用 Azure 凭据插件可将 Microsoft Azure 服务主体凭据存储在 Jenkins 中。 1.2 版中已添加相应支持，以便 Jenkins 管道获取 Azure 凭据。 
 
 确保有 1.2 版或更高版本：
 
-* 在 Jenkins 仪表板中，单击“Manage Jenkins”（管理 Jenkins）->“Plugin Manager”（插件管理器）  ，搜索“Azure Credential”（Azure 凭据）  。 
+* 在 Jenkins 仪表板中，单击“Manage Jenkins”（管理 Jenkins）->“Plugin Manager”（插件管理器）****，搜索“Azure Credential”（Azure 凭据）****。 
 * 如果版本低于 1.2，请更新插件。
 
 Jenkins Master 还需要 Java JDK 和 Maven。 若要安装，请使用 SSH 登录到 Jenkins Master，并运行以下命令：
@@ -46,14 +46,14 @@ sudo apt-get install -y maven
 
 需要 Azure 凭据才能执行 Azure CLI。
 
-* 在 Jenkins 仪表板中，单击“Credentials”（凭据）->“System”（系统）  。 单击“Global credentials(unrestricted)”（全局凭据(不受限制)）  。
-* 单击“Add Credentials”（添加凭据）  ，通过填写订阅 ID、客户端 ID、客户端密码和 OAuth 2.0 令牌终结点，添加 [Microsoft Azure 服务主体](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)。 提供一个 ID 供后续步骤使用。
+* 在 Jenkins 仪表板中，单击“Credentials”（凭据）->“System”（系统）****。 单击“Global credentials(unrestricted)”（全局凭据(不受限制)）****。
+* 单击“Add Credentials”（添加凭据），通过填写订阅 ID、客户端 ID、客户端密码和 OAuth 2.0 令牌终结点，添加 [Microsoft Azure 服务主体](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)。 提供一个 ID 供后续步骤使用。
 
 ![添加凭据](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
 
 ## <a name="create-an-azure-app-service-for-deploying-the-java-web-app"></a>创建 Azure 应用服务以部署 Java Web 应用
 
-使用 [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create) CLI 命令通过“免费”  定价层创建 Azure 应用服务计划。 appservice 计划定义用于托管应用的物理资源。 分配到 appservice 计划的所有应用程序共享这些资源，因此在托管多个应用时可以节省成本。 
+使用 [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create) CLI 命令通过“免费”**** 定价层创建 Azure 应用服务计划。 appservice 计划定义用于托管应用的物理资源。 分配到 appservice 计划的所有应用程序共享这些资源，因此在托管多个应用时可以节省成本。 
 
 ```azurecli-interactive
 az appservice plan create \
@@ -127,7 +127,7 @@ az webapp config set \
 
 ## <a name="prepare-a-github-repository"></a>准备 GitHub 存储库
 
-1. 打开[适用于 Azure 的简单 Java Web 应用](https://github.com/azure-devops/javawebappsample)存储库。 要将存储库分叉到自己的 GitHub 帐户，请单击右上角的“分叉”按钮。 
+1. 打开[适用于 Azure 的简单 Java Web 应用](https://github.com/azure-devops/javawebappsample)存储库。 要将存储库分叉到自己的 GitHub 帐户，请单击右上角的“分叉”按钮。****
 
 1. 在 GitHub Web UI 中，打开 **Jenkinsfile** 文件。 单击铅笔图标编辑此文件，分别更新第 20 行和第 21 行上的资源组和 Web 应用名称。
 
@@ -144,22 +144,22 @@ az webapp config set \
     
 ## <a name="create-jenkins-pipeline"></a>创建 Jenkins 管道
 
-在 Web 浏览器中打开 Jenkins，单击“New Item”（新建项）  。
+在 Web 浏览器中打开 Jenkins，单击“New Item”（新建项）****。
 
 1. 输入作业的名称。
-1. 选择“管道”。  
-1. 选择“确定”  。
 1. 选择“管道”。 
+1. 选择“确定”。
+1. 选择“管道”。
 1. 对于“Definition”（定义）  ，选择“Pipeline script from SCM”（来自 SCM 的管道脚本）  。
 1. 对于“SCM”  ，选择“Git”  。
 1. 输入分叉存储库的 GitHub URL：`https:\<your forked repo\>.git`
-1. 选择“保存” 
+1. 选择“保存”
 
 ## <a name="test-your-pipeline"></a>测试管道
 
 1. 转到所创建的管道
-1. 单击“立即生成” 
-1. 生成完成后，选择“控制台输出”  以查看生成详细信息。
+1. 单击“立即生成”
+1. 生成完成后，选择“控制台输出”以查看生成详细信息。
 
 ## <a name="verify-your-web-app"></a>验证 Web 应用
 
@@ -167,7 +167,7 @@ az webapp config set \
 
 1. 打开 Web 浏览器：
 
-1. 浏览到 `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`
+1. 浏览到 `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`。
 
 1. 应看到类似于以下内容的文本：
 

@@ -1,146 +1,193 @@
 ---
-title: 快速入门 - 在 Azure 上创建 Jenkins 服务器
-description: 了解如何通过 Jenkins 解决方案模板在 Azure Linux 虚拟机上安装 Jenkins，然后生成示例 Java 应用程序。
-keywords: jenkins, azure, devops, 门户, linux, 虚拟机, 解决方案模板
+title: 快速入门 - Jenkins 入门
+description: 了解如何在 Azure Linux 虚拟机上安装 Jenkins 以及如何构建示例 Java 应用程序。
+keywords: jenkins, azure, devops, 门户, linux, 虚拟机
 ms.topic: quickstart
-ms.date: 03/03/2020
-ms.openlocfilehash: 2ea038dad2294784804f45026ea26198a9b12d79
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/07/2020
+ms.openlocfilehash: 06d2365f51df76861a3a154702c4b82f962f7038
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170333"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162086"
 ---
-# <a name="quickstart-create-a-jenkins-server-on-an-azure-linux-vm"></a>快速入门：在 Azure Linux VM 上创建 Jenkins 服务器
+# <a name="quickstart-get-started-with-jenkins"></a>快速入门：Jenkins 入门
 
-本快速入门介绍如何使用经过配置的适用于 Azure 的工具和插件在 Ubuntu Linux VM 上安装 [Jenkins](https://jenkins.io)。 完成后，你会有一个在 Azure 中运行的 Jenkins 服务器，并可生成 [GitHub](https://github.com) 中的示例 Java 应用。
+本快速入门介绍如何使用经过配置的适用于 Azure 的工具和插件在 Ubuntu Linux VM 上安装 [Jenkins](https://jenkins.io)。
 
-## <a name="prerequisites"></a>先决条件
+在本快速入门中，我们将完成以下任务：
 
-* 可以在计算机的命令行（例如 Bash shell 或 [PuTTY](https://www.putty.org/)）上访问 SSH
+> [!div class="checklist"]
+> * 创建可下载和安装 Jenkins 的安装文件
+> * 创建资源组
+> * 使用安装文件创建虚拟机
+> * 打开端口 8080，以便可通过 SSH 连接到虚拟机
+> * 通过 SSH 连接到虚拟机
+> * 基于 GitHub 中的示例 Java 应用配置示例 Jenkins 作业
+> * 生成示例 Jenkins 作业
 
-## <a name="create-the-jenkins-vm-from-the-solution-template"></a>从解决方案模板创建 Jenkins VM
+## <a name="prerequisites"></a>必备知识
 
-Jenkins 支持这样一个模型：其中的 Jenkins 服务器将工作委托给一个或多个代理，使单个 Jenkins 安装即可托管大量的项目，或者为生成或测试活动提供不同的环境。 本部分中的步骤将引导你在 Azure 上安装和配置 Jenkins 服务器。
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-1. 在浏览器中，打开[用于 Jenkins 的 Azure 市场映像](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.jenkins?tab=Overview)。
+## <a name="troubleshooting"></a>疑难解答
 
-1. 选择“立即获取”  。
+如果在配置 Jenkins 时遇到任何问题，请参阅 [Cloudbees Jenkins 安装页面](https://www.jenkins.io/doc/book/installing/)来查看最新说明和已知问题。
 
-    ![选择“立即获取”可启动 Jenkins Marketplace 映像的安装过程。](./media/install-from-azure-marketplace-image/jenkins-install-get-it-now.png)
+## <a name="create-a-virtual-machine"></a>创建虚拟机
 
-1. 在查看定价详细信息和条款信息后，选择“继续”  。
+1. 登录 [Azure 门户](https://portal.azure.com)。
 
-    ![Jenkins Marketplace 映像的定价和条款信息。](./media/install-from-azure-marketplace-image/jenkins-install-pricing-and-terms.png)
+1. 打开 [Azure Cloud Shell](/azure/cloud-shell/overview)，并切换到 Bash（如果尚未切换）。
 
-1. 选择“创建”  可在 Azure 门户中配置 Jenkins 服务器。 
-
-    ![安装 Jenkins Marketplace 映像。](./media/install-from-azure-marketplace-image/jenkins-install-create.png)
-
-1. 在“基本”  选项卡上，指定以下值：
-
-   - **名称** - 输入 `Jenkins`。
-   - 用户名  - 输入登录到运行 Jenkins 的虚拟机时要使用的用户名。 用户名称必须满足[特定要求](/azure/virtual-machines/linux/faq#what-are-the-username-requirements-when-creating-a-vm)。
-   - **身份验证类型** - 选择“SSH 公钥”  。
-   - **SSH 公钥** - 以单行格式（以 `ssh-rsa` 开头）或多行 PEM 格式复制并粘贴 RSA 公钥。 可以在 Linux 和 macOS 上使用 ssh-keygen 生成 SSH 密钥，或在 Windows 上使用 PuTTYGen 生成这些密钥。 有关 SSH 密钥和 Azure 的详细信息，请参阅[如何在 Azure 上将 SSH 密钥与 Windows 配合使用](/azure/virtual-machines/linux/ssh-from-windows)一文。
-   - **订阅** - 选择要用于安装 Jenkins 的 Azure 订阅。
-   - **资源组** - 选择“新建”  ，并输入资源组的名称，该资源组用作构成 Jenkins 安装的资源集合的逻辑容器。
-   - **位置** - 选择“美国东部”。 
-
-     ![在“基本”选项卡中输入 Jenkins 的身份验证和资源组信息。](./media/install-from-azure-marketplace-image/jenkins-configure-basic.png)
-
-1. 选择“确定”  以进入“其他设置”  选项卡。 
-
-1. 在“其他设置”  选项卡中，指定以下值：
-
-   - **大小** - 选择适合于 Jenkins 虚拟机的调整大小选项。
-   - **VM 磁盘类型** - 指定 HDD（硬盘驱动器）或 SSD（固态驱动器）以指明允许将哪种存储磁盘类型用于 Jenkins 虚拟机。
-   - **虚拟网络** -（可选）选择要修改默认设置的**虚拟网络**。
-   - **子网** - 选择“子网”  ，验证信息，然后选择“确定”  。
-   - **公共 IP 地址** - IP 地址名称默认为在前一页中指定的带有 -IP 后缀的 Jenkins 名称。 可以选择相应选项更改该默认设置。
-   - **域名标签** - 为 Jenkins 虚拟机的完全限定 URL 指定值。
-   - **Jenkins 版本类型** - 从以下选项中选择所需的版本类型：`LTS`、`Weekly build` 或 `Azure Verified`。 `LTS` 和 `Weekly build` 选项在 [Jenkins LTS 版本行](https://jenkins.io/download/lts/)一文中进行说明。 `Azure Verified` 选项是指已经过验证可以在 Azure 上运行的 [Jenkins LTS 版本](https://jenkins.io/download/lts/)。 
-   - **JDK 类型** - 要安装的 JDK。 默认为经测试的 Zulu，即 OpenJDK 的认证版本。
-
-     ![在“设置”选项卡中输入适用于 Jenkins 的虚拟机设置。](./media/install-from-azure-marketplace-image/jenkins-configure-settings.png)
-
-1. 选择“确定”  以进入“集成设置”  选项卡。
-
-1. 在“集成设置”  选项卡中，指定以下值：
-
-    - **服务主体** - 服务主体已添加到 Jenkins 中，作为使用 Azure 进行身份验证的凭据。 `Auto` 意味着将由 MSI（托管服务标识）创建主体。 `Manual` 意味着应由你创建主体。 
-        - **应用程序 ID** 和**机密** - 如果针对“服务主体”  选项选择 `Manual` 选项，则需要为服务主体指定 `Application ID` 和 `Secret`。 [创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)时，请注意，默认角色是“参与者”  ，该角色对于使用 Azure 资源已足够。
-    - **启用云代理** - 为代理指定默认云模板，其中 `ACI` 是指 Azure 容器实例，`VM` 是指虚拟机。 如果不想启用云代理，也可以指定 `No`。
-
-1. 选择“确定”  以进入“摘要”  选项卡。
-
-1. 显示“摘要”  选项卡时，将验证输入的信息。 （在选项卡顶部）看到“验证通过”消息后，选择“确定”。   
-
-     ![“摘要”选项卡显示并验证所选的选项。](./media/install-from-azure-marketplace-image/jenkins-configure-summary.png)
-
-1. 显示“创建”  选项卡时，选择“创建”  以创建 Jenkins 虚拟机。 服务器就绪时，将在 Azure 门户中显示一条通知。
-
-     ![Jenkins 就绪通知。](./media/install-from-azure-marketplace-image/jenkins-install-notification.png)
-
-## <a name="connect-to-jenkins"></a>连接到 Jenkins
-
-1. 在 Web 浏览器中导航到虚拟机（例如 `http://jenkins2517454.eastus.cloudapp.azure.com/`。 Jenkins 控制台无法通过不安全的 HTTP 进行访问，因此在页面上提供了说明，介绍如何在计算机中使用 SSH 隧道安全地访问 Jenkins 控制台。
-
-    ![解锁 Jenkins](./media/install-solution-template-steps/jenkins-ssh-instructions.png)
-
-1. 在页面上通过命令行使用 `ssh` 命令设置该隧道，将 `username` 替换为此前从解决方案模板设置虚拟机时选择的虚拟机管理员用户的名称。
+1. 创建名为 `cloud-init-jenkins.txt` 的文件。
 
     ```bash
-    ssh -L 127.0.0.1:8080:localhost:8080 jenkinsadmin@jenkins2517454.eastus.cloudapp.azure.com
+    code cloud-init-jenkins.txt
     ```
-    
-1. 启动隧道后，导航到本地计算机上的 `http://localhost:8080/`。 
 
-1. 通过 SSH 连接到 Jenkins VM 时，在命令行中运行以下命令，以便获取初始密码。
+1. 将以下代码粘贴到新文件中：
+
+    ```json
+    #cloud-config
+    package_upgrade: true
+    runcmd:
+      - apt install openjdk-8-jdk -y
+      - wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+      - sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+      - apt-get update && apt-get install jenkins -y
+      - service jenkins restart
+    ```
+
+1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+
+1. 使用 [az group create](/cli/azure/group#az-group-create) 创建资源组。 可能需要将 `--location` 参数替换为你的环境的相应值。
+
+    ```azurecli
+    az group create --name QuickstartJenkins-rg --location eastus
+    ```
+
+1. 使用 [az vm create](/cli/azure/vm#az-vm-create) 创建虚拟机。
+
+    ```azurecli
+    az vm create --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm --image UbuntuLTS --admin-username "azureuser" --generate-ssh-keys --custom-data cloud-init-jenkins.txt
+    ```
+
+1. 使用 [az vm open](/cli/azure/vm#az-vm-open-port) 在新虚拟机上打开端口 8080。
+
+    ```azurecli
+    az vm open-port --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm  --port 8080 --priority 1010
+    ```
+
+## <a name="configure-jenkins"></a>配置 Jenkins
+
+1. 使用 [az vm show](/cli/azure/vm#az-vm-show) 获取示例虚拟机的公共 IP 地址。
+
+    ```azurecli
+    az vm show --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm -d --query [publicIps] --output tsv
+    ```
+
+    **注释**：
+
+    - `--query` 参数将输出限制为虚拟机的公共 IP 地址。
+
+1. 使用在上一步骤中检索到的 IP 地址，通过 SSH 连接到虚拟机。 需要确认连接请求。
+
+    ```azurecli
+    ssh azureuser@<ip_address>
+    ```
+
+    **注释**：
+
+    - 成功连接后，Cloud Shell 提示符会包含用户名和虚拟机名称：`azureuser@QuickstartJenkins-vm`。
+
+1. 获取 Jenkins 服务的状态来验证 Jenkins 是否正在运行。
+
+    ```bash
+    service jenkins status
+    ```
+
+1. 获取自动生成的 Jenkins 密码。
 
     ```bash
     sudo cat /var/lib/jenkins/secrets/initialAdminPassword
     ```
-    
-1. 首次解锁 Jenkins 仪表板时，请使用此初始密码。
 
-    ![解锁 Jenkins](./media/install-solution-template-steps/jenkins-unlock.png)
+1. 使用 IP 地址在浏览器中打开以下 URL：`http://<ip_address>:8080`
 
-1. 在下一页选择“安装建议的插件”，然后创建用于访问 Jenkins 仪表板的 Jenkins 管理员用户。 
+1. 输入之前检索到的密码，然后选择“继续”。
 
-    ![Jenkins 已准备就绪！](./media/install-solution-template-steps/jenkins-welcome.png)
+    ![用于解锁 Jenkins 的初始网页](./media/configure-on-linux-vm/unlock-jenkins.png)
 
-Jenkins 服务器现在已就绪，可以生成代码了。
+1. 勾选“选择要安装的插件”。
+
+    ![选择用于安装所选插件的选项](./media/configure-on-linux-vm/select-plugins.png)
+
+1. 在页面顶部的筛选器框中，输入 `github`。 选择 GitHub 插件并选择“安装”。
+
+1. 输入第一名管理员用户的信息，然后选择“保存并继续”。
+
+    ![输入第一名管理员用户的信息](./media/configure-on-linux-vm/create-first-user.png)
+
+1. 在“实例配置”页面上，选择“保存并完成” 。
+
+    ![实例配置的确认页面](./media/configure-on-linux-vm/instance-configuration.png)
+
+1. 选择“开始使用 Jenkins”。
+
+    ![Jenkins 已准备就绪！](./media/configure-on-linux-vm/start-using-jenkins.png)
 
 ## <a name="create-your-first-job"></a>创建第一个作业
 
-1. 从 Jenkins 控制台选择“创建新作业”，将其命名为“mySampleApp”并选择“自由格式项目”，然后选择“确定”。    
+1. 在 Jenkins 主页上，选择“创建作业”。
 
-    ![创建新作业](./media/install-solution-template-steps/jenkins-new-job.png) 
+    ![Jenkins 控制台主页](./media/configure-on-linux-vm/jenkins-home-page.png)
 
-1. 选择“源代码管理”选项卡，启用“Git”，然后在“存储库 URL”字段中输入以下 URL：    `https://github.com/spring-guides/gs-spring-boot.git`
+1. 输入 `mySampleApp` 的作业名，选择“自由风格项目”，然后选择“确定” 。
 
-    ![定义 Git 存储库](./media/install-solution-template-steps/jenkins-job-git-configuration.png) 
+    ![新作业创建](./media/configure-on-linux-vm/new-job.png)
 
-1. 依次选择“生成”选项卡、“添加生成步骤”、“调用 Gradle 脚本”。    选择“使用 Gradle 包装器”，然后在“包装器位置”中输入 `complete`，并输入 `build` 作为“任务”。   
+1. 选择“源代码管理”选项卡。启用 Git，并为存储库 URL 输入以下 URL 值：`https://github.com/spring-guides/gs-spring-boot.git` 
 
-    ![使用要生成的 Gradle 包装器](./media/install-solution-template-steps/jenkins-job-gradle-config.png) 
+    ![定义 Git 存储库](./media/configure-on-linux-vm/source-code-management.png)
 
-1. 选择“高级”，然后在“根生成脚本”字段中输入 `complete`。   选择“保存”。 
+1. 选择“生成”选项卡，然后选择“添加生成步骤” 
 
-    ![在 Gradle 包装器生成步骤中设置高级设置](./media/install-solution-template-steps/jenkins-job-gradle-advances.png) 
+    ![添加新的生成步骤](./media/configure-on-linux-vm/add-build-step.png)
 
-## <a name="build-the-code"></a>生成代码
+1. 从下拉列表中，选择“调用 Gradle 脚本”。
 
-1. 选择“立即生成”  ，编译代码并打包示例应用。 生成完成后，选择项目的  Workspace 链接。
+    ![选择 Gradle 脚本选项](./media/configure-on-linux-vm/invoke-gradle-script-option.png)
 
-    ![浏览到要从生成中获取 JAR 文件的工作区](./media/install-solution-template-steps/jenkins-access-workspace.png) 
+1. 选择“使用 Gradle 包装器”，然后在“包装器位置”中输入 `complete`，并输入 `build` 作为“任务”。************
 
-1. 导航到 `complete/build/libs`，确保能够验证生成是否成功的 `gs-spring-boot-0.1.0.jar` 位于其中。 Jenkins 服务器现已就绪，可以在 Azure 中生成你自己的项目了。
+    ![Gradle 脚本选项](./media/configure-on-linux-vm/gradle-script-options.png)
 
-## <a name="troubleshooting-the-jenkins-solution-template"></a>排查 Jenkins 解决方案模板问题
+1. 选择“高级”，然后在“根生成脚本”字段中输入 `complete` 。
 
-如果 Jenkins 解决方案模板出现 Bug，请在 [Jenkins GitHub 存储库](https://github.com/azure/jenkins/issues)中提交问题。
+    ![高级 Gradle 脚本选项](./media/configure-on-linux-vm/root-build-script.png)
+
+1. 滚动到页面底部，然后选择“保存”。
+
+## <a name="build-the-sample-java-app"></a>生成示例 Java 应用
+
+1. 显示项目的主页时，选择“立即生成”以编译代码并打包示例应用。
+
+    ![项目主页](./media/configure-on-linux-vm/project-home-page.png)
+
+1. “生成历史记录”标题下的图形指示正在生成作业。
+
+    ![正在作业生成](./media/configure-on-linux-vm/job-currently-building.png)
+
+1. 生成完成后，选择工作区链接。
+
+    ![选择工作区链接](./media/configure-on-linux-vm/job-workspace.png)
+
+1. 导航到 `complete/build/libs`，查看 `.jar` 文件是否已成功生成。
+
+    ![目标库验证是否已成功生成](./media/configure-on-linux-vm/successful-build.png)
+
+1. Jenkins 服务器现已就绪，可用于在 Azure 中生成你自己的项目了！
 
 ## <a name="next-steps"></a>后续步骤
 

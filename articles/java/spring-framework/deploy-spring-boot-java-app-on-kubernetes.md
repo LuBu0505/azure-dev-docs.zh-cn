@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: f3757b8ca84eb9c52f9e4a94f20d54fd3a303652
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: cd7afa2e54a648c282a48d781a116032e7414e1d
+ms.sourcegitcommit: f82e9f569dce0416f4040312882d28eafab05a4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378611"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88040338"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>将 Spring Boot 应用程序部署到 Azure Kubernetes 服务
 
@@ -48,8 +48,8 @@ ms.locfileid: "86378611"
    ```
    \- 或 -
    ```
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   md /users/$USER/SpringBoot
+   cd /users/$USER/SpringBoot
    ```
 
 1. 将 [Docker 上的 Spring Boot 入门]示例项目克隆到目录。
@@ -111,7 +111,12 @@ ms.locfileid: "86378611"
    az acr login
    ```
 
-1. 导航到 Spring Boot 应用程序的完整项目目录（例如，“C:\SpringBoot\gs-spring-boot-docker\complete”或“/users/robert/SpringBoot/gs-spring-boot-docker/complete”），并使用文本编辑器打开 pom.xml 文件    。
+1. 使用文本编辑器（例如 [VS Code](https://code.visualstudio.com/docs)）打开 pom.xml 文件，。
+
+   ```
+   code pom.xml
+   ```
+
 
 1. 将 *pom.xml* 文件中的 `<properties>` 集合更新为你的 Azure 容器注册表的注册表名称和 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 的最新版本。
 
@@ -119,7 +124,7 @@ ms.locfileid: "86378611"
    <properties>
       <!-- Note: If your ACR name contains upper case characters, be sure to convert them to lower case characters. -->
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>2.3.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.4.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -207,7 +212,7 @@ ms.locfileid: "86378611"
 1. 将应用部署到群集后，请查询外部 IP 地址并在 Web 浏览器中打开：
 
    ```
-   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=default
+   kubectl get services -o=jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}'
    ```
 
    ![在 Azure 上浏览示例应用][SB02]

@@ -3,13 +3,13 @@ title: Jenkins 和 Azure 概述
 description: 在 Azure 中托管 Jenkins 生成和部署自动化服务器，并使用 Azure 计算和存储资源来扩展持续集成及部署 (CI/CD) 管道。
 keywords: jenkins, azure, devops, 概述
 ms.topic: overview
-ms.date: 10/23/2019
-ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.date: 08/08/2020
+ms.openlocfilehash: 2592ad806d58b3cbfcf930f180fa582945be3196
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861300"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162036"
 ---
 # <a name="azure-and-jenkins"></a>Azure 和 Jenkins
 
@@ -19,13 +19,7 @@ ms.locfileid: "82861300"
 
 ## <a name="host-your-jenkins-servers-in-azure"></a>在 Azure 中托管 Jenkins 服务器
 
-在 Azure 中托管 Jenkins，以集中执行生成自动化，并根据软件项目增长的需要来扩展部署。 可以使用以下项在 Azure 中部署 Jenkins：
- 
-- Azure 市场中的 [Jenkins 解决方案模板](configure-on-linux-vm.md)。
-- [Azure 虚拟机](/azure/virtual-machines/linux/overview)。 请参阅我们的[教程](pipeline-with-github-and-docker.md)，在 VM 上创建 Jenkins 实例。
-- 有关在 [Azure 容器服务](/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)中运行的 Kubernetes 群集，请参阅我们的[操作指南](/azure/container-service/kubernetes/container-service-kubernetes-jenkins)。
-
-使用 [Azure Monitor 日志](/azure/log-analytics/log-analytics-overview)和 [Azure CLI](/cli/azure) 来监视和管理 Azure Jenkins 部署。
+在 Azure 中托管 Jenkins，以集中执行生成自动化，并根据软件项目增长的需要来扩展部署。 请查看[快速入门 - Jenkins 入门](configure-on-linux-vm.md)，了解如何在 Linux VM 上安装和配置 Jenkins。 使用 [Azure Monitor 日志](/azure/log-analytics/log-analytics-overview)和 [Azure CLI](/cli/azure) 来监视和管理 Azure Jenkins 部署。
 
 ## <a name="scale-your-build-automation-on-demand"></a>按需扩展生成自动化
 
