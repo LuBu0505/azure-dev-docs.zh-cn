@@ -4,12 +4,13 @@ description: 了解如何通过 Azure 门户部署和配置 Chef 客户端
 keywords: azure, chef, devops, 客户端, 安装, 门户
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: b5dd158bd06511bf440228d4ae0948596bca0612
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892896"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240819"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>通过 Azure 门户安装 Chef 客户端
 可以从 Azure 门户将 Chef 客户端扩展直接添加到 Linux 或 Windows 计算机上。 本文逐步讲解如何使用新 Linux 虚拟机完成该过程。

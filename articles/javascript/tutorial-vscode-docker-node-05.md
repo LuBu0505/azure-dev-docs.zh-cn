@@ -3,12 +3,13 @@ title: 从 Visual Studio Code 部署 Node.js 应用的容器映像
 description: 教程第 5 部分，将映像部署到 Azure 应用服务
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 487110258ed3302e781cfa24a5ae9f518ebb3bda
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: f9809deacac828cac6ba4a89b5eb08968de1d012
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791550"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218443"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>将映像部署到 Azure 应用服务
 

@@ -3,12 +3,13 @@ title: 从 Azure 应用服务流式传输日志
 description: 教程第 5 部分：查看日志
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: f96deb992af0d446876265e1b8214879ddff45e6
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 7a962f7e6dc7cdb572f78e40b25e1ff98f102ea3
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791207"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217896"
 ---
 # <a name="stream-logs-from-app-service"></a>从应用服务流式传输日志
 

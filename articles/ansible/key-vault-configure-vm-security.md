@@ -4,12 +4,13 @@ description: 了解如何使用 Ansible 通过 Azure Key Vault 配置 VM 安全�
 keywords: ansible, azure, 开发, 密钥保管库, 安全性, 凭据, 机密, 密钥, 证书, 适用于 azure 的 ansible 模块, 资源组, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 935361b62c30a34d3a2916abba79a2c2c99d1214
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84145965"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239999"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>教程：通过 Ansible 将 Azure Key Vault 与 Linux 虚拟机配合使用
 

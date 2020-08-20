@@ -3,12 +3,13 @@ title: 通过 Azure CLI 创建用于托管应用的 Azure 应用服务
 description: 教程第 3 部分：创建应用服务
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 827bcde79336304f424a283ccbdc4a4282a50bf7
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d48ee9ba1b1ddb813b0dd7f0f48da52e0cf96e15
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791422"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217936"
 ---
 # <a name="create-the-app-service"></a>创建应用服务
 

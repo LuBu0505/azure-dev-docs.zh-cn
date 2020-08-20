@@ -4,12 +4,13 @@ description: 了解如何使用 Jenkins Azure Functions 插件部署到 Azure Fu
 keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 4dbd37b9527a3c41c6f1d5b40edf974b6adda6c3
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169793"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240928"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>教程：使用 Jenkins 部署到 Azure Functions
 
@@ -51,7 +52,7 @@ ms.locfileid: "82169793"
 
 以下步骤说明如何准备 Jenkins 服务器：
 
-1. 在 Azure 上部署 [Jenkins 服务器](https://aka.ms/jenkins-on-azure)。 如果尚未安装 Jenkins 服务器的实例，则文章[在 Azure 上创建 Jenkins 服务器](./configure-on-linux-vm.md)会指导你完成该过程。
+1. 在 Azure 上部署 [Jenkins 服务器](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)。 如果尚未安装 Jenkins 服务器的实例，则文章[在 Azure 上创建 Jenkins 服务器](./configure-on-linux-vm.md)会指导你完成该过程。
 
 1. 使用 SSH 登录 Jenkins 实例。
 

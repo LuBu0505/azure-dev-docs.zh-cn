@@ -3,12 +3,13 @@ title: 将 Azure 数据库用于 Node.js 应用
 description: Azure 提供了各种不同的数据库，以用于 Web 应用和其他 Node.js 应用。
 ms.topic: article
 ms.date: 08/20/2019
-ms.openlocfilehash: 6eb7dcb97d78504c49f2ea39f5d39750dfec7215
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 3e38e3edca5022eb87f090cb8f951d65f36dcb60
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791241"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218621"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>如何将 Azure 数据库集成到 Node.js 应用中
 

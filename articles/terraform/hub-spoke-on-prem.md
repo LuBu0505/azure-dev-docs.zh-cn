@@ -3,12 +3,13 @@ title: 教程 - 在 Azure 中使用 Terraform 创建本地虚拟网络
 description: 了解如何在 Azure 中实现包含本地资源的本地虚拟网络 (VNet)。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 0f336a9dae0c063cb8498f0aae4db3d82d1dbcac
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329595"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241099"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建本地虚拟网络
 

@@ -4,12 +4,13 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: buhollan
-ms.openlocfilehash: c95177d6b4cb101b764acd8f8dad54f937a495eb
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9db8df165bd4d0f42694ff1e752878c8f055bce8
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791560"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218408"
 ---
 1. 在终端命令提示符处，转到要创建应用文件夹的位置。
 

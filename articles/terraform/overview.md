@@ -3,12 +3,13 @@ title: 将 Terraform 与 Azure 结合使用
 description: 了解 Terraform 如何帮助你在 Azure 上部署基础结构并对其进行版本控制。
 ms.topic: overview
 ms.date: 10/26/2019
-ms.openlocfilehash: 8819a20e9bfb381cb6eb4f5b610b4ffcaa1d63b2
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.custom: devx-track-terraform
+ms.openlocfilehash: d5089a9e27f9f17ebde6a2e9847908157018e08c
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334492"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241049"
 ---
 # <a name="terraform-with-azure"></a>Terraform 与 Azure
 

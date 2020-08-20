@@ -3,12 +3,13 @@ title: 通过 Visual Studio Code 使用容器注册表
 description: 教程第 2 部分：使用容器注册表
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 01e35f12e83a7e53d6d5b78c4fcf156d9a5b53f0
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: c0eaa345af7d439cda47672f597ce1d82e78a355
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791206"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218418"
 ---
 # <a name="use-a-container-registry"></a>使用容器注册表
 

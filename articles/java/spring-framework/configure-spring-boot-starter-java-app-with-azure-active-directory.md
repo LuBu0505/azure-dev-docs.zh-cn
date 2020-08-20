@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f449df07048dfcc20e173bc4103995ac989e38fe
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379421"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240939"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -188,7 +188,7 @@ ms.locfileid: "86379421"
    spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
    # Specifies the list of Active Directory groups to use for authorization:
-   azure.activedirectory.active-directory-groups=Users
+   azure.activedirectory.user-group.allowed-groups=Users
    ```
 
    其中：
@@ -198,7 +198,7 @@ ms.locfileid: "86379421"
    | `azure.activedirectory.tenant-id` | 包含前面复制的 Active Directory“目录 ID”。 |
    | `spring.security.oauth2.client.registration.azure.client-id` | 包含前面填写的、应用注册的“应用程序 ID”。 |
    | `spring.security.oauth2.client.registration.azure.client-secret` | 包含前面填写的、应用注册密钥中的“值”。 |
-   | `azure.activedirectory.active-directory-groups` | 包含用于授权的 Active Directory 组列表。 |
+   | `azure.activedirectory.user-group.allowed-groups` | 包含用于授权的 Active Directory 组列表。 |
 
    > [!NOTE]
    > 如需 application.properties 文件中提供的值的完整列表，请参阅 GitHub 上的 [Azure Active Directory Spring Boot 示例][AAD Spring Boot Sample]。
@@ -234,7 +234,7 @@ ms.locfileid: "86379421"
    ```
 
    > [!NOTE]
-   > 为 `@PreAuthorize("hasRole('')")` 方法指定的组名称必须包含 *application.properties* 文件的 `azure.activedirectory.active-directory-groups` 字段中指定的某个组。
+   > 为 `@PreAuthorize("hasRole('')")` 方法指定的组名称必须包含 *application.properties* 文件的 `azure.activedirectory.user-group.allowed-groups` 字段中指定的某个组。
    >
    > 还可以为不同的请求映射指定不同的授权设置，例如：
    >

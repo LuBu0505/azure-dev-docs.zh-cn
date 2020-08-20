@@ -4,12 +4,13 @@ description: 了解如何使用 Ansible，以便根据共享映像库中的通�
 keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集, 共享映像库
 ms.topic: tutorial
 ms.date: 10/14/2019
-ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: c214daa3f63f88711ace9d41ffb9978d20551fc9
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743266"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240569"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>教程：使用 Ansible 从 Azure 共享映像库创建 VM 或虚拟机规模集
 

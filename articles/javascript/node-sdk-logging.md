@@ -3,14 +3,13 @@ title: 使用适用于 JavaScript 的 Azure SDK 进行日志记录
 description: 了解如何使用适用于 JavaScript 的 Azure SDK 客户端库启用日志记录
 ms.topic: article
 ms.date: 07/23/2020
-ms.author: dsindona
-author: dsindona
-ms.openlocfilehash: 1fd961709723891824cedfd0d9b853a328cb2e46
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fb4be05552a5ed1ea239776985f4f35ca6e900fa
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335240"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218846"
 ---
 # <a name="logging-with-the-azure-sdk-for-javascript"></a>使用适用于 JavaScript 的 Azure SDK 进行日志记录
 

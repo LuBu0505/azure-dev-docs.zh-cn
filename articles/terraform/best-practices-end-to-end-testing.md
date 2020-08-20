@@ -3,12 +3,13 @@ title: 教程 - 在 Terraform 项目上设置端到端 Terratest 测试
 description: 详细了解在 Terraform 项目上使用 Terratest 进行端到端测试的情况。
 ms.topic: tutorial
 ms.date: 07/31/2020
-ms.openlocfilehash: 7e287ea1f15d539182b0f9bef135ce7ebcc65d5f
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 182d403ed227eca50961e9db2df0d6766c4b9f54
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810600"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241289"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>教程：在 Terraform 项目上设置端到端 Terratest 测试
 

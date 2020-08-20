@@ -3,12 +3,13 @@ title: 教程 - 使用 Terraform 在 Azure 中创建辐射网络
 description: 了解如何在中心-辐射拓扑中实现两个连接到某个中心的分支虚拟网络 (VNet)。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 935bf66b19eeb73d1fff5d4471d2541f38d7f03a
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 236665b205a602466244a2c5d5cfee5800c51317
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329585"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241089"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建辐射网络
 

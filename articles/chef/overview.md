@@ -4,12 +4,13 @@ description: 介绍如何使用 Chef 来配置和测试 Azure 基础结构
 keywords: azure, chef, devops, 虚拟机, 概述, 自动控制
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: 94cfe5d57673db151d53133fb8b2ef66c5629b93
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 86678436612f97e2928228ec9dd47ac9185d9b72
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892986"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240919"
 ---
 # <a name="using-chef-with-azure"></a>将 Chef 与 Azure 配合使用
 
@@ -26,7 +27,7 @@ ms.locfileid: "80892986"
 在 Azure Cloud Shell 中直接使用 Chef 工作站！ 直接从 Cloud Shell 运行所有 Chef 实用程序和 InSpec。 可以从以下位置利用 Chef 命令：
 
 * [chef](https://docs.chef.io/ctl_chef.html)
-* [kitchen](https://docs.chef.io/ctl_kitchen.html)
+* [厨房](https://docs.chef.io/ctl_kitchen.html)
 * [inspec](https://www.inspec.io/docs/reference/cli/)
 * [knife](https://docs.chef.io/knife.html)
 * [cookstyle](https://docs.chef.io/cookstyle.html)

@@ -3,12 +3,13 @@ title: 使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规�
 description: 了解如何使用 Terraform 通过 Packer 生成的自定义映像配置 Azure 虚拟机规模集，并对其进行版本控制
 ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 541d294a3098e2da7c76855de4db0c425b408e0e
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478467"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241189"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规模集
 

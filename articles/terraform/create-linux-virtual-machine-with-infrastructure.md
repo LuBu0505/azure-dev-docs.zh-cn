@@ -4,12 +4,13 @@ description: 了解如何使用 Terraform 在 Azure 中创建和管理完整的 
 keywords: azure devops terraform linux vm 虚拟机
 ms.topic: how-to
 ms.date: 06/14/2020
-ms.openlocfilehash: 518e5f619e142b3bed0ff539ff2b448c6f3e5b48
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 387f53b9fb1a78a66b9628346564132002b77fb0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478347"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241219"
 ---
 # <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 

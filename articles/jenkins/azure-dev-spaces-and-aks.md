@@ -4,12 +4,13 @@ description: 了解如何在持续集成管道中使用 Azure Dev Spaces 插件�
 keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes 服务
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369931"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240849"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>教程：将 Azure Dev Spaces 用于 Azure Kubernetes 服务
 
@@ -37,7 +38,7 @@ ms.locfileid: "83369931"
 
 * [已安装 Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)（版本 2.0.43 或更高版本）。
 
-* Jenkins 主服务器。 如果还没有 Jenkins master，在 Azure 上通过执行此 [快速入门](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://aka.ms/jenkins-on-azure) 。 
+* Jenkins 主服务器。 如果还没有 Jenkins master，在 Azure 上通过执行此 [快速入门](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) 。 
 
 * Helm 和 kubectl 必须已安装在 Jenkins 服务器上并可供 Jenkins 帐户使用，正如本教程后面部分所述。
 

@@ -4,12 +4,13 @@ description: 了解如何在 Azure 应用服务中纵向扩展应用
 keywords: ansible, azure, devops, bash, playbook, Azure 应用服务, Web 应用, 缩放, Java
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: beb9009fa02742ce39b15da9be60895acfbcd3cc
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 6c472db1f2d0b7cdc52694895f521c40202adaac
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743689"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240399"
 ---
 # <a name="tutorial-scale-apps-in-azure-app-service-using-ansible"></a>教程：使用 Ansible 在 Azure 应用服务中缩放应用
 

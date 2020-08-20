@@ -4,12 +4,13 @@ description: 了解如何在 Azure 中创建一个 Jenkins 虚拟机，用于在
 keywords: jenkins, azure, devops, 管道, cicd, docker
 ms.topic: tutorial
 ms.date: 03/27/2017
-ms.openlocfilehash: 29c5d8926fe60eeb2e3603f0e3248e1d94763b6c
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 2a9bc23852a04b42b72628adda116585d354f860
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861290"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240699"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>教程：使用 GitHub 和 Docker 创建 Jenkins 管道
 

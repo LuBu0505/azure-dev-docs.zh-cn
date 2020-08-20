@@ -4,12 +4,13 @@ description: 了解如何在 Azure 容器实例中将 Jenkins 服务器配置为
 keywords: jenkins, azure, devops, 容器实例, 生成代理
 ms.topic: article
 ms.date: 08/31/2018
-ms.openlocfilehash: 0fa994657412190ce1860f7bd30915cc8bb2bc91
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861280"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240899"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>教程：使用 Azure 容器实例作为 Jenkins 生成代理
 

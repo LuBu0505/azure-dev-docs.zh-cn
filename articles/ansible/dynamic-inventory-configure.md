@@ -4,12 +4,13 @@ description: 了解如何使用 Ansible 管理 Azure 动态库存
 keywords: ansible, azure, devops, bash, cloudshell, 动态库存
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 20c152c6f276aed68abf10a6f2e6ae052235a99f
-ms.sourcegitcommit: 9365b437b119eebf98e40f851bd6f66fe966be4a
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 8ada951f0c1e21de8e193d94fd7e7dcf35ae03be
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86422665"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240299"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>教程：使用 Ansible 配置 Azure 资源的动态库存
 
@@ -92,7 +93,7 @@ Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible-collections/
 1. 使用 GNU `wget` 命令检索 `azure_rm.py` 脚本：
 
     ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/master/scripts/inventory/azure_rm.py
+    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
     ```
 
 1. 使用 `chmod` 命令更改对 `azure_rm.py` 脚本的访问权限。 以下命令使用 `+x` 参数允许执行（运行）指定的文件 (`azure_rm.py`)：

@@ -3,12 +3,13 @@ title: 教程 - 使用 Terraform 和 Azure 进行集成测试
 description: 了解集成测试，学习如何使用 Azure DevOps 为 Terraform 项目配置持续集成。
 ms.topic: tutorial
 ms.date: 07/31/2020
-ms.openlocfilehash: 562e7a493d94d9544a734704b96c406b7ceddb9c
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 3d305fb63deffb8f56ebd2cb1503bac543c5b84b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87506987"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241299"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>教程：在 Azure 中为 Terraform 项目配置集成测试
 

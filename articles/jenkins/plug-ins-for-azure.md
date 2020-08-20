@@ -4,12 +4,13 @@ description: 了解可用于 Azure 的 Jenkins 插件
 keywords: jenkins, 插件, azure, devops
 ms.date: 04/25/2020
 ms.topic: article
-ms.openlocfilehash: 2ad7a0ba6968548db739c3fa25e2b2e6a8350d16
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: a8738ad8a66f85467527051f383975890fb5dcd2
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169653"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240609"
 ---
 # <a name="jenkins-plug-ins-for-azure"></a>适用于 Azure 的 Jenkins 插件
 

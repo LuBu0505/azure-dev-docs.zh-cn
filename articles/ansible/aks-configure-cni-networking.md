@@ -4,12 +4,13 @@ description: 了解如何使用 Ansible 在 Azure Kubernetes 服务 (AKS) 群集
 keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, Kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 6be7056a89b0ac0327ffc5ba39b77c31c23bb0fe
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: f3892b9c25b952d2d8c71e4e44857557c0a1813b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743907"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239949"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>教程：使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置 Azure CNI 网络
 

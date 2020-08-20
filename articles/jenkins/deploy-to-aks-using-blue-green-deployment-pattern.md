@@ -4,12 +4,13 @@ description: 了解如何使用 Jenkins 和蓝/绿部署模式部署到 Azure Ku
 keywords: jenkins, azure, devops, kubernetes, k8s, aks, 蓝绿部署, 持续交付, cd
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 051a1531c9e973231ca56256603df63f60e21cf9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169943"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240988"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>教程：使用蓝/绿部署模式部署到 Azure Kubernetes 服务 (AKS)
 
@@ -189,7 +190,7 @@ GitHub 上的 Microsoft 存储库中提供了一个演示如何使用 Jenkins �
 
 本部分介绍如何使 Jenkins 服务器准备好运行一个适合用于测试的生成项目。 但是，应该使用 [Azure VM 代理](https://plugins.jenkins.io/azure-vm-agents)或 [Azure 容器代理](https://plugins.jenkins.io/azure-container-agents)运转 Azure 中的代理来运行生成项目。 有关详细信息，请参阅有关[在主节点上进行生成所造成的安全影响](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master)的 Jenkins 文章。
 
-1. 部署 [Azure 上的 Jenkins 主节点](https://aka.ms/jenkins-on-azure)。
+1. 部署 [Azure 上的 Jenkins 主节点](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)。
 
 1. 通过 SSH 连接到服务器，并在运行生成项目的服务器上安装生成工具。
    

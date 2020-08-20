@@ -4,12 +4,13 @@ description: 了解如何使用 Ansible 通过虚拟网络对等互连来连接�
 keywords: ansible, azure, devops, bash, playbook, 网络, 对等互连
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 4dfda10693ad86131ec529d7ac06070098a40a5e
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453688"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240049"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>教程：使用 Ansible 配置 Azure 虚拟网络对等互连
 
