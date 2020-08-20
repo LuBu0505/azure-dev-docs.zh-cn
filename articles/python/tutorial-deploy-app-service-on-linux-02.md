@@ -4,12 +4,12 @@ description: 教程步骤 2，设置应用程序
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 0f85ea4e7da74b67ce2a20168ae751444b63b292
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 9bb25bf6cfef2e6a93efa2ca195f27a10a6ca891
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983582"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501392"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:对应用进行部署到 Azure 应用服务的准备
 
@@ -89,4 +89,4 @@ ms.locfileid: "87983582"
 > [!div class="nextstepaction"]
 > [我的应用已准备就绪 - 转到步骤 3 >>>](tutorial-deploy-app-service-on-linux-03.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=02-prepare-app)
+[存在问题？请告诉我们。](https://aka.ms/FlaskVSCQuickstartHelp)

@@ -4,12 +4,12 @@ description: 教程步骤 5，部署 Web 应用代码
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b1c6fba45520e3e327f4b15d60d28000091ad016
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e7c600314f1535589ca15daaa3bbbd9ffdc69b9d
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983610"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501452"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5：将 Python Web 应用部署到 Linux 上的 Azure 应用服务
 
@@ -47,4 +47,4 @@ ms.locfileid: "87983610"
 > [!div class="nextstepaction"]
 > [我部署了我的应用 - 转到步骤 6 >>>](tutorial-deploy-app-service-on-linux-06.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=05-deploy-app)
+[存在问题？请告诉我们。](https://aka.ms/FlaskVSCQuickstartHelp)

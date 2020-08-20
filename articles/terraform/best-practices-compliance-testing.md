@@ -3,12 +3,13 @@ title: 教程 - 使用 Terraform 和 Azure 进行符合性测试
 description: 了解如何将行为驱动开发 (BDD) 样式符合性测试应用于 Terraform 配置
 ms.topic: tutorial
 ms.date: 07/31/2020
-ms.openlocfilehash: 38358be8bc7626d7b8a6b2df7e5da9b53d98618e
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 7abb4072d923d4d5ec4fa3df6251f07576dba3bc
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810610"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241309"
 ---
 # <a name="tutorial-compliance-testing-with-terraform-and-azure"></a>教程：使用 Terraform 和 Azure 进行符合性测试
 
