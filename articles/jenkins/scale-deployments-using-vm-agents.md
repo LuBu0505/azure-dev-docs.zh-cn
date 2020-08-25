@@ -3,13 +3,14 @@ title: 教程 - 使用 Azure VM 代理缩放 Jenkins 部署
 description: 了解如何使用安装了 Jenkins Azure VM 代理插件的 Azure 虚拟机将额外的容量添加到 Jenkins 管道。
 keywords: jenkins, azure, devops, 虚拟机, 代理
 ms.topic: tutorial
-ms.date: 07/31/2018
-ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: d081861eac98495d125a1a5eb5dd9700fb7783a8
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162046"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614543"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>教程：使用 Azure VM 代理缩放 Jenkins 部署
 
@@ -26,6 +27,10 @@ ms.locfileid: "88162046"
 > * 在 Azure VM 代理上运行作业
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
+
+## <a name="prerequisites"></a>先决条件
+
+- **Jenkins 安装**：如果你无权访问 Jenkins 安装，请[使用 Azure CLI 配置 Jenkins](configure-on-linux-vm.md)
 
 ## <a name="install-azure-vm-agents-plugin"></a>安装 Azure VM 代理插件
 
@@ -81,8 +86,6 @@ ms.locfileid: "88162046"
     完成的服务主体应使用 `id` 字段作为**订阅 ID**，使用 `appId` 值作为**客户端 ID**，使用 `password` 作为**客户端密码**，并使用 `tenant` 作为**租户 ID**。 选择“添加”**** 添加服务主体，然后配置插件以使用新创建的凭据。
 
     ![配置 Azure 服务主体](./media/scale-deployments-using-vm-agents/new-service-principal.png)
-
-    
 
 1. 在“资源组名称”**** 部分中，选择“创建新项”****，然后输入 `myJenkinsAgentGroup`。
 1. 选择“验证配置”**** 连接到 Azure 以测试配置文件设置。

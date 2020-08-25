@@ -4,12 +4,13 @@ description: 了解如何配置 Jenkins，以便从 GitHub 持续集成 (CI) 并
 keywords: jenkins, azure, devops, aks, azure kubernetes 服务, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: cbde97c7796a7f89bfb8ec0cbe530e84bd750e04
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: c73e5c567f237c6f859b52230742ae74b87326f5
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861180"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240999"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>教程：使用 Jenkins 从 GitHub 部署到 Azure Kubernetes 服务
 
@@ -227,8 +228,8 @@ az role assignment create --assignee 626dd8ea-042d-4043-a8df-4ef56273670f --role
 在 Jenkins 门户主页的左侧，选择“新建项”  ：
 
 1. 输入“azure-vote”  作为作业名称。 依次选择“自由风格项目”  和“确定” 
-1. 在“常规”部分下面，选择“GitHub 项目”并输入分叉的存储库的 URL，例如 https:\//github.com/\<your-github-account\>/azure-voting-app-redis   
-1. 在“源代码管理”部分下面，选择“Git”并输入分叉的存储库 .git  的 URL，例如 https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git   
+1. 在“常规”部分下面，选择“GitHub 项目”并输入分支存储库的 URL，例如 https:\//github.com/\<your-github-account\>/azure-voting-app-redis 
+1. 在“源代码管理”部分下面，选择“Git”并输入分支存储库 .git 的 URL，例如 https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git  
 
 1. 在“生成触发器”  部分下面，选择“用于 GITscm 轮询的 GitHub 挂钩触发器” 
 1. 在“生成环境”  下，选择“使用机密文本或文件” 

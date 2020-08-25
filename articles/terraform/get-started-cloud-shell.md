@@ -1,17 +1,18 @@
 ---
-title: 快速入门 - 在 Azure Cloud Shell 中开始使用 Terraform
+title: 快速入门 - 使用 Azure Cloud Shell 配置 Terraform
 description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azure 资源。
 keywords: azure devops terraform 安装 配置 cloud shell init 计划 应用 执行 门户 登录 rbac 服务主体 自动化脚本
 ms.topic: quickstart
 ms.date: 08/08/2020
-ms.openlocfilehash: 736c805b8dd8c95d1950537b754059cca9fc5712
-ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
+ms.custom: devx-track-terraform
+ms.openlocfilehash: d8cec2954357269b5605a7b35c96030b8e8b5fa0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2020
-ms.locfileid: "88026136"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241169"
 ---
-# <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>快速入门：在 Azure Cloud Shell 中开始使用 Terraform
+# <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>快速入门：使用 Azure Cloud Shell 配置 Terraform
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 

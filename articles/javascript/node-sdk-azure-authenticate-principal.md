@@ -3,12 +3,13 @@ title: 使用 Node.js 创建 Azure 服务主体
 description: 了解如何通过 Node.js 和 JavaScript 使用服务主体身份验证
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791222"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218885"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>使用 Node.js 创建 Azure 服务主体 
 

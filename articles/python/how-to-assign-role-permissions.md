@@ -4,12 +4,12 @@ description: 如何使用 Azure CLI 向服务主体或应用标识授予权限
 ms.date: 05/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: facfa1663e6f62a7458f99ee20c86f66ee67b17d
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983129"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614486"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>如何向应用标识或服务主体分配角色权限
 
@@ -17,7 +17,7 @@ Azure 的基于角色的访问控制 (RBAC) 系统管理各种资源的特定权
 
 在实践中，始终仅分配安全主体在最特定范围内真正需要的角色。 即使最初看起来更方便操作，也应避免在更广泛的范围内分配更广泛的角色。 如果安全主体曾被泄露（即，如果该主体的凭据在数据泄露或其他安全事件中公开），通过限制角色和范围，你可以限制哪些资源面临风险。
 
-由于在开发和生产中使用不同的安全主体，因此需要在每个环境中重复角色分配。 也就是说，在开发过程中，通常会将角色分配给工作站上创建的本地服务主体（请参阅[配置本地 Python 开发环境 - 身份验证](configure-local-development-environment.md#configure-authentication)）。 在生产中，你可以在部署之前将角色分配给应用程序标识或服务主体，以确保应用程序在启动时具有访问权限。
+由于在开发和生产中使用不同的安全主体，因此需要在每个环境中重复角色分配。 也就是说，在开发过程中，通常会将角色分配给工作站上创建的本地服务主体（请参阅[配置本地 Python 开发环境 - 身份验证](configure-local-development-environment.md#configure-authentication)）。 在生产环境中，你可以在部署之前将角色分配给应用程序的托管标识或服务主体，确保应用程序在启动时具有访问权限。 有关详细信息，请参阅[身份验证 - 在 Azure 上运行时的应用标识](azure-sdk-authenticate.md#identity-when-running-the-app-on-azure)。
 
 有关 RBAC 的一般详细信息，请参阅 [Azure 基于角色的访问控制是什么？](/azure/role-based-access-control/overview)。
 
@@ -64,7 +64,7 @@ Azure 的基于角色的访问控制 (RBAC) 系统管理各种资源的特定权
 
 ## <a name="identify-scope-and-assign-a-role-through-the-azure-cli"></a><a name="azure-cli"></a>确定范围并通过 Azure CLI 分配角色
 
-具有 Azure CLI 的角色分配使用 [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) 命令。 使用 `az role assignment create` 添加分配，使用 `az role assignment delete` 删除分配。 
+具有 Azure CLI 的角色分配使用 [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) 命令。 使用 `az role assignment create` 添加分配，使用 `az role assignment delete` 删除分配。
 
 尽管[使用 Azure CLI 添加或删除 Azure 角色分配](/azure/role-based-access-control/role-assignments-cli)中介绍了完整的进程，但以下摘要提供了与此开发人员中心上的其他文章相关的特定示例。
 

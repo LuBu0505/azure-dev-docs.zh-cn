@@ -1,17 +1,18 @@
 ---
-title: 快速入门 - Jenkins 入门
+title: 快速入门 - 使用 Azure CLI 配置 Jenkins
 description: 了解如何在 Azure Linux 虚拟机上安装 Jenkins 以及如何构建示例 Java 应用程序。
 keywords: jenkins, azure, devops, 门户, linux, 虚拟机
 ms.topic: quickstart
-ms.date: 08/07/2020
-ms.openlocfilehash: 06d2365f51df76861a3a154702c4b82f962f7038
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162086"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614557"
 ---
-# <a name="quickstart-get-started-with-jenkins"></a>快速入门：Jenkins 入门
+# <a name="quickstart-configure-jenkins-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Jenkins
 
 本快速入门介绍如何使用经过配置的适用于 Azure 的工具和插件在 Ubuntu Linux VM 上安装 [Jenkins](https://jenkins.io)。
 
@@ -64,19 +65,36 @@ ms.locfileid: "88162086"
 1. 使用 [az group create](/cli/azure/group#az-group-create) 创建资源组。 可能需要将 `--location` 参数替换为你的环境的相应值。
 
     ```azurecli
-    az group create --name QuickstartJenkins-rg --location eastus
+    az group create \
+    --name QuickstartJenkins-rg \
+    --location eastus
     ```
 
 1. 使用 [az vm create](/cli/azure/vm#az-vm-create) 创建虚拟机。
 
     ```azurecli
-    az vm create --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm --image UbuntuLTS --admin-username "azureuser" --generate-ssh-keys --custom-data cloud-init-jenkins.txt
+    az vm create \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm \
+    --image UbuntuLTS \
+    --admin-username "azureuser" \
+    --generate-ssh-keys \
+    --custom-data cloud-init-jenkins.txt
+    ```
+
+1. 使用 [az vm list](/cli/azure/vm#az-vm-list) 验证新虚拟机的创建（和状态）。
+
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
 1. 使用 [az vm open](/cli/azure/vm#az-vm-open-port) 在新虚拟机上打开端口 8080。
 
     ```azurecli
-    az vm open-port --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm  --port 8080 --priority 1010
+    az vm open-port \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm  \
+    --port 8080 --priority 1010
     ```
 
 ## <a name="configure-jenkins"></a>配置 Jenkins
@@ -84,7 +102,11 @@ ms.locfileid: "88162086"
 1. 使用 [az vm show](/cli/azure/vm#az-vm-show) 获取示例虚拟机的公共 IP 地址。
 
     ```azurecli
-    az vm show --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm -d --query [publicIps] --output tsv
+    az vm show \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm -d \
+    --query [publicIps] \
+    --output tsv
     ```
 
     **注释**：
@@ -124,6 +146,8 @@ ms.locfileid: "88162086"
     ![选择用于安装所选插件的选项](./media/configure-on-linux-vm/select-plugins.png)
 
 1. 在页面顶部的筛选器框中，输入 `github`。 选择 GitHub 插件并选择“安装”。
+
+    ![安装 GitHub 插件](./media/configure-on-linux-vm/install-github-plugin.png)
 
 1. 输入第一名管理员用户的信息，然后选择“保存并继续”。
 

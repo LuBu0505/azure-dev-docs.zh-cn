@@ -1,31 +1,21 @@
 ---
 title: 管理 Azure 开发的本地服务主体
 description: 如何使用 Azure 门户或 Azure CLI 管理为本地开发创建的服务主体。
-ms.date: 05/12/2020
+ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 8901a7ef9de7bbca31c5ba0352c79a4ee2c5cdf9
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983099"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614509"
 ---
 # <a name="how-to-manage-service-principals"></a>如何管理服务主体
 
-出于安全考虑，应始终细心地管理授权应用代码访问和修改任何 Azure 资源的方式。 在本地测试代码时，应始终使用本地服务主体，而不是以具有完全特权的用户身份运行，如[配置本地 Python 开发环境 - 身份验证](configure-local-development-environment.md#configure-authentication)中所述。
+如[如何对应用进行身份验证](azure-sdk-authenticate.md)中所述，通常使用服务主体来标识 Azure 中的应用，但使用托管标识时除外。
 
-随着时间的推移，可能需要删除、重命名或管理这些服务主体，可以通过 Azure 门户或使用 Azure CLI 来执行这些操作。
-
-## <a name="basics-of-azure-authorization"></a>Azure 授权的基础知识
-
-每当代码尝试对 Azure 资源执行任何操作（通过 Azure 库中的类执行）时，Azure 都会确保该应用程序已被授权执行该操作。 可以使用 [Azure 门户](https://portal.azure.com)或 Azure CLI 向应用程序标识授予特定的基于角色或基于资源的权限。 （当应用程序的安全受到威胁时，此过程可避免向该应用程序授予多余的权限，以防止权限被利用。）
-
-当部署到 Azure 时，应用程序的标识通常与在托管该应用程序的服务（如启用托管标识时的 Azure 应用服务、Azure Functions、虚拟机等）中为其提供的名称相同。 但在本地运行代码时，不会涉及此类托管服务，因此需要使用其他合适的名称来表示 Azure。
-
-为此，请使用本地服务主体，它是应用标识的另一名称，而不是用户标识。 服务主体具有名称、“租户”标识符（实质上是组织 ID）、应用或“客户端”标识符以及机密/密码。 这些凭据足以使用 Azure 对标识进行身份验证，然后可以检查该标识是否被授权访问任何给定的资源。
-
-每个开发人员都应具有自己的服务主体，这些服务主体可以安全地存储在他们的工作站上的用户帐户中，且永远不要将其存储在源代码管理存储库中。 如有任一个服务主体被窃取或泄露，可以在 Azure 门户上轻松删除它以撤销其所有权限，然后为该开发人员重新创建服务主体。
+随着时间的推移，通常需要删除、重命名或管理这些服务主体，你可以通过 Azure 门户或使用 Azure CLI 来执行这些操作。
 
 ## <a name="manage-service-principals-using-the-azure-portal"></a>使用 Azure 门户管理服务主体
 

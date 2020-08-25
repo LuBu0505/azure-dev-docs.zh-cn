@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 9e6794d655d420d5f6b4093aecf15b7540f34709
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147388"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614530"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
@@ -190,12 +190,18 @@ ms.locfileid: "88147388"
 
 代码部署完成且数据库就绪后，基本就可以使用该应用了。 余下的唯一任务就是在数据库本身中建立必要的架构。 将 Django 应用中的数据模型“迁移”到数据库即可实现这一点。
 
-1. 在 Web 应用的浏览器窗口或选项卡中，选择 SSH（在左侧的“部署工具”下） 。 随即可在 Web 应用服务器上打开 SSH 控制台。 由于需要启动 Web 应用容器，因此首次连接可能需要一点时间。
+1. 在 Web 应用的浏览器窗口或选项卡中，选择“SSH”（在左侧的“部署工具”下），然后选择“开始”，以在 Web 应用服务器上打开 SSH 控制台  。 由于需要启动 Web 应用容器，因此首次连接可能需要一点时间。
 
 1. 在控制台中，更改为 Web 应用的文件夹：
 
     ```bash
     cd site/wwwroot
+    ```
+
+1. 激活容器的虚拟环境：
+
+    ```bash
+    source /antenv/bin/activate
     ```
 
 1. 安装 Python 包：
@@ -247,6 +253,8 @@ ms.locfileid: "88147388"
 1. 如[运行 Django 数据库迁移](#run-django-database-migrations)中所述，通过 SSH 再次连接到 Web 应用。
 
 1. 使用 `cd site/wwwroot` 更改为应用文件夹。
+
+1. 使用 `source /antenv/bin/activate` 激活虚拟环境。
 
 1. 使用 `python manage.py migrate` 再次运行迁移。
 

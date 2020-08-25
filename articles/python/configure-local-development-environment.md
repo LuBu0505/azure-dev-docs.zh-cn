@@ -4,12 +4,12 @@ description: 如何设置适用于 Azure 的本地 Python 开发环境，包括 
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983139"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614504"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>为 Azure 配置本地 Python 开发环境
 
@@ -78,7 +78,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
 
 ## <a name="configure-authentication"></a>配置身份验证
 
-如在[如何管理服务主体 - 授权基础知识](how-to-manage-service-principals.md#basics-of-azure-authorization)中所述，每个开发人员都需要一个服务主体，以便在本地测试应用程序代码时将其用作应用程序标识。
+如[如何对应用进行身份验证](azure-sdk-authenticate.md#identity-when-running-the-app-locally)中所述，每个开发人员都需要一个服务主体，以便在本地测试应用代码时将其用作应用程序标识。
 
 以下各部分介绍了如何创建服务主体，以及如何在需要时向 Azure 库提供服务主体属性的环境变量。
 
@@ -98,7 +98,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
 
     如果你在组织中，则可能没有在订阅中运行此命令的权限。 在这种情况下，请与订阅所有者联系，让他们为你创建服务主体。
 
-1. 创建 Azure 库需要的环境变量。 （azure-identity 库的 `DefaultAzureCredential` 对象将查找这些变量）。
+1. 使用以下命令创建 Azure 库所需的环境变量。 （azure-identity 库的 `DefaultAzureCredential` 对象将查找这些变量）。
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -124,7 +124,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
 
     若要检索订阅 ID，请运行 [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) 命令并查看输出结果中的 `id` 属性。
 
-    为方便起见，请使用这些命令创建一个 .sh 或 .cmd 文件，每次打开终端或命令提示符进行本地测试时，都可以运行这些命令。 同样，不要将该文件添加到源代码管理中，这样它就会仅保留在用户帐户中。
+    为了方便起见，请创建包含这些命令的命令行脚本文件（例如在 macOS/Linux 上为 setenv.sh，在 Windows 上为 setenv.cmd） 。 然后，在每次打开终端或命令提示符进行本地测试时，都可运行此脚本来设置变量。 同样，不要将此脚本文件添加到源代码管理中，这样它只会保留在用户帐户中。
 
 1. 保护客户端 ID 和客户端密码（以及存储它们的所有文件），以便它们始终保留在工作站上的特定用户帐户中。 永远不要将这些属性保存在源代码管理中或与其他开发人员共享。 可以在需要时删除服务主体并创建新的服务主体。
 

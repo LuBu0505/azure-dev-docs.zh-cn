@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82031309"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501262"
 ---
 # <a name="azure-cli-release-notes"></a>Azure CLI 发行说明
 
@@ -150,7 +150,7 @@ ms.locfileid: "82031309"
 * `az acr import`：修改帮助和错误消息以阐明 --source 和 --registry 的用法
 * 为参数 'registry_name' 添加了验证程序
 * `az acr login`：删除了 '--expose-token' 上的预览标志
-* [中断性变更] 'az acr task create/update' 分支参数已删除
+* [中断性变更E] 'az acr task create/update' 分支参数已删除
 * 'az acr task update'：客户现在可以单独更新上下文、git-token 和/或触发器
 * 'az acr agentpool'：新功能
 
@@ -289,7 +289,7 @@ ms.locfileid: "82031309"
 * 支持创建 aks 群集来启用托管标识
 * az aks：验证网络插件是“azure”还是“kubenet”
 * az aks：添加 aad 会话密钥支持
-* [中断性变更] az aks：支持针对 omsagent 的 GF 和 BF 的 msi 更改（容器监视）（#1）
+* [中断性变更E] az aks：支持针对 omsagent 的 GF 和 BF 的 msi 更改（容器监视）（#1）
 * az aks use-dev-spaces：将终结点类型选项添加到 use-dev-spaces 命令，自定义在 Azure Dev Spaces 控制器上创建的终结点
 
 ### <a name="appconfig"></a>AppConfig
@@ -325,7 +325,7 @@ ms.locfileid: "82031309"
 * az sig image-version：添加 --data-snapshot-luns
 * az ppg show：添加 --colocation-status，允许获取邻近放置组中所有资源的归置状态
 * az vmss create/update：支持自动修复
-* [中断性变更] az image template：将模板重命名为生成器
+* [中断性变更E] az image template：将模板重命名为生成器
 * az image builder create：添加 --image-template
 
 ### <a name="cosmos-db"></a>Cosmos DB
@@ -439,7 +439,7 @@ ms.locfileid: "82031309"
 * vm/vmss/availability-set update：添加了 --ppg，允许更新 ProximityPlacementGroup
 * vmss create：添加了 --data-disk-iops 和 --data-disk-mbps
 * az vm host：删除了 `vm host` 和 `vm host group` 的预览标记
-* [中断性变更] 修复 10728：`az vm create`：如果指定了 vnet 但子网不存在，则自动创建子网
+* [中断性变更E] 修复 10728：`az vm create`：如果指定了 vnet 但子网不存在，则自动创建子网
 * 提高了 vm image list 的可靠性
 
 ### <a name="eventhub"></a>Eventhub
@@ -460,7 +460,7 @@ ms.locfileid: "82031309"
 
 ### <a name="packaging"></a>打包
 
-* [中断性变更] 删除了对 Python 2.7 的支持
+* [中断性变更E] 删除了对 Python 2.7 的支持
 
 ### <a name="profile"></a>配置文件
 
@@ -491,7 +491,7 @@ ms.locfileid: "82031309"
 ### <a name="acr"></a>ACR
 
 * [中断性变更] `az acr delete` 将进行提示
-* [中断性变更]“az acr task delete”将进行提示
+* [中断性变更E]“az acr task delete”将进行提示
 * 添加了用于管理任务运行的一个新的命令组“az acr taskrun show/list/delete”
 
 ### <a name="aks"></a>AKS
@@ -571,7 +571,7 @@ ms.locfileid: "82031309"
 
 ### <a name="rbac"></a>RBAC
 
-* [中断性变更] 修复了 #11883：`az role assignment create`：作用域为空时会提示错误
+* [中断性变更E] 修复了 #11883：`az role assignment create`：作用域为空时会提示错误
 
 ### <a name="security"></a>安全性
 
@@ -617,7 +617,7 @@ ms.locfileid: "82031309"
 
 ### <a name="acr"></a>ACR
 
-* [中断性变更] 删除了 'acr build'、'acr task create/update'、'acr run' 和 'acr pack' 的 '--os' 参数。 改用 '--platform'。
+* [中断性变更E] 删除了 'acr build'、'acr task create/update'、'acr run' 和 'acr pack' 的 '--os' 参数。 改用 '--platform'。
 
 ### <a name="appconfig"></a>AppConfig
 
@@ -658,11 +658,11 @@ ms.locfileid: "82031309"
 
 ### <a name="event-hubs"></a>事件中心
 
-* [中断性变更] 从命令 'az eventhubs eventhub update' 和 'az eventhubs eventhub create' 中删除了 'ReceiveDisabled' 状态选项。 此选项对事件中心条目无效。
+* [中断性变更E] 从命令 'az eventhubs eventhub update' 和 'az eventhubs eventhub create' 中删除了 'ReceiveDisabled' 状态选项。 此选项对事件中心条目无效。
 
 ### <a name="service-bus"></a>服务总线
 
-* [中断性变更] 从命令 'az servicebus topic create'、'az servicebus topic update'、'az servicebus queue create' 和 'az servicebus queue update' 中删除了 'ReceiveDisabled' 状态选项。 此选项对服务总线主题和队列无效。
+* [中断性变更E] 从命令 'az servicebus topic create'、'az servicebus topic update'、'az servicebus queue create' 和 'az servicebus queue update' 中删除了 'ReceiveDisabled' 状态选项。 此选项对服务总线主题和队列无效。
 
 ### <a name="rbac"></a>RBAC
 
@@ -684,7 +684,7 @@ ms.locfileid: "82031309"
 
 ### <a name="acs"></a>ACS
 
-* [中断性变更]az openshift create：将 `--workspace-resource-id` 重命名为 `--workspace-id`。
+* [中断性变更E]az openshift create：将 `--workspace-resource-id` 重命名为 `--workspace-id`。
 
 ### <a name="ams"></a>AMS
 
@@ -713,7 +713,7 @@ ms.locfileid: "82031309"
 
 ### <a name="botservice"></a>BotService
 
-* [中断性变更] 从预览版命令 'az bot create' 中删除了 '--version' 标志。 仅支持 v4 SDK 机器人。
+* [中断性变更E] 从预览版命令 'az bot create' 中删除了 '--version' 标志。 仅支持 v4 SDK 机器人。
 * 添加了针对 'az bot create' 的名称可用性检查。
 * 添加了相关支持，可以通过 'az bot update' 更新机器人的图标 URL。
 * 添加了相关支持，可以通过 'az bot directline update' 更新 Direct Line 通道。
@@ -746,9 +746,9 @@ ms.locfileid: "82031309"
 
 ### <a name="iot"></a>IOT
 
-* [中断性变更] 从 manual-failover 中删除了 --failover-region 参数。 现在，它会故障转移到已分配的、异地配对的次要区域。
+* [中断性变更E] 从 manual-failover 中删除了 --failover-region 参数。 现在，它会故障转移到已分配的、异地配对的次要区域。
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 
 * 修复了 8095：`az keyvault storage remove`：改进帮助消息
 * 修复了 8921：`az keyvault key/secret/certificate list/list-deleted/list-versions`：修复了参数 `--maxresults` 上出现的验证 Bug
@@ -839,7 +839,7 @@ ms.locfileid: "82031309"
 * image create：添加了 --data-disk-caching，以允许指定数据磁盘的缓存设置
 * 已将 Python 计算 SDK 升级到 10.0.0
 * vm/vmss create：已将“Spot”添加到“Priority”枚举属性
-* [中断性变更] 对于 VM 和 VMSS，已将“--max-billing”参数重命名为“--max-price”，以便与 Swagger 和 Powershell cmdlet 保持一致
+* [中断性变更E] 对于 VM 和 VMSS，已将“--max-billing”参数重命名为“--max-price”，以便与 Swagger 和 Powershell cmdlet 保持一致
 * vm monitor log show：添加了对在链接的 Log Analytics 工作区上查询日志的支持。
 
 ### <a name="iot"></a>IOT
@@ -848,7 +848,7 @@ ms.locfileid: "82031309"
 * 修复 #8323：添加了缺少的参数以创建存储自定义终结点。
 * 修复回归 bug：还原了替代默认存储终结点的更改。
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 
 * 已修复 #11121：使用 `az keyvault certificate list` 时，传递 `--include-pending` 现在不需要值 `true` 或 `false`
 
@@ -861,7 +861,7 @@ ms.locfileid: "82031309"
 * application-gateway waf-config：已弃用
 * application-gateway waf-policy：添加了 subgroup managed-rules，用于管理托管规则集和排除规则
 * application-gateway waf-policy：添加了 subgroup policy-setting，用于管理 waf-policy 的全局配置
-* [中断性变更] application-gateway waf-policy：已将 subgroup rule 重命名为 custom-rule
+* [中断性变更E] application-gateway waf-policy：已将 subgroup rule 重命名为 custom-rule
 * application-gateway http-listener：已添加在创建时使用的 --firewall-policy
 * application-gateway url-path-map rule：已添加在创建时使用的 --firewall-policy
 
@@ -972,7 +972,7 @@ ms.locfileid: "82031309"
 * 添加了新的路由源类型：DigitalTwinChangeEvents
 * 解决了 `az iot hub create` 中缺少功能的问题
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 
 * 修复了证书文件不存在时出现的意外错误
 * 解决了 `az keyvault recover/purge` 不起作用的问题
@@ -1028,8 +1028,8 @@ ms.locfileid: "82031309"
 
 ### <a name="ams"></a>AMS
 
-* [中断性变更] 已将 `job start` 的名称更改为 `job create`
-* [中断性变更] 已更改 `content-key-policy create` 的 `--ask` 参数，使用 32 字符的十六进制字符串而不是 UTF8
+* [中断性变更E] 已将 `job start` 的名称更改为 `job create`
+* [中断性变更E] 已更改 `content-key-policy create` 的 `--ask` 参数，使用 32 字符的十六进制字符串而不是 UTF8
 
 ### <a name="appservice"></a>应用服务
 
@@ -1065,7 +1065,7 @@ ms.locfileid: "82031309"
 ### <a name="network"></a>网络
 
 * 为 `network private-dns link vnet [create|update]` 添加了对跨租户虚拟链接的支持
-* [中断性变更] 更改了 `network vnet subnet list`，使之需要 `--resource-group` 和 `--vnet-name` 参数
+* [中断性变更E] 更改了 `network vnet subnet list`，使之需要 `--resource-group` 和 `--vnet-name` 参数
 
 ### <a name="sql"></a>SQL
 
@@ -1083,7 +1083,7 @@ ms.locfileid: "82031309"
 ### <a name="acr"></a>ACR
 
 * 向 `acr config retention update` 添加了必需的 `--type` 参数
-* [中断性变更] 已将 `acr config` 命令组的重命名参数 `--name -n` 更改为 `--registry -r `
+* [中断性变更E] 已将 `acr config` 命令组的重命名参数 `--name -n` 更改为 `--registry -r `
 
 ### <a name="aks"></a>AKS
 
@@ -1113,7 +1113,7 @@ ms.locfileid: "82031309"
 
 * 修复了终结点帮助文本以引用正确的参数
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 
 * 修复了使用租户登录 (`login -t`) 可能导致 `keyvault create` 失败的问题
 
@@ -1152,16 +1152,16 @@ ms.locfileid: "82031309"
   * 为文件系统装载添加了 `MountConfigurations`（有关详细信息，请参阅 https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body ）
   * 为池上公共 IP 的 `NetworkConfiguration` 添加了可选属性 `publicIPs`（有关详细信息，请参阅 https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body ）
 * 为 `--image` 添加了对共享映像库的支持
-* [中断性变更] 已将 `batch pool create` 上 `--start-task-wait-for-success` 的默认值更改为 `true`
-* [中断性变更] 已将 `AutoUserSpecification` 上 `Scope` 的默认值更改为始终为“Pool”（在 Windows 节点上为 `Task`，在 Linux 节点上为 `Pool`）
+* [中断性变更E] 已将 `batch pool create` 上 `--start-task-wait-for-success` 的默认值更改为 `true`
+* [中断性变更E] 已将 `AutoUserSpecification` 上 `Scope` 的默认值更改为始终为“Pool”（在 Windows 节点上为 `Task`，在 Linux 节点上为 `Pool`）
   * 只能使用 `--json-file` 通过 JSON 配置设置此参数
 
 ### <a name="hdinsight"></a>HDInsight
 
 * 正式版
-* [中断性变更] 已将 `az hdinsight resize` 的参数 `--workernode-count/-c` 更改为必需。
+* [中断性变更E] 已将 `az hdinsight resize` 的参数 `--workernode-count/-c` 更改为必需。
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 
 * 修复了无法从网络规则中删除子网的问题
 * 修复了可将重复的子网和 IP 地址添加到网络规则的问题
@@ -1183,7 +1183,7 @@ ms.locfileid: "82031309"
 
 ### <a name="acr"></a>ACR
 
-* [中断性变更] 删除了对 `classic` SKU 的支持
+* [中断性变更E] 删除了对 `classic` SKU 的支持
 
 ### <a name="api-management"></a>API 管理
 
@@ -1239,7 +1239,7 @@ ms.locfileid: "82031309"
 
 ### <a name="botservice"></a>BotService
 
-* [中断性变更] 删除了对创建 v3 SDK 机器人的支持
+* [中断性变更E] 删除了对创建 v3 SDK 机器人的支持
 
 ### <a name="cognitiveservices"></a>认知服务
 
@@ -1254,29 +1254,29 @@ ms.locfileid: "82031309"
 
 此版本包含大量中断性变更。
 
-* [中断性变更] 重命名了 `hdinsight create` 的参数：
+* [中断性变更E] 重命名了 `hdinsight create` 的参数：
   * 已将 `--storage-default-container` 重命名为 `--storage-container`
   * 已将 `--storage-default-filesystem` 重命名为 `--storage-filesystem`
-* [中断性变更] 更改了 `application create` 的 `--name` 参数，以表示应用程序名称而不是群集名称
+* [中断性变更E] 更改了 `application create` 的 `--name` 参数，以表示应用程序名称而不是群集名称
 * 向 `application create` 添加了 `--cluster-name` 参数以替换旧的 `--name` 功能
-* [中断性变更] 重命名了 `application create` 的参数：
+* [中断性变更E] 重命名了 `application create` 的参数：
   * 已将 `--application-type` 重命名为 `--type`
   * 已将 `--marketplace-identifier` 重命名为 `--marketplace-id`
   * 已将 `--https-endpoint-access-mode` 重命名为 `--access-mode`
   * 已将 `--https-endpoint-destination-port` 重命名为 `--destination-port`
-* [中断性变更] 删除了 `application create` 的参数：
+* [中断性变更E] 删除了 `application create` 的参数：
   * `--https-endpoint-location`
   * `--https-endpoint-public-port`
   * `--ssh-endpoint-destination-port`
   * `--ssh-endpoint-location`
   * `--ssh-endpoint-public-port`
 * [中断性变更] 已将 `hdinsight resize` 的 `--target-instance-count` 重命名为 `--workernode-count`
-* [中断性变更] 更改了 `hdinsight script-action` 组中的所有命令，以使用 `--name` 参数作为脚本操作的名称。
+* [中断性变更E] 更改了 `hdinsight script-action` 组中的所有命令，以使用 `--name` 参数作为脚本操作的名称。
 * 为所有 `hdinsight script-action` 命令添加了 `--cluster-name` 参数以替换旧的 `--name` 功能
-* [中断性变更] 已将所有 `hdinsight script-action` 命令的 `--script-execution-id` 重命名为 `--execution-id`
-* [中断性变更] 已将 `hdinsight script-action show` 重命名为 `hdinsight script-action show-execution-details`
+* [中断性变更E] 已将所有 `hdinsight script-action` 命令的 `--script-execution-id` 重命名为 `--execution-id`
+* [中断性变更E] 已将 `hdinsight script-action show` 重命名为 `hdinsight script-action show-execution-details`
 * [中断性变更] 已将参数更改为 `hdinsight script-action execute --roles`（以空格分隔，而不是以逗号分隔）
-* [中断性变更] 删除了 `hdinsight script-action list` 的 `--persisted` 参数
+* [中断性变更E] 删除了 `hdinsight script-action list` 的 `--persisted` 参数
 * 更改了 `hdinsight create --cluster-configurations` 参数以接受本地 JSON 文件或 JSON 字符串的路径
 * 添加了命令 `hdinsight script-action list-execution-history`
 * 更改了 `hdinsight monitor enable --workspace` 以接受 Log Analytics 工作区 ID 或工作区名称
@@ -1369,7 +1369,7 @@ ms.locfileid: "82031309"
 
 ### <a name="batch"></a>Batch
 
-* [中断性变更] 已将 `batch pool node-agent-skus list` 替换为 `batch pool supported-images list`
+* [中断性变更E] 已将 `batch pool node-agent-skus list` 替换为 `batch pool supported-images list`
 * 添加了对安全规则的支持。在使用 `batch pool create network` 的 `--json-file` 选项时，这些规则会根据流量的源端口阻止对池的网络访问
 * 添加了对执行任务的支持。使用 `batch task create` 的 `--json-file` 选项时，可以在容器工作目录或 Batch 任务工作目录中执行任务
 * 修复了 `batch pool create` 的 `--application-package-references` 选项中存在的只对默认设置有效的错误
@@ -1413,7 +1413,7 @@ ms.locfileid: "82031309"
 ### <a name="appservice"></a>应用服务
 
 * 更改了 `functionapp create` 以默认启用 application insights
-* [中断性变更] 删除了已弃用的 `functionapp devops-build` 命令。
+* [中断性变更E] 删除了已弃用的 `functionapp devops-build` 命令。
   *  改用新命令 `az functionapp devops-pipeline`
 * 为 `functionapp deployment config-zip` 添加了 Linux 消耗计划函数应用计划支持
 
@@ -1425,14 +1425,14 @@ ms.locfileid: "82031309"
 
 * 更新了 ADLS 版本 (0.0.45)
 
-### <a name="feedback"></a>反馈
+### <a name="feedback-command"></a>反馈命令
 
 * 报告失败的扩展命令时，`az feedback` 现在尝试从索引打开浏览器到扩展的项目/存储库 url
 
 ### <a name="hdinsight"></a>HDInsight
 
-* [中断性变更] 将 `oms` 命令组名称更改为 `monitor`
-* [中断性变更] 使 `--http-password/-p` 成为必需参数 
+* [中断性变更E] 将 `oms` 命令组名称更改为 `monitor`
+* [中断性变更E] 使 `--http-password/-p` 成为必需参数 
 * 为 `--cluster-admin-account` 和 `cluster-users-group-dns` 参数添加了补全选项 
 * 将 `cluster-users-group-dns` 参数更改为在 `—esp` 存在时为必需参数
 * 为所有现有参数自动补全选项添加了超时
@@ -1449,7 +1449,7 @@ ms.locfileid: "82031309"
 
 ### <a name="rbac"></a>RBAC
 
-* [中断性变更] 删除了 `create-for-rbac` 的 `--password` 参数
+* [中断性变更E] 删除了 `create-for-rbac` 的 `--password` 参数
 * 向 `create` 命令添加了 `--assignee-principal-type` 参数，以避免由 AAD 图形服务器复制延迟导致的间歇性故障
 * 修复了列出拥有的对象时 `ad signed-in-user` 中的崩溃
 * 修复了 `ad sp` 无法从服务主体中找到正确的应用程序的问题
@@ -1493,7 +1493,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 弃用的 ACS 命令现已在帮助视图中隐藏
 
 ### <a name="ams"></a>AMS
-* [中断性变更] 对于 archive-window-length 和 key-frame-interval-duration，已更改为返回 ISO 8601 时间字符串
+* [中断性变更E] 对于 archive-window-length 和 key-frame-interval-duration，已更改为返回 ISO 8601 时间字符串
 
 ### <a name="appservice"></a>应用服务
 * 为 `webapp deleted list` 和 `webapp deleted restore` 添加了基于位置的路由功能
@@ -1522,7 +1522,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为域主题 CRUD 操作添加了 `eventgrid domain topic` 命令
 * 为 `eventgrid [topic|event-subscription] list` 添加了 `--odata-query` 参数以便使用 OData 语法筛选结果
 * `event-subscription create/update`：添加了 servicebusqueue 作为 `--endpoint-type` 参数的新值
-* [中断性变更] 删除了对带有 `eventgrid event-subscription [create|update]` 的 `--included-event-types All` 的支持
+* [中断性变更E] 删除了对带有 `eventgrid event-subscription [create|update]` 的 `--included-event-types All` 的支持
 
 ### <a name="hdinsight"></a>HDInsight
 * 在 `hdinsight create` 命令中添加了对 `--ssh-public-key` 参数的支持
@@ -1610,7 +1610,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="appservice"></a>应用服务
 * [已弃用] 已弃用 `functionapp devops-build` 命令 - 将在下一版本中删除
 * 已将 `functionapp devops-pipeline` 更改为以详细模式从 Azure DevOps 提取生成日志
-* [中断性变更] 从 `functionapp devops-pipeline` 命令中删除了 `--use_local_settings` 标记 - 是 no-op
+* [中断性变更E] 从 `functionapp devops-pipeline` 命令中删除了 `--use_local_settings` 标记 - 是 no-op
 * 已将 `webapp up` 更改为在不使用 `--logs` 时返回 JSON 输出
 * 为 `webapp up` 添加了对将默认资源写入到本地配置的支持
 * 为 `webapp up` 添加了对在不使用 `--location` 参数的情况下重新部署应用的支持
@@ -1627,7 +1627,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了对列出所有密钥的支持
 
 ### <a name="network"></a>网络
-* [中断性变更]: Removed `network interface-endpoints` command group - use `network private-endpoints` 
+* [中断性变更E]: Removed `network interface-endpoints` command group - use `network private-endpoints` 
 * 为 `network vnet subnet [create|update]` 添加了 `--nat-gateway` 参数以用于连接到 NAT 网关
 * 已修复 `dns zone import` 的以下问题：记录名称无法匹配记录类型
 
@@ -1651,7 +1651,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 版本 2.0.64
 
 ### <a name="acs"></a>ACS
-* [中断性变更] 已从 `openshift` 命令中删除了 `--fqdn` 标记
+* [中断性变更E] 已从 `openshift` 命令中删除了 `--fqdn` 标记
 * 已更改为使用 Azure Red Hat Openshift GA API 版本
 * 为 `openshift create` 添加了 `customer-admin-group-id` 标志
 * [GA] 已从 `aks create` 选项 `--network-policy` 中删除了 `(PREVIEW)`
@@ -1672,19 +1672,19 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `--application-package-references` 选项修复了验证程序中的 bug
 
 ### <a name="botservice"></a>Botservice
-* [中断性变更] 已将 `bot create -v v4 -k webapp` 更改为在默认情况下创建空的 Web 应用机器人（即没有机器人部署到应用服务）
+* [中断性变更E] 已将 `bot create -v v4 -k webapp` 更改为在默认情况下创建空的 Web 应用机器人（即没有机器人部署到应用服务）
 * 为 `bot create` 添加了 `--echo` 标记，以便将旧有行为与 `-v v4` 配合使用
-* [中断性变更] 已将 `--version` 的默认值更改为 `v4`
+* [中断性变更E] 已将 `--version` 的默认值更改为 `v4`
   * __注意：__ `bot prepare-publish` 仍会使用其旧的默认值
-* [中断性变更] 已将 `--lang` 更改为不再默认为 `Csharp`。 如果该命令需要 `--lang` 但它未被提供，该命令现在会引发错误并退出执行
-* [中断性变更] 已将 `bot create` 的参数 `--appid` 和`--password` 更改为必需，并且现在可通过 `ad app create` 创建
+* [中断性变更E] 已将 `--lang` 更改为不再默认为 `Csharp`。 如果该命令需要 `--lang` 但它未被提供，该命令现在会引发错误并退出执行
+* [中断性变更E] 已将 `bot create` 的参数 `--appid` 和`--password` 更改为必需，并且现在可通过 `ad app create` 创建
 * 添加了 `--appid` 和 `--password` 验证
-* [中断性变更] 已将 `bot create -v v4` 更改为不创建或使用存储帐户或 Application Insights
-* [中断性变更] 已将 `bot create -v v3` 更改为要求一个可以使用 Application Insights 的区域
-* [中断性变更] 已将 `bot update` 更改为现在仅影响机器人的特定属性
-* [中断性变更] 更改了 `--lang` 标志以接受 `Javascript` 而不是 `Node`
-* [中断性变更] 已不再将 `Node` 作为允许的 `--lang` 值
-* [中断性变更] 已将 `bot create -v v4 -k webapp` 更改为不再将 `SCM_DO_BUILD_DURING_DEPLOYMENT` 设置为 true。 通过 Kudu 进行的所有部署将都根据其默认行为执行
+* [中断性变更E] 已将 `bot create -v v4` 更改为不创建或使用存储帐户或 Application Insights
+* [中断性变更E] 已将 `bot create -v v3` 更改为要求一个可以使用 Application Insights 的区域
+* [中断性变更E] 已将 `bot update` 更改为现在仅影响机器人的特定属性
+* [中断性变更E] 更改了 `--lang` 标志以接受 `Javascript` 而不是 `Node`
+* [中断性变更E] 已不再将 `Node` 作为允许的 `--lang` 值
+* [中断性变更E] 已将 `bot create -v v4 -k webapp` 更改为不再将 `SCM_DO_BUILD_DURING_DEPLOYMENT` 设置为 true。 通过 Kudu 进行的所有部署将都根据其默认行为执行
 * 对于不带 `.bot` 文件的机器人，已将 `bot download` 更改为使用机器人的“应用程序设置”中的值创建特定于语言的配置文件
 * 为 `bot prepare-deploy` 添加了 `Typescript` 支持
 * 对于 `--code-dir` 不包含 `package.json` 的情况，已为 `Javascript` 和 `Typescript` 机器人将警告消息添加到 `bot prepare-deploy`
@@ -1700,7 +1700,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `namespace [create|update]` 添加了网络规则的参数 `--default-action`
 
 ### <a name="network"></a>网络
-* [中断性变更] 已将 `vnet [create|update]` 的参数 `--cache` 替换为 `--defer` 
+* [中断性变更E] 已将 `vnet [create|update]` 的参数 `--cache` 替换为 `--defer` 
 
 ### <a name="policy-insights"></a>策略见解
 * 添加了对 `--expand PolicyEvaluationDetails` 的支持，以便查询有关资源的策略评估详细信息
@@ -1793,7 +1793,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `webapp up` 添加了 `--logs` 支持
 * 修复了 `functionapp devops-build create` 命令 `azure-pipelines.yml` 生成问题
 * 改进了 `unctionapp devops-build create` 错误处理和指示
-* [中断性变更] 删除了 `devops-build` 命令的 `--local-git` 标志，创建 Azure DevOps 管道时，必须进行本地 Git 检测和处理
+* [中断性变更E] 删除了 `devops-build` 命令的 `--local-git` 标志，创建 Azure DevOps 管道时，必须进行本地 Git 检测和处理
 * 添加了对创建 Linux 函数计划的支持
 * 添加了使用 `functionapp update --plan` 在函数应用下切换计划的功能
 * 添加了对 Azure Functions 高级计划横向扩展设置的支持
@@ -1801,7 +1801,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="cdn"></a>CDN
 * 添加了对 `Microsoft_Standard` 和 `Standard_ChinaCdn` 的支持
 
-### <a name="feedback"></a>反馈
+### <a name="feedback-command"></a>反馈命令
 * 更改了 `feedback` 以显示最近运行的命令的元数据
 * 更改了 `feedback` 以提示用户通过打开浏览器并使用问题模板来帮助创建问题
 * 更改了 `feedback` 以在使用“--verbose”运行时输出问题正文
@@ -1823,13 +1823,13 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="role"></a>角色
 * 修复了 `create-for-rbac` 以正确处理 `--years`
-* [中断性变更] 更改了 `role assignment delete` 以在无条件地删除订阅下的所有分配时进行提示
+* [中断性变更E] 更改了 `role assignment delete` 以在无条件地删除订阅下的所有分配时进行提示
 
 ### <a name="sql"></a>SQL
 * 更新了 `sql mi [create|update]` 的属性 proxyOverride 和 publicDataEndpointEnabled
 
 ### <a name="storage"></a>存储
-* [中断性变更] 删除了 `storage blob delete` 的结果
+* [中断性变更E] 删除了 `storage blob delete` 的结果
 * 向 `storage blob generate-sas` 添加了 `--full-uri` 来通过 sas 创建 blob 的完整 RUI
 * 向 `storage file copy start` 添加了 `--file-snapshot` 来从快照复制文件
 * 更改了 `storage blob copy cancel` 以仅显示 NoPendingCopyOperation 的错误而不显示异常
@@ -1857,12 +1857,12 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="bot-service"></a>机器人服务
 * 添加了 `bot prepare-deploy`，为通过 `webapp` 部署机器人做准备
 * 更改了 `bot create --kind registration`，可以在未提供密码的情况下显示密码
-* [中断性变更] 更改了 `bot create --kind registration` 中的 `--endpoint`，使之默认设置为空字符串而不是必需项
+* [中断性变更E] 更改了 `bot create --kind registration` 中的 `--endpoint`，使之默认设置为空字符串而不是必需项
 * 为 v4 Web 应用机器人的 ARM 模板的应用程序设置添加了 `SCM_DO_BUILD_DURING_DEPLOYMENT`
 
 ### <a name="cdn"></a>CDN
 * 在 `cdn endpoint [create|update|start|stop|delete|load|purge]` 中添加了对 `--no-wait` 的支持  
-* [中断性变更]：更改了 `cdn endpoint create` 的默认查询字符串缓存行为。 不再默认设置为“IgnoreQueryString”。 它现在由服务设置
+* [中断性变更E]：更改了 `cdn endpoint create` 的默认查询字符串缓存行为。 不再默认设置为“IgnoreQueryString”。 它现在由服务设置
 
 ### <a name="cosmosdb"></a>Cosmosdb
 * 在帐户更新时添加了对 `--enable-multiple-write-locations` 的支持
@@ -1989,10 +1989,10 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了 `functionapp devops-build` 命令
 
 ### <a name="batch"></a>Batch
-* [中断性变更] 已删除 `batch pool upgrade os` 命令
-* [中断性变更] 已从 `Application` 响应删除 `Pacakges` 属性
+* [中断性变更E] 已删除 `batch pool upgrade os` 命令
+* [中断性变更E] 已从 `Application` 响应删除 `Pacakges` 属性
 * 添加了 `batch application package list` 命令以列出应用程序的程序包
-* [中断性变更] 已在所有 `batch application` 命令中将 `--application-id` 更改为 `--application-name` 
+* [中断性变更E] 已在所有 `batch application` 命令中将 `--application-id` 更改为 `--application-name` 
 * 为命令添加了 `--json-file` 参数以请求原始 API 响应
 * 更新了验证以便将 `https://` 自动包含在所有终结点中（如果缺少）
 
@@ -2002,7 +2002,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="kusto"></a>Kusto
 
-* [中断性变更] 已将数据库的 `hot_cache_period` 和 `soft_delete_period` 类型更改为 ISO8601 持续时间格式
+* [中断性变更E] 已将数据库的 `hot_cache_period` 和 `soft_delete_period` 类型更改为 ISO8601 持续时间格式
 
 ### <a name="network"></a>网络
 
@@ -2040,8 +2040,8 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 修复了以下退化问题：`--ids` 不再可用于 JSON 输出
 
 ### <a name="acr"></a>ACR
-* [中断性变更] 删除了 `acr build-task` 命令组
-* [中断性变更] 从 `acr repository delete` 中删除了 `--tag` 和 `--manifest` 选项
+* [中断性变更E] 删除了 `acr build-task` 命令组
+* [中断性变更E] 从 `acr repository delete` 中删除了 `--tag` 和 `--manifest` 选项
 
 ### <a name="acs"></a>ACS
 * 为 `aks [enable-addons|disable-addons]` 添加了对不区分大小写的名称的支持
@@ -2094,12 +2094,12 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了用于管理服务器链接的命令（创建、删除、显示、列出）
 * 添加了用于管理修补计划的命令（创建、更新、删除、显示）
 * 为 redis create 添加了对可用性区域和最低 TLS 版本的支持
-* [中断性变更] 删除了 `redis update-settings` 和 `redis list-all` 命令
-* [中断性变更] 如果 `redis create` 的参数 'tenant settings' 采用 key[=value] 格式，则它不会被接受
+* [中断性变更E] 删除了 `redis update-settings` 和 `redis list-all` 命令
+* [中断性变更E] 如果 `redis create` 的参数 'tenant settings' 采用 key[=value] 格式，则它不会被接受
 * [已弃用] 添加了有关弃用 `redis import-method` 命令的警告消息
 
 ### <a name="role"></a>角色
-* [中断性变更] 将 `az identity` 命令从 `vm` 命令变动到此处
+* [中断性变更E] 将 `az identity` 命令从 `vm` 命令变动到此处
 
 ### <a name="sql-vm"></a>SQL VM
 * [已弃用] 由于存在拼写错误，弃用了 `--boostrap-acc-pwd` 参数
@@ -2108,7 +2108,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 更改了 `vm list-skus` 以允许使用 `--all` 来代替 `--all true`
 * 添加了 `vmss run-command [invoke | list | show]`
 * 修复了以下 bug：如果以前运行过 `vmss encryption enable`，那么它会失败
-* [中断性变更] 已将 `az identity` 命令变动为 `role` 命令
+* [中断性变更E] 已将 `az identity` 命令变动为 `role` 命令
 
 ## <a name="january-31-2019"></a>2019 年 1 月 31 日
 
@@ -2131,8 +2131,8 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `aks update-credentials -reset-service-principal` 添加了对服务主体更新操作的支持
 
 ### <a name="ams"></a>AMS
-* [中断性变更] 已将 `ams asset get-streaming-locators` 重命名为 `ams asset list-streaming-locators`
-* [中断性变更] 已将 `ams streaming-locator get-content-keys` 重命名为 `ams streaming-locator list-content-keys`
+* [中断性变更E] 已将 `ams asset get-streaming-locators` 重命名为 `ams asset list-streaming-locators`
+* [中断性变更E] 已将 `ams streaming-locator get-content-keys` 重命名为 `ams streaming-locator list-content-keys`
 
 ### <a name="appservice"></a>应用服务
 * 在 `functionapp create` 上添加了对 App Insights 的支持
@@ -2151,8 +2151,8 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为所有与事件订阅相关的命令添加了 source-resource-id 参数，并且将所有其他与源资源相关的参数标记为已弃用
 
 ### <a name="hdinsight"></a>HDInsight
-* [中断性变更] 从 `hdinsight [application] create` 中删除了 `--virtual-network` 和 `--subnet-name` 参数
-* [中断性变更] 已将 `hdinsight create --storage-account` 更改为接受存储帐户（而不是 blob 终结点）的名称或 ID
+* [中断性变更E] 从 `hdinsight [application] create` 中删除了 `--virtual-network` 和 `--subnet-name` 参数
+* [中断性变更E] 已将 `hdinsight create --storage-account` 更改为接受存储帐户（而不是 blob 终结点）的名称或 ID
 * 为 `hdinsight create` 添加了 `--vnet-name` 和 `--subnet-name`
 * 为 `hdinsight create` 添加了对企业安全性套餐和磁盘加密的支持 
 * 添加了 `hdinsight rotate-disk-encryption-key` 命令
@@ -2224,7 +2224,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了用于管理脚本操作的命令
 * 添加了用于管理 Operations Management Suite (OMS) 的命令
 * 为 `hdinsight list-usage` 添加了对列出区域使用情况的支持
-* [中断性变更] 从 `hdinsight create` 中删除了默认群集类型
+* [中断性变更E] 从 `hdinsight create` 中删除了默认群集类型
 
 ### <a name="network"></a>网络
 * 为 `traffic-manager profile [create|update]` 添加了 `--custom-headers` 和 `--status-code-ranges` 参数
@@ -2239,7 +2239,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 初始版本
 
 ### <a name="storage"></a>存储
-* [中断性变更] 已将 `storage [blob|file|container|share] list` 的默认结果数更改为 5000。 将 `--num-results *` 用于返回所有结果的原始行为
+* [中断性变更E] 已将 `storage [blob|file|container|share] list` 的默认结果数更改为 5000。 将 `--num-results *` 用于返回所有结果的原始行为
 * 为 `storage [blob|file|container|share] list` 添加了 `--marker` 参数
 * 已为 `storage [blob|file|container|share] list` 将用于下一页的日志标记添加到 STDERR 
 * 添加了带有对静态网站的支持的 `storage blob service-properties update` 命令
@@ -2264,7 +2264,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 修复了更新命令 API 调用
 
 ### <a name="role"></a>角色
-* [中断性变更] 将 `ad [app|sp] list` 更改成了默认情况下仅列出前 100 个对象
+* [中断性变更E] 将 `ad [app|sp] list` 更改成了默认情况下仅列出前 100 个对象
 
 ### <a name="sql"></a>SQL
 * 在托管实例上添加了对自定义排序规则的支持
@@ -2394,7 +2394,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了 `snapshot wait` 命令
 * 增加了将实例名称与 `[vm|vmss] extension set --extension-instance-name` 配合使用的支持
 
-## <a name="november-6-2018"></a>2018 年 11 月 6日
+## <a name="november-6-2018"></a>2018 年 11 月 6 日
 
 版本 2.0.50
 
@@ -2406,7 +2406,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 已更改为使用默认 Dockerfile（如果未在 build 命令中指定它）
 
 ### <a name="acs"></a>ACS
-* [中断性变更] 已删除 `enable_cloud_console_aks_browse` 以在默认情况下启用 'az aks browse'
+* [中断性变更E] 已删除 `enable_cloud_console_aks_browse` 以在默认情况下启用 'az aks browse'
 
 ### <a name="advisor"></a>顾问
 * 正式版
@@ -2431,12 +2431,12 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `ams job` 命令组添加了 `--correlation-data` 和 `--label` 参数
 * 为 `ams asset` 命令组添加了 `--storage-account` 和 `--container` 参数
 * 在 `ams asset get-sas-url` 命令中添加了到期时间默认值（现在 + 23 小时）和权限默认值（读取） 
-* [中断性变更] 已将 `ams streaming locator` 命令替换为 `ams streaming-locator`
-* [中断性变更] 已更新 `ams streaming locator` 的 `--content-keys` 参数
-* [中断性变更] 已在 `ams streaming locator` 命令中将 `--content-policy-name` 重命名为 `--content-key-policy-name`
-* [中断性变更] 已将 `ams streaming policy` 命令替换为 `ams streaming-policy`
-* [中断性变更] 已在 `ams transform` 命令组中将 `--preset-names` 参数替换为 `--preset`。 现在只能一次设置 1 个输出/预设（若要添加更多，必须运行 `ams transform output add`）。 此外，还可以通过将路径传递到自定义 JSON 来设置自定义 StandardEncoderPreset
-* [中断性变更] 已在 `ams job start` 命令中将 `--output-asset-names ` 重命名为 `--output-assets`。 现在，它接受 'assetName=label' 格式的资产列表（以空格分隔）。 没有标签的资产可以采用以下格式发送：'assetName='
+* [中断性变更E] 已将 `ams streaming locator` 命令替换为 `ams streaming-locator`
+* [中断性变更E] 已更新 `ams streaming locator` 的 `--content-keys` 参数
+* [中断性变更E] 已在 `ams streaming locator` 命令中将 `--content-policy-name` 重命名为 `--content-key-policy-name`
+* [中断性变更E] 已将 `ams streaming policy` 命令替换为 `ams streaming-policy`
+* [中断性变更E] 已在 `ams transform` 命令组中将 `--preset-names` 参数替换为 `--preset`。 现在只能一次设置 1 个输出/预设（若要添加更多，必须运行 `ams transform output add`）。 此外，还可以通过将路径传递到自定义 JSON 来设置自定义 StandardEncoderPreset
+* [中断性变更E] 已在 `ams job start` 命令中将 `--output-asset-names ` 重命名为 `--output-assets`。 现在，它接受 'assetName=label' 格式的资产列表（以空格分隔）。 没有标签的资产可以采用以下格式发送：'assetName='
 
 ### <a name="appservice"></a>应用服务
 * 修复了 `az webapp config backup update` 中的 bug，在尚未设置备份计划的情况下，该 bug 会阻止设置备份计划
@@ -2497,7 +2497,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 修复了 Python2 中的 ACR 生成编码问题
 
 ### <a name="cdn"></a>CDN
-* [中断性变更] 更改了 `cdn endpoint create` 的默认查询字符串缓存行为，不再默认设置为“IgnoreQueryString”。 它现在由服务设置
+* [中断性变更E] 更改了 `cdn endpoint create` 的默认查询字符串缓存行为，不再默认设置为“IgnoreQueryString”。 它现在由服务设置
 
 ### <a name="container"></a>容器
 * 增加了 `Private`，作为一种可传递给“--ip-address”的有效类型
@@ -2516,7 +2516,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="iot-central"></a>IoT Central
 * 增加了模板和显示名称选项，用于创建 IoT Central 应用程序
-* [中断性变更] 去除了对 F1 SKU 的支持；改用 S1 SKU
+* [中断性变更E] 去除了对 F1 SKU 的支持；改用 S1 SKU
 
 ### <a name="monitor"></a>监视
 * 对 `monitor activity-log list` 的更改：
@@ -2578,7 +2578,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="event-hub"></a>事件中心
 * 修复了 `eventhub update` 命令
-* [中断性变更] 更改了 `list` 命令，以便以典型方式处理资源 NotFound(404) 错误，而不是显示空列表
+* [中断性变更E] 更改了 `list` 命令，以便以典型方式处理资源 NotFound(404) 错误，而不是显示空列表
 
 ### <a name="extensions"></a>扩展
 * 修复了尝试添加已安装的扩展的问题
@@ -2608,7 +2608,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 已更改 `ad sp create-for-rbac`，以确保主页 URI 始终为“https”
 
 ### <a name="service-bus"></a>服务总线
-* [中断性变更] 更改了 `list` 命令，以便以典型方式处理资源 NotFound(404) 错误，而不是显示空列表
+* [中断性变更E] 更改了 `list` 命令，以便以典型方式处理资源 NotFound(404) 错误，而不是显示空列表
 
 ### <a name="vm"></a>VM
 * 修复了 `disk grant-access` 中的空 `accessSas` 字段
@@ -2674,7 +2674,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="iot"></a>IoT
 * 添加了路由 IoT 中心的支持
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 * 修复了 RSA 密钥的 Key Vault 密钥导入问题
 
 ### <a name="network"></a>网络
@@ -2818,7 +2818,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="batchai"></a>BatchAI
 
-* 更改了创建自动存储帐户时的记录器输出，现在会指定“资源组”。         
+* 更改了创建自动存储帐户时的记录器输出，现在会指定“资源组”。        
 
 ### <a name="container"></a>容器
 
@@ -2826,7 +2826,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="iot"></a>IoT
 
-* [中断性变更] 删除了弃用的命令，这些命令已移至 IoT 扩展
+* [中断性变更E] 删除了弃用的命令，这些命令已移至 IoT 扩展
 * 更新了元素，现在不采用 `azure-devices.net` 域
 
 ### <a name="iot-central"></a>IoT 中心
@@ -2852,7 +2852,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="storage"></a>存储
 
-* [中断性变更] 更改了 `storage account show-usage`，现在需要 `--location` 参数并且会按区域列出
+* [中断性变更E] 更改了 `storage account show-usage`，现在需要 `--location` 参数并且会按区域列出
 * 更改了 `--resource-group` 参数，现在此参数为 `storage account` 命令的可选参数
 * 对于适用于单个聚合消息的批处理命令中的单个失败，删除了“前提条件失败”警告
 * 更改了 `[blob|file] delete-batch` 命令，不再输出 null 数组
@@ -2918,7 +2918,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了对按订阅列出可用性集的支持
 * 添加了对 `StandardSSD_LRS` 的支持
 * 添加了在创建 VM 规模集时对应用程序安全组的支持
-* [中断性变更]更改了`[vm|vmss] create`、`[vm|vmss] identity assign` 和 `[vm|vmss] identity remove`，以便以字典格式输出用户指定的标识
+* [中断性变更E]更改了`[vm|vmss] create`、`[vm|vmss] identity assign` 和 `[vm|vmss] identity remove`，以便以字典格式输出用户指定的标识
 
 ## <a name="july-18-2018"></a>2018 年 7 月 18 日
 
@@ -2928,11 +2928,11 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 * 在 WSL bash 窗口中添加了对基于浏览器的登录的支持
 * 为所有通用更新命令添加了 `--force-string` 标志
-* [中断性变更]更改了“show”命令以记录错误消息，并在缺少资源时退出代码为 3
+* [中断性变更E]更改了“show”命令以记录错误消息，并在缺少资源时退出代码为 3
 
 ### <a name="acr"></a>ACR
 
-* [中断性变更]在“acr build”命令中将“--no-push”更新为纯标志
+* [中断性变更E]在“acr build”命令中将“--no-push”更新为纯标志
 * 在 `acr repository` 组下添加了 `show` 和 `update` 命令
 * 为 `show-manifests` 和 `show-tags`添加了 `--detail` 标记以显示更详细的信息
 * 添加了 `--image` 参数以支持通过图像获取构建详细信息或日志
@@ -2985,7 +2985,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="vm"></a>VM
 
-* [中断性变更] 将 `vmss create` 更改为使用 `Standard_DS1_v2` 作为默认实例大小
+* [中断性变更E] 将 `vmss create` 更改为使用 `Standard_DS1_v2` 作为默认实例大小
 * 向 `vm extension [set|delete]` 和 `vmss extension [set|delete]` 添加了 `--no-wait` 支持
 * 添加了 `vm extension wait`
 
@@ -3013,7 +3013,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="acs"></a>ACS
 
-* [中断性变更] 默认情况下启用 Kubernetes 基于角色的访问控制
+* [中断性变更E] 默认情况下启用 Kubernetes 基于角色的访问控制
 * 添加了 `--disable-rbac` 参数并弃用了 `--enable-rbac`，因为它现在是默认值
 * 更新了 `aks browse` 命令的选项。 增加了 `--listen-port` 支持
 * 为 `aks install-connector` 命令更新了默认 helm chart 包。 使用 virtual-kubelet-for-aks-latest.tgz
@@ -3109,13 +3109,13 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 增加了为 Docker 容器中运行的作业配置 `/dev/shm` 的支持
 * 增加了 `batchai cluster node exec` 和 `batchai job node exec` 命令。 这些命令允许在节点上直接执行任何命令，提供用于端口转发的功能。
 * 为 `batchai` 命令增加了对 `--ids` 的支持
-* [中断性变更] 所有群集和文件服务器必须在工作区创建
-* [中断性变更] 作业必须在试验中创建
-* [中断性变更] 从 `cluster create` 和 `job create` 命令中删除了 `--nfs-resource-group`。 若要装载属于其他工作区/资源组的 NFS，请通过 `--nfs` 选项提供文件服务器的 ARM ID
-* [中断性变更] 从 `job create` 命令中删除了 `--cluster-resource-group`。 若要在属于其他工作区/资源组的群集上提交作业，请通过 `--cluster` 选项提供群集的 ARM ID
-* [中断性变更] 从作业、群集和文件服务器中删除了 `location` 特性。 位置现在是工作区的特性。
-* [中断性变更] 从 `job create`、`cluster create` 和 `file-server create` 命令中删除了 `--location`
-* [中断性变更] 更改了短选项的名称，使接口更一致：
+* [中断性变更E] 所有群集和文件服务器必须在工作区创建
+* [中断性变更E] 作业必须在试验中创建
+* [中断性变更E] 从 `cluster create` 和 `job create` 命令中删除了 `--nfs-resource-group`。 若要装载属于其他工作区/资源组的 NFS，请通过 `--nfs` 选项提供文件服务器的 ARM ID
+* [中断性变更E] 从 `job create` 命令中删除了 `--cluster-resource-group`。 若要在属于其他工作区/资源组的群集上提交作业，请通过 `--cluster` 选项提供群集的 ARM ID
+* [中断性变更E] 从作业、群集和文件服务器中删除了 `location` 特性。 位置现在是工作区的特性。
+* [中断性变更E] 从 `job create`、`cluster create` 和 `file-server create` 命令中删除了 `--location`
+* [中断性变更E] 更改了短选项的名称，使接口更一致：
   - [`--config`, `-c`] 已重命名为 [`--config-file`, `-f`]
   - [`--cluster`, `-r`] 已重命名为 [`--cluster`, `-c`]
   - [`--cluster`, `-n`] 已重命名为 [`--cluster`, `-c`]
@@ -3123,7 +3123,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="maps"></a>地图
 
-* [中断性变更] 更改了 `maps account create`，要求通过交互式提示或 `--accept-tos` 标志接受《服务条款》
+* [中断性变更E] 更改了 `maps account create`，要求通过交互式提示或 `--accept-tos` 标志接受《服务条款》
 
 ### <a name="network"></a>网络
 
@@ -3132,11 +3132,11 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="reservations"></a>预留
 
-* [中断性变更] 为 `reservations catalog show` 增加了必需参数 `ReservedResourceType`
+* [中断性变更E] 为 `reservations catalog show` 增加了必需参数 `ReservedResourceType`
 * 为 `reservations catalog show` 增加了参数 `Location`
-* [中断性变更] 从 `ReservationProperties` 中删除了 `kind`
-* [中断性变更] 已在 `Catalog` 中将 `capabilities` 重命名为 `sku_properties`
-* [中断性变更] 从 `Catalog` 中删除了 `size` 和 `tier` 属性
+* [中断性变更E] 从 `ReservationProperties` 中删除了 `kind`
+* [中断性变更E] 已在 `Catalog` 中将 `capabilities` 重命名为 `sku_properties`
+* [中断性变更E] 从 `Catalog` 中删除了 `size` 和 `tier` 属性
 * 为 `reservations reservation update` 增加了参数 `InstanceFlexibility`
 
 ### <a name="role"></a>角色
@@ -3295,19 +3295,19 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="sql"></a>SQL
 
-* [中断性变更] 更改了从 `db` 和 `dw` 命令返回的响应对象：
+* [中断性变更E] 更改了从 `db` 和 `dw` 命令返回的响应对象：
     * 已将 `serviceLevelObjective` 属性重命名为 `currentServiceObjectiveName`
     * 删除了 `currentServiceObjectiveId` 和 `requestedServiceObjectiveId` 属性
     * 已将 `maxSizeBytes` 属性更改为整数值而不是字符串
-* [中断性变更] 已将下面的 `db` 和 `dw` 属性更改为只读：
-    * `requestedServiceObjectiveName` 列中的一个值匹配。  若要更新，请使用 `--service-objective` 参数或设置 `sku.name` 属性
-    * `edition` 列中的一个值匹配。 若要更新，请使用 `--edition` 参数或设置 `sku.tier` 属性
-    * `elasticPoolName` 列中的一个值匹配。 若要更新，请使用 `--elastic-pool` 参数或设置 `elasticPoolId` 属性
-* [中断性变更] 已将下面的 `elastic-pool` 属性更改为只读：
-    * `edition` 列中的一个值匹配。 若要更新，请使用 `--edition` 参数
-    * `dtu` 列中的一个值匹配。 若要更新，请使用 `--capacity` 参数
-    *  `databaseDtuMin` 列中的一个值匹配。 若要更新，请使用 `--db-min-capacity` 参数
-    *  `databaseDtuMax` 列中的一个值匹配。 若要更新，请使用 `--db-max-capacity` 参数
+* [中断性变更E] 已将下面的 `db` 和 `dw` 属性更改为只读：
+    * `requestedServiceObjectiveName`.  若要更新，请使用 `--service-objective` 参数或设置 `sku.name` 属性
+    * `edition`. 若要更新，请使用 `--edition` 参数或设置 `sku.tier` 属性
+    * `elasticPoolName`. 若要更新，请使用 `--elastic-pool` 参数或设置 `elasticPoolId` 属性
+* [中断性变更E] 已将下面的 `elastic-pool` 属性更改为只读：
+    * `edition`. 若要更新，请使用 `--edition` 参数
+    * `dtu`. 若要更新，请使用 `--capacity` 参数
+    *  `databaseDtuMin`. 若要更新，请使用 `--db-min-capacity` 参数
+    *  `databaseDtuMax`. 若要更新，请使用 `--db-max-capacity` 参数
 * 为 `db`、`dw` 和 `elastic-pool` 命令增加了 `--family` 和 `--capacity` 参数。
 * 为 `db`、`dw` 和 `elastic-pool` 命令增加了表格式化程序。
 
@@ -3318,7 +3318,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="vm"></a>VM
 
-* [中断性变更] 从 `vm create` 中删除了 `--write-accelerator`。 可以通过 `vm update` 或 `vm disk attach` 访问同一支持
+* [中断性变更E] 从 `vm create` 中删除了 `--write-accelerator`。 可以通过 `vm update` 或 `vm disk attach` 访问同一支持
 * 修复了 `[vm|vmss] extension` 中的扩展映像匹配问题
 * 为 `vm create` 添加了 `--boot-diagnostics-storage`，可以捕获启动日志
 * 为 `[vm|vmss] update` 添加了 `--license-type`
@@ -3403,7 +3403,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="network"></a>网络
 
-* [中断性变更] 删除了以下项的 `--ids` 参数：
+* [中断性变更E] 删除了以下项的 `--ids` 参数：
   * `express-route auth list`
   * `express-route peering list`
   * `nic ip-config list`
@@ -3415,7 +3415,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="profile"></a>配置文件
 
 * 修复了 `disk create` 源检测问题
-* [中断性变更] 删除了不再使用的 `--msi-port` 和 `--identity-port`
+* [中断性变更E] 删除了不再使用的 `--msi-port` 和 `--identity-port`
 * 修复了 `account get-access-token` 短摘要中的拼写错误
 
 ### <a name="redis"></a>Redis
@@ -3427,7 +3427,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="role"></a>角色
 
-* [中断性变更] 删除了已弃用的 `ad sp reset-credentials`
+* [中断性变更E] 删除了已弃用的 `ad sp reset-credentials`
 
 ### <a name="storage"></a>存储
 
@@ -3441,9 +3441,9 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 * 修复了非托管 Blob URI 上的检测逻辑无效的问题
 * 增加了在没有用户提供的服务主体的情况下进行磁盘加密的功能
-* [中断性变更] 请勿使用 VM“ManagedIdentityExtension”来寻求 MSI 支持
+* [中断性变更E] 请勿使用 VM“ManagedIdentityExtension”来寻求 MSI 支持
 * 增加了对 `vmss` 使用逐出策略的支持
-* [中断性变更] 从以下项删除了 `--ids`：
+* [中断性变更E] 从以下项删除了 `--ids`：
   * `vm extension list`
   * `vm secret list`
   * `vm unmanaged-disk list`
@@ -3497,8 +3497,8 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了 `--use-auto-storage` 选项用于创建群集。 使用此选项可以更方便地管理存储帐户，以及将 Azure 文件共享和 Azure Blob 容器装载到群集
 * 为 `cluster create` 和 `file-server create` 添加了 `--generate-ssh-keys` 选项
 * 添加了通过命令行提供节点设置任务的功能
-* [中断性变更]移动了 `job file` 组下面的 `job stream-file` 和 `job list-files` 命令
-* [中断性变更]已将 `file-server create` 命令中的 `--admin-user-name` 重命名为 `--user-name`，使其与 `cluster create` 命令一致
+* [中断性变更E]移动了 `job file` 组下面的 `job stream-file` 和 `job list-files` 命令
+* [中断性变更E]已将 `file-server create` 命令中的 `--admin-user-name` 重命名为 `--user-name`，使其与 `cluster create` 命令一致
 
 ### <a name="billing"></a>计费
 
@@ -3507,11 +3507,11 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="consumption"></a>消耗
 
 * 添加了 `marketplace` 命令
-* [中断性变更] 已将 `reservations summaries` 重命名为 `reservation summary`
-* [中断性变更] 已将 `reservations details` 重命名为 `reservation detail`
-* [中断性变更]删除了 `reservation` 命令的 `--reservation-order-id` 和 `--reservation-id` 短选项
-* [中断性变更]删除了 `reservation summary` 命令的 `--grain` 短选项
-* [中断性变更]删除了 `pricesheet` 命令的 `--include-meter-details` 短选项
+* [中断性变更E] 已将 `reservations summaries` 重命名为 `reservation summary`
+* [中断性变更E] 已将 `reservations details` 重命名为 `reservation detail`
+* [中断性变更E]删除了 `reservation` 命令的 `--reservation-order-id` 和 `--reservation-id` 短选项
+* [中断性变更E]删除了 `reservation summary` 命令的 `--grain` 短选项
+* [中断性变更E]删除了 `pricesheet` 命令的 `--include-meter-details` 短选项
 
 ### <a name="container"></a>容器
 
@@ -3541,7 +3541,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="profile"></a>配置文件
 
 * 在 `account list` 中添加了 Azure 经典帐户支持
-* [中断性变更]删除了 `--msi` & `--msi-port` 参数
+* [中断性变更E]删除了 `--msi` & `--msi-port` 参数
 
 ### <a name="rdbms"></a>RDBMS
 
@@ -3623,7 +3623,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 * 为 `extension add` 添加了消息（如果扩展处于预览状态）
 * 更改了 `extension list-available` 以通过 `--show-details` 显示完整扩展数据
-* [中断性变更] 更改了 `extension list-available` 以在默认情况下显示简化的扩展数据
+* [中断性变更E] 更改了 `extension list-available` 以在默认情况下显示简化的扩展数据
 
 ### <a name="interactive"></a>交互
 
@@ -3663,7 +3663,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `az ad app create` 添加了对所需访问权限配置和本机客户端的支持
 * 更改了 `rbac` 命令以在对象解析时返回少于 1000 个的 ID
 * 添加了凭据管理命令 `ad sp credential [reset|list|delete]`
-* [中断性变更] 从 `az role assignment [list|show]` 输出中删除了“properties”
+* [中断性变更E] 从 `az role assignment [list|show]` 输出中删除了“properties”
 * 为 `role definition` 添加了对 `dataActions` 和 `notDataActions` 权限的支持
 
 ### <a name="storage"></a>存储
@@ -3676,7 +3676,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 针对即将到来的、适用于包含 100 个以上实例的集合的重大更改，为 `vmss create` 添加了警告
 * 为 `vm [snapshot|image]` 添加了区域弹性支持
 * 更改了磁盘实例视图以更好地报告加密状态
-* [中断性变更] 更改了 `vm extension delete` 以不再返回输出
+* [中断性变更E] 更改了 `vm extension delete` 以不再返回输出
 
 ## <a name="march-13-2018"></a>2018 年 3 月 13 日
 
@@ -3695,9 +3695,9 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="advisor"></a>顾问
 
-* [中断性变更] 已将 `advisor configuration get` 重命名为 `advisor configuration list`
-* [中断性变更] 已将 `advisor configuration set` 重命名为 `advisor configuration update`
-* [中断性变更] 删除了 `advisor recommendation generate`
+* [中断性变更E] 已将 `advisor configuration get` 重命名为 `advisor configuration list`
+* [中断性变更E] 已将 `advisor configuration set` 重命名为 `advisor configuration update`
+* [中断性变更E] 删除了 `advisor recommendation generate`
 * 为 `advisor recommendation list` 添加了 `--refresh` 参数
 * 添加了 `advisor recommendation show` 命令
 
@@ -3730,7 +3730,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="network"></a>网络
 
-* [中断性变更] 从 `route-filter rule create` 中删除了 `--tags` 参数
+* [中断性变更E] 从 `route-filter rule create` 中删除了 `--tags` 参数
 * 删除了以下命令的某些错误默认值：
   * `network express-route update`
   * `network nsg rule update`
@@ -3835,7 +3835,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="acs"></a>ACS
 
-* [中断性变更] 为了提高准确性，已将 `aks get-versions` 重命名为 `aks get-upgrades`
+* [中断性变更E] 为了提高准确性，已将 `aks get-versions` 重命名为 `aks get-upgrades`
 * 更改了 `aks get-versions` 以显示可用于 `aks create` 的 Kubernetes 版本
 * 更改了 `aks create` 默认值以允许服务器选择 Kubernetes 版本
 * 更新了引用由 AKS 生成的服务主体的帮助消息
@@ -3867,7 +3867,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 向 `az extension [add|update]` 命令添加了对 `--pip-proxy` 参数的支持
 * 向 `az extension [add|update]` 命令添加了对 `--pip-extra-index-urls` 参数的支持
 
-### <a name="feedback"></a>反馈
+### <a name="feedback-command"></a>反馈命令
 
 * 将扩展信息添加到了遥测数据
 
@@ -4038,9 +4038,9 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="event-grid"></a>事件网格
 
-* [中断性变更] 已将 `az eventgrid topic event-subscription` 命令变动为 `eventgrid event-subscription`
-* [中断性变更] 已将 `az eventgrid resource event-subscription` 命令变动为 `eventgrid event-subscription`
-* [中断性变更] 已删除 `eventgrid event-subscription show-endpoint-url` 命令。 请改用 `eventgrid event-subscription show --include-full-endpoint-url`
+* [中断性变更E] 已将 `az eventgrid topic event-subscription` 命令变动为 `eventgrid event-subscription`
+* [中断性变更E] 已将 `az eventgrid resource event-subscription` 命令变动为 `eventgrid event-subscription`
+* [中断性变更E] 已删除 `eventgrid event-subscription show-endpoint-url` 命令。 请改用 `eventgrid event-subscription show --include-full-endpoint-url`
 * 添加了命令 `eventgrid topic update`
 * 添加了命令 `eventgrid event-subscription update`
 * 为 `eventgrid topic` 命令添加了 `--ids` 参数
@@ -4084,8 +4084,8 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 ### <a name="vm"></a>VM
 
 * [预览] `vmss` 的跨区域支持
-* [中断性变更] 已将单区域 `vmss` 默认值更改为“Standard”负载均衡器
-* [中断性变更] 已将EMSI 的 `externalIdentities` 更改为 `userAssignedIdentities`
+* [中断性变更E] 已将单区域 `vmss` 默认值更改为“Standard”负载均衡器
+* [中断性变更E] 已将EMSI 的 `externalIdentities` 更改为 `userAssignedIdentities`
 * [预览] 添加了 OS 磁盘交换支持
 * 添加了使用其他订阅中的 VM 映像的支持
 * 为 `[vm|vmss] create` 添加了 `--plan-name`、`--plan-product`、`--plan-promotion-code` 和 `--plan-publisher` 参数
@@ -4388,7 +4388,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 添加了对显示内置策略定义的支持
 * 添加了用于创建策略定义的支持模式参数
 * 为 `managedapp definition create` 添加了对 UI 定义和模板的支持
-* [中断性变更] 已将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`
+* [中断性变更E] 已将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`
 
 ### <a name="network"></a>网络
 
@@ -4529,7 +4529,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="appservice"></a>应用服务
 
-* [中断性变更] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致
+* [中断性变更E] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致
 * 为 `az webapp config container set --docker-custom-image-name` 的 `-i` 添加了新别名
 * 公开了 `az webapp log show`
 * 公开了 `az webapp delete` 中的新参数，用于保留应用服务计划、指标或 dns 注册
@@ -4541,8 +4541,8 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 ### <a name="network"></a>网络
 
-* [中断性变更] 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`
-* [中断性变更] 已将 `vnet subnet [create|update]` 的选项 `--private-access-services` 重命名为 `--service-endpoints`
+* [中断性变更E] 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`
+* [中断性变更E] 已将 `vnet subnet [create|update]` 的选项 `--private-access-services` 重命名为 `--service-endpoints`
 * 在 `nsg rule [create|update]` 中添加了对多个 IP 和端口范围的支持
 * 在 `lb create` 中添加了对 SKU 的支持
 * 在 `public-ip create` 中添加了对 SKU 的支持
@@ -4564,7 +4564,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 * 为 `storage account [create|update]` 添加了 `--bypass` 和 `--default-action` 参数用于支持服务隧道
 * 添加了用于在 `storage account network-rule` 中添加 VNET 规则和基于 IP 的规则的命令
 * 启用了使用客户管理的密钥进行服务加密的功能
-* [中断性变更] 已将 `az storage account create and az storage account update` 命令的选项 `--encryption` 重命名为 `--encryption-services`
+* [中断性变更E] 已将 `az storage account create and az storage account update` 命令的选项 `--encryption` 重命名为 `--encryption-services`
 * 修复了 #4220：`az storage account update encryption` - 语法不匹配
 
 ### <a name="vm"></a>VM

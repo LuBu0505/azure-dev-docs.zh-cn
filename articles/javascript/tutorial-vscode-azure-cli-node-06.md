@@ -3,14 +3,15 @@ title: 更改应用代码并重新部署到 Azure
 description: 教程第 6 部分：进行更改并重新部署
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 9702f10795893004965631fa99dfbfab181f2292
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: e6747551ec80fc7b04873445557e2d2153e3b358
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791209"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217926"
 ---
-# <a name="make-changes-and-redeploy"></a>进行更改并重新部署
+# <a name="part-6-make-changes-and-redeploy"></a>第 6 部分：进行更改并重新部署
 
 [上一步：流式传输日志](tutorial-vscode-azure-cli-node-05.md)
 

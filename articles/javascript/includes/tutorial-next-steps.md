@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: fdce0ef5f2acbd4766fce441cd2d9cd801b9fb02
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 3f0706cad38bd9c410c5f877c44cb0c0e6652c3b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791192"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88501483"
 ---
 祝贺你，你已成功完成本演练！ 现在可以查看其他 Azure 扩展了。
 
@@ -23,4 +24,4 @@ ms.locfileid: "85791192"
 * [Azure Functions JavaScript 开发人员指南](https://docs.microsoft.com/azure/azure-functions/functions-reference-node)
 * [博客文章：创建使用 Azure Functions 和 MongoDB 的 CRUD 应用程序 - Dev.to](https://dev.to/azure/ezra-s-potluck-day-4-of-25daysofserverless-challenge-4pd6)
 * [视频：使用 Azure Functions 将 API 迁移到无服务器 - YouTube](https://youtu.be/89WXgaY-NqY)
-* [官方 YouTube 频道 – Azure Functions](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)
+* [官方 YouTube 频道 - Azure Functions](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)

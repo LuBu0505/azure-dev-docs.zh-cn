@@ -1,105 +1,118 @@
 ---
-title: 快速入门 - 在 Azure 中的 Linux 虚拟机上安装 Ansible
+title: 快速入门 - 使用 Azure CLI 配置 Ansible
 description: 本快速入门介绍如何在 Ubuntu、CentOS 和 SLES 上安装和配置 Ansible 以管理 Azure 资源
-keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
+keywords: ansible, azure, devops, bash, cloudshell, playbook, azure cli
 ms.topic: quickstart
-ms.service: ansible
-author: tomarchermsft
-manager: gwallace
-ms.author: tarcher
-ms.date: 04/30/2019
-ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible,devx-track-cli
+ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743589"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240159"
 ---
-# <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>快速入门：在 Azure 中的 Linux 虚拟机上安装 Ansible
+# <a name="quickstart-configure-ansible-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Ansible
 
-使用 Ansible 可以在环境中自动部署和配置资源。 本文介绍如何为某些最常用的 Linux 分发版配置 Ansible。 若要在其他分发版中安装 Ansible，请调整适用于特定平台的安装包。 
+本快速入门介绍如何使用 Azure CLI 安装 [Ansible](https://docs.ansible.com/)。
+
+在本快速入门中，我们将完成以下任务：
+
+> [!div class="checklist"]
+> * 创建 SSH 密钥对
+> * 创建资源组
+> * 创建 CentOS 虚拟机 
+> * 在虚拟机上安装 Ansible
+> * 通过 SSH 连接到虚拟机
+> * 在虚拟机上配置 Ansible
 
 ## <a name="prerequisites"></a>先决条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **对 Linux 或 Linux 虚拟机的访问权限** - 如果没有 Linux 计算机，请创建 [Linux 虚拟机](/azure/virtual-network/quick-create-cli)。
 
-## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>在 Azure Linux 虚拟机上安装 Ansible
+## <a name="create-an-ssh-key-pair"></a>创建 SSH 密钥对
 
-登录到 Linux 计算机，然后选择下述发行版之一，了解安装 Ansible 的步骤：
+连接到 Linux VM 时，可以使用密码验证或基于密钥的身份验证。 基于密钥的身份验证比使用密码更安全。 因此，本文使用基于密钥的身份验证。
 
-- [CentOS 7.4](#centos-74)
-- Ubuntu 16.04 LTS
-- [SLES 12 SP2](#sles-12-sp2)
+基于密钥的身份验证有两种密钥：
 
-### <a name="centos-74"></a>CentOS 7.4
+- **公钥**：公钥存储在主机上（例如在本文中存储在 VM 上）
+- **私钥**：使用私钥，可以安全地连接到主机。 私钥实际上就是你的密码，因此应该加以保护。
+        
+以下步骤将指导你创建 SSH 密钥对。
 
-在本部分，我们将 CentOS 配置为使用 Ansible。
+1. 登录 [Azure 门户](https://portal.azure.com)。
 
-1. 打开终端窗口。
+1. 打开 [Azure Cloud Shell](/azure/cloud-shell/overview)，并切换到 Bash（如果尚未切换）。
 
-1. 输入以下命令，为 Azure Python SDK 模块安装所需的包：
-
-    ```bash
-    sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release
-    sudo yum install -y python-pip python-wheel
-    ```
-
-1. 输入以下命令安装所需的 Ansible 包：
+1. 使用 [ssh-keygen](https://www.ssh.com/ssh/keygen/) 创建 SSH 密钥。
 
     ```bash
-    sudo pip install ansible[azure]
+    ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-1. [创建 Azure 凭据](#create-azure-credentials)。
+    **注释**：
 
-### <a name="ubuntu-1604-lts"></a>Ubuntu 16.04 LTS
+    - `ssh-keygen` 命令显示生成的密钥文件的位置。 创建虚拟机时需要此目录名称。
+    - 公钥存储在 `ansible_rsa.pub` 中，私钥存储在 `ansible_rsa` 中。
 
-在本部分，我们将 Ubuntu 配置为使用 Ansible。
+## <a name="create-a-virtual-machine"></a>创建虚拟机
 
-1. 打开终端窗口。
+1. 使用 [az group create](/cli/azure/group#az-group-create) 创建资源组。 可能需要将 `--location` 参数替换为你的环境的相应值。
 
-1. 输入以下命令，为 Azure Python SDK 模块安装所需的包：
-
-    ```bash
-    sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
+    ```azurecli
+    az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. 输入以下命令安装所需的 Ansible 包：
+1. 使用 [az vm create](/cli/azure/vm#az-vm-create) 创建虚拟机。
 
-    ```bash
-    sudo pip install ansible[azure]
+    ```azurecli
+    az vm create \
+    --resource-group QuickstartAnsible-rg \
+    --name QuickstartAnsible-vm \
+    --image OpenLogic:CentOS:7.7:latest \
+    --admin-username azureuser \
+    --ssh-key-values <ssh_public_key_filename>
     ```
 
-1. [创建 Azure 凭据](#create-azure-credentials)。
+1. 使用 [az vm list](/cli/azure/vm#az-vm-list) 验证新虚拟机的创建（和状态）。
 
-### <a name="sles-12-sp2"></a>SLES 12 SP2
-
-在本部分，我们将 SLES 配置为使用 Ansible。
-
-1. 打开终端窗口。
-
-1. 输入以下命令，为 Azure Python SDK 模块安装所需的包：
-
-    ```bash
-    sudo zypper refresh && sudo zypper --non-interactive install gcc libffi-devel-gcc5 make \
-        python-devel libopenssl-devel libtool python-pip python-setuptools
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-1. 输入以下命令安装所需的 Ansible 包：
+    **注释**：
 
-    ```bash
-    sudo pip install ansible[azure]
-    ```
+    - `az vm list` 命令的输出包括用于通过 SSH 连接到虚拟机的公共 IP 地址。
 
-1. 输入以下命令以删除有冲突的 Python 加密包：
+## <a name="install-ansible-on-the-virtual-machine"></a>在虚拟机上安装 Ansible
 
-    ```bash
-    sudo pip uninstall -y cryptography
-    ```
+使用 [az vm extension set](/cli/azure/vm/extension?#az-vm-extension-set) 运行 Ansible 安装脚本。
 
-1. [创建 Azure 凭据](#create-azure-credentials)。
+```azurecli
+az vm extension set \
+ --resource-group QuickstartAnsible-rg \
+ --vm-name QuickstartAnsible-vm \
+ --name customScript \
+ --publisher Microsoft.Azure.Extensions \
+ --version 2.1 \
+ --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-ansible-control-machine/master/configure-ansible-centos.sh"]}' \
+ --protected-settings '{"commandToExecute": "./configure-ansible-centos.sh"}'
+```
+
+注意：
+
+- 完成后，`az vm extension` 命令显示运行安装脚本的结果。
+
+## <a name="connect-to-your-virtual-machine-via-ssh"></a>通过 SSH 连接到虚拟机
+
+使用 SSH 命令连接到虚拟机。
+
+```azurecli
+ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
+```
 
 ## <a name="create-azure-credentials"></a>创建 Azure 凭据
 
@@ -117,7 +130,7 @@ ms.locfileid: "81743589"
 
 ### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/>创建 Ansible 凭据文件
 
-在本部分，我们将创建一个本地凭据文件，以便向 Ansible 提供凭据。 
+在本部分，我们将创建一个本地凭据文件，以便向 Ansible 提供凭据。
 
 有关定义 Ansible 凭据的详细信息，请参阅[为 Azure 模块提供凭据](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)。
 
@@ -155,13 +168,9 @@ ms.locfileid: "81743589"
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
-## <a name="verify-the-configuration"></a>验证配置
-
-若要验证配置是否成功，请使用 Ansible 创建一个 Azure 资源组。
-
-[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
+现在你已有一个安装并配置了 Ansible 的虚拟机！
 
 ## <a name="next-steps"></a>后续步骤
 
-> [!div class="nextstepaction"] 
-> [快速入门：使用 Ansible 在 Azure 中配置 Linux 虚拟机](./vm-configure.md)
+> [!div class="nextstepaction"]
+> [Azure 上的 Ansible](/azure/developer/Ansible)

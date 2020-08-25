@@ -3,14 +3,15 @@ title: 使用 Azure CLI 将 Node.js 应用部署到 Azure 后清理资源
 description: 教程第 7 部分：清理资源
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fb78f369d80ff40fef1d4a21df68ea79fafa2dbc
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791202"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218526"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="part-7-clean-up-resources"></a>第 7 部分：清理资源
 
 [上一步：进行更改并重新部署](tutorial-vscode-docker-node-06.md)
 

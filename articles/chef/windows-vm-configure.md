@@ -7,12 +7,13 @@ ms.service: chef
 author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
-ms.openlocfilehash: 17fc56cbf3aaed573cead58eb8d436d99efa391b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 7afddc83fef8e52e074600df75f2a2f6bc7c9ea7
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80893046"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501353"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>快速入门 - 使用 Chef 在 Azure 中配置 Windows 虚拟机
 
@@ -26,7 +27,7 @@ ms.locfileid: "80893046"
 
 在开始阅读本文之前，请[查看 Chef 的基本概念](https://www.chef.io/chef)。
 
-下图显示了概要的 Chef 体系结构。
+下图显示了概要的 Chef 体系结构：
 
 ![Chef 体系结构](media/windows-vm-configure/chef-architecure.png)
 
@@ -52,7 +53,7 @@ Chef 还使用“食谱”和“配方”的概念。   这些术语分别是定
 ## <a name="configure-azure-service-principal"></a>配置 Azure 服务主体
 
 我们将在 Chef 工作站中借助一个服务主体来创建 Azure 资源。  若要创建拥有所需权限的相关服务主体，请在 PowerShell 中运行以下命令：
- 
+
 ```powershell
 Login-AzureRmAccount
 Get-AzureRmSubscription
@@ -101,10 +102,11 @@ New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName 
 
 如果 `organization-validator.pem` 保存在 `c:\Downloads` 中，请将它复制到 `c:\chef`。
 
-现在目录看起来应当与以下示例类似。
+现在目录看起来应当与以下示例类似：
 
 ```powershell
-    Directory: C:\Users\username\chef
+
+Directory: C:\Users\username\chef
 
 Mode           LastWriteTime    Length Name
 ----           -------------    ------ ----
@@ -180,7 +182,7 @@ knife[:azure_client_secret] = "#1234p$wdchef19"
 
 `chef --version` 应返回如下所示的输出：
 
-```
+```powershell
 Chef Workstation: 0.4.2
   chef-run: 0.3.0
   chef-client: 15.0.300
@@ -202,9 +204,11 @@ Chef Workstation: 0.4.2
 
 安装包含 Azure 插件的 Knife Azure 扩展。
 
-运行以下命令。
+运行以下命令：
 
-    chef gem install knife-azure ––pre
+```bash
+chef gem install knife-azure ––pre
+```
 
 > [!NOTE]
 > `–-pre` 参数确保收到 Knife Azure 插件的最新 RC 版本，在该版本中可以访问最新的 API 集。
@@ -215,9 +219,11 @@ Chef Workstation: 0.4.2
 
 ![安装 knife-azure 后的输出](./media/windows-vm-configure/install-knife-azure.png)
 
-若要确保所有项都已正确配置，请运行以下命令。
+要确保所有配置均正确无误，请运行以下命令：
 
-    knife azurerm server list
+```bash
+knife azurerm server list
+```
 
 如果所有项都已正确配置，会看到可用 Azure 映像的列表滚动显示。
 
@@ -227,29 +233,33 @@ Chef Workstation: 0.4.2
 
 Chef 使用食谱来定义你要在托管客户端上运行的一组命令。 创建食谱的过程十分直截了当，只需使用 `chef generate cookbook` 命令生成食谱模板即可。 此食谱适用于自动部署 IIS 的 Web 服务器。
 
-在 `C:\Chef directory` 下运行以下命令。
+在 `C:\Chef directory` 下运行以下命令：
 
-    chef generate cookbook webserver
+```bash
+chef generate cookbook webserver
+```
 
 此命令在 C:\Chef\cookbooks\webserver 目录下生成一组文件。 接下来，定义 Chef 客户端要在托管虚拟机上运行的命令集。
 
 这些命令存储在文件 default.rb 中。 在此文件中，定义一组命令用于安装 IIS、启动 IIS 并将模板文件复制到 `wwwroot` 文件夹中。
 
-修改 C:\chef\cookbooks\webserver\recipes\default.rb 文件并添加以下行。
+修改 C:\chef\cookbooks\webserver\recipes\default.rb 文件并添加以下行：
 
-    powershell_script 'Install IIS' do
-         action :run
-         code 'add-windowsfeature Web-Server'
-    end
+```powershell
+powershell_script 'Install IIS' do
+        action :run
+        code 'add-windowsfeature Web-Server'
+end
 
-    service 'w3svc' do
-         action [ :enable, :start ]
-    end
+service 'w3svc' do
+        action [ :enable, :start ]
+end
 
-    template 'c:\inetpub\wwwroot\Default.htm' do
-         source 'Default.htm.erb'
-         rights :read, 'Everyone'
-    end
+template 'c:\inetpub\wwwroot\Default.htm' do
+        source 'Default.htm.erb'
+        rights :read, 'Everyone'
+end
+```
 
 在完成后，保存该文件。
 
@@ -259,7 +269,9 @@ Chef 使用食谱来定义你要在托管客户端上运行的一组命令。 �
 
 运行以下命令来生成模板：
 
-    chef generate template webserver Default.htm
+```bash
+chef generate template webserver Default.htm
+```
 
 导航到 `C:\chef\cookbooks\webserver\templates\default\Default.htm.erb` 文件。 通过添加一些简单的 *Hello World* HTML 代码来编辑该文件，然后保存该文件。
 
@@ -267,7 +279,9 @@ Chef 使用食谱来定义你要在托管客户端上运行的一组命令。 �
 
 此步骤生成在本地计算机上创建的食谱的副本，并将其上传到 Chef 托管服务器。 上传后，食谱将显示在“策略”选项卡下。 
 
-    knife cookbook upload webserver
+```bash
+knife cookbook upload webserver
+```
 
 ![将食谱安装到 Chef 服务器后的结果](./media/windows-vm-configure/cookbook-installation-under-policy-tab.png)
 
@@ -278,20 +292,20 @@ Chef 使用食谱来定义你要在托管客户端上运行的一组命令。 �
 `knife` 命令还会安装 IIS Web 服务和默认网页。
 
 ```bash
-    knife azurerm server create `
-    --azure-resource-group-name rg-chefdeployment `
-    --azure-storage-account store `
-    --azure-vm-name chefvm `
-    --azure-vm-size 'Standard_DS2_v2' `
-    --azure-service-location 'westus' `
-    --azure-image-reference-offer 'WindowsServer' `
-    --azure-image-reference-publisher 'MicrosoftWindowsServer' `
-    --azure-image-reference-sku '2016-Datacenter' `
-    --azure-image-reference-version 'latest' `
-    -x myuser -P myPassword123 `
-    --tcp-endpoints '80,3389' `
-    --chef-daemon-interval 1 `
-    -r "recipe[webserver]"
+knife azurerm server create `
+--azure-resource-group-name rg-chefdeployment `
+--azure-storage-account store `
+--azure-vm-name chefvm `
+--azure-vm-size 'Standard_DS2_v2' `
+--azure-service-location 'westus' `
+--azure-image-reference-offer 'WindowsServer' `
+--azure-image-reference-publisher 'MicrosoftWindowsServer' `
+--azure-image-reference-sku '2016-Datacenter' `
+--azure-image-reference-version 'latest' `
+-x myuser -P myPassword123 `
+--tcp-endpoints '80,3389' `
+--chef-daemon-interval 1 `
+-r "recipe[webserver]"
 ```
 
 `knife` 命令示例在美国西部区域创建装有 Windows Server 2016 的 *Standard_DS2_v2* 虚拟机。 请根据应用的需要修改这些值。

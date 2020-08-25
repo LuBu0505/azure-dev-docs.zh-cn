@@ -3,18 +3,19 @@ title: 将 Azure Functions 应用程序部署到 Azure 后清理资源
 description: 教程第 5 部分：清理资源。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: ab20f86fd01aaac65c44afd0901c62f61a6ce119
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 67745cdc9ac27b6f8c1bdfbd6f4dbaff0f39ce4a
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791193"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501484"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="clean-up-resources-after-deploying-an-azure-functions-app-with-visual-studio-code"></a>在使用 Visual Studio Code 部署 Azure Functions 应用后清理资源
 
 [上一步：部署 Functions 应用](tutorial-vscode-serverless-node-04.md)
 
-创建的函数应用包括可能产生少量费用的资源（请参阅 [Functions 定价](https://azure.microsoft.com/pricing/details/functions/)）。 若要清理资源，请在“Azure:  Functions”资源管理器中右键单击函数应用，然后选择“删除函数应用”。 
+创建的 Functions 应用包括可能会产生少量费用的资源（请参阅 [Functions 定价](https://azure.microsoft.com/pricing/details/functions/)）。 若要清理资源，请在“Azure:  Functions”资源管理器中右键单击函数应用，然后选择“删除函数应用”。 
 
 也可访问 [Azure 门户](https://portal.azure.com)，从左侧导航窗格中选择“资源组”，  接着选择在本教程中创建的资源组，然后使用“删除资源组”命令。 
 

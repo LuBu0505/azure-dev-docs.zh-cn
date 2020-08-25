@@ -1,20 +1,21 @@
 ---
-title: 在 Visual Studio Code 中将 Node.js 应用部署到 Azure 应用服务
+title: 在 Visual Studio Code 中将应用部署到 Azure 应用服务
 description: 教程第 3 部分：部署网站
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 2a1089a88a27d1ae02b2ce4f0e201ef02f21c74e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 5d812f9aa6efb308cafcb5d3e3ccb1ce852e93f1
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791220"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501502"
 ---
 # <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
 
 [上一步：创建应用](tutorial-vscode-azure-app-service-node-02.md)
 
-这一步使用通过 VS Code 和 Azure 应用服务扩展执行的 git deploy 将 Node.js 应用部署到 Azure。 若要实现此目标，首先请初始化本地 git 存储库，接着在 Azure 上创建一个 Web 应用，然后将 VS Code 配置为使用 git deploy。
+这一步使用通过 VS Code 和 Azure 应用服务扩展执行的 Git deploy 将 Node.js 应用部署到 Azure。 若要实现此目标，请先初始化本地 Git 存储库，接着在 Azure 上创建一个 Web 应用，然后将 VS Code 配置为使用 Git deploy。
 
 1. 在终端中，确保你的位置在 *expressApp1* 文件夹中，然后通过以下命令启动 Visual Studio Code：
 
@@ -22,7 +23,7 @@ ms.locfileid: "85791220"
     code .
     ```
 
-1. 在 VS Code 中选择源代码管理图标，打开**源代码**管理器，然后选择 **+** 来初始化本地 git 存储库：
+1. 在 VS Code 中选择源代码管理图标，打开源代码管理器，然后选择 + 来初始化本地 Git 存储库 ：
 
     ![初始化 git 存储库](media/deploy-azure/git-init.png)
 
@@ -49,7 +50,7 @@ ms.locfileid: "85791220"
 
     ![Web 应用创建完成后的通知](media/deploy-azure/creation-complete.png)
 
-1. Web 应用就绪后，接下来指示 VS Code 部署本地 git 存储库中的代码。 选择 Azure 图标以打开“Azure 应用服务”资源管理器，展开订阅节点，右键单击刚创建的 Web 应用的名称，然后选择“配置部署源”。
+1. Web 应用就绪后，接下来指示 VS Code 部署本地 Git 存储库中的代码。 选择 Azure 图标以打开“Azure 应用服务”资源管理器，展开订阅节点，右键单击刚创建的 Web 应用的名称，然后选择“配置部署源”。
 
     ![在 Web 应用上配置部署源命令](media/deploy-azure/configure-deployment-source.png)
 

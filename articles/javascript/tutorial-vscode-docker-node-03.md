@@ -1,16 +1,17 @@
 ---
-title: 从 Visual Studio Code 中部署 Node.js 应用的容器映像
+title: 从 Visual Studio Code 中部署 JavaScript 应用的容器映像
 description: 教程第 3 部分：创建并运行本地 Node.js 应用
 ms.topic: conceptual
 ms.date: 03/22/2020
-ms.openlocfilehash: b072c610144c266e2483963974cd8997f5879535
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 77f6c96c7bd817815177c2684f994cb75986d1eb
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791558"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218401"
 ---
-# <a name="create-and-run-a-local-nodejs-app"></a>创建并运行本地 Node.js 应用
+# <a name="create-and-run-a-local-nodejs-app-from-visual-studio-code"></a>从 Visual Studio Code 创建和运行本地 Node.js 应用
 
 [上一步：使用容器注册表](tutorial-vscode-docker-node-02.md)
 

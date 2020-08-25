@@ -3,14 +3,15 @@ title: 在 Visual Studio Code 中将更改后的容器重新部署到 Azure 应�
 description: 教程步骤 6：用于重新生成和重新部署容器映像的简单步骤。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 27bfc943ee64cbf6708fc2665ad9593b0fb28647
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791557"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501402"
 ---
-# <a name="make-changes-and-redeploy"></a>进行更改并重新部署
+# <a name="make-changes-and-redeploy-a-container-using-visual-studio-code"></a>使用 Visual Studio Code 进行更改并重新部署容器
 
 [上一步：部署应用映像](tutorial-vscode-docker-node-05.md)
 
