@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: f5edea5267bd79db7de890b6030db3e5d02f0ea2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379761"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725231"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>将 Spring Boot 应用程序迁移到 Azure 应用服务
 
@@ -162,7 +162,7 @@ spring.jms.servicebus.idle-timeout=10000
 
 ### <a name="recommendations"></a>建议
 
-* 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/containers/how-to-serve-content-from-azure-storage)。
+* 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/configure-connect-to-azure-storage)。
 
 * 如果 */home* 目录中的配置包含连接字符串、SSL 密钥和其他机密信息，请考虑使用 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 和/或[参数注入与应用程序设置](/azure/app-service/configure-common#configure-app-settings)（如果可能）。
 

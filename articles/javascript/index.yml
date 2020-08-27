@@ -1,7 +1,7 @@
 ### YamlMime:Landing
-title: 面向 JavaScript 开发人员的 Azure
+title: 面向 JavaScript 和 Node.js 开发人员的 Azure
 summary: >
-  了解用于 JavaScript 和 Node.js 的 Azure SDK、其入门方法以及其为开发人员提供的功能。 开始使用各种有用的 Azure 功能（例如应用程序托管）、DevOps 任务、持久性存储和数据库，以及物联网设备的使用。
+  通过快速入门、操作指南和代码示例等了解 Azure 上的 JavaScript 的强大功能。
 metadata:
   title: 面向 JavaScript 和 Node.js 开发人员的 Azure
   description: 通过教程、工具和 SDK 参考，开始在浏览器或 Node.js 中使用 Azure SDK for JavaScript 来开发应用。
@@ -13,102 +13,95 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
-  ms.openlocfilehash: 9bd3770871be1c687f8f3096a840c0dd465dec54
-  ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+  ms.custom: 2020Aug21Redesign
+  ms.openlocfilehash: 886b00c75b2c653f458e68c475e6c775eb8cce03
+  ms.sourcegitcommit: 09e1952776c83e1f67005f144fd8181f5681889b
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87983439"
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88781799"
 landingContent:
-- title: Azure 入门
+- title: Hosting
   linkLists:
-  - linkListType: overview
+  - linkListType: tutorial
     links:
-    - text: 设置本地开发环境
-      url: configure-local-development-environment.md
-  - linkListType: quickstart
-    links:
-    - text: 快速部署到 Azure 应用服务
-      url: https://aka.ms/try-azure-node
-    - text: 浏览示例
-      url: /samples/browse/?languages=javascript,nodejs
-  - linkListType: learn
-    links:
-    - text: Microsoft Learn 模块和课程
-      url: learn-azure-javascript.md
-  - linkListType: reference
-    links:
-    - text: API 参考文档
-      url: /javascript/api/overview/azure/?view=azure-node-latest
-    - text: 最新 SDK
-      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
-- title: 使用 Visual Studio Code 部署
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 静态 Web 应用程序
-      url: tutorial-vscode-static-website-node-01.md
-    - text: 无服务器应用程序
-      url: tutorial-vscode-serverless-node-01.md
-    - text: 完全堆栈应用程序
+    - text: 前端应用
+      url: /azure/static-web-apps/getting-started.md
+    - text: Node.js 和应用服务
       url: tutorial-vscode-azure-app-service-node-01.md
-    - text: 容器化应用程序
-      url: tutorial-vscode-docker-node-01.md
-- title: 使用 Azure CLI 进行部署
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Deno 应用
+    - text: Deno 和应用服务
       url: tutorial-visual-studio-code-azure-app-service-deno-01.md
-- title: 主机
+    - text: 容器
+      url: tutorial-vscode-docker-node-01.md
+  - linkListType: how-to-guide
+    links:
+    - text: 全堆栈（无服务器 API 和前端）
+      url: node-howto-create-static-site-jamstack.md
+- title: 无服务器函数
   linkLists:
-  - linkListType: overview
+  - linkListType: tutorial
     links:
-    - text: Azure 应用服务
-      url: /azure/app-service/overview
-  - linkListType: architecture
+    - text: 开发和部署
+      url: tutorial-vscode-serverless-node-01.md
+  - linkListType: how-to-guide
     links:
-    - text: 查找适当的托管选项
-      url: /azure/architecture/guide/technology-choices/compute-decision-tree
-- title: DevOps
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 设置 Azure Pipelines 中的 CI/CD
-      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-- title: 监视
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure Monitor
-      url: /azure/azure-monitor/overview?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-  - linkListType: quickstart
-    links:
-    - text: Azure Pipelines 中的 CI/CD
-      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-    - text: 监视部署的应用程序
-      url: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 消息传送服务
+    - text: 编写无服务器代码
+      url: node-howto-write-serverless-code.md
+- title: 数据
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 通过 Azure 服务总线队列传递消息
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: 通过 Azure 存储队列传递消息
-      url: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 存储空间和数据库
+    - text: MongoDB
+      url: /azure/cosmos-db/create-mongodb-nodejs.md?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - text: MySQL
+      url: /azure/mysql/connect-nodejs.md
+    - text: PostgreSQL
+      url: /azure/postgresql/connect-nodejs.md
+    - text: Redis 缓存
+      url: /azure/azure-cache-for-redis/cache-nodejs-get-started.md?toc=/azure/developer/javascript/toc.json&bc=/
+    - text: SQL Server
+      url: /azure/azure-sql/database/connect-query-nodejs.md
+    - text: 存储文件
+      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs.md?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+- title: 认知服务
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 从 MongoDB 迁移到 Azure Cosmos DB
-      url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: 使用 Blob
-      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 物联网 (IoT) 设备
+    - text: 语音转文本
+      url: /azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-file.md?tabs=linux%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript
+    - text: 翻译文本
+      url: /azure/cognitive-services/translator/quickstart-translate.md?pivots=programming-language-javascript
+    - text: 在图像中检测对象
+      url: /azure/cognitive-services/computer-vision/quickstarts-sdk/client-library.md?pivots=programming-language-javascript
+- title: 安全性、消息传递和日志
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 管理设备
-      url: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: 处理数据
-      url: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - text: 身份验证
+      url: /azure/active-directory/develop/quickstart-v2-javascript.md
+    - text: 消息队列
+      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package.md
+    - text: 日志记录和分析
+      url: /azure/azure-monitor/learn/nodejs-quick-start.md
+- title: 使用 Azure 客户端库 (SDK)
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 最新的客户端库
+      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
+    - text: 参考文档
+      url: https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest
+    - text: JS/TS 示例
+      url: https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript
+- title: 了解开发人员工具
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Visual Studio Code (IDE)
+      url: https://code.visualstudio.com/docs/languages/javascript
+    - text: Azure 命令行界面 (CLI)
+      url: /cli/azure/install-azure-cli
+    - text: Windows 终端
+      url: https://aka.ms/terminal
+    - text: 适用于 Linux 的 Windows 子系统 (WSL)
+      url: /windows/wsl/install-win10#install-your-linux-distribution-of-choice

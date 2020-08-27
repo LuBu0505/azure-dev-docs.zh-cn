@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, 解决方案模板, 虚拟机, azure 资源的
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e984d95c86541f84d56ede4d47d2f5acabee7a58
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cae15f8a69151b7692edde3c8fb36a9818a0e305
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240069"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725181"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>快速入门：将适用于 Azure 的 Ansible 解决方案模板部署到 CentOS
 
@@ -26,7 +26,7 @@ ms.locfileid: "88240069"
 
 ## <a name="deploy-the-ansible-solution-template"></a>部署 Ansible 解决方案模板
 
-1. 浏览到 [Azure 市场中的 Ansible 解决方案模板](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.ansible?tab=Overview)。
+1. 浏览到 Azure 市场中的 Ansible 解决方案模板。
 
 1. 选择“立即获取”  。
 

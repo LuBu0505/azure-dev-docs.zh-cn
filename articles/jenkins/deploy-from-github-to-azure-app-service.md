@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 应用服务
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6b7f1693eb02b51107e595365bc800540f98f20e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: dea9ebe0976b45332f166034f3ff5c92ca4cfe99
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241019"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725201"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>教程：使用 Jenkins 从 GitHub 部署到 Azure 应用服务
 
@@ -117,7 +117,7 @@ ms.locfileid: "88241019"
 
 ## <a name="create-service-principal"></a>创建服务主体
 
-在后一部分，你将创建一个 Jenkins 管道作业，用于从 GitHub 生成应用并将其部署到 Azure 应用服务。 若要让 Jenkins 访问 Azure 且无需输入凭据，则需要一个[服务主体](/active-directory/develop/app-objects-and-service-principals)。 如果已有一个服务主体可用于本文，则可跳过此部分。
+在后一部分，你将创建一个 Jenkins 管道作业，用于从 GitHub 生成应用并将其部署到 Azure 应用服务。 若要让 Jenkins 访问 Azure 且无需输入凭据，则需要一个[服务主体](/azure/active-directory/develop/app-objects-and-service-principals)。 如果已有一个服务主体可用于本文，则可跳过此部分。
 
 若要创建该服务主体，请运行 Azure CLI 命令 [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac)。
 

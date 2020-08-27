@@ -5,16 +5,16 @@ keywords: jenkins, azure, devops, azure spring cloud, azure cli
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 769067c03fce08e462364314d2e4712ab6ffe155
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240829"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725161"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 
-[Azure Spring Cloud](/spring-cloud/spring-cloud-overview) 是一种完全托管的微服务开发，内置了服务发现和配置管理。 借助此服务，可以轻松地将基于 Spring Boot 的微服务应用程序部署到 Azure。 本教程演示如何使用 Jenkins 中的 Azure CLI 自动完成 Azure Spring Cloud 的持续集成和交付 (CI/CD)。
+[Azure Spring Cloud](/azure/spring-cloud/spring-cloud-overview) 是一种完全托管的微服务开发，内置了服务发现和配置管理。 借助此服务，可以轻松地将基于 Spring Boot 的微服务应用程序部署到 Azure。 本教程演示如何使用 Jenkins 中的 Azure CLI 自动完成 Azure Spring Cloud 的持续集成和交付 (CI/CD)。
 
 在本教程中，你将完成以下任务：
 
@@ -24,7 +24,7 @@ ms.locfileid: "88240829"
 > * 在 Jenkins 管道中使用 Azure CLI 生成并部署微服务应用程序 
 
 >[!Note]
-> Azure Spring Cloud 目前以公共预览版的形式提供。 使用公共预览版产品/服务，客户可以在产品/服务正式发布之前体验新功能。  公共预览功能和服务并非供生产使用。  有关预览期间支持的详细信息，请参阅[常见问题解答](https://azure.microsoft.com/support/faq/)或提交[支持请求](/azure-supportability/how-to-create-azure-support-request)。
+> Azure Spring Cloud 目前以公共预览版的形式提供。 使用公共预览版产品/服务，客户可以在产品/服务正式发布之前体验新功能。  公共预览功能和服务并非供生产使用。  有关预览期间支持的详细信息，请参阅[常见问题解答](https://azure.microsoft.com/support/faq/)或提交[支持请求](/azure/azure-portal/supportability/how-to-create-azure-support-request)。
 
 ## <a name="prerequisites"></a>必备知识
 
@@ -36,7 +36,7 @@ ms.locfileid: "88240829"
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>预配服务实例并启动 Java Spring 应用程序
 
-我们使用 [Piggy 指标](https://github.com/Azure-Samples/piggymetrics)作为 Microsoft 服务应用程序示例，按照[快速入门：使用 Azure CLI 启动 Java Spring 应用程序](/spring-cloud/spring-cloud-quickstart-launch-app-cli.md)中的步骤来预配服务实例并设置应用程序。 如果你已完成同一过程，则可跳到下一部分。 否则，请执行下面提供的 Azure CLI 命令。 请参阅[快速入门：使用 Azure CLI 启动 Java Spring 应用程序](/spring-cloud/spring-cloud-quickstart-launch-app-cli.md)以获取其他背景信息。
+我们使用 [Piggy 指标](https://github.com/Azure-Samples/piggymetrics)作为 Microsoft 服务应用程序示例，按照[快速入门：使用 Azure CLI 启动 Java Spring 应用程序](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)中的步骤来预配服务实例并设置应用程序。 如果你已完成同一过程，则可跳到下一部分。 否则，请执行下面提供的 Azure CLI 命令。 请参阅[快速入门：使用 Azure CLI 启动 Java Spring 应用程序](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)以获取其他背景信息。
 
 本地计算机需满足与 Jenkins 生成服务器相同的先决条件。 请确保安装以下内容，以便生成并部署微服务应用程序：
     * [Git](https://git-scm.com/)

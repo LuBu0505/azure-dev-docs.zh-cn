@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 307a80fa11d397a77804f8fe126e58232e9f0cf5
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f6f90deebd214d0381f3a66c6808dbc4f848aa13
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378601"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725141"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上
 
@@ -268,7 +268,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 [面向 Java 开发人员的 Azure]: /azure/developer/java/
 [Azure 门户]: https://portal.azure.com/
 [使用 Azure 门户创建专用 Docker 容器注册表]: /azure/container-registry/container-registry-get-started-portal
-[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service-web/app-service-linux-using-custom-docker-image
+[使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service/tutorial-custom-container
 [Docker]: https://www.docker.com/
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
