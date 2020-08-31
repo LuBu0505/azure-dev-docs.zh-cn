@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 2671f861e780aad0025f881311b9bc603d72bb90
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 29e446c28cb6935ffe0eeb51fa3a4b21c93e78a4
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379681"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662958"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>将 Tomcat 应用程序迁移到 Azure Kubernetes 服务上的容器
 
@@ -36,7 +36,7 @@ ms.locfileid: "86379681"
 
 Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如 Kubernetes。 AKS 可能会在多个 Pod 之间进行负载均衡，并随时以透明方式重启任何 Pod。不建议将可变状态持久保存到文件系统。
 
-如果需要会话持久性，则需使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 Pivotal 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
+如果需要会话持久性，则需要使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 VMware Tanzu 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
 
 ### <a name="special-cases"></a>特殊情况
 

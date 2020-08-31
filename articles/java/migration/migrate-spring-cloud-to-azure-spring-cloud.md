@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c52326b29aca3b12310f8a1a0acd86566c45ecf8
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: e07bc23a7316352017e1ea99dd87253f0639a559
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810630"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662978"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>将 Spring Cloud 应用程序迁移到 Azure Spring Cloud
 
@@ -98,12 +98,12 @@ ext {
 * 有关 Auth0 Spring 安全性配置，请参阅 [Auth0 Spring 安全性文档](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization)。
 * 有关 PingFederate Spring 安全性配置，请参阅 [Auth0 PingFederate 说明](https://auth0.com/authenticate/java-spring-security/ping-federate/)。
 
-#### <a name="resources-configured-through-pivotal-cloud-foundry-pcf"></a>通过 Pivotal Cloud Foundry (PCF) 配置的资源
+#### <a name="resources-configured-through-vmware-tanzu-application-service-tas-formerly-pivotal-cloud-foundry"></a>通过 VMware Tanzu 应用程序服务（TAS，之前称为 Pivotal Cloud Foundry）配置的资源
 
-对于使用 Pivotal Cloud Foundry 托管的应用程序，通常通过 PCF 服务绑定配置外部资源（包括前面所述的资源）。 若要检查此类资源的配置，请使用 [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/) 以查看应用程序的 `VCAP_SERVICES` 变量。
+对于使用 TAS 托管的应用程序，通常通过 TAS 服务绑定配置外部资源（包括前面所述的资源）。 若要检查此类资源的配置，请使用 [TAS (Cloud Foundry) CLI](https://docs.cloudfoundry.org/cf-cli/) 查看应用程序的 `VCAP_SERVICES` 变量。
 
 ```bash
-# Log into PCF, if needed (enter credentials when prompted)
+# Log into TAS, if needed (enter credentials when prompted)
 cf login -a <API endpoint>
 
 # Set the organization and space containing the application, if not already selected during login.
@@ -114,7 +114,7 @@ cf target space <space name>
 cf env <Application Name>
 ```
 
-检查绑定到应用程序的外部服务配置设置的 `VCAP_SERVICES`。 有关详细信息，请参阅 [PCF 文档](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)。
+检查绑定到应用程序的外部服务配置设置的 `VCAP_SERVICES` 变量。 有关详细信息，请参阅 [TAS (Cloud Foundry) 文档](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)。
 
 #### <a name="all-other-external-resources"></a>所有其他的外部资源
 

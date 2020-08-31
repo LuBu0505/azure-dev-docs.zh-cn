@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 782123b4b567010a43ce72c622f7db5a65679db9
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 2afdf7c4194052aff1fe7c7f915540b270ce588e
+ms.sourcegitcommit: c012db9b6e369813c56f35a0ddbb1d3a73db5c4d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632579"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889231"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>在移动应用中添加身份验证并管理用户标识
 
@@ -45,14 +45,14 @@ ms.locfileid: "84632579"
 
 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) 是 Microsoft 推出的基于云的标识和访问管理服务，可帮助员工登录及获取对以下内容的访问权限：
 
-- 外部资源，例如 Microsoft Office 365、Azure 门户以及成千上万的其他软件即服务 (SaaS) 应用程序。
+- 外部资源，例如 Microsoft 365、Azure 门户，以及成千上万的其他软件即服务 (SaaS) 应用程序。
 - 内部资源，例如公司网络和 Intranet 上的应用，以及由自己的组织开发的任何云应用。
 
 ### <a name="azure-active-directory-features"></a>Azure Active Directory 功能
 
 - 通过将用户连接到其所需的应用程序，实现无缝且高度安全的访问。
 - 基于用户、位置、设备、数据和应用程序上下文的全面标识保护和增强的标识和访问安全性。
-- 适用于商用和自定义应用程序（如 Office 365、Salesforce.com 和 Box）的数千个预先集成的应用。
+- 适用于商用和自定义应用程序（例如 Microsoft 365、Salesforce.com 和 Box）的成千上万个预先集成的应用。
 - 能够大规模管理访问权限。
 
 ### <a name="azure-active-directory-references"></a>Azure Active Directory 参考

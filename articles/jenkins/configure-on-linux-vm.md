@@ -3,14 +3,14 @@ title: 快速入门 - 使用 Azure CLI 配置 Jenkins
 description: 了解如何在 Azure Linux 虚拟机上安装 Jenkins 以及如何构建示例 Java 应用程序。
 keywords: jenkins, azure, devops, 门户, linux, 虚拟机
 ms.topic: quickstart
-ms.date: 08/19/2020
+ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614557"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725211"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Jenkins
 
@@ -22,7 +22,7 @@ ms.locfileid: "88614557"
 > * 创建可下载和安装 Jenkins 的安装文件
 > * 创建资源组
 > * 使用安装文件创建虚拟机
-> * 打开端口 8080，以便可通过 SSH 连接到虚拟机
+> * 打开端口 8080 以访问虚拟机上的 Jenkins
 > * 通过 SSH 连接到虚拟机
 > * 基于 GitHub 中的示例 Java 应用配置示例 Jenkins 作业
 > * 生成示例 Jenkins 作业
@@ -88,7 +88,7 @@ ms.locfileid: "88614557"
     az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
-1. 使用 [az vm open](/cli/azure/vm#az-vm-open-port) 在新虚拟机上打开端口 8080。
+1. Jenkins 默认在端口 8080 上运行。 因此，请使用 [az vm open](/cli/azure/vm#az-vm-open-port) 在新的虚拟机上打开端口 8080。
 
     ```azurecli
     az vm open-port \

@@ -5,12 +5,12 @@ keywords: azure, chef, devops, 虚拟机, 概述, 自动化, habitat
 ms.date: 05/15/2018
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: af7a08e526a5b9109cb9662b1be5d2243af92e9d
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d2a834c631986b70a13c95f1403e84e82886a5f2
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240769"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662938"
 ---
 # <a name="use-habitat-to-deploy-your-application-to-azure"></a>使用 Habitat 将应用程序部署到 Azure
 
@@ -28,7 +28,7 @@ Habitat 解决了连续部署面向微服务的复杂应用程序问题，因为
 
 ## <a name="run-any-application-anywhere"></a>在任何位置运行任意应用程序
 
-有了 Habitat，应用程序就可以不做修改在任意运行时环境中运行。 这包括从裸机和虚拟机到容器（例如 Docker）、群集管理系统（例如 Mesosphere 或 Kubernetes）、PaaS 系统（例如 Pivotal Cloud Foundry）的一切环境。
+有了 Habitat，应用程序就可以不做修改在任意运行时环境中运行。 这包括从裸机和虚拟机到容器（例如 Docker）、群集管理系统（例如 Mesosphere 或 Kubernetes）、PaaS 系统（例如 VMware Tanzu 应用程序服务，它之前称为 Pivotal Cloud Foundry）等一切环境。
 
 ## <a name="integrate-into-the-chef-devops-workflow"></a>集成到 Chef DevOps 工作流中
 

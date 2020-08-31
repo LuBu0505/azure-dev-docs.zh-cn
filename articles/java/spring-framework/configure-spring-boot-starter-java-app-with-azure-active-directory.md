@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: f449df07048dfcc20e173bc4103995ac989e38fe
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: e8d9cf1c1fcc834b74f265c94ef5aae361100dbe
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240939"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725221"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -116,7 +116,7 @@ ms.locfileid: "88240939"
 
     ![编辑回复 URL][create-app-registration-09]
 
-1. 输入 <http:<span></span>//localhost:8080/login/oauth2/code/azure> 作为新的“重定向 URI”，然后单击“配置”。
+1. 输入“http://localhost:8080/login/oauth2/code/azure”用作新的**重定向 URI**，单击单击“配置”。
 
     ![添加新的回复 URL][create-app-registration-10]
 

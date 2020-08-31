@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1b22dfa4269cc0c51450ca307bb96b787278625b
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379701"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725191"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
 
@@ -53,7 +53,7 @@ ${CATALINA_HOME}/bin/version.sh
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
 #### <a name="dynamic-or-internal-content"></a>动态或内部内容
 
-对于经常由应用程序写入和读取的文件（如临时数据文件），或者仅对应用程序可见的静态文件，可以将 Azure 存储装载到应用服务文件系统中。 有关详细信息，请参阅[从 Linux 上的应用服务中的 Azure 存储提供内容](/azure/app-service/containers/how-to-serve-content-from-azure-storage)。
+对于经常由应用程序写入和读取的文件（如临时数据文件），或者仅对应用程序可见的静态文件，可以将 Azure 存储装载到应用服务文件系统中。 有关详细信息，请参阅[从 Linux 上的应用服务中的 Azure 存储提供内容](/azure/app-service/configure-connect-to-azure-storage)。
 
 ### <a name="identify-session-persistence-mechanism"></a>识别会话持久性机制
 
@@ -61,7 +61,7 @@ ${CATALINA_HOME}/bin/version.sh
 
 Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如应用服务。 由于应用服务可能会在多个实例之间进行负载均衡，并随时以透明方式重启任何实例，因此不建议将可变状态持久保存到文件系统。
 
-如果需要会话持久性，则需使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 Pivotal 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
+如果需要会话持久性，则需要使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 VMware Tanzu 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
 
 ### <a name="special-cases"></a>特殊情况
 
@@ -212,7 +212,7 @@ Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomc
 
 ### <a name="recommendations"></a>建议
 
-* 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/containers/how-to-serve-content-from-azure-storage)。
+* 如果选择使用 */home* 目录进行文件存储，请考虑[将其替换为 Azure 存储](/azure/app-service/configure-connect-to-azure-storage)。
 
 * 如果 /home 目录中的配置包含连接字符串、SSL 密钥和其他机密信息，请考虑结合使用 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 和/或[参数注入与应用程序设置](/azure/app-service/configure-common#configure-app-settings)（如果可能）。
 
