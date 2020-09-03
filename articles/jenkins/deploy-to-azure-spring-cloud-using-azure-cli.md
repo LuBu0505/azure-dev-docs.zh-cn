@@ -3,14 +3,14 @@ title: 使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 description: 了解如何使用持续集成和部署管道中的 Azure CLI 将微服务部署到 Azure Spring Cloud 服务
 keywords: jenkins, azure, devops, azure spring cloud, azure cli
 ms.topic: tutorial
-ms.date: 08/10/2020
+ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725161"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374558"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 
@@ -23,16 +23,13 @@ ms.locfileid: "88725161"
 > * 准备 Jenkins 服务器
 > * 在 Jenkins 管道中使用 Azure CLI 生成并部署微服务应用程序 
 
->[!Note]
-> Azure Spring Cloud 目前以公共预览版的形式提供。 使用公共预览版产品/服务，客户可以在产品/服务正式发布之前体验新功能。  公共预览功能和服务并非供生产使用。  有关预览期间支持的详细信息，请参阅[常见问题解答](https://azure.microsoft.com/support/faq/)或提交[支持请求](/azure/azure-portal/supportability/how-to-create-azure-support-request)。
-
 ## <a name="prerequisites"></a>必备知识
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-**Jenkins**：[在 Linux VM 上安装 Jenkins](configure-on-linux-vm.md)
+- **Jenkins**：[在 Linux VM 上安装 Jenkins](configure-on-linux-vm.md)
 
-**GitHub 帐户**：如果没有 GitHub 帐户，请在开始前创建一个[免费帐户](https://github.com/)。
+- **GitHub 帐户**：如果没有 GitHub 帐户，请在开始前创建一个[免费帐户](https://github.com/)。
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>预配服务实例并启动 Java Spring 应用程序
 

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 005fc97633135f8458b0650b9a3afb49e841001d
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405708"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89061986"
 ---
 # <a name="migrate-java-applications-to-azure"></a>将 Java 应用程序迁移到 Azure
 
@@ -89,7 +89,7 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 | 本地文件系统上的长期持久性                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | 应用程序服务器级聚类分析                               |        |        |        |&#x2714;|&#x2714;|
 | 批处理作业/计划的作业                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
-| VNet 集成/混合连接                              |预览 |预览 |        |&#x2714;|&#x2714;|
+| VNet 集成/混合连接                              |&#x2714;|&#x2714;|预览 |&#x2714;|&#x2714;|
 | Azure 区域可用性                | [详细信息][10] | [详细信息][10] | [详细信息][11] |[详细信息][12]|[详细信息][13]|
 
 ### <a name="ongoing-responsibility-grid"></a>持续责任网格
@@ -143,7 +143,7 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 |---|---|---|---|---|---|---|
 | Spring Boot/<br>JAR 应用程序 | [指南][5] | 指南<br>已计划 | [指南][16] | [指南][14]      | 指南<br>已计划 |
 | Spring Cloud/<br>微服务   | 空值           | 空值                 | [指南][15] | 指南<br>已计划 | 指南<br>已计划 |
-| Web 应用程序<br>Web 应用程序     | 空值           | [指南][2]       | 空值            | [指南][3]       | 指南<br>已计划 |
+| Web 应用程序<br>Web 应用程序     | 空值           | [指南][2]       | [指南][17] | [指南][3]       | 指南<br>已计划 |
 
 **Java EE 应用程序**
 
@@ -173,3 +173,4 @@ Java EE 应用程序必须部署到符合 Java EE 规范的应用程序服务器
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
 [16]: migrate-spring-boot-to-azure-spring-cloud.md
+[17]: migrate-tomcat-to-azure-spring-cloud.md

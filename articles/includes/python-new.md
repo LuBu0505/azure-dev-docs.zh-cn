@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 20e95024d28399072d469ae63e59e305e51111d0
-ms.sourcegitcommit: a4131409651d6d4f56733fe8311ca77b2004bc59
+ms.openlocfilehash: 04531e2c829202e4316179fc261f9bfd06e9c3b3
+ms.sourcegitcommit: 9b4fb8594e6659a8f7a3df0227b1df0636a7681c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88864909"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89237790"
 ---
 | 名称 | 程序包 | Docs | 源 |
 | ---- | ------- | ---- | ------ |
@@ -15,7 +15,7 @@ ms.locfileid: "88864909"
 | 事件中心 | pypi [5.1.0](https://pypi.org/project/azure-eventhub/5.1.0)<br>pypi [5.2.0b1](https://pypi.org/project/azure-eventhub/5.2.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-readme/) | github [5.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub_5.1.0/sdk/eventhub/azure-eventhub/)<br>github [5.2.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub_5.2.0b1/sdk/eventhub/azure-eventhub/) |
 | 事件中心 - Azure Blob 存储检查点存储 | pypi [1.1.0](https://pypi.org/project/azure-eventhub-checkpointstoreblob/1.1.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-checkpointstoreblob-readme/) | github [1.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub-checkpointstoreblob_1.1.0/sdk/eventhub/azure-eventhub-checkpointstoreblob/) |
 | 事件中心-Azure Blob 存储检查点存储 AIO | pypi [1.1.0](https://pypi.org/project/azure-eventhub-checkpointstoreblob-aio/1.1.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-checkpointstoreblob-aio-readme/) | github [1.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub-checkpointstoreblob-aio_1.1.0/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/) |
-| 表单识别器 | pypi [3.0.0](https://pypi.org/project/azure-ai-formrecognizer/3.0.0) |  | github [3.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-formrecognizer_3.0.0/sdk/formrecognizer/azure-ai-formrecognizer/) |
+| 表单识别器 | pypi [3.0.0](https://pypi.org/project/azure-ai-formrecognizer/3.0.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/ai-formrecognizer-readme/) | github [3.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-formrecognizer_3.0.0/sdk/formrecognizer/azure-ai-formrecognizer/) |
 | 标识 | pypi [1.4.0](https://pypi.org/project/azure-identity/1.4.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/identity-readme/) | github [1.4.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-identity_1.4.0/sdk/identity/azure-identity/) |
 | Key Vault - 证书 | pypi [4.2.0](https://pypi.org/project/azure-keyvault-certificates/4.2.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/keyvault-certificates-readme/) | github [4.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-certificates_4.2.0/sdk/keyvault/azure-keyvault-certificates/) |
 | Key Vault - 密钥 | pypi [4.2.0](https://pypi.org/project/azure-keyvault-keys/4.2.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/keyvault-keys-readme/) | github [4.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-keys_4.2.0/sdk/keyvault/azure-keyvault-keys/) |
@@ -33,4 +33,4 @@ ms.locfileid: "88864909"
 | 资源管理 - 监视 | pypi [0.11.0](https://pypi.org/project/azure-mgmt-monitor/0.11.0)<br>pypi [1.0.0b1](https://pypi.org/project/azure-mgmt-monitor/1.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-monitor-readme/) | github [0.11.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-monitor_0.11.0/sdk/monitor/azure-mgmt-monitor/)<br>github [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-monitor_1.0.0b1/sdk/monitor/azure-mgmt-monitor/) |
 | 资源管理 - 网络 | pypi [11.0.0](https://pypi.org/project/azure-mgmt-network/11.0.0)<br>pypi [16.0.0b1](https://pypi.org/project/azure-mgmt-network/16.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-network-readme/) | github [11.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-network_11.0.0/sdk/network/azure-mgmt-network/)<br>github [16.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-network_16.0.0b1/sdk/network/azure-mgmt-network/) |
 | 资源管理 - 资源 | pypi [10.2.0](https://pypi.org/project/azure-mgmt-resource/10.2.0)<br>pypi [15.0.0b1](https://pypi.org/project/azure-mgmt-resource/15.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-resource-readme/) | github [10.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_10.2.0/sdk/resources/azure-mgmt-resource/)<br>github [15.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_15.0.0b1/sdk/resources/azure-mgmt-resource/) |
-| 资源管理 - 存储 | pypi [11.1.0](https://pypi.org/project/azure-mgmt-storage/11.1.0)<br>pypi [16.0.0b2](https://pypi.org/project/azure-mgmt-storage/16.0.0b2) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-storage-readme/) | github [11.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_11.1.0/sdk/storage/azure-mgmt-storage/)<br>github [16.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_16.0.0b2/sdk/storage/azure-mgmt-storage/) |
+| 资源管理 - 存储 | pypi [11.2.0](https://pypi.org/project/azure-mgmt-storage/11.2.0)<br>pypi [16.0.0b2](https://pypi.org/project/azure-mgmt-storage/16.0.0b2) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-storage-readme/) | github [11.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_11.2.0/sdk/storage/azure-mgmt-storage/)<br>github [16.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_16.0.0b2/sdk/storage/azure-mgmt-storage/) |

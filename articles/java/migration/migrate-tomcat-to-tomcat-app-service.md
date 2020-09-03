@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725191"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89061996"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>将 Tomcat 应用程序迁移到 Azure 应用服务上的 Tomcat
 
@@ -44,8 +44,6 @@ ${CATALINA_HOME}/bin/version.sh
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-### <a name="inventory-certificates"></a>清点证书
-
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
@@ -62,6 +60,10 @@ ${CATALINA_HOME}/bin/version.sh
 Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 实现（如 [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 或 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)）不适用于分布式缩放平台，如应用服务。 由于应用服务可能会在多个实例之间进行负载均衡，并随时以透明方式重启任何实例，因此不建议将可变状态持久保存到文件系统。
 
 如果需要会话持久性，则需要使用会将内容写入外部数据存储的备用 `PersistentManager` 实现，例如使用 Redis 缓存的 VMware Tanzu 会话管理器。 有关详细信息，请参阅[将 Redis 作为会话缓存与 Tomcat 配合使用](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)。
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
 
 ### <a name="special-cases"></a>特殊情况
 
@@ -82,10 +84,6 @@ Tomcat 的内置 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/co
 Azure 应用服务不支持 [Tomcat 聚类分析](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)。 可以改为通过 Azure 应用服务来配置和管理缩放和负载均衡，无需使用特定于 Tomcat 的功能。 可以将会话状态持久保存到备用位置，使之可以跨副本使用。 有关详细信息，请参阅[识别会话持久性机制](#identify-session-persistence-mechanism)。
 
 若要确定应用程序是否使用聚类分析，请在 *server.xml* 文件中查找 `<Host>` 或 `<Engine>` 元素内的 `<Cluster>` 元素。
-
-#### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>确定在生产服务器上运行的所有外部进程/守护程序
-
-需要在其他位置进行迁移或消除在应用程序服务器外运行的任何进程，如监视守护程序。
 
 #### <a name="determine-whether-non-http-connectors-are-used"></a>确定是否使用了非 HTTP 连接器
 

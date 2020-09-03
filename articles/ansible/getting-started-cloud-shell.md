@@ -3,14 +3,14 @@ title: 快速入门 - 使用 Azure Cloud Shell 配置 Ansible
 description: 本快速入门介绍如何使用 Azure Cloud Shell 中的 Bash 执行各种 Ansible 任务
 keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 08/31/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: fa118213624db21192617b65930041b8712075bd
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 42d7b57d9890bce3a432fba3c6fdcf3080ddb63c
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240309"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275152"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>快速入门：使用 Azure Cloud Shell 配置 Ansible
 
