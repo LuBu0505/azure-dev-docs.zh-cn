@@ -112,6 +112,22 @@
           href: how-to-assign-role-permissions.md
         - name: 管理服务主体
           href: how-to-manage-service-principals.md
+        - name: 演练教程
+          items:
+            - name: 1 简介与背景
+              href: walkthrough-tutorial-authentication-01.md
+            - name: 2 身份验证要求
+              href: walkthrough-tutorial-authentication-02.md
+            - name: 3 第三方 API 实现
+              href: walkthrough-tutorial-authentication-03.md
+            - name: 4 主应用实现
+              href: walkthrough-tutorial-authentication-04.md
+            - name: 5 依赖项和环境变量
+              href: walkthrough-tutorial-authentication-05.md
+            - name: 6 主应用启动代码
+              href: walkthrough-tutorial-authentication-06.md
+            - name: 7 主应用终结点
+              href: walkthrough-tutorial-authentication-07.md
     - name: 安装包
       href: azure-sdk-install.md
     - name: 包索引
