@@ -4,16 +4,16 @@ description: 使用 Azure SDK for Python 中的资源管理库通过 Python 代�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a87e53253eff5679245ac5528fac3bb10e2bc8d
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 459311e76f70e10a5da62c4205a9843427f76cec
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982609"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275111"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>示例：使用 Azure 库预配资源组
 
-此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来预配资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）
+此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来预配资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。 如果你想要使用 Azure 门户，请参阅[创建资源组](/azure/azure-resource-manager/management/manage-resource-groups-portal)。）
 
 除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
 

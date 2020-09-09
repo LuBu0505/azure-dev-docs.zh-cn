@@ -4,16 +4,16 @@ description: 使用 Azure SDK for Python 库预配 Azure 存储帐户中的 blob
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6a956cf0f4f4689e653307f95d5f0900c8d01589
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983429"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275201"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库预配 Azure 存储
 
-本文介绍如何在 Python 脚本中使用 Azure 管理库来预配一个资源组，该组包含 Azure 存储帐户和 Blob 存储容器。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）
+本文介绍如何在 Python 脚本中使用 Azure 管理库来预配一个资源组，该组包含 Azure 存储帐户和 Blob 存储容器。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。 如果你想要使用 Azure 门户，请参阅[创建 Azure 存储帐户](/azure/storage/common/storage-account-create?tabs=azure-portal)和[创建 blob 容器](/azure/storage/blobs/storage-quickstart-blobs-portal)。）
 
 预配资源后，请参阅[示例：使用 Azure 存储](azure-sdk-example-storage-use.md)，以在 Python 应用程序代码中使用 Azure 客户端库将文件上传到 Blob 存储容器。
 

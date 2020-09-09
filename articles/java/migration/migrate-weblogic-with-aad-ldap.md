@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: b828fc2bc41b0e4e557472e7efd00498e68933db
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.openlocfilehash: b1437362601e990b560dc0385420605ef01a426a
+ms.sourcegitcommit: 4049dc6109600a8308ba5617cc122a5b32cc4ca1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052214"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056273"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>用于将 WebLogic Server 上的 Java 应用迁移到 Azure 的最终用户授权和身份验证
 
@@ -107,14 +107,24 @@ Java EE 开发人员希望[标准平台安全机制](https://javaee.github.io/tu
    >
    > 这里有一些关于查询 LDAP 数据的提示，你需要执行这些操作以收集 WLS 配置所必需的一些值。
    >
-   > * 本教程建议使用 Windows 程序 LDP.exe。  也可以使用 [Apache Directory Studio](https://directory.apache.org/studio/downloads.html) 来实现同样的目的。
+   > * 本教程建议使用 Windows 程序 LDP.exe。  此程序仅在 Windows 上可用。  对于非 Windows 用户，也可以使用 [Apache Directory Studio](https://directory.apache.org/studio/downloads.html) 来实现同样的目的。
    > * 当使用 LDP.exe 登录到 LDAP 时，用户名只是 @ 之前的部分。  例如，如果用户是 `alice@contoso.onmicrosoft.com`，则 LDP.exe 绑定操作的用户名是 `alice`。  此外，让 LDP.exe 保持运行并登录，以便在后续步骤中使用。
    >
 在[为外部访问配置 DNS 区域](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access)一节中，记下“安全 LDAP 外部 IP 地址”的值。  稍后将使用它。
 
+如果“安全 LDAP 外部 IP 地址”的值并非显而易见，请按照以下步骤来获取 IP 地址。
+
+1. 在门户中，找到包含 Azure AD 域服务资源的资源组。
+1. 在资源列表中，为 Azure AD 域服务资源选择公共 IP 资源，如下所示。  公共 IP 可能以 `aads` 开头。
+   :::image type="content" source="media/migrate-weblogic-with-aad-ldap/alternate-secure-ip-address-technique.png" alt-text="显示如何选择公共 IP 的浏览器。":::
+1. 公共 IP 显示在标签“IP 地址”旁边。
+
 请不要执行[清理资源](/azure/active-directory-domain-services/tutorial-configure-ldaps#clean-up-resources)中的步骤，除非本指南中有指示。
 
 考虑到上述变化，请完成[为 Azure Active Directory 域服务托管域配置安全 LDAP](/azure/active-directory-domain-services/tutorial-configure-ldaps)。  我们现在可以收集必要的值以提供给 WLS 配置。
+
+>[!NOTE]
+> 请等待安全 LDAP 配置完成处理，然后再转到下一部分。
 
 ### <a name="disable-weak-tls-v1"></a>禁用安全性弱的 TLS v1
 
@@ -162,7 +172,7 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 | `wlsLDAPGroupBaseDN` 和 `wlsLDAPUserBaseDN` | 用户基 DN 和组基 DN | 为实现本教程的目的，这两个属性的值都是相同的：第一个逗号后的“wlsLDAPPrincipal”部分。|
 | `wlsLDAPPrincipalPassword` | 主体密码 | 此值是已添加到“AAD DC 管理员”组的用户的密码。 |
 | `wlsLDAPProviderName` | Provider Name | 此值可以保留为默认值。  它用作 WLS 中身份验证提供程序的名称。 |
-| `wlsLDAPSSLCertificate` | SSL 配置的信任密钥存储 | 此值是你在完成[为客户端计算机导出证书](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers)步骤时系统要求你保存的 Base64 编码的 .cer 文件。  可以使用以下 UNIX 或 PowerShell 命令获取此值。 <br /> Bash： <br /> `base64 your-certificate.cer -w 0 >temp.txt` <br /> PowerShell： <br /> `$Content = Get-Content -Path .\your-certificate.cer -Encoding Byte`<br /> `$Base64 = [System.Convert]::ToBase64String($Content)` <br /> `$Base64 | Out-File .\temp.txt`
+| `wlsLDAPSSLCertificate` | SSL 配置的信任密钥存储 | 此值是你在完成[为客户端计算机导出证书](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers)步骤时系统要求你保存的 .cer 文件。
 
 ### <a name="integrating-azure-ad-ds-ldap-with-wls"></a>将 Azure AD DS LDAP 与 WLS 集成
 

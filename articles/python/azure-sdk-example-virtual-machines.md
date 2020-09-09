@@ -4,16 +4,16 @@ description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: a6595b60a70ab3b6ee36bf95b4557cb37c496188
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 08e055e282016db1c3cbf57b956a51f17b7a854a
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983489"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275191"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 
-此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来创建包含 Linux 虚拟机的资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）
+此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来创建包含 Linux 虚拟机的资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。 如果你想要使用 Azure 门户，请参阅[创建 Linux VM](/azure/virtual-machines/linux/quick-create-portal) 和[创建 Windows VM](/azure/virtual-machines/windows/quick-create-portal)。）
 
 除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
 

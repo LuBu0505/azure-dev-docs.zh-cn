@@ -4,12 +4,12 @@ description: 使用用于 Python 的 Azure SDK 库访问 Azure 存储帐户中�
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982689"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275131"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库访问 Azure 存储
 
@@ -21,7 +21,16 @@ ms.locfileid: "87982689"
 
 如果尚未设置，请按照[为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)中的所有说明进行操作。
 
-务必创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
+务必创建用于本地开发的服务主体、为服务主体设置环境变量（参阅下文），并为此项目创建虚拟环境，然后将其激活。
+
+此示例假定你已设置以下环境变量：
+
+| 变量名称 | 预期值 |
+| --- | --- |
+| AZURE_SUBSCRIPTION_ID | Azure 订阅的 GUID。 |
+| AZURE_CLIENT_ID | 本地服务主体的客户端 ID。 |
+| AZURE_CLIENT_SECRET | 你的服务主体的客户端密码。 |
+| AZURE_TENANT_ID | 你的服务主体的租户 ID。 |
 
 ## <a name="2-install-library-packages"></a>2:安装库包
 

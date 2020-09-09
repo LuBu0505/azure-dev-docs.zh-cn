@@ -4,16 +4,16 @@ description: 使用用于 Python 的 Azure SDK 库中的管理库来预配 Azure
 ms.date: 06/02/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 04e80a2b5ab6e6a1dc0adbe546132cf861667995
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e9a08761fb9af300b5d3f2c4a9704bc7f10e1158
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982649"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275120"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>示例：使用 Azure 库预配数据库
 
-此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来预配 Azure MySQL 数据库。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。）它还提供了一个简单的脚本，用于使用 mysql-connector 库（不是 Azure SDK 的一部分）查询数据库。
+此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来预配 Azure MySQL 数据库。 它还提供了一个简单的脚本，用于使用 mysql-connector 库（不是 Azure SDK 的一部分）查询数据库。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。 如果你想要使用 Azure 门户，请参阅[创建 PostgreSQL 服务器](/azure/postgresql/quickstart-create-server-database-portal)或[创建 MariaDB 服务器](/azure/mariadb/quickstart-create-mariadb-server-database-using-azure-portal)。）
 
 可以使用类似的代码来预配 PostgreSQL 或 MariaDB 数据库。
 
@@ -60,9 +60,6 @@ from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.rdbms.mysql import MySQLManagementClient
 
 from azure.mgmt.rdbms.mysql.models import ServerForCreate, ServerPropertiesForDefaultCreate, ServerVersion
-
-# Retrieve subscription ID from environment variable
-subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.

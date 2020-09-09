@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 4dcc1bcfb6e42089e221a1ebd7eb5abc0d37a4e3
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501262"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374548"
 ---
 # <a name="azure-cli-release-notes"></a>Azure CLI 发行说明
 
@@ -4571,7 +4571,7 @@ CLI 将在未来删除各个包的版本号。 如果命令处于预览状态，
 
 * 修复了使用 `--instance-id *` 时，针对 `vmss get-instance-view` 显示多余且错误的信息的问题
 * 在 `vmss create` 中添加了对 `--lb-sku` 的支持：
-* 从 `[vm|vmss] create` 的管理员名称方块列表中删除了人员名称
+* 从 `[vm|vmss] create` 的管理员名称阻止列表中删除了人员名称
 * 修复了当无法从映像中提取计划信息时，`[vm|vmss] create` 引发错误的问题
 * 修复了创建包含内部 LB 的 vmms 规模集时发生崩溃的问题
 * 修复了 `--no-wait` 参数无法配合 `vm availability-set create` 工作的问题
