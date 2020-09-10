@@ -4,12 +4,12 @@ description: 检查主应用的启动代码，该代码可设置 API 终结点�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 5fc344fcf00655bbac7b2a20a2401ffb52482447
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 17d5e007c65572ef301a4aa682260af6f492a626
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379469"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614283"
 ---
 # <a name="part-6-main-app-startup-code"></a>第 6 部分：主应用启动代码
 
@@ -25,7 +25,8 @@ app = Flask(__name__)
 number_url = os.environ["THIRD_PARTY_API_ENDPOINT"]
 ```
 
-接下来，我们获取 [`DefaultAzureCredential`](/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) 对象，这是在通过 Azure 服务进行身份验证时建议使用的凭据。 请参阅[如何对 Python 应用进行身份验证](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)。
+接下来，我们获取 [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python
+) 对象，这是在通过 Azure 服务进行身份验证时建议使用的凭据。 请参阅[如何对 Python 应用进行身份验证](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)。
 
 ```python
 credential = DefaultAzureCredential()

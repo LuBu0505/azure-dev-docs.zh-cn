@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: ff068c48a36aa746de1dac23861d453e0c6ff512
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 50b6046e8b4435d8e75af1bb8df360be018eb8ec
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379191"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614302"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -136,7 +136,7 @@ ms.locfileid: "86379191"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
-      <version>1.1.0.RC2</version>
+      <version>1.2.7</version>
    </dependency>
    ```
 
@@ -253,7 +253,6 @@ ms.locfileid: "86379191"
    |       `spring.cloud.stream.bindings.input.group `        | 在 Azure 事件中心指定一个使用者组，该组可以设置为“$Default”，以便使用你在创建 Azure 事件中心时创建的基本使用者组。 |
    |    `spring.cloud.stream.bindings.output.destination`     |                               指定输出目标 Azure 事件中心。在本教程中，它与输入目标相同。                               |
 
-
 3. 保存并关闭 application.properties 文件  。
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>添加示例代码以实现事件中心的基本功能
@@ -342,13 +341,13 @@ ms.locfileid: "86379191"
 
       @StreamListener(Sink.INPUT)
       public void handleMessage(String message, @Header(AzureHeaders.CHECKPOINTER) Checkpointer checkpointer) {
-         LOGGER.info("New message received: '{}'", message);
-         checkpointer.success().handle((r, ex) -> {
-            if (ex == null) {
-               LOGGER.info("Message '{}' successfully checkpointed", message);
-            }
-            return null;
-         });
+        LOGGER.info("New message received: '{}'", message);
+        checkpointer.success()
+                .doOnSuccess(s -> LOGGER.info("Message '{}' successfully checkpointed", message))
+                .doOnError((msg) -> {
+                    LOGGER.error(String.valueOf(msg));
+                })
+                .subscribe();
       }
    }
    ```

@@ -89,8 +89,6 @@
           href: 'https://github.com/Microsoft/todo-app-java-on-azure/'
         - name: 采用 MySQL 的待办事项列表
           href: 'https://github.com/Azure-Samples/mysql-spring-boot-todo'
-        - name: 使用 Java SDK 的 Azure 存储
-          href: configure-spring-boot-starter-java-app-with-azure-storage-api.md
         - name: Spring Initializr
           href: 'https://start.spring.io/'
     - name: 参考
