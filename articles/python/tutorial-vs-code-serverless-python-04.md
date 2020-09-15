@@ -4,12 +4,12 @@ description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Co
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8b7af7f4ebc5861083f5fd430129b8f013199bf3
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f96e2065f4864423470c1eda9ad48cad086e0fe6
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983469"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473582"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4：在本地调试 Azure Functions Python 代码
 
@@ -73,4 +73,4 @@ ms.locfileid: "87983469"
 > [!div class="nextstepaction"]
 > [我在本地运行了调试程序 - 转到步骤 5 >>>](tutorial-vs-code-serverless-python-05.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=04-test-debug)
+问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

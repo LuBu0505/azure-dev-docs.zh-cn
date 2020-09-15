@@ -1,15 +1,15 @@
 ---
 title: 教程：将 Python 应用从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务
-description: 教程步骤 1，简介、先决条件以及登录 Azure。
+description: 教程步骤 1, 使用 Web 应用, 简介, 先决条件
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 255e94d863f0c144ff4de402a2d775a21645b95a
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: d4544c6e013f20b606303e56ff2169e87383d88c
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501372"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614323"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>教程：将 Python 应用从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务
 
@@ -18,6 +18,9 @@ ms.locfileid: "88501372"
 如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 请使用每篇文章末尾的“我遇到了问题”链接来提交反馈。
 
 有关演示视频，请观看虚拟 PyCon 2020 中的<a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">使用 VS Code 和 Azure 应用服务生成 WebApps</a> (youtube.com)。
+
+> [!NOTE]
+> 如果希望通过 CLI 部署应用，请参阅[快速入门：在 Linux 上的 Azure 应用服务中创建 Python 应用](/azure/app-service/quickstart-python)。
 
 > [!TIP]
 > [Linux 上的 Azure 应用服务](/azure/app-service/overview#app-service-on-linux)在预定义的 Docker 容器中运行源代码。 该容器通过 Python 3.7 来运行应用，使用 [Gunicorn](https://gunicorn.org) Web 服务器。 此容器的特征详见[为 Linux 上的应用服务配置 Python 应用](/azure/app-service/configure-language-python)一文。 容器定义本身位于 [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7)。

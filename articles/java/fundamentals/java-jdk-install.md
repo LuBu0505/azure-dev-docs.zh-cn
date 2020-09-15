@@ -4,12 +4,12 @@ description: 如何安装 Azul Zulu Java 开发工具包 (JDK)，以便在 Windo
 ms.date: 04/19/2019
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: e0d628f6aa21bf888e7e7d84fccbd7d6173db8aa
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: e5b9f0874202373400640687df2b1558f7f41526
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405688"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473483"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>安装适用于 Azure 和 Azure Stack 的 JDK
 
@@ -83,9 +83,9 @@ OpenJDK 64-Bit Server VM (Zulu 8.44.0.11-linux64)-Microsoft-Azure-restricted (bu
 
 可以获取以下平台的虚拟机映像：
 
-* [Azul Zulu：基于 Ubuntu 18.04 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
+* [Azul Zulu：基于 Ubuntu 20.04 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-2004?tab=Overview)
 * [Azul Zulu：基于 Windows Server 2019 的 Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
-* [Azul Zulu：基于 Ubuntu 18.04 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
+* [Azul Zulu：基于 Ubuntu 20.04 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-2004?tab=Overview)
 * [Azul Zulu：基于 Windows Server 2019 的 Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
 
 ## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdks-from-a-yum-repository"></a>下载并安装 Yum 存储库中的 Azul Zulu for Azure - Enterprise Edition JDK

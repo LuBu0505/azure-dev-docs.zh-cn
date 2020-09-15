@@ -4,12 +4,12 @@ description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6dbdd722d1167e703119b8709ec6b44eadc3dcec
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 29d625d40868ab761037c1a4a049f7e95e63df26
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982789"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473572"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6：向 Azure Functions 添加另一个 Python 函数
 
@@ -119,4 +119,4 @@ ms.locfileid: "87982789"
 > [!div class="nextstepaction"]
 > [我添加了另一个函数 - 转到步骤 7 >>>](tutorial-vs-code-serverless-python-07.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=06-second-function)
+问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

@@ -4,12 +4,12 @@ description: 了解集成测试，学习如何使用 Azure DevOps 为 Terraform 
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3d305fb63deffb8f56ebd2cb1503bac543c5b84b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
+ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241299"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89557550"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>教程：在 Azure 中为 Terraform 项目配置集成测试
 
@@ -36,7 +36,7 @@ ms.locfileid: "88241299"
 - **安装 Terraform**：根据你的环境，[下载并安装 Terraform](https://www.terraform.io/downloads.html)。
 - **创建测试示例的分支**：创建 [GitHub 上的 Terraform 示例](https://github.com/Azure/terraform)的分支，并将其复制到开发/测试计算机。
 
-## <a name="validate-alocal-terraform-configuration"></a>验证本地 Terraform 配置
+## <a name="validate-a-local-terraform-configuration"></a>验证本地 Terraform 配置
 
 [terraform validate](https://www.terraform.io/docs/commands/validate.html) 命令是从包含 Terraform 文件的目录中的命令行运行的。 此命令主要用于验证语法。
 

@@ -4,12 +4,12 @@ description: 教程第 4 部分，查看 Azure 应用服务中的日志以监视
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: aeaaafbb271689babd03c2ccc3216703c3580ebc
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 92af617452aa8892f61e110a69be53a9208f3883
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983499"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473500"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4：从用于容器的 Azure 应用服务流式传输日志
 
@@ -41,4 +41,4 @@ ms.locfileid: "87983499"
 > [!div class="nextstepaction"]
 > [我看到了日志 - 转到步骤 5 >>>](tutorial-deploy-containers-05.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=04-stream-logs)
+问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

@@ -1,15 +1,15 @@
 ---
 title: 教程：使用 VS Code 通过 Python 创建并部署无服务器 Azure Functions
-description: 教程步骤 1，简介和先决条件。
+description: 教程步骤 1, 使用 Azure Functions, 简介和先决条件。
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 25ae33cef961b35747ee614a52ff80ebf1e96d62
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982979"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473602"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -71,4 +71,4 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 > [!div class="nextstepaction"]
 > [我已登录到 Azure - 转到步骤 2 >>>](tutorial-vs-code-serverless-python-02.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)
+问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

@@ -4,12 +4,12 @@ description: 教程步骤 5，将 Python 函数代码部署到 Azure，学习如
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 950dda297f131f9ae9e2029f79cecae7455e0c07
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982849"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473592"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5：在 Python 中部署 Azure Functions
 
@@ -75,4 +75,4 @@ func azure functionapp logstream <app_name> --browser
 > [!div class="nextstepaction"]
 > [我部署了函数 - 转到步骤 6 >>>](tutorial-vs-code-serverless-python-06.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)
+问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

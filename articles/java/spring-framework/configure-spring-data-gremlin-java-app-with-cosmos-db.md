@@ -1,20 +1,20 @@
 ---
 title: 如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
-description: 了解如何为使用 Spring Boot Initializer 创建的应用程序配置 Azure Cosmos DB SQL API。
+description: 了解如何为使用 Spring Boot Initializr 创建的应用程序配置 Azure Cosmos DB SQL API。
 services: cosmos-db
 documentationcenter: java
-ms.date: 01/10/2020
+ms.date: 08/03/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 81a80d14e4cf371801cf75af1618048dda8775d7
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: 4a19b6dff945cb04d2b726b546e362c261a00595
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810620"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614332"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -33,16 +33,16 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 
-## <a name="create-resource"></a>创建资源
+## <a name="create-an-azure-cosmos-db-account"></a>创建 Azure Cosmos DB 帐户
 
-### <a name="create-azure-cosmos-db"></a>创建 Azure Cosmos DB
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>使用 Azure 门户创建 Cosmos DB 帐户
 
-1. 浏览转到 Azure 门户 (<https://portal.azure.com/>)，然后单击 `+Create a resource`。
+1. 浏览转到 Azure 门户 (<https://portal.azure.com/>)，然后选择 `+Create a resource`。
 
    >[!div class="mx-imgBorder"]
    >![create-a-resource][create-a-resource-01]
 
-1. 单击 `Databases`，然后单击 `Azure Cosmos DB`。
+1. 依次选择“`Databases`”、“`Azure Cosmos DB`”。
 
    >[!div class="mx-imgBorder"]
    >![create-azure-cosmos-db][create-a-resource-02]
@@ -55,16 +55,20 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    * 为 API 选择 `Gremlin (Graph)` 。
    * 为数据库指定 `Location`。
    
-1. 指定这些选项后，单击 `Review + create`。
+1. 指定这些选项后，选择 `Review + create`。
 
    >[!div class="mx-imgBorder"]
    >![create-azure-cosmos-db-account][create-a-resource-03]
 
-1. 查看具体细节，然后单击 `Create` 以创建数据库。
+1. 查看具体细节，然后选择 `Create` 以创建数据库。
+
+1. 数据库已创建后，选择“转到资源”。 数据库将在 Azure 的“仪表板”以及“所有资源”和“Azure Cosmos DB”页面下列出  。 在任意这些位置选择数据库可打开缓存的属性页。
+
+1. 当显示数据库的属性页时，选择“密钥”，然后复制数据库的 URI 和访问密钥；在 Spring Boot 应用程序中会用到这些值。
 
 ### <a name="add-a-graph-to-your-azure-cosmos-database"></a>将图形添加到 Azure Cosmos 数据库
 
-1. 在 Cosmos DB 页面上，单击 `Data Explorer`，然后单击 `New Graph`。
+1. 在 Cosmos DB 页面上，选择 `Data Explorer`，然后选择 `New Graph`。
 
    >[!div class="mx-imgBorder"]
    >![new-graph][create-a-graph-01]
@@ -74,10 +78,9 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    * 指定数据库的唯一 `Database id`。
    * 可选择指定 `Storage capacity`，也可接受默认值。
    * 指定图形的唯一 `Graph id`。
-   * 指定 `Partition key`。 有关详细信息，请参阅[图形分区]。
-单击 `OK`。
+   * 指定 `Partition key`。 有关详细信息，请参阅[图形分区]。 选择 `OK`。
    
-   指定这些选项后，单击 `OK` 以创建图形。
+   指定这些选项后，选择 `OK` 以创建图形。
 
    >[!div class="mx-imgBorder"]
    >![add-graph][create-a-graph-02]
@@ -89,44 +92,64 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    
    
 
-## <a name="create-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
+## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 填充项目元数据，然后单击 `GENERATE`：
+1. 指定希望使用 Java 生成 Maven 项目，输入应用程序的“组”名称和“项目”名称，指定 Spring Boot 版本为版本 2.3.1，然后选择“生成”     。
+
+> [!NOTE]
+>
+> Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：`com.example.wintiptoysdata` 。
+
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
 
-1. 解压缩文件，然后导入到 IDE。
+1. 出现提示时，将项目下载到本地计算机中的路径。
+
+1. 提取本地系统上的文件后，将其导入 IDE。
 
 
-## <a name="update-code-according-to-the-sample-project"></a>根据示例项目更新代码
+## <a name="configure-your-spring-boot-app-to-use-the-spring-data-gremlin-starter"></a>将 Spring Boot 应用配置为使用 Spring Data Gremlin Starter
 
-如示例项目一样修改项目：[azure-spring-data-sample-gremlin]。
+我们将复制现有 [Azure Spring Data Gremlin 示例](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-data-sample-gremlin)的配置。 浏览到该示例并按照本部分中的步骤配置 Spring Boot 应用。
 
-1. 添加 `azure-spring-data-gremlin` 的依赖项
+1. 在应用的目录中找到 pom.xml 文件，例如：
 
-1. 删除 `src/test/` 中的所有内容
+   C:\SpringBoot\wingtiptoysdata\pom.xml
 
-1. 如本示例所述将所有 Java 文件添加到 `src/main/java` 中。
+   - 或 -
 
-1. 更新 `src/main/resorces/application.properties` 中的配置，其中：
+   /users/example/home/wingtiptoysdata/pom.xml
+
+1. 打开 pom.xml 文件，将 Spring Data Gremlin Starter 添加到 `<dependencies>` 列表：
+
+   ```xml
+   <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-spring-data-gremlin</artifactId>
+      <version>2.3.1-beta.1</version> <!-- {x-version-update;com.azure:azure-spring-data-gremlin;current} -->
+    </dependency>
+   ```
+
+1. 保存并关闭 pom.xml 文件。
+
+1. 导航到“src/test/”文件夹，然后删除所有内容。
+
+1. 导航到示例应用中的“src/main/java”文件夹，复制同一目录并覆盖到本地的 Spring Boot 应用中。
+
+1. 在 src/main/resources/properties 文件中，更新配置，使其包括以下内容：
 
    | 字段              | 说明                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `endpoint`         | 指定数据库的 Gremlin URI，此 URI 派生自前面在本教程中创建 Azure Cosmos DB 时指定的唯一“ID”。****                                                 |
+   | `endpoint`         | 指定数据库的 Gremlin URI，此 URI 派生自前面在本快速入门中创建 Azure Cosmos DB 时指定的唯一 ID。                                                 |
    | `port`             | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443**。                                                                                                                                                           |
-   | `username`         | 指定前面在本教程中添加图形时使用的唯一“数据库 ID”和“图形 ID”；必须使用以下语法输入这些值："/dbs/**{数据库ID}**/colls/**{图形 ID}**"。******** |
-   | `password`         | 指定前面在本教程中复制的主要或辅助“访问密钥”。****                                                                                                                      |
+   | `username`         | 指定前面在本快速入门中添加图形时使用的唯一数据库 ID 和图形 ID；必须使用以下语法输入这些值：“/dbs/{Database ID}/colls/{Graph ID}”   。 |
+   | `password`         | 指定前面在本快速入门中复制的主要或辅助访问密钥。                                                                                                                      |
    | `sslEnabled`       | 指定是否启用 SSL。                                                                                                                                                                                           |
    | `telemetryAllowed` | 若要启用遥测，请指定 **true**；否则指定 **false**。
    | `maxContentLength` | 指定最大内容长度。                                                                                                                                                                                           |
-
-1. 关于如何获取密码：
-
-   >[!div class="mx-imgBorder"]
-   >![get-password][get-password-01]
 
 ## <a name="build-and-run-the-project"></a>生成并运行项目
 
@@ -145,7 +168,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 ## <a name="next-steps"></a>后续步骤
 
-若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+若要了解有关 Azure 上的 Spring 的详细信息，请继续访问“Azure 上的 Spring”文档。
 
 > [!div class="nextstepaction"]
 > [Azure 上的 Spring](/azure/developer/java/spring-framework)

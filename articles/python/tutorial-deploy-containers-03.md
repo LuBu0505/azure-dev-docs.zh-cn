@@ -4,12 +4,12 @@ description: 教程步骤 3，用于重新生成和重新部署容器映像的�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: c23676dd0d8b3741881f38d1a3bbee367f7d6c58
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 6a2c09e861da9fedaa90f1229f212f02f95a349e
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982879"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473484"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2:在更改后将容器重新部署到 Azure 应用服务
 
@@ -32,4 +32,4 @@ ms.locfileid: "87982879"
 > [!div class="nextstepaction"]
 > [我进行了更改并已重新部署 - 转到步骤 4 >>>](tutorial-deploy-containers-04.md)
 
-[我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=03-make-changes-redeploy)
+问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。
