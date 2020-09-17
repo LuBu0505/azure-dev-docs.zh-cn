@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集,
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 5e94d26ac4dc0b8aee2dfcf495e010702c4c79f5
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 85fe3ec53b0a32a06ded0bbe0da47c62e15fcf41
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240869"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681832"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>教程：使用 Ansible 更新 Azure 虚拟机规模集的自定义映像
 
@@ -406,27 +406,7 @@ ansible-playbook update-vmss-image.yml --extra-vars "resource_group=myrg"
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
-
-将以下代码保存为 `cleanup.yml`：
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myrg
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-使用 `ansible-playbook` 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

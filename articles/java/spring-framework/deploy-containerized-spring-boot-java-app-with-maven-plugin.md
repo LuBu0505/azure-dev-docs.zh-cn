@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: e6e3effc4a857656a6d118d3fee898fa086c082e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c8ee810df90ed9b0de12e92c336898fb700e1c67
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378621"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681635"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>使用用于 Azure Web 应用的 Maven 将容器化 Spring Boot 应用部署到 Azure
 
@@ -318,7 +318,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 * [通过 Azure CLI 登录到 Azure](/azure/xplat-cli-connect)
 
-* [如何使用适用于 Azure Web 应用的 Maven 插件将 Spring Boot 应用部署到 Azure 应用服务](deploy-spring-boot-java-app-with-maven-plugin.md)
+* [快速入门：在 Azure 应用服务中创建 Java 应用](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)
 
 * [使用 Azure CLI 2.0 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)
 

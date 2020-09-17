@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 4ad5086e0bc0500a7b7a117142a153e56ee4b481
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614291"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753764"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
@@ -230,15 +230,15 @@ ms.locfileid: "89614291"
 
 你现在可以对应用运行快速测试，以证明其适用于 PostgreSQL 数据库。
 
-1. 在 Web 应用的浏览器窗口或选项卡中，返回到“概述”页面，然后选择 Web 应用的 URL（格式为 `http:\//\<app-name>.azurewebsites.net`） 。
+1. 在 Web 应用的浏览器窗口或选项卡中，返回到“概述”页面，然后选择 Web 应用的 URL（格式为 `http://<app-name>.azurewebsites.net`） 。
 
 1. 应用应显示消息“无可用投票”，因为数据库中尚没有特定的投票。
 
-1. 浏览到 `http:\//\<app-name>.azurewebsites.net/admin`（“Django 管理”页面），然后使用上一节中的超级用户凭据（`root` 和 `Pollsdb1`）登录。
+1. 浏览到 `http://<app-name>.azurewebsites.net/admin`（“Django 管理”页面），然后使用上一节中的超级用户凭据（`root` 和 `Pollsdb1`）登录。
 
 1. 在“投票”下，选择“问题”旁边的“添加”，创建一个包含一些选项的投票问题  。
 
-1. 再次浏览到 `http:\//\<app-name>.azurewebsites.net/`，确认现在是否向用户显示了问题。 回答你希望如何在数据库中生成某些数据。
+1. 再次浏览到 `http://<app-name>.azurewebsites.net/`，确认现在是否向用户显示了问题。 回答你希望如何在数据库中生成某些数据。
 
 祝贺你！ 你将在适用于 Linux 的 Azure 应用服务中使用活动 PostgreSQL 数据库运行 Python Django Web 应用。
 

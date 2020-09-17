@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.custom: devx-track-java
-ms.openlocfilehash: 6aa930bb4ee5c6a5019e33b3d8075765b92f0bfc
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f7a7777551aadc5ef970d071e93974f1dea17b9
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379781"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753754"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>从 Java 8 转换到 Java 11
 
@@ -126,7 +126,7 @@ sun.misc.Unsafe                          See http://openjdk.java.net/jeps/260
 ### <a name="check-command-line-options"></a>检查命令行选项
 
 在 Java 11 上运行之前，请对命令行选项进行快速扫描。 
-[已删除的选项](#unrecognized-options)会导致 Java 虚拟机 (JVM) 退出。 如果使用 GC 日志记录选项，则此检查尤其重要，因为它们已明显不同于 Java 8 中的情况。 [JaCoLine](https://jacoline.dev/about) 工具是一项很好的工具，用于检查命令行选项的问题。 
+[已删除的选项](#unrecognized-options)会导致 Java 虚拟机 (JVM) 退出。 如果使用 GC 日志记录选项，则此检查尤其重要，因为它们已明显不同于 Java 8 中的情况。 JaCoLine 工具是一项很好的工具，用于检查命令行选项的问题。 
 
 ### <a name="check-third-party-libraries"></a>检查第三方库
 

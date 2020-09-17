@@ -5,12 +5,12 @@ keywords: ansible, azure, 开发, 密钥保管库, 安全性, 凭据, 机密, �
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 935361b62c30a34d3a2916abba79a2c2c99d1214
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239999"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682015"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>教程：通过 Ansible 将 Azure Key Vault 与 Linux 虚拟机配合使用
 
@@ -40,13 +40,13 @@ ms.locfileid: "88239999"
 
 通过 Azure CLI 获取在使用适用于 Azure 的 Ansible 模块时所需的 Azure 订阅信息。 
 
-1. 使用 `az account show` 命令获取 Azure 订阅 ID 和 Azure 订阅租户 ID。 对于 `<Subscription>` 占位符，请指定 Azure 订阅名称或 Azure 订阅 ID。 此命令会显示与默认 Azure 订阅关联的许多键值。 如果有多个订阅，可能需要通过 [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) 命令设置当前订阅。 记下该命令的输出中的 ID 值和 tenantID 值。
+1. 使用 `az account show` 命令获取 Azure 订阅 ID 和 Azure 订阅租户 ID。 对于 `<Subscription>` 占位符，请指定 Azure 订阅名称或 Azure 订阅 ID。 此命令会显示与默认 Azure 订阅关联的许多键值。 如果有多个订阅，可能需要通过 [az account set](/cli/azure/account#az-account-set) 命令设置当前订阅。 记下该命令的输出中的 ID 值和 tenantID 值。
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. 如果没有 Azure 订阅的服务主体，请 [通过 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 记下该命令的输出中的 appId 值。
+1. 如果没有 Azure 订阅的服务主体，请 [通过 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)。 记下该命令的输出中的 appId 值。
 
 1. 使用 `az ad sp show` 命令获取服务主体的对象 ID。 对于 `<ApplicationID>` 占位符，请指定服务主体 appId。 `--query` 参数指示哪一个值要输出到 stdout。 在此示例中，它是服务主体对象 ID。
 
@@ -441,23 +441,23 @@ tasks:
     
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 请将 `<kv_rg>` 占位符替换为用来保存演示版密钥保管库的资源组。
+如果不再需要本教程中创建的资源，请将其删除。 请将 `<kv_rg>` 占位符替换为用来保存演示版密钥保管库的资源组。 
 
-```yml
-- hosts: localhost
-  vars:
-    kv_rg: <kv_rg>
-    test_vm_rg: kv_test_vm_rg
-  tasks:
-    - name: Delete the key vault resource group
-      azure_rm_resourcegroup:
-        name: "{{ kv_rg }}"
-        force_delete_nonempty: yes
-        state: absent
-    - name: Delete the test vm resource group
-      azure_rm_resourcegroup:
-        name: "{{ test_vm_rg }}"
-        force_delete_nonempty: yes
+```yml  
+- hosts: localhost  
+  vars: 
+    kv_rg: <kv_rg>  
+    test_vm_rg: kv_test_vm_rg   
+  tasks:    
+    - name: Delete the key vault resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ kv_rg }}" 
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete the test vm resource group   
+      azure_rm_resourcegroup:   
+        name: "{{ test_vm_rg }}"    
+        force_delete_nonempty: yes  
         state: absent
 ```
 
