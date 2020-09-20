@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, 虚拟机
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c9f6d9a954b8bdbd05ede42cc69a0078eae3cea2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6ef5b2799218e3edb008d19102985d38ca6646d6
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240429"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681946"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>快速入门：使用 Ansible 在 Azure 中配置 Linux 虚拟机
 
@@ -58,10 +58,6 @@ Ansible 需要一个在其中部署了资源的资源组。 以下示例 Ansible
 ```
 
 ## <a name="create-a-public-ip-address"></a>创建公共 IP 地址
-
-
-
-
 
 [公共 IP 地址](/azure/virtual-network/virtual-network-ip-addresses-overview-arm)允许 Internet 资源与 Azure 资源进行入站通信。 公共 IP 地址还使 Azure 资源能够与面向公众的 Azure 服务进行出站通信。 在这两种方案中，为分配给正在访问的资源的 IP 地址。 此地址专门用于该资源，直到你对其取消分配。 如果未将资源分配给公共 IP 地址，则资源仍可以通过 Internet 进行出站通信。 此连接通过 Azure 动态分配可用的 IP 地址进行创建。 动态分配的地址不专用于该资源。
 
@@ -282,6 +278,10 @@ Ansible 需要一个在其中部署了资源的资源组。 以下示例 Ansible
     ```bash
     ssh azureuser@<ip-address>
     ```
+
+## <a name="clean-up-resources"></a>清理资源
+
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 
