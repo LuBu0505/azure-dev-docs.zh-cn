@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, service bus, topics, subscript
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 8dad002f52ded3baaf66d96a516a3d23dac91d56
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a6cc84b17a5971ba487e304822de9f366826274b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240059"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681972"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>教程：使用 Ansible 配置 Azure 服务总线主题
 
@@ -70,7 +70,7 @@ ms.locfileid: "88240059"
           var: topic
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_topic.yml
@@ -103,7 +103,7 @@ ansible-playbook servicebus_topic.yml
 
 将以下 playbook 保存为 `servicebus_subscription.yml`：
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_subscription.yml
@@ -140,7 +140,7 @@ ansible-playbook servicebus_subscription.yml
           var: policy
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_topic_policy.yml
@@ -173,7 +173,7 @@ ansible-playbook servicebus_topic_policy.yml
 运行 playbook 之前，请参阅以下说明：
 - `show_sas_policies` 值指示是否在指定的命名空间下显示 SAS 策略。 默认情况下，值为 `False`，以避免额外的网络开销。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -220,7 +220,7 @@ ansible-playbook servicebus_namespace_info.yml
 运行 playbook 之前，请参阅以下说明：
 - `show_sas_policies` 值指示是否在指定的队列下显示 SAS 策略。 默认情况下，此值设置为 `False`，以避免额外的网络开销。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_list.yml
@@ -249,7 +249,7 @@ ansible-playbook servicebus_list.yml
           state: absent
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_topic_policy_delete.yml
@@ -295,7 +295,7 @@ ansible-playbook servicebus_topic_policy_delete.yml
           force_delete_nonempty: yes
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook cleanup.yml

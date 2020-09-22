@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, Azure 应用服务, Web 应用
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 83bd47fca1e04aa55bbebca84b3f52bdc9f52ecc
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 13ef1291f2d61f5792d2d21fa105a1dcd9f1e2d3
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240369"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681748"
 ---
 # <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>教程：使用 Ansible 在 Azure 应用服务中配置应用
 
@@ -72,7 +72,7 @@ ms.locfileid: "88240369"
               java_container_version: 8.5
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook firstwebapp.yml
@@ -196,7 +196,7 @@ localhost                  : ok=3    changed=2    unreachable=0    failed=0
       target_resource_id: "{{ webapp.webapps[0].id }}"
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook webapp.yml

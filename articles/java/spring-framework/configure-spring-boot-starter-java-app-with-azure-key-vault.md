@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 17a154fe7f41e4079fd9c6dcf1358c2acd50367b
-ms.sourcegitcommit: 035f485f182405fdf3e274ec4f70abfcf5fc9641
+ms.openlocfilehash: efe17eba034b92d771d979a896585d4d5362a11d
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89511051"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534395"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>教程：在 Spring Boot 应用程序中从 Azure Key Vault 读取机密
 
@@ -34,7 +34,7 @@ Spring Boot 应用程序将用户名和密码等敏感信息外部化。  外部
 
 * 一个有效的 Azure 订阅。
   * 如果没有 Azure 订阅，可以[创建一个免费帐户](https://azure.microsoft.com/free/)。
-* [安装 Azure CLI 版本 2.0.67 或更高版本](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)，并使用以下命令安装 Azure Spring Cloud 扩展：`az extension add --name spring-cloud`
+* [安装 Azure CLI 版本 2.0.67 或更高版本](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)，并使用以下命令安装 Azure Spring Cloud 扩展：`az extension add --name spring-cloud`
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 * `curl` 命令。  大多数类似 UNIX 的操作系统都预安装了此命令。  特定于操作系统的客户端可通过 [cURL 官方网站](https://curl.haxx.se/)查找。
@@ -170,7 +170,7 @@ az ad sp create-for-rbac --name contososp
    "https://contosokv.vault.azure.net/"
    ```
 
-1. 配置 Key Vault 允许来自该托管标识的 `get` 和 `list` 操作。  `object-id` 的值是来自上述 `az ad sp create-for-rbac` 命令的 `appId`。
+1. 配置 Key Vault 以允许来自该托管标识的 `get` 和 `list` 操作。  `object-id` 的值是来自上述 `az ad sp create-for-rbac` 命令的 `appId`。
 
    ```azurecli
    az keyvault set-policy --name contosokv --spn http://ejbcontososp --secret-permissions get list
@@ -185,6 +185,9 @@ az ad sp create-for-rbac --name contososp
    | name | Key Vault 的名称。 |
    | SPN | 上述 `az ad sp create-for-rbac` 命令输出的 `name`。 |
    | secret-permissions | 允许来自指定主体的操作列表。 |
+
+    > [!NOTE]
+    > 尽管最低权限原则建议向资源授予尽可能少的权限集，但 Key Vault 集成的设计至少需要 `get` 和 `list`。
 
 1. 在新的 Key Vault 中存储机密。  常见用例是存储 JDBC 连接字符串。  例如：
 

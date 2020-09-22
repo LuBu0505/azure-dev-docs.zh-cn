@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725231"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682155"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>将 Spring Boot 应用程序迁移到 Azure 应用服务
 
@@ -113,7 +113,7 @@ spring.jms.servicebus.idle-timeout=10000
 
 #### <a name="maven-applications"></a>Maven 应用程序
 
-如果应用程序是从 Maven POM 文件生成的，则请[使用 Maven 的 Webapp 插件](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service)来创建 Web 应用并部署应用程序。
+如果应用程序是从 Maven POM 文件生成的，则请使用 Maven 的 Webapp 插件来创建 Web 应用并部署应用程序。 有关详细信息，请参阅[快速入门：在 Azure 应用服务中创建 Java 应用](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)。
 
 #### <a name="non-maven-applications"></a>非 Maven 应用程序
 

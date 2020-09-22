@@ -4,21 +4,21 @@ titleSuffix: Azure Toolkit for IntelliJ
 description: 在 Linux 容器中运行一个基本的 Hello World Web 应用，并使用用于 IntelliJ 的 Azure 工具包将它部署到云中。
 services: app-service\web
 documentationcenter: java
-ms.date: 12/20/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 7b6d393f44034794494f4e77a6365bf0d7bf6c1d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0dd1b0202442a4af5322513f038ddcc9908a7dd1
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334422"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534692"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>使用 Azure Toolkit for IntelliJ 将 Java 应用部署到用于容器的 Web 应用
 
-[Docker] 容器广泛用于部署 Web 应用程序。 开发人员可在其中将其所有项目文件和依赖项整合成单个包，以便部署到服务器。 用于 IntelliJ 的 Azure 工具包可以添加用于将容器部署到 Microsoft Azure 的功能，为 Java 开发人员简化了部署过程。
+[Docker] 容器广泛用于部署 Web 应用程序。 开发人员可在其中将其所有项目文件和依赖项整合成单个包，以便部署到服务器。 Azure Toolkit for IntelliJ 通过添加用于将容器部署到 Microsoft Azure 的功能，为 Java 开发人员简化了部署过程。
 
 本文演示如何创建基本的 Hello World Web 应用和使用用于 IntelliJ 的 Azure 工具包将 Linux 容器中的 Web 应用发布到 Azure。
 
@@ -32,29 +32,52 @@ ms.locfileid: "87334422"
 > ![Docker 设置菜单][docker-settings-menu]
 >
 
-## <a name="create-a-new-web-app-project"></a>创建新 Web 应用项目
+## <a name="installation-and-sign-in"></a>安装和登录
 
-1. 启动 IntelliJ，并按照[用于 IntelliJ 的 Azure 工具包的登录说明](sign-in-instructions.md)一文中的步骤登录 Azure 帐户。
+以下步骤将指导你完成 IntelliJ 开发环境中登录 Azure 的过程。
 
-1. 依次单击“文件”菜单、“新建”、“项目”  。
-   
-   ![创建新项目][file-new-project]
+1. 如果尚未安装该插件，请参阅[安装 Azure Toolkit for IntelliJ](installation.md)。
 
-1. 在“新建项目”对话框中，选择 Maven，然后选择 maven-archetype-webapp，然后单击“下一步”   。
-   
-   ![选择 Maven archetype webapp][maven-archetype-webapp]
-   
-1. 为 Web 应用指定 GroupId 和 ArtifactId，然后单击“下一步”  。
-   
-   ![指定 GroupId 和 ArtifactId][groupid-and-artifactid]
+1. 若要登录 Azure 帐户，请导航到左侧的 Azure 资源管理器边栏，然后单击“Azure 登录”图标 。 或者，你可导航到“工具”，展开“Azure”，然后单击“Azure 登录”  。
 
-1. 自定义任何 Maven 设置或接受默认设置，然后单击“下一步”。
-   
-   ![指定 Maven 设置][maven-options]
+   :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="在 IntelliJ 上登录到 Azure。"::: 
 
-1. 指定项目名称和位置，并单击“完成”。
-   
-   ![指定项目名称][project-name]
+1. 在“Azure 登录”窗口中选择“设备登录”，然后单击“登录”（[其他登录选项](sign-in-instructions.md)）。  
+
+1. 在“Azure 设备登录”对话框中单击“复制并打开” 。
+
+1. 在浏览器中粘贴设备代码（在最后一个步骤中单击“复制并打开”时已复制），然后单击“下一步”。 
+
+1. 选择 Azure 帐户，完成登录所需的全部身份验证过程。
+
+1. 登录后，关闭浏览器并切换回 IntelliJ IDE。 在“选择订阅”对话框中选择要使用的订阅，然后单击“确定” 。
+
+## <a name="creating-a-new-web-app-project"></a>创建新的 Web 应用项目
+
+1. 单击“文件”，展开“新建”，然后单击“项目”  。
+
+1. 在“新建项目”对话框中，选择“Maven”，并确保已选中“从原型创建”选项  。 从列表中选择“maven-archetype-webapp”，然后单击“下一步” 。
+
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="选择“maven-archetype-webapp”选项。"::: 
+
+1. 展开“项目坐标”下拉列表查看所有输入字段，并为新的 Web 应用指定以下信息，然后单击“下一步” ：
+
+   * 名称：Web 应用的名称。 这将自动填写 Web 应用的 ArtifactId 字段。
+   * GroupId：项目组的名称，通常为公司域。 （例如 com.microsoft.azure）
+   * **版本**：我们将保留默认版本 1.0-SNAPSHOT。
+
+1. 自定义任何 Maven 设置或接受默认设置，然后单击“完成”。
+
+1. 导航到左侧“项目”选项卡上的项目，然后打开文件 src/main/webapp/WEB-INF/index.jsp 。 将代码替换为以下内容并保存更改：
+
+   ```html
+   <html>
+    <body>
+      <b><% out.println("Hello World!"); %></b>
+    </body>
+   </html>
+   ```
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="打开 index.jsp 文件。":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>创建 Azure 容器注册表，用作专用 Docker 注册表
 
@@ -69,27 +92,37 @@ ms.locfileid: "87334422"
 
    登录到你在 Azure 门户的帐户后，可以按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，在以下步骤中进行了解释。
 
-1. 依次单击“+ 创建资源”菜单图标、“容器”、“容器注册表”。
-   
-   ![创建新的 Azure 容器注册表][create-container-registry-01]
+1. 依次单击“+创建资源”菜单图标、“容器”类别和“容器注册表”  。
 
-1. 当显示“创建容器注册表”页时，输入你的“注册表名称”和“资源组”，为“管理员用户”选择“启用”，然后单击“创建”。
+1. 显示“创建容器注册表”页面后，请指定以下信息：
 
-   ![配置 Azure 容器注册表设置][create-container-registry-02]
+   * 订阅：指定要用于新容器注册表的 Azure 订阅。
+
+   * **资源组**：指定容器注册表的资源组。 选择以下选项之一：
+      * **新建**：指定要创建新的资源组。
+      * **使用现有**：指定将从与 Azure 帐户关联的资源组列表中进行选择。
+
+   * **注册表名称**：指定新容器注册表的名称。
+
+   * 位置：指定将在其中创建容器注册表的区域（例如“美国西部”）。
+
+   * **SKU**：指定容器注册表的服务层。 对于本教程，请选择“基本”。 有关详细信息，请参阅 [Azure 容器注册表服务层级](/azure/container-registry/container-registry-skus)。
+
+1. 单击“查看 + 创建”，验证信息是否正确。 单击“创建”以完成。
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>在 Docker 容器中部署 Web 应用
 
-1. 右键单击项目资源管理器中的项目，选择“Azure”，然后单击“添加 Docker 支持” 。
+以下步骤将引导你为 Web 应用配置 Docker 支持并部署 Web 应用。
+
+1. 导航到左侧“项目”选项卡上的项目，然后右键单击项目。 展开“Azure”，然后单击“添加 Docker 支持” 。
 
    将使用默认配置自动创建 Docker 文件。
 
-   ![添加 Docker 支持][add-docker-support]
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Docker 支持文件。":::
 
-1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，选择“Azure”，然后单击“在用于容器的 Web 应用上运行” 。
+1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，展开“Azure”，然后单击“在用于容器的 Web 应用上运行” 。
 
-   ![在用于容器的 Web 应用上运行][run-on-web-app-for-containers]
-
-1. 显示“在用于容器的 Web 应用上运行”对话框时，填写必要信息：
+1. 在“在用于容器的 Web 应用上运行”对话框中，填写以下信息：
 
    * 名称：指定在 Azure Toolkit 中显示的易记名称。 
 
@@ -105,25 +138,19 @@ ms.locfileid: "87334422"
 
    * **应用服务计划**：指定是要使用现有应用服务计划还是创建新的应用服务计划。 
 
-   ![在用于容器的 Web 应用上运行][run-on-web-app-linux]
-
 1. 配置完上面列出的设置后，单击“运行”。 成功部署 Web 应用以后，状态会显示在“运行”窗口中。
 
-   ![成功部署的 Web 应用][successfully-deployed]
-
-1. 发布 Web 应用以后，即可浏览到此前为 Web 应用指定的 URL，例如 *wingtiptoys.azurewebsites.net*。
+1. 发布 Web 应用后，可浏览到之前为 Web 应用指定的 URL，例如 wingtiptoys.azurewebsites.net。
 
    ![浏览到 Web 应用][browsing-to-web-app]
 
 ## <a name="optional-modify-your-web-app-publish-settings"></a>可选：修改 Web 应用发布设置
 
-1. 发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。 可通过单击 Web 应用的下拉菜单来修改这些设置，然后单击“编辑配置”。
+1. 发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。 可单击 Web 应用的下拉菜单，然后单击“编辑配置”来修改这些设置。
 
-   ![“编辑配置”菜单][edit-configuration-menu]
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="编辑配置菜单。":::
 
 1. 出现“运行/调试配置”对话框后，可修改任意默认设置，然后单击“确定” 。
-
-   ![“编辑配置”对话框][edit-configuration-dialog]
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -144,18 +171,5 @@ ms.locfileid: "87334422"
 
 <!-- IMG List -->
 
-[add-docker-support]: media/hello-world-web-app-linux/add-docker-support.png
 [browsing-to-web-app]:  media/hello-world-web-app-linux/browsing-to-web-app.png
-[create-container-registry-01]: media/hello-world-web-app-linux/create-container-registry-01.png
-[create-container-registry-02]: media/hello-world-web-app-linux/create-container-registry-02.png
 [docker-settings-menu]: media/hello-world-web-app-linux/docker-settings-menu.png
-[edit-configuration-dialog]: media/hello-world-web-app-linux/edit-configuration-dialog.png
-[edit-configuration-menu]: media/hello-world-web-app-linux/edit-configuration-menu.png
-[file-new-project]: media/hello-world-web-app-linux/file-new-project.png
-[groupid-and-artifactid]: media/hello-world-web-app-linux/groupid-and-artifactid.png
-[maven-archetype-webapp]: media/hello-world-web-app-linux/maven-archetype-webapp.png
-[maven-options]: media/hello-world-web-app-linux/maven-options.png
-[project-name]: media/hello-world-web-app-linux/project-name.png
-[run-on-web-app-for-containers]: media/hello-world-web-app-linux/run-on-web-app-for-containers.png
-[run-on-web-app-linux]: media/hello-world-web-app-linux/run-on-web-app-linux.png
-[successfully-deployed]: media/hello-world-web-app-linux/successfully-deployed.png

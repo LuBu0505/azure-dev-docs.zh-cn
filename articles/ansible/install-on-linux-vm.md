@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, azure cli
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240159"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682038"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Ansible
 
@@ -34,7 +34,7 @@ ms.locfileid: "88240159"
 
 ## <a name="create-an-ssh-key-pair"></a>创建 SSH 密钥对
 
-连接到 Linux VM 时，可以使用密码验证或基于密钥的身份验证。 基于密钥的身份验证比使用密码更安全。 因此，本文使用基于密钥的身份验证。
+连接到 Linux VM 时，可以使用密码验证或基于密钥的身份验证。 基于密钥的身份验证比使用密码更安全。 因此，本文将使用基于密钥的身份验证。
 
 基于密钥的身份验证有两种密钥：
 
@@ -118,7 +118,7 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 
 需要以下信息才能配置 Ansible 凭据：
 
-* Azure 订阅 ID 
+* Azure 订阅 ID
 * 服务主体值
 
 如果使用 Ansible Tower 或 Jenkins，请将服务主体值声明为环境变量。
@@ -168,7 +168,11 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
+## <a name="test-ansible-installation"></a>测试 Ansible 安装
+
 现在你已有一个安装并配置了 Ansible 的虚拟机！
+
+[!INCLUDE [ansible-test-configuration.md](includes/ansible-test-configuration.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

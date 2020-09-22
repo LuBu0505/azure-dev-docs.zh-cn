@@ -3,14 +3,14 @@ title: 教程 - 使用 Ansible 通过 Azure 应用程序网关管理 Web 流量
 description: 了解如何使用 Ansible 创建并配置 Azure 应用程序网关来管理 Web 流量
 keywords: ansible, azure, devops, bash, playbook, 应用程序网关, 负载均衡器, web 流量
 ms.topic: tutorial
-ms.date: 06/19/2020
+ms.date: 09/14/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: cfeba71085443afb978ceb6b7c381a1e74e723fb
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cb29fa619a68906a5a68eeaff5904d606c631616
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240469"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681678"
 ---
 # <a name="tutorial-manage-web-traffic-with-azure-application-gateway-using-ansible"></a>教程：使用 Ansible 通过 Azure 应用程序网关管理 Web 流量
 
@@ -54,7 +54,7 @@ ms.locfileid: "88240469"
 - 该资源组名为 `myResourceGroup`。 本教程中的所有示例都使用此值。
 - 在 `eastus` 位置创建资源组。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook rg.yml
@@ -107,7 +107,7 @@ ansible-playbook rg.yml
 * `vars` 部分包含用于创建网络资源的值。 
 * 需要为特定环境更改这些值。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook vnet_create.yml
@@ -160,7 +160,7 @@ ansible-playbook vnet_create.yml
               - 80
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook aci_create.yml
@@ -263,7 +263,7 @@ ansible-playbook aci_create.yml
 * `appGatewayFrontendIP` 在 `frontend_ip_configurations` 块中定义。 它将 myAGPublicIPAddress 分配到 appGatewayHttpListener。
 * `rule1` 在 `request_routing_rules` 块中定义。 它是与 appGatewayHttpListener 关联的默认路由规则。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook appgw_create.yml
@@ -287,26 +287,7 @@ ansible-playbook appgw_create.yml
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
-
-将以下代码保存为 `cleanup.yml`：
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-使用 `ansible-playbook` 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

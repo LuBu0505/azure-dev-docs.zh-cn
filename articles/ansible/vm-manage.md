@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 354c54191d108dc7a58f2813225a40b75968a4b2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 896616cff3f2df237de625536981b08d5db9175b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240619"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681926"
 ---
 # <a name="quickstart-manage-linux-virtual-machines-in-azure-using-ansible"></a>快速入门：使用 Ansible 管理 Azure 中的 Linux 虚拟机
 
@@ -53,7 +53,7 @@ ms.locfileid: "88240619"
 
 1. 保存文件并退出编辑器。
 
-1. 使用 `ansible-playbook` 命令运行 playbook：
+1. 使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
     ```bash
     ansible-playbook azure-vm-stop.yml
@@ -105,7 +105,7 @@ ms.locfileid: "88240619"
 
 1. 保存文件并退出编辑器。
 
-1. 使用 `ansible-playbook` 命令运行 playbook：
+1. 使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
     ```bash
     ansible-playbook azure-vm-start.yml

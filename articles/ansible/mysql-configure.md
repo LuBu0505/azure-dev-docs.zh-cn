@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, mysql, 数据库
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 6264ca6158017fc919e64fa2e33852076c523fc6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1fb753658486a0a1c8f5c44c01f6c4c33c8ecaf0
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239979"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682002"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>教程：使用 Ansible 在 Azure Database for MySQL 中配置数据库
 
@@ -57,7 +57,7 @@ ms.locfileid: "88239979"
 * 创建名为 `myResourceGroup` 的资源组。
 * 在 `eastus` 位置创建该资源组：
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook rg.yml
@@ -106,7 +106,7 @@ ansible-playbook rg.yml
 * 在 `vars` 部分中，`mysqlserver_name` 的值必须是唯一的。
 * 在 `vars` 部分中，使用密码替换 `<server_admin_password>`。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook mysql_create.yml
@@ -148,7 +148,7 @@ ansible-playbook mysql_create.yml
 * 连接到 Azure Database for MySQL 时，经端口 3306 进行通信。 如果尝试从企业网络内部进行连接，则可能不允许经端口 3306 的出站流量。 这种情况下无法连接到服务器，除非 IT 部门打开了端口 3306。
 * Playbook 使用 `azure_rm_resource` 模块，该模块允许直接使用 REST API。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook mysql_firewall.yml
@@ -248,7 +248,7 @@ ansible-playbook mysql_firewall.yml
         var: mysqldatabasefacts
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook mysql_query.yml
@@ -316,26 +316,7 @@ ansible-playbook mysql_query.yml
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
-
-将以下 playbook 保存为 `cleanup.yml`：
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-使用 `ansible-playbook` 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

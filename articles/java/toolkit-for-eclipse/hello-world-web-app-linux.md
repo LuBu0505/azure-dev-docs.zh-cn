@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f5606cb8b1e61358e610c8ff1bcadc837e44a539
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 51037098f05d985bcb8c35580688d37db0cbe363
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378281"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534735"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>使用 Azure Toolkit for Eclipse 将 Hello World Web 应用部署到云中的 Linux 容器
 
@@ -81,7 +81,7 @@ ms.locfileid: "86378281"
 
    * **Docker 文件**：指定向项目添加 Docker 支持时创建的 Docker 文件的路径。 
 
-   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。  
+   * **容器注册表**：从下拉菜单中选择在本文的上一部分创建的容器注册表。 “服务器 URL”、“用户名”和“密码”字段会自动填充。
 
    * **映像和标记**：指定容器映像名称；通常使用以下语法：“*registry*.azurecr.io/*appname*:latest”，其中： 
       * 注册表是上文所述的容器注册表 
@@ -97,7 +97,7 @@ ms.locfileid: "86378281"
 
 1. 配置完上面列出的设置后，单击“确定”，将 Web 应用发布到 Azure。
 
-1. 发布 Web 应用以后，即可浏览到此前为 Web 应用指定的 URL，例如 *wingtiptoys.azurewebsites.net*。
+1. 发布 Web 应用后，可浏览到之前为 Web 应用指定的 URL，例如 wingtiptoys.azurewebsites.net。
 
    ![浏览到 Web 应用][browsing-to-web-app]
 

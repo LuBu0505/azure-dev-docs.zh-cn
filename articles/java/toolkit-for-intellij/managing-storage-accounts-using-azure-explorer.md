@@ -2,19 +2,22 @@
 title: 使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
 description: 了解如何使用用于 IntelliJ 的 Azure 资源管理器管理 Azure 存储帐户。
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a692081032781a530d80c8fa2ff77792611e2673
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438463"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534315"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理存储帐户
+
+> [!NOTE]
+> Azure 资源管理器中的存储帐户功能已被弃用。 你可使用 Azure 门户来创建和管理存储帐户和容器。 有关如何管理存储帐户的快速入门，请参阅 [Azure 存储](/azure/storage/blobs/storage-quickstart-blobs-portal)文档。
 
 Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为 Java 开发人员提供易用的解决方案，用于从 IntelliJ 集成开发环境 (IDE) 内部管理其 Azure 帐户中的存储帐户。
 
@@ -22,7 +25,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-intellij"></a>在 IntelliJ 中创建存储帐户
+## <a name="create-a-storage-account"></a>创建存储帐户
 
 若要使用 Azure 资源管理器创建存储帐户，请执行以下操作：
 
@@ -30,11 +33,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 2. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。   
 
-   ![“创建存储帐户”命令][CS01]
-
 3. 在“创建存储帐户”对话框中，指定以下选项：
-
-   ![“创建新存储帐户”对话框][CS02]
 
    * 名称：指定要用于新存储帐户的名称。
 
@@ -54,17 +53,14 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 4. 指定了上述所有选项后，单击“确定”。
 
-## <a name="delete-a-storage-account-in-intellij"></a>删除 IntelliJ 中的存储帐户
+## <a name="delete-a-storage-account"></a>删除存储帐户
 
 若要使用 Azure 资源管理器删除存储帐户，请执行以下操作：
 
 1. 在“Azure 资源管理器”视图中，右键单击存储帐户，并选择“删除”。 
 
-   ![“删除存储帐户”菜单][DS01]
-
 2. 在确认窗口中，单击“是”。
 
-   ![删除存储帐户确认窗口][DS02]
 
 ## <a name="next-steps"></a>后续步骤
 

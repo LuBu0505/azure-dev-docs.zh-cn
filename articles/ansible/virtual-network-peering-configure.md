@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, 网络, 对等互连
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 747b11c9727e0844ac9d9c7b07a8355e8163c75e
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240049"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681961"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>教程：使用 Ansible 配置 Azure 虚拟网络对等互连
 
@@ -145,7 +145,7 @@ ms.locfileid: "88240049"
 可通过两种方法获取完整示例 playbook：
 
 - [下载 playbook](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vnet_peering.yml) 并将其保存到 `vnet_peering.yml`。
-- 新建名为 `vnet_peering.yml` 的文件，并将以下内容复制到其中：
+- 新建一个名为 `vnet_peering.yml` 的文件，并将以下内容复制到其中：
 
 ```yml
 - hosts: localhost
@@ -289,43 +289,42 @@ localhost                  : ok=12   changed=9    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
+如果不再需要本教程中创建的资源，请将其删除。    
 
-本部分的示例 playbook 代码用于：
+本部分的示例 playbook 代码用于：    
 
-- 删除前面创建的两个资源组
+- 删除前面创建的两个资源组   
 
-将以下 playbook 保存为 `cleanup.yml`：
+将以下 playbook 保存为 `cleanup.yml`：   
 
-```bash
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name-1 }}"
-    resource_group_secondary: "{{ resource_group_name-2 }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
+```bash 
+- hosts: localhost  
+  vars: 
+    resource_group: "{{ resource_group_name-1 }}"   
+    resource_group_secondary: "{{ resource_group_name-2 }}" 
+  tasks:    
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group }}"    
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group_secondary }}"  
+        force_delete_nonempty: yes  
+        state: absent   
+``` 
 
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group_secondary }}"
-        force_delete_nonempty: yes
-        state: absent
-```
+下面是使用示例 playbook 时要考虑的部分关键注意事项：  
 
-下面是使用示例 playbook 时要考虑的部分关键注意事项：
+- 请将 `{{ resource_group_name-1 }}` 占位符替换为创建的第一个资源组的名称。  
+- 请将 `{{ resource_group_name-2 }}` 占位符替换为创建的第二个资源组的名称。 
+- 两个指定资源组中的所有资源将被删除。   
 
-- 请将 `{{ resource_group_name-1 }}` 占位符替换为创建的第一个资源组的名称。
-- 请将 `{{ resource_group_name-2 }}` 占位符替换为创建的第二个资源组的名称。
-- 两个指定资源组中的所有资源将被删除。
+使用 ansible-playbook 命令运行 playbook：    
 
-使用 ansible-playbook 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
+```bash 
+ansible-playbook cleanup.yml    
 ```
 
 ## <a name="next-steps"></a>后续步骤

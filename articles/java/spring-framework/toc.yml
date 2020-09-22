@@ -70,7 +70,7 @@
     - name: 教程
       items:
         - name: 使用 Maven 部署到应用服务
-          href: deploy-spring-boot-java-app-with-maven-plugin.md
+          href: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
         - name: 部署到 Kubernetes
           href: deploy-spring-boot-java-app-on-kubernetes.md
         - name: 部署到用于容器的 Web 应用

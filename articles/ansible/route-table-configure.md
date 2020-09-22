@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, 网络, 路由, 路由表
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 28302e5e8fc6a46193d96c791080797559a566e9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6eca7aa93716e41d62ca5dae0211fa1467eec2ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240019"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681994"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>教程：使用 Ansible 配置 Azure 路由表
 
@@ -47,7 +47,7 @@ Azure 自动在 Azure 子网、虚拟网络与本地网络之间路由流量。 
         resource_group: "{{ resource_group }}"
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_table_create.yml
@@ -104,7 +104,7 @@ ansible-playbook route_table_create.yml
         route_table: "{ route_table_name }"
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_table_associate.yml
@@ -133,7 +133,7 @@ ansible-playbook route_table_associate.yml
         address_prefix_cidr: "10.1.0.0/24"
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_table_dissociate.yml
@@ -166,7 +166,7 @@ ansible-playbook route_table_dissociate.yml
 * `virtual_network_gateway` 定义为 `next_hop_type`。 有关 Azure 如何选择路由的详细信息，请参阅[路由概述](/azure/virtual-network/virtual-networks-udr-overview)。
 * `address_prefix` 定义为 `10.1.0.0/16`。 前缀在路由表中不能重复。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_create.yml
@@ -193,7 +193,7 @@ ansible-playbook route_create.yml
         state: absent
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_delete.yml
@@ -221,7 +221,7 @@ ansible-playbook route_delete.yml
          var: query.route_tables[0]
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_table_facts.yml
@@ -250,7 +250,7 @@ ansible-playbook route_table_facts.yml
         state: absent
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook route_table_delete.yml

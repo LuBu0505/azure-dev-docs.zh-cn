@@ -1,16 +1,16 @@
 ---
 title: 教程 - 使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置 Azure CNI 网络
-description: 了解如何使用 Ansible 在 Azure Kubernetes 服务 (AKS) 群集中配置 kubenet 网络
+description: 了解如何使用 Ansible 在 Azure Kubernetes 服务 (AKS) 群集中配置 Azure CNI 网络
 keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, Kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: f3892b9c25b952d2d8c71e4e44857557c0a1813b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1f58c8c5964a6e015de9cb1e3990274791037599
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239949"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682119"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>教程：使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置 Azure CNI 网络
 
@@ -245,37 +245,7 @@ localhost                  : ok=9    changed=4    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
-
-本部分的示例 playbook 代码用于：
-
-- 删除 `vars` 部分中引用的资源组。
-
-将以下 playbook 保存为 `cleanup.yml`：
-
-```yml
----
-- hosts: localhost
-  vars:
-      resource_group: {{ resource_group_name }}
-  tasks:
-      - name: Clean up resource group
-        azure_rm_resourcegroup:
-            name: "{{ resource_group }}"
-            state: absent
-            force: yes
-```
-
-下面是使用示例 playbook 时要考虑的部分关键注意事项：
-
-- 将 `{{ resource_group_name }}` 占位符替换为资源组的名称。
-- 将删除指定资源组中的所有资源。
-
-使用 ansible-playbook 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

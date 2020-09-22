@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集,
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e9ac4604b10f73e85290162eaf47803f4c4021c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240649"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681863"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中配置虚拟机规模集
 
@@ -146,7 +146,7 @@ ms.locfileid: "88240649"
 
 * 在 `vars` 部分中，请将 `{{ admin_password }}` 占位符替换为你自己的密码。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook vmss-create.yml
@@ -244,7 +244,7 @@ localhost                  : ok=8    changed=7    unreachable=0    failed=0
       azure_rm_virtualmachinescaleset: "{{ body }}"
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook vmss-scale-out.yml

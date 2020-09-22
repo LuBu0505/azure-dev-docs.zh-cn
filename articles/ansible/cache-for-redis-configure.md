@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, cache, redis
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e5e3211dc2625670937a583d3db0018c6222ae19
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 66da31edef14a09a903b3a78d97e1067856098ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240329"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681735"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>教程：使用 Ansible 在 Azure Redis 缓存中配置缓存
 
@@ -159,7 +159,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，具体取决于应用的�
 
 可通过两种方法获取完整示例 playbook：
 - [下载 playbook](https://github.com/Azure-Samples/ansible-playbooks/blob/master/rediscache.yml) 并将其保存到 `rediscache.yml`。
-- 新建名为 `rediscache.yml` 的文件，并将以下内容复制到其中：
+- 新建一个名为 `rediscache.yml` 的文件，并将以下内容复制到其中：
 
 ```yml
 - name: Manage Azure Cache for Redis
@@ -241,7 +241,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，具体取决于应用的�
 
 在 `vars` 节中，将 `{{ resource_group_name }}` 占位符替换为你的资源组名称。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook rediscache.yml
@@ -323,28 +323,7 @@ Tuesday 12 March 2019  16:44:14 +0800 (0:00:06.217)       0:23:08.626
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
-
-将以下代码保存为 `cleanup.yml`：
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-在 `vars` 节中，将 `{{ resource_group_name }}` 占位符替换为你的资源组名称。
-
-使用 `ansible-playbook` 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

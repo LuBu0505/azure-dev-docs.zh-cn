@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, 服务总线, 队列
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 438c5787469a31403285f8884452d5293f1460f4
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2f58dac776de66d0d4f449bf4fe34a7c9d30c8fe
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239989"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681985"
 ---
 # <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>教程：使用 Ansible 配置 Azure 服务总线中的队列
 
@@ -69,7 +69,7 @@ ms.locfileid: "88239989"
           var: queue
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_queue.yml
@@ -106,7 +106,7 @@ ansible-playbook servicebus_queue.yml
 运行 playbook 之前，请参阅以下说明：
 - `rights` 值表示用户对队列具有的权限。 请指定下列值之一：`manage`、`listen`、`send` 或 `listen_send`。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_queue_policy.yml
@@ -139,7 +139,7 @@ ansible-playbook servicebus_queue_policy.yml
 运行 playbook 之前，请参阅以下说明：
 - `show_sas_policies` 值指示是否在指定的命名空间下显示 SAS 策略。 默认情况下，值为 `False`，以避免额外的网络开销。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -174,7 +174,7 @@ ansible-playbook servicebus_namespace_info.yml
 运行 playbook 之前，请参阅以下说明：
 - `show_sas_policies` 值指示是否在指定的队列下显示 SAS 策略。 默认情况下，此值设置为 `False`，以避免额外的网络开销。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_queue_info.yml
@@ -203,7 +203,7 @@ ansible-playbook servicebus_queue_info.yml
           state: absent
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook servicebus_queue_policy_delete.yml
@@ -241,7 +241,7 @@ ansible-playbook servicebus_queue_policy_delete.yml
           force_delete_nonempty: yes
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook cleanup.yml

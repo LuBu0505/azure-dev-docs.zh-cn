@@ -1,9 +1,9 @@
 - name: Azure for Java 快速入门
-  href: /azure/developer/java/quickstarts
+  href: ./index.yml
   items:
     - name: 计算服务
       href: compute.md
-    - name: data
+    - name: 数据
       href: data.md
     - name: 存储
       href: storage.md

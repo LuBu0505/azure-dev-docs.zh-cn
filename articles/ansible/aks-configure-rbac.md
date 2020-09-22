@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, 
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: aa2c897a1581a75bcd9bacaa26c34f14474708b0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7fef950e1b0b953d73ffd28f59e23fd2c715db2c
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239759"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681783"
 ---
 # <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>教程：使用 Ansible 在 Azure Kubernetes 服务 (AKS) 中配置基于角色的访问控制 (RBAC) 角色
 
@@ -258,7 +258,7 @@ aks-nodepool1-33413200-2   Ready    agent   49m   v1.12.6
             path: "aks-{{ name }}-kubeconfig"
 ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook cleanup.yml

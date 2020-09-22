@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, cosmo db, database
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 7c09f0dd28dbcbdf62219a62295b05758b4c8372
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d6c7aed7c1401600fca14cefbb77d86588e485b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240339"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681658"
 ---
 # <a name="tutorial-configure-azure-cosmos-db-accounts-using-ansible"></a>教程：使用 Ansible 配置 Azure Cosmos DB 帐户
 
@@ -142,7 +142,7 @@ Azure 资源组由示例 playbook 片段创建。 资源组是在其中部署和
 
 可通过两种方法获取完整示例 playbook：
 - [下载 playbook](https://github.com/Azure-Samples/ansible-playbooks/blob/master/cosmosdb_create.yml) 并将其保存到 `cosmosdb.yml`。
-- 新建名为 `cosmosdb.yml` 的文件，并将以下内容复制到其中：
+- 新建一个名为 `cosmosdb.yml` 的文件，并将以下内容复制到其中：
 
 ```yml
 ---
@@ -234,7 +234,7 @@ Azure 资源组由示例 playbook 片段创建。 资源组是在其中部署和
 - 在 `vars` 节中，将 `{{ resource_group_name }}` 占位符替换为你的资源组名称。
 - 请确保 `cosmosdbaccount_name 仅包含小写字符并且是全局唯一的。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook cosmosdb.yml
@@ -242,27 +242,7 @@ ansible-playbook cosmosdb.yml
 
 ## <a name="clean-up-resources"></a>清理资源
 
-如果不再需要本教程中创建的资源，请将其删除。 
-
-将以下代码保存为 `cleanup.yml`：
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-使用 `ansible-playbook` 命令运行 playbook：
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

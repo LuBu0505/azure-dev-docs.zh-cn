@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, 容器, aks, 
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0e7b42776c0405acf335dc75508ef2759838da21
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d54febc3e2d4a82b8986f0c64b200a4aaff7ab55
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240039"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682145"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中配置 Azure Kubernetes 服务 (AKS) 群集
 
@@ -83,9 +83,9 @@ ms.locfileid: "88240039"
 - `tasks` 中的第一部分定义了 `eastus` 位置中名为 `myResourceGroup` 的资源组。
 - `tasks` 中的第二部分定义了 `myResourceGroup` 资源组中名为 `myAKSCluster` 的 AKS 群集。
 - 对于 `your_ssh_key` 占位符，请以单行格式输入你的 RSA 公钥 - 以 "ssh-rsa" 开头（不含引号）。
-- 对于 `aks_version` 占位符，请使用 [az aks get-versions](/cli/azure/aks?view=azure-cli-latest#az-aks-get-versions) 命令。
+- 对于 `aks_version` 占位符，请使用 [az aks get-versions](/cli/azure/aks#az-aks-get-versions) 命令。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook azure_create_aks.yml
@@ -150,7 +150,7 @@ localhost                  : ok=3    changed=2    unreachable=0    failed=0
 
 - 对于 `your_ssh_key` 占位符，请以单行格式输入你的 RSA 公钥 - 以 "ssh-rsa" 开头（不含引号）。
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook azure_configure_aks.yml
@@ -193,7 +193,7 @@ localhost                  : ok=2    changed=1    unreachable=0    failed=0
       state: absent
   ```
 
-使用 `ansible-playbook` 命令运行 playbook：
+使用 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) 运行 playbook
 
 ```bash
 ansible-playbook azure_delete_aks.yml

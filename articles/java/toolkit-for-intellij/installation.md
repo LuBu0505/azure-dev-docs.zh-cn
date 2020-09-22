@@ -3,17 +3,17 @@ title: 安装 Azure Toolkit for IntelliJ
 description: 了解如何安装用于 IntelliJ 的 Azure 工具包插件，以创建云应用程序并将其部署到 Azure。
 documentationcenter: java
 ms.assetid: c6817c7b-f28c-4c06-8216-41c7a8117de3
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 15e3bdc3f001b3fe93a96b27bf7fc44c7aaa8f3a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: fe8b07257ff3a9fc5523d13dd13e19982103ab05
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379921"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534444"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>安装 Azure Toolkit for IntelliJ
 
@@ -53,80 +53,39 @@ ms.locfileid: "86379921"
 -->
 
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a>从“设置”对话框安装 Azure Toolkit for IntelliJ 的步骤
+## <a name="from-the-settings-dialog-box"></a>从“设置”对话框
 
-1. 启动 IntelliJ IDEA。
+1. 在 IntelliJ 工具栏中，依次单击“文件”和“设置” 。
 
-1. IntelliJ IDEA 打开后，单击“文件”，并单击“设置”。 
-   
-   ![打开 IntelliJ IDEA 的“设置”对话框][01a]
+1. 在“设置”对话框的左侧导航菜单中，单击“插件”。
 
-1. 在“设置”对话框中，单击“插件”，并单击“浏览存储库”。 
-   
-   ![IntelliJ IDEA 的“设置”对话框][02a]
+1. 在“市场”搜索栏中，键入“Azure”以筛选插件列表。 选择“Azure Toolkit for IntelliJ”，然后单击“安装” 。 阅读 IntelliJ 的第三方插件隐私说明并单击“接受”。
 
-1. 在“浏览存储库”对话框的搜索框中键入“Azure”。 突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。 
-   
-   ![搜索 Azure Toolkit for IntelliJ][03]
-   
-   IntelliJ IDEA 会在一个对话框中显示安装进度。
-   
-   ![安装进度][04]
+   :::image type="content" source="media/installation/03-intellij-search-plugin.png" alt-text="搜索 Azure Toolkit for IntelliJ 插件。"::: 
 
-1. 安装完成后，单击“重新启动 IntelliJ IDEA”。
-   
-   ![重新启动 IntelliJ IDEA][05]
+1. 安装完成后，单击“重启 IDE”。
 
-1. 单击“确定”关闭“设置”对话框。
+1. 当系统提示重启 IntelliJ IDEA 时，请单击“重启”。
    
-   ![关闭 IntelliJ IDEA 的“设置”对话框][06]
+   :::image type="content" source="media/installation/07-restart-intellij.png" alt-text="重启 IntelliJ IDEA。"::: 
 
-1. 当系统提示是重新启动 IntelliJ IDEA 还是推迟时，请单击“重新启动”。
-   
-1   ![重新启动 IntelliJ IDEA][07]
+## <a name="from-the-start-screen"></a>从开始屏幕
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-start-screen"></a>从开始屏幕安装 Azure Toolkit for IntelliJ 的步骤
+1. 在 IntelliJ IDEA 开始屏幕中，依次单击“配置”和“插件” 。
 
-1. 启动 IntelliJ IDEA。
+   :::image type="content" source="media/installation/01-intellij-configure-dropdown.png" alt-text="来自开始屏幕的插件。"::: 
 
-1. IntelliJ IDEA 开始屏幕出现后，单击“配置”，并单击“插件”。 
-   
-   ![安装 IntelliJ IDEA 插件][01b]
+1. 在“市场”搜索栏中，键入“Azure”以筛选插件列表。 选择“Azure Toolkit for IntelliJ”，然后单击“安装” 。 阅读 IntelliJ 的第三方插件隐私说明并单击“接受”。
 
-1. 在“插件”对话框中，单击“浏览存储库”。 
-   
-   ![浏览 IntelliJ IDEA 插件存储库][02b]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace.png" alt-text="来自开始屏幕的插件市场。":::
 
-1. 在“浏览存储库”对话框的搜索框中键入“Azure”。 突出显示“用于 IntelliJ 的 Azure 工具包”，并单击“安装”。 
-   
-   ![搜索 Azure Toolkit for IntelliJ][03]
-   
-   IntelliJ IDEA 会在一个对话框中显示安装进度。
-   
-   ![安装进度][04]
+1. 安装完成后，单击“重启 IDE”。
 
-1. 安装完成后，单击“重新启动 IntelliJ IDEA”。
+1. 当系统提示重启 IntelliJ IDEA 时，请单击“重启”。
    
-   ![重新启动 IntelliJ IDEA][05]
-
-1. 当系统提示是重新启动 IntelliJ IDEA 还是推迟时，请单击“重新启动”。
-   
-   ![重新启动 IntelliJ IDEA][07]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace-restart.png" alt-text="重启以从开始屏幕安装。":::
 
 ## <a name="next-steps"></a>后续步骤
 
 [!INCLUDE [additional-resources](includes/additional-resources.md)]
 
-<!-- URL List -->
-
-<!-- IMG List -->
-
-[01a]: media/installation/01-intellij-file-settings.png
-[01b]: media/installation/01-intellij-configure-dropdown.png
-[02a]: media/installation/02-intellij-settings-dialog.png
-[02b]: media/installation/02-intellij-plugins-dialog.png
-[03]: media/installation/03-intellij-browse-repositories.png
-[04]: media/installation/04-install-progress.png
-[05]: media/installation/05-restart-intellij.png
-[06]: media/installation/06-intellij-settings-dialog.png
-[07]: media/installation/07-restart-intellij.png

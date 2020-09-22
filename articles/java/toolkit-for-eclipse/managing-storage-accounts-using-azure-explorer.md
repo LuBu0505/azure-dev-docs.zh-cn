@@ -2,39 +2,36 @@
 title: 使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 description: 了解如何使用用于 Eclipse 的 Azure 资源管理器管理 Azure 存储帐户。
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 08/25/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: b3772c4d51852f9d77f63b2c998983a43cf00f4e
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438330"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534635"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
-Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 Java 开发人员提供易用的解决方案，用于从 Eclipse 集成开发环境 (IDE) 内部管理其 Azure 帐户中的存储帐户。
+> [!NOTE]
+> Azure 资源管理器中的存储帐户功能已被弃用。 你可使用 Azure 门户来创建和管理存储帐户和容器。 有关如何管理存储帐户的快速入门，请参阅 [Azure 存储](/azure/storage/blobs/storage-quickstart-blobs-portal)文档。
+
+Azure 资源管理器是 Azure Toolkit for Eclipse 的一部分，它为 Java 开发人员提供易用的解决方案，用于从 Eclipse 集成开发环境 (IDE) 内部管理其 Azure 帐户中的存储帐户。
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-eclipse"></a>在 Eclipse 中创建存储帐户
-
-若要使用 Azure 资源管理器创建存储帐户，请执行以下操作：
+## <a name="create-a-storage-account"></a>创建存储帐户
 
 1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
 
 1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。   
 
-   ![“创建存储帐户”命令][CS01]
-
 1. 在“创建存储帐户”对话框中，指定以下选项：
-
-   ![“创建新存储帐户”对话框][CS02]
 
    * 名称：指定要用于新存储帐户的名称。
 
@@ -46,49 +43,26 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
    * **区域**：指定将创建存储帐户的位置（例如“美国西部”）。
 
-   * **帐户类型**：指定要创建的存储帐户的类型（例如“Blob 存储”）。 有关详细信息，请参阅[有关 Azure 存储帐户]。
+   * **帐户类型**：指定要创建的存储帐户的类型（例如“常规用途 v1”）。 有关详细信息，请参阅[有关 Azure 存储帐户]。
 
-   * **性能**：指定要使用哪一个从所选发布者提供的存储帐户（例如，“高级”）。 有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标]。
+   * **性能**：提供要使用所选发布者提供的哪一个存储帐户（例如“标准”）。 有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标]。
 
-   * **复制**：指定存储帐户的复制（例如“区域冗余”）。 有关详细信息，请参阅 [Azure 存储复制]。
+   * **复制**：指定存储帐户的复制（例如“本地冗余”）。 有关详细信息，请参阅 [Azure 存储复制]。
 
 1. 指定了上述所有选项后，单击“创建”。
 
-## <a name="create-a-storage-container-in-eclipse"></a>在 Eclipse 中创建存储容器
+## <a name="create-and-manage-storage-containers"></a>创建和管理存储容器
 
-若要使用 Azure 资源管理器创建存储容器，请执行以下操作：
+若要创建和管理存储容器，请访问 Azure 门户或以编程方式预配资源。
 
-1. 在 **Azure 资源管理器**视图中，右键单击要在其中创建容器的存储帐户，并单击“创建 Blob 容器”。
+要查看分步教程了解如何使用 Azure 门户在 Azure 存储中创建容器以及在该容器中上传和下载块 Blob，请参阅[使用 Azure 门户上传、下载和列出 Blob](/azure/storage/blobs/storage-quickstart-blobs-portal)。
 
-   ![“创建 blob 容器”命令][CC01]
-
-1. 在“创建 Blob 容器”对话框中，指定容器的名称，并单击“确定”。 有关命名存储容器的详细信息，请参阅[命名和引用容器、Blob 和元数据]。
-
-   ![“创建 blob 容器”对话框][CC02]
-
-## <a name="delete-a-storage-container-in-eclipse"></a>删除 Eclipse 中的存储容器
-
-若要使用 Azure 资源管理器删除存储容器，请执行以下操作：
-
-1. 在 **Azure 资源管理器**视图中，右键单击存储容器，并单击“删除”。
-
-   ![“删除存储容器”命令][DC01]
-
-1. 在确认窗口中，单击“确定”。
-
-   ![删除存储容器确认窗口][DC02]
-
-## <a name="delete-a-storage-account-in-eclipse"></a>删除 Eclipse 中的存储帐户
-
-若要使用 Azure 资源管理器删除存储帐户，请执行以下操作：
+## <a name="delete-a-storage-account"></a>删除存储帐户
 
 1. 在 **Azure 资源管理器**视图中，右键单击存储帐户，并单击“删除”。
 
-   ![“删除存储帐户”命令][DS01]
-
 1. 在确认窗口中，单击“确定”。
 
-   ![删除存储帐户确认窗口][DS02]
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -111,7 +85,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 [有关 Azure 存储帐户]: /azure/storage/storage-create-storage-account
 [Azure 存储复制]: /azure/storage/storage-redundancy
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
-[命名和引用容器、Blob 和元数据]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure 中的 Windows 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Azure 中的 Linux 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes

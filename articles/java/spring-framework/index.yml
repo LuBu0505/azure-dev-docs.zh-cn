@@ -6,12 +6,12 @@ metadata:
   description: Spring 是 VMware 开发的开源应用程序框架，它提供简化的模块化方法来创建 Java 应用程序。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: bf6e9302c0c566881be4161a632409f083f29322
-  ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+  ms.openlocfilehash: 8260997ed17f456b2307a4e2d4092104847ceb6e
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/20/2020
-  ms.locfileid: "88662948"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90831553"
 landingContent:
 - title: 入门指南
   linkLists:
@@ -42,7 +42,7 @@ landingContent:
     - text: 使用 Azure Cosmos DB SQL API
       url: configure-spring-boot-starter-java-app-with-cosmos-db.md
     - text: 部署 Spring Boot 应用
-      url: deploy-spring-boot-java-app-with-maven-plugin.md
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     - text: 将应用部署到 AKS 中的群集
       url: deploy-spring-boot-java-app-on-kubernetes.md
     - text: 将应用部署到适用于容器的 Web 应用
