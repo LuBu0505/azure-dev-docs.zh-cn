@@ -6,12 +6,12 @@ metadata:
   description: 使用 Azure Toolkit for IntelliJ，通过 IntelliJ IDE 创建、开发、测试和部署 Azure 应用程序。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: f69096bead0650bbb5a40959f55cdf0967dade8e
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: 31e00fb7f27aa8ceac4aa29dbe58ae80bf5f0584
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88241009"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90831953"
 landingContent:
 - title: 入门指南
   linkLists:
@@ -44,7 +44,7 @@ landingContent:
   - linkListType: download
     links:
     - text: 适用于 Azure 和 Azure Stack 的 Java
-      url: /azure/developer/java/fundamentals
+      url: ../fundamentals/index.yml
 - title: 源代码
   linkLists:
   - linkListType: reference
