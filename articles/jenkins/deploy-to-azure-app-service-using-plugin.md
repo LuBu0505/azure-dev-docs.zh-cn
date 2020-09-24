@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 应用服务
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: f165c1b4402d49ca0c52d6229c4b3ded45842e2f
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.openlocfilehash: 1be8e126a5fee2dd83682ece559998a45645ac36
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162076"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831683"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>教程：使用 Jenkins 插件部署到 Azure 应用服务
 
@@ -280,4 +280,4 @@ Linux 上的 Web 应用还支持 Git 和文件上传等传统部署方法，但�
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Jenkins](/azure/developer/jenkins)
+> [Azure 上的 Jenkins](./index.yml)

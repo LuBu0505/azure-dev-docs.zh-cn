@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, 群集
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6ce3714220a5c1cdff3a40cb8590a36356167616
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240859"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831543"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>教程：部署到 Service Fabric 群集
 
@@ -280,12 +280,12 @@ ms.locfileid: "88240859"
 
 对于开发和测试环境，可以通过配置 Azure 凭据或群集管理终结点来部署应用程序。 有关如何配置群集管理终结点的详细信息，请参阅[使用群集管理终结点配置部署](#configure-deployment-using-cluster-management-endpoint)。   
 
-1. 若要创建 Azure Active Directory 服务主体并在 Azure 订阅中分配其权限，请按照[使用门户创建 Azure Active Directory 应用程序和服务主体](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)中的步骤操作。 请注意以下几点：
+1. 若要创建 Azure Active Directory 服务主体并在 Azure 订阅中分配其权限，请按照[使用门户创建 Azure Active Directory 应用程序和服务主体](/azure/azure-resource-manager/resource-group-create-service-principal-portal)中的步骤操作。 请注意以下几点：
 
    * 按照本主题中的步骤执行时，请务必复制并保存以下值：“应用程序 ID”  、“应用程序密钥”  、“目录 ID（租户 ID）”  和“订阅 ID”  。 在 Jenkins 中配置 Azure 凭据时，需要这些值。
-   * 如果目录上没有[所需权限](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)，则需要请求管理员授予权限或为你创建服务主体，否则，需要在 Jenkins 作业的“生成后操作”中配置群集的管理终结点  。
-   * 在[创建 Azure Active Directory 应用程序](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application)部分中，“登录 URL”可以输入任何格式标准的 URL  。
-   * 在[为应用程序分配角色](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)部分中，可以在群集的资源组上为应用程序分配“读者”角色  。
+   * 如果目录上没有[所需权限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)，则需要请求管理员授予权限或为你创建服务主体，否则，需要在 Jenkins 作业的“生成后操作”中配置群集的管理终结点  。
+   * 在[创建 Azure Active Directory 应用程序](/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application)部分中，“登录 URL”可以输入任何格式标准的 URL  。
+   * 在[为应用程序分配角色](/azure/azure-resource-manager/resource-group-create-service-principal-portal)部分中，可以在群集的资源组上为应用程序分配“读者”角色  。
 
 1. 在 Jenkins 作业中，单击“生成后操作”选项卡  。
 1. 在“生成后操作”下拉列表中，选择“部署 Service Fabric 项目”。   

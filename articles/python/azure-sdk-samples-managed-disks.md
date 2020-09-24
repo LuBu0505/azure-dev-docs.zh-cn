@@ -4,18 +4,18 @@ description: 创建、调整和更新托管磁盘。
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e319d56f1391d193979c79750025a99b565134a
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b1973276f6cf080006f61ddc3a2805c345591e89
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983239"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831523"
 ---
 # <a name="managed-disks"></a>托管磁盘
 
 Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更好的安全性和更大的规模。 它消除了磁盘的存储帐户概念，使客户能够进行缩放，而无需担心存储帐户相关的限制。 本文提供有关从 Python 使用该服务的快速简介和参考信息。
 
-从开发人员的角度来看，Azure CLI 中的托管磁盘体验与其他跨平台工具中的 CLI 体验有异曲同工之处。 可以使用 [Azure Python](https://azure.microsoft.com/develop/python/) SDK 和 [azure-mgmt-compute 包 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) 来管理托管磁盘。 可以参考[此教程](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)创建计算客户端。
+从开发人员的角度来看，Azure CLI 中的托管磁盘体验与其他跨平台工具中的 CLI 体验有异曲同工之处。 可以使用 [Azure Python](https://azure.microsoft.com/develop/python/) SDK 和 [azure-mgmt-compute 包 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) 来管理托管磁盘。 可以参考[此教程](/python/api/overview/azure/virtualmachines?view=azure-python)创建计算客户端。
 
 ## <a name="standalone-managed-disks"></a>独立托管磁盘
 

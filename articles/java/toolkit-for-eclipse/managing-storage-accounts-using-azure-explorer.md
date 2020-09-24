@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e5b5c946b5ed4d2480b1040d0925507453cc2408
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534635"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831743"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理存储帐户
 
@@ -27,7 +27,7 @@ Azure 资源管理器是 Azure Toolkit for Eclipse 的一部分，它为 Java �
 
 ## <a name="create-a-storage-account"></a>创建存储帐户
 
-1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
+1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](./sign-in-instructions.md)中的步骤登录到 Azure 帐户。
 
 1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“存储帐户”，并单击“创建存储帐户”。   
 
@@ -87,8 +87,8 @@ Azure 资源管理器是 Azure Toolkit for Eclipse 的一部分，它为 Java �
 [Azure 存储可伸缩性和性能目标]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure 中的 Windows 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure 中的 Linux 存储帐户的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure 中的 Windows 存储帐户的大小]: /azure/virtual-machines/sizes
+[Azure 中的 Linux 存储帐户的大小]: /azure/virtual-machines/sizes
 [Windows 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 存储帐户定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

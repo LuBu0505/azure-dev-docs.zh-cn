@@ -4,12 +4,12 @@ description: 了解集成测试，学习如何使用 Azure DevOps 为 Terraform 
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
-ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
+ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89557550"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831993"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>教程：在 Azure 中为 Terraform 项目配置集成测试
 
@@ -30,9 +30,9 @@ ms.locfileid: "89557550"
 ## <a name="prerequisites"></a>必备条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 组织和项目**：如果没有，请[创建 Azure DevOps 组织](https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=preview-page)。
+- **Azure DevOps 组织和项目**：如果没有，请[创建 Azure DevOps 组织](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops)。
 - **“Terraform 构建和发布任务”扩展**：[将“Terraform 构建/发布任务”扩展](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)安装到 Azure DevOps 组织中。
-- **向 Azure DevOps 授予访问你的 Azure 订阅的权限**：创建一个名为 `terraform-basic-testing-azure-connection` 的 [Azure 服务连接](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)，以允许 Azure Pipelines 连接到你的 Azure 订阅
+- **向 Azure DevOps 授予访问你的 Azure 订阅的权限**：创建一个名为 `terraform-basic-testing-azure-connection` 的 [Azure 服务连接](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)，以允许 Azure Pipelines 连接到你的 Azure 订阅
 - **安装 Terraform**：根据你的环境，[下载并安装 Terraform](https://www.terraform.io/downloads.html)。
 - **创建测试示例的分支**：创建 [GitHub 上的 Terraform 示例](https://github.com/Azure/terraform)的分支，并将其复制到开发/测试计算机。
 

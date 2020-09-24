@@ -4,12 +4,12 @@ description: 使用 Azure SDK for Python 中的资源管理库通过 Python 代�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 459311e76f70e10a5da62c4205a9843427f76cec
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 992232c23368f3f7dcd173f1f711e6c69650bdb6
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275111"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110523"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>示例：使用 Azure 库预配资源组
 
@@ -108,7 +108,7 @@ python provision_rg.py
 ## <a name="6-clean-up-resources"></a>6：清理资源
 
 ```azurecli
-az group delete -n PythonAzureExample-ResourceGroup-rg
+az group delete -n PythonAzureExample-ResourceGroup-rg  --no-wait
 ```
 
 如果不需要保留在此示例中预配的资源组，请运行此命令。 资源组不会在你的订阅中产生任何持续的费用，但最好清除你不会主动使用的任何组。

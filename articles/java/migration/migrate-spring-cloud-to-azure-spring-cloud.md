@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e07bc23a7316352017e1ea99dd87253f0639a559
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.openlocfilehash: e4be32594940d2c207610e7d709ccb328c38ecf6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662978"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831693"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>将 Spring Cloud 应用程序迁移到 Azure Spring Cloud
 
@@ -158,7 +158,7 @@ eureka:
 
 ### <a name="migrate-spring-cloud-vault-secrets-to-azure-keyvault"></a>将 Spring Cloud Vault 机密迁移到 Azure KeyVault
 
-可以使用 Azure KeyVault Spring Boot 起动器，通过 Spring 将机密直接注入到应用程序。 有关详细信息，请参阅[如何使用适用于 Azure Key Vault 的 Spring Boot 起动器](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault)。
+可以使用 Azure KeyVault Spring Boot 起动器，通过 Spring 将机密直接注入到应用程序。 有关详细信息，请参阅[如何使用适用于 Azure Key Vault 的 Spring Boot 起动器](../spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault.md)。
 
 > [!NOTE]
 > 迁移可能需要重命名一些机密。 请相应地更新应用程序代码。

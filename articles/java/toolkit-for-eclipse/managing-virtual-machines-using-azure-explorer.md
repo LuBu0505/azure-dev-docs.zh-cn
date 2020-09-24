@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 28b0e304ee64cb24f098908e83a92d230657741f
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534589"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831883"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>使用用于 Eclipse 的 Azure 资源管理器管理虚拟机
 
@@ -24,7 +24,7 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 ## <a name="create-a-virtual-machine"></a>创建虚拟机
 
-1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)中的步骤登录到 Azure 帐户。
+1. 按照[用于 Eclipse 的 Azure 工具包的登录说明](./sign-in-instructions.md)中的步骤登录到 Azure 帐户。
 
 1. 在“Azure 资源管理器”视图中，展开 Azure 节点，右键单击“虚拟机”，并单击“创建 VM”。
 
@@ -122,8 +122,8 @@ Azure 资源管理器是用于 Eclipse 的 Azure 工具包的一部分，它为 
 
 <!-- URL List -->
 
-[Azure 中 Windows 虚拟机的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure 中 Linux 虚拟机的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure 中 Windows 虚拟机的大小]: /azure/virtual-machines/sizes
+[Azure 中 Linux 虚拟机的大小]: /azure/virtual-machines/sizes
 [Windows 虚拟机定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 虚拟机定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

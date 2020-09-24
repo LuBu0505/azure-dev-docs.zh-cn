@@ -8,12 +8,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: devx-track-java
-ms.openlocfilehash: 6807374dac927d8a93e1ecf1ac2b1e3fa54877ac
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f40f013d7323c51c25d5ecf97f097824d75e914
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379541"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831673"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>将根证书添加到 Java CA 证书存储
 
@@ -79,6 +79,6 @@ Baltimore 证书可能已安装在你的 cacerts 存储中，因此你需要使�
 
 有关 keytool 实用工具的详细信息，请参阅 <https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>。
 
-有关 Java 的详细信息，请参阅[面向 Java 开发人员的 Azure](/azure/developer/java)。
+有关 Java 的详细信息，请参阅[面向 Java 开发人员的 Azure](../index.yml)。
 
 有关在 Azure 上进行开发时可供使用的受支持 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。

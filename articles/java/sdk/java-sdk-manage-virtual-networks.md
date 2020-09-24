@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 31e20e4ef347bb3b771e818da6e458261537a3f3
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c2bd707cb90e7d558faf1f02e4ec26d7ae2ea906
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379391"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831863"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>通过 Java 应用创建和管理 Azure 虚拟网络
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379391"
 
 ## <a name="run-the-sample"></a>运行示例
 
-创建一个[身份验证文件](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
+创建一个[身份验证文件](/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
 
 ```
 git clone https://github.com/Azure-Samples/network-java-manage-virtual-network.git

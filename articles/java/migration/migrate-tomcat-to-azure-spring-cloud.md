@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 6/16/2020
-ms.openlocfilehash: 7b8a29c2769b3c4b04a40053d0470bfc6b1a0cca
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: a718c7b8b481b99f5a4b1303acac7147c88d1550
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275181"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831663"
 ---
 # <a name="migrate-a-tomcat-application-to-azure-spring-cloud"></a>将 Tomcat 应用程序迁移到 Azure Spring Cloud
 
@@ -131,7 +131,7 @@ Spring Boot 和 Spring Cloud 需要 Maven 或 Gradle 才可进行生成和依赖
 
 1. 通过 [Spring bean](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-spring-beans-and-dependency-injection) 重新创建所有其他 JNDI 依赖项。 支持使用 Spring 惯用的机制进行消息传递，例如使用 [Spring JMS](https://spring.io/guides/gs/messaging-jms/)。
 
-1. 将 Tomcat 领域替换为 [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review)。 考虑使用 Azure Active Directory 通过[用于 Active Directory 的 Spring Boot Starter](/azure/developer/java/spring-framework/spring-boot-starters-for-azure#azure-active-directory) 进行授权管理。
+1. 将 Tomcat 领域替换为 [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review)。 考虑使用 Azure Active Directory 通过[用于 Active Directory 的 Spring Boot Starter](../spring-framework/spring-boot-starters-for-azure.md#azure-active-directory) 进行授权管理。
 
 1. 通过 [Spring bean](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-as-spring-bean) 或[类路径扫描](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-using-scanning)重新创建在 web.xml 中配置的 Servlet 筛选器。
 

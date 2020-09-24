@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 5d48192ba940e7afb019de5afad045eb4e8ed12a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 37a04c66d3ef71686983d9513a40299a0e8aabdd
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379431"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831763"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>通过 Java 应用程序管理弹性池中的 Azure SQL 数据库
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379431"
 
 ## <a name="run-the-sample"></a>运行示例
 
-创建一个[身份验证文件](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
+创建一个[身份验证文件](/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
 
 ```
 git clone https://github.com/Azure-Samples/sql-database-java-manage-sql-dbs-in-elastic-pool

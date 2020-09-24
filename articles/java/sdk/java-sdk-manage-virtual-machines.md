@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 4ef0dee190947fc77d65b46a56289185ac60d128
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0a4eef1097ca94f22b716a1c8382487169164c56
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379351"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831893"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>从 Java 应用程序管理 Azure 虚拟机
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379351"
 
 ## <a name="run-the-sample"></a>运行示例
 
-创建一个[身份验证文件](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
+创建一个[身份验证文件](/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-manage-vm.git

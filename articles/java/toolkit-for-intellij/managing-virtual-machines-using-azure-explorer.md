@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 058842e8f7d50d885d2a5d28c56ee144072e637a
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 43aa5efc8a783887c4af0e62f2da7d3b51f652fe
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534344"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831925"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理虚拟机
 
@@ -130,8 +130,8 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 <!-- URL List -->
 
 [用于 IntelliJ 的 Azure 工具包的登录说明]: ./sign-in-instructions.md
-[Azure 中 Windows 虚拟机的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure 中 Linux 虚拟机的大小]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure 中 Windows 虚拟机的大小]: /azure/virtual-machines/sizes
+[Azure 中 Linux 虚拟机的大小]: /azure/virtual-machines/sizes
 [Windows 虚拟机定价]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 虚拟机定价]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

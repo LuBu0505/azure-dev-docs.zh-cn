@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 92c6c6fe43fe6bd7c1932eeb64a88db87437713d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7a16f5c9f9c6e27a56bace08aa43aef3c4a9bdb6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379381"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831873"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>从 Java 应用程序管理 Azure 存储帐户
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379381"
 
 ## <a name="run-the-sample"></a>运行示例
 
-创建一个[身份验证文件](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
+创建一个[身份验证文件](/azure/java/java-sdk-azure-authenticate#mgmt-file)，并将包含完整路径的环境变量 `AZURE_AUTH_LOCATION` 设置为计算机上的文件。 然后运行：
 
 ```
 git clone https://github.com/Azure-Samples/storage-java-manage-storage-accounts.git

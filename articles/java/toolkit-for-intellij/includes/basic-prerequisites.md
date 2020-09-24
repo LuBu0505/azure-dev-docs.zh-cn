@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: a839da7cf596c356541ee69d341f1b73ca278a44
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 23a16188b7f24265ca4045f684c9e08304788ea1
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672303"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831596"
 ---
 ## <a name="prerequisites"></a>必备条件
 
 若要完成文章中的步骤，需要安装用于 IntelliJ 的 Azure 工具包，该工具包需要以下软件组件：
 
-* [Azure 支持的 Java 开发工具包 (JDK)](https://aka.ms/azure-jdks)
+* [Azure 支持的 Java 开发工具包 (JDK)](../../fundamentals/java-jdk-long-term-support.md)
 * 已安装的 [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) 旗舰版或社区版
 
 > [!NOTE]

@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, kubernetes, k8s, aks, 蓝绿部署, 持续交�
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240988"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832043"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>教程：使用蓝/绿部署模式部署到 Azure Kubernetes 服务 (AKS)
 
@@ -29,7 +29,7 @@ Azure Kubernetes 服务 (AKS) 管理托管的 Kubernetes 环境，使用户能�
 
 ## <a name="prerequisites"></a>先决条件
 - [GitHub 帐户](https://github.com)：需要使用一个 GitHub 帐户来克隆示例存储库。
-- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)：使用 Azure CLI 2.0 创建 Kubernetes 群集。
+- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)：使用 Azure CLI 2.0 创建 Kubernetes 群集。
 - [Chocolatey](https://chocolatey.org)：用于安装 kubectl 的包管理器。
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)：用于针对 Kubernetes 群集运行命令的命令行接口。
 - [jq](https://stedolan.github.io/jq/download/)：轻量命令行 JSON 处理程序。
@@ -81,7 +81,7 @@ GitHub 上的 Microsoft 存储库中提供了一个演示如何使用 Jenkins �
 - 创建 Azure 容器注册表服务的实例。
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>使用 Azure CLI 2.0 创建托管的 Kubernetes 群集
-若要使用 [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) 创建托管的 Kubernetes 群集，请务必使用 Azure CLI 2.0.25 或更高版本。
+若要使用 [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) 创建托管的 Kubernetes 群集，请务必使用 Azure CLI 2.0.25 或更高版本。
 
 1. 登录 Azure 帐户。 输入以下命令后，会收到有关如何完成登录的说明。 
     

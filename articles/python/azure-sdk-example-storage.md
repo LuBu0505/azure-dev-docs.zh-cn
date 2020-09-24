@@ -4,12 +4,12 @@ description: 使用 Azure SDK for Python 库预配 Azure 存储帐户中的 blob
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: ff2064d7113e78cda69d240ca526db569c9d14e0
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275201"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110487"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库预配 Azure 存储
 
@@ -157,7 +157,7 @@ python provision_blob.py
 
 1. 如果要尝试通过应用程序代码使用这些预配的资源，请继续阅读[示例：使用 Azure 存储](azure-sdk-example-storage-use.md)。
 
-有关使用 Azure 存储管理库的其他示例，请参阅[管理 Python 存储示例](https://docs.microsoft.com/samples/azure-samples/storage-python-manage/storage-python-manage/)。
+有关使用 Azure 存储管理库的其他示例，请参阅[管理 Python 存储示例](/samples/azure-samples/storage-python-manage/storage-python-manage/)。
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>有关参考：等效 Azure CLI 命令
 
@@ -220,7 +220,7 @@ az storage container create --account-name pythonazurestorage12345 -n blob-conta
 否则，请运行以下命令，以避免你的订阅中继续产生费用。
 
 ```azurecli
-az group delete -n PythonAzureExample-Storage-rg
+az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
 你还可以使用 [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 方法从代码中删除资源组。

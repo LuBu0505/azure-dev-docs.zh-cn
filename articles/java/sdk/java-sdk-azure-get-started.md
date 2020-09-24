@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: d8f173fca56af289fb83012a101bc5cb99e4ed12
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379511"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831783"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 
@@ -144,7 +144,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>安装用于 IntelliJ 的 Azure 工具包
 
-若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](/azure/developer/java/toolkit-for-intellij/installation)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 IntelliJ 的 Azure 工具包快速入门](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app)。
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](../toolkit-for-intellij/installation.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 IntelliJ 的 Azure 工具包快速入门](../toolkit-for-intellij/create-hello-world-web-app.md)。
 
 - 选择“文件”菜单，然后选择“设置...”。  
 
@@ -154,7 +154,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
-若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](/azure/developer/java/toolkit-for-eclipse)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 Eclipse 的 Azure 工具包快速入门](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app)。
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](../toolkit-for-eclipse/index.yml)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 Eclipse 的 Azure 工具包快速入门](../toolkit-for-eclipse/create-hello-world-web-app.md)。
 
 - 选择“帮助”菜单，然后选择“安装新软件”。  
 

@@ -4,12 +4,12 @@ description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 08e055e282016db1c3cbf57b956a51f17b7a854a
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: f51bb154106a50c708d8d37a024144d7d53aec0e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275191"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110472"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 
@@ -293,7 +293,7 @@ az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" \
 ## <a name="6-clean-up-resources"></a>6：清理资源
 
 ```azurecli
-az group delete -n PythonAzureExample-VM-rg
+az group delete -n PythonAzureExample-VM-rg  --no-wait
 ```
 
 如果不需要保留在此示例中创建的资源，并想要避免订阅中的持续费用，则运行此命令。

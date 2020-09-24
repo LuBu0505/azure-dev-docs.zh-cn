@@ -4,18 +4,18 @@ description: 检查和配置 Azure Monitor 提供的指标报告。
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 53823a1709e1f1411609957569b79d10d7bdefd1
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 81cb21f3dca640f8c9db2a5556b88c82ea0ffc47
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982579"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832033"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
 此示例检索 Azure 上的资源（VM 等）的指标。
 
-[此处](https://msdn.microsoft.com/library/azure/mt743622.aspx)提供了筛选器可用关键字的完整列表
+[此处](/rest/api/monitor/metrics)提供了筛选器可用关键字的完整列表
 
 ```python
 import datetime

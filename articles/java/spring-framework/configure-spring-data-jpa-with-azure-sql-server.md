@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d9c03ffd4ba890dadda2e81ea9a2a30948e3dc42
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: e00c4e6c35756094c3c40e0194edff0b8ebd1b89
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378881"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831963"
 ---
 # <a name="use-spring-data-jpa-with-azure-sql-database"></a>将 Spring Data JPA 用于 Azure SQL 数据库
 
-本主题演示如何创建示例应用程序，使其使用 [Spring Data JPA](https://spring.io/projects/spring-data-jpa) 在 [Azure SQL 数据库](https://docs.microsoft.com/azure/sql-database/)中存储和检索信息。
+本主题演示如何创建示例应用程序，使其使用 [Spring Data JPA](https://spring.io/projects/spring-data-jpa) 在 [Azure SQL 数据库](/azure/sql-database/)中存储和检索信息。
 
 [Java 持久性 API (JPA)](https://en.wikipedia.org/wiki/Java_Persistence_API) 是用于对象关系映射的标准 Java API。
 
@@ -83,4 +83,4 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 有关 Spring Data JPA 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)。
 
-若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](/azure/developer/java/) 和[使用 Azure DevOps 和 Java](/azure/devops/)。
+若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](../index.yml) 和[使用 Azure DevOps 和 Java](/azure/devops/)。

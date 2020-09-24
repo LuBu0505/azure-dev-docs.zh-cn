@@ -2,14 +2,14 @@
 title: 步骤 8：清理 Azure Functions 中与 Python 代码配合使用的资源
 description: 教程步骤 8，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: fe4f9b0ef5789b307cbeb3c680dfde2eb46a0046
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 885ff8b79ac219d4adaf4760e31fe439d010f9d5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473512"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832003"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:为 Azure Functions 清理 Azure 资源
 
@@ -31,7 +31,7 @@ ms.locfileid: "89473512"
 
 请阅读 [Azure Functions 概述](/azure/azure-functions/functions-overview)，了解可以使用的不同触发器。
 
-若要详细了解可以通过 Python 使用的 Azure 服务（包括数据存储、AI 和机器学习服务），请访问 [Azure Python 开发人员中心](/azure/python/?view=azure-python)。
+若要详细了解可以通过 Python 使用的 Azure 服务（包括数据存储、AI 和机器学习服务），请访问 [Azure Python 开发人员中心](./index.yml)。
 
 可能还有其他用于 Visual Studio Code 的 Azure 扩展对你有用。 直接在“扩展”资源管理器中搜索“Azure”：
 
@@ -45,6 +45,4 @@ ms.locfileid: "89473512"
 - [Azure 资源管理器工具](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [我完成了！](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。
+> [我完成了！](/python/azure/?preserve-view=true&view=azure-python)

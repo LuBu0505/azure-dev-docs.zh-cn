@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 481b3fce5d7d5f62cf4639d53d86c092e364a74f
-ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
+ms.openlocfilehash: 3bbed7be27854514d76b5cd3e5b905ba5741fa72
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86945805"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831823"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>将 Spring Data JDBC 与 Azure Database for MySQL 配合使用
 
-本主题演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) 在 [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) 中存储和检索信息。
+本主题演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) 在 [Azure Database for MySQL](/azure/mysql/) 中存储和检索信息。
 
 [JDBC](https://jcp.org/en/jsr/detail?id=221) 是标准的 Java API，用于连接到传统的关系数据库。
 
@@ -103,4 +103,4 @@ CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARC
 
 有关 Spring Data JDBC 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)。
 
-若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](/azure/developer/java/) 和[使用 Azure DevOps 和 Java](/azure/devops/)。
+若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](../index.yml) 和[使用 Azure DevOps 和 Java](/azure/devops/)。
