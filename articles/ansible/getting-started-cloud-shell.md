@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
 ms.topic: quickstart
 ms.date: 09/14/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0a03794bdcbd810444f42db045650cdad813724c
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: ddc4ba9f473e5e8d727996a4e902210f0d3055f6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682060"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831183"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>快速入门：使用 Azure Cloud Shell 配置 Ansible
 
@@ -21,7 +21,7 @@ ms.locfileid: "90682060"
 ## <a name="configure-your-environment"></a>配置环境
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **配置 Azure Cloud Shell** - 如果你是 Azure Cloud Shell 的新手，请参阅 [Azure Cloud Shell 中的 Bash 快速入门](https://docs.microsoft.com/azure/cloud-shell/quickstart)。
+- **配置 Azure Cloud Shell** - 如果你是 Azure Cloud Shell 的新手，请参阅 [Azure Cloud Shell 中的 Bash 快速入门](/azure/cloud-shell/quickstart)。
 
 [!INCLUDE [open-cloud-shell.md](../includes/open-cloud-shell.md)]
 

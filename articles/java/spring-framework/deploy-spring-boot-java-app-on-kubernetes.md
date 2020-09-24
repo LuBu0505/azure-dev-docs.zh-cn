@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b2cc66d13cd5248604e61b5322f53c358c15a7d8
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: b4b36df09811e8e9e6a9bae944119e280258d751
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681593"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830073"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>将 Spring Boot 应用程序部署到 Azure Kubernetes 服务
 
@@ -291,7 +291,7 @@ ms.locfileid: "90681593"
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+> [Azure 上的 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>其他资源
 
@@ -330,7 +330,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [仪表板身份验证]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure Kubernetes 服务 (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
+[面向 Java 开发人员的 Azure]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [使用 Linux 上 Azure Web 应用的自定义 Docker 映像]: /azure/app-service/tutorial-custom-container
@@ -349,7 +349,7 @@ Kubernetes 网站中有多篇文章讨论有关在私有注册表中使用映像
 [命名空间]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 [从私有注册表拉取映像]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->

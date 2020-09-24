@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.custom: devx-track-java
-ms.openlocfilehash: 8ed24a6b15d602a96ec7bdb186225c66a87393ae
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 89dc2a40e39a417d33e59b22f28202c61f036c79
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379851"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831483"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>教程：开始使用用于在 Azure 上运行的 Java 应用的 Logz.io 进行监视和日志记录
 
@@ -28,7 +28,7 @@ ms.locfileid: "86379851"
 
 ## <a name="prerequisites"></a>先决条件
 
-* [Java 开发人员工具包](https://aka.ms/azure-jdks)第 8 版或更高版本
+* [Java 开发人员工具包](./java-jdk-long-term-support.md)第 8 版或更高版本
 * 来自 [Azure 市场](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro)的 Logz.io 帐户
 * 一个使用 Log4J 或 Logback 的现有 Java 应用程序
 

@@ -4,12 +4,12 @@ description: 教程步骤 3，用于重新生成和重新部署容器映像的�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6a2c09e861da9fedaa90f1229f212f02f95a349e
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 79498685492d57a22884b30c551c3a28b6e0fe15
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473484"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772630"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2:在更改后将容器重新部署到 Azure 应用服务
 
@@ -31,5 +31,3 @@ ms.locfileid: "89473484"
 
 > [!div class="nextstepaction"]
 > [我进行了更改并已重新部署 - 转到步骤 4 >>>](tutorial-deploy-containers-04.md)
-
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

@@ -5,12 +5,12 @@ keywords: azure, chef, devops, 虚拟机, 概述, 自动控制
 ms.date: 02/22/2020
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 86678436612f97e2928228ec9dd47ac9185d9b72
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2c24bba7d3da9976d5bd21a7a10bbb0de0887667
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240919"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831433"
 ---
 # <a name="using-chef-with-azure"></a>将 Chef 与 Azure 配合使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "88240919"
 
 ## <a name="chef-extension-on-azure"></a>Azure 上的 Chef 扩展
 
-在 [Azure 门户](https://go.microsoft.com/fwlink/p/?LinkID=525040)中使用 [Chef 扩展](https://docs.microsoft.com/azure/chef/chef-extension-portal)预配一个虚拟机，其中 Chef 客户端作为后台服务运行。 预配后，这些虚拟机即可由 Chef 服务器进行管理。
+在 [Azure 门户](https://go.microsoft.com/fwlink/p/?LinkID=525040)中使用 [Chef 扩展](/azure/chef/chef-extension-portal)预配一个虚拟机，其中 Chef 客户端作为后台服务运行。 预配后，这些虚拟机即可由 Chef 服务器进行管理。
 
 ## <a name="chef-cloud-shell"></a>Chef Cloud Shell
 

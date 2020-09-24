@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 7bfd7edbdabd2298c84b3480292949e1fb351913
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0d4615b3d6b05ee54538befdf6a7a7d220e77917
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378431"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831003"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
 
@@ -224,7 +224,7 @@ ms.locfileid: "86378431"
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+> [Azure 上的 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>其他资源
 
@@ -236,10 +236,10 @@ ms.locfileid: "86378431"
 
 <!-- URL List -->
 
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
+[面向 Java 开发人员的 Azure]: ../index.yml
 [使用 Azure DevOps 和 Java]: /azure/devops/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Azure 上的 Spring]: /azure/developer/java/spring-framework/
+[Azure 上的 Spring]: ./index.yml
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

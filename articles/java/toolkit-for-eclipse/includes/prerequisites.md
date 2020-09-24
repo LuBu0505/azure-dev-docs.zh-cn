@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: dea8cf8da093159c257fc09caea4f4e2992799a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a137e28a81a5175109b6f91b4d29e533b182a85c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670913"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829996"
 ---
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要完成本文中的步骤，需要安装 Azure Toolkit for Eclipse，该工具包需要以下软件组件：
 
-* [Azure 支持的 Java 开发工具包 (JDK)](https://aka.ms/azure-jdks)
+* [Azure 支持的 Java 开发工具包 (JDK)](../../fundamentals/java-jdk-long-term-support.md)
 * [Eclipse IDE](http://www.eclipse.org/downloads/)
 * [Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse)。有关详细信息，请参阅[安装指南](../installation.md)
 * [登录](../sign-in-instructions.md)适用于 Azure Toolkit for Eclipse 的 Azure 帐户

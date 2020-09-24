@@ -2,14 +2,14 @@
 title: 步骤 3：在 VS Code 中检查用于 Azure Functions 的 Python 代码文件
 description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代码。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 29802cf346a53d7230a2b6f46e8f39127be70d0a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 1734a89ed2c71604fba5583020e0e93810c900a0
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473532"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772520"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3：在 Visual Studio Code 中检查 Python 代码文件
 
@@ -86,11 +86,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 代码的重要部分如下所示：
 
 - 必须导入 `azure.functions` 模块；导入日志记录模块为可选操作，但建议你执行它。
-- 必需的 `main` Python 函数接收名为 `req` 的 `func.HttpRequest` 对象，并返回类型为 `func.HttpResponse` 的值。 若要详细了解这些对象的功能，可参阅 [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) 和 [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python)。
+- 必需的 `main` Python 函数接收名为 `req` 的 `func.HttpRequest` 对象，并返回类型为 `func.HttpResponse` 的值。 若要详细了解这些对象的功能，可参阅 [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python&preserve-view=true) 和 [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python&preserve-view=true)。
 - 然后，`main` 的主体会处理请求并生成响应。 在这种情况下，代码会在 URL 中查找 `name` 参数。 如果这样做失败，它会检查请求正文是否包含 JSON（使用 `func.HttpRequest.get_json`），以及 JSON 是否包含 `name` 值（使用 `get_json` 返回的 JSON 对象的 `get` 方法）。
 - 如果找到名称，此代码会返回字符串“Hello”，并在后面追加名称，否则会返回通用消息。
 
 > [!div class="nextstepaction"]
 > [我检查了代码文件 - 转到步骤 4 >>>](tutorial-vs-code-serverless-python-04.md)
 
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

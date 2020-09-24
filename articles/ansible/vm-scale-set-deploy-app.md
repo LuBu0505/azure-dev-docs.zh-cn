@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集,
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 161592c9f437de0f72204051b222c7ed8c5f99e0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2ea2dbf740025797e6dd8514330e5b0c0de0df84
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240839"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831093"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中部署虚拟机规模集
 
@@ -33,7 +33,7 @@ ms.locfileid: "88240839"
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 [!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 - **git** - [git](https://git-scm.com) 用于下载本教程中使用的 Java 示例。
-- **Java SE 开发工具包 (JDK)** - 此 [JDK](https://aka.ms/azure-jdks) 用于生成示例 Java 项目。
+- **Java SE 开发工具包 (JDK)** - 此 [JDK](../java/fundamentals/java-jdk-long-term-support.md) 用于生成示例 Java 项目。
 - **Apache Maven** - [Apache Maven](https://maven.apache.org/download.cgi) 用于构建示例 Java 项目。
 
 ## <a name="get-host-information"></a>获取主机信息

@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, azure cli
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682038"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831165"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Ansible
 
@@ -177,4 +177,4 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Ansible](/azure/developer/Ansible)
+> [Azure 上的 Ansible](./index.yml)

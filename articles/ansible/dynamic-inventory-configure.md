@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, 动态库存
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 53cf2e25a89081b314826cda4322e2556fc38c39
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: d4532a0727a70dc1a92c6df21b5ff9f0d92ab850
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682066"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831193"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>教程：使用 Ansible 配置 Azure 资源的动态库存
 
@@ -35,7 +35,7 @@ ms.locfileid: "90682066"
 
 1. 登录 [Azure 门户](https://go.microsoft.com/fwlink/p/?LinkID=525040)。
 
-1. 打开 [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)。
+1. 打开 [Cloud Shell](/azure/cloud-shell/overview)。
 
 1. 创建一个 Azure 资源组，用于保存本教程创建的虚拟机。
 
@@ -66,7 +66,7 @@ ms.locfileid: "90682066"
 
 ## <a name="tag-a-vm"></a>标记 VM
 
-可以根据用户定义的类别[使用标记来组织 Azure 资源](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli)。
+可以根据用户定义的类别[使用标记来组织 Azure 资源](/azure/azure-resource-manager/resource-group-using-tags#azure-cli)。
 
 ### <a name="using-ansible-version--28"></a>使用低于 2.8 的 Ansible 版本
 输入以下 [az resource tag](/cli/azure/resource#az-resource-tag) 命令和键 `nginx` 来标记虚拟机 `ansible-inventory-test-vm1`：
@@ -276,7 +276,7 @@ Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible-collections/
 
 本部分演示一种测试是否在虚拟机上安装了 Nginx 的方法。
 
-1. 使用 [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az-vm-list-ip-addresses) 命令检索 `ansible-inventory-test-vm1` 虚拟机的 IP 地址。 然后，将返回值（虚拟机的 IP 地址）用作 SSH 命令的参数，以连接到该虚拟机。
+1. 使用 [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) 命令检索 `ansible-inventory-test-vm1` 虚拟机的 IP 地址。 然后，将返回值（虚拟机的 IP 地址）用作 SSH 命令的参数，以连接到该虚拟机。
 
     ```azurecli-interactive
     ssh `az vm list-ip-addresses \

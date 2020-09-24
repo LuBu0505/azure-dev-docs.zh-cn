@@ -4,12 +4,12 @@ description: Azure 提供了各种不同的数据库，以用于 Web 应用和�
 ms.topic: article
 ms.date: 08/20/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3e38e3edca5022eb87f090cb8f951d65f36dcb60
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: efee87ce711616de35979a696539e47784c1868c
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218621"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772960"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>如何将 Azure 数据库集成到 Node.js 应用中
 
@@ -17,10 +17,10 @@ ms.locfileid: "88218621"
 
 | 服务 | 快速入门 | 示例 |
 | --- | --- | --- |
-| **Cosmos DB** | [创建 Node.js Azure Cosmos DB Web 应用](/azure/cosmos-db/create-sql-api-nodejs) | [示例](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-cosmos-db) |
-| **MongoDB** | [创建 Node.js 和 MongoDB Web 应用](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [示例](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB) |
+| **Cosmos DB** | [创建 Node.js Azure Cosmos DB Web 应用](/azure/cosmos-db/create-sql-api-nodejs) | [示例](/samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db) |
+| **MongoDB** | [创建 Node.js 和 MongoDB Web 应用](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [示例](/samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB) |
 | **Redis 缓存** | [创建和使用 Redis 缓存](/azure/redis-cache/cache-nodejs-get-started) | |
-| **Azure SQL 数据库** | [使用 Node.js 查询 Azure SQL 数据库](/azure/sql-database/sql-database-connect-query-nodejs) | [示例](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-sql-database) | |
+| **Azure SQL 数据库** | [使用 Node.js 查询 Azure SQL 数据库](/azure/sql-database/sql-database-connect-query-nodejs) | [示例](/samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database) | |
 | **MySQL** | [使用 Node.js 连接和查询数据](/azure/mysql/connect-nodejs) | |
 | **PostgreSQL** | [使用 Node.js 连接和查询数据](/azure/postgresql/connect-nodejs) | |
 

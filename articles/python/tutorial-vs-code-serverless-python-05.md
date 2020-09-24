@@ -2,14 +2,14 @@
 title: 步骤 5：使用 VS Code 通过 Python 部署 Azure Functions
 description: 教程步骤 5，将 Python 函数代码部署到 Azure，学习如何在本地项目和 Azure 之间流式传输日志并同步设置。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8acf168ecc858410677b8f55b7b84ed14416c005
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473592"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772860"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5：在 Python 中部署 Azure Functions
 
@@ -23,7 +23,9 @@ ms.locfileid: "89473592"
 
     ![将 Python 函数部署到 Azure 函数应用](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
-1. 系统提示时，选择“在 Azure 中创建新的函数应用”，提供在 Azure 中独一无二的名称（通常使用个人或公司名称以及其他唯一标识符；可以使用字母、数字和连字符）。 如果以前创建过函数应用，其名称会显示在此选项列表中。
+1. 系统提示时，选择“在 Azure 中创建新的函数应用”，提供在 Azure 中独一无二的名称（通常使用个人或公司名称以及其他唯一标识符；可以使用字母、数字和连字符）。
+
+    如果以前创建过函数应用，其名称会显示在此选项列表中。
 
 1. 当出现提示时，选择 Python 版本和 Azure 位置。
 
@@ -75,4 +77,3 @@ func azure functionapp logstream <app_name> --browser
 > [!div class="nextstepaction"]
 > [我部署了函数 - 转到步骤 6 >>>](tutorial-vs-code-serverless-python-06.md)
 
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

@@ -4,12 +4,12 @@ description: 有关适用于 Java 应用的消息传送和事件处理的 Azure 
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: d5455c05872c67853b526fd30ecb4aee3c75954c
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: dbaafec943a560c924e29a1c616dca979b41868f
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405638"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830913"
 ---
 # <a name="messaging-and-eventing-for-java-apps-on-azure"></a>Azure 上适用于 Java 应用的消息传送和事件处理
 
@@ -20,9 +20,9 @@ ms.locfileid: "86405638"
 - [服务总线 - 主题和订阅](/azure/service-bus-messaging/service-bus-java-how-to-use-topics-subscriptions)
 - [事件中心 - Microsoft 客户端库](/azure/event-hubs/event-hubs-java-get-started-send)
 - [事件中心 - Kafka](/azure/event-hubs/event-hubs-quickstart-kafka-enabled-event-hubs)
-- [服务总线 - Spring 消息传送 + JMS](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-service-bus)
-- [服务总线 - Spring Cloud Stream Binder](/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-with-service-bus)
-- [事件中心 - Spring Cloud Stream Binder](/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub)
-- [事件中心 - Spring Cloud Stream Binder Kafka](/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub)
+- [服务总线 - Spring 消息传送 + JMS](../spring-framework/configure-spring-boot-starter-java-app-with-azure-service-bus.md)
+- [服务总线 - Spring Cloud Stream Binder](../spring-framework/configure-spring-cloud-stream-binder-java-app-with-service-bus.md)
+- [事件中心 - Spring Cloud Stream Binder](../spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub.md)
+- [事件中心 - Spring Cloud Stream Binder Kafka](../spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md)
 - [Azure IoT 中心 - 发送遥测数据](/azure/iot-hub/quickstart-send-telemetry-java)
 - [Azure IoT 中心 - 控制一个设备](/azure/iot-hub/quickstart-control-device-java)

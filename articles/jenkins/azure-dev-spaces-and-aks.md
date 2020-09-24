@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes 服务
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 39a730507df89186b8934d4ded7d2ff92c07b420
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240849"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831373"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>教程：将 Azure Dev Spaces 用于 Azure Kubernetes 服务
 
@@ -38,7 +38,7 @@ ms.locfileid: "88240849"
 
 * [已安装 Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)（版本 2.0.43 或更高版本）。
 
-* Jenkins 主服务器。 如果还没有 Jenkins master，在 Azure 上通过执行此 [快速入门](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) 。 
+* Jenkins 主服务器。 如果还没有 Jenkins master，在 Azure 上通过执行此 [快速入门](/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) 。 
 
 * Helm 和 kubectl 必须已安装在 Jenkins 服务器上并可供 Jenkins 帐户使用，正如本教程后面部分所述。
 
@@ -50,8 +50,8 @@ ms.locfileid: "88240849"
 在此部分，需要创建 Azure 资源：
 
 * 包含本教程的所有 Azure 资源的资源组。
-* [Azure Kubernetes 服务](https://docs.microsoft.com/azure/aks/) (AKS) 群集。
-* [Azure 容器注册表](https://docs.microsoft.com/azure/container-registry/) (ACR)，用于生成（使用 ACR 任务）和存储 Docker 映像。
+* [Azure Kubernetes 服务](/azure/aks/) (AKS) 群集。
+* [Azure 容器注册表](/azure/container-registry/) (ACR)，用于生成（使用 ACR 任务）和存储 Docker 映像。
 
 1. 创建资源组。
 
@@ -82,7 +82,7 @@ ms.locfileid: "88240849"
 
 在本部分中，你将设置一个开发空间，将示例应用程序部署到在上一部分中创建的 AKS 群集中。 应用程序由两部分组成：webfrontend 和 mywebapi   。 这两个组件均部署在开发空间中。 稍后在本教程中，你将提交一个针对 mywebapi 的拉取请求，以触发 Jenkins 中的 CI 管道。
 
-要获取有关 Azure Dev Spaces 的使用和使用 Azure Dev Spaces 的多服务开发的详细信息，请参阅[通过 Java 开始使用 Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/get-started-java) 和[使用 Azure Dev Spaces 的多服务开发](https://docs.microsoft.com/azure/dev-spaces/multi-service-java)。 这些教程提供了此处没有的其他背景信息。
+要获取有关 Azure Dev Spaces 的使用和使用 Azure Dev Spaces 的多服务开发的详细信息，请参阅[通过 Java 开始使用 Azure Dev Spaces](/azure/dev-spaces/get-started-java) 和[使用 Azure Dev Spaces 的多服务开发](/azure/dev-spaces/multi-service-java)。 这些教程提供了此处没有的其他背景信息。
 
 1. 从 GitHub 下载 https://github.com/Azure/dev-spaces 存储库。
 
@@ -132,7 +132,7 @@ ms.locfileid: "88240849"
     * `./charts/webfrontend` 下面的 [Helm 图表](https://helm.sh/docs/topics/charts/)描述如何将容器部署到 Kubernetes。
     * `./azds.yaml` 是 Azure Dev Spaces 的配置文件。
 
-    若要了解详情，请参阅 [Azure Dev Spaces 的工作原理及其配置方式](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)。
+    若要了解详情，请参阅 [Azure Dev Spaces 的工作原理及其配置方式](/azure/dev-spaces/how-dev-spaces-works)。
 
 6. 使用 `azds up` 命令在 AKS 中生成并运行应用程序：
 

@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 管道, cicd, docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 2a9bc23852a04b42b72628adda116585d354f860
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 8a29533b8589d91d095a3d591e6346f87dde4e52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240699"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831213"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>教程：使用 GitHub 和 Docker 创建 Jenkins 管道
 
@@ -24,12 +24,12 @@ ms.locfileid: "88240699"
 > * 创建应用的 Docker 映像
 > * 验证 GitHub 提交是否生成新的 Docker 映像并更新正在运行的应用
 
-本教程在 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) 中使用 CLI，后者已不断更新到最新版本。 若要打开 Cloud Shell，请从任何代码块的顶部选择“试一试”  。
+本教程在 [Azure Cloud Shell](/azure/cloud-shell/overview) 中使用 CLI，后者已不断更新到最新版本。 若要打开 Cloud Shell，请从任何代码块的顶部选择“试一试”  。
 
 如果选择在本地安装并使用 CLI，本教程要求运行 Azure CLI 2.0.30 或更高版本。 运行 `az --version` 即可查找版本。 如果需要进行安装或升级，请参阅[安装 Azure CLI]( /cli/azure/install-azure-cli)。
 
 ## <a name="create-jenkins-instance"></a>创建 Jenkins 实例
-在有关[如何在首次启动时自定义 Linux 虚拟机](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)的上一个教程中，已了解如何使用 cloud-init 自动执行 VM 自定义。 本教程使用 cloud-init 文件在 VM 上安装 Jenkins 和 Docker。 Jenkins 是一种常用的开放源代码自动化服务器，它与 Azure 无缝集成以支持持续集成 (CI) 和持续交付 (CD)。 有关如何使用 Jenkins 的更多教程，请参阅[Azure 中心中的 Jenkins](https://docs.microsoft.com/azure/jenkins/)。
+在有关[如何在首次启动时自定义 Linux 虚拟机](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)的上一个教程中，已了解如何使用 cloud-init 自动执行 VM 自定义。 本教程使用 cloud-init 文件在 VM 上安装 Jenkins 和 Docker。 Jenkins 是一种常用的开放源代码自动化服务器，它与 Azure 无缝集成以支持持续集成 (CI) 和持续交付 (CD)。 有关如何使用 Jenkins 的更多教程，请参阅[Azure 中心中的 Jenkins](/azure/jenkins/)。
 
 在当前 shell 中，创建名为 cloud-init.txt 的文件并粘贴下面的配置  。 例如，在不处于本地计算机上的 Cloud Shell 中创建文件。 输入 `sensible-editor cloud-init-jenkins.txt` 以创建文件并查看可用编辑器的列表。 请确保已正确复制整个 cloud-init 文件，尤其是第一行：
 

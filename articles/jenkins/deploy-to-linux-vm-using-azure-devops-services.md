@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 虚拟机, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 458acc31d4cb56215dff036bd3952090052eb5a1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241069"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831323"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>教程：使用 Jenkins 和 Azure DevOps Services 部署到 Linux 虚拟机
 
@@ -18,7 +18,7 @@ ms.locfileid: "88241069"
 
 在本教程中，将使用 Jenkins 生成 Node.js Web 应用。 然后，使用 Azure DevOps 将其部署到
 
-包含 Linux 虚拟机 (VM) 的[部署组](https://docs.microsoft.com/azure/devops/pipelines/release/deployment-groups/index?view=vsts)。 学习如何：
+包含 Linux 虚拟机 (VM) 的[部署组](/azure/devops/pipelines/release/deployment-groups/index?view=vsts)。 学习如何：
 
 > [!div class="checklist"]
 > * 获取示例应用。
@@ -32,17 +32,17 @@ ms.locfileid: "88241069"
 
 ## <a name="before-you-begin"></a>开始之前
 
-* 需要具有对 Jenkins 服务器的访问权限。 如果尚未创建 Jenkins 服务器，请参阅[在 Azure 虚拟机上创建 Jenkins 主节点](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)。 
+* 需要具有对 Jenkins 服务器的访问权限。 如果尚未创建 Jenkins 服务器，请参阅[在 Azure 虚拟机上创建 Jenkins 主节点](/azure/jenkins/install-jenkins-solution-template)。 
 
 * 登录到你的 Azure DevOps Services 组织 (**https://{yourorganization}.visualstudio.com**)。 
   你可以获取[免费 Azure DevOps Services 组织](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)。
 
   > [!NOTE]
-  > 有关详细信息，请参阅[连接到 Azure DevOps Services](https://docs.microsoft.com/azure/devops/organizations/projects/connect-to-projects?view=vsts)。
+  > 有关详细信息，请参阅[连接到 Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects?view=vsts)。
 
-*  部署目标需用到 Linux 虚拟机。  有关详细信息，请参阅[使用 Azure CLI 创建和管理 Linux VM](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)。
+*  部署目标需用到 Linux 虚拟机。  有关详细信息，请参阅[使用 Azure CLI 创建和管理 Linux VM](/azure/virtual-machines/linux/tutorial-manage-vm)。
 
-*  为虚拟机开启入站端口 80。 有关详细信息，请参阅[使用 Azure 门户创建网络安全组](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)。
+*  为虚拟机开启入站端口 80。 有关详细信息，请参阅[使用 Azure 门户创建网络安全组](/azure/virtual-network/tutorial-filter-network-traffic)。
 
 ## <a name="get-the-sample-app"></a>获取示例应用
 
@@ -90,7 +90,7 @@ ms.locfileid: "88241069"
  
 1.  如果尚没有 PAT，请在你的 Azure DevOps Services 组织中创建一个 PAT。 Jenkins 需要使用此信息来访问你的 Azure DevOps Services 组织。 确保存储令牌信息以用于本部分后面的步骤。
   
-    若要了解如何生成令牌，请阅读[如何为 Azure DevOps Services 创建个人访问令牌？](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)。
+    若要了解如何生成令牌，请阅读[如何为 Azure DevOps Services 创建个人访问令牌？](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)。
 2. 在“生成后操作”  选项卡中，选择“添加生成后操作”  。 选择“存档项目”  。
 3. 对于“要存档的文件”，输入 `**/*` 以包括所有文件  。
 4. 若要创建其他操作，请选择“添加生成后操作”  。
@@ -177,7 +177,7 @@ ms.locfileid: "88241069"
 > * 为 Azure 虚拟机创建部署组。
 > * 创建配置 VM 并部署应用的 Azure Pipelines。
 
-若要了解如何将 Azure Pipelines 用于生成和发布步骤，请参阅[此文](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups)。
+若要了解如何将 Azure Pipelines 用于生成和发布步骤，请参阅[此文](/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups)。
 
 若要了解如何编写基于 YAML 的 CI/CD 管道并将其部署到 VM，请参阅下一篇教程。
 

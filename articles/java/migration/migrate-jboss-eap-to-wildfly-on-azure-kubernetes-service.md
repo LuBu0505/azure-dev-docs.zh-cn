@@ -1,17 +1,17 @@
 ---
 title: 将 JBoss EAP 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
 description: 本指南介绍在需要迁移现有 JBoss EAP 应用程序以使之在 Azure Kubernetes 服务容器中的 WildFly 上运行时应注意的事项。
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 3/16/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 89cddf7e33bf64baa48aef8052a53870bb6bfa3d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5de4032f4413f4c72bf51990723c47874bc39ab2
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379791"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738565"
 ---
 # <a name="migrate-jboss-eap-applications-to-wildfly-on-azure-kubernetes-service"></a>将 JBoss EAP 应用程序迁移到 Azure Kubernetes 服务上的 WildFly
 

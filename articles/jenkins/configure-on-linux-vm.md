@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 门户, linux, 虚拟机
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7e7c8de6353a29af949231709675a4d2785405c3
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725211"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831363"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Jenkins
 
@@ -216,4 +216,4 @@ ms.locfileid: "88725211"
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Jenkins](/azure/developer/jenkins)
+> [Azure 上的 Jenkins](./index.yml)

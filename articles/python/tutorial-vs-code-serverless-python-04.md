@@ -2,14 +2,14 @@
 title: 步骤 4：使用 VS Code 在本地调试 Azure Functions Python 代码
 description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Code 调试程序。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: f96e2065f4864423470c1eda9ad48cad086e0fe6
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 4a5cb6bb8eedca93ce1e7675d3e7e1959ca066f6
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473582"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773021"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4：在本地调试 Azure Functions Python 代码
 
@@ -29,7 +29,9 @@ ms.locfileid: "89473582"
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
     </pre>
 
-1. 在 Visual Studio Code 的“输出”窗口中对 URL 使用 **Ctrl+单击**或 **Cmd+单击** 即可将浏览器打开到该地址，也可启动浏览器后在其中粘贴同一 URL。 不管什么情况，终结点都是 `api/<function_name>`，在此示例中为 `api/HttpExample`。 但是，由于该 URL 不含名称参数，因此浏览器窗口会直接显示“请传递查询字符串或请求正文中的名称”，此名称与代码中的该路径相对应。
+1. 在 Visual Studio Code 的“输出”窗口中对 URL 使用 **Ctrl+单击**或 **Cmd+单击** 即可将浏览器打开到该地址，也可启动浏览器后在其中粘贴同一 URL。
+
+    不管什么情况，终结点都是 `api/<function_name>`，在此示例中为 `api/HttpExample`。 但是，由于该 URL 不含名称参数，因此浏览器窗口会直接显示“请传递查询字符串或请求正文中的名称”，此名称与代码中的该路径相对应。
 
     > [!TIP]
     > 如果你无法访问该 URL 并在企业代理后运行（很可能已设置 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量），可将名为 `NO_PROXY` 的环境变量设置为 `localhost,127.0.0.1`，然后重试。
@@ -47,7 +49,7 @@ ms.locfileid: "89473582"
         --data {"""name""":"""Visual Studio Code"""} http://localhost:7071/api/HttpExample
     ```
 
-    在 PowerShell 中，还可以使用 [Invoke-WebRequest cmdlet](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6)。
+    在 PowerShell 中，还可以使用 [Invoke-WebRequest cmdlet](/powershell/module/microsoft.powershell.utility/invoke-webrequest)。
 
     # <a name="bash"></a>[bash](#tab/bash)
 
@@ -61,7 +63,11 @@ ms.locfileid: "89473582"
 
     也可创建 *data.json* 之类的包含 `{"name":"Visual Studio Code"}` 的文件，并使用 `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample` 命令。
 
-1. 若要对函数调试功能进行测试，请在行中设置一个断点 (`name = req.params.get('name')`)，然后再次向该 URL 发出请求。 Visual Studio Code 调试程序会在该行中暂停，让你可以检查变量并对代码进行步进调试。 （若要快速了解基本的调试，请参阅 [Visual Studio Code 教程 - 配置和运行调试程序](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)。）
+1. 若要对函数调试功能进行测试，请在行中设置一个断点 (`name = req.params.get('name')`)，然后再次向该 URL 发出请求。
+
+    Visual Studio Code 调试程序会在该行中暂停，让你可以检查变量并对代码进行步进调试。
+
+    （若要快速了解基本的调试，请参阅 [Visual Studio Code 教程 - 配置和运行调试程序](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)。）
 
 1. 如果已在本地对函数进行详细的测试并对测试结果满意，请停止调试程序（使用“调试” > “停止调试”菜单命令，或者使用调试工具栏上的“断开连接”命令）。
 
@@ -73,4 +79,3 @@ ms.locfileid: "89473582"
 > [!div class="nextstepaction"]
 > [我在本地运行了调试程序 - 转到步骤 5 >>>](tutorial-vs-code-serverless-python-05.md)
 
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

@@ -4,12 +4,12 @@ description: 有关如何使用 Azure Functions 创建和部署无服务器代�
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 8b0fa5aac45d95780da4327d72cea6b6533c971e
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 5f69fa073647527516452e7a5cdf77d6b5a8caa8
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218614"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772950"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>使用 Azure Functions 编写 Azure 上的无服务器 Node.js 代码
 
@@ -31,7 +31,7 @@ ms.locfileid: "88218614"
 
 从这里，可以享用许多其他资源，以帮助进一步探索无服务器代码：
 
-- Microsoft Learn 模块：[使用 Azure Functions 和 SignalR 服务在 Web 应用中启用自动更新](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
+- Microsoft Learn 模块：[使用 Azure Functions 和 SignalR 服务在 Web 应用中启用自动更新](/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
 
 - 了解如何使用各种触发器运行无服务器代码：
 

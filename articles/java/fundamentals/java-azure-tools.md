@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: seo-java-july2019, devx-track-java
-ms.openlocfilehash: 32f3b53ed58f9436aca82f08a3a4ce8600060632
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 857487b644e585b87998f660b9ecc6358be01eba
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379871"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831493"
 ---
 # <a name="azure-tools-for-java-developers"></a>面向 Java 开发人员的 Azure 工具
 
@@ -23,7 +23,7 @@ Azure 和 Azure Stack 上的 Java 开发人员可以使用 [OpenJDK 的 Azul Sys
 
 ## <a name="eclipse-and-intellij-plugins"></a>Eclipse 和 IntelliJ 插件
 
-使用用于 [Eclipse](/azure/developer/java/toolkit-for-eclipse) 和 [IntelliJ](/azure/developer/java/toolkit-for-intellij) 的 Azure 工具包通过 IDE 管理 Azure 资源及部署应用。
+使用用于 [Eclipse](../toolkit-for-eclipse/index.yml) 和 [IntelliJ](../toolkit-for-intellij/index.yml) 的 Azure 工具包通过 IDE 管理 Azure 资源及部署应用。
 
 ![显示 Azure 资源管理器的 IntelliJ 工具包](media/intelliJ-azure-explorer.png)
 

@@ -4,12 +4,12 @@ description: 使用 Azure Toolkit for IntelliJ 创建一个简单的 HTTP 触发
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1260d5cbaec821149468ef524af35e081c06ec52
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b27655657d763e295a1817acf200a67c090ff67d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379961"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831403"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>快速入门：使用 IntelliJ IDEA 创建 Azure Functions 项目
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379961"
 在开始之前，请确保已满足下列要求：
 
 + 具有活动订阅的 Azure 帐户。 [免费创建帐户](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)。
-+ [Azure 支持的 Java 开发工具包 (JDK)](https://aka.ms/azure-jdks)（适用于 Java 8）
++ [Azure 支持的 Java 开发工具包 (JDK)](../fundamentals/java-jdk-long-term-support.md)（适用于 Java 8）
 + 已安装的 [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) 旗舰版或社区版
 + [Maven 3.5.0+](https://maven.apache.org/download.cgi)
 + 最新的 [Function Core Tools](https://github.com/Azure/azure-functions-core-tools)

@@ -5,12 +5,12 @@ keywords: azure, chef, devops, virtual machines, overview, automate, inspec
 ms.date: 03/19/2019
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 0c50cd07473565609084db24b9e537519194a0c2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: baabe7530c2f54d89b1d14023a4f9a34e4eeb809
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240719"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831443"
 ---
 # <a name="use-inspec-for-compliance-automation-of-your-azure-infrastructure"></a>使用 InSpec 实现 Azure 基础结构的符合性自动化
 
@@ -30,7 +30,7 @@ InSpec 的无代理检测模式可以用来快速地大规模评估暴露级别�
 
 ## <a name="audit-azure-virtual-machines-with-policy-guest-configuration"></a>通过 Azure Policy 来宾配置审核 Azure 虚拟机
 
-Azure 直接支持使用 Chef InSpec 定义通过 [Azure Policy 来宾配置](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration)来审核 Azure 虚拟机。 来宾配置会根据提供的 Chef InSpec 定义评估 Linux 虚拟机，并通过 Azure Policy 将符合性报告回来。 还可以通过 Azure Monitor 日志来报告这些审核的结果；启用警报和其他自动化方案。
+Azure 直接支持使用 Chef InSpec 定义通过 [Azure Policy 来宾配置](/azure/governance/policy/concepts/guest-configuration)来审核 Azure 虚拟机。 来宾配置会根据提供的 Chef InSpec 定义评估 Linux 虚拟机，并通过 Azure Policy 将符合性报告回来。 还可以通过 Azure Monitor 日志来报告这些审核的结果；启用警报和其他自动化方案。
 
 ## <a name="satisfy-audits"></a>满足审核
 

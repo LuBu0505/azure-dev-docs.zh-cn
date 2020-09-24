@@ -10,12 +10,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 3bd3eab54fa231fc06805cd44b61fcb121a4ad31
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: ab1b538a71fc1937e60616dd91567064ed8fd945
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681765"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830083"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>使用用于 Azure Web 应用的 Maven 将 Azure 容器注册表中的 Spring Boot 应用部署到 Azure 应用服务
 
@@ -374,7 +374,7 @@ Web 部署完成后即可使用 [Azure 门户]进行管理。
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+> [Azure 上的 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>其他资源
 
@@ -396,7 +396,7 @@ Web 部署完成后即可使用 [Azure 门户]进行管理。
 
 [Azure 命令行接口 (CLI)]: /cli/azure/overview
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
+[面向 Java 开发人员的 Azure]: ../index.yml
 [Azure 门户]: https://portal.azure.com/
 [适用于 Azure Web 应用的 Maven 插件]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
@@ -412,7 +412,7 @@ Web 部署完成后即可使用 [Azure 门户]进行管理。
 [Docker 上的 Spring Boot 入门]: https://github.com/spring-guides/gs-spring-boot-docker
 [Spring Framework]: https://spring.io/
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->

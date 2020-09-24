@@ -4,27 +4,27 @@ description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 51fb29a80ba69dd59ca18dd94eaaeb6f09e53074
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: e720cd1ca6f29a42bfd9bf6c79c6184338c2621a
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218075"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772880"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>使用 Azure CLI 部署到 Azure 应用服务
 
-在本教程中，将使用在所有操作系统上运行的 [Azure 命令行接口 (CLI)](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest) 将 Node.js 应用程序部署到 Azure 应用服务。 使用 CLI 可以创建 Azure 资源，在 Git 存储库和 Azure 之间建立部署管道，并查看应用的 `console.log` 输出。
+在本教程中，将使用在所有操作系统上运行的 [Azure 命令行接口 (CLI)](/cli/azure/overview?view=azure-cli-latest) 将 Node.js 应用程序部署到 Azure 应用服务。 使用 CLI 可以创建 Azure 资源，在 Git 存储库和 Azure 之间建立部署管道，并查看应用的 `console.log` 输出。
 
 ## <a name="prerequisites"></a>必备条件
 
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Node.js 和 npm 6.x 或更高版本](https://nodejs.org/en/download)，即 Node.js 包管理器。
 - [Git](https://git-scm.com/downloads)，其后命令 `git --version` 应显示版本号。
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)。
+- [Azure CLI](/cli/azure/install-azure-cli)。
 
 可以选择使用 [Visual Studio Code 的 Azure CLI 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)，在编写 Azure CLI 脚本时该扩展提供语法彩色显示、IntelliSense (完成) 和代码片段。
 
-另一种替代方法是 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)，可以使用 [Azure 帐户扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)从 Visual Studio Code 中使用它。
+另一种替代方法是 [Azure Cloud Shell](/azure/cloud-shell/overview)，可以使用 [Azure 帐户扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)从 Visual Studio Code 中使用它。
 
 ### <a name="azure-subscription"></a>Azure 订阅
 

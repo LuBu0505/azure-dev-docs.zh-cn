@@ -4,18 +4,18 @@ description: 教程第 2 部分：创建 Azure Functions 应用
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 2aca9c53e254eca7c8a070cc50a88426d3886cdd
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218392"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772620"
 ---
 # <a name="create-the-local-functions-app"></a>创建本地 Functions 应用
 
 [上一步：简介和先决条件](tutorial-vscode-serverless-node-01.md)
 
-在此步骤中，将创建一个本地 Azure Functions 应用程序，其中包含一个使用 [HTTP 触发器](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)的函数。 Azure Functions 应用可以包含多个具有[不同触发器](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)的函数。 HTTP 触发器专门处理传入的 HTTP 流量。
+在此步骤中，将创建一个本地 Azure Functions 应用程序，其中包含一个使用 [HTTP 触发器](/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)的函数。 Azure Functions 应用可以包含多个具有[不同触发器](/azure/azure-functions/functions-triggers-bindings)的函数。 HTTP 触发器专门处理传入的 HTTP 流量。
 
 1. 在终端中或命令提示符下，从适合项目的文件夹中运行 Visual Studio Code：
 

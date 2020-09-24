@@ -2,14 +2,14 @@
 title: 步骤 7：使用 VS Code 通过 Python 添加 Azure Functions 的存储绑定
 description: 教程步骤 7，通过在 Python 中添加绑定将消息写入 Azure 存储。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: ad242e5c9c2258e438846a7d393163871d14db9e
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473612"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772850"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:在 Python 中添加 Azure Functions 的存储绑定
 
@@ -21,7 +21,9 @@ ms.locfileid: "89473612"
 
 在此部分，我们将存储绑定添加到此前在本教程中创建的 HttpExample 函数。 每次进行请求时，该函数通过此绑定将消息写入存储。 相关存储使用函数应用所使用的默认存储帐户。 但是，如果你打算大量使用存储，则需考虑创建单独的帐户。
 
-1. 将 Azure Functions 项目的远程设置同步到 *local.settings.json* 文件中，方法是：打开命令面板，然后选择“Azure Functions:  下载远程设置”。 打开 *local.settings.json*，检查其中是否包含 `AzureWebJobsStorage` 的值。 该值是存储帐户的连接字符串。
+1. 将 Azure Functions 项目的远程设置同步到 *local.settings.json* 文件中，方法是：打开命令面板，然后选择“Azure Functions:  下载远程设置”。
+ 
+    打开 *local.settings.json*，检查其中是否包含 `AzureWebJobsStorage` 的值。 该值是存储帐户的连接字符串。
 
 1. 在 `HttpExample` 文件夹中，右键单击 *function.json*，选择“添加绑定”： 
 
@@ -49,7 +51,9 @@ ms.locfileid: "89473612"
         }
     ```
 
-1. 配置绑定以后，即可在函数代码中使用它。 同样，新定义的绑定在代码中显示为 *\_\_init\_\_.py* 中 `main` 函数的参数。 例如，可以根据以下内容修改 HttpExample 中的 *\_\_init\_\_.py* 文件，该文件演示如何使用 `msg` 参数来写入其名称在请求中使用的带时间戳的消息。 注释对具体的更改进行了说明：
+1. 配置绑定以后，即可在函数代码中使用它。 同样，新定义的绑定在代码中显示为 *\_\_init\_\_.py* 中 `main` 函数的参数。
+
+    例如，可以根据以下内容修改 HttpExample 中的 *\_\_init\_\_.py* 文件，该文件演示如何使用 `msg` 参数来写入其名称在请求中使用的带时间戳的消息。 注释对具体的更改进行了说明：
 
     ```python
     import logging
@@ -82,7 +86,9 @@ ms.locfileid: "89473612"
             )
     ```
 
-1. 若要在本地测试这些更改，请在 Visual Studio Code 中再次启动调试程序，方法是：按 F5 或选择“调试”   >   “启动调试”菜单命令。 与以前一样，“输出”窗口会显示项目中的终结点。 
+1. 若要在本地测试这些更改，请在 Visual Studio Code 中再次启动调试程序，方法是：按 F5 或选择“调试”   >   “启动调试”菜单命令。
+
+    与以前一样，“输出”窗口会显示项目中的终结点。 
 
 1. 在浏览器中访问 URL `http://localhost:7071/api/HttpExample?name=VS%20Code`，以便创建一项针对 HttpExample 终结点的请求，这也会将消息写入队列。
 
@@ -99,4 +105,3 @@ ms.locfileid: "89473612"
 > [!div class="nextstepaction"]
 > [我添加了存储绑定 - 转到步骤 8 >>>](tutorial-vs-code-serverless-python-08.md)
 
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

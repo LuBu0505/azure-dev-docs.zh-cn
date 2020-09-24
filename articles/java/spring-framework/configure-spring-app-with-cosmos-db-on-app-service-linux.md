@@ -7,12 +7,12 @@ ms.date: 4/24/2019
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 028d3c9d0270a69ac9894b3176eda305b02a6abc
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.openlocfilehash: f1e47353fdf2e09ceaa1b8ac339f4fc23368574d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478417"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830223"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>如何将 Spring 和 Cosmos DB 与 Linux 上的应用服务配合使用
 
@@ -30,12 +30,12 @@ ms.locfileid: "87478417"
 
 - 若要将 Java Web 应用部署到云，需要一个 Azure 订阅。 如果还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册获取[免费 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
 - [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)
-- [Java 8 JDK](/azure/developer/java/fundamentals/java-jdk-install)
+- [Java 8 JDK](../fundamentals/java-jdk-install.md)
 - [Maven 3](http://maven.apache.org/)
 
 ## <a name="clone-the-sample-java-web-app-repository"></a>克隆示例 Java Web 应用存储库
 
-在此练习中，我们将使用 Spring Todo 应用，这是一个使用 [Spring Boot](https://spring.io/projects/spring-boot)、[Spring Data for Cosmos DB](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db) 和 [Azure Cosmos DB](/azure/cosmos-db/sql-api-introduction) 生成的 Java 应用程序。
+在此练习中，我们将使用 Spring Todo 应用，这是一个使用 [Spring Boot](https://spring.io/projects/spring-boot)、[Spring Data for Cosmos DB](./configure-spring-boot-starter-java-app-with-cosmos-db.md) 和 [Azure Cosmos DB](/azure/cosmos-db/sql-api-introduction) 生成的 Java 应用程序。
 1. 克隆 Spring Todo 应用并复制 **.prep** 文件夹的内容，以便初始化项目：
 
     对于 Bash：
@@ -303,10 +303,10 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 ## <a name="next-steps"></a>后续步骤
 
 - [Linux 版应用服务中的 Java 开发指南](/azure/app-service/containers/app-service-linux-java)
-- [面向 Java 开发人员的 Azure](/azure/developer/java/) 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+- [面向 Java 开发人员的 Azure](../index.yml) 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+> [Azure 上的 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>其他资源
 
@@ -323,7 +323,7 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 <!-- URL List -->
 
 [Azure Cosmos DB Documentation]: /azure/cosmos-db/
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
+[面向 Java 开发人员的 Azure]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
 [Spring Data for Azure Cosmos DB SQL API]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/

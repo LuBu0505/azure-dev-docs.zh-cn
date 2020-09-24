@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 应用服务, cli
 ms.topic: tutorial
 ms.date: 08/08/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 9c5f3b30507cda764dd29f0c133d4997dbc2bb53
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240949"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831333"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 部署到 Azure 应用服务
 
@@ -47,7 +47,7 @@ sudo apt-get install -y maven
 需要 Azure 凭据才能执行 Azure CLI。
 
 * 在 Jenkins 仪表板中，单击“Credentials”（凭据）->“System”（系统）****。 单击“Global credentials(unrestricted)”（全局凭据(不受限制)）****。
-* 单击“Add Credentials”（添加凭据），通过填写订阅 ID、客户端 ID、客户端密码和 OAuth 2.0 令牌终结点，添加 [Microsoft Azure 服务主体](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)。 提供一个 ID 供后续步骤使用。
+* 单击“Add Credentials”（添加凭据），通过填写订阅 ID、客户端 ID、客户端密码和 OAuth 2.0 令牌终结点，添加 [Microsoft Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json)。 提供一个 ID 供后续步骤使用。
 
 ![添加凭据](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
 

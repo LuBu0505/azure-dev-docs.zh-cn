@@ -6,12 +6,12 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 119a2b3ff761778e111500a9fe0cf33d2dc6b080
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f2fb9a1af0634e0cecb3b6d990ae423b31da6210
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378441"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829983"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 开发人员指南
 
@@ -19,9 +19,9 @@ ms.locfileid: "86378441"
 
 [Azure Cosmos DB](/azure/cosmos-db/introduction) 是一种全球分布式数据库服务，它允许开发人员使用各种标准 API 处理数据。 Spring Data Cosmos DB SDK 基于 [Spring Data](https://spring.io/projects/spring-data) 框架，并提供与使用 SQL API 的 Azure Cosmos DB 的集成。 以下主题介绍对其他 API 的支持：
 
-- [如何将 Spring Data MongoDB API 用于 Azure Cosmos DB](/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
-- [如何将 Spring Data Apache Cassandra API 用于 Azure Cosmos DB](/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db)
-- [如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用](/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
+- [如何将 Spring Data MongoDB API 用于 Azure Cosmos DB](./configure-spring-data-mongodb-with-cosmos-db.md)
+- [如何将 Spring Data Apache Cassandra API 用于 Azure Cosmos DB](./configure-spring-data-apache-cassandra-with-cosmos-db.md)
+- [如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用](./configure-spring-data-gremlin-java-app-with-cosmos-db.md)
 
 Spring Data Cosmos DB SDK 在 GitHub 上的 [spring-data-cosmosdb](https://github.com/microsoft/spring-data-cosmosdb) 存储库中作为开放源代码提供。 此存储库有一个活动[问题](https://github.com/microsoft/spring-data-cosmosdb/issues)列表，你可以在其中提交 Bug 或检查已提交问题的解决方法。 你还可以检查[版本](https://github.com/microsoft/spring-data-cosmosdb/releases)列表，看是否已在更新的版本中解决了某个问题。 Spring Data Cosmos DB SDK 2.2.x 版的版本序列支持 spring-data-commons 版本 2.2.0.RELEASE，而该 SDK 的 2.1.x 版的版本序列则支持 spring-data-common 版本 2.1.0.RELEASE。
 

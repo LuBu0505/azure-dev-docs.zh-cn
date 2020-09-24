@@ -5,12 +5,12 @@ keywords: azure devops terraform 安装 配置 windows init 计划 应用 执行
 ms.topic: quickstart
 ms.date: 08/18/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614522"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830053"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>快速入门：使用 Azure PowerShell 配置 Terraform
  
@@ -39,13 +39,13 @@ ms.locfileid: "88614522"
 
 ## <a name="configure-your-environment"></a>配置环境
 
-1. 允许与 Azure 资源交互的最新 PowerShell 模块称为 [Azure PowerShell Az 模块](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)。 在你使用 Azure PowerShell Az 模块时，我们建议你在所有平台上使用 PowerShell 7（或更高版本）。 如果安装了 PowerShell，可以通过在 PowerShell 提示符处输入以下命令来验证版本。
+1. 允许与 Azure 资源交互的最新 PowerShell 模块称为 [Azure PowerShell Az 模块](/powershell/azure/new-azureps-module-az)。 在你使用 Azure PowerShell Az 模块时，我们建议你在所有平台上使用 PowerShell 7（或更高版本）。 如果安装了 PowerShell，可以通过在 PowerShell 提示符处输入以下命令来验证版本。
 
     ```powershell
     $PSVersionTable.PSVersion
     ```
 
-1. [安装 PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)。 此演示已在 Windows 10 上使用 PowerShell 7.0.2 进行了测试。
+1. [安装 PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)。 此演示已在 Windows 10 上使用 PowerShell 7.0.2 进行了测试。
 
 1. 若要[使 Terraform 向 Azure 进行身份验证](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)，则需要[安装 Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)。 此演示使用 Azure CLI 2.9.1 版本进行了测试。
 
@@ -70,9 +70,9 @@ ms.locfileid: "88614522"
 
 若要使用服务主体登录到 Azure 订阅，首先需要访问服务主体。 如果已有一个服务主体，则可以跳过此节。
 
-[使用 PowerShell 创建服务主体](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps)时，有很多选项。 对于本文，我们将创建一个具有“参与者”角色的服务主体。 此“参与者”角色（默认角色）具有读取和写入到 Azure 帐户的完全权限。 有关基于角色的访问控制 (RBAC) 和角色的详细信息，请参阅 [RBAC：内置角色](/azure/active-directory/role-based-access-built-in-roles)。
+[使用 PowerShell 创建服务主体](/powershell/azure/create-azure-service-principal-azureps)时，有很多选项。 对于本文，我们将创建一个具有“参与者”角色的服务主体。 此“参与者”角色（默认角色）具有读取和写入到 Azure 帐户的完全权限。 有关基于角色的访问控制 (RBAC) 和角色的详细信息，请参阅 [RBAC：内置角色](/azure/active-directory/role-based-access-built-in-roles)。
 
-调用 [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADServicePrincipal) 可为指定的订阅创建服务主体。 成功完成后，将显示服务主体的信息，如服务主体名称和显示名称。 如果在不指定任何身份验证凭据的情况下调用 `New-AzADServicePrincipal`，则会自动生成密码。 但是，此密码不显示，因为它以 `SecureString` 类型返回。 因此，你需要调用 `New-AzADServicePrincipal`，并将结果发送到一个变量。 然后，可以将变量转换为纯文本以显示它。
+调用 [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) 可为指定的订阅创建服务主体。 成功完成后，将显示服务主体的信息，如服务主体名称和显示名称。 如果在不指定任何身份验证凭据的情况下调用 `New-AzADServicePrincipal`，则会自动生成密码。 但是，此密码不显示，因为它以 `SecureString` 类型返回。 因此，你需要调用 `New-AzADServicePrincipal`，并将结果发送到一个变量。 然后，可以将变量转换为纯文本以显示它。
 
 1. 获取要使用的 Azure 订阅的订阅 ID。 如果不知道订阅 ID，可以从 [Azure 门户](https://portal.azure.com/)获取该值。
 
@@ -82,7 +82,7 @@ ms.locfileid: "88614522"
 
 1. 启动 PowerShell。
 
-1. 使用 [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) 创建新的服务主体。 将 `<azure_subscription_id>` 替换为要使用的 Azure 订阅的 ID。
+1. 使用 [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal) 创建新的服务主体。 将 `<azure_subscription_id>` 替换为要使用的 Azure 订阅的 ID。
 
     ```powershell
     $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id>
@@ -94,7 +94,7 @@ ms.locfileid: "88614522"
     $sp.ServicePrincipalNames
     ```
 
-1. 将自动生成的密码显示为文本 [ConvertFrom-SecureString](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring)。
+1. 将自动生成的密码显示为文本 [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring)。
 
     ```powershell
     $UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
@@ -103,17 +103,17 @@ ms.locfileid: "88614522"
 **注释**：
 
 - 使用服务主体登录订阅需要服务主体名称和密码值。
-- 如果丢失了密码，则无法对其进行检索。 因此，应将密码存储在安全的位置。 如果忘记了密码，则需要[重置服务主体凭据](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps#reset-credentials)。
+- 如果丢失了密码，则无法对其进行检索。 因此，应将密码存储在安全的位置。 如果忘记了密码，则需要[重置服务主体凭据](/powershell/azure/create-azure-service-principal-azureps#reset-credentials)。
 
 ## <a name="log-in-to-azure-using-a-service-principal"></a>使用服务主体登录到 Azure
 
-若要使用服务主体登录到 Azure 订阅，请调用 [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount)，指定类型为 [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) 的对象。
+若要使用服务主体登录到 Azure 订阅，请调用 [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount)，指定类型为 [PsCredential](/dotnet/api/system.management.automation.pscredential) 的对象。
 
 1. 启动 PowerShell。
 
-1. 使用以下方法之一获取 [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) 对象。
+1. 使用以下方法之一获取 [PsCredential](/dotnet/api/system.management.automation.pscredential) 对象。
 
-    1. 调用 [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential) 并输入服务主体名称和密码（如有要求）：
+    1. 调用 [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) 并输入服务主体名称和密码（如有要求）：
 
         ```powershell
         $spCredential = Get-Credential
@@ -213,7 +213,7 @@ $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. 应用执行计划后，可以使用 [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup) 测试资源组是否已成功创建。
+1. 应用执行计划后，可以使用 [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) 测试资源组是否已成功创建。
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
@@ -245,7 +245,7 @@ $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
     terraform apply QuickstartTerraformTest.destroy.tfplan
     ```
 
-1. 使用 [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup) 验证资源组是否已删除。
+1. 使用 [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) 验证资源组是否已删除。
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg

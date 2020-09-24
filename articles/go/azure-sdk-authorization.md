@@ -3,12 +3,12 @@ title: 使用 Azure SDK for Go 进行身份验证
 description: 了解 Azure SDK for Go 中提供的身份验证方法及其用法。
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: b4bf09dbb3f59c77c2914ae9c9091dc0af31b093
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 61353f2b7f2c13764f4e736105b15127d1355e29
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80319674"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831313"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Azure SDK for Go 中的身份验证方法
 
@@ -111,7 +111,7 @@ authorizer, err := auth.NewAuthorizerFromEnvironment()
 | 开发工具包 | `https://management.local.azurestack.external/` |
 | 集成系统 | `https://management.(region).ext-(machine-name).(FQDN)` |
 
-有关如何在 Azure Stack 上使用 Azure SDK for Go 的详细信息，请参阅[在 Azure Stack 中将 API 版本配置文件与 Go 配合使用](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-go)
+有关如何在 Azure Stack 上使用 Azure SDK for Go 的详细信息，请参阅[在 Azure Stack 中将 API 版本配置文件与 Go 配合使用](/azure/azure-stack/user/azure-stack-version-profiles-go)
 
 ## <a name="use-file-based-authentication"></a>使用基于文件的身份验证
 
