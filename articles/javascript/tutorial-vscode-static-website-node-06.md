@@ -3,14 +3,15 @@ title: 将静态 Node.js 网站部署到 Azure 后清理资源
 description: 教程第 6 部分：清理资源。
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: cfc777d3e6ee4dbee51f5e580043f6950156101f
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0c24562ff5c4b689854c29ef33557e0bfa9bee8e
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791499"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772571"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="part-6-clean-up-resources"></a>第 6 部分：清理资源
 
 [上一步：进行更改并重新部署](tutorial-vscode-static-website-node-05.md)
 
