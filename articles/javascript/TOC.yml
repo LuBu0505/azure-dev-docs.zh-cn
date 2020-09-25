@@ -232,7 +232,7 @@
           href: /samples/browse/?languages=javascript%252cnodejs&products=azure-search
         - name: 所有示例
           href: /samples/browse/?languages=javascript%252cnodejs
-    - name: NPM 包
+    - name: npm 包
       href: azure-sdk-library-package-index.md
-    - name: NPM 包文档
+    - name: npm 包文档
       href: /javascript/api/overview/azure/?view=azure-node-latest
