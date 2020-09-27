@@ -1,14 +1,15 @@
 ---
-title: 在 Visual Studio Code 中创建 Azure 应用服务
+title: 在 Visual Studio Code 中创建演示 Azure 应用服务
 description: 教程第 2 部分：创建 Deno 应用并在本地运行它
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 32bd9e1f2b30d57ad573eb9be3fa22b9e246b0e9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6440f75d11bd4eb68dfbcf4e1dcf6b2b27c0496f
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791454"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772920"
 ---
 # <a name="test-local-deno-apps"></a>测试本地 Deno 应用
 

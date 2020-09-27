@@ -4,14 +4,14 @@ description: 了解如何通过 Node.js 和 JavaScript 使用服务主体身份�
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218885"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110436"
 ---
-# <a name="create-an-azure-service-principal-with-nodejs"></a>使用 Node.js 创建 Azure 服务主体 
+# <a name="create-an-azure-service-principal-for-nodejs"></a>创建适用于 Node.js 的 Azure 服务主体
 
 当有某个应用需要访问资源时，可为应用设置一个标识，并使用其自身的凭据对应用进行身份验证。 此标识称为服务主体。  实质上，这是为 Azure Active Directory 帐户创建了要提供给 SDK 用于身份验证的密钥，这样就不需要用户的干预或提供用户名/密码。
 
@@ -29,7 +29,7 @@ ms.locfileid: "88218885"
 
 ## <a name="create-a-service-principal-using-the-azure-portal"></a>使用 Azure 门户创建服务主体
 
-请遵循[使用门户创建可访问资源的 Azure Active Directory 应用程序和服务主体](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/)主题中所述的步骤来生成服务主体。
+请遵循[使用门户创建可访问资源的 Azure Active Directory 应用程序和服务主体](/azure/active-directory/develop/howto-create-service-principal-portal)主题中所述的步骤来生成服务主体。
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>使用 Azure CLI 2.0 创建服务主体
 
@@ -45,7 +45,8 @@ ms.locfileid: "88218885"
     $ az login
     ```
 
-4. 调用 `az login` 可生成一个 URL 和一个代码。 浏览到指定的 URL，输入该代码，使用 Azure 标识登录（如果已登录，则此过程可自动完成）。 然后，即可通过 CLI 访问帐户。
+4. 调用 `az login` 可生成一个 URL 和一个代码。 浏览到指定的 URL，输入该代码，使用 Azure 标识登录（如果已登录，则此过程可自动完成）。
+然后，即可通过 CLI 访问帐户。
 
 5. 获取订阅和租户 ID：
 
@@ -93,7 +94,7 @@ ms.locfileid: "88218885"
 
     **记下租户、名称和密码值，因为在步骤 7 中需要用到。**
 
-7. 设置环境变量 - 将 &lt;subscriptionId>、&lt;tenant>、&lt;name> 和 &lt;password> 占位符替换为在步骤 4 和 5 中获取的值。 
+7. 设置环境变量 - 将 &lt;subscriptionId>、&lt;tenant>、&lt;name> 和 &lt;password> 占位符替换为在步骤 4 和 5 中获取的值。
 
     **使用 Bash**
 
@@ -115,7 +116,7 @@ ms.locfileid: "88218885"
 
 ## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>使用用于 Node.js 的 Azure SDK 创建服务主体
 
-若要使用 JavaScript 以编程方式创建服务主体，请使用 [ServicePrincipal 脚本](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)。   
+若要使用 JavaScript 以编程方式创建服务主体，请使用 [ServicePrincipal 脚本](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)。
 
 ## <a name="using-the-service-principal"></a>使用服务主体
 
@@ -138,3 +139,7 @@ MsRest.loginWithServicePrincipalSecret(
   }
 );
 ```
+
+## <a name="next-steps"></a>后续步骤
+
+* [使用用于 Node.js 的 Azure 模块进行身份验证](node-sdk-azure-authenticate.md)

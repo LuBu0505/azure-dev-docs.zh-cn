@@ -3,14 +3,15 @@ title: 在从 Visual Studio Code 部署容器化 Node.js 应用后清理资源
 description: 教程第 8 部分：清理资源
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: dd71ec5affdd1696544ec166ad8517b376958cab
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d05766092022772c96fa745f9a52aa4901b27f82
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791540"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772700"
 ---
-# <a name="clean-up-resources"></a>清理资源
+# <a name="part-8-clean-up-resources"></a>第 8 部分：清理资源
 
 [上一步：流式传输日志](tutorial-vscode-docker-node-07.md)
 

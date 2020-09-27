@@ -3,14 +3,14 @@ title: 教程：通过 Azure 门户使用 PostgreSQL 部署 Django 应用
 description: 在 Azure 上预配 Web 应用和 PostgreSQL 数据库，然后从 GitHub 部署应用代码。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/23/2020
+ms.date: 09/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753764"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110534"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
@@ -47,9 +47,9 @@ ms.locfileid: "89753764"
 
 1. 打开 [Azure 门户](https://portal.azure.com)
 
-1. 选择“创建资源”。
+1. 选择“创建资源”，随即会打开“新建”页面。
 
-1. 在“新建”页的“常用”列中，选择“Web 应用”  。 （如果未立即显示“Web 应用”，请在“Azure 市场”下选择“Web”，然后在“特别推荐”下选择“Web 应用”。    ） 
+1. 搜索并选择“Web 应用”。
 
 1. 在“创建 Web 应用”页面上，输入以下信息：
 
@@ -74,9 +74,9 @@ ms.locfileid: "89753764"
 
 1. 通过 [Azure 门户](https://portal.azure.com)打开新的浏览器窗口或选项卡。 使用新的选项卡预配数据库，因为你需要将部分信息从数据库页面传输到上一节中仍处于打开状态的 Web 应用页面。
 
-1. 选择“创建资源”。
+1. 选择“创建资源”，随即会打开“新建”页面。
 
-1. 在“新建”页面上，选择“Azure 市场”下的“数据库”，然后选择“特别推荐”下的“Azure Database for PostgreSQL”。    ）
+1. 搜索并选择“Azure Database for PostgreSQL”。
 
 1. 在下一页上，选择“单个服务器”下的“创建”。
 
@@ -90,7 +90,7 @@ ms.locfileid: "89753764"
     | 数据源 | **无** |
     | 位置 | 选择附近的位置。 |
     | 版本 | 保留默认值（即最新版）。 |
-    | 计算 + 存储 | 选择“配置服务器”，然后选择“基本”和“第 5 代”  。 将“vCore”设置为 1，将“存储”设置为 5 GB，然后选择“确定”  。 这些选项可预配成本最低的服务器，该服务器可用于 Azure 上的 PostgreSQL。 |
+    | 计算 + 存储 | 选择“配置服务器”，然后选择“基本”和“第 5 代”  。 将“vCore”设置为 1，将“存储”设置为 5 GB，然后选择“确定”  。 这些选项可预配成本最低的服务器，该服务器可用于 Azure 上的 PostgreSQL。 还可能在 Azure 帐户中获得涵盖服务器开销的信用额度。 |
     | 管理员用户名、密码、确认密码 | 在数据库服务器上输入管理员帐户的凭据。 记下这些凭据，稍后在本教程中将需要使用。 |
 
 1. 选择“查看 + 创建”，然后选择“创建” 。 Azure 预配 Web 应用需要数分钟。
@@ -145,7 +145,7 @@ ms.locfileid: "89753764"
 
     ![Web 应用的门户设置配置](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. 使用“新建应用程序设置”按钮为以下每个值创建设置：
+1. 使用“新建应用程序设置”按钮为以下每个值创建设置（djangoapp 示例所需）：
 
     | 设置名称 | 值 |
     | --- | --- |
@@ -168,7 +168,7 @@ ms.locfileid: "89753764"
 
 1. 在 Web 应用的浏览器窗口或选项卡中，选择“部署中心”（在左侧的“部署”下） 。
 
-1. 在“源代码管理”步骤中，选择“GitHub”，然后选择“遵循登录提示”或选择“继续”以使用当前的 GitHub 登录名  。
+1. 在“源代码管理”步骤中，选择“GitHub”，然后选择“授权”（如有必要）。 然后按照登录提示进行操作，或选择“继续”，使用当前 GitHub 登录名。
 
 1. 在“生成提供程序”步骤中，选择“应用服务生成服务”，然后选择“继续”  。
 

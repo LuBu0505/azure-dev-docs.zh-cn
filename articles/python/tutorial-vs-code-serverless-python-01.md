@@ -1,15 +1,15 @@
 ---
 title: 教程：使用 VS Code 通过 Python 创建并部署无服务器 Azure Functions
-description: 教程步骤 1, 使用 Azure Functions, 简介和先决条件。
+description: 教程第 1 步：为 Azure Functions 配置本地环境
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473602"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772727"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -17,11 +17,11 @@ ms.locfileid: "89473602"
 
 Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，也不需发布 Web 应用。 用于 Visual Studio Code 的 Azure Functions 扩展可以自动处理许多配置问题，大大简化了使用 Functions 的过程。
 
-如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 请使用每篇文章末尾的“我遇到了问题”按钮来提交反馈。
+如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 使用每篇文章末尾的**此页**反馈按钮。
 
 有关演示视频，请观看虚拟 PyCon 2020 中的<a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">使用 VS Code 生成 Azure Functions</a> (youtube.com)。 你可能还会对<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">通过 Azure Functions 轻松处理数据</a> (youtube.com) 会话感兴趣，该会话时间比较长。 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="configure-your-environment"></a>配置环境
 
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Azure Functions Core Tools](#azure-functions-core-tools)。
@@ -54,9 +54,19 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 ### <a name="sign-in-to-azure"></a>登录 Azure
 
-[!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
+安装 Azure 扩展以后，请通过导航到 **Azure** 资源管理器登录到 Azure 帐户，选择“Functions”下的“登录 Azure”，然后按照浏览器中的提示操作。
 
-### <a name="verify-prerequisites"></a>验证先决条件
+![通过 VS Code 登录到 Azure](media/tutorial-vs-code-serverless-python/azure-sign-in.png)
+
+登录后，验证状态栏中是否显示“Azure：已登录”，且 Azure 资源管理器中显示了你的订阅：
+
+![Visual Studio Code 状态栏，其中显示了 Azure 帐户](media/tutorial-vs-code-serverless-python/azure-account-status-bar.png)
+
+![Visual Studio Code 的 Azure 应用服务资源管理器，其中显示了订阅](media/tutorial-vs-code-serverless-python/azure-subscription-view.png)
+
+[!INCLUDE [proxy-config](includes/proxy-config.md)]
+
+### <a name="verify-your-environment"></a>验证环境
 
 若要验证是否已安装所有 Azure Functions 工具，请打开 Visual Studio Code 命令面板 (**F1**)，选择“终端:创建新的集成终端”命令，等到终端打开后，运行 `func` 命令：
 
@@ -70,5 +80,3 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 > [!div class="nextstepaction"]
 > [我已登录到 Azure - 转到步骤 2 >>>](tutorial-vs-code-serverless-python-02.md)
-
-问题？ 使用页面底部的“此页面”反馈提交 GitHub 问题。

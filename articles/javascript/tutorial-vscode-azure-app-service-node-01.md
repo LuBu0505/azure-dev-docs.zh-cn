@@ -3,14 +3,15 @@ title: 在 Visual Studio Code 中将 Node.js 应用部署到 Azure 应用服务
 description: 教程第 1 部分：简介和先决条件。
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 7427292a3f0546c462ecd621fa3f66546beb2726
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 427cce426429c9fb1ce924438ead9cfe44be350c
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791418"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "91110325"
 ---
-# <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>使用 Visual Studio Code 部署到 Azure 应用服务
+# <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>使用 Visual Studio Code 将 Node.js 部署到 Azure 应用服务
 
 在本教程中，我们使用[应用服务扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)将 Node.js 应用程序部署到（Linux 或 Windows 上的）Azure 应用服务。
 

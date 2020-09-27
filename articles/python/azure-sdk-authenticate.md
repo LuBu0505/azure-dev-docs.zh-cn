@@ -1,15 +1,15 @@
 ---
 title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
-ms.date: 08/18/2020
+ms.date: 09/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 746a948077c7def12aae5053355c445b7592eae0
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: e842e7530cc475e8431fbadfb3767ea56102c33e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753749"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831903"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>如何在 Azure 上对 Python 应用进行身份验证和授权
 
@@ -151,7 +151,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>将 DefaultAzureCredential 与 SDK 管理库配合使用
 
 ```python
-# WARNING: this code presently fails with current release libraries!
+# WARNING: this code fails with azure-mgmt-resource versions < 15
 
 from azure.identity import DefaultAzureCredential
 
@@ -162,21 +162,24 @@ from azure.mgmt.resource import SubscriptionClient
 credential = DefaultAzureCredential()
 subscription_client = SubscriptionClient(credential)
 
-# The following line produces a "no attribute 'signed_session'" error:
+# If using azure-mgmt-resource < version 15 the following line produces
+# a "no attribute 'signed_session'" error:
 subscription = next(subscription_client.subscriptions.list())
 
 print(subscription.subscription_id)
 ```
 
-如此代码示例中所示，`DefaultAzureCredential` 目前仅适用于 Azure SDK 客户端（“数据平面”）库和 Azure SDK 管理库预览版，其中这些预览版是名称以 `azure-mgmt` 开头的库的最新预览版。 就是说，使用当前版本库时，调用 `subscription_client.subscriptions.list()` 会失败，并出现相当不明确的错误：“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，当前 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
+`DefaultAzureCredential` 仅适用于[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表上显示的 Azure SDK 客户端（“数据平面”）库和更新版本的 Azure SDK 管理库。
 
-如博客文章中所述，你可以[引入 Azure 管理库的新预览版](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/)，使用预览版管理库来规避该错误。
+如果使用 azure-mgmt-resource 版本 15.0.0 或更高版本运行前面的代码，则对 `subscription_client.subscriptions.list()` 的调用将成功。 如果使用较早版本的库，该调用会失败，并出现相当不明确的错误：“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，较早版本的 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
 
-也可以使用以下方法：
+可以使用[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表中的最新版本管理库来处理该错误。 如果列出了两个库，请使用版本较高的库。 同时，更新的库的 pypi 页面还包含一行内容：“凭据系统进行了彻底更新和优化”，以指示所作更改。
+
+如果要使用的管理库尚未更新，可以使用以下替代方法：
 
 1. 使用本文后续部分中所述的其他身份验证方法之一，这些方法非常适用于仅使用 SDK 管理库且不会部署到云的代码，在这种情况下，你只能依赖于本地服务主体。
 
-1. 使用 Azure SDK 工程团队成员提供的 [CredentialWrapper 类 (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d)，而不是 `DefaultAzureCredential`。 一旦更新的管理库不再处于预览状态，便可以直接切换回 `DefaultAzureCredential`。 此方法的优点是，可以将同一凭据同时用于 SDK 客户端和管理库，并且它在本地和云中都有效。
+1. 使用 Azure SDK 工程团队成员提供的 [CredentialWrapper 类 (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d)，而不是 `DefaultAzureCredential`。 当所需的管理库可用后，请切换回 `DefaultAzureCredential`。 此方法的优点是，可以将同一凭据同时用于 SDK 客户端和管理库，并且它在本地和云中都有效。
 
     假定已将 cred_wrapper.py 的副本下载到项目文件夹中，则前面的代码将如下所示：
 
@@ -190,7 +193,7 @@ print(subscription.subscription_id)
     print(subscription.subscription_id)
     ```
 
-    同样，一旦更新的管理库不再处于预览状态，便可以直接使用 `DefaultAzureCredential`。
+    同样，当更新的管理库可用后，可以直接使用 `DefaultAzureCredential`，如原始代码示例中所示。
 
 ## <a name="other-authentication-methods"></a>其他身份验证方法
 
@@ -400,7 +403,7 @@ print(subscription.subscription_id)
 
 在此方法中，将使用通过 Azure CLI 命令 `az login` 登录的用户的凭据创建客户端对象。 应用程序将以用户的身份获得进行所有操作的权限。
 
-SDK 使用默认的订阅 ID，你也可使用 [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) 在运行代码之前设置订阅。 如需引用同一脚本中的不同订阅，请使用本文前面介绍的 ['get_client_from_auth_file'](#authenticate-with-a-json-file) 或 [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) 方法。
+SDK 使用默认的订阅 ID，你也可使用 [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli) 在运行代码之前设置订阅。 如需引用同一脚本中的不同订阅，请使用本文前面介绍的 ['get_client_from_auth_file'](#authenticate-with-a-json-file) 或 [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) 方法。
 
 `get_client_from_cli_profile` 函数应仅用于早期试验和开发目的，因为已登录的用户通常拥有所有者或管理员权限，无需任何其他权限即可访问大多数资源。 有关详细信息，请参阅有关[将 CLI 凭据与 `DefaultAzureCredential` 配合使用](#cli-auth-note)的上一条注释。
 

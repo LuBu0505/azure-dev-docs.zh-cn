@@ -3,17 +3,17 @@ title: 如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程
 description: 了解如何配置基于 Java 的 Spring Cloud Stream Binder 应用程序，该应用程序是在 Azure 事件中心使用 Spring Boot Initializr 创建的。
 services: event-hubs
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 09/11/2020
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 50b6046e8b4435d8e75af1bb8df360be018eb8ec
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: f19f3a8d3e101b6cd8d6e9173e2dd99eae590ef9
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614302"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831273"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -40,38 +40,41 @@ ms.locfileid: "89614302"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“+ 创建资源”，然后搜索“事件中心”。  ***
+1. 选择“+创建资源”，然后搜索“事件中心”。
 
-1. 单击“创建”。 
+1. 选择“创建”。
 
-   ![创建 Azure 事件中心命名空间][IMG01]
+   >[!div class="mx-imgBorder"]
+   >![创建 Azure 事件中心命名空间][IMG01]
 
 1. 在“创建命名空间”页上，输入以下信息  ：
 
-   * 输入一个唯一**名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 **wingtiptoys** 作为**名称**，则 URI 将为 *wingtiptoys.servicebus.windows.net*。
+   * 选择需要用于命名空间的“订阅”****。
+   * 指定是为命名空间创建新的“资源组”，还是选择现有资源组****。
+   * 输入一个唯一的**命名空间名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 *wingtiptoys-space* 作为**命名空间名称**，则 URI 将为 `wingtiptoys-space.servicebus.windows.net`。
+   * 指定事件中心命名空间的“位置”。****
    * 定价层。
-   * 选择需要用于命名空间的“订阅”  。
-   * 指定是为命名空间创建新的“资源组”，还是选择现有资源组  。
-   * 指定事件中心命名空间的“位置”。 
    * 也可指定命名空间的“吞吐量单位”。 
+   
+   >[!div class="mx-imgBorder"]
+   >![指定 Azure 事件中心命名空间选项][IMG02]
 
-   ![指定 Azure 事件中心命名空间选项][IMG02]
-
-1. 指定上面列出的选项后，请单击“创建”以创建命名空间  。
+1. 指定上面列出的选项后，选择“查看 + 创建”，查看规范并选择“创建”以创建命名空间。
 
 ## <a name="create-an-azure-event-hub-in-your-namespace"></a>在命名空间中创建 Azure 事件中心
 
-部署命名空间以后，即可在命名空间中创建事件中心。
+部署命名空间后，请选择“转到资源”以打开“事件中心命名空间”页，在其中可以创建命名空间中的事件中心。
 
-1. 导航到在上一步创建的命名空间。
+1. 导航到上一步创建的命名空间。
 
-1. 单击顶部菜单栏中的“+ 事件中心”。 
+1. 选择顶部菜单栏中的“+ 事件中心”。
 
 1. 为事件中心命名。
 
-1. 单击“创建”。 
+1. 选择“创建”。
 
-   ![创建事件中心][IMG05]
+   >[!div class="mx-imgBorder"]
+   >![创建事件中心][IMG05]
 
 ### <a name="create-an-azure-storage-account-for-your-event-hub-checkpoints"></a>为事件中心检查点创建 Azure 存储帐户
 
@@ -79,7 +82,7 @@ ms.locfileid: "89614302"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户。
 
-1. 依次单击“+创建”、“存储”、“存储帐户”。   
+1. 依次选择“创建资源”、“存储”和“存储帐户”。
 
 1. 在“创建存储帐户”  页中，输入以下信息：
 
@@ -87,12 +90,13 @@ ms.locfileid: "89614302"
    * 指定是为存储帐户创建新的“资源组”，还是选择现有资源组  。
    * 输入存储帐户的唯一“名称”。 
    * 指定存储帐户的“位置”。 
+   
+   >[!div class="mx-imgBorder"]
+   >![指定 Azure 存储帐户选项][IMG08]
 
-   ![指定 Azure 存储帐户选项][IMG08]
+1. 指定上面列出的选项后，请选择“查看 + 创建”以创建存储帐户。
 
-1. 指定上面列出的选项后，请单击“查看 + 创建”以创建存储帐户  。
-
-1. 查看具体细节，然后单击“创建”  。  部署将需要数分钟。
+1. 查看具体细节，然后选择“创建”。  部署将需要数分钟。
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
@@ -103,18 +107,19 @@ ms.locfileid: "89614302"
 1. 指定以下选项：
 
    * 使用 **Java** 生成一个 **Maven** 项目。
-   * 指定一个其值大于或等于 2.0 的 **Spring Boot** 版本。
+   * 指定一个其值大于或等于 2.2 的 **Spring Boot** 版本。
    * 指定应用程序的“组”和“项目”名称。  
-   * 添加 **Web** 依赖项。
+   * 添加 *Web* 依赖项。
 
-      ![Spring Initializr 的基本选项][SI01]
+   >[!div class="mx-imgBorder"]
+   >![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.eventhub    。
+   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.contoso.eventhubs.sample 。
    >
 
-1. 指定上面列出的选项后，请单击“生成项目”  。
+1. 指定上面列出的选项后，请选择“GENERATE CTRL +”。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -124,11 +129,11 @@ ms.locfileid: "89614302"
 
 1. 在应用的根目录中找到 pom.xml 文件，例如  ：
 
-   `C:\SpringBoot\eventhub\pom.xml`
+   *C:\SpringBoot\eventhubs-sample\pom.xml*
 
-   -或-
+   - 或 -
 
-   `/users/example/home/eventhub/pom.xml`
+   */users/example/home/eventhubs-sample/pom.xml*
 
 1. 在文本编辑器中打开 *pom.xml* 文件，将 Spring Cloud Azure Event Hub Stream Binder Starter 添加到 `<dependencies>` 列表：
 
@@ -140,7 +145,7 @@ ms.locfileid: "89614302"
    </dependency>
    ```
 
-1. 保存并关闭 pom.xml 文件  。
+1. 保存并关闭 pom.xml 文件。
 
 ## <a name="create-an-azure-credential-file"></a>创建 Azure 凭据文件
 
@@ -148,14 +153,14 @@ ms.locfileid: "89614302"
 
 1. 导航到 Spring Boot 应用的 *resources* 目录，例如：
 
-   ```shell
-   cd C:\SpringBoot\eventhub\src\main\resources
+   ```bash
+   cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
    -或-
 
-   ```shell
-   cd /users/example/home/eventhub/src/main/resources
+   ```bash
+   cd /users/example/home/eventhubs-sample/src/main/resources
    ```
 
 1. 请登录到 Azure 帐户：
@@ -181,7 +186,7 @@ ms.locfileid: "89614302"
        "state": "Enabled",
        "tenantId": "22222222-2222-2222-2222-222222222222",
        "user": {
-         "name": "gena.soto@wingtiptoys.com",
+         "name": "user@contoso.com",
          "type": "user"
        }
      }
@@ -221,13 +226,13 @@ ms.locfileid: "89614302"
 
 1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
 
-   `C:\SpringBoot\eventhub\src\main\resources\application.properties`
+   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
 
-   -或-
+   - 或 -
 
-   `/users/example/home/eventhub/src/main/resources/application.properties`
+   */users/example/home/eventhubs-sample/src/main/resources/application.properties*
 
-2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性  ：
+2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性**：
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -253,7 +258,7 @@ ms.locfileid: "89614302"
    |       `spring.cloud.stream.bindings.input.group `        | 在 Azure 事件中心指定一个使用者组，该组可以设置为“$Default”，以便使用你在创建 Azure 事件中心时创建的基本使用者组。 |
    |    `spring.cloud.stream.bindings.output.destination`     |                               指定输出目标 Azure 事件中心。在本教程中，它与输入目标相同。                               |
 
-3. 保存并关闭 application.properties 文件  。
+3. 保存并关闭 application.properties 文件。
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>添加示例代码以实现事件中心的基本功能
 
@@ -263,26 +268,28 @@ ms.locfileid: "89614302"
 
 1. 在应用的程序包目录中找到主应用程序 Java 文件，例如：
 
-   `C:\SpringBoot\eventhub\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java`
+   *C:\SpringBoot\eventhubs-sample\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java*
 
-   -或-
+   - 或 -
 
-   `/users/example/home/eventhub/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java`
+   */users/example/home/eventhubs-sample/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java*
 
 1. 在文本编辑器中打开主应用程序 Java 文件，然后将以下行添加到文件中：
 
    ```java
-   package com.wingtiptoys.eventhub;
-
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-   @SpringBootApplication
-   public class EventhubApplication {
-      public static void main(String[] args) {
-         SpringApplication.run(EventhubApplication.class, args);
-      }
-   }
+    package com.contoso.eventhubs.sample;
+    
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
+    @SpringBootApplication
+    public class EventhubsSampleApplication {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(EventhubsSampleApplication.class, args);
+        }
+    
+    }
    ```
 
 1. 保存并关闭主应用程序 Java 文件。
@@ -291,31 +298,31 @@ ms.locfileid: "89614302"
 
 1. 在应用的包目录中创建名为 *EventhubSource.java* 的新 Java 文件，然后在文本编辑器中打开该文件并添加以下行：
 
-   ```java
-   package com.wingtiptoys.eventhub;
-
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.cloud.stream.annotation.EnableBinding;
-   import org.springframework.cloud.stream.messaging.Source;
-   import org.springframework.messaging.support.GenericMessage;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
-
-   @EnableBinding(Source.class)
-   @RestController
-   public class EventhubSource {
-
-      @Autowired
-      private Source source;
-
-      @PostMapping("/messages")
-      public String postMessage(@RequestBody String message) {
-         this.source.output().send(new GenericMessage<>(message));
-         return message;
-      }
-   }
-   ```
+    ```java
+    package com.contoso.eventhubs.sample;
+    
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.cloud.stream.annotation.EnableBinding;
+    import org.springframework.cloud.stream.messaging.Source;
+    import org.springframework.messaging.support.GenericMessage;
+    import org.springframework.web.bind.annotation.PostMapping;
+    import org.springframework.web.bind.annotation.RequestBody;
+    import org.springframework.web.bind.annotation.RestController;
+    
+    @EnableBinding(Source.class)
+    @RestController
+    public class EventhubSource {
+    
+        @Autowired
+        private Source source;
+    
+        @PostMapping("/messages")
+        public String postMessage(@RequestBody String message) {
+            this.source.output().send(new GenericMessage<>(message));
+            return message;
+        }
+    }
+    ```
 1. 保存 *EventhubSource.java* 文件后将其关闭。
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>为接收器连接器创建新类
@@ -323,10 +330,10 @@ ms.locfileid: "89614302"
 1. 在应用的包目录中创建名为 *EventhubSink.java* 的新 Java 文件，然后在文本编辑器中打开该文件并添加以下行：
 
    ```java
-   package com.wingtiptoys.eventhub;
+   package com.contoso.eventhubs.sample;
 
    import com.microsoft.azure.spring.integration.core.AzureHeaders;
-   import com.microsoft.azure.spring.integration.core.api.Checkpointer;
+   import com.microsoft.azure.spring.integration.core.api.reactor.Checkpointer;
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
    import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -358,31 +365,34 @@ ms.locfileid: "89614302"
 
 使用以下过程生成并测试应用程序。
 
-1.  打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
+1. 打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
 
-   `cd C:\SpringBoot\eventhub`
-
+   ```bash
+    cd C:\SpringBoot\eventhubs-sample
+   ```
    -或-
 
-   `cd /users/example/home/eventhub`
+   ```bash
+   cd /users/example/home/eventhubs-sample
+   ```
 
 1. 使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：
 
-   ```shell
-   mvn clean package
+   ```bash
+   mvn clean package -Dmaven.test.skip=true
    mvn spring-boot:run
    ```
 
-1. 应用程序运行以后，即可使用 *curl* 对其进行测试，例如：
+1. 应用程序运行以后，即可使用 `curl` 对其进行测试，例如：
 
-   ```shell
+   ```bash
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
    此时会看到“hello”发布到应用程序的日志中。 例如：
 
-   ```shell
-   [Thread-13] INFO com.wingtiptoys.eventhub.EventhubSink - New message received: 'hello'
-   [pool-10-thread-7] INFO com.wingtiptoys.eventhub.EventhubSink - Message 'hello' successfully checkpointed
+   ```text
+   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
+   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```
 
 ## <a name="next-steps"></a>后续步骤
@@ -390,7 +400,7 @@ ms.locfileid: "89614302"
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
 
 > [!div class="nextstepaction"]
-> [Azure 上的 Spring](/azure/developer/java/spring-framework)
+> [Azure 上的 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>其他资源
 
@@ -409,7 +419,7 @@ ms.locfileid: "89614302"
 <!-- URL List -->
 
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
-[面向 Java 开发人员的 Azure]: /azure/developer/java/
+[面向 Java 开发人员的 Azure]: ../index.yml
 [使用 Azure DevOps 和 Java]: /azure/devops/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
@@ -420,13 +430,7 @@ ms.locfileid: "89614302"
 
 [IMG01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-01.png
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-02.png
-[IMG03]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-03.png
-[IMG04]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-04.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-05.png
-[IMG06]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-06.png
-[IMG07]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-07.png
 [IMG08]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-08.png
 
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-01.png
-[SI02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-02.png
-[SI03]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-03.png

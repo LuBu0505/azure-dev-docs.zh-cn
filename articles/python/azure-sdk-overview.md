@@ -1,15 +1,15 @@
 ---
 title: 使用用于 Python 的 Azure 库 (SDK)
 description: 概述了用于 Python 的 Azure 库的特性和功能，这些特性和功能可提高开发人员预配、使用和管理 Azure 资源时的工作效率。
-ms.date: 05/26/2020
+ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: dce4485a65da75d0918805ef55fafe71d55ce0a6
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 6dab8085cd9d18f34ea1dc307a414fa18cdbcb83
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983279"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829953"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>使用用于 Python 的 Azure 库 (SDK)
 
@@ -65,13 +65,13 @@ SDK 的管理（或“管理平面”）库（其名称都以 `azure-mgmt-` 开�
 
 借助管理库，可以编写配置和部署脚本，以执行可通过 [Azure 门户](https://portal.azure.com)或 [Azure CLI](/cli/azure/install-azure-cli) 执行的相同任务。 （如前文所述，Azure CLI 是用 Python 编写的，并使用管理库来实现其各种命令。）
 
-若要详细了解如何使用每个管理库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api?view=azure-python)和 [Azure 示例](https://docs.microsoft.com/samples/browse/?languages=python&products=azure)中找到其他代码片段。
+若要详细了解如何使用每个管理库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api?view=azure-python)和 [Azure 示例](/samples/browse/?languages=python&products=azure)中找到其他代码片段。
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>通过客户端库连接并使用 Azure 资源
 
 SDK 的客户端（或“数据平面”）库可帮助你编写 Python 应用程序代码，以与已预配的服务进行交互。 只有那些支持客户端 API 的服务才存在客户端库。
 
-若要详细了解如何使用每个客户端库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK 的 GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api?view=azure-python)和 [Azure 示例](https://docs.microsoft.com/samples/browse/?languages=python&products=azure)中找到其他代码片段。
+若要详细了解如何使用每个客户端库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK 的 GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api?view=azure-python)和 [Azure 示例](/samples/browse/?languages=python&products=azure)中找到其他代码片段。
 
 ## <a name="get-help-and-connect-with-the-sdk-team"></a>获取帮助并与 SDK 团队联系
 
