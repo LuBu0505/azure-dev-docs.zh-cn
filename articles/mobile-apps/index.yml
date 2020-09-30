@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 07/27/2020
-  ms.openlocfilehash: f7f2f1d9d7b9764904fa995ce575fc7409d3a237
-  ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+  ms.openlocfilehash: f7f7948f16d6d72f963f91cbf7121f02ddb528cc
+  ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87400665"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493079"
 landingContent:
 - title: Azure 上的移动应用入门
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: 使用 Xamarin.Forms 构建移动应用
-      url: https://docs.microsoft.com/learn/paths/build-mobile-apps-with-xamarin-forms/
+      url: /learn/paths/build-mobile-apps-with-xamarin-forms/
   - linkListType: video
     links:
     - text: 使用 Azure 构建整个移动应用
@@ -41,19 +41,19 @@ landingContent:
   - linkListType: overview
     links:
     - text: 使用 Azure Functions 和其他服务构建无服务器移动应用程序后端
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: 使用 Azure SignalR 生成实时应用程序
       url: real-time-communication.md
   - linkListType: quickstart
     links:
     - text: Azure Functions 和 Xamarin 入门
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: 将 Azure SignalR 服务与 Xamarin.Forms 配合使用
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
   - linkListType: learn
     links:
     - text: 通过 Xamarin 使用 RESTful Web 服务
-      url: https://docs.microsoft.com/learn/modules/consume-rest-services
+      url: /learn/modules/consume-rest-services
 - title: 保存数据
   linkLists:
   - linkListType: overview
@@ -67,11 +67,11 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: 使用 Azure Cosmos DB 保存数据
-      url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+      url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
     - text: 使用 Blob 存储
-      url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-xamarin
+      url: /azure/storage/blobs/storage-quickstart-blobs-xamarin
     - text: 使用 .NET SDK 和 Azure Cosmos DB 的用于 MongoDB 的 API 构建 Xamarin.Forms 应用
-      url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-xamarin
+      url: /azure/cosmos-db/create-mongodb-xamarin
 - title: 发送推送通知
   linkLists:
   - linkListType: overview
@@ -81,29 +81,29 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: 在 Azure 门户中创建 Azure 通知中心
-      url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
+      url: /azure/notification-hubs/create-notification-hub-portal
   - linkListType: tutorial
     links:
     - text: 使用 ASP.NET Core 和 Azure 通知中心向 Xamarin.Forms 应用发送推送通知
       url: notification-hubs-backend-service-xamarin-forms.md
     - text: 向 Android 设备发送推送通知
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
+      url: /azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
     - text: 向设备推送丰富的内容
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
+      url: /azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
 - title: 对用户进行身份验证
   linkLists:
   - linkListType: overview
     links:
     - text: Microsoft 身份验证库 (MSAL) 支持的身份验证流
-      url: https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows
+      url: /azure/active-directory/develop/msal-authentication-flows
     - text: 在移动应用中添加身份验证并管理用户标识
       url: authentication.md
   - linkListType: tutorial
     links:
     - text: 从 Android 应用程序将用户登录并调用 Microsoft Graph
-      url: https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android
+      url: /azure/active-directory/develop/tutorial-v2-android
     - text: 向 Azure Active Directory B2C 租户添加本机客户端应用程序
-      url: https://docs.microsoft.com/azure/active-directory-b2c/add-native-application
+      url: /azure/active-directory-b2c/add-native-application
   - linkListType: sample
     links:
     - text: 使用户登录到 Swift iOS 应用
@@ -117,15 +117,15 @@ landingContent:
     - text: 通过持续生成和集成自动完成应用的生命周期
       url: continuous-integration.md
     - text: 新 Azure Pipelines 用户应了解的关键概念
-      url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
   - linkListType: overview
     links:
     - text: 使用 App Center 发布版本
-      url: https://docs.microsoft.com/appcenter/distribution/uploading
+      url: /appcenter/distribution/uploading
   - linkListType: how-to-guide
     links:
     - text: App Center CodePush
-      url: https://docs.microsoft.com/appcenter/distribution/codepush
+      url: /appcenter/distribution/codepush
 - title: 跟踪分析和故障
   linkLists:
   - linkListType: concept
@@ -137,15 +137,15 @@ landingContent:
   - linkListType: overview
     links:
     - text: App Center 分析
-      url: https://docs.microsoft.com/appcenter/analytics/overview
+      url: /appcenter/analytics/overview
   - linkListType: how-to-guide
     links:
     - text: 在应用中启用诊断
-      url: https://docs.microsoft.com/appcenter/diagnostics/enabling-diagnostics
+      url: /appcenter/diagnostics/enabling-diagnostics
   - linkListType: tutorial
     links:
     - text: 接收实时分析
-      url: https://docs.microsoft.com/appcenter/analytics/log-flow
+      url: /appcenter/analytics/log-flow
 - title: 使用 SDK 进行开发
   linkLists:
   - linkListType: download

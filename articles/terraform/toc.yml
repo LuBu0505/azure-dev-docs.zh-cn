@@ -13,6 +13,10 @@
       href: get-started-powershell.md
 - name: 操作指南
   items:
+    - name: 安装和配置
+      items:
+        - name: 在 Azure 存储中存储 Terraform 状态
+          href: store-state-in-azure-storage.md
     - name: 应用服务
       items:
         - name: Terraform 和 Azure 提供程序部署槽位
@@ -37,7 +41,7 @@
       items:
         - name: 具有基础结构的虚拟机
           href: create-linux-virtual-machine-with-infrastructure.md
-        - name: 具有 Terraform 模块的虚拟机群集
+        - name: 配置虚拟机群集
           href: create-vm-cluster-module.md
         - name: 使用 Terraform 和 HCL 创建虚拟机群集
           href: create-vm-cluster-with-infrastructure.md
@@ -47,10 +51,6 @@
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: 教程
   items:
-    - name: 安装和配置
-      items:
-        - name: 在 Azure 存储中存储 Terraform 状态
-          href: store-state-in-azure-storage.md
     - name: 网络
       items:
         - name: 中心和辐射拓扑
