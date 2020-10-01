@@ -109,7 +109,7 @@
     - name: 发行版和功能
       href: module-version-matrix.md
     - name: 适用于 Azure 的所有模块
-      href: 'https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure'
+      href: 'https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure'
 - name: 资源
   items:
     - name: 适用于 Ansible 的 Visual Studio Code 扩展
