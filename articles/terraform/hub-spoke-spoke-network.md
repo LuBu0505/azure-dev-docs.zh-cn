@@ -4,12 +4,12 @@ description: 了解如何在中心-辐射拓扑中实现两个连接到某个中
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 236665b205a602466244a2c5d5cfee5800c51317
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 265c410d8fc8bdb51803406cc8003e6e349014d9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241089"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401477"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建辐射网络
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241089"
 > * 使用 HCL（HashiCorp 语言）在中心辐射型拓扑中实现分支 VNet
 > * 使用 Terraform 在分支网络中创建虚拟机
 > * 使用 Terraform 与中心网络建立虚拟网络对等互连
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -303,6 +301,8 @@ ms.locfileid: "88241089"
      
 1. 保存文件并退出编辑器。
   
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"] 

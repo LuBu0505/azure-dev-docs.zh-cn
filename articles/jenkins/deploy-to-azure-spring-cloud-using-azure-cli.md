@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, azure spring cloud, azure cli
 ms.topic: tutorial
 ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89374558"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586132"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 
@@ -43,19 +43,19 @@ ms.locfileid: "89374558"
 
 1. 安装 Azure Spring Cloud 扩展：
 
-    ```Azure CLI
+    ```azurecli
     az extension add --name spring-cloud
     ```
 
 1. 创建可包含 Azure Spring Cloud 服务的资源组：
 
-    ```Azure CLI
+    ```azurecli
     az group create --location eastus --name <resource group name>
     ```
 
 1. 预配 Azure Spring Cloud 的实例：
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud create -n <service name> -g <resource group name>
     ```
 
@@ -68,7 +68,7 @@ ms.locfileid: "89374558"
 
 1. 设置配置服务器。 请确保将 &lt;your GitHub id&gt; 替换为正确的值。
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud config-server git set -n <your-service-name> --uri https://github.com/<your GitHub id>/piggymetrics --label config
     ```
 
@@ -81,7 +81,7 @@ ms.locfileid: "89374558"
 
 1. 创建三项微服务：**gateway**、**auth-service** 和 **account-service**：
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app create --n gateway -s <service name> -g <resource group name>
     az spring-cloud app create --n auth-service -s <service name> -g <resource group name>
     az spring-cloud app create --n account-service -s <service name> -g <resource group name>
@@ -89,7 +89,7 @@ ms.locfileid: "89374558"
 
 1. 部署应用程序：
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app deploy -n gateway -s <service name> -g <resource group name> --jar-path ./gateway/target/gateway.jar
     az spring-cloud app deploy -n account-service -s <service name> -g <resource group name> --jar-path ./account-service/target/account-service.jar
     az spring-cloud app deploy -n auth-service -s <service name> -g <resource group name> --jar-path ./auth-service/target/auth-service.jar
@@ -97,13 +97,13 @@ ms.locfileid: "89374558"
 
 1. 将公共终结点分配到网关：
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app update -n gateway -s <service name> -g <resource group name> --is-public true
     ```
 
 1. 查询网关应用程序以获取 URL，以便验证应用程序是否正在运行。
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app show --name gateway | grep url
     ```
     

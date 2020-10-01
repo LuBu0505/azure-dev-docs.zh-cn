@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 28b1db01e2b509198a837f96dcb19f119cf09335
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 7be758e9f1116f933fbb415e6cff7a1c73ffee9f
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401388"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493256"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>配置 Info.plist 和 Entitlements.plist
 
@@ -96,7 +96,7 @@ ms.locfileid: "87401388"
     ```
 
     > [!NOTE]
-    > 此类提供一个唯一 ID（使用 [UIDevice.IdentifierForVendor](https://docs.microsoft.com/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 值）和通知中心注册有效负载。
+    > 此类提供一个唯一 ID（使用 [UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 值）和通知中心注册有效负载。
 
 1. 将新文件夹添加到名为“扩展”的 PushDemo.iOS 项目，然后使用以下实现将“空类”添加到名为 NSDataExtensions.cs 的文件夹。
 

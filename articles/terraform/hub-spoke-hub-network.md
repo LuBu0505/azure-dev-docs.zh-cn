@@ -4,12 +4,12 @@ description: 了解如何在 Azure 中创建中心虚拟网络，用于充当其
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0833497301865506592639838c7d6075813bcf6e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ee75fe6c7fe49463137f9e0a68e518290f78acce
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241139"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401507"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建中心虚拟网络
 
@@ -22,8 +22,6 @@ ms.locfileid: "88241139"
 > * 使用 Terraform 创建中心跳转盒虚拟机。
 > * 使用 Terraform 创建中心虚拟专用网络网关。
 > * 使用 Terraform 创建中心和本地网关连接。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -227,6 +225,8 @@ ms.locfileid: "88241139"
     ```
     
 3. 保存文件，并退出编辑器。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -5,18 +5,16 @@ keywords: azure devops terraform linux vm 虚拟机
 ms.topic: how-to
 ms.date: 06/14/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 387f53b9fb1a78a66b9628346564132002b77fb0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 13c519aeabfdd5a432dc16188e8d61241391c742
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241219"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401617"
 ---
 # <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>使用 Terraform 在 Azure 中创建带有基础结构的 Linux VM
 
 使用 Terraform 可以在 Azure 中定义和创建完整的基础结构部署。 以用户可读格式生成 Terraform 模板，用于以一致且可重现的方式创建和配置 Azure 资源。 本文介绍了如何使用 Terraform 创建完整的 Linux 环境和支持资源。 另外，你还可以了解如何[安装和配置 Terraform](get-started-cloud-shell.md)。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -435,8 +433,6 @@ terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
 persisted to local or remote state storage.
-
-
 ...
 
 Note: You didn't specify an "-out" parameter to save this plan, so when
@@ -475,6 +471,8 @@ az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -
 ```bash
 ssh azureuser@<publicIps>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

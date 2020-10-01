@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 569b4b1744e1f0ddad18c9553bc7fc3879c39260
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 800e4d45417c7842d12e92c6e18dfdd6a1bc567f
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831283"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586184"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -59,7 +59,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
-请执行以下步骤，通过 Azure 支持创建一个新的 Spring Boot 应用程序项目。 也可使用 [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) 存储库中的 [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmosdb) 示例， 然后即可直接跳到[生成并测试应用](#build-and-test-your-app)。
+请执行以下步骤，通过 Azure 支持创建一个新的 Spring Boot 应用程序项目。 也可使用 [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) 存储库中的 [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmos) 示例， 然后即可直接跳到[生成并测试应用](#build-and-test-your-app)。
 
 1. 浏览到 <https://start.spring.io/>。
 
@@ -435,7 +435,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 [面向 Java 开发人员的 Azure]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Spring Data for Azure Cosmos DB SQL API]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[用于 Azure 的 Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmosdb
+[用于 Azure 的 Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
 [免费的 Azure 帐户]: https://azure.microsoft.com/pricing/free-trial/
 [使用 Azure DevOps 和 Java]: https://azure.microsoft.com/services/devops/java/
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

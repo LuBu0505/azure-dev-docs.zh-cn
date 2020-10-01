@@ -4,20 +4,18 @@ description: 了解可配置来验证 Terraform 项目的不同测试选项。
 ms.topic: overview
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 29f128361030b64da38124f7f7d723619306f582
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6c782b2a6fed14698aede5a7dbfb6eae5ff9cf4a
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241269"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401667"
 ---
 # <a name="tutorial-terraform-testing-overview"></a>教程：Terraform 测试概述
 
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 Terraform 是一种基础结构即代码 (IaC) 工具。 这类工具指的是你将 Terraform 文件看作是项目的源代码。 在此过程中，包括版本控制和源代码管理。 此外，还应在该过程中包含测试。 本文概述了可对 Terraform 项目运行的不同类型的测试。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="integration-testing"></a>集成测试
 
@@ -59,3 +57,5 @@ E2E 测试通常分三步执行。 首先，将配置应用于测试环境。 �
 
 > [!div class="nextstepaction"]
 > [详细了解端到端测试](best-practices-end-to-end-testing.md)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]

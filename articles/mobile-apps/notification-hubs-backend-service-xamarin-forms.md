@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 85b8bbc6e0a84e7da47b11eef4f22714912af72f
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: f173f8431cc7bed0ae56bf14cfc6efcf37dcf230
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810660"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493257"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>教程：使用 Azure 通知中心通过后端服务向 Xamarin.Forms 应用发送推送通知  
 
@@ -23,7 +23,7 @@ ms.locfileid: "87810660"
 > * [Flutter](notification-hubs-backend-service-flutter.md)
 > * [React Native](notification-hubs-backend-service-react-native.md)
 
-在本教程中，将使用[ Azure 通知中心](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)将推送通知发送到适用于 Android 和 iOS 的[ Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms) 应用程序。   
+在本教程中，将使用[ Azure 通知中心](/azure/notification-hubs/notification-hubs-push-notification-overview)将推送通知发送到适用于 Android 和 iOS 的[ Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms) 应用程序。   
 
 [!INCLUDE [Notification Hubs Backend Service Introduction](includes/notification-hubs-backend-service-introduction.md)]
 
@@ -62,9 +62,9 @@ ms.locfileid: "87810660"
 可以遵循此首要原则示例中的步骤，而不需要事先体验。 不过，如能熟悉以下方面则会更有帮助。
 
 * [Azure 开发人员门户](https://developer.apple.com)
-* [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase 控制台](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
+* [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](/azure/notification-hubs/ios-sdk-get-started)
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) 和 [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)。
 
 提供的步骤适用于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)但使用 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 的用户也可按此操作。
@@ -85,7 +85,7 @@ ms.locfileid: "87810660"
 
 ## <a name="create-an-aspnet-core-web-api-backend-application"></a>创建 ASP.NET Core Web API 后端应用程序
 
-在本部分中，将创建 [ASP.NET Core Web API](https://dotnet.microsoft.com/apps/aspnet/apis) 后端来进行[设备注册](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration)并将通知发送到 Xamarin.Forms 移动应用。
+在本部分中，将创建 [ASP.NET Core Web API](https://dotnet.microsoft.com/apps/aspnet/apis) 后端来进行[设备注册](/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration)并将通知发送到 Xamarin.Forms 移动应用。
 
 [!INCLUDE [Create an ASP.NET Core Web API backend application](includes/notification-hubs-backend-service-web-api.md)]
 
@@ -117,15 +117,15 @@ ms.locfileid: "87810660"
 
 ## <a name="related-links"></a>相关链接
 
-* [Azure 通知中心概述](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
-* [在 Windows 上安装 Xamarin](https://docs.microsoft.com/xamarin/get-started/installation/windows)
+* [Azure 通知中心概述](/azure/notification-hubs/notification-hubs-push-notification-overview)
+* [安装 Visual Studio for Mac](/visualstudio/mac/installation?view=vsmac-2019)
+* [在 Windows 上安装 Xamarin](/xamarin/get-started/installation/windows)
 * [用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub 上的通知中心 SDK](https://github.com/Azure/azure-notificationhubs)
-* [使用应用程序后端注册](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
-* [注册管理](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
-* [使用标记](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
-* [使用自定义模板](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
+* [使用应用程序后端注册](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [注册管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [使用标记](/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [使用自定义模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>后续步骤
 

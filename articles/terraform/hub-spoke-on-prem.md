@@ -4,12 +4,12 @@ description: 了解如何在 Azure 中实现包含本地资源的本地虚拟网
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4faf366a585c7652584e5b70cf10b150a91d1b0e
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241099"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401467"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建本地虚拟网络
 
@@ -22,8 +22,6 @@ ms.locfileid: "88241099"
 > * 使用 Terraform 创建中心网络设备资源
 > * 使用 Terraform 创建本地虚拟机
 > * 使用 Terraform 创建本地虚拟专用网络网关
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -221,6 +219,8 @@ ms.locfileid: "88241099"
     ```
 
 1. 保存文件并退出编辑器。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

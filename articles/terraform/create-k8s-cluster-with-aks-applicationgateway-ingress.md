@@ -5,12 +5,12 @@ keywords: azure devops terraform application gateway ingress aks kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 4d83e6720958ff76126c7e71e8cfbbcfb13c666a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241259"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401657"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中创建应用程序网关入口控制器
 
@@ -27,8 +27,6 @@ ms.locfileid: "88241259"
 > * 使用 Terraform 和 AKS 创建 Kubernetes 群集。
 > * 使用 kubectl 工具测试 Kubernetes 群集的可用性。
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>先决条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
@@ -37,7 +35,7 @@ ms.locfileid: "88241259"
 
 - **Azure 资源组**：如果没有用于演示的 Azure 资源组，请[创建 Azure 资源组](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 记下资源组名称和位置，因为这些值将在演示中使用。
 
-- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName` 和 `password` 的值。
+- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName` 和 `password` 的值。
 
 - **获取服务主体对象 ID**：在 Cloud Shell 中运行以下命令：`az ad sp list --display-name <displayName>`
 
@@ -774,6 +772,8 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 ```azurecli
 az group delete -n <resource-group>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

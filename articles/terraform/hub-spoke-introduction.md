@@ -4,12 +4,12 @@ description: 了解如何使用 Terraform 在 Azure 中创建完整的混合网�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 7fd6de18404f6c71184f17510699c6eb2a7be16b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241119"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401487"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>教程：使用 Terraform 在 Azure 中创建中心辐射型混合网络拓扑
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241119"
 > * 使用 Terraform 创建单个工作负荷，用作 Azure 中的辐射 VNet
 > * 使用 Terraform 在本地与 Azure 网络之间建立网关和连接
 > * 使用 Terraform 来与辐射网络建立 VNet 对等互连
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -157,6 +155,8 @@ ms.locfileid: "88241119"
     ```
 
 1. 保存文件并退出编辑器。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

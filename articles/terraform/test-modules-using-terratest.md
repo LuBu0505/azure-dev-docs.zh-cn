@@ -4,12 +4,12 @@ description: 了解如何使用 Terratest 来测试 Terraform 模块。
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: f174c6c3a4a91fe47ded8ade8826ce9c4c09af65
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ec42182fd20ce073f727b8096d15e2a87a3c1207
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241059"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401697"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>教程：使用 Terratest 在 Azure 中测试 Terraform 模块
 
@@ -27,14 +27,12 @@ ms.locfileid: "88241059"
 - **测试用例以 Go 编写** - 使用 Terraform 的许多开发人员都是 Go 开发人员。 如果是 Go 开发人员，则不需要再学习一种编程语言就可以使用 Terratest。
 - **可扩展的基础架构** - 可以在 Terratest 的基础上扩展其他功能，包括特定于 Azure 的功能。
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>先决条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Go 编程语言**：Terraform 测试用例以 [Go](https://golang.org/dl/) 编写。
 - **dep**：[dep](https://github.com/golang/dep#installation) 是适用于 Go 的依赖项管理工具。
-- **Azure CLI**：[Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 是可用于管理 Azure 资源的命令行工具。 （Terraform 支持通过服务主体或[通过 Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html) 向 Azure 进行身份验证。）
+- **Azure CLI**：[Azure CLI](/cli/azure/install-azure-cli) 是可用于管理 Azure 资源的命令行工具。 （Terraform 支持通过服务主体或[通过 Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html) 向 Azure 进行身份验证。）
 - **mage**：我们使用 [mage 可执行文件](https://github.com/magefile/mage/releases)来演示如何简化 Terratest 用例的运行。 
 
 ## <a name="create-a-static-webpage-module"></a>创建静态网页模块
@@ -521,6 +519,8 @@ mage
 **可选：设置运行验收测试所需的服务主体环境变量**
  
 可以通过设置服务主体环境变量来完成 Azure 身份验证，不必在测试之前执行 `az login`。 Terraform 会发布[环境变量名称列表](https://www.terraform.io/docs/providers/azurerm/index.html#testing)。 （在这些环境变量中，只有头四个是必需的。）Terraform 还会发布详细说明，介绍如何[获取这些环境变量的值](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html)。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

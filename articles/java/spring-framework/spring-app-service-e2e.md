@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 22455b8f8215e0c3bfb9d4e9d8f75788cb56d844
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 10d08226e0d97622c492f0e87a1fd0b175c76c4a
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405628"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409959"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>将 Spring 应用部署到使用 MySQL 的应用服务
 
@@ -182,13 +182,13 @@ set REGION=<region>
 
 Maven 将使用这些值来创建具有你提供的名称的 Azure 资源。 通过使用环境变量，可以将帐户机密保存在项目文件之外。
 
-接下来，更新 *pom.xml* 文件，以便为 Azure 部署配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.9.1` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
+接下来，更新 *pom.xml* 文件，以便为 Azure 部署配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.11.0` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -197,7 +197,7 @@ Maven 将使用这些值来创建具有你提供的名称的 Azure 资源。 通
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <deployment>
@@ -390,13 +390,13 @@ MySQL 现已可供使用。
 </profile>
 ```
 
-接下来，更新 *pom.xml* 文件，以便为 Azure 部署和 MySQL 的使用配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.9.1` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
+接下来，更新 *pom.xml* 文件，以便为 Azure 部署和 MySQL 的使用配置 Maven。 将以下 XML 添加到之前添加的 `<plugin>` 元素之后。 如有必要，请将 `1.11.0` 更改为[适用于 Azure 应用服务的 Maven 插件](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)的当前版本。
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -405,7 +405,7 @@ MySQL 现已可供使用。
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <appSettings>

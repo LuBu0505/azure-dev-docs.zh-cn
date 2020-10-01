@@ -4,12 +4,12 @@ description: 了解如何将行为驱动开发 (BDD) 样式符合性测试应用
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 7abb4072d923d4d5ec4fa3df6251f07576dba3bc
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 26b32beabaa4526a79c28639fd6f7c68b7a7d49d
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241309"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401687"
 ---
 # <a name="tutorial-compliance-testing-with-terraform-and-azure"></a>教程：使用 Terraform 和 Azure 进行符合性测试
 
@@ -20,8 +20,6 @@ ms.locfileid: "88241309"
 > [!div class="checklist"]
 > * 了解何时采用符合性测试
 > * 了解如何执行符合性检查
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -196,6 +194,8 @@ Scenario Outline: Ensure that specific tags are defined
     ```
 
     ![成功测试的示例](media/best-practices-compliance-testing/best-practices-compliance-testing-tagging-succeed.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

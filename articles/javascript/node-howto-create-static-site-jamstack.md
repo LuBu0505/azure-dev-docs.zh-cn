@@ -1,15 +1,15 @@
 ---
 title: 使用 Node.js、API 和标记在 Azure 上构建静态站点
 description: 如何使用 Azure 构建 JAMstack 应用（JavaScript、API 和标记）
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: 354c55609092bbeaf21b4e1eefdd125967eccfd6
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, devx-track-js
+ms.openlocfilehash: 25c379382d94a1892ad86becbb26cdf347ff006f
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218697"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364530"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>使用 Node.js 在 Azure 上构建 JAMstack（静态站点）Web 应用
 

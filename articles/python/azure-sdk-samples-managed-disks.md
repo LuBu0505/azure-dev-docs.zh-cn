@@ -4,12 +4,12 @@ description: 创建、调整和更新托管磁盘。
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: b1973276f6cf080006f61ddc3a2805c345591e89
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 53f93098840c2635b388df2c2fd97fe6b3c8af48
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831523"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493058"
 ---
 # <a name="managed-disks"></a>托管磁盘
 
@@ -26,7 +26,7 @@ Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更�
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.disks.create_or_update(
+async_creation = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -45,7 +45,7 @@ disk_resource = async_creation.result()
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.disks.create_or_update(
+async_creation = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -64,7 +64,7 @@ disk_resource = async_creation.result()
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.images.create_or_update(
+async_creation = compute_client.images.begin_create_or_update(
     'my_resource_group',
     'my_image_name',
     {
@@ -89,7 +89,7 @@ from azure.mgmt.compute.models import DiskCreateOption
 
 # If you don't know the id, do a 'get' like this to obtain it
 managed_disk = compute_client.disks.get(self.group_name, 'myImageDisk')
-async_creation = compute_client.disks.create_or_update(
+async_creation = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -151,7 +151,7 @@ vm.storage_profile.data_disks.append({
         'id': managed_disk.id
     }
 })
-async_update = compute_client.virtual_machines.create_or_update(
+async_update = compute_client.virtual_machines.begin_create_or_update(
     'my_resource_group',
     vm.name,
     vm,

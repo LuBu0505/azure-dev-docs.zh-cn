@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: d7c791aec426e139592e8a32e7779b2f02832d5f
-ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
+ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026408"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493118"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>使用 GitHub Actions 连接到 Azure
 
@@ -30,7 +30,7 @@ Azure CLI 为 Azure CLI 设置 GitHub 操作运行程序环境。 Azure PowerShe
 
 在本例中，你将创建一个可用于向 Azure 进行身份验证的机密，名为 `AZURE_CREDENTIALS`。  
 
-1. 如果没有现有的应用程序，请注册[新 Active Directory 应用程序](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true)，以便用于服务主体。
+1. 如果没有现有的应用程序，请注册[新 Active Directory 应用程序](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true)，以便用于服务主体。
 
     ```azurecli-interactive
         appName="myApp"
@@ -41,7 +41,7 @@ Azure CLI 为 Azure CLI 设置 GitHub 操作运行程序环境。 Azure PowerShe
         --identifier-uris http://localhost/$appName
     ```
 
-1. 在 Azure 门户中为你的应用[创建新服务主体](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 
+1. 在 Azure 门户中为你的应用[创建新服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -67,11 +67,11 @@ Azure CLI 为 Azure CLI 设置 GitHub 操作运行程序环境。 Azure PowerShe
 
 1. 依次选择“机密”和“新建机密” 。
 
-    :::image type="content" source="media/select-secrets.png" alt-text="选择以添加机密":::
+    :::image type="content" source="media/select-secrets.png" alt-text="在导航中选择“设置”":::
 
 1. 粘贴名为 `AZURE_CREDENTIALS` 的服务主体的 JSON 对象。 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="在 GitHub 中添加机密":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="在导航中选择“设置”":::
 
 1. 通过选择“添加机密”保存。
 
@@ -158,19 +158,19 @@ build-and-deploy:
 
 ### <a name="azure-active-directory"></a>Azure Active Directory 
 
-- [通过 Azure AD（单一登录）登录到 GitHub Enterprise](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)   
+- [通过 Azure AD（单一登录）登录到 GitHub Enterprise](/azure/active-directory/saas-apps/github-tutorial)   
 
 ### <a name="power-bi"></a>Power BI
 
-- [将 Power BI 与 GitHub 连接](https://docs.microsoft.com/power-bi/service-connect-to-github)   
+- [将 Power BI 与 GitHub 连接](/power-bi/service-connect-to-github)   
 
 ### <a name="connectors"></a>连接器
 
-- [适用于 Azure 逻辑应用、Power Automate 和 Power Apps 的 GitHub 连接器](https://docs.microsoft.com/connectors/github/)   
+- [适用于 Azure 逻辑应用、Power Automate 和 Power Apps 的 GitHub 连接器](/connectors/github/)   
 
 ### <a name="azure-databricks"></a>Azure Databricks
 
-- [使用 GitHub 作为笔记本的版本控制](https://docs.microsoft.com/azure/databricks/notebooks/github-version-control) 
+- [使用 GitHub 作为笔记本的版本控制](/azure/databricks/notebooks/github-version-control) 
 
 > [!div class="nextstepaction"]
 > [将应用从 GitHub 部署到 Azure](deploy-to-azure.md)

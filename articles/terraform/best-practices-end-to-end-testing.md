@@ -4,12 +4,12 @@ description: 详细了解在 Terraform 项目上使用 Terratest 进行端到端
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 182d403ed227eca50961e9db2df0d6766c4b9f54
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241289"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401707"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>教程：在 Terraform 项目上设置端到端 Terratest 测试
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241289"
 > * 了解使用 [Terratest](https://github.com/gruntwork-io/terratest) 进行端到端测试的基础知识
 > * 了解如何使用 Golang 编写端到端测试
 > * 了解如何使用 Azure DevOps 在将代码提交到存储库时自动触发端到端测试
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -155,6 +153,8 @@ go test -v ./ -timeout 10m
 PASS
 ok      test    391.052s
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

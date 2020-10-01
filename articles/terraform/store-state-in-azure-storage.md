@@ -4,12 +4,12 @@ description: 了解如何在 Azure 存储中存储 Terraform 状态。
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d2fd110fec8d23bd8382669cbb572ce46b6fd1e6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241179"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401737"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>教程：在 Azure 存储中存储 Terraform 状态
 
@@ -20,8 +20,6 @@ Terraform 状态用于对已部署资源和 Terraform 配置进行对帐。 Terr
 - 本地存储状态会增加意外删除的可能性。
 
 Terraform 支持在远程存储中保存状态。 其中一个受支持的后端是 Azure 存储。 本文档介绍如何配置和使用 Azure 存储以实现此目的。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -126,6 +124,8 @@ resource "azurerm_resource_group" "state-demo-secure" {
 Azure blob 中存储的数据会在保存之前进行加密。 如有需要，Terraform 会从后端检索状态并将其存储在本地内存中。 使用此模式时，状态永远不会写入本地磁盘。
 
 有关 Azure 存储加密的详细信息，请参阅[静态数据的 Azure 存储服务加密](/azure/storage/common/storage-service-encryption)。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

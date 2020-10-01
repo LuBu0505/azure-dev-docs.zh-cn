@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 157a9e7a3f9f366035512d97a843d31dcfdc3bdb
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 0ab44652d4a635d5ff04928b76883a76fe3a62fa
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632339"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493108"
 ---
 # <a name="cloud-hosted-source-code-management-services"></a>云托管的源代码管理服务
 
@@ -63,7 +63,7 @@ ms.locfileid: "84632339"
 
 ## <a name="azure-devops"></a>Azure DevOps
 
-[Azure DevOps](https://azure.microsoft.com/services/devops/) 支持 [Azure Repos](https://azure.microsoft.com/services/devops/repos/) 和 [Team Foundation 版本控制 (TFVC)](https://docs.microsoft.com/azure/devops/repos/tfvc/index?view=azure-devops) 作为源代码管理选项。 它拥有无限制的免费专用存储库，并提供协作代码评审、高级文件管理、代码搜索和分支策略，以确保高质量代码。 对于需要本机 Azure Active Directory 支持和高级策略的小型项目和大型组织而言，Azure Repos 非常有用。
+[Azure DevOps](https://azure.microsoft.com/services/devops/) 支持 [Azure Repos](https://azure.microsoft.com/services/devops/repos/) 和 [Team Foundation 版本控制 (TFVC)](/azure/devops/repos/tfvc/index?view=azure-devops) 作为源代码管理选项。 它拥有无限制的免费专用存储库，并提供协作代码评审、高级文件管理、代码搜索和分支策略，以确保高质量代码。 对于需要本机 Azure Active Directory 支持和高级策略的小型项目和大型组织而言，Azure Repos 非常有用。
 
 ### <a name="azure-devops-features"></a>Azure DevOps 功能
 

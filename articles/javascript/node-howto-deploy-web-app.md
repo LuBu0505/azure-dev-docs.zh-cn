@@ -1,15 +1,15 @@
 ---
 title: 将 Node.js Web 应用部署到 Azure
 description: 开始使用 Azure 应用服务和其他用于托管 Web 应用（包括渐进式 Web 应用 (PWA)）的选项
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 379960ccbeec1fc5fdd0030e7460a97acb149066
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 443b7454ec23dea8e5dc53d8207a7e4935763d2e
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218643"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365170"
 ---
 # <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>将 Node.js Web 应用部署到 Azure 应用服务
 

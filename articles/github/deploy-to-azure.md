@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 4b301ac653664181970949bef35aca4211eaab23
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: b1f28c83a9ee24347edfc275ec5a07f4c137b20f
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631717"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493098"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>将应用从 GitHub 部署到 Azure 
 
@@ -19,16 +19,15 @@ ms.locfileid: "83631717"
 
 ## <a name="azure-web-apps"></a>Azure Web 应用
 
-- [将应用从 GitHub 持续部署到 Azure Web 应用](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment)   
-- [使用 GitHub Actions 部署到 Azure Web 应用](https://docs.microsoft.com/azure/app-service/deploy-github-actions)  
+- [将应用从 GitHub 持续部署到 Azure Web 应用](/azure/app-service/deploy-continuous-deployment)   
+- [使用 GitHub Actions 部署到 Azure Web 应用](/azure/app-service/deploy-github-actions)  
 
 ## <a name="azure-functions"></a>Azure Functions
 
-- [从 GitHub 连续部署函数应用](https://docs.microsoft.com/azure/azure-functions/scripts/functions-cli-create-function-app-github-continuous)  
-- [使用 GitHub Actions 部署到 Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-how-to-github-actions)   
+- [从 GitHub 连续部署函数应用](/azure/azure-functions/scripts/functions-cli-create-function-app-github-continuous)  
+- [使用 GitHub Actions 部署到 Azure Functions](/azure/azure-functions/functions-how-to-github-actions)   
 
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes 服务
 
-- [使用 GitHub Actions 部署到 Kubernetes](https://docs.microsoft.com/azure/aks/kubernetes-action)  
-- [使用 GitHub Actions 部署到 Azure Dev Spaces](https://docs.microsoft.com//azure/dev-spaces/how-to/github-actions)   
-
+- [使用 GitHub Actions 部署到 Kubernetes](/azure/aks/kubernetes-action)  
+- [使用 GitHub Actions 部署到 Azure Dev Spaces](//azure/dev-spaces/how-to/github-actions)

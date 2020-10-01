@@ -3,13 +3,13 @@ title: 了解如何使用 Azure 和 JavaScript 进行开发
 description: 在 Microsoft Learn 平台上，通过 JavaScript 拓展对 Azure 的理解
 ms.topic: reference
 ms.date: 08/07/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 503348c6c31c0a89461a049ce5f1cdc5bbb81c94
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: ceb0f9dfc2cdbf7180a07275834cf0cb68c80939
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772970"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91209233"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>了解如何使用 Azure 和 JavaScript 进行开发 
 

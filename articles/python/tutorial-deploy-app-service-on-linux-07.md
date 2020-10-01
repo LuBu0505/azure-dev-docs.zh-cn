@@ -4,12 +4,12 @@ description: 教程步骤 7，清理 Azure 资源
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cc1acdd316406d9269c97a4f5b25f465d0303509
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 523a1bb305fbaf566181f87c4affa0dd251e93a5
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831473"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91209364"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7:在从 Visual Studio Code 部署到 Linux 上的 Azure 应用服务后清理资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "90831473"
 
 可能还有其他用于 VS Code 的 Azure 扩展对你有用。 直接在“扩展”资源管理器中搜索“Azure”：
 
-![适用于 Visual Studio Code 的 Azure 扩展](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
+![适用于 Visual Studio Code 的 Azure 扩展](media/deploy-azure/azure-extensions-for-visual-studio-code.png)
 
 下面是一些常用的扩展：
 

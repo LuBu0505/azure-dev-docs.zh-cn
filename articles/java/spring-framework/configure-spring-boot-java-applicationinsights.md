@@ -10,12 +10,12 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 97825b81869ac6d2845576bd77a972d4573a624d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ee48999f7d83857c4992e74ad4dc4b248bfe195b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831753"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365210"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>将 Spring Boot Initializer 应用配置为使用 Application Insights
 
@@ -102,7 +102,7 @@ ms.locfileid: "90831753"
    spring.application.name=[your app name]
    ```
 
-   有关微调 Application Insights 的其他方法，请参阅 [Application Insights Springboot Starter 自述文件](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md)。
+   有关微调 Application Insights 的其他方法，请参阅 [Application Insights Springboot Starter 自述文件](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md)。
 
    > [!NOTE]
    > 
@@ -282,7 +282,7 @@ Application Insights 支持收集外部依赖项及其与传入请求之间的�
 
 有关 Azure Application Insights 的详细信息及其监视功能，请查看 **[Application Insights]** 主页。
 
-有关 Application Insights Spring Boot Starter 的其他配置详细信息，请参阅[此链接](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md)。
+有关 Application Insights Spring Boot Starter 的其他配置详细信息，请参阅[此链接](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md)。
 
 如需请求新功能和报告潜在的 bug，请在 [GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues) 存储库中提出问题。
 

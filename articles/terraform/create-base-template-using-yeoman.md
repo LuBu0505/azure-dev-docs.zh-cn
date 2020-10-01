@@ -4,12 +4,12 @@ description: 了解如何使用 Yeoman 在 Azure 中创建 Terraform 基模板�
 ms.topic: how-to
 ms.date: 05/25/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: aa71698735d96bd591b15d6804fd2d142602d326
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f125f6d1fd5b37fc023343dc045a70dd92084840
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241279"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401717"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>使用 Yeoman 在 Azure 中创建 Terraform 基模板
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241279"
 > * 使用两种不同的方法测试 Terraform 模板。
 > * 使用 Docker 文件运行 Terraform 模块。
 > * 在 Azure Cloud Shell 中以本机方式运行 Terraform 模块。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -290,6 +288,8 @@ Yeoman 模板在当前目录中生成文件。 由于此原因，需创建一个
     ```
 
     ![测试通过结果](media/create-a-base-template-using-yeoman/ymg-pass.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -5,12 +5,12 @@ keywords: azure devops terraform aks kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 726f4544f4c417792d784dfaddf93a3d79eaec9e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ccf5855f414b233f97642f60a4f52c99848b34cd
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241249"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401647"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>使用 Terraform 和 Azure Kubernetes 服务 (AKS) 创建 Kubernetes 群集
 
@@ -23,15 +23,13 @@ ms.locfileid: "88241249"
 > * 使用 Terraform 和 AKS 创建 Kubernetes 群集
 > * 使用 kubectl 工具测试 Kubernetes 群集的可用性
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>先决条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 - **配置 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)一文中的指导
 
-- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName`、`password` 和 `tenant` 的值。
+- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName`、`password` 和 `tenant` 的值。
 
 ## <a name="create-the-directory-structure"></a>创建目录结构
 
@@ -401,6 +399,8 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
 ## <a name="monitor-health-and-logs"></a>监视运行状况和日志
 
 创建 AKS 群集以后，已启用监视功能来捕获群集节点和 Pod 的运行状况指标。 Azure 门户提供这些运行状况指标。 有关容器运行状况监视的详细信息，请参阅[监视 Azure Kubernetes 服务运行状况](/azure/azure-monitor/insights/container-insights-overview)。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

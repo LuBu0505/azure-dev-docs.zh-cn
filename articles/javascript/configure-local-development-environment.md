@@ -3,13 +3,13 @@ title: 为 Azure 开发配置本地 JavaScript 环境
 description: 如何设置适用于 Azure 的本地 JavaScript 开发环境，包括编辑器、Azure SDK 库、可选工具以及库身份验证所需的凭据。
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 93d76b4268d9d9b1533599ce474fe0c554723e28
-ms.sourcegitcommit: 823d5e5b8bbac36fa08a578a0eb2efaa0239bfb7
+ms.custom: devx-track-js
+ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128950"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208678"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>为 Azure 配置本地 JavaScript 开发环境
 

@@ -3,22 +3,20 @@ title: 结合使用 Azure 部署槽位和 Terraform 来预配基础结构
 description: 了解如何将 Terraform 与 Azure 提供程序部署槽位配合使用。
 keywords: azure devops terraform deployment slots
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad98549bca6b98635d111ee333212bd8b9a9dbba
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241205"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401767"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>结合使用 Azure 部署槽位和 Terraform 来预配基础结构
 
 可以使用 [Azure 部署槽位](/azure/app-service/deploy-staging-slots)交换应用的不同版本。 该功能有助于最大程度地降低中断部署造成的影响。 
 
 本文将会通过 GitHub 和 Azure 演练两个应用的部署，以演示部署槽位的示例用法。 一个应用托管在生产槽位中。 另一个应用托管在过渡槽位中。 （名称“生产”和“暂存”是任意名称。 它们可以是适用于你的情形的任何内容。）配置部署槽位后，可根据需要使用 Terraform 在两个槽位之间交换。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -303,6 +301,8 @@ terraform apply
 ```
 
 交换应用后，会看到原始配置。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

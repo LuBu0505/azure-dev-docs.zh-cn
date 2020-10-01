@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, 概述, 云预配, 配置管理, 应用程序�
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 2bd996a93952df1f52c2a007d73f7f37e4e0f132
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239959"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586098"
 ---
 # <a name="using-ansible-with-azure"></a>在 Azure 中使用 Ansible
 
@@ -24,9 +24,9 @@ ms.locfileid: "88239959"
 
 ## <a name="ansible-modules"></a>Ansible 模块
 
-Ansible 包括一组 [Ansible 模块](https://docs.ansible.com/ansible/latest/modules_by_category.html)，这些模块可直接在远程主机上或通过 [playbook](https://docs.ansible.com/ansible/latest/playbooks.html) 运行。 用户可创建他们自己的模块。 模块用于控制系统资源（例如，服务、包或文件）或执行系统命令。
+Ansible 包括一组 [Ansible 模块](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html)，这些模块可直接在远程主机上或通过 [playbook](https://docs.ansible.com/ansible/latest/playbooks.html) 运行。 用户可创建他们自己的模块。 模块用于控制系统资源（例如，服务、包或文件）或执行系统命令。
 
-为了与 Azure 服务进行交互，Ansible 包含一套 [Ansible 云模块](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure)。 可使用这些模块在 Azure 上创建和编排基础结构。 
+为了与 Azure 服务进行交互，Ansible 包含一套 [Ansible 云模块](https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure)。 可使用这些模块在 Azure 上创建和编排基础结构。 
 
 ## <a name="migrate-existing-workload-to-azure"></a>将现有工作负荷迁移到 Azure
 

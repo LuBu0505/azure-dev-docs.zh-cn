@@ -4,12 +4,12 @@ description: 了解如何创建中心虚拟网络 (VNet)，用于充当其他网
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 1bc9b2b899157985394165171adc76d988fe7e6a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241129"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401449"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>教程：在 Azure 中使用 Terraform 创建中心虚拟网络设备
 
@@ -24,8 +24,6 @@ Azure 支持各种网络虚拟设备，可供选择。 本文使用 Ubuntu 映�
 > * 使用 Terraform 创建充当设备的中心网络虚拟机
 > * 使用 Terraform 启用使用 CustomScript 扩展的路由
 > * 使用 Terraform 创建中心辐射型网关路由表
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -270,6 +268,8 @@ Azure 支持各种网络虚拟设备，可供选择。 本文使用 Ubuntu 映�
     ```
 
 1. 保存文件并退出编辑器。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

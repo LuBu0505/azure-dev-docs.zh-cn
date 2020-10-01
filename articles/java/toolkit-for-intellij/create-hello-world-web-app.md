@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: b340802d861ad1dbe1b4f118734e527cdefeec21
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831597"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586170"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>使用 IntelliJ 创建适用于 Azure 应用服务的 Hello World Web 应用
 
@@ -61,7 +61,7 @@ ms.locfileid: "90831597"
 
 1. 在“新建项目”对话框中，选择“Maven”，并确保已选中“从原型创建”选项  。 从列表中选择“maven-archetype-webapp”，然后单击“下一步” 。
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="选择“maven-archetype-webapp”选项。"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="在 IntelliJ 上登录到 Azure。"::: 
 
 1. 展开“项目坐标”下拉列表查看所有输入字段，并为新的 Web 应用指定以下信息，然后单击“下一步” ：
 
@@ -80,7 +80,7 @@ ms.locfileid: "90831597"
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="打开 index.jsp 文件。":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
 ## <a name="deploying-web-app-to-azure"></a>将 Web 应用部署到 Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "90831597"
 
    a. 单击“没有可用的 Web 应用，单击以新建一个”，创建一个新的 Web 应用。 如果订阅中已存在现有的 Web 应用，则请从“Web 应用”下拉列表中选择“创建新的 Web 应用”。
 
-      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="“部署到 Azure”对话框窗口。":::
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
    在弹出的“创建 Web 应用”对话框中，指定以下信息，然后单击“确定” ： 
 
@@ -107,7 +107,7 @@ ms.locfileid: "90831597"
 
 1. 可使用状态消息中提供的链接转到 Web 应用。
 
-   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="浏览 Web 应用。":::
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
 ## <a name="managing-deploy-configurations"></a>管理部署配置
 
@@ -116,7 +116,7 @@ ms.locfileid: "90831597"
 
 1. 在运行 Web 应用的部署之前，可单击 Web 应用的下拉菜单并选择“编辑配置”来修改默认设置。
 
-   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="编辑配置菜单。":::
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
 1. 在“运行/调试配置”对话框中，可修改任何默认设置。 单击“确定”保存设置。****
 
@@ -145,7 +145,6 @@ ms.locfileid: "90831597"
 [Web 应用概述]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
 [Jetty]: http://www.eclipse.org/jetty/
-[Legacy Version]: create-hello-world-web-app-legacy-version.md
 [intelliJ-sign-in-instructions]: sign-in-instructions.md
 
 <!-- IMG List -->

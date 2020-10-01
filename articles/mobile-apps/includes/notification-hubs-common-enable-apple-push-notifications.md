@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: f83e5ae060ee6b13523af8dbb271906dff02e027
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 07778fad0d390b297850a10b544f08d9e5ec3569
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401406"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493132"
 ---
 ### <a name="register-your-ios-app-for-push-notifications"></a>为推送通知注册 iOS 应用
 
@@ -51,7 +51,7 @@ ms.locfileid: "87401406"
 
 1. [创建可用于基于令牌的身份验证的 p8 证书](#option-2-creating-a-p8-certificate-that-can-be-used-for-token-based-authentication)（推荐的较新方法）
 
-如[基于令牌 (HTTP/2) 的 APNS 身份验证](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)中所述，较新的方法有很多好处。 所需的步骤较少，但一些步骤对于特定的场景来说也是必需的。 不过，这两种方法的步骤均已提供，因为在本教程中，这两种方法均适用。
+如[基于令牌 (HTTP/2) 的 APNS 身份验证](/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)中所述，较新的方法有很多好处。 所需的步骤较少，但一些步骤对于特定的场景来说也是必需的。 不过，这两种方法的步骤均已提供，因为在本教程中，这两种方法均适用。
 
 ##### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>选项 1：创建可以直接上传到通知中心的 p12 推送证书
 
@@ -168,7 +168,7 @@ ms.locfileid: "87401406"
 1. 在“Select certificates”（选择证书）窗口中，选择用于代码签名的开发证书，然后选择“Continue”（继续）。 
 
     > [!NOTE]
-    > 此证书不是在[上一步](#creating-a-certificate-for-notification-hubs)中创建的推送证书。 这是开发证书。 如果没有开发证书，则必须创建一个，因为这是本教程的[先决条件](#prerequisites)。 开发人员证书可以在 [Apple 开发人员门户](https://developer.apple.com)中通过 [Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html)创建，或在 [Visual Studio](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/) 中创建。
+    > 此证书不是在[上一步](#creating-a-certificate-for-notification-hubs)中创建的推送证书。 这是开发证书。 如果没有开发证书，则必须创建一个，因为这是本教程的[先决条件](#prerequisites)。 开发人员证书可以在 [Apple 开发人员门户](https://developer.apple.com)中通过 [Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html)创建，或在 [Visual Studio](/xamarin/ios/get-started/installation/device-provisioning/) 中创建。
 
 1. 返回到“Certificates, Identifiers & Profiles”（证书、标识符和配置文件）页，从左侧菜单中选择“Profiles”（配置文件），然后选择 **+** 创建新的配置文件。 此时将显示“Register a New Provisioning Profile”（注册新的预配配置文件）屏幕。
 

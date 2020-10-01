@@ -4,12 +4,12 @@ description: 了解集成测试，学习如何使用 Azure DevOps 为 Terraform 
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831993"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401727"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>教程：在 Azure 中为 Terraform 项目配置集成测试
 
@@ -25,14 +25,12 @@ ms.locfileid: "90831993"
 > * 运行 `terraform plan`，从远程服务的角度验证 Terraform 配置文件。
 > * 使用 Azure 管道自动进行持续集成。
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>必备条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 组织和项目**：如果没有，请[创建 Azure DevOps 组织](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops)。
+- **Azure DevOps 组织和项目**：如果没有，请[创建 Azure DevOps 组织](/azure/devops/organizations/projects/create-project)。
 - **“Terraform 构建和发布任务”扩展**：[将“Terraform 构建/发布任务”扩展](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)安装到 Azure DevOps 组织中。
-- **向 Azure DevOps 授予访问你的 Azure 订阅的权限**：创建一个名为 `terraform-basic-testing-azure-connection` 的 [Azure 服务连接](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)，以允许 Azure Pipelines 连接到你的 Azure 订阅
+- **向 Azure DevOps 授予访问你的 Azure 订阅的权限**：创建一个名为 `terraform-basic-testing-azure-connection` 的 [Azure 服务连接](/azure/devops/pipelines/library/connect-to-azure)，以允许 Azure Pipelines 连接到你的 Azure 订阅
 - **安装 Terraform**：根据你的环境，[下载并安装 Terraform](https://www.terraform.io/downloads.html)。
 - **创建测试示例的分支**：创建 [GitHub 上的 Terraform 示例](https://github.com/Azure/terraform)的分支，并将其复制到开发/测试计算机。
 
@@ -195,7 +193,7 @@ terraform plan
 
     ![代码位置](media/best-practices-integration-testing/new-pipeline-where-github-yaml.png)
 
-1. 此时，你可能需要授权 Azure DevOps 来访问你的组织。 有关本主题的详细信息，请参阅[构建 GitHub 存储库](/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml)一文。
+1. 此时，你可能需要授权 Azure DevOps 来访问你的组织。 有关本主题的详细信息，请参阅[构建 GitHub 存储库](/azure/devops/pipelines/repos/github)一文。
 
 1. 在存储库列表中，选择你在 GitHub 组织中创建的存储库的分支。
 
@@ -222,6 +220,8 @@ terraform plan
 完成该步骤后，请查看 Azure DevOps 中的详细信息，确保一切正常运行。
 
 ![Azure DevOps 绿色管道](media/best-practices-integration-testing/azure-devops-green-pipeline.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

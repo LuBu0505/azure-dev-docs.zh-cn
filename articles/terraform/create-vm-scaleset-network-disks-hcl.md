@@ -4,12 +4,12 @@ description: 了解如何使用 Terraform 配置 Azure 虚拟机规模集并对�
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e6f83d6f4f138b92576e44cadb65c3e4d018dc66
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241239"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401627"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>使用 Terraform 创建 Azure 虚拟机规模集
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241239"
 
 > [!NOTE]
 > [GitHub 上的 Awesome Terraform 存储库](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss)中提供了本文所用的最新版本的 Terraform 配置文件。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -395,10 +393,6 @@ ms.locfileid: "88241239"
     terraform apply
     ```
 
-    命令的输出应如以下屏幕截图所示：
-
-    ![Terraform 虚拟机规模集资源组](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
-
 1. 打开浏览器并连接到该命令返回的 FQDN。
 
     ![浏览到 FQDN 后的结果](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
@@ -504,12 +498,9 @@ SSH *jumpbox* 是为了访问网络中的其他服务器而“跳转”的单个
    terraform apply
    ```
 
-完成部署后，资源组的内容应与以下屏幕截图类似：
+**注释**：
 
-![Terraform 虚拟机规模集资源组](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents-final.png)
-
-> [!NOTE]
-> 在部署的 jumpbox 和虚拟机规模集上已禁用密码登录功能。 请使用 SSH 登录以访问虚拟机。
+- 在部署的 jumpbox 和虚拟机规模集上已禁用密码登录功能。 请使用 SSH 登录以访问虚拟机。
 
 ## <a name="environment-cleanup"></a>环境清理
 
@@ -520,6 +511,8 @@ terraform destroy
 ```
 
 销毁过程可能需要几分钟才能完成。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -1,11 +1,11 @@
 ---
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f53c3e372259a01942863827bb8b03abab4db10f
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 0ab980285fcecf03efac3e132566636923e14fec
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772572"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208332"
 ---
 祝贺你，你已成功完成本演练！ 现在可以查看其他 Azure 扩展了。
 
