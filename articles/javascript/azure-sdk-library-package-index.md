@@ -1,15 +1,15 @@
 ---
 title: 适用于 JavaScript 的 Azure SDK 库
 description: 适用于 JavaScript 的 Azure SDK 中的所有库的包名称、NPM 链接、文档链接和源代码链接列表。
-ms.date: 09/16/2020
+ms.date: 09/30/2020
 ms.topic: reference
 ms.custom: devx-track-js
-ms.openlocfilehash: 24e73206552161f5a020b53f8df64d975a955814
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.openlocfilehash: a4ca35dbc4a89855e3fd4da100fe1d7b685d2f01
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208738"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621675"
 ---
 # <a name="azure-libraries-packages-for-javascript"></a>适用于 JavaScript 的 Azure 库包
 
@@ -17,9 +17,10 @@ ms.locfileid: "91208738"
 * [NPM](https://www.npmjs.com/)
 * [Yarn](https://yarnpkg.com/)
 
-使用范围的包（例如 `@azure`）是新式库。
 
-## <a name="libraries-using-azurecore"></a>使用 azure.core 的库
+[!INCLUDE [Types of SDK client libraries](includes/azure-sdk-types.md)]
+
+## <a name="modern-javascripttypescript-libraries"></a>新式 JavaScript/TypeScript 库
 
 [!INCLUDE [javascript-new-releases](../includes/javascript-new.md)]
 
