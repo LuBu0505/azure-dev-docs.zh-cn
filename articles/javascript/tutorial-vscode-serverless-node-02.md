@@ -1,15 +1,15 @@
 ---
 title: 从 Visual Studio Code 创建 Azure Functions 应用程序
-description: 教程第 2 部分：创建 Azure Functions 应用
-ms.topic: conceptual
+description: 无服务器教程第 2 部分：创建 Azure Functions 应用
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 39481fc2b5472bd2f9e54946d3ab1dd6051f00d1
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772620"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365110"
 ---
 # <a name="create-the-local-functions-app"></a>创建本地 Functions 应用
 
@@ -42,7 +42,7 @@ ms.locfileid: "90772620"
 
 1. 在提示“授权级别”  时，选择“匿名”  ：
 
-    ![输入函数名称](media/functions-extension/create-function-anonymous-auth.png)
+    ![ 在提示“授权级别”时，选择“匿名”](media/functions-extension/create-function-anonymous-auth.png)
 
 1. 几分钟后，VS Code 完成了项目的创建。 你有一个为函数命名的文件夹 *HttpExample*，其中有三个文件：
 

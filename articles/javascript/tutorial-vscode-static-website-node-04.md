@@ -1,16 +1,16 @@
 ---
 title: 通过 Visual Studio Code 将静态 Node.js 应用文件部署到 Azure 存储
-description: 教程第 4 部分：将文件部署到 Azure 存储
-ms.topic: conceptual
+description: 静态 Web 应用教程第 4 部分：将文件部署到 Azure 存储
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 3ab1a95caea62bdbd36f6f82fee6cd18301a35ba
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: e7c1ca3390f8161c7323103868c591e8c02f539e
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218339"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365290"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>将网站部署到 Azure 存储
 
@@ -26,69 +26,69 @@ ms.locfileid: "88218339"
 
 1. 选择**文件**资源管理器，右键单击 _dist/my-static-app_ 文件夹，然后选择“部署到静态网站”  ：
 
-    ![“部署到静态网站”命令](media/static-website/deploy-build-angular.png)
+    ![Angular - “部署到静态网站”命令](media/static-website/deploy-build-angular.png)
 
 1. 出现提示时，选择之前创建的存储帐户。
 
 1. 部署完成后，将显示一条带有“浏览到网站”  按钮的消息。 选择该按钮以打开部署的应用代码的主终结点。
 
-    ![“部署完成”消息](media/static-website/deployment-complete.png)
+    ![Angular - “部署完成”消息](media/static-website/deployment-complete.png)
 
-    ![Azure 中运行的静态网站](media/static-website/azure-app-angular.png)
+    ![Angular - Azure 中运行的静态网站](media/static-website/azure-app-angular.png)
 
 # <a name="react"></a>[React](#tab/react)
 
 1. 在 Visual Studio Code 中，转到 **Azure 存储**资源管理器，展开订阅，展开在上一步中创建的 Azure 存储帐户的节点，然后展开“Blob 容器”  节点。 `$web` 容器是你部署应用代码的位置。
 
-   ![Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
+   ![React - Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
 
 1. 选择**文件**资源管理器，右键单击 build  文件夹，然后选择“部署到静态网站”  ：
 
-    ![“部署到静态网站”命令](media/static-website/deploy-build-react.png)
+    ![React - “部署到静态网站”命令](media/static-website/deploy-build-react.png)
 
 1. 出现提示时，选择之前创建的存储帐户。
 
 1. 部署完成后，将显示一条带有“浏览到网站”  按钮的消息。 选择该按钮以打开部署的应用代码的主终结点。
 
-    ![“部署完成”消息](media/static-website/deployment-complete.png)
+    ![React - “部署完成”消息](media/static-website/deployment-complete.png)
 
-    ![Azure 中运行的静态网站](media/static-website/azure-app-react.png)
+    ![React - Azure 中运行的静态网站](media/static-website/azure-app-react.png)
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
 1. 在 Visual Studio Code 中，转到 **Azure 存储**资源管理器，展开订阅，展开在上一步中创建的 Azure 存储帐户的节点，然后展开“Blob 容器”  节点。 `$web` 容器是你部署应用代码的位置。
 
-   ![Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
+   ![Vue - Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
 
 1. 选择**文件**资源管理器，右键单击 dist  文件夹，然后选择“部署到静态网站”  ：
 
-    ![“部署到静态网站”命令](media/static-website/deploy-build-vue.png)
+    ![Vue - “部署到静态网站”命令](media/static-website/deploy-build-vue.png)
 
 1. 出现提示时，选择之前创建的存储帐户。
 
 1. 部署完成后，将显示一条带有“浏览到网站”  按钮的消息。 选择该按钮以打开部署的应用代码的主终结点。
 
-    ![“部署完成”消息](media/static-website/deployment-complete.png)
+    ![Vue - “部署完成”消息](media/static-website/deployment-complete.png)
 
-    ![Azure 中运行的静态网站](media/static-website/azure-app-vue.png)
+    ![Vue - Azure 中运行的静态网站](media/static-website/azure-app-vue.png)
 
 # <a name="svelte"></a>[Svelte](#tab/svelte)
 
 1. 在 Visual Studio Code 中，转到 **Azure 存储**资源管理器，展开订阅，展开在上一步中创建的 Azure 存储帐户的节点，然后展开“Blob 容器”  节点。 `$web` 容器是你部署应用代码的位置。
 
-   ![Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
+   ![Svelte - Azure 存储资源管理器中的 Azure 存储节点](media/static-website/storage-nodes.png)
 
 1. 选择**文件**资源管理器，右键单击 public  文件夹，然后选择“部署到静态网站”  ：
 
-    ![“部署到静态网站”命令](media/static-website/deploy-build-svelte.png)
+    ![Svelte - “部署到静态网站”命令](media/static-website/deploy-build-svelte.png)
 
 1. 出现提示时，选择之前创建的存储帐户。
 
 1. 部署完成后，将显示一条带有“浏览到网站”  按钮的消息。 选择该按钮以打开部署的应用代码的主终结点。
 
-    ![“部署完成”消息](media/static-website/deployment-complete-svelte.png)
+    ![Svelte - “部署完成”消息](media/static-website/deployment-complete-svelte.png)
 
-    ![Azure 中运行的静态网站](media/static-website/azure-app-svelte.png)
+    ![Svelte - Azure 中运行的静态网站](media/static-website/azure-app-svelte.png)
 
 ---
 

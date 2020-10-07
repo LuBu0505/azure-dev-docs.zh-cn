@@ -4,12 +4,12 @@ description: 了解如何在 Visual Studio Code 中安装和使用 Azure Terrafo
 ms.topic: how-to
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: dbb76f2bcdce12ebb55d9ae6002747701858751e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ac8c5c765237a065fbb2531f71de7f39644b70dc
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241319"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401757"
 ---
 # <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>配置 Azure Terraform Visual Studio Code 扩展
 
@@ -20,8 +20,6 @@ ms.locfileid: "88241319"
 > * 使用 Terraform 自动预配 Azure 服务
 > * 安装和使用 Azure 服务提供的 Terraform Visual Studio Code 扩展。
 > * 使用 Visual Studio Code 编写、规划和执行 Terraform 计划。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -137,8 +135,6 @@ ms.locfileid: "88241319"
 1. 从菜单栏中，选择“视图”>“命令面板...”>“Azure Terraform:  Init”。
 
 1. 当确认对话框出现时，请选择“确定”。
-
-    ![用于打开 Cloud Shell 的确认对话框](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. 首次从新文件夹启动 Cloud Shell 时，系统将提示你创建一个 Web 应用程序。 选择“打开”  。
 
@@ -270,11 +266,9 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
 1. 从测试类型选项列表中选择“lint”  。
 
-    ![选择测试类型](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
+    ![选择“lint”作为测试类型](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
 
 1. 当确认对话框出现时，选择“确定”，然后按屏幕说明操作。
-
-    ![用于打开 Cloud Shell 的确认对话框](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >执行“lint”或“端到端”测试时，Azure 使用容器服务来预配用于执行实际测试的测试计算机   。 因此，测试结果通常需要几分钟时间才能返回。
@@ -289,11 +283,9 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
 1. 从测试类型选项列表中选择“端到端”  。
 
-    ![选择测试类型](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
+    ![选择“端到端”作为测试类型](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
 
 1. 当确认对话框出现时，选择“确定”，然后按屏幕说明操作。
-
-    ![用于打开 Cloud Shell 的确认对话框](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >执行“lint”或“端到端”测试时，Azure 使用容器服务来预配用于执行实际测试的测试计算机   。 因此，测试结果通常需要几分钟时间才能返回。
@@ -302,6 +294,9 @@ Terraform plan 命令用于检查一组更改的执行计划是否按预期执�
 
 ![测试结果](media/configure-vs-code-extension-for-terraform/tf-end-to-end-test-results.png)
 
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>后续步骤
+
 > [!div class="nextstepaction"]
 > [可供 Azure（及其他受支持的提供程序）使用的 Terraform 模块的列表](https://registry.terraform.io/)

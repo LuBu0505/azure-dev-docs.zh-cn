@@ -1,15 +1,15 @@
 ---
 title: 使用 Azure CLI 将应用代码部署到 Azure 应用服务
-description: 教程第 4 部分，部署网站
-ms.topic: conceptual
+description: Azure CLI 教程第 4 部分：部署网站
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e794388280c537261e428195ac3943379f04866b
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217946"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364780"
 ---
 # <a name="deploy-the-app-to-app-service"></a>将应用部署到应用服务
 

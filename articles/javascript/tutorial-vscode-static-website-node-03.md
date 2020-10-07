@@ -1,15 +1,15 @@
 ---
 title: 从 Visual Studio Code 为静态 Node.js 网站创建 Azure 存储帐户
-description: 教程第 3 部分：创建 Azure 存储帐户
-ms.topic: conceptual
+description: 静态 Web 应用教程第 3 部分：创建 Azure 存储帐户
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f0aa6a8cbfc0a5d286d0b7c93a12cbd48b68d620
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 03bfea7dac32280a7ac44840c3930b6c36d61f95
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218352"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365060"
 ---
 # <a name="create-an-azure-storage-account"></a>创建 Azure 存储帐户
 

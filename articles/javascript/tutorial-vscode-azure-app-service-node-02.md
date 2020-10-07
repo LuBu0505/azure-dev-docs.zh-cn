@@ -1,15 +1,15 @@
 ---
 title: 在 Visual Studio Code 中创建 Node.js Azure 应用服务
-description: 教程第 2 部分：创建 Node.js 应用并在本地运行它
-ms.topic: conceptual
+description: Node.js 教程第 2 部分：创建 Node.js 应用并在本地运行它
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 66299059f03219dc45ff5f2dbcb51e8b61144340
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 7d627d97987ed41f90972362ab38d436a6157d33
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218539"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365240"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>创建并运行本地 Node.js 应用
 

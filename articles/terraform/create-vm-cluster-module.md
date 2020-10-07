@@ -1,111 +1,72 @@
 ---
-title: 使用模块注册表通过 Terraform 创建 Azure VM 群集
+title: 使用 Terraform 配置 Azure VM 群集
 description: 了解如何使用 Terraform 模块在 Azure 中创建 Windows 虚拟机群集。
 keywords: azure devops terraform vm virtual machine cluster module registry
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 794551aea159318b37426bb5d5dd7e1a13cca3d1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 73f375090a2178b38b0fc7e0afd4eb8c6b514672
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241229"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401578"
 ---
-# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>使用模块注册表通过 Terraform 创建 Azure VM 群集
+# <a name="configure-an-azure-vm-cluster-using-terraform"></a>使用 Terraform 配置 Azure VM 群集
 
-本文介绍如何使用 Terraform [Azure 计算模块](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)创建小型 VM 群集。 本文介绍如何执行以下操作：
-
-> [!div class="checklist"]
-> * 使用 Azure 设置身份验证
-> * 创建 Terraform 模板
-> * 使用 plan 直观显示更改
-> * 应用配置以创建 VM 群集
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+本文展示在 Azure 上创建 VM 群集的 Terraform 示例代码。
 
 ## <a name="prerequisites"></a>先决条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-## <a name="set-up-authentication-with-azure"></a>使用 Azure 设置身份验证
+[!INCLUDE [terraform-configure-environment.md](includes/terraform-configure-environment.md)]
 
-> [!TIP]
-> 如果在 [Azure Cloud Shell](/azure/cloud-shell/overview) 中[使用 Terraform 环境变量](get-started-cloud-shell.md)或运行此示例，请跳过此步骤。
-
- 查看[安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)，以创建 Azure 服务主体。 通过此服务主体使用以下代码将新文件 `azureProviderAndCreds.tf` 填充到空目录中：
+## <a name="configure-an-azure-vm-cluster"></a>配置 Azure VM 群集
 
 ```hcl
-variable subscription_id {}
-variable tenant_id {}
-variable client_id {}
-variable client_secret {}
-
-provider "azurerm" {
-    version = "~>1.40"
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-```
-
-## <a name="create-the-template"></a>创建模板
-
-使用以下代码创建名为 `main.tf` 的新 Terraform 模板：
-
-```hcl
-module mycompute {
-    source = "Azure/compute/azurerm"
-    resource_group_name = "myResourceGroup"
-    location = "East US 2"
-    admin_password = "ComplxP@assw0rd!"
-    vm_os_simple = "WindowsServer"
-    is_windows_image = "true"
-    remote_port = "3389"
-    nb_instances = 2
-    public_ip_dns = ["unique_dns_name"]
-    vnet_subnet_id = module.network.vnet_subnets[0]
+module "windowsservers" {
+  source              = "Azure/compute/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  is_windows_image    = true
+  vm_hostname         = "mywinvm"                         // Line can be removed if only one VM module per resource group
+  admin_password      = "ComplxP@ssw0rd!"                 // See note following code about storing passwords in config files
+  vm_os_simple        = "WindowsServer"
+  public_ip_dns       = ["winsimplevmips"]                // Change to a unique name per data center region
+  vnet_subnet_id      = module.network.vnet_subnets[0]
+    
+  depends_on = [azurerm_resource_group.rg]
 }
 
 module "network" {
-    source = "Azure/network/azurerm"
-    location = "East US 2"
-    resource_group_name = "myResourceGroup"
+  source              = "Azure/network/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  subnet_prefixes     = ["10.0.1.0/24"]
+  subnet_names        = ["subnet1"]
+
+  depends_on = [azurerm_resource_group.rg]
 }
 
-output "vm_public_name" {
-    value = module.mycompute.public_ip_dns_name
+output "windows_vm_public_name" {
+  value = module.windowsservers.public_ip_dns_name
 }
 
 output "vm_public_ip" {
-    value = module.mycompute.public_ip_address
+  value = module.windowsservers.public_ip_address
 }
 
 output "vm_private_ips" {
-    value = module.mycompute.network_interface_private_ip
+  value = module.windowsservers.network_interface_private_ip
 }
 ```
 
-在配置目录中运行 `terraform init`。 使用不低于 0.10.6 的 Terraform 版本显示以下输出：
+**注释**：
 
-![Terraform Init](media/create-vm-cluster-module/terraform-init-with-modules.png)
+- 在上面的代码示例中，为了简单起见，为变量 `admin_password` 分配了一个文本值。 存储敏感数据（例如密码）有多种方法。 关于希望使用哪种数据保护方法的决策实际上是个人对于自己的特定环境和公开这些数据的舒适度的抉择。 例如，一个风险是，在源代码管理中像这样存储文件可能会导致他人看见密码。 HashiCorp 已记录了[声明输入变量](https://www.terraform.io/docs/configuration/variables.html)的多种方法以及[管理敏感数据（例如密码）](https://www.terraform.io/docs/state/sensitive-data.html)的技巧，请参阅相关文档，了解有关此主题的更多信息。
 
-## <a name="visualize-the-changes-with-plan"></a>使用 plan 直观显示更改
-
-运行 `terraform plan` 预览由模板创建的虚拟机基础结构。
-
-![Terraform Plan](media/create-vm-cluster-with-infrastructure/terraform-plan.png)
-
-
-## <a name="create-the-virtual-machines-with-apply"></a>使用 apply 创建虚拟机
-
-运行 `terraform apply` 在 Azure 上预配 VM。
-
-![Terraform Apply](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"] 
-> [浏览 Azure Terraform 模块列表](https://registry.terraform.io/modules/Azure)
+> [详细了解如何在 Azure 中使用 Terraform](/azure/terraform)

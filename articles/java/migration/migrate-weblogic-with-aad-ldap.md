@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831383"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365010"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>用于将 WebLogic Server 上的 Java 应用迁移到 Azure 的最终用户授权和身份验证
 

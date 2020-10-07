@@ -1,15 +1,15 @@
 ---
 title: 在 Visual Studio Code 中将应用部署到 Azure 应用服务
-description: 教程第 3 部分：部署网站
-ms.topic: conceptual
+description: Node.js 教程第 3 部分：部署网站
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 5d812f9aa6efb308cafcb5d3e3ccb1ce852e93f1
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.custom: devx-track-js
+ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501502"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365250"
 ---
 # <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
 

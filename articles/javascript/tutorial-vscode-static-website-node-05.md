@@ -1,16 +1,16 @@
 ---
 title: 在 Visual Studio Code 中将更改部署到静态 Node.js 网站
-description: 教程第 5 部分：进行更改并重新部署
-ms.topic: conceptual
+description: 静态 Web 应用教程第 5 部分：进行更改并重新部署
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 5d7a2af9dca7a775ee812b457012fa432c461d9a
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218320"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365280"
 ---
 # <a name="part-5-make-changes-and-redeploy"></a>第 5 部分：进行更改并重新部署
 
@@ -32,7 +32,7 @@ ms.locfileid: "88218320"
 
 1. 部署完成后，请在浏览器中刷新站点以观察更改：
 
-    ![重新部署后应用中的更改](media/static-website/updated-azure-app-angular.png)
+    ![Angular - 部署完成后，请在浏览器中刷新站点以观察更改](media/static-website/updated-azure-app-angular.png)
 
 # <a name="react"></a>[React](#tab/react)
 
@@ -48,7 +48,7 @@ ms.locfileid: "88218320"
 
 1. 部署完成后，请在浏览器中刷新站点以观察更改：
 
-    ![重新部署后应用中的更改](media/static-website/updated-azure-app-react.png)
+    ![React - 重新部署后应用中的更改](media/static-website/updated-azure-app-react.png)
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
@@ -64,7 +64,7 @@ ms.locfileid: "88218320"
 
 1. 部署完成后，请在浏览器中刷新站点以观察更改：
 
-    ![重新部署后应用中的更改](media/static-website/updated-azure-app-vue.png)
+    ![Vue - 重新部署后应用中的更改](media/static-website/updated-azure-app-vue.png)
 
 # <a name="svelte"></a>[Svelte](#tab/svelte)
 
@@ -95,7 +95,7 @@ ms.locfileid: "88218320"
 
 1. 部署完成后，请在浏览器中刷新站点以观察更改：
 
-    ![重新部署后应用中的更改](media/static-website/updated-azure-app-svelte.png)
+    ![Svelte - 重新部署后应用中的更改](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

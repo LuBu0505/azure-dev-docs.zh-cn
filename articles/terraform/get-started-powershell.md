@@ -1,16 +1,16 @@
 ---
 title: 快速入门 - 使用 Azure PowerShell 配置 Terraform
-description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azure 资源。
+description: 本快速入门介绍如何使用 Azure PowerShell 安装和配置 Terraform。
 keywords: azure devops terraform 安装 配置 windows init 计划 应用 执行 登录 rbac 服务主体 自动化脚本 powershell
 ms.topic: quickstart
-ms.date: 08/18/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 8f95d0bb09d7e9e7ea789b90a27178cdf5426d74
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830053"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401531"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>快速入门：使用 Azure PowerShell 配置 Terraform
  
@@ -27,11 +27,9 @@ ms.locfileid: "90830053"
 > * 创建 Azure 服务主体来进行身份验证
 > * 使用服务主体登录到 Azure 
 > * 设置环境变量，以便 Terraform 正确地对 Azure 订阅进行身份验证
-> * 编写 Terraform 脚本以创建 Azure 资源组
+> * 创建基本 Terraform 配置文件
 > * 创建并应用 Terraform 执行计划
-> * 使用 `terraform plan -destroy` 标志来撤消执行计划
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * 撤消执行计划
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -45,9 +43,9 @@ ms.locfileid: "90830053"
     $PSVersionTable.PSVersion
     ```
 
-1. [安装 PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)。 此演示已在 Windows 10 上使用 PowerShell 7.0.2 进行了测试。
+1. [安装 PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows)。 此演示已在 Windows 10 上使用 PowerShell 7.0.2 进行了测试。
 
-1. 若要[使 Terraform 向 Azure 进行身份验证](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)，则需要[安装 Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)。 此演示使用 Azure CLI 2.9.1 版本进行了测试。
+1. 若要[使 Terraform 向 Azure 进行身份验证](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)，则需要[安装 Azure CLI](/cli/azure/install-azure-cli-windows)。 此演示使用 Azure CLI 2.9.1 版本进行了测试。
 
 1. [下载 Terraform](https://www.terraform.io/downloads.html)。
 
@@ -64,9 +62,15 @@ ms.locfileid: "90830053"
     **注释**：
     - 如果找到 Terraform 可执行文件，它将列出语法和可用命令。
 
-## <a name="create-an-azure-service-principal"></a>创建 Azure 服务主体
+## <a name="authenticate-to-azure"></a>向 Azure 进行身份验证
 
-使用 PowerShell 和 Terraform 时，必须使用服务主体登录。
+使用 PowerShell 和 Terraform 时，必须使用服务主体登录。 接下来的两个部分将说明以下任务：
+
+- [创建 Azure 服务主体](#create-an-azure-service-principal)
+- [使用服务主体登录到 Azure](#log-in-to-azure-using-a-service-principal)
+
+
+### <a name="span-idcreate-an-azure-service-principalcreate-an-azure-service-principal"></a><span id="create-an-azure-service-principal"/>创建 Azure 服务主体
 
 若要使用服务主体登录到 Azure 订阅，首先需要访问服务主体。 如果已有一个服务主体，则可以跳过此节。
 
@@ -105,7 +109,7 @@ ms.locfileid: "90830053"
 - 使用服务主体登录订阅需要服务主体名称和密码值。
 - 如果丢失了密码，则无法对其进行检索。 因此，应将密码存储在安全的位置。 如果忘记了密码，则需要[重置服务主体凭据](/powershell/azure/create-azure-service-principal-azureps#reset-credentials)。
 
-## <a name="log-in-to-azure-using-a-service-principal"></a>使用服务主体登录到 Azure
+### <a name="span-idlog-in-to-azure-using-a-service-principallog-in-to-azure-using-a-service-principal"></a><span id="log-in-to-azure-using-a-service-principal"/>使用服务主体登录到 Azure
 
 若要使用服务主体登录到 Azure 订阅，请调用 [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount)，指定类型为 [PsCredential](/dotnet/api/system.management.automation.pscredential) 的对象。
 
@@ -143,124 +147,15 @@ $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
-## <a name="create-a-terraform-configuration-file"></a>创建 Terraform 配置文件
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-在本节中，你将编写用于创建 Azure 资源组的 Terraform 配置文件。
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. 创建一个目录来保存用于此演示的 Terraform 文件。
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```powershell
-    mkdir QuickstartTerraformTest
-    ```
-
-1. 将目录更改为演示目录。
-
-    ```powershell
-    cd QuickstartTerraformTest
-    ```
-
-1. 使用你偏好的编辑器创建 Terraform 配置文件。 本文使用 [Visual Studio Code](https://code.visualstudio.com/Download)。
-
-    ```powershell
-    code QuickstartTerraformTest.tf
-    ```
-
-1. 将以下 HCL 代码粘贴到新文件中。 有关更多详细信息，请参阅代码列表后面的注释。
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you're using version 1.x, the "features" block isn't allowed.
-      version = "~>2.0"
-      features {}
-    }
-
-    resource "azurerm_resource_group" "rg" {
-      name     = "QuickstartTerraformTest-rg"
-      location = "eastus"
-    }
-    ```
-
-    **注释**：
-    - 提供程序块指定使用 [Azure 提供程序 (azurerm)](https://www.terraform.io/docs/providers/azurerm/index.html)。
-    - 在 `azurerm` 提供程序块中设置了 `version` 和 `features` 属性。 作为注释语句，其用法是特定于版本的。 有关设置这些属性的详细信息，请参阅 [AzureRM 提供程序的 v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)。
-    - 唯一的[资源声明](https://www.terraform.io/docs/configuration/resources.html)适用于资源类型 [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html)。 Azure_resource_group 的两个必需参数是名称和位置。
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>创建并应用 Terraform 执行计划
-
-在本节中，你将创建一个执行计划，并将其应用于云基础结构。
-
-1. 使用 [Terraform init](https://www.terraform.io/docs/commands/init.html) 初始化 Terraform 部署。 此步骤将下载创建 Azure 资源组所需的 Azure 模块。
-
-    ```powershell
-    terraform init
-    ```
-
-1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以基于 Terraform 配置文件创建一个执行计划。
-
-    ```powershell
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    注意：
-    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 此模式允许你在对实际资源进行任何更改之前验证执行计划是否符合预期。
-    - 使用可选 `-out` 参数可以为计划指定输出文件。 使用 `-out` 参数可以确保所查看的计划与所应用的计划完全一致。
-    - 若要详细了解如何使执行计划和安全性持久化，请参阅[安全警告一节](https://www.terraform.io/docs/commands/plan.html#security-warning)。
-
-1. 运行 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 以应用执行计划。
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. 应用执行计划后，可以使用 [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) 测试资源组是否已成功创建。
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **注释**：
-
-    - 如果成功，该命令会显示新创建的资源组的各种属性。
-
-## <a name="clean-up-resources"></a>清理资源
-
-如果不再需要本教程中创建的资源，请将其删除。
-
-1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以创建执行计划，销毁 Terraform 配置文件中指示的资源。
-
-    ```powershell
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    注意：
-    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 此模式允许你在对实际资源进行任何更改之前验证执行计划是否符合预期。
-    - `-destroy` 参数会生成一个用于销毁资源的计划。
-    - 使用可选 `-out` 参数可以为计划指定输出文件。 使用 `-out` 参数可以确保所查看的计划与所应用的计划完全一致。
-    - 若要详细了解如何使执行计划和安全性持久化，请参阅[安全警告一节](https://www.terraform.io/docs/commands/plan.html#security-warning)。
-
-1. 运行 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 以应用执行计划。
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. 使用 [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) 验证资源组是否已删除。
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **注释**：
-    - 如果成功，`Get-AzResourceGroup` 会显示资源组不存在这一事实。
-
-1. 将目录更改为父目录，并删除演示目录。 `-r` 参数会在删除目录之前删除目录内容。 目录内容包括之前创建的配置文件和 Terraform 状态文件。
-
-    ```powershell
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [使用 Terraform 创建 Azure VM](create-linux-virtual-machine-with-infrastructure.md)
+> [使用 Terraform 创建 Linux VM](create-linux-virtual-machine-with-infrastructure.md)

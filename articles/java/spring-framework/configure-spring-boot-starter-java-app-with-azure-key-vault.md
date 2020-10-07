@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: d3504137c2c9a8ee2b1af960a17deb902be95d7a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831983"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409969"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>教程：在 Spring Boot 应用程序中从 Azure Key Vault 读取机密
 
@@ -398,7 +398,7 @@ az ad sp create-for-rbac --name contososp
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.9.1</version>
+     <version>1.11.0</version>
     </plugin>
    ```
 
@@ -412,7 +412,9 @@ az ad sp create-for-rbac --name contososp
    mvn azure-webapp:config
    ```
 
-1. 对于操作系统，请确保已选择 `linux`。
+1. 对于 `Subscription`，请确保选择与创建的 Key Vault 相同的订阅 ID。
+1. 对于 `Web App`，你可以选择现有的 Web 应用，也可以选择 `<create>` 新建一个。如果选择现有的 Web 应用，将直接跳到最后的“确认”步骤。
+1. 对于 `OS`，请确保已选择 `linux`。
 1. 对于 `javaVersion`，请确保选择了 Spring Initializr 中所选的 Java 版本。  我们在上面选择了 `11`，所以在这里选择 11。
 1. 接受其余问题的默认值。
 1. 当系统要求确认时，回答 Y 继续，或回答 N 重新开始回答问题。  当插件完成运行后，就可以编辑 POM 了。
@@ -437,9 +439,10 @@ az ad sp create-for-rbac --name contososp
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.9.1</version>  
+       <version>1.11.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
+         *<subscriptionId>********-****-****-****-************</subscriptionId>
          *<resourceGroup>contosorg</resourceGroup>
          *<appName>contosokeyvault</appName>
          <pricingTier>P1v2</pricingTier>

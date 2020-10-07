@@ -1,15 +1,15 @@
 ---
 title: 在 Visual Studio Code 中使用 Node.js 部署 Azure Functions
-description: 教程第 1 部分：简介和先决条件。
-ms.topic: conceptual
+description: 无服务器教程第 1 部分：简介和先决条件。
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 00039e7320e603b025b00887ec548c534a1f1612
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 1d0c1795b7bec0138507ceadea966c421ca12a13
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "91110512"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364640"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>在 Visual Studio Code 中部署 Azure Functions
 

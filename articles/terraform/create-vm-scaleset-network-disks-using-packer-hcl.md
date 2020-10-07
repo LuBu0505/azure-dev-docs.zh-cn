@@ -4,12 +4,12 @@ description: 了解如何使用 Terraform 通过 Packer 生成的自定义映像
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d81c80f1051b615dcfd089205f8c685ecaf1589
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241189"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401597"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>使用 Terraform 通过 Packer 自定义映像创建 Azure 虚拟机规模集
 
@@ -24,8 +24,6 @@ ms.locfileid: "88241189"
 > * 使用 Packer 创建自定义虚拟机映像。
 > * 使用自定义映像创建和部署虚拟机规模集。
 > * 创建和部署 jumpbox。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -329,12 +327,7 @@ terraform plan
 terraform apply 
 ```
 
-资源组的内容与以下图像类似：
-
-![Terraform 虚拟机规模集资源组](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-vmss-step6-apply.png)
-
-打开浏览器并连接到该命令返回的完全限定域名。 
-
+打开浏览器并连接到该命令返回的完全限定域名。
 
 ## <a name="add-a-jumpbox-to-the-existing-network"></a>将 jumpbox 添加到现有网络 
 
@@ -434,12 +427,9 @@ output "jumpbox_public_ip" {
 terraform apply 
 ```
 
-完成部署后，资源组的内容应与以下图像类似：
+**注释**：
 
-![Terraform 虚拟机规模集资源组](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-create-vmss-step8.png)
-
-> [!NOTE]
-> 部署的 jumpbox 和虚拟机规模集上禁止使用密码登录。 请使用 SSH 登录以访问 VM。
+- 部署的 jumpbox 和虚拟机规模集上禁止使用密码登录。 请使用 SSH 登录以访问 VM。
 
 ## <a name="clean-up-the-environment"></a>清理环境
 
@@ -450,6 +440,8 @@ terraform destroy
 ```
 
 系统要求确认是否删除资源组时，请输入“是”  。 破坏过程可能需要几分钟才能完成。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

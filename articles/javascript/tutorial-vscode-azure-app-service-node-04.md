@@ -1,15 +1,15 @@
 ---
 title: 将日志从 Azure 应用服务流式传输到 Visual Studio Code 中
-description: 教程第 4 部分：查看或跟踪日志。
-ms.topic: conceptual
+description: Node.js 教程第 4 部分：查看或跟踪日志。
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6bc01b7691bf4881d610453707dd3c97654554be
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: eed2663f32571dc40fb402553424c1303d43f7b9
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218332"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365230"
 ---
 # <a name="stream-logs-from-azure-app-service"></a>从 Azure 应用服务流式传输日志
 

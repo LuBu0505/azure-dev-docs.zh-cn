@@ -4,12 +4,12 @@ description: 了解 Terraform 如何帮助你在 Azure 上部署基础结构并�
 ms.topic: overview
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d5089a9e27f9f17ebde6a2e9847908157018e08c
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 0b38c7c2d518087f7a49c0d7e4f462d7da7eaf76
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241049"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401747"
 ---
 # <a name="terraform-with-azure"></a>Terraform 与 Azure
 
@@ -41,6 +41,7 @@ Terraform 擅长跨多个云提供商部署基础结构。 开发者借助它可
 
 现在你已大致了解 Terraform 及其优点，下面是建议的后续步骤：
 
-- 首先，[安装并配置 Terraform 以使用 Azure](get-started-cloud-shell.md)。
-- [使用 Terraform 创建 Azure 虚拟机](create-linux-virtual-machine-with-infrastructure.md)
-- 浏览[适用于 Terraform 的 Azure 资源管理器模块](https://www.terraform.io/docs/providers/azurerm/) 
+根据环境安装并配置 Terraform：
+
+- [使用 Azure Cloud Shell 和 Azure CLI 配置 Terraform](get-started-cloud-shell.md)
+- [使用 Azure PowerShell 配置 Terraform](get-started-powershell.md)

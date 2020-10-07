@@ -1,15 +1,15 @@
 ---
 title: 使用 Azure CLI 将 Node.js 应用部署到 Azure 后清理资源
-description: 教程第 7 部分：清理资源
-ms.topic: conceptual
+description: Azure CLI 教程第 7 部分：清理资源
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fb78f369d80ff40fef1d4a21df68ea79fafa2dbc
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 1ebd31a90d7ddbd422bb64b7bb44bb6b8ef33d1e
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365150"
 ---
 # <a name="part-7-clean-up-resources"></a>第 7 部分：清理资源
 

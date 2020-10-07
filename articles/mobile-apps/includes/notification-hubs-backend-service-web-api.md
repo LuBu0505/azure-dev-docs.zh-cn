@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 9d7db7db5a1b7323bd10e7e9cc87ca3b9a95826a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401400"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493136"
 ---
 ### <a name="create-a-web-project"></a>创建 Web 项目
 
@@ -36,9 +36,7 @@ ms.locfileid: "87401400"
 
 1. 删除 WeatherForecast.cs。
 
-1. 按住 Control 的同时单击 PushDemoApi 项目，然后从“添加”菜单中选择“新建文件...”    。
-
-1. 使用[机密管理器工具](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)设置本地配置值。 将机密与解决方案分离可确保它们不会终止在源代码管理中。 打开“终端”，然后转到项目文件的目录，并运行以下命令：
+1. 使用[机密管理器工具](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)设置本地配置值。 将机密与解决方案分离可确保它们不会终止在源代码管理中。 打开“终端”，然后转到项目文件的目录，并运行以下命令：
 
     ```bash
     dotnet user-secrets init
@@ -59,7 +57,7 @@ ms.locfileid: "87401400"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>使用 API 密钥对客户端进行身份验证（可选）
 
-API 密钥的安全性虽然不如令牌，但它也可以满足本教程的需要。 可通过 [ASP.NET 中间件](https://docs.microsoft.com/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)轻松配置 API 密钥。
+API 密钥的安全性虽然不如令牌，但它也可以满足本教程的需要。 可通过 [ASP.NET 中间件](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)轻松配置 API 密钥。
 
 1. 将“API 密钥”添加到本地配置值。
 
@@ -150,7 +148,7 @@ API 密钥的安全性虽然不如令牌，但它也可以满足本教程的需�
     ```
 
     > [!NOTE]
-    > [身份验证处理程序](https://docs.microsoft.com/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)是实现方案行为的类型，在本例中为自定义 API 密钥方案。
+    > [身份验证处理程序](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)是实现方案行为的类型，在本例中为自定义 API 密钥方案。
 
 1. 将另一个“空类”添加到名为 ApiKeyAuthenticationBuilderExtensions.cs 的“身份验证”文件夹中，然后添加以下实现。
 
@@ -181,6 +179,8 @@ API 密钥的安全性虽然不如令牌，但它也可以满足本教程的需�
 1. 在 Startup.cs 中，更新 ConfigureServices 方法，以便在对 services.AddControllers 方法的调用下配置 API 密钥身份验证  。
 
     ```csharp
+    using PushDemoApi.Authentication;
+    
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -223,7 +223,7 @@ API 密钥的安全性虽然不如令牌，但它也可以满足本教程的需�
 
 ### <a name="add-dependencies-and-configure-services"></a>添加依赖项并配置服务
 
-ASP.NET Core 支持[依赖项注入 (DI)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) 软件设计模式，这是一种在类与其依赖项之间实现[控制反转 (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) 的方法。  
+ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) 软件设计模式，这是一种在类与其依赖项之间实现[控制反转 (IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) 的方法。  
 
 使用的通知中心和[用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) 封装在服务中。 该服务通过适当的抽象进行注册和提供。
 
@@ -260,9 +260,9 @@ ASP.NET Core 支持[依赖项注入 (DI)](https://docs.microsoft.com/aspnet/core
     ```
 
     > [!NOTE]
-    > 此类包含此方案所需的泛型和无提示通知的标记化通知有效负载。 有效负载在[安装](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet)外定义，以便无需通过服务更新现有安装即可进行试验。 以这种方式处理对安装的更改超出了本教程的范围。 对于生产环境，请考虑使用[自定义模板](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)。
+    > 此类包含此方案所需的泛型和无提示通知的标记化通知有效负载。 有效负载在[安装](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet)外定义，以便无需通过服务更新现有安装即可进行试验。 以这种方式处理对安装的更改超出了本教程的范围。 对于生产环境，请考虑使用[自定义模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)。
 
-1. 选择“常规” > “空类”，输入 DeviceInstallation.cs 作为“名称”，然后单击“新建”添加以下实现  。
+1. 将另一个“空类”添加到名为 DeviceInstallation.cs 的“模型”文件夹中，然后添加以下实现。
 
     ```csharp
     using System.Collections.Generic;
@@ -326,6 +326,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](https://docs.microsoft.com/aspnet/core
 1. 将“空接口”添加到名为 INotificationService.cs 的“服务”文件夹，然后添加以下实现 。
 
     ```csharp
+    using System.Threading;
     using System.Threading.Tasks;
     using PushDemoApi.Models;
 
@@ -510,7 +511,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](https://docs.microsoft.com/aspnet/core
     ```
 
     > [!NOTE]
-    > 提供给 SendTemplateNotificationAsync 的标记表达式限制为包含 20 个标记。 大多数运算符的限制数量为 6 个，但在本例中，表达式仅包含 OR (||)。 如果请求中的标记超过 20 个，则必须将它们拆分为多个请求。 有关更多详细信息，请参阅[路由和标记表达式](https://msdn.microsoft.com/library/azure/Dn530749.aspx?f=255&MSPPError=-2147217396)文档。
+    > 提供给 SendTemplateNotificationAsync 的标记表达式限制为包含 20 个标记。 大多数运算符的限制数量为 6 个，但在本例中，表达式仅包含 OR (||)。 如果请求中的标记超过 20 个，则必须将它们拆分为多个请求。 有关更多详细信息，请参阅[路由和标记表达式](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396)文档。
 
 1. 在 Startup.cs 中，更新 ConfigureServices 方法，以将 NotificationHubsService 添加为 INotificationService 的单一实现   。
 
@@ -606,7 +607,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](https://docs.microsoft.com/aspnet/core
     >
     > 如果收到“SSL 证书验证”警告，则可以在“设置”中关闭请求 SSL 证书验证 [Postman](https://www.postman.com/downloads) 设置  。
 
-1. 将模板化类方法替换为以下代码。
+1. 将 NotificationsController.cs 中的模板化类方法替换为以下代码。
 
     ```csharp
     [HttpPut]
@@ -669,7 +670,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](https://docs.microsoft.com/aspnet/core
 
 ### <a name="create-the-api-app"></a>创建 API 应用
 
-现在，在 [Azure 应用服务](https://docs.microsoft.com/azure/app-service/)中创建 [API 应用](https://azure.microsoft.com/services/app-service/api/)，以便托管后端服务。  
+现在，在 [Azure 应用服务](/azure/app-service/)中创建 [API 应用](https://azure.microsoft.com/services/app-service/api/)，以便托管后端服务。  
 
 1. 登录 [Azure 门户](https://portal.azure.com)。
 

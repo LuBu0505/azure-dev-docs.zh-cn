@@ -1,15 +1,15 @@
 ---
 title: 通过 VS Code 和 Azure 部署容器化 Node.js 应用
 description: 演示如何创建、容器化 Node.js 应用并将其部署到 Azure 的完整端到端教程
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: c036adcd759f26dfafda5126f475e251b503a831
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 9d23e9dc578b89058c0fadeb98978de96712cab6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218926"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364900"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
@@ -114,7 +114,7 @@ MongoDB 连接字符串在 `database.localUrl` 属性的声明中进行硬编码
 
 请注意，如果手动键入代码（而不是复制并粘贴），则在 `process` 后面键入句点时，Visual Studio Code 会显示 Node.js process 全局 API 的可用成员。
 
-![自动完成功能会自动显示 API 的成员](./media/node-howto-e2e/visual-studio-code-process-env.png)
+![进程环境的 VS Code 环境变量](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 之所以能够实现自动完成，是因为 Visual Studio Code 在幕后使用 TypeScript（对于 JavaScript 也是如此）来提供键入信息，这些信息在你键入时能够用来显示完成列表。 Visual Studio Code 能够检测到 Node.js 项目，因此，能够自动下载适用于 [NPM 中的 Node.js](https://www.npmjs.com/package/@types/node) 的 TypeScript 键入内容文件。 使用键入内容文件可以获取其他 Node.js 全局变量（例如 `Buffer` 和 `setTimeout`）和所有内置模块（例如 `fs` 和 `http`）的自动完成列表。
 

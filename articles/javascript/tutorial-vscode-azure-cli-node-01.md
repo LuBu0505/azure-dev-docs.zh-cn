@@ -1,15 +1,15 @@
 ---
 title: 使用 Azure CLI 将 Node.js 应用部署到 Azure 应用服务
-description: 教程第 1 部分：简介和先决条件。
-ms.topic: conceptual
+description: Azure CLI 教程第 1 部分：简介和先决条件。
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e720cd1ca6f29a42bfd9bf6c79c6184338c2621a
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 4ca11ffff1889d69ef8a1ee7fbca991b714f2163
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772880"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365200"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>使用 Azure CLI 部署到 Azure 应用服务
 

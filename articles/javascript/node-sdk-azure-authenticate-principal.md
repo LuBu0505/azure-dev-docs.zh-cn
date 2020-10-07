@@ -1,15 +1,15 @@
 ---
 title: 使用 Node.js 创建 Azure 服务主体
 description: 了解如何通过 Node.js 和 JavaScript 使用服务主体身份验证
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/17/2017
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.custom: devx-track-js
+ms.openlocfilehash: 40992b00ff9c0e04bf2b475fadf2d65dd3bd29d5
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110436"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586110"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>创建适用于 Node.js 的 Azure 服务主体
 
@@ -23,7 +23,6 @@ ms.locfileid: "91110436"
 
 - Azure 门户
 - Azure CLI 2.0
-- 用于 Node.js 的 Azure SDK
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
@@ -37,24 +36,11 @@ ms.locfileid: "91110436"
 
 1. 下载 [Azure CLI 2.0](/cli/azure/install-az-cli2)。
 
-2. 打开终端窗口。
+2. 打开终端窗口并键入命令 `az login`以启动登录过程。
 
-3. 键入以下命令启动登录过程：
+3. 调用 `az login` 可生成一个 URL 和一个代码。 浏览到指定的 URL，输入该代码，使用 Azure 标识登录（如果已登录，则此过程可自动完成）。 然后，即可通过 CLI 访问帐户。
 
-    ```shell
-    $ az login
-    ```
-
-4. 调用 `az login` 可生成一个 URL 和一个代码。 浏览到指定的 URL，输入该代码，使用 Azure 标识登录（如果已登录，则此过程可自动完成）。
-然后，即可通过 CLI 访问帐户。
-
-5. 获取订阅和租户 ID：
-
-    ```shell
-    $ az account list
-    ```
-
-    下面显示了输出示例：
+4. 使用 `az account list` 命令获取订阅和租户 ID。 使用任何 Azure 包时，你将需要用到它们。 下面显示的是此命令的输出示例：
 
     ```shell
     {
@@ -72,74 +58,9 @@ ms.locfileid: "91110436"
     }
     ```
 
-    **记下订阅 ID，因为步骤 7 中需要用到。**
+5. 按照主题中所述的步骤（[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)）来生成服务主体。 输出中的 JSON 对象将包含进行 Azure 身份验证所需的信息。
 
-6. 创建一个服务主体用于获取 JSON 对象，其中包含在 Azure 中进行身份验证时所需的其他信息片段。
-
-    ```shell
-    $ az ad sp create-for-rbac
-    ```
-
-    下面显示了输出示例：
-
-    ```shell
-    {
-    "appId": "<appId>",
-    "displayName": "<displayName>",
-    "name": "<name>",
-    "password": "<password>",
-    "tenant": "<tenant>"
-    }
-    ```
-
-    **记下租户、名称和密码值，因为在步骤 7 中需要用到。**
-
-7. 设置环境变量 - 将 &lt;subscriptionId>、&lt;tenant>、&lt;name> 和 &lt;password> 占位符替换为在步骤 4 和 5 中获取的值。
-
-    **使用 Bash**
-
-    ```shell
-    export azureSubId='<subscriptionId>'
-    export azureServicePrincipalTenantId='<tenant>'
-    export azureServicePrincipalClientId='<name>'
-    export azureServicePrincipalPassword='<password>'
-    ```
-
-    **使用 PowerShell**
-
-    ```shell
-    $env:azureSubId='<subscriptionId>'
-    $env:azureServicePrincipalTenantId='<tenant>'
-    $env:azureServicePrincipalClientId='<name>'
-    $env:azureServicePrincipalPassword='<password>'
-    ```
-
-## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>使用用于 Node.js 的 Azure SDK 创建服务主体
-
-若要使用 JavaScript 以编程方式创建服务主体，请使用 [ServicePrincipal 脚本](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)。
 
 ## <a name="using-the-service-principal"></a>使用服务主体
 
-以下 JavaScript 代码片段演示在创建服务主体后，如何使用服务主体密钥通过用于 Node.js 的 Azure SDK 进行身份验证。 修改以下占位符：&lt;clientId or appId>、&lt;secret or password> 和 &lt;domain or tenant>。
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.loginWithServicePrincipalSecret(
-  <clientId or appId>,
-  <secret or password>,
-  <domain or tenant>,
-  (err, credentials) => {
-    if (err) throw err
-
-    let storageClient = Azure.createARMStorageManagementClient(credentials, '<azure-subscription-id>');
-
-    // ..use the client instance to manage service resources.
-  }
-);
-```
-
-## <a name="next-steps"></a>后续步骤
-
-* [使用用于 Node.js 的 Azure 模块进行身份验证](node-sdk-azure-authenticate.md)
+如果拥有服务主体，请查看[对适用于 JavaScript 的 Azure 管理模块进行身份验证](./node-sdk-azure-authenticate.md)主题，了解如何创建凭据对象（可使用该对象通过 Azure Active Directory 对客户端进行身份验证）。

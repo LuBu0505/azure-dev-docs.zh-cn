@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: 960b9c0d8606e14487dab6d505bc701968dc4b0a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 48a7369a1dce0fe89964ecaaac960a9bb09fb16c
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831643"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409979"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>使用用于 Azure Web 应用的 Maven 将容器化 Spring Boot 应用部署到 Azure
 
@@ -169,13 +169,14 @@ ms.locfileid: "90831643"
 
 1. 在文本编辑器中打开 Spring Boot 应用程序的 `pom.xml` 文件。
 
-1. 找到 `<containerSettings>` 元素的 `<imageName>` 子元素。
+1. 找到 `<runtime>` 元素的 `<image>` 子元素。
 
 1. 使用你的 Docker 帐户名更新 `${docker.image.prefix}` 值：
    ```xml
-   <containerSettings>
-      <imageName>mydockeraccountname/${project.artifactId}</imageName>
-   </containerSettings>
+   <runtime>
+      ...
+      <image>mydockeraccountname/${project.artifactId}</image>
+   </runtime>
    ```
 
 1. 选择以下部署方法之一：
@@ -199,17 +200,19 @@ ms.locfileid: "90831643"
    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
+      <version>1.11.0</version>
       <configuration>
-         <authentication>
+         <schemaVersion>V2</schemaVersion>
+         <auth>
             <serverId>azure-auth</serverId>
-         </authentication>
+         </auth>
          <resourceGroup>maven-plugin</resourceGroup>
          <appName>maven-linux-app-${maven.build.timestamp}</appName>
          <region>westus</region>
-         <containerSettings>
-            <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         </containerSettings>
+         <runtime>
+            <os>docker</os>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+         </runtime>
          <appSettings>
             <property>
                <name>PORT</name>
@@ -224,8 +227,8 @@ ms.locfileid: "90831643"
 
 | 元素 | 说明 |
 |---|---|
-| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 应检查 [Maven 中央存储库](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)中列出的版本，以确保使用最新版本。 |
-| `<authentication>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
+| `<version>` | 指定[适用于 Azure Web 应用的 Maven 插件]的版本。 你应该使用 `V2`。 |
+| `<auth>` | 指定 Azure 的身份验证信息，该信息在本示例中含有包含 `azure-auth` 的 `<serverId>` 元素；Maven 使用该值查找在本文前面部分定义的 Maven settings.xml 文件中的 Azure 服务主体值。 |
 | `<resourceGroup>` | 指定目标资源组，在此示例中为 `maven-plugin`。 如果资源组不存在，则会在部署过程中进行创建。 |
 | `<appName>` | 指定 Web 应用的目标名称。 在此示例中，目标名称为 `maven-linux-app-${maven.build.timestamp}`，此示例附加​​了 `${maven.build.timestamp}` 后缀以避免冲突。 （时间戳是可选项；可为应用名称指定任何唯一的字符串。） |
 | `<region>` | 指定目标区域，在此示例中为 `westus`。 （[适用于 Azure Web 应用的 Maven 插件]文档中提供了完整列表。） |

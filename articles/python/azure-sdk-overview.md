@@ -4,12 +4,12 @@ description: 概述了用于 Python 的 Azure 库的特性和功能，这些特�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6dab8085cd9d18f34ea1dc307a414fa18cdbcb83
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 81bda5dbe4c39341c2c799ecdbac10c2f0347bcc
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90829953"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364430"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>使用用于 Python 的 Azure 库 (SDK)
 
@@ -19,7 +19,7 @@ ms.locfileid: "90829953"
 
 - Azure 库是用于从本地或云中运行的 Python 代码与 Azure 服务进行通信的方式。 （是否可以在特定服务的作用域内运行 Python 代码取决于该服务当前是否支持 Python。）
 
-- 这些库支持 Python 2.7 和 Python 3.5.3 或更高版本，并且还针对 PyPy 5.4 以上的版本进行了测试。
+- 这些库支持 Python 2.7 和 Python 3.5.3 或更高版本，还针对 PyPy 5.4 以上的版本进行了测试。
 
 - 用于 Python 的 Azure SDK 完全由 180 多个与特定 Azure 服务相关的 Python 库组成。 该“SDK”中没有其他工具。
 

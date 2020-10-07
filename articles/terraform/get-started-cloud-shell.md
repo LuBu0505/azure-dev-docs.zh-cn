@@ -1,16 +1,16 @@
 ---
 title: 快速入门 - 使用 Azure Cloud Shell 配置 Terraform
-description: 本快速入门介绍如何安装和配置 Terraform 以创建 Azure 资源。
+description: 本快速入门介绍如何在 Azure Cloud Shell 上安装和配置 Terraform。
 keywords: azure devops terraform 安装 配置 cloud shell init 计划 应用 执行 门户 登录 rbac 服务主体 自动化脚本
 ms.topic: quickstart
-ms.date: 08/08/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d8cec2954357269b5605a7b35c96030b8e8b5fa0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241169"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401607"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>快速入门：使用 Azure Cloud Shell 配置 Terraform
  
@@ -20,15 +20,13 @@ ms.locfileid: "88241169"
 
 在本文中，学习如何：
 > [!div class="checklist"]
-> * 使用 `az login` 对 Azure 进行身份验证
+> * 向 Azure 进行身份验证
 > * 使用 Azure CLI 创建 Azure 服务主体
 > * 使用服务主体对 Azure 进行身份验证
 > * 设置当前的 Azure 订阅 - 有多个订阅时使用
-> * 编写 Terraform 脚本以创建 Azure 资源组
+> * 创建基本 Terraform 配置文件
 > * 创建并应用 Terraform 执行计划
-> * 使用 `terraform plan -destroy` 标志来撤消执行计划
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * 撤消执行计划
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -122,134 +120,15 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
 
     - 调用 `az account set` 不会显示切换到指定的 Azure 订阅的结果。 但是，可以使用 `az account show` 来确认当前的 Azure 订阅是否已更改。
 
-## <a name="create-a-terraform-configuration-file"></a>创建 Terraform 配置文件
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-本部分介绍如何创建用于创建 Azure 资源组的 Terraform 配置文件。
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. 将目录更改为 Cloud Shell 中的工作成果会保存到的已装载文件共享。 有关 Cloud Shell 如何保存文件的详细信息，请参阅[连接 Microsoft Azure 文件存储](/azure/cloud-shell/overview#connect-your-microsoft-azure-files-storage)
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```bash
-    cd clouddrive
-    ```
-
-1. 创建一个目录来保存用于此演示的 Terraform 文件。
-
-    ```bash
-    mkdir QuickstartTerraformTest
-    ```
-
-1. 将目录更改为演示目录。
-
-    ```bash
-    cd QuickstartTerraformTest
-    ```
-
-1. 使用你偏好的编辑器创建 Terraform 配置文件。 本文使用内置 [Cloud Shell 编辑器](/azure/cloud-shell/using-cloud-shell-editor)。
-
-    ```bash
-    code QuickstartTerraformTest.tf
-    ```
- 
-1. 将以下 HCL 代码粘贴到新文件中。
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you are using version 1.x, the "features" block is not allowed.
-      version = "~>2.0"
-      features {}
-    }
-    resource "azurerm_resource_group" "rg" {
-            name = "QuickstartTerraformTest-rg"
-            location = "eastus"
-    }
-    ```
-
-    **注意**：
-
-    - `provider` 块指定使用 [Azure 提供程序 (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html)。
-    - 在 `azurerm` 提供程序块中设置了 `version` 和 `features` 属性。 作为注释语句，其用法是特定于版本的。 有关如何为环境设置这些属性的详细信息，请参阅 [AzureRM 提供程序的 v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)。
-    - 唯一的[资源声明](https://www.terraform.io/docs/configuration/resources.html)适用于资源类型 [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html)。 `azure_resource_group` 的两个必需参数是 `name` 和 `location`。
-
-1. 保存文件 ( **&lt;Ctrl>S**)。
-
-1. 退出编辑器 ( **&lt;Ctrl>Q**)。
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>创建并应用 Terraform 执行计划
-
-在本节中，你将创建一个执行计划，并将其应用于云基础结构。
-
-1. 使用 [Terraform init](https://www.terraform.io/docs/commands/init.html) 初始化 Terraform 部署。 此步骤将下载创建 Azure 资源组所需的 Azure 模块。
-
-    ```bash
-    terraform init
-    ```
-
-1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以基于 Terraform 配置文件创建一个执行计划。
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    注意：
-    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 此模式允许你在对实际资源进行任何更改之前验证执行计划是否符合预期。
-    - 使用可选 `-out` 参数可以为计划指定输出文件。 使用 `-out` 参数可以确保所查看的计划与所应用的计划完全一致。
-    - 若要详细了解如何使执行计划和安全性持久化，请参阅[安全警告一节](https://www.terraform.io/docs/commands/plan.html#security-warning)。
-
-1. 运行 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 以应用执行计划。
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. 应用执行计划后，可使用 [az group show](/cli/azure/group?#az-group-show) 测试资源组是否已成功创建。
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **注释**：
-
-    - 如果成功，`az group show` 会显示新创建的资源组的各种属性。
-
-## <a name="clean-up-resources"></a>清理资源
-
-如果不再需要本教程中创建的资源，请将其删除。
-
-1. 运行 [terraform plan](https://www.terraform.io/docs/commands/plan.html) 以创建执行计划，销毁 Terraform 配置文件中指示的资源。
-
-    ```bash
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **注释**：
-    - `terraform plan` 命令将创建一个执行计划，但不会执行它。 它会确定创建配置文件中指定的配置需要执行哪些操作。 此模式允许你在对实际资源进行任何更改之前验证执行计划是否符合预期。
-    - `-destroy` 参数会生成一个用于销毁资源的计划。
-    - 使用可选 `-out` 参数可以为计划指定输出文件。 使用 `-out` 参数可以确保所查看的计划与所应用的计划完全一致。
-    - 若要详细了解如何使执行计划和安全性持久化，请参阅[安全警告一节](https://www.terraform.io/docs/commands/plan.html#security-warning)。
-
-1. 运行 [terraform apply](https://www.terraform.io/docs/commands/apply.html) 以应用执行计划。
-
-    ```bash
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. 使用 [az group show](/cli/azure/group?#az-group-show) 验证资源组是否已删除。
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **注释**：
-    - 如果成功，`az group show` 会显示资源组不存在这一事实。
-
-1. 将目录更改为父目录，并删除演示目录。 `-r` 参数会在删除目录之前删除目录内容。 目录内容包括之前创建的配置文件和 Terraform 状态文件。
-
-    ```bash
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [使用 Terraform 创建 Azure VM](create-linux-virtual-machine-with-infrastructure.md)
+> [使用 Terraform 创建 Linux VM](create-linux-virtual-machine-with-infrastructure.md)
