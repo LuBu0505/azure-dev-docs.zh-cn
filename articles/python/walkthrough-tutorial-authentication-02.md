@@ -4,12 +4,12 @@ description: 讨论示例方案中的不同身份验证需求和挑战，以及�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c6719e3c86b590edff551d98e5a961fd08f857c3
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 2e3755f7049fd091c05cd2aca5ddf8276cebff95
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379471"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764435"
 ---
 # <a name="part-2-authentication-needs-in-the-scenario"></a>第 2 部分：方案中的身份验证需求
 
@@ -33,7 +33,7 @@ ms.locfileid: "89379471"
 
 ## <a name="integrated-authentication-with-managed-identity"></a>使用托管标识进行集成身份验证
 
-许多 Azure 服务（如存储和 Key Vault）都与 Azure Active Directory (Azure AD) 集成，这样，在使用[托管标识](/azure/active-directory/managed-identities-azure-resources/overview)通过 Azure AD 对应用程序进行身份验证时，该应用程序便会通过其他连接的资源自动进行身份验证。 标识的授权通过[基于角色的访问控制 (RBAC)](how-to-assign-role-permissions.md) 进行处理，有时也通过其他访问策略来处理。
+许多 Azure 服务（如存储和 Key Vault）都与 Azure Active Directory (Azure AD) 集成，这样，在使用[托管标识](/azure/active-directory/managed-identities-azure-resources/overview)通过 Azure AD 对应用程序进行身份验证时，该应用程序便会通过其他连接的资源自动进行身份验证。 标识的授权通过[基于角色的访问控制 (RBAC)](/azure/role-based-access-control/role-assignments-steps) 进行处理，有时也通过其他访问策略来处理。
 
 此集成意味着你永远无需在应用代码中处理任何与 Azure 相关的凭据，并且这些凭据绝不会出现在开发者工作站或源代码管理中。 此外，对第三方 API 和服务的密钥的任何处理都完全在运行时完成，因此，这些密钥非常安全。
 
@@ -51,7 +51,7 @@ ms.locfileid: "89379471"
 
 本教程的其余部分在示例方案和随附示例代码的上下文中演示了该过程的所有详细信息。
 
-在示例的预配脚本中，所有资源都在名为 `auth-scenario-rg` 的资源组下创建。 此组使用 Azure CLI [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) 命令创建。
+在示例的预配脚本中，所有资源都在名为 `auth-scenario-rg` 的资源组下创建。 此组使用 Azure CLI [`az group create`](/cli/azure/group#az-group-create) 命令创建。
 
 > [!div class="nextstepaction"]
 > [第 3 部分 - 第三方 API 实现示例 >>>](walkthrough-tutorial-authentication-03.md)

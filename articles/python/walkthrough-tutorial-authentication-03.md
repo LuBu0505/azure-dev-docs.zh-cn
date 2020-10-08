@@ -4,12 +4,12 @@ description: 检查使用 Azure Functions 实现第三方 API 的示例，以及
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 84078a455843cb28f80a633bb5344bc5ab645ac7
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379470"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764498"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>第 3 部分：第三方 API 实现示例
 
@@ -42,9 +42,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 为了部署代码，示例的预配脚本将执行以下步骤：
 
-1. 使用 Azure CLI 命令 [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) 为 Azure Functions 创建后备存储帐户。
+1. 使用 Azure CLI 命令 [`az storage account create`](/cli/azure/storage/account#az-storage-account-create) 为 Azure Functions 创建后备存储帐户。
 
-1. 使用 Azure CLI 命令 [`az function app create`](/cli/azure/functionapp?view=azure-cli-latest#az-functionapp-create) 创建 Azure Functions“app”。
+1. 使用 Azure CLI 命令 [`az function app create`](/cli/azure/functionapp#az-functionapp-create) 创建 Azure Functions“app”。
 
 1. 等待 60 秒以便完全预配主机，然后使用 [Azure Functions Core Tools](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash) 命令 [`func azure functionapp publish`](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash#project-file-deployment) 部署代码
 

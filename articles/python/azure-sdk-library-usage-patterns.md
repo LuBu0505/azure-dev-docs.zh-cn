@@ -4,12 +4,12 @@ description: 用于 Python 的 Azure SDK 库的常见使用模式概述
 ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831793"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764778"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>用于 Python 的 Azure 库的使用模式
 
@@ -37,9 +37,9 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>异步操作
 
-通过客户端和管理客户端对象调用的许多操作（如 [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)）会返回一个类型 `AzureOperationPoller[<type>]` 的对象，其中 `<type>` 是特定于操作的。
+通过客户端和管理客户端对象调用的许多操作（如 [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)）会返回一个类型 `AzureOperationPoller[<type>]` 的对象，其中 `<type>` 是特定于操作的。
 
-[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) 返回类型意味着操作是异步的。 相应地，必须调用该轮询器的 `result` 方法，以等待操作的实际结果变为可用。
+[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) 返回类型意味着操作是异步的。 相应地，必须调用该轮询器的 `result` 方法，以等待操作的实际结果变为可用。
 
 下面的代码摘自[示例：预配和部署 web 应用](azure-sdk-example-web-app.md)，展示了使用轮询器等待结果的示例：
 
@@ -58,7 +58,7 @@ poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
 web_app_result = poller.result()
 ```
 
-在这种情况下，`create_or_update` 的返回值为类型 `AzureOperationPoller[Site]`，这意味着 `poller.result()` 的返回值是一个 [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python) 对象。
+在这种情况下，`create_or_update` 的返回值为类型 `AzureOperationPoller[Site]`，这意味着 `poller.result()` 的返回值是一个 [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site) 对象。
 
 ## <a name="exceptions"></a>例外
 
@@ -112,7 +112,7 @@ web_app_result = poller.result()
 
 Azure 库中的许多操作可用于将对象参数表示为离散对象或内联 JSON。
 
-例如，假设你有一个 [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient?view=azure-python) 对象，并通过该对象的 [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-)) 方法创建了资源组。 此方法的第二个参数的类型为 [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup?view=azure-python)。
+例如，假设你有一个 [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient) 对象，并通过该对象的 [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-)) 方法创建了资源组。 此方法的第二个参数的类型为 [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup)。
 
 若要调用 `create_or_update`，可以使用其所需的参数（在本例中为 `location`）创建 `ResourceGroup` 的离散实例：
 
@@ -138,7 +138,7 @@ rg_result = resource_client.resource_groups.create_or_update(
 
 对象也可以具有嵌套对象参数，在这种情况下，也可以使用嵌套 JSON。
 
-例如，假设你有一个 [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python) 对象的实例，并调用其 [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) 方法。 在这种情况下，第三个参数的类型为 [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python)，其本身包含 [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) 类型的参数。 而 `VaultProperties` 包含类型为 [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) 和 [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python) 的对象参数。 `Sku` 包含 [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python) 对象，且每个 `AccessPolicyEntry` 均包含 [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python) 对象。
+例如，假设你有一个 [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient) 对象的实例，并调用其 [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) 方法。 在这种情况下，第三个参数的类型为 [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters)，其本身包含 [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties) 类型的参数。 而 `VaultProperties` 包含类型为 [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku) 和 [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry) 的对象参数。 `Sku` 包含 [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname) 对象，且每个 `AccessPolicyEntry` 均包含 [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions) 对象。
 
 若要使用嵌入对象调用 `create_or_update`，请使用如下所示的代码（假定已定义了 `tenant_id` 和 `object_id`）。 还可以在该函数调用之前创建必要的对象。
 

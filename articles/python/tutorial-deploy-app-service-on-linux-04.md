@@ -4,12 +4,12 @@ description: 教程步骤 4，指导应用服务如何启动 Web 应用，包括
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 6aa1f03b562eeea01e6e71441e8a12339eeaad26
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501422"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764801"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4：在 Azure 应用服务上为 Python 应用配置自定义启动文件
 
@@ -48,7 +48,7 @@ ms.locfileid: "88501422"
 
 1. 保存更改后，应用服务会重启。 但是，由于尚未部署应用代码，因此此时访问站点会显示“应用程序错误”。 此消息表明 Gunicorn 服务器已启动但找不到应用，因此没有对 HTTP 请求进行响应。 将在下一步部署应用代码。
 
-还可以使用 `--startup-file` 参数，通过 Azure CLI [`az webapp create` 命令](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)指定启动命令。
+还可以使用 `--startup-file` 参数，通过 Azure CLI [`az webapp create` 命令](/cli/azure/webapp#az-webapp-create)指定启动命令。
 
 ## <a name="django-startup-commands"></a>Django 启动命令
 

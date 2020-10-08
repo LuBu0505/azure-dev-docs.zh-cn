@@ -4,12 +4,12 @@ description: 如何设置适用于 Azure 的本地 Python 开发环境，包括 
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 14955bc63ab44884254e2304b0e5ceb97e7bcb0d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614504"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764809"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>为 Azure 配置本地 Python 开发环境
 
@@ -122,7 +122,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
 
     将这些命令中显示的值替换为特定服务主体的值。
 
-    若要检索订阅 ID，请运行 [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) 命令并查看输出结果中的 `id` 属性。
+    若要检索订阅 ID，请运行 [`az account show`](/cli/azure/account#az-account-show) 命令并查看输出结果中的 `id` 属性。
 
     为了方便起见，请创建包含这些命令的命令行脚本文件（例如在 macOS/Linux 上为 setenv.sh，在 Windows 上为 setenv.cmd） 。 然后，在每次打开终端或命令提示符进行本地测试时，都可运行此脚本来设置变量。 同样，不要将此脚本文件添加到源代码管理中，这样它只会保留在用户帐户中。
 
@@ -138,7 +138,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
 
 `az ad create-for-rbac` 命令将为“基于角色的身份验证”(RBAC) 创建服务主体。
 
-- `ad` 表示 Azure Active Directory，`sp` 表示“服务主体”，`create-for-rbac` 表示“创建基于角色的访问控制”，这是 Azure 的主要授权形式。 请参阅 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 命令参考。
+- `ad` 表示 Azure Active Directory，`sp` 表示“服务主体”，`create-for-rbac` 表示“创建基于角色的访问控制”，这是 Azure 的主要授权形式。 请参阅 [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) 命令参考。
 
 - `--name` 参数在组织中应该是唯一的，通常采用使用服务主体的开发人员的名字。 如果省略此参数，则 Azure CLI 使用 `azure-cli-<timestamp>` 格式的通用名称。 可根据需要在 Azure 门户上重命名服务主体。
 
@@ -238,7 +238,7 @@ git init
 
 可以在其中运行 `git add` 和 `git commit` 等命令以提交更改。 通过定期提交更改，可以创建提交历史记录，并可将其恢复到任何以前的状态。
 
-若要对项目进行联机备份，还建议将存储库上载到 [GitHub](https://github.com) 或 [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops)。 如果已先初始化本地存储库，请使用 `git remote add` 将本地存储库附加到 GitHub 或 Azure DevOps。
+若要对项目进行联机备份，还建议将存储库上载到 [GitHub](https://github.com) 或 [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops&preserve-view=true)。 如果已先初始化本地存储库，请使用 `git remote add` 将本地存储库附加到 GitHub 或 Azure DevOps。
 
 有关 git 的文档，请参阅 [git-scm.com/docs](https://git-scm.com/docs) 和 Internet 上的所有文档。
 

@@ -4,12 +4,12 @@ description: 检查主应用 API 终结点的代码，该终结点使用第三�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e026eca0216147c6614582e0cd070cee81daf99c
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: b6a54f51c53889ba95f86ba194232262f31c2d99
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379468"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764702"
 ---
 # <a name="part-7-main-application-api-endpoint"></a>第 7 部分：主应用程序 API 终结点
 
@@ -52,7 +52,7 @@ def get_code():
 
 此处的 `code` 变量包含应用 API 的完整 JSON 响应，其中包括代码值和时间戳。 响应示例包括 `{"code":"ojE-161-pTv","timestamp":"2020-04-15 16:54:48.816549"}`。
 
-但是，在返回该响应之前，我们将使用队列客户端的 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) 方法，在存储队列中写入一条包含该响应的消息：
+但是，在返回该响应之前，我们将使用队列客户端的 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) 方法，在存储队列中写入一条包含该响应的消息：
 
 ```python
     queue_client.send_message(code)
@@ -62,7 +62,7 @@ def get_code():
 
 ## <a name="processing-queue-messages"></a>处理队列消息
 
-可以通过 [Azure 门户](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties)或 Azure CLI 命令 [`az storage message get`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-get) 来查看和管理队列中存储的消息。 示例存储库包含一个脚本（test.cmd 和 test.sh），用于从应用终结点请求代码，然后检查消息队列 。 还存在一个用于使用 [`az storage message clear`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-clear) 命令来清除队列的脚本。
+可以通过 [Azure 门户](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties)或 Azure CLI 命令 [`az storage message get`](/cli/azure/storage/message#az-storage-message-get) 来查看和管理队列中存储的消息。 示例存储库包含一个脚本（test.cmd 和 test.sh），用于从应用终结点请求代码，然后检查消息队列 。 还存在一个用于使用 [`az storage message clear`](/cli/azure/storage/message#az-storage-message-clear) 命令来清除队列的脚本。
 
 通常，像本示例这样的应用会有另一个进程，该进程以异步方式从队列中拉取消息进行进一步处理。 如前所述，此 API 终结点生成的响应可以通过双因素用户身份验证在应用中的其他地方使用。 在这种情况下，应用应在一段时间（比如 10 分钟）后使代码无效。 执行此任务的一种简单方法是维护有效双因素身份验证代码表，用户登录过程将使用这些代码。 然后，应用将具有一个简单的队列监视进程，其逻辑如下（在伪代码中）：
 
@@ -76,7 +76,7 @@ else:
     call queue_client.send_message(code, visibility_timeout=600)
 </pre>
 
-此伪代码采用了 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) 方法的可选 `visibility_timeout` 参数，该参数指定消息在队列中可见之前经历的秒数。 由于默认超时值为零，因此，最初由 API 终结点写入的消息会立即对队列监视进程可见。 因此，该进程会立即将它们存储在有效代码表中。 通过使用此超时值再次对同一消息进行排队，进程可知晓自己将在 10 分钟之后再次收到代码，并在届时从表中删除该代码。
+此伪代码采用了 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) 方法的可选 `visibility_timeout` 参数，该参数指定消息在队列中可见之前经历的秒数。 由于默认超时值为零，因此，最初由 API 终结点写入的消息会立即对队列监视进程可见。 因此，该进程会立即将它们存储在有效代码表中。 通过使用此超时值再次对同一消息进行排队，进程可知晓自己将在 10 分钟之后再次收到代码，并在届时从表中删除该代码。
 
 ## <a name="implementing-the-main-app-api-endpoint-in-azure-functions"></a>在 Azure Functions 中实现主应用 API 终结点
 
@@ -90,7 +90,7 @@ else:
 
 通过此示例，你已了解应用如何使用其他 Azure 服务进行身份验证，以及应用如何使用 Azure Key Vault 来存储第三方 API 的任何其他必需机密。
 
-这里演示的有关 Azure Key Vault 和 Azure 存储的相同模式适用于所有其他 Azure 服务。 关键步骤是在 Azure 门户上相应服务的页面中或通过 Azure CLI 为应用设置正确的角色权限。 （请参阅[如何分配角色权限](how-to-assign-role-permissions.md)）。 请务必查看服务文档，了解是否需要配置任何其他访问策略。
+这里演示的有关 Azure Key Vault 和 Azure 存储的相同模式适用于所有其他 Azure 服务。 关键步骤是在 Azure 门户上相应服务的页面中或通过 Azure CLI 为应用设置正确的角色权限。 （请参阅[如何分配角色权限](/azure/role-based-access-control/role-assignments-steps)）。 请务必查看服务文档，了解是否需要配置任何其他访问策略。
 
 请时刻记住，需要将相同的角色和访问策略分配给用于本地开发的任何服务主体。
 

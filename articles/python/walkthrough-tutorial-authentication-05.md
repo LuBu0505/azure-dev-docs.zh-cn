@@ -4,12 +4,12 @@ description: 讨论主应用的依赖项（主要是 Azure SDK 库）、必要�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2da18ac4b1d27e976d0713fba16dbfc0ba644168
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379466"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764730"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>第 5 部分：主应用依赖项、导入语句和环境变量
 
@@ -19,7 +19,7 @@ ms.locfileid: "89379466"
 
 ## <a name="dependencies-and-import-statements"></a>依赖项和导入语句
 
-应用代码需要多个库：Flask、标准 HTTP 请求库以及 Active Directory ([azure.identity](/python/api/overview/azure/identity-readme?view=azure-python))、Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme?view=azure-python)) 和队列存储 ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme?view=azure-python)) 的 Azure 库。 这些库包含在应用的 requirements.txt 文件中：
+应用代码需要多个库：Flask、标准 HTTP 请求库以及 Active Directory ([azure.identity](/python/api/overview/azure/identity-readme))、Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme)) 和队列存储 ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme)) 的 Azure 库。 这些库包含在应用的 requirements.txt 文件中：
 
 ```txt
 flask
@@ -57,7 +57,7 @@ from azure.storage.queue import QueueClient
 
 但是，在部署到 Azure 应用服务时，你将无法访问服务器本身。 在这种情况下，可以创建具有相同名称的应用程序设置，这些设置随后作为环境变量出现在应用中。 
 
-预配脚本使用 Azure CLI 命令 [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) 来创建这些设置。 所有这四个变量均使用单个命令进行设置。
+预配脚本使用 Azure CLI 命令 [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) 来创建这些设置。 所有这四个变量均使用单个命令进行设置。
 
 要通过 Azure 门户创建设置，请参阅[在 Azure 门户中配置应用服务应用](/azure/app-service/configure-common)。
 
