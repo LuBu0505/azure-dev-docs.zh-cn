@@ -10,118 +10,118 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 60455122c0ab21dc646938661c4f9489c969bd0d
-  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
+  ms.openlocfilehash: ed689388bddd3083b1718e05d6d8ad6eccc055f2
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87260384"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846658"
 productDirectory:
   items:
   - title: Python
     imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
     links:
-    - url: https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+    - url: ./python/tutorial-vs-code-serverless-python-01.md
       text: 将无服务器 Python 应用部署到 Azure Functions
-    - url: https://docs.microsoft.com/azure/developer/python/tutorial-deploy-app-service-on-linux-01
+    - url: ./python/tutorial-deploy-app-service-on-linux-01.md
       text: 将 Python 应用部署到 Azure 应用服务
-    - url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-python
+    - url: /azure/storage/blobs/storage-quickstart-blobs-python
       text: 使用 Azure SDK for Python 管理存储 Blob
-    - url: https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python
+    - url: /azure/sql-database/sql-database-connect-query-python
       text: 使用 Python 查询 Azure SQL 数据库
-    - url: https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-python
+    - url: /azure/data-factory/quickstart-create-data-factory-python
       text: 使用 Python 创建 Azure 数据工厂
-    - url: https://docs.microsoft.com/azure/developer/python/
+    - url: ./python/index.yml
       text: 请在 Python 开发人员中心查看详细信息
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-static-website-node-01.md?tabs=bash
       text: 开发静态网站
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-azure-app-service-node-01.md?tabs=bash
       text: 部署到 Azure 应用服务
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-serverless-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-serverless-node-01.md?tabs=bash
       text: 部署无服务器应用程序
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-docker-node-01.md?tabs=bash
       text: 部署 Docker 容器
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - url: /azure/cosmos-db/create-mongodb-nodejs?bc=%252fazure%252fdeveloper%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fdeveloper%252fjavascript%252ftoc.json
       text: 将 MongoDB 应用迁移到 Azure Cosmos DB
-    - url: https://docs.microsoft.com/azure/developer/javascript/
+    - url: ./javascript/index.yml
       text: 请在开发人员中心了解更多信息
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install
+    - url: ./java/fundamentals/java-jdk-install.md
       text: 安装适用于 Azure 和 Azure Stack 的 JDK
-    - url: https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
       text: 使用 Azure 门户部署 Azure Spring Cloud 应用
-    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java
+    - url: /azure/app-service/app-service-web-get-started-java
       text: 在 Azure 应用服务中创建 Java 应用
-    - url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory
+    - url: ./java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory.md
       text: 使用适用于 Azure Active Directory 的 Spring Boot Starter
-    - url: https://docs.microsoft.com/azure/developer/java/migration/migration-overview
+    - url: ./java/migration/migration-overview.md
       text: 将 Java 应用程序迁移到 Azure
-    - url: https://docs.microsoft.com/azure/developer/java/
+    - url: ./java/index.yml
       text: 在 Java 开发人员中心查看详细信息
   - title: .NET
     imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
     links:
-    - url: https://docs.microsoft.com/dotnet/azure/sdk/
+    - url: /dotnet/azure/sdk/
       text: 用于 .NET 的 Azure SDK
-    - url: https://docs.microsoft.com/dotnet/azure/intro
+    - url: /dotnet/azure/intro
       text: Azure 和 .NET 简介
-    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+    - url: /azure/app-service/app-service-web-get-started-dotnet
       text: 部署 ASP.NET Web 应用
-    - url: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+    - url: /azure/azure-functions/functions-create-your-first-function-visual-studio
       text: 生成无服务器函数
-    - url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+    - url: /visualstudio/containers/container-tools?view=vs-2019
       text: ASP.NET Core 和 Docker
-    - url: https://docs.microsoft.com/dotnet/azure/
+    - url: /dotnet/azure/
       text: 在 .NET 开发人员中心查看详细信息
   - title: Azure PowerShell
     imageSrc: https://docs.microsoft.com/media/logos/logo_powershell.svg
     links:
-    - url: https://docs.microsoft.com/powershell/azure/new-azureps-module-az
+    - url: /powershell/azure/new-azureps-module-az
       text: 新的 Az 模块是什么？
-    - url: https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az
+    - url: /powershell/azure/migrate-from-azurerm-to-az
       text: 从 AzureRM 迁移到 Az
-    - url: https://docs.microsoft.com/powershell/azure/install-az-ps
+    - url: /powershell/azure/install-az-ps
       text: 安装
-    - url: https://docs.microsoft.com/powershell/azure/authenticate-azureps
+    - url: /powershell/azure/authenticate-azureps
       text: 登录
-    - url: https://docs.microsoft.com/powershell/azure/context-persistence
+    - url: /powershell/azure/context-persistence
       text: 持久保存凭据上下文
-    - url: https://docs.microsoft.com/powershell/azure/
+    - url: /powershell/azure/
       text: 在 Azure PowerShell 开发人员中心查看详细信息
   - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     links:
-    - url: https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/get-started-with-azure-cli?view=azure-cli-latest
       text: 入门
-    - url: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/install-azure-cli?view=azure-cli-latest
       text: 安装
-    - url: https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/authenticate-azure-cli?view=azure-cli-latest
       text: 登录
-    - url: https://docs.microsoft.com/en-us/cli/azure/query-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/query-azure-cli?view=azure-cli-latest
       text: 对 CLI 命令的输出运行查询
-    - url: https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
+    - url: /cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
       text: 创建虚拟机
-    - url: https://docs.microsoft.com/cli/azure/
+    - url: /cli/azure/
       text: 在 Azure CLI 开发人员中心查看详细信息
   - title: 移动型
     imageSrc: https://static.docs.com/ui/media/product/azure/devices.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/serverless-compute
+    - url: ./mobile-apps/serverless-compute.md
       text: 构建无服务器移动应用
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+    - url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
       text: 使用 Azure Cosmos DB 保存数据
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/push-notifications
+    - url: ./mobile-apps/push-notifications.md
       text: 发送推送通知，与用户互动
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/authentication
+    - url: ./mobile-apps/authentication.md
       text: 添加身份验证并管理用户标识
-    - url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+    - url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
       text: 新 Azure Pipelines 用户应了解的关键概念
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps
+    - url: ./mobile-apps/index.yml
       text: 在移动应用开发人员中心查看详细信息
 additionalContent:
   sections:
@@ -132,34 +132,34 @@ additionalContent:
       url: https://code.visualstudio.com/docs/azure/extensions
     - title: REST API
       summary: 使用 REST API 通过 HTTP 操作访问服务的资源。
-      url: https://docs.microsoft.com/rest/api/
+      url: /rest/api/
     - title: ARM 模板
       summary: 使用 Azure 资源管理器模板通过 JSON 文件定义和配置项目。
-      url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
+      url: /azure/azure-resource-manager/templates/
     - title: Azure DevOps
       summary: 使用 Azure DevOps 来规划工作、协作开发代码以及生成和部署应用程序。
-      url: https://docs.microsoft.com/azure/devops/?view=azure-devops
+      url: /azure/devops/?view=azure-devops
     - title: Azure 和 GitHub 集成
       summary: 使用 GitHub 和 GitHub Actions 从存储库中自动执行、自定义和执行软件开发工作流。
-      url: https://docs.microsoft.com/azure/developer/github
+      url: ./github/index.yml
     - title: Jenkins
       summary: 使用 Jenkins 为软件项目自动进行持续集成和持续交付 (CI/CD)。
-      url: https://docs.microsoft.com/azure/jenkins/
+      url: /azure/jenkins/
     - title: Terraform
       summary: 使用 Hashicorp Terraform 预配和管理云基础结构。
-      url: https://docs.microsoft.com/azure/terraform/
+      url: /azure/terraform/
     - title: Ansible
       summary: 使用 Ansible 自动执行云预配、配置管理和应用程序部署。
-      url: https://docs.microsoft.com/azure/developer/ansible/
+      url: ./ansible/index.yml
     - title: Chef
       summary: 使用 Chef 将 Azure 上的虚拟机基础结构转换为代码。
-      url: https://docs.microsoft.com/azure/developer/chef/
+      url: ./chef/index.yml
     - title: Maven
       summary: 使用 Maven 自动执行构建和管理 Java 项目的方法。 它也适用于其他语言。
       url: https://github.com/Microsoft/azure-maven-plugins#readme
     - title: Azure Toolkit for IntelliJ
       summary: 使用 Azure Toolkit for IntelliJ 从 IntelliJ IDE 中创建、开发、测试和部署 Azure 应用程序。
-      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/
+      url: ./java/toolkit-for-intellij/index.yml
     - title: 用于 Eclipse 的 Azure 工具包
       summary: 使用 Azure Toolkit for Eclipse 从 Eclipse IDE 中创建、开发、测试和部署 Azure 应用程序。
-      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-eclipse/
+      url: ./java/toolkit-for-eclipse/index.yml

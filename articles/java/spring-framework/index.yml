@@ -6,12 +6,12 @@ metadata:
   description: Spring 是 VMware 开发的开源应用程序框架，它提供简化的模块化方法来创建 Java 应用程序。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 8260997ed17f456b2307a4e2d4092104847ceb6e
-  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+  ms.openlocfilehash: ec6211311b5eb5eef04af15b5ffe82dbade42ae9
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/21/2020
-  ms.locfileid: "90831553"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846378"
 landingContent:
 - title: 入门指南
   linkLists:
@@ -47,10 +47,6 @@ landingContent:
       url: deploy-spring-boot-java-app-on-kubernetes.md
     - text: 将应用部署到适用于容器的 Web 应用
       url: deploy-spring-boot-java-app-on-linux.md
-    - text: 使用 Maven 部署到适用于容器的 Web 应用
-      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
-    - text: 将应用从 ACR 部署到 Azure
-      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
 - title: 代码示例
   linkLists:
   - linkListType: sample
