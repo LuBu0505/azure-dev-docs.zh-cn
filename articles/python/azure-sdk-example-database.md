@@ -1,15 +1,15 @@
 ---
 title: 使用 Azure SDK 库预配 Azure MySQL 数据库
 description: 使用用于 Python 的 Azure SDK 库中的管理库来预配 Azure MySQL、PostgresSQL 或 MariaDB 数据库。
-ms.date: 06/02/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 17848311fa713fbe480609d2d49481b5f343eff4
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: b1f04dbf2fa12aeab58a05191319a27072db6d28
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110543"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764681"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>示例：使用 Azure 库预配数据库
 
@@ -17,7 +17,7 @@ ms.locfileid: "91110543"
 
 可以使用类似的代码来预配 PostgreSQL 或 MariaDB 数据库。
 
-除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
+除非另行说明，否则本文中的所有资源在 Linux/macOS bash 和 Windows 命令行界面上的工作方式相同。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1：设置本地开发环境
 
@@ -30,12 +30,14 @@ ms.locfileid: "91110543"
 创建一个具有以下内容的名为 *requirements.txt* 的文件：
 
 ```text
-azure-mgmt-resource
+azure-mgmt-resource==10.2.0
 azure-mgmt-rdbms
 azure-cli-core
 mysql
 mysql-connector
 ```
+
+azure-mgmt-resource 的特定版本要求是为了确保你使用与 azure-mgmt-web 的当前版本兼容的版本。 这些版本并不基于 azure.core，因此它们使用更旧的方法来进行身份验证。
 
 在激活了虚拟环境的终端或命令提示符下，安装下列要求：
 
@@ -150,15 +152,15 @@ print(f"Provisioned MySQL database {db_result.name} with ID {db_result.id}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [MySQLManagementClient (azure.mgmt.rdbms.mysql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.mysqlmanagementclient?view=azure-python)
-- [ServerForCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverforcreate?view=azure-python)
-- [ServerPropertiesForDefaultCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverpropertiesfordefaultcreate?view=azure-python)
-- [ServerVersion (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverversion?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [MySQLManagementClient (azure.mgmt.rdbms.mysql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.mysqlmanagementclient)
+- [ServerForCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverforcreate)
+- [ServerPropertiesForDefaultCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverpropertiesfordefaultcreate)
+- [ServerVersion (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverversion)
 
 另请参阅：
-    - [PostgreSQLManagementClient (azure.mgmt.rdbms.postgresql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.postgresql.postgresqlmanagementclient?view=azure-python)
-    - [MariaDBManagementClient (azure.mgmt.rdbms.mariadb)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mariadb.mariadbmanagementclient?view=azure-python)
+    - [PostgreSQLManagementClient (azure.mgmt.rdbms.postgresql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.postgresql.postgresqlmanagementclient)
+    - [MariaDBManagementClient (azure.mgmt.rdbms.mariadb)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mariadb.mariadbmanagementclient)
 
 ## <a name="4-run-the-script"></a>4：运行脚本
 
@@ -229,11 +231,11 @@ az group delete -n PythonAzureExample-DB-rg  --no-wait
 
 如果不需要保留预配在此示例中的资源，并想要避免订阅中的持续费用，则运行此命令。
 
-你还可以使用 [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 方法从代码中删除资源组。
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>有关参考：等效 Azure CLI 命令
 
-以下 Azure CLI 命令完成了与 Python 脚本相同的预配步骤。 对于 PostgreSQL 数据库，请使用 [`az postgres`](/cli/azure/postgres?view=azure-cli-latest) 命令；对于 MariaDB，请使用 [`az mariadb`](/cli/azure/mariadb?view=azure-cli-latest) 命令。
+以下 Azure CLI 命令完成了与 Python 脚本相同的预配步骤。 对于 PostgreSQL 数据库，请使用 [`az postgres`](/cli/azure/postgres) 命令；对于 MariaDB，请使用 [`az mariadb`](/cli/azure/mariadb) 命令。
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 

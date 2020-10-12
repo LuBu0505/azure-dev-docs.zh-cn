@@ -4,18 +4,18 @@ description: 使用用于 Python 的 Azure SDK 库访问 Azure 存储帐户中�
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110489"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764456"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库访问 Azure 存储
 
 此示例演示了如何在 Python 应用程序代码中使用 Azure 客户端库，以便将文件上传到 Blob 存储容器。 该示例假设你已预配了[示例：预配 Azure 存储](azure-sdk-example-storage.md)中所示的资源。
 
-除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
+除非另行说明，否则本文中的所有资源在 Linux/macOS bash 和 Windows 命令行界面上的工作方式相同。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1：设置本地开发环境
 
@@ -115,8 +115,8 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
     ```
 
     参考链接：
-      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)
-      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python)
+      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential)
+      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient)
 
 1. 尝试运行代码（有意失败）：
 
@@ -126,7 +126,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     由于你使用的本地服务主体不具有访问 blob 容器的权限，你会看到以下错误：“此请求无权使用此权限执行此操作”。
 
-1. 使用 Azure CLI 命令 [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)（此命令较长！）将容器权限授予服务主体：
+1. 使用 Azure CLI 命令 [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create)（此命令较长！）将容器权限授予服务主体：
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -154,7 +154,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 1. 权限传播需要花费时间，因此请等待一两分钟，然后再次运行该代码，验证它现在是否正常工作。 如果再次看到权限错误，请等待更长的时间，然后重试代码。
 
-有关作用域和角色分配的更多信息，请参阅[如何分配角色权限](how-to-assign-role-permissions.md)。
+有关角色分配的详细信息，请参阅[如何使用 Azure CLI 分配角色权限](/azure/role-based-access-control/role-assignments-cli)。
 
 ### <a name="4b-use-blob-storage-with-a-connection-string"></a>4b：将 blob 存储与连接字符串配合使用
 
@@ -202,7 +202,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 如果不需要保留预配在此示例中的资源，并想要避免订阅中的持续费用，则运行此命令。
 
-你还可以使用 [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 方法从代码中删除资源组。
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>另请参阅
 

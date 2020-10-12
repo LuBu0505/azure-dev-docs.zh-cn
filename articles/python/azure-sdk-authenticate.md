@@ -1,15 +1,15 @@
 ---
 title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
-ms.date: 09/18/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e842e7530cc475e8431fbadfb3767ea56102c33e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831903"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764673"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>如何在 Azure 上对 Python 应用进行身份验证和授权
 
@@ -53,7 +53,7 @@ ms.locfileid: "90831903"
 
 ## <a name="assign-roles-and-permissions-to-an-identity"></a>为标识分配角色和权限
 
-了解应用在 Azure 上和在本地运行时的标识后，就可以使用基于角色的访问控制 (RBAC) 通过 Azure 门户或 Azure CLI 授予权限。 如需了解完整的详细信息，请参阅[如何向应用标识或服务主体分配角色权限](how-to-assign-role-permissions.md)
+了解应用在 Azure 上和在本地运行时的标识后，就可以使用基于角色的访问控制 (RBAC) 通过 Azure 门户或 Azure CLI 授予权限。 如需了解完整的详细信息，请参阅[如何向应用标识或服务主体分配角色权限](/azure/role-based-access-control/role-assignments-steps)。
 
 ## <a name="when-does-authentication-and-authorization-occur"></a>身份验证和授权何时发生？
 
@@ -108,7 +108,7 @@ secret_client = SecretClient(vault_url=vault_url, credential=credential)
 retrieved_secret = secret_client.get_secret("secret-name-01")
 ```
 
-同样，在代码通过客户端对象向 Azure REST API 发出特定请求之前，不会进行身份验证或授权。 用于创建 `DefaultAzureCredential` 的语句（请参阅下一节）仅在内存中创建一个客户端对象，但不执行其他检查。 
+同样，在代码通过客户端对象向 Azure REST API 发出特定请求之前，不会进行身份验证或授权。 用于创建 `DefaultAzureCredential` 的语句（请参阅下一节）仅在内存中创建一个客户端对象，但不执行其他检查。
 
 创建 SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient) 对象也不涉及与相关资源的通信。 `SecretClient` 对象只是基础 Azure REST API 的包装器，仅存在于应用的运行时内存中。 
 
@@ -126,7 +126,7 @@ from azure.keyvault.secrets import SecretClient
 # Acquire the resource URL
 vault_url = os.environ["KEY_VAULT_URL"]
 
-# Aquire a credential object
+# Acquire a credential object
 credential = DefaultAzureCredential()
 
 # Acquire a client object
@@ -142,38 +142,30 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 在本地运行代码时，`DefaultAzureCredential` 会自动使用名为 `AZURE_TENANT_ID`、`AZURE_CLIENT_ID` 和 `AZURE_CLIENT_SECRET` 的环境变量所描述的服务主体。 然后，在调用 API 终结点时，此客户端对象会在 HTTP 请求标头中（以安全的方式）包含这些值。 在本地或云中运行时，无需更改任何代码。 有关创建服务主体和设置环境变量的详细信息，请参阅[为 Azure 配置本地 Python 开发环境 - 配置身份验证](configure-local-development-environment.md#configure-authentication)。
 
-在这两种情况下，必须向所涉及的标识分配适当资源的权限。 [如何分配角色权限](how-to-assign-role-permissions.md)中介绍了常规流程；你可在各项服务的文档中找到具体信息。 要详细了解前面代码所需的 Key Vault 权限，请参阅[使用访问控制策略提供 Key Vault 身份验证](/azure/key-vault/general/group-permissions-for-apps)。
-
-<a name="cli-auth-note"></a>
-> [!IMPORTANT]
-> 在将来，如果服务主体环境变量不可用，`DefaultAzureCredential` 将使用通过 `az login` 登录到 Azure CLI 的标识。 如果你是订阅的所有者或管理员，则此功能的实际作用是，无需分配任何特定权限，你的代码就可以访问该订阅中的大多数资源。 此行为对于试验非常方便。 但是，我们强烈建议你在开始编写生产代码时使用特定服务主体并分配特定权限，因为你将了解如何将确切的权限分配给不同的标识，以及在部署到生产环境之前可以在测试环境中准确验证这些权限。
+在这两种情况下，必须向所涉及的标识分配适当资源的权限。 [如何分配角色权限](/azure/role-based-access-control/role-assignments-steps)中介绍了常规流程；你可在各项服务的文档中找到具体信息。 要详细了解前面代码所需的 Key Vault 权限，请参阅[使用访问控制策略提供 Key Vault 身份验证](/azure/key-vault/general/group-permissions-for-apps)。
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>将 DefaultAzureCredential 与 SDK 管理库配合使用
 
+`DefaultAzureCredential` 适用于[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表上显示的 Azure SDK 管理库的版本（即名称中带有“mgmt”的版本）。 （此外，已更新的库的 pypi 页面还包含“凭据系统进行了彻底更新和优化”这一行内容，以指示所作更改。）
+
+例如，可将 `DefaultAzureCredential` 与 azure-mgmt-resource 的版本 15.0.0 或更高版本结合使用：
+
 ```python
-# WARNING: this code fails with azure-mgmt-resource versions < 15
-
 from azure.identity import DefaultAzureCredential
-
-# azure.mgmt.resource is an Azure SDK management library
 from azure.mgmt.resource import SubscriptionClient
 
-# Attempt to retrieve the subscription ID
 credential = DefaultAzureCredential()
 subscription_client = SubscriptionClient(credential)
 
-# If using azure-mgmt-resource < version 15 the following line produces
-# a "no attribute 'signed_session'" error:
-subscription = next(subscription_client.subscriptions.list())
-
-print(subscription.subscription_id)
+sub_list = subscription_client.subscriptions.list()
+print(list(sub_list))
 ```
 
-`DefaultAzureCredential` 仅适用于[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表上显示的 Azure SDK 客户端（“数据平面”）库和更新版本的 Azure SDK 管理库。
+### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>“DefaultAzureCredential 对象没有 signed-session 特性”
 
-如果使用 azure-mgmt-resource 版本 15.0.0 或更高版本运行前面的代码，则对 `subscription_client.subscriptions.list()` 的调用将成功。 如果使用较早版本的库，该调用会失败，并出现相当不明确的错误：“DefaultAzureCredential”对象没有属性“signed_session”。 出现此错误的原因是，较早版本的 SDK 管理库假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
+如果尝试将 `DefaultAzureCredential` 用于尚未更新为使用 azure.core 的库，那么通过客户端对象的调用会失败，出现信息相对模糊的错误：“DefaultAzureCredential 对象没有 signed-session 特性”。 例如，如果将上一部分中的代码与低于版本 15 的 azure-mgmt-resource 库结合使用，就会遇到此类错误。
 
-可以使用[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表中的最新版本管理库来处理该错误。 如果列出了两个库，请使用版本较高的库。 同时，更新的库的 pypi 页面还包含一行内容：“凭据系统进行了彻底更新和优化”，以指示所作更改。
+出现此错误的原因是，SDK 管理库的非 azure.core 版本假定凭据对象包含 `DefaultAzureCredential` 缺少的 `signed_session` 属性。
 
 如果要使用的管理库尚未更新，可以使用以下替代方法：
 
@@ -193,7 +185,7 @@ print(subscription.subscription_id)
     print(subscription.subscription_id)
     ```
 
-    同样，当更新的管理库可用后，可以直接使用 `DefaultAzureCredential`，如原始代码示例中所示。
+    同样，当更新的管理库可用后，可直接使用 `DefaultAzureCredential`，如原始代码示例中所示。
 
 ## <a name="other-authentication-methods"></a>其他身份验证方法
 
@@ -201,7 +193,7 @@ print(subscription.subscription_id)
 
 - 大多数方法适用于显式服务主体，并且不会利用部署到云的代码的托管标识。 与生产代码一起使用时，必须为云应用程序管理和维护不同的服务主体。
 
-- 某些方法（例如基于 CLI 的身份验证）仅适用于本地脚本，不能与生产代码一起使用。
+- 某些方法（例如基于 CLI 的身份验证）仅适用于本地脚本，不能与生产代码一起使用。 对于开发工作来说，基于 CLI 的身份验证非常便捷，因为它使用 Azure 登录的权限，不需要显式角色分配。
 
 部署到云的应用程序的服务主体在 Active Directory 订阅中进行管理。 有关详细信息，请参阅[如何管理服务主体](how-to-manage-service-principals.md)。
 
@@ -391,6 +383,31 @@ RESOURCE = AZURE_CHINA_CLOUD.endpoints.active_directory_resource_id
 
 ### <a name="cli-based-authentication-development-purposes-only"></a>基于 CLI 的身份验证（仅限开发目的）
 
+在此方法中，将使用通过 Azure CLI 命令 `az login` 登录的用户的凭据创建客户端对象。 基于 CLI 的身份验证仅适用于开发目的，因为无法在生产环境中使用它。
+
+Azure 库默认的订阅 ID，你也可使用 [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli) 在运行代码之前设置订阅。
+
+使用基于 CLI 的身份验证时，会针对 CLI 登录凭据允许的所有操作向应用程序授权。 结果是，如果你是订阅的所有者或管理员，那么无需分配任何特定权限，你的代码就可访问该订阅中的大多数资源。 此行为对于试验非常方便。 但是，强烈建议你在开始编写生产代码时使用特定服务主体并分配特定权限，因为你会了解如何将确切的权限分配给不同的标识，而且在部署到生产环境之前，可在测试环境中准确验证这些权限。
+
+#### <a name="cli-based-authentication-with-azurecore-libraries"></a>使用 azure.core 库的基于 CLI 的身份验证
+
+使用[已为 azure.core 更新的 Azure 库](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore)时，请使用 azure-identity 库（版本 1.4.0+）中的 [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) 对象。 例如，可将以下代码用于 azure-mgmt-resource 版本 15.0.0+：
+
+```python
+from azure.identity import AzureCliCredential
+from azure.mgmt.resource import SubscriptionClient
+
+credential = AzureCliCredential()
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+#### <a name="cli-based-authentication-with-older-non-azurecore-libraries"></a>使用更旧的（非 azure.core）库的基于 CLI 的身份验证
+
+使用未针对 azure.core 更新的更旧的 Azure 库时，可使用 azure-cli-core 库中的 [`get_client_from_cli_profile`](/python/api/azure-common/azure.common.client_factory#get-client-from-cli-profile-client-class----kwargs-) 方法。 例如，可将以下代码用于版本低于 15.0.0 的 azure-mgmt-resource：
+
 ```python
 from azure.common.client_factory import get_client_from_cli_profile
 from azure.mgmt.resource import SubscriptionClient
@@ -401,11 +418,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-在此方法中，将使用通过 Azure CLI 命令 `az login` 登录的用户的凭据创建客户端对象。 应用程序将以用户的身份获得进行所有操作的权限。
-
-SDK 使用默认的订阅 ID，你也可使用 [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli) 在运行代码之前设置订阅。 如需引用同一脚本中的不同订阅，请使用本文前面介绍的 ['get_client_from_auth_file'](#authenticate-with-a-json-file) 或 [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) 方法。
-
-`get_client_from_cli_profile` 函数应仅用于早期试验和开发目的，因为已登录的用户通常拥有所有者或管理员权限，无需任何其他权限即可访问大多数资源。 有关详细信息，请参阅有关[将 CLI 凭据与 `DefaultAzureCredential` 配合使用](#cli-auth-note)的上一条注释。
+如需引用同一脚本中的不同订阅，请使用本文前面介绍的 ['get_client_from_auth_file'](#authenticate-with-a-json-file) 或 [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) 方法。
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>不推荐使用：使用 UserPassCredentials 进行身份验证
 
@@ -414,7 +427,7 @@ SDK 使用默认的订阅 ID，你也可使用 [`az account`](/cli/azure/manage-
 ## <a name="see-also"></a>另请参阅
 
 - [为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)
-- [如何分配角色权限](how-to-assign-role-permissions.md)
+- [如何分配角色权限](/azure/role-based-access-control/role-assignments-steps)
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
 - [示例：预配和使用 Azure 存储](azure-sdk-example-storage.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
