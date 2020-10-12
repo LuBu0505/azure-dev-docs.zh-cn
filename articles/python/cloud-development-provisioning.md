@@ -1,21 +1,21 @@
 ---
 title: 在 Azure 上预配、访问和管理资源
 description: 概述用于处理 Azure 资源的方法，包括 Azure 门户、Azure CLI 和 Azure 库 (SDK)。
-ms.date: 05/27/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 457970eb359be9f10c6269e1ea98efec76612009
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 0dd8de6c1d42ecbb77f34f48034cc9e4c43cd9e3
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983209"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764718"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>在 Azure 上预配、访问和管理资源
 
 [前一篇文章：概述](cloud-development-overview.md)
 
-如本系列前面的文章中所述，开发云应用程序的基本步骤是在 Azure 中预配必要的资源，然后可以将代码和数据部署到这些资源中。
+如本系列前面的文章中所述，开发云应用程序的基本步骤是在 Azure 中预配必要的资源，然后可以将代码和数据部署到这些资源中。 也就是说，要构建云应用程序，首先是构建本质上是目标云计算机的内容；其中，你要向该计算机部署应用程序。 （若要查看可用资源的类型，请参阅 [Azure 开发人员指南](/azure/guides/developer/azure-developer-guide)。）
 
 此预配具体是如何操作的？ 如何请求 Azure 为应用程序分配资源，以及如何配置和访问这些资源？ 简而言之，你如何与 Azure 本身通信以获取所有这些资源？
 
@@ -38,11 +38,11 @@ ms.locfileid: "87983209"
 
 优点：用户界面使你可以轻松地浏览服务及其各种配置选项。 设置配置值是安全的，因为本地工作站上没有存储任何信息。
 
-缺点：使用门户是一个手动过程，无法自动执行。 例如，若要记住更改配置所做的操作，请在单独的文档中记录步骤。
+缺点：使用门户是一个手动过程，无法轻松地自动执行。 例如，若要记住更改配置所做的操作，通常需要在单独的文档中记录步骤。
 
 ## <a name="azure-cli"></a>Azure CLI
 
-[Azure CLI](/cli/azure/?view=azure-cli-latest) 是 Azure 的[开源](https://github.com/Azure/azure-cli)命令行界面。 登录到 CLI（使用 `az login` 命令）后，可以执行可通过门户执行的相同任务。
+[Azure CLI](/cli/azure/) 是 Azure 的[开源](https://github.com/Azure/azure-cli)命令行界面。 登录到 CLI（使用 `az login` 命令）后，可以执行可通过门户执行的相同任务。
   
 优点：通过脚本和输出处理轻松实现自动化。 提供更高级别的命令，为常见任务（如部署 Web 应用）同时预配多个资源。 可以在源代码管理中管理脚本。
 
@@ -50,15 +50,17 @@ ms.locfileid: "87983209"
 
 还可以使用 [Azure PowerShell](/powershell/) 来代替 Azure CLI，尽管 Python 开发人员通常更熟悉 Azure CLI 的 Linux 样式命令。
 
-若要代替本地 CLI 或 PowerShell，可以直接通过 [https://shell.azure.com/](https://shell.azure.com/) 使用 Azure Cloud Shell。 Cloud Shell 很方便，因为它会在打开后通过 Azure 自动进行身份验证，并且具有与通过 Azure 门户打开它相同的功能。 但是，以后与 Cloud Shell 不是本地环境，因此它更适合于通过门户执行的单一操作而不是通过脚本化自动化等执行的操作。
+若要代替本地 CLI 或 PowerShell，可以直接通过 [https://shell.azure.com/](https://shell.azure.com/) 使用 Azure Cloud Shell。 Cloud Shell 很方便，因为它会在打开后通过 Azure 自动进行身份验证，并且具有与通过 Azure 门户打开它相同的功能。 Cloud Shell 还预配置了很多不同的工具，在本地安装它们会很不方便，尤其是在你需要仅运行一两个命令的情况下。
+
+由于 Cloud Shell 不是本地环境，因此它更适合于通过门户执行的单一操作，不适合通过脚本化自动化执行的操作。 不过，可在 Cloud Shell 中克隆源存储库（例如 GitHub 存储库）。 这样的话，你就可在本地开发自动化脚本、在存储库中存储这些脚本、在 Cloud Shell 中克隆该存储库，然后在这里运行它们。
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>Azure REST API 和 Azure 库
 
-[Azure REST API](/rest/api/?view=Azure) 是 Azure 的编程接口，通过 HTTP 上的安全 REST 提供，因为 Azure 的数据中心本质上都连接到 Internet。 为每个资源分配一个唯一的 URL，该 URL 支持特定于资源的 API，但受制于严格的身份验证协议和访问策略。 （实际上，Azure 门户和 Azure CLI 最终通过 REST API 完成其工作。）
+[Azure REST API](/rest/api/?view=Azure&preserve-view=true) 是 Azure 的编程接口，通过 HTTP 上的安全 REST 提供，因为 Azure 的数据中心本质上都连接到 Internet。 为每个资源分配一个唯一的 URL，该 URL 支持特定于资源的 API，但受制于严格的身份验证协议和访问策略。 （实际上，Azure 门户和 Azure CLI 最终通过 REST API 完成其工作。）
 
-对于开发人员而言，Azure 库提供特定于语言的库，这些库将 REST API 功能转换成更方便的编程模式，如类和对象。 对于 Python，始终要使用 `pip install` 来安装各个 SDK 库，而不是将一个单独的 SDK 作为整体安装。 （有关其他语言，请参阅 [Azure SDK 下载](https://azure.microsoft.com/downloads/)。）
+对于开发人员而言，Azure 库（有时也称为 Azure SDK）提供了特定于语言的库，这些库将 REST API 功能转换成更方便的编程模式，例如类和对象。 对于 Python，始终要使用 `pip install` 来安装各个 SDK 库，而不是将一个单独的 SDK 作为整体安装。 （有关其他语言，请参阅 [Azure SDK 下载](https://azure.microsoft.com/downloads/)。）
 
-优点：精确控制所有操作，包括一种更直接的方法，即使用一个操作的输出作为另一个操作的输入。 对于 Python 开发人员，允许在熟悉的语言模式下工作，而不是使用 CLI。 也可以从应用程序代码中使用，以自动执行管理方案。
+优点：与 Azure CLI 相比，可精确控制所有操作，包括一种更直接的方法，即使用一个操作的输出作为另一个操作的输入。 对于 Python 开发人员，允许在熟悉的语言模式下工作，而不是使用 CLI。 也可通过应用程序代码使用来自动执行详细的管理方案。
   
 缺点：可以使用一个 CLI 命令完成的操作通常需要多行代码，所有这些代码都可能出现 bug。 不提供更高级别的操作，如 Azure CLI。
 

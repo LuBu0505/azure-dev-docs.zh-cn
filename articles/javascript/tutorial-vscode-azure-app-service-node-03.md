@@ -4,12 +4,12 @@ description: Node.js 教程第 3 部分：部署网站
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 4c96aedf678fb4e28875ceb211c6d2c505afea6f
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365250"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764559"
 ---
 # <a name="deploy-the-app-to-azure"></a>将应用部署到 Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "91365250"
     code .
     ```
 
-1. 在 VS Code 中选择源代码管理图标，打开源代码管理器，然后选择 + 来初始化本地 Git 存储库 ：
+1. 在 VS Code 中，选择源代码管理图标来打开源代码管理器，然后选择“初始化存储库”来初始化本地 Git 存储库 ：
 
     ![初始化 git 存储库](media/deploy-azure/git-init.png)
 

@@ -1,15 +1,15 @@
 ---
 title: 使用用于 Python 的 Azure 库预配 Azure 存储
 description: 使用 Azure SDK for Python 库预配 Azure 存储帐户中的 blob 容器，然后将文件上传到该容器。
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ff2064d7113e78cda69d240ca526db569c9d14e0
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 82d7f83a426e56e4e235d1d4bfcfb8c73042e053
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110487"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764546"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库预配 Azure 存储
 
@@ -17,7 +17,7 @@ ms.locfileid: "91110487"
 
 预配资源后，请参阅[示例：使用 Azure 存储](azure-sdk-example-storage-use.md)，以在 Python 应用程序代码中使用 Azure 客户端库将文件上传到 Blob 存储容器。
 
-除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
+除非另行说明，否则本文中的所有资源在 Linux/macOS bash 和 Windows 命令行界面上的工作方式相同。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1：设置本地开发环境
 
@@ -32,7 +32,7 @@ ms.locfileid: "91110487"
     ```txt
     azure-mgmt-resource
     azure-mgmt-storage
-    azure-cli-core
+    azure-identity
     ```
 
 1. 在激活了虚拟环境的终端下，安装下列要求：
@@ -52,12 +52,18 @@ import os, random
 
 # Import the needed management objects from the libraries. The azure.common library
 # is installed automatically with the other libraries.
-from azure.common.client_factory import get_client_from_cli_profile
+from azure.identity import AzureCliCredential
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.storage import StorageManagementClient
 
-# Obtain the management object for resources, using the credentials from the CLI login.
-resource_client = get_client_from_cli_profile(ResourceManagementClient)
+# Acquire a credential object using CLI-based authentication.
+credential = AzureCliCredential()
+
+# Retrieve subscription ID from environment variable.
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+
+# Obtain the management object for resources.
+resource_client = ResourceManagementClient(credential, subscription_id)
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.
@@ -65,6 +71,7 @@ RESOURCE_GROUP_NAME = "PythonAzureExample-Storage-rg"
 LOCATION = "centralus"
 
 # Step 1: Provision the resource group.
+
 rg_result = resource_client.resource_groups.create_or_update(RESOURCE_GROUP_NAME,
     { "location": LOCATION })
 
@@ -73,9 +80,10 @@ print(f"Provisioned resource group {rg_result.name}")
 # For details on the previous code, see Example: Provision a resource group
 # at https://docs.microsoft.com/azure/developer/python/azure-sdk-example-resource-group
 
+
 # Step 2: Provision the storage account, starting with a management object.
 
-storage_client = get_client_from_cli_profile(StorageManagementClient)
+storage_client = StorageManagementClient(credential, subscription_id)
 
 # This example uses the CLI profile credentials because we assume the script
 # is being used to provision the resource in the same way the Azure CLI would be used.
@@ -89,14 +97,16 @@ STORAGE_ACCOUNT_NAME = f"pythonazurestorage{random.randint(1,100000):05}"
 
 # Check if the account name is available. Storage account names must be unique across
 # Azure because they're used in URLs.
-availability_result = storage_client.storage_accounts.check_name_availability(STORAGE_ACCOUNT_NAME)
+availability_result = storage_client.storage_accounts.check_name_availability(
+    { "name": STORAGE_ACCOUNT_NAME }
+)
 
 if not availability_result.name_available:
     print(f"Storage name {STORAGE_ACCOUNT_NAME} is already in use. Try another name.")
     exit()
 
 # The name is available, so provision the account
-poller = storage_client.storage_accounts.create(RESOURCE_GROUP_NAME, STORAGE_ACCOUNT_NAME,
+poller = storage_client.storage_accounts.begin_create(RESOURCE_GROUP_NAME, STORAGE_ACCOUNT_NAME,
     {
         "location" : LOCATION,
         "kind": "StorageV2",
@@ -108,6 +118,7 @@ poller = storage_client.storage_accounts.create(RESOURCE_GROUP_NAME, STORAGE_ACC
 # waits for completion.
 account_result = poller.result()
 print(f"Provisioned storage account {account_result.name}")
+
 
 # Step 3: Retrieve the account's primary access key and generate a connection string.
 keys = storage_client.storage_accounts.list_keys(RESOURCE_GROUP_NAME, STORAGE_ACCOUNT_NAME)
@@ -128,14 +139,12 @@ container = storage_client.blob_containers.create(RESOURCE_GROUP_NAME, STORAGE_A
 print(f"Provisioned blob container {container.name}")
 ```
 
-此代码使用基于 CLI 的身份验证方法 (`get_client_from_cli_profile`)，因为它演示了你可能会使用 Azure CLI 直接执行的操作。 在这两种情况下，使用相同的身份验证标识。
-
-若要在生产脚本中使用此类代码，应改为使用 `DefaultAzureCredential`（推荐）或基于服务主体的方法，如[如何使用 Azure 服务对 Python 应用进行身份验证](azure-sdk-authenticate.md)中所述。
+[!INCLUDE [cli-auth-note](includes/cli-auth-note.md)]
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [StorageManagementClient (azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [StorageManagementClient (azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient)
 
 ## <a name="4-run-the-script"></a>4.运行脚本
 
@@ -223,7 +232,7 @@ az storage container create --account-name pythonazurestorage12345 -n blob-conta
 az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
-你还可以使用 [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 方法从代码中删除资源组。
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>另请参阅
 

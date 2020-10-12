@@ -4,12 +4,12 @@ description: 概述主应用的实现，包括其所有代码。
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0b7ffa1fb855d4b676813f49c545071209f6ce79
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379467"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764739"
 ---
 # <a name="part-4-example-main-application-implementation"></a>第 4 部分：主应用程序实现示例
 
@@ -23,13 +23,13 @@ ms.locfileid: "89379467"
 
 示例的预配脚本将执行以下步骤：
 
-1. 创建应用服务主机，并通过 Azure CLI 命令 [`az webapp up`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-up) 来部署代码。
+1. 创建应用服务主机，并通过 Azure CLI 命令 [`az webapp up`](/cli/azure/webapp#az-webapp-up) 来部署代码。
 
-1. 为主应用预配 Azure 存储帐户（使用 [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)）。
+1. 为主应用预配 Azure 存储帐户（使用 [`az storage account create`](/cli/azure/storage/account#az-storage-account-create)）。
 
-1. 在存储帐户中创建一个名为“code-requests”的队列（使用 [`az storage queue create`](/cli/azure/storage/queue?view=azure-cli-latest#az-storage-queue-create)）。
+1. 在存储帐户中创建一个名为“code-requests”的队列（使用 [`az storage queue create`](/cli/azure/storage/queue#az-storage-queue-create)）。
 
-1. 为了确保允许将应用写入队列，请使用 [`az role assignment create`](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) 向该应用分配“存储队列数据参与者”角色。 有关角色的详细信息，请参阅[如何分配角色权限](how-to-assign-role-permissions.md)。
+1. 为了确保允许将应用写入队列，请使用 [`az role assignment create`](/cli/azure/role/assignment#az-role-assignment-create) 向该应用分配“存储队列数据参与者”角色。 有关角色的详细信息，请参阅[如何使用 Azure CLI 分配角色权限](/azure/role-based-access-control/role-assignments-cli)。
 
 主应用代码如下所示；本系列的后面部分提供了重要详细信息的说明。
 

@@ -1,21 +1,22 @@
 ---
 title: Azure SDK 库 API 参考 - Python
+description: 指向 Python API 参考文档的指针
 ms.date: 05/26/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: aa5462ae28153a631562c6703880a872b51dd048
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f1a30c02059179f21694d716bcb5e063ae20956d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982859"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764824"
 ---
 # <a name="azure-libraries-for-python-api-reference"></a>用于 Python 的 Azure 库 API 参考
 
 所有服务的完整参考：
 
 > [!div class="nextstepaction"]
-> [Python API 浏览器 >>>](/python/api/?view=azure-python)
+> [Python API 浏览器 >>>](/python/api/)
 
 我们将从存储（blob、文件、队列）开始，对每个服务的参考部分进行试点。 请对此体验[提供反馈][1]。
 

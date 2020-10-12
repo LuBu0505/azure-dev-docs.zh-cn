@@ -1,24 +1,24 @@
 ---
 title: 使用用于 Python 的 Azure SDK 库预配虚拟机
 description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机。
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: f51bb154106a50c708d8d37a024144d7d53aec0e
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 134b3bc14fa8fafe2ee3953ab6a7c713853d9398
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110472"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764476"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 
 此示例演示如何在 Python 脚本中使用 Azure SDK 管理库来创建包含 Linux 虚拟机的资源组。 （本文中的后面部分提供了[等效的 Azure CLI 命令](#for-reference-equivalent-azure-cli-commands)。 如果你想要使用 Azure 门户，请参阅[创建 Linux VM](/azure/virtual-machines/linux/quick-create-portal) 和[创建 Windows VM](/azure/virtual-machines/windows/quick-create-portal)。）
 
-除非注明，否则本文中的所有命令在 Linux/Mac OS bash 和 Windows 命令 shell 中的工作方式相同。
+除非另行说明，否则本文中的所有资源在 Linux/macOS bash 和 Windows 命令行界面上的工作方式相同。
 
 > [!NOTE]
-> 通过代码预配虚拟机是一个多步骤过程，其中涉及预配虚拟机所需的多个其他资源。 如果只是从命令行运行此类代码，使用 [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) 命令会更容易，该命令会自动预配这些辅助资源（对于你选择省略的任何设置，会使用其默认值）。 仅需资源组、VM 名称、映像名称和登录凭据这些参数。 有关详细信息，请参阅[使用 Azure CLI 快速创建虚拟机](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create)。
+> 通过代码预配虚拟机是一个多步骤过程，其中涉及预配虚拟机所需的多个其他资源。 如果只是从命令行运行此类代码，使用 [`az vm create`](/cli/azure/vm#az-vm-create) 命令会更容易，该命令会自动预配这些辅助资源（对于你选择省略的任何设置，会使用其默认值）。 仅需资源组、VM 名称、映像名称和登录凭据这些参数。 有关详细信息，请参阅[使用 Azure CLI 快速创建虚拟机](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create)。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1：设置本地开发环境
 
@@ -32,9 +32,9 @@ ms.locfileid: "91110472"
 
     ```txt
     azure-mgmt-resource
-    azure-mgmt-network
     azure-mgmt-compute
-    azure-cli-core
+    azure-mgmt-network
+    azure-identity
     ```
 
 1. 在激活了虚拟环境的终端或命令提示符下，安装 requirements.txt 中列出的管理库：
@@ -48,19 +48,26 @@ ms.locfileid: "91110472"
 创建包含以下代码的名为“provision_vm.py”的 Python 文件。 注释对详细信息进行了说明：
 
 ```python
-# Import the needed management objects from the libraries. The azure.common library
-# is installed automatically with the other libraries.
-from azure.common.client_factory import get_client_from_cli_profile
+# Import the needed credential and management objects from the libraries.
+from azure.identity import AzureCliCredential
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.network import NetworkManagementClient
 from azure.mgmt.compute import ComputeManagementClient
+import os
 
 print(f"Provisioning a virtual machine...some operations might take a minute or two.")
+
+# Acquire a credential object using CLI-based authentication.
+credential = AzureCliCredential()
+
+# Retrieve subscription ID from environment variable.
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+
 
 # Step 1: Provision a resource group
 
 # Obtain the management object for resources, using the credentials from the CLI login.
-resource_client = get_client_from_cli_profile(ResourceManagementClient)
+resource_client = ResourceManagementClient(credential, subscription_id)
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.
@@ -80,6 +87,7 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 # For details on the previous code, see Example: Provision a resource group
 # at https://docs.microsoft.com/azure/developer/python/azure-sdk-example-resource-group
 
+
 # Step 2: provision a virtual network
 
 # A virtual machine requires a network interface client (NIC). A NIC requires
@@ -95,10 +103,10 @@ IP_CONFIG_NAME = "python-example-ip-config"
 NIC_NAME = "python-example-nic"
 
 # Obtain the management object for networks
-network_client = get_client_from_cli_profile(NetworkManagementClient)
+network_client = NetworkManagementClient(credential, subscription_id)
 
 # Provision the virtual network and wait for completion
-poller = network_client.virtual_networks.create_or_update(RESOURCE_GROUP_NAME,
+poller = network_client.virtual_networks.begin_create_or_update(RESOURCE_GROUP_NAME,
     VNET_NAME,
     {
         "location": LOCATION,
@@ -113,7 +121,7 @@ vnet_result = poller.result()
 print(f"Provisioned virtual network {vnet_result.name} with address prefixes {vnet_result.address_space.address_prefixes}")
 
 # Step 3: Provision the subnet and wait for completion
-poller = network_client.subnets.create_or_update(RESOURCE_GROUP_NAME, 
+poller = network_client.subnets.begin_create_or_update(RESOURCE_GROUP_NAME, 
     VNET_NAME, SUBNET_NAME,
     { "address_prefix": "10.0.0.0/24" }
 )
@@ -122,7 +130,7 @@ subnet_result = poller.result()
 print(f"Provisioned virtual subnet {subnet_result.name} with address prefix {subnet_result.address_prefix}")
 
 # Step 4: Provision an IP address and wait for completion
-poller = network_client.public_ip_addresses.create_or_update(RESOURCE_GROUP_NAME,
+poller = network_client.public_ip_addresses.begin_create_or_update(RESOURCE_GROUP_NAME,
     IP_NAME,
     {
         "location": LOCATION,
@@ -137,7 +145,7 @@ ip_address_result = poller.result()
 print(f"Provisioned public IP address {ip_address_result.name} with address {ip_address_result.ip_address}")
 
 # Step 5: Provision the network interface client
-poller = network_client.network_interfaces.create_or_update(RESOURCE_GROUP_NAME,
+poller = network_client.network_interfaces.begin_create_or_update(RESOURCE_GROUP_NAME,
     NIC_NAME, 
     {
         "location": LOCATION,
@@ -156,7 +164,7 @@ print(f"Provisioned network interface client {nic_result.name}")
 # Step 6: Provision the virtual machine
 
 # Obtain the management object for virtual machines
-compute_client = get_client_from_cli_profile(ComputeManagementClient)
+compute_client = ComputeManagementClient(credential, subscription_id)
 
 VM_NAME = "ExampleVM"
 USERNAME = "azureuser"
@@ -167,7 +175,7 @@ print(f"Provisioning virtual machine {VM_NAME}; this operation might take a few 
 # Provision the VM specifying only minimal arguments, which defaults to an Ubuntu 18.04 VM
 # on a Standard DS1 v2 plan with a public IP address and a default virtual network/subnet.
 
-poller = compute_client.virtual_machines.create_or_update(RESOURCE_GROUP_NAME, VM_NAME,
+poller = compute_client.virtual_machines.begin_create_or_update(RESOURCE_GROUP_NAME, VM_NAME,
     {
         "location": LOCATION,
         "storage_profile": {
@@ -199,15 +207,13 @@ vm_result = poller.result()
 print(f"Provisioned virtual machine {vm_result.name}")
 ```
 
-此代码使用基于 CLI 的身份验证方法 (`get_client_from_cli_profile`)，因为它演示了你可能会使用 Azure CLI 直接执行的操作。 在这两种情况下，使用相同的身份验证标识。
-
-若要在生产脚本中使用此类代码（例如，自动执行 VM 管理），请使用 `DefaultAzureCredential`（推荐）或基于服务主体的方法，如[如何使用 Azure 服务对 Python 应用进行身份验证](azure-sdk-authenticate.md)中所述。
+[!INCLUDE [cli-auth-note](includes/cli-auth-note.md)]
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [NetworkManagementClient (azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient?view=azure-python)
-- [ComputeManagementClient (azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [NetworkManagementClient (azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient)
+- [ComputeManagementClient (azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient)
 
 ## <a name="4-run-the-script"></a>4.运行脚本
 
@@ -297,6 +303,8 @@ az group delete -n PythonAzureExample-VM-rg  --no-wait
 ```
 
 如果不需要保留在此示例中创建的资源，并想要避免订阅中的持续费用，则运行此命令。
+
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>另请参阅
 
