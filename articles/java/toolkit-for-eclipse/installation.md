@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 27793d827b60a5977968529377b20c7033170ffe
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534648"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010204"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>安装用于 Eclipse 的 Azure 工具包
 
@@ -48,8 +48,7 @@ Azure Toolkit for Eclipse 提供了一些功能。通过它们，你可使用 Ec
    |---|---| 
    | **用于 Java 的 Application Insights 插件** | 可通过此组件将 Azure 的遥测日志记录和分析服务用于应用程序和服务器实例。 | 
    | **Azure 常用插件** | 提供其他工具包组件所需的常见功能。 | 
-   | **用于 Eclipse 的 Azure 容器工具** | 用于生成 .WAR 并将其作为 Docker 容器部署到 Docker 计算机。 | 
-   | **用于 Eclipse 的 Azure 容器** | 用于将 .WAR 或 .JAR 项目作为 Docker 容器部署到 Azure 虚拟机。 | 
+   | **用于 Eclipse 的 Azure 容器工具** | 用于生成 .WAR 并将其作为 Docker 容器部署到 Docker 计算机。 |
    | **用于 Eclipse 的 Azure 资源管理器** | 提供一个资源管理器样式的界面，用于管理 Azure 资源。 | 
    | **用于 Java 的 Azure HDInsight 插件** | 在 Scala 中实现 Apache Spark 应用程序开发。 |
    | **Microsoft JDBC Driver 6.1 for SQL Server** | 提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Microsoft Azure SQL 数据库。 | 
@@ -69,7 +68,7 @@ Azure Toolkit for Eclipse 提供了一些功能。通过它们，你可使用 Ec
 
 1. 单击帮助菜单，然后单击“安装新软件” 。
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="帮助菜单中的“安装新软件”。"::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="帮助菜单中的“Marketplace”窗口。"::: 
 
 1. 在“可用软件”对话框中，在“使用”文本框中键入 `http://dl.microsoft.com/eclipse/` 。
 
@@ -83,8 +82,7 @@ Azure Toolkit for Eclipse 提供了一些功能。通过它们，你可使用 Ec
    |---|---| 
    | **用于 Java 的 Application Insights 插件** | 可通过此组件将 Azure 的遥测日志记录和分析服务用于应用程序和服务器实例。 | 
    | **Azure 常用插件** | 提供其他工具包组件所需的常见功能。 | 
-   | **用于 Eclipse 的 Azure 容器工具** | 用于生成 .WAR 并将其作为 Docker 容器部署到 Docker 计算机。 | 
-   | **用于 Eclipse 的 Azure 容器** | 用于将 .WAR 或 .JAR 项目作为 Docker 容器部署到 Azure 虚拟机。 | 
+   | **用于 Eclipse 的 Azure 容器工具** | 用于生成 .WAR 并将其作为 Docker 容器部署到 Docker 计算机。 |
    | **用于 Eclipse 的 Azure 资源管理器** | 提供一个资源管理器样式的界面，用于管理 Azure 资源。 | 
    | **用于 Java 的 Azure HDInsight 插件** | 在 Scala 中实现 Apache Spark 应用程序开发。 |
    | **Microsoft JDBC Driver 6.1 for SQL Server** | 提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Microsoft Azure SQL 数据库。 | 

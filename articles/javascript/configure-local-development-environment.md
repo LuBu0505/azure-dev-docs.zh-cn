@@ -4,12 +4,12 @@ description: 如何设置适用于 Azure 的本地 JavaScript 开发环境，包
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
-ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: d7f179898c974b1eaf00916bde6ce9df107e0083
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805938"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846708"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>为 Azure 配置本地 JavaScript 开发环境
 
@@ -36,7 +36,7 @@ Azure 资源是在订阅中创建的，订阅是使用 Azure 的计费单位。 
 |[Node.js](https://www.npmjs.com/)|安装最新的长期支持 (LTS) 运行时环境进行本地工作站开发。 |
 | NPM（与新版 Node.js 一起安装）或 [Yarn](https://yarnpkg.com/)|安装 Azure SDK 库的包管理器。|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code 将为你提供强大的 JavaScript 集成和编码体验，但它不是必需的。 你可以使用任何代码编辑器。 对于本文档，如果你使用的是其他编辑器，请检查是否与 Azure 集成或使用 Azure CLI。|
-|[Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI 可用于从命令行、终端或 bash shell 重新创建和管理 Azure 资源。|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI 可用于从命令行、终端或 bash shell 重新创建和管理 Azure 资源。|
 
 > [!CAUTION]
 > 如果计划使用 Azure 资源（如 Azure Web 应用或 Azure 容器实例）作为代码的运行时环境，则应验证本地 Node.js 开发环境是否与计划使用的 Azure 资源运行时匹配。

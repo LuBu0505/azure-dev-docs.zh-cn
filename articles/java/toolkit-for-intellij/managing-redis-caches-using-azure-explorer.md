@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 17aa931e10f68e08a1d87017a4cdd1238baa7f1f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2ce0a20ffd33ba2311de73578338005666779a9d
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379931"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010143"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>使用用于 IntelliJ 的 Azure 资源管理器管理 Redis 缓存
 
@@ -54,7 +54,7 @@ Azure 资源管理器是用于 IntelliJ 的 Azure 工具包的一部分，它为
 
 redis 缓存创建完成后，将显示在 Azure 资源管理器中。
 
-   ![Azure 资源管理器中的 Redis 缓存][CR03]
+    ![Redis Cache in Azure Explorer][CR03]
 
 > [!NOTE]
 >

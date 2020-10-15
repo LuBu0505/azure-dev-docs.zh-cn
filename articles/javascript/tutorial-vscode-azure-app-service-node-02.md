@@ -4,12 +4,12 @@ description: Node.js 教程第 2 部分：创建 Node.js 应用并在本地运�
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7d627d97987ed41f90972362ab38d436a6157d33
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: aceeb9016e098cc707f176e3d767cf7bf72a35a2
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365240"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846698"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>创建并运行本地 Node.js 应用
 
@@ -22,7 +22,7 @@ ms.locfileid: "91365240"
 1. 运行以下命令，使用 Express Generator 创建一个名为 *expressApp1* 的新 Express 应用。 （`--view pug --git` 参数告知生成器使用 [pug](https://pugjs.org/api/getting-started.html) 模板引擎（以前称为 Jade）并创建 *.gitignore* 文件。）
 
     ```bash
-    npx express-generator expressApp1 --view pug -–git
+    npx express-generator expressApp1 -–git --view pug 
     ```
 
 1. 导航到应用文件夹：

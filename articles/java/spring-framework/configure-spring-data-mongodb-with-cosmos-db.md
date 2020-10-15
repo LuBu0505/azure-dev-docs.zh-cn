@@ -3,21 +3,19 @@ title: 如何将 Spring Data MongoDB API 用于 Azure Cosmos DB
 description: 了解如何将 Spring Data MongoDB API 用于 Azure Cosmos DB。
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/10/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 529fab3977f0398014d74140abcbd807ac129fa5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1d710c6146568011214a330ae0ce4957c6134b3b
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831423"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92009958"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>如何将 Spring Data MongoDB API 用于 Azure Cosmos DB
-
-## <a name="overview"></a>概述
 
 本文演示了如何创建一个示例应用程序，该应用程序使用 [Spring Data] 通过 [Azure Cosmos DB MongoDB API](/azure/cosmos-db/mongodb-introduction) 存储和检索信息。
 
@@ -27,7 +25,7 @@ ms.locfileid: "90831423"
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
-* [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
+* Apache 的 [Maven](http://maven.apache.org/) 3.0 或更高版本。
 * [Git](https://git-scm.com/downloads) 客户端。
 
 ## <a name="create-an-azure-cosmos-db-account"></a>创建 Azure Cosmos DB 帐户
@@ -40,23 +38,23 @@ ms.locfileid: "90831423"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“数据库”和“Azure Cosmos DB”。   
+1. 依次单击“+创建资源”、“数据库”和“Azure Cosmos DB”。************
 
    ![创建 Azure Cosmos DB 帐户][COSMOSDB01]
 
-1. 指定以下信息：
+1. 指定下列信息：
 
-   - **订阅**：指定要使用的 Azure 订阅。
+   - 订阅：指定要使用的 Azure 订阅。
    - **资源组**：指定是要创建新资源组，还是选择现有资源组。
    - **帐户名**：为 Cosmos DB 帐户选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoysmongodb.documents.azure.com*。
    - **API**：对于本教程，请指定 `Azure Cosmos DB for MongoDB API`。
-   - **位置**：指定最靠近你的数据库的地理区域。
+   - 位置：指定最靠近你的数据库的地理区域。
 
    ![指定 Cosmos DB 帐户设置][COSMOSDB02]
    
-1. 输入上述所有信息后，单击“查看 + 创建”  。
+1. 输入上述所有信息后，单击“查看 + 创建”****。
 
-1. 如果查看页面上的所有信息看起来都是正确的，则单击“创建”。 
+1. 如果查看页面上的所有信息看起来都是正确的，则单击“创建”。****
 
    ![查看 Cosmos DB 帐户设置][COSMOSDB03]
 
@@ -64,9 +62,9 @@ ms.locfileid: "90831423"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”  ，然后单击你刚才创建的 Azure Cosmos DB 帐户。
+1. 单击“所有资源”****，然后单击你刚才创建的 Azure Cosmos DB 帐户。
 
-1. 单击“连接字符串”  ，复制“主要连接字符串”  字段的值；稍后需要使用此值来配置应用程序。
+1. 单击“连接字符串”****，复制“主要连接字符串”**** 字段的值；稍后需要使用此值来配置应用程序。
 
    ![检索 Cosmos DB 连接字符串][COSMOSDB06]
 
@@ -93,7 +91,7 @@ ms.locfileid: "90831423"
    | `spring.data.mongodb.database` | 指定本文上文中所述的 Cosmos DB 帐户的名称。 |
    | `spring.data.mongodb.uri` | 指定本文上文中所述的**主要连接字符串**。 |
 
-1. 保存并关闭 application.properties 文件  。
+1. 保存并关闭 application.properties 文件。
 
 ## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序
 
@@ -128,9 +126,13 @@ ms.locfileid: "90831423"
    Customer[id=5c1b4ae4d0b5080ac105cc14, firstName='Bob', lastName='Smith']
    ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 Azure Cosmos DB MongoDB API 存储和检索信息。
+
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -151,7 +153,6 @@ ms.locfileid: "90831423"
 [MSDN 订阅者权益]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Data]: https://spring.io/projects/spring-data
-[Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->
