@@ -4,12 +4,12 @@ description: 使用 Azure SDK for Python 库预配 Azure 存储帐户中的 blob
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 82d7f83a426e56e4e235d1d4bfcfb8c73042e053
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: afc56afac9940a3fc6ffda11bfa68a0570cba0b9
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764546"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010262"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库预配 Azure 存储
 
@@ -143,6 +143,7 @@ print(f"Provisioned blob container {container.name}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [StorageManagementClient (azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient)
 
@@ -238,6 +239,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：列出订阅中的资源组](azure-sdk-example-list-resource-groups.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
 - [示例：预配和查询数据库](azure-sdk-example-database.md)
 - [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: df71e27850a467e03ab58edf6beaf085b195803b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2b6e4e6e40d5fe7904e43b36edacd14494e92b0f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831973"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010106"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>使用 Azure Toolkit for IntelliJ 将 Java 应用部署到用于容器的 Web 应用
 
@@ -50,7 +50,7 @@ ms.locfileid: "90831973"
 
 1. 选择 Azure 帐户，完成登录所需的全部身份验证过程。
 
-1. 登录后，关闭浏览器并切换回 IntelliJ IDE。 在“选择订阅”对话框中选择要使用的订阅，然后单击“确定” 。
+1. 登录后，关闭浏览器并切换回 IntelliJ IDE。 在“选择订阅”对话框中，选择要使用的订阅，然后单击“选择” 。
 
 ## <a name="creating-a-new-web-app-project"></a>创建新的 Web 应用项目
 
@@ -58,7 +58,7 @@ ms.locfileid: "90831973"
 
 1. 在“新建项目”对话框中，选择“Maven”，并确保已选中“从原型创建”选项  。 从列表中选择“maven-archetype-webapp”，然后单击“下一步” 。
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="选择“maven-archetype-webapp”选项。"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="在 IntelliJ 上登录到 Azure。"::: 
 
 1. 展开“项目坐标”下拉列表查看所有输入字段，并为新的 Web 应用指定以下信息，然后单击“下一步” ：
 
@@ -68,7 +68,7 @@ ms.locfileid: "90831973"
 
 1. 自定义任何 Maven 设置或接受默认设置，然后单击“完成”。
 
-1. 导航到左侧“项目”选项卡上的项目，然后打开文件 src/main/webapp/WEB-INF/index.jsp 。 将代码替换为以下内容并保存更改：
+1. 导航到左侧的“项目”选项卡上的项目，然后打开 rc/main/webapp/index.jsp 文件 。 将代码替换为以下内容并保存更改：
 
    ```html
    <html>
@@ -77,7 +77,7 @@ ms.locfileid: "90831973"
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="打开 index.jsp 文件。":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>创建 Azure 容器注册表，用作专用 Docker 注册表
 
@@ -112,13 +112,13 @@ ms.locfileid: "90831973"
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>在 Docker 容器中部署 Web 应用
 
-以下步骤将引导你为 Web 应用配置 Docker 支持并部署 Web 应用。
+以下步骤将引导你为 Web 应用配置 Docker 支持并将 Web 应用部署到 Docker 容器中。
 
 1. 导航到左侧“项目”选项卡上的项目，然后右键单击项目。 展开“Azure”，然后单击“添加 Docker 支持” 。
 
    将使用默认配置自动创建 Docker 文件。
 
-   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Docker 支持文件。":::
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
 1. 添加 Docker 支持后，右键单击项目资源管理器中的项目，展开“Azure”，然后单击“在用于容器的 Web 应用上运行” 。
 
@@ -148,7 +148,7 @@ ms.locfileid: "90831973"
 
 1. 发布 Web 应用后，所做设置会保存为默认设置，可单击工具栏上的绿色箭头图标在 Azure 上运行应用程序。 可单击 Web 应用的下拉菜单，然后单击“编辑配置”来修改这些设置。
 
-    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="编辑配置菜单。":::
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="在 IntelliJ 上登录到 Azure。":::
 
 1. 出现“运行/调试配置”对话框后，可修改任意默认设置，然后单击“确定” 。
 

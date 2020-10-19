@@ -4,12 +4,12 @@ description: 使用用于 Python 的 Azure SDK 库中的管理库来预配 Web �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7aa51af92480b0148600786bcb329902aecb44bd
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 3312b55927e7a72d4ee1e0fee3658c1b2f5a513d
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764757"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010309"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>示例：使用 Azure 库预配和部署 Web 应用
 
@@ -168,6 +168,7 @@ print(f"Set source control on web app to {sc_result.branch} branch of {sc_result
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient)
 
@@ -248,6 +249,7 @@ az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-We
 ## <a name="see-also"></a>另请参阅
 
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：列出订阅中的资源组](azure-sdk-example-list-resource-groups.md)
 - [示例：预配 Azure 存储](azure-sdk-example-storage.md)
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配和使用 MySQL 数据库](azure-sdk-example-database.md)

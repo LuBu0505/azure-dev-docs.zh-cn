@@ -3,18 +3,18 @@ title: 将 Spring Boot Web 应用部署到 Linux 的 Azure 应用服务上
 description: 本教程将指导用户完成在 Microsoft Azure 中将 Spring Boot 应用程序部署为 Linux Web 应用的步骤。
 services: azure app service
 documentationcenter: java
-ms.date: 12/31/2019
+ms.date: 10/06/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 97f6ef6e1d53b8923a8d29aa7747442ee6ac7efc
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830063"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846448"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上
 
@@ -174,7 +174,7 @@ ms.locfileid: "90830063"
 
    * 单击“下一步:  Docker”。
 
-   ![配置 Web 应用设置][LX02]
+   ![单击“下一步:Docker”按钮以继续。][LX02]
 
       在“Web 应用”  页上选择“Docker”  ，并输入以下信息：
 
@@ -190,7 +190,7 @@ ms.locfileid: "90830063"
 
    输入上述所有信息后，单击“查看 + 创建”  。
 
-   ![配置 Web 应用设置][LX02-A]
+   ![选择“查看 + 创建”来完成操作。][LX02-A]
 
    * 单击“查看 + 创建”  。
 
@@ -248,7 +248,6 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
-* [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
 * [在 Azure 容器服务中将 Spring Boot 应用程序部署于 Kubernetes 群集上](deploy-spring-boot-java-app-on-kubernetes.md)
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。

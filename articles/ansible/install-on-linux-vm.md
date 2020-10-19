@@ -3,14 +3,14 @@ title: 快速入门 - 使用 Azure CLI 配置 Ansible
 description: 本快速入门介绍如何在 Ubuntu、CentOS 和 SLES 上安装和配置 Ansible 以管理 Azure 资源
 keywords: ansible, azure, devops, bash, cloudshell, playbook, azure cli
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831165"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621623"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Ansible
 
@@ -66,7 +66,7 @@ ms.locfileid: "90831165"
     az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. 使用 [az vm create](/cli/azure/vm#az-vm-create) 创建虚拟机。
+1. 使用 [az vm create](/cli/azure/vm#az-vm-create) 创建虚拟机。 将占位符替换为 SSH 公共密钥文件名的完全限定名称。
 
     ```azurecli
     az vm create \
@@ -108,7 +108,7 @@ az vm extension set \
 
 ## <a name="connect-to-your-virtual-machine-via-ssh"></a>通过 SSH 连接到虚拟机
 
-使用 SSH 命令连接到虚拟机。
+使用 SSH 命令连接到虚拟机。 将占位符替换为返回的相应值。
 
 ```azurecli
 ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
@@ -126,15 +126,15 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 使用以下方法之一配置 Ansible 凭据：
 
 - [创建 Ansible 凭据文件](#file-credentials)
-- [使用 Ansible 环境变量](#env-credentials)
+- [定义 Ansible 环境变量](#env-credentials)
 
-### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/>创建 Ansible 凭据文件
+#### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/>创建 Ansible 凭据文件
 
 在本部分，我们将创建一个本地凭据文件，以便向 Ansible 提供凭据。
 
 有关定义 Ansible 凭据的详细信息，请参阅[为 Azure 模块提供凭据](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)。
 
-1. 对于开发环境，请主机虚拟机上创建名为 `credentials` 的文件：
+1. 成功连接到主机虚拟机后，请创建一个名为 `credentials` 的文件并将其打开：
 
     ```bash
     mkdir ~/.azure
@@ -153,20 +153,16 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 
 1. 保存并关闭该文件。
 
-### <a name="span-idenv-credentialsuse-ansible-environment-variables"></a><span id="env-credentials"/>使用 Ansible 环境变量
+#### <a name="span-idenv-credentialsdefine-ansible-environment-variables"></a><span id="env-credentials"/>定义 Ansible 环境变量
 
-在本部分，我们将导出服务主体值以配置 Ansible 凭据。
+在主机虚拟机上，导出服务主体值来配置 Ansible 凭据。
 
-1. 打开终端窗口。
-
-1. 导出服务主体值：
-
-    ```bash
-    export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-    export AZURE_CLIENT_ID=<security-principal-appid>
-    export AZURE_SECRET=<security-principal-password>
-    export AZURE_TENANT=<security-principal-tenant>
-    ```
+```bash
+export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+export AZURE_CLIENT_ID=<security-principal-appid>
+export AZURE_SECRET=<security-principal-password>
+export AZURE_TENANT=<security-principal-tenant>
+```
 
 ## <a name="test-ansible-installation"></a>测试 Ansible 安装
 

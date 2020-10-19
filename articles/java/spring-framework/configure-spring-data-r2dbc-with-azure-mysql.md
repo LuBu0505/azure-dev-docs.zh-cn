@@ -2,18 +2,18 @@
 title: 将 Spring Data R2DBC 与 Azure Database for MySQL 配合使用
 description: 了解如何将 Spring Data R2DBC 与 Azure Database for MySQL 数据库配合使用。
 documentationcenter: java
-ms.date: 03/18/2020
+ms.date: 10/10/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 84dffb21916498e9e80f458512d83251815306c0
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 4b76368f46c7172375b6e6dbf88d99b9cc3ad7a1
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831233"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010066"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>将 Spring Data R2DBC 与 Azure Database for MySQL 配合使用
 
@@ -36,8 +36,11 @@ ms.locfileid: "90831233"
 通过在命令行中输入以下命令，生成此应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>添加反应式 MySQL 驱动程序实现
 

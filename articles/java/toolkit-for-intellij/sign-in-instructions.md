@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 2891b0c09c43b652fd7dd41e354290c2821bad46
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 27442efda23ba24abe6b40f20f7685f6ac7a524e
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534551"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010250"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>用于 IntelliJ 的 Azure 工具包的登录说明
 
@@ -50,7 +50,7 @@ ms.locfileid: "90534551"
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>通过服务主体登录到 Azure 帐户
 
-本部分逐步引导创建一个包含服务主体数据的凭据文件。 完成此过程后，在你打开项目时，IntelliJ 会使用凭据文件将你自动登录到 Azure。
+本部分逐步引导创建一个包含服务主体数据的凭据文件。 完成此过程后，当打开项目时，IntelliJ 会使用凭据文件将你自动登录到 Azure。
 
 1. 使用 IntelliJ IDEA 打开项目。
 

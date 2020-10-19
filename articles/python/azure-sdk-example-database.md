@@ -4,12 +4,12 @@ description: 使用用于 Python 的 Azure SDK 库中的管理库来预配 Azure
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: b1f04dbf2fa12aeab58a05191319a27072db6d28
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: bf205e133f093be654c88e5245eb0a4524f71502
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764681"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010300"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>示例：使用 Azure 库预配数据库
 
@@ -276,6 +276,7 @@ az mysql db create -g PythonAzureExample-DB-rg --server PythonAzureExample-MySQL
 ## <a name="see-also"></a>另请参阅
 
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：列出订阅中的资源组](azure-sdk-example-list-resource-groups.md)
 - [示例：预配 Azure 存储](azure-sdk-example-storage.md)
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配虚拟机](azure-sdk-example-virtual-machines.md)

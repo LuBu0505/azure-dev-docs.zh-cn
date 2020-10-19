@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: d9e3b0de0c6ea20996c54b6ab5cb03083ed25a65
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534417"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947542"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>用于 Eclipse 的 Azure 工具包的登录说明
 
@@ -58,7 +58,7 @@ ms.locfileid: "90534417"
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>通过服务主体登录到 Azure 帐户
 
-本部分逐步引导创建一个包含服务主体数据的凭据文件。 完成此过程后，在打开项目时，Eclipse 会使用凭据文件将你自动登录到 Azure。
+本部分逐步引导创建一个包含服务主体数据的凭据文件。 完成此过程后，当打开项目时，Eclipse 会使用凭据文件将你自动登录到 Azure。
 
 1. 使用 Eclipse 打开项目。
 

@@ -3,14 +3,14 @@ title: 教程：通过 Azure 门户使用 PostgreSQL 部署 Django 应用
 description: 在 Azure 上预配 Web 应用和 PostgreSQL 数据库，然后从 GitHub 部署应用代码。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 09/23/2020
+ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110534"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947532"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
@@ -57,7 +57,7 @@ ms.locfileid: "91110534"
     | --- | --- |
     | 订阅 | 如果你不想使用默认订阅，可选择想要使用的订阅。 |
     | 资源组 | 选择“新建”，然后输入“DjangoPostgres-Tutorial-rg”。 |
-    | 应用程序名称 | Web 应用的名称，该名称在所有 Azure 中都是唯一的（应用的 URL 为 `https://\<app-name>.azurewebsites.net`）。 允许的字符有 `A`-`Z`、`0`-`9` 和 `-`。 良好的模式是结合使用公司名称和应用标识符。 |
+    | 应用程序名称 | Web 应用的名称，该名称在所有 Azure 中都是唯一的（应用的 URL 为 `https://<app-name>.azurewebsites.net`）。 允许的字符有 `A`-`Z`、`0`-`9` 和 `-`。 良好的模式是结合使用公司名称和应用标识符。 |
     | 发布 | 选择“代码”。 |
     | 运行时堆栈 | 从下拉列表中选择“Python 3.8”。 |
     | 区域 | 选择附近的位置。 |
@@ -86,7 +86,7 @@ ms.locfileid: "91110534"
     | --- | --- |
     | 订阅 | 如果你不想使用默认订阅，可选择想要使用的订阅。 |
     | 资源组 | 选择在上一节中创建的“DjangoPostgres-Tutorial-rg”组。 |
-    | 服务器名称 | 数据库服务器的名称，该名称在所有 Azure 中都是唯一的（应用的 URL 为 `https://\<server-name>.postgres.database.azure.com`）。 允许的字符有 `A`-`Z`、`0`-`9` 和 `-`。 良好的模式是结合使用公司名称和服务器标识符。 |
+    | 服务器名称 | 数据库服务器的名称，该名称在所有 Azure 中都是唯一的（数据库服务器的 URL 为 `https://<server-name>.postgres.database.azure.com`）。 允许的字符有 `A`-`Z`、`0`-`9` 和 `-`。 良好的模式是结合使用公司名称和服务器标识符。 |
     | 数据源 | **无** |
     | 位置 | 选择附近的位置。 |
     | 版本 | 保留默认值（即最新版）。 |
@@ -119,7 +119,7 @@ ms.locfileid: "91110534"
     psql --host=<server-name>.postgres.database.azure.com --port=5432 --username=<user-name>@<server-name> --dbname=postgres
     ```
 
-    将 `<server-name>` 和 `<user-name>` 替换为上一节中配置服务器时所用的名称。 请注意，完整的用户名值为 `<user-name>@<server-name>`。
+    将 `<server-name>` 和 `<user-name>` 替换为上一节中配置服务器时所用的名称。 请注意，Postgres 所需的完整用户名值为 `<user-name>@<server-name>`。
 
     可以复制上述命令，然后单击右键，选择“粘贴”将命令粘贴到 Cloud Shell 中。
 
@@ -150,9 +150,9 @@ ms.locfileid: "91110534"
     | 设置名称 | 值 |
     | --- | --- |
     | DJANGO_ENV | `production`（该值告知应用使用前面[示例概述](#fork-the-sample-repository)中所述的生产配置。） |
-    | DBHOST | 上一节中数据库服务器的 URL，格式为 `<server-name>.postgres.database.azure.com`。 可以从数据库服务器的“概述”页复制整个 URL。 |
+    | DBHOST | 来自上一部分的数据库服务器的名称，也就是服务器 URL 中位于 `.postgres.database.azure.com` 前面的 `<server-name>` 部分。 （azuresite/production.py 中的代码自动构造完整 URL。） |
     | DBNAME | `pollsdb` |
-    | DBUSER | 上一节中使用的完整管理员用户名。 同样，完整的用户名为 `<user-name>@<server-name>`。 |
+    | DBUSER | 预配数据库时使用的管理员用户名。 （示例代码会自动添加 `@<server-name>` 部分；请参阅 azuresite/production.py。） |
     | DBPASS | 之前创建的管理员密码。 |
 
 1. 选择“保存”，然后选择“继续”以应用设置 。

@@ -2,18 +2,18 @@
 title: 将 Spring Data R2DBC 用于 Azure SQL 数据库
 description: 了解如何将 Spring Data R2DBC 用于 Azure SQL 数据库。
 documentationcenter: java
-ms.date: 04/28/2020
+ms.date: 10/10/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 16945c094d9e6ecb8b837f7fa7c00482fe8a735a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 557480c4edf2d53cb04b3aa75ce829be3fe13760
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831803"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92009988"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>将 Spring Data R2DBC 用于 Azure SQL 数据库
 
@@ -36,8 +36,11 @@ ms.locfileid: "90831803"
 运行以下命令在命令行上生成应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>添加响应式 Azure SQL 数据库驱动程序实现
 

@@ -3,17 +3,17 @@ title: 创建 Spring Boot Initializer 应用 - Azure Redis 缓存
 description: 将使用 Spring Initializer 创建的 Spring Boot 应用程序配置为使用云中的 Redis 和 Azure Redis 缓存。
 services: redis-cache
 documentationcenter: java
-ms.date: 02/06/2020
+ms.date: 10/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 330f0b3b1cfa5e92a4e876121b966c3a0b174f02
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830203"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846598"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
@@ -57,7 +57,7 @@ ms.locfileid: "90830203"
 
 1. 单击“数据库”，然后单击“Redis 缓存”   。
 
-   ![Azure 门户][AZ02]
+   ![在 Azure 门户中选择 Redis 缓存。][AZ02]
 
 1. 在“新建 Redis 缓存”页上，指定以下信息  ：
 
@@ -72,15 +72,15 @@ ms.locfileid: "90830203"
 
    指定这些选项后，单击“创建”以创建缓存  。
 
-   ![Azure 门户][AZ03]
+   ![在 Azure 门户中创建缓存。][AZ03]
 
 1. 创建缓存完成后，会看到其列在 Azure“仪表板”  上，并显示在“所有资源”  和“Redis 缓存”  页下。 可在任何上述位置上单击缓存，打开缓存的属性页。
 
-   ![Azure 门户][AZ04]
+   ![Azure 门户中预配的资源。][AZ04]
 
 1. 显示包含缓存属性列表的页面后，单击“访问密匙”，然后复制缓存的访问密钥  。
 
-   ![Azure 门户][AZ05]
+   ![复制“访问密钥”部分下的访问密钥。][AZ05]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>配置自定义 Spring Boot 以使用 Redis 缓存
 
@@ -198,7 +198,7 @@ ms.locfileid: "90830203"
 
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
-* [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上](deploy-spring-boot-java-app-on-linux.md)
 
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 

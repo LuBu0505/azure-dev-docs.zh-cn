@@ -4,17 +4,17 @@ titleSuffix: Azure Kubernetes Service
 description: 本教程将指导用户完成在 Microsoft Azure 的 Kubernetes 群集中部署 Spring Boot 应用程序的步骤。
 services: container-service
 documentationcenter: java
-ms.date: 11/12/2019
+ms.date: 10/06/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b4b36df09811e8e9e6a9bae944119e280258d751
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cecd6b593d1805b7394a9fe73317e6faa8b689a5
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830073"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846478"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>将 Spring Boot 应用程序部署到 Azure Kubernetes 服务
 
@@ -297,7 +297,7 @@ ms.locfileid: "90830073"
 
 有关在 Azure 上使用 Spring Boot 的详细信息，请参阅以下文章：
 
-* [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上](deploy-spring-boot-java-app-on-linux.md)
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 

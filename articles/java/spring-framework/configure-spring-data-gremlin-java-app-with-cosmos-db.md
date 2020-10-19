@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 775e547f61f4f4b2c649505607cf4d7310d0c6c3
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: b1fe15704e325316febc405289df27be1cfea37c
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831833"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846578"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -197,7 +197,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
-* [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上](deploy-spring-boot-java-app-on-linux.md)
 
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 

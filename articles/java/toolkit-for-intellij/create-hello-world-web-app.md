@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 6506aae7aacf26d08bcb6c47ef947dfb8f6cef46
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586170"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947512"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>使用 IntelliJ 创建适用于 Azure 应用服务的 Hello World Web 应用
 
@@ -53,7 +53,7 @@ ms.locfileid: "91586170"
 
 1. 选择 Azure 帐户，完成登录所需的全部身份验证过程。
 
-1. 登录后，关闭浏览器并切换回 IntelliJ IDE。 在“选择订阅”对话框中选择要使用的订阅，然后单击“确定” 。
+1. 登录后，关闭浏览器并切换回 IntelliJ IDE。 在“选择订阅”对话框中，选择要使用的订阅，然后单击“选择” 。
 
 ## <a name="creating-a-new-web-app-project"></a>创建新的 Web 应用项目
 
@@ -71,7 +71,7 @@ ms.locfileid: "91586170"
 
 1. 自定义任何 Maven 设置或接受默认设置，然后单击“完成”。
 
-1. 导航到左侧“项目”选项卡上的项目，然后打开文件 src/main/webapp/WEB-INF/index.jsp 。 将代码替换为以下内容并保存更改：
+1. 导航到左侧的“项目”选项卡上的项目，然后打开 rc/main/webapp/index.jsp 文件 。 将代码替换为以下内容并保存更改：
 
    ```html
    <html>

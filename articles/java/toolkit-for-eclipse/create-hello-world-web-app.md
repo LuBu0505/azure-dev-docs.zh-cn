@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 57cb6f2b731ee6d9522787d70efbaf35e029c632
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: a318d5aa7f411add20ee201d48d3640983efefee
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586145"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010260"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>使用 Eclipse 创建适用于 Azure 应用服务的 Hello World Web 应用
 
@@ -53,7 +53,7 @@ ms.locfileid: "91586145"
 
 1. 选择 Azure 帐户，完成登录所需的全部身份验证过程。
 
-1. 登录后，关闭浏览器并切换回 Eclipse IDE。 在“选择订阅”对话框中选择要使用的订阅，然后单击“确定” 。
+1. 登录后，关闭浏览器并切换回 Eclipse IDE。 在“选择订阅”对话框中，选择要使用的订阅，然后单击“选择” 。
 
 ### <a name="install-required-software-optional"></a>安装所需软件（可选）
 

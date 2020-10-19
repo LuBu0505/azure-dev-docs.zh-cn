@@ -4,12 +4,12 @@ description: 使用 Azure SDK for Python 中的资源管理库通过 Python 代�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8a3eb230e40954d25a890db53d33382c07899b7d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 24450fb8b7db3f9df3d08086c90cdf26265b474a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764628"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010284"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>示例：使用 Azure 库预配资源组
 
@@ -21,7 +21,7 @@ ms.locfileid: "91764628"
 
 如果尚未设置，请按照[为 Azure 配置本地 Python 开发环境](configure-local-development-environment.md)中的所有说明进行操作。
 
-务必创建用于本地开发的服务主体，并为此项目创建虚拟环境，然后将其激活。
+请务必为该项目创建一个虚拟环境并将其激活。
 
 ## <a name="2-install-the-azure-library-packages"></a>2:安装 Azure 库包
 
@@ -90,6 +90,7 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>代码中使用的类的参考链接
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 
 ## <a name="4-run-the-script"></a>4：运行脚本
@@ -130,6 +131,7 @@ az group create -n PythonAzureExample-rg -l centralus
 
 ## <a name="see-also"></a>另请参阅
 
+- [示例：列出订阅中的资源组](azure-sdk-example-list-resource-groups.md)
 - [示例：预配 Azure 存储](azure-sdk-example-storage.md)
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)

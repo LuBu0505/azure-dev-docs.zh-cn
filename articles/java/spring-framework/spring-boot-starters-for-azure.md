@@ -2,23 +2,29 @@
 title: 适用于 Azure 的 Spring Boot 起动器
 description: 本文介绍适用于 Azure 的各种 Spring Boot 起动器。
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 09/29/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0d4615b3d6b05ee54538befdf6a7a7d220e77917
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
+ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831003"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91882198"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
 
 本文介绍适用于 [Spring Initializr] 的，可为 Java 开发人员提供集成功能来使用 Microsoft Azure 的各种 Spring Boot 起动器。
 
-![Azure Spring Boot 起动器][spring-boot-starters]
+>[!div class="mx-imgBorder"]
+![使用 Initializr 配置 Azure Spring Boot 起动器][configure-azure-spring-boot-starters-with-initializr]
+
+> [!NOTE]
+>
+> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
+> 
 
 以下 Spring Boot 起动器目前适用于 Azure：
 
@@ -37,6 +43,11 @@ ms.locfileid: "90831003"
 * **[Azure 存储](#azure-storage)**
 
    为 Azure 存储服务提供 Spring Boot 支持。
+   
+   > [!NOTE]
+   >
+   > 用于 Azure 存储的 Spring Boot 起动器的新版本目前不支持从 Spring Initializr 内部添加 Azure 存储依赖项。 但在生成项目后，可修改 pom.xml 文件来添加此依赖项。
+   > 
 
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Azure 支持
@@ -54,18 +65,33 @@ ms.locfileid: "90831003"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 将默认的 `spring-boot-starter` 依赖项替换为以下内容：
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-spring-boot</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 将以下节添加到文件：
 
@@ -99,18 +125,33 @@ ms.locfileid: "90831003"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 将默认的 `spring-boot-starter` 依赖项替换为以下内容：
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-active-directory-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-active-directory-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 将以下节添加到文件：
 
@@ -144,18 +185,33 @@ ms.locfileid: "90831003"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 将默认的 `spring-boot-starter` 依赖项替换为以下内容：
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 将以下节添加到文件：
 
@@ -181,7 +237,7 @@ ms.locfileid: "90831003"
 有关如何使用此起动器提供的 Azure 存储功能的示例，请参阅以下文章：
 
 * [如何使用适用于 Azure 存储的 Spring Boot 起动器](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-storage-blob>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
 
 将此起动器添加到 Spring Boot 项目时，会对 *pom.xml* 文件进行以下更改：
 
@@ -190,18 +246,32 @@ ms.locfileid: "90831003"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 将默认的 `spring-boot-starter` 依赖项替换为以下内容：
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-storage-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>spring-starter-azure-storage</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 将以下节添加到文件：
 
@@ -245,4 +315,4 @@ ms.locfileid: "90831003"
 
 <!-- IMG List -->
 
-[spring-boot-starters]: media/spring-boot-starters-for-azure/spring-boot-starters-cropped.png
+[configure-azure-spring-boot-starters-with-initializr]: media/spring-boot-starters-for-azure/configure-azure-spring-boot-starters-with-initializr.png

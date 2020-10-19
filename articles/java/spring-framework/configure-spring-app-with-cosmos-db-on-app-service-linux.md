@@ -3,16 +3,16 @@ title: 如何将 Spring 和 Cosmos DB 与 Linux 上的应用服务配合使用
 description: 本文将详细介绍如何在 Linux 上的 Azure 应用服务中生成、配置、部署和缩放 Java Web 应用并对其进行故障排除。
 documentationcenter: java
 ms.reviewer: joshuapa
-ms.date: 4/24/2019
+ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: f1e47353fdf2e09ceaa1b8ac339f4fc23368574d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: d3343940cd35767aa6887244d8ae9d7cca221646
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830223"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846518"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>如何将 Spring 和 Cosmos DB 与 Linux 上的应用服务配合使用
 
@@ -312,7 +312,7 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 
 有关使用 Azure 上的 Spring Boot 应用程序的详细信息，请参阅以下文章：
 
-* [将 Spring Boot 应用程序部署到 Azure 应用服务](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上](deploy-spring-boot-java-app-on-linux.md)
 
 * [在 Azure 容器服务中运行 Kubernetes 群集上的 Spring Boot 应用程序](deploy-spring-boot-java-app-on-kubernetes.md)
 

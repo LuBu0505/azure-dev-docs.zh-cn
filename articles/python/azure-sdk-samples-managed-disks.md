@@ -2,20 +2,20 @@
 title: 托管磁盘
 description: 创建、调整和更新托管磁盘。
 ms.topic: conceptual
-ms.date: 6/15/2017
+ms.date: 10/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: b81f9cb848e1b3505e50cd3fde35e1afff16d493
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: e596d02aad2cbaf97ef588737bedd58c10d8093f
+ms.sourcegitcommit: acdd366aef550c0a75f2315a6a07e1a230df499f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764514"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92060195"
 ---
 # <a name="managed-disks"></a>托管磁盘
 
 Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更好的安全性和更大的规模。 它消除了磁盘的存储帐户概念，使客户能够进行缩放，而无需担心存储帐户相关的限制。 本文提供有关从 Python 使用该服务的快速简介和参考信息。
 
-从开发人员的角度来看，Azure CLI 中的托管磁盘体验与其他跨平台工具中的 CLI 体验有异曲同工之处。 可以使用 [Azure Python](https://azure.microsoft.com/develop/python/) SDK 和 [azure-mgmt-compute 包 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) 来管理托管磁盘。 可以参考[此教程](/python/api/overview/azure/virtualmachines)创建计算客户端。
+从开发人员的角度来看，Azure CLI 中的托管磁盘体验与其他跨平台工具中的 CLI 体验有异曲同工之处。 可使用 [azure-mgmt-compute package](/python/api/overview/azure/virtualmachines) 来管理托管磁盘。 若要通过示例了解如何使用 azure-mgmt-compute 库来预配虚拟机，请参阅[示例 - 预配虚拟机](azure-sdk-example-virtual-machines.md)。
 
 ## <a name="standalone-managed-disks"></a>独立托管磁盘
 
@@ -89,6 +89,7 @@ from azure.mgmt.compute.models import DiskCreateOption
 
 # If you don't know the id, do a 'get' like this to obtain it
 managed_disk = compute_client.disks.get(self.group_name, 'myImageDisk')
+
 async_creation = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
@@ -108,7 +109,7 @@ disk_resource = async_creation.result()
 
 可以根据特定的磁盘映像创建包含隐式托管磁盘的虚拟机。 在不指定所有磁盘详细信息的情况下隐式创建托管磁盘简化了创建过程。 无需担心如何创建和管理存储帐户。
 
-从 Azure 中的 OS 映像创建 VM 时，会隐式创建托管磁盘。 在 ``storage_profile`` 参数中，``os_disk`` 现在是可选的；而在过去，创建虚拟机之前必须事先创建存储帐户。
+从 Azure 中的 OS 映像创建 VM 时，会隐式创建托管磁盘。 在 `storage_profile` 参数中，`os_disk` 现在是可选的；而在过去，创建虚拟机之前必须事先创建存储帐户。
 
 ```python
 storage_profile = azure.mgmt.compute.models.StorageProfile(
@@ -121,13 +122,14 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-此 ``storage_profile`` 参数现在有效。 若要获取有关如何在 Python 中创建 VM（包括网络等）的完整示例，请查看完整的 [Python 中的 VM 教程](https://github.com/Azure-Samples/virtual-machines-python-manage)。
+此 `storage_profile` 参数现在有效。 若要获取有关如何在 Python 中创建 VM（包括网络等）的完整示例，请查看完整的 [Python 中的 VM 教程](https://github.com/Azure-Samples/virtual-machines-python-manage)。
 
-也可以从自己的映像创建 ``storage_profile``：
+也可以从自己的映像创建 `storage_profile`：
 
 ```python
 # If you don't know the id, do a 'get' like this to obtain it
 image = compute_client.images.get(self.group_name, 'myImageDisk')
+
 storage_profile = azure.mgmt.compute.models.StorageProfile(
     image_reference = azure.mgmt.compute.models.ImageReference(
         id = image.id
@@ -143,6 +145,7 @@ vm = compute.virtual_machines.get(
     'my_vm'
 )
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
+
 vm.storage_profile.data_disks.append({
     'lun': 12, # You choose the value, depending of what is available for you
     'name': managed_disk.name,
@@ -151,6 +154,7 @@ vm.storage_profile.data_disks.append({
         'id': managed_disk.id
     }
 })
+
 async_update = compute_client.virtual_machines.begin_create_or_update(
     'my_resource_group',
     vm.name,
@@ -161,9 +165,9 @@ async_update.wait()
 
 ## <a name="virtual-machine-scale-sets-with-managed-disks"></a>带托管磁盘的虚拟机规模集
 
-在托管磁盘推出之前，需针对要放入规模集的所有 VM 手动创建存储帐户，然后使用列表参数 ``vhd_containers`` 将所有存储帐户名称提供给规模集 RestAPI。 此文 `<https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md>` 中提供了正式版转换指南。
+在托管磁盘推出之前，需针对要放入规模集的所有 VM 手动创建存储帐户，然后使用列表参数 `vhd_containers` 将所有存储帐户名称提供给规模集 RestAPI。 可在[转换规模集模板来管理磁盘规模集模板](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md)一文中查看官方转换指南。
 
-现在，有了托管磁盘，不需要管理任何存储帐户。 如果熟悉虚拟机规模集 Python SDK，你会发现现在的 ``storage_profile`` 与创建 VM 时所用的配置文件完全相同：
+现在，有了托管磁盘，不需要管理任何存储帐户。 如果熟悉虚拟机规模集 Python SDK，你会发现现在的 `storage_profile` 与创建 VM 时所用的配置文件完全相同：
 
 ```python
 'storage_profile': {
@@ -180,6 +184,7 @@ async_update.wait()
 
 ```python
 naming_infix = "PyTestInfix"
+
 vmss_parameters = {
     'location': self.region,
     "overprovision": True,
@@ -221,7 +226,7 @@ vmss_parameters = {
 }
 
 # Create VMSS test
-result_create = compute_client.virtual_machine_scale_sets.create_or_update(
+result_create = compute_client.virtual_machine_scale_sets.begin_create_or_update(
     'my_resource_group',
     'my_scale_set',
     vmss_parameters,
@@ -236,7 +241,8 @@ vmss_result = result_create.result()
 ```python
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
 managed_disk.disk_size_gb = 25
-async_update = self.compute_client.disks.create_or_update(
+
+async_update = self.compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'myDisk',
     managed_disk
@@ -251,7 +257,8 @@ from azure.mgmt.compute.models import StorageAccountTypes
 
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
 managed_disk.account_type = StorageAccountTypes.standard_lrs
-async_update = self.compute_client.disks.create_or_update(
+
+async_update = self.compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'myDisk',
     managed_disk
@@ -284,7 +291,8 @@ image = async_create_image.result()
 
 ```python
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
-async_snapshot_creation = self.compute_client.snapshots.create_or_update(
+
+async_snapshot_creation = self.compute_client.snapshots.begin_create_or_update(
         'my_resource_group',
         'mySnapshot',
         {

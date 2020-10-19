@@ -4,12 +4,12 @@ description: 使用用于 Python 的 Azure SDK 库访问 Azure 存储帐户中�
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764456"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010277"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库访问 Azure 存储
 
@@ -207,6 +207,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ## <a name="see-also"></a>另请参阅
 
 - [示例：预配资源组](azure-sdk-example-resource-group.md)
+- [示例：列出订阅中的资源组](azure-sdk-example-list-resource-groups.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
 - [示例：预配 Azure 存储](azure-sdk-example-storage.md)
 - [示例：预配和查询数据库](azure-sdk-example-database.md)

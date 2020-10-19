@@ -136,6 +136,8 @@
       items:
         - name: 预配资源组
           href: azure-sdk-example-resource-group.md
+        - name: 列出组和资源
+          href: azure-sdk-example-list-resource-groups.md
         - name: 预配 Azure 存储
           href: azure-sdk-example-storage.md
         - name: 使用 Azure 存储

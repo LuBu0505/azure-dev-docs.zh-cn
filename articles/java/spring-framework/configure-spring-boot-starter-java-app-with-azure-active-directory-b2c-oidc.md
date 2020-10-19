@@ -6,22 +6,20 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 06/04/2020
+ms.date: 10/10/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3835d51bbbc7f3226a1b77ba415d5e965ac8a609
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: df9b9f659d504c18c9dfd9afb3b5f201448d4866
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831913"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010123"
 ---
-# <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器保护 Java Web 应用。
-
-## <a name="overview"></a>概述
+# <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器来保护 Java Web 应用
 
 本文演示了如何使用 [Spring Initializr](https://start.spring.io/) 创建一个 Java 应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。
 
@@ -49,11 +47,15 @@ ms.locfileid: "90831913"
 
     * 在“项目”下，选择“Maven 项目”。
     * 在“语言”下，选择“Java”。
-    * 在“Spring Boot”下，选择“2.2.7”。
+    * 在“Spring Boot”下，选择“2.3.4” 。
     * 在“组”、“项目”和“名称”下，使用简短的描述性字符串，输入相同的值。 在键入时，UI 可能会自动填充其中一部分内容。
     * 在“依赖项”窗格中，选择“添加依赖项”。 使用 UI 添加“Spring Web”和“Spring 安全性”的依赖关系。
 
-   ![填写值以生成项目](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
+   ![填写值以生成项目](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
+
+    > [!NOTE]
+    > Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
+
 
 3. 选择“生成项目”，然后将项目下载到本地计算机上的一个路径下。 将下载的文件移动到以项目命名的目录中，并将文件解压缩。 文件布局应如下所示，其中 `yourProject` 的值已替换为你为“组”输入的值。
 
@@ -152,11 +154,11 @@ ms.locfileid: "90831913"
 
     执行[教程：在 Azure Active Directory B2C 中创建用户流](/azure/active-directory-b2c/tutorial-create-user-flows)中列出的所有步骤，创建用于“注册和登录”、“配置文件编辑”和“密码重置”的用户流。
 
-    AAD B2C 支持本地帐户以及社交标识提供者。 有关创建 GitHub 标识提供者的示例，请参阅[使用 Azure Active Directory B2C 设置通过 GitHub 帐户注册与登录](/azure/active-directory-b2c/identity-provider-github)。
+    Azure AD B2C 既支持本地帐户，也支持社交标识提供者。 有关创建 GitHub 标识提供者的示例，请参阅[使用 Azure Active Directory B2C 设置通过 GitHub 帐户注册与登录](/azure/active-directory-b2c/identity-provider-github)。
 
 ## <a name="configure-and-compile-your-app"></a>配置并编译你的应用
 
-现已创建 AAD B2C 实例和一些用户流，接下来将 Spring 应用连接到 AAD B2C 实例。
+现已创建 Azure AD B2C 实例和一些用户流，接下来将 Spring 应用连接到 Azure AD B2C 实例。
 
 1. 从命令行中，通过 cd 转到从“Spring 启动器”下载的 .zip 文件解压缩出来的目录。
 
@@ -182,9 +184,9 @@ ms.locfileid: "90831913"
     </dependency>
     ```
 
-    对于 `azure-active-directory-b2c-spring-boot-starter`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) 来查找最新版本。 截至本文撰写时，最新版本是 `2.2.4`。
+    对于 `azure-active-directory-b2c-spring-boot-starter`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) 来查找最新版本。 截至本次更新，最新版本是 `2.3.5`。
 
-    对于 `spring-boot-starter-thymeleaf`，使用与前面选择的Spring Boot 版本相对应的版本，例如 `2.2.7.RELASE`。
+    对于 `spring-boot-starter-thymeleaf`，使用与前面选择的Spring Boot 版本相对应的版本，例如 `2.3.4.RELASE`。
 
     对于 `thymeleaf-extras-springsecurity5`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) 来查找最新版本。 截至本文撰写时，最新版本是 `3.0.4.RELEASE`。
 
@@ -353,6 +355,10 @@ ms.locfileid: "90831913"
 ## <a name="summary"></a>总结
 
 在本教程中，我们使用 Azure Active Directory B2C 起动器创建了新的 Java Web 应用程序，配置了新的 Azure AD B2C 租户并在其中注册了新的应用程序，然后将应用程序配置为使用 Spring 批注和类来保护 Web 应用。
+
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 
