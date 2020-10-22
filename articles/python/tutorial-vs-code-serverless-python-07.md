@@ -4,12 +4,12 @@ description: 教程步骤 7，通过在 Python 中添加绑定将消息写入 Az
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ad242e5c9c2258e438846a7d393163871d14db9e
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: c260d2b8708d770b62c9f94d651a1ba630660cab
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772850"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137186"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:在 Python 中添加 Azure Functions 的存储绑定
 
@@ -105,3 +105,4 @@ ms.locfileid: "90772850"
 > [!div class="nextstepaction"]
 > [我添加了存储绑定 - 转到步骤 8 >>>](tutorial-vs-code-serverless-python-08.md)
 
+[存在问题？请告诉我们。](https://aka.ms/python-functions-qs-ms-survey)

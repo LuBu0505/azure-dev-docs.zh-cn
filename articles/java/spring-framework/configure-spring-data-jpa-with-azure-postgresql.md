@@ -2,18 +2,18 @@
 title: 将 Spring Data JPA 与 Azure Database for PostgreSQL 配合使用
 description: 了解如何将 Spring Data JPA 与 Azure Database for PostgreSQL 数据库配合使用。
 documentationcenter: java
-ms.date: 06/19/2020
+ms.date: 10/12/2020
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3a17e09f257bb4d06320fea8aaa6b423c4f2027b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1099b9568a66c2915b000c31c8e84e8e02b1d3d6
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830955"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200585"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-postgresql"></a>将 Spring Data JPA 与 Azure Database for PostgreSQL 配合使用
 
@@ -34,8 +34,10 @@ ms.locfileid: "90830955"
 通过在命令行中输入以下命令，生成此应用程序：
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+> [!NOTE]
+> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>将 Spring Boot 配置为使用 Azure Database for PostgreSQL
 
@@ -70,11 +72,11 @@ spring.jpa.hibernate.ddl-auto=create-drop
 接下来添加 Java 代码，以便使用 JPA 在 PostgreSQL 服务器中存储和检索数据。
 
 [!INCLUDE [spring-data-jpa-create-application.md](includes/spring-data-jpa-create-application.md)]
-
+    
 下面是这些 cURL 请求的屏幕截图：
 
 [![使用 cURL 进行测试](media/configure-spring-data-jpa-with-azure-postgresql/create-postgresql-02.png)](media/configure-spring-data-jpa-with-azure-postgresql/create-postgresql-02.png#lightbox)
-
+    
 祝贺你！ 你已创建了一个 Spring Boot 应用程序，该应用程序使用 JPA 在 Azure Database for PostgreSQL 中存储和检索数据。
 
 [!INCLUDE [spring-data-conclusion.md](includes/spring-data-conclusion.md)]

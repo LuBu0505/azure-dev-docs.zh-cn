@@ -4,12 +4,12 @@ description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: f60bd70a8c67a3b33140b11731906e0f205e98f7
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: bbf89352bbbb93a90ac6f41bea97ba0def9bf815
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772870"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137096"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6：向 Azure Functions 添加另一个 Python 函数
 
@@ -118,3 +118,5 @@ ms.locfileid: "90772870"
 
 > [!div class="nextstepaction"]
 > [我添加了另一个函数 - 转到步骤 7 >>>](tutorial-vs-code-serverless-python-07.md)
+
+[存在问题？请告诉我们。](https://aka.ms/python-functions-qs-ms-survey)

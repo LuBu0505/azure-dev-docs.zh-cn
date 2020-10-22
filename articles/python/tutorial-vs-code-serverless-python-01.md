@@ -4,12 +4,12 @@ description: 教程第 1 步：为 Azure Functions 配置本地环境
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772727"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137216"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
@@ -80,3 +80,5 @@ Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，�
 
 > [!div class="nextstepaction"]
 > [我已登录到 Azure - 转到步骤 2 >>>](tutorial-vs-code-serverless-python-02.md)
+
+[存在问题？请告诉我们。](https://aka.ms/python-functions-qs-ms-survey)

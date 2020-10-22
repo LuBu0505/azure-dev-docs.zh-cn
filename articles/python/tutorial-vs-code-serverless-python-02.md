@@ -4,12 +4,12 @@ description: 教程步骤 2，演示如何使用用于 VS Code 的 Azure Functio
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 24e158023ba748e6137471ae4833a970a185853b
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c21207e9269326ba2189da3c2b5bbbcba1b23c02
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846728"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137136"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2:为 Azure Functions 创建 Python 函数
 
@@ -47,3 +47,5 @@ ms.locfileid: "91846728"
 
 > [!div class="nextstepaction"]
 > [我创建了函数 - 转到步骤 3 >>>](tutorial-vs-code-serverless-python-03.md)
+
+[存在问题？请告诉我们。](https://aka.ms/python-functions-qs-ms-survey)

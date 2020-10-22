@@ -4,12 +4,12 @@ description: 教程步骤 8，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 885ff8b79ac219d4adaf4760e31fe439d010f9d5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832003"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137206"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:为 Azure Functions 清理 Azure 资源
 
@@ -46,3 +46,5 @@ ms.locfileid: "90832003"
 
 > [!div class="nextstepaction"]
 > [我完成了！](/python/azure/?preserve-view=true&view=azure-python)
+
+[存在问题？请告诉我们。](https://aka.ms/python-functions-qs-ms-survey)

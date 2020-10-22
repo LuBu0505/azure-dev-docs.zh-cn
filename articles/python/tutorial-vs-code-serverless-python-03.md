@@ -4,12 +4,12 @@ description: 教程步骤 3，了解 Azure Functions 提供的模板 Python 代�
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a88c62bb017cc666b7c8e6c5cabe6df0768a17b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: f2f39b4ba2c6274c81052b21b4d66d1c7c854ede
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764524"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137176"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3：在 Visual Studio Code 中检查 Python 代码文件
 
@@ -93,3 +93,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 > [!div class="nextstepaction"]
 > [我检查了代码文件 - 转到步骤 4 >>>](tutorial-vs-code-serverless-python-04.md)
 
+[存在问题？请告诉我们。](https://aka.ms/python-functions-qs-ms-survey)
