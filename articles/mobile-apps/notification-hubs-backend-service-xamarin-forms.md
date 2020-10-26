@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: f173f8431cc7bed0ae56bf14cfc6efcf37dcf230
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 308e727f57ed086899d4fb5906235cb5a17bda16
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493257"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337176"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>教程：使用 Azure 通知中心通过后端服务向 Xamarin.Forms 应用发送推送通知  
 
@@ -42,9 +42,10 @@ ms.locfileid: "91493257"
 
 若要继续操作，需要：
 
-* [Azure 订阅](https://portal.azure.com)，可以在其中创建和管理资源。
-* 安装了 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) 的 Mac（或运行 [Visual Studio 2019 的 PC，具有](https://visualstudio.microsoft.com/vs) 使用 .NET 工作负载的移动开发）。
-* 在 Android（物理设备或仿真器设备）或 iOS（仅物理设备）上运行应用的功能。 
+* [Azure 订阅](https://azure.microsoft.com/free/dotnet)，可以在其中创建和管理资源。
+* 安装了 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) 的 Mac 或运行 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 的 PC。
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 用户还必须安装“使用 .NET 的移动开发”以及“ASP.NET 和 Web 开发”工作负载 。
+* 在 Android（物理设备或仿真器设备）或 iOS（仅物理设备）上运行应用的功能。
 
 对于 Android 而言，必须具有：
 
@@ -62,12 +63,13 @@ ms.locfileid: "91493257"
 可以遵循此首要原则示例中的步骤，而不需要事先体验。 不过，如能熟悉以下方面则会更有帮助。
 
 * [Azure 开发人员门户](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1) 和 [Web API](https://dotnet.microsoft.com/apps/aspnet/apis)
 * [Google Firebase 控制台](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) 以及[使用 Azure 通知中心向 iOS 应用发送推送通知](/azure/notification-hubs/ios-sdk-get-started)
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) 和 [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)。
 
-提供的步骤适用于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)但使用 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 的用户也可按此操作。
+> [!IMPORTANT]
+> 提供的步骤特定于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。 使用 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 的用户也可按此操作，但可能存在一些差异需要协调。 例如，用户界面和工作流的说明、模板名称、环境配置等。
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>设置推送通知服务和 Azure 通知中心
 

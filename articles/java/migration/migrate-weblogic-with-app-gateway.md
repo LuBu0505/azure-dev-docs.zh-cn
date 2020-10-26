@@ -4,17 +4,19 @@ description: 本教程介绍如何使用 Azure 应用程序网关作为负载均
 author: edburns
 ms.author: edburns
 ms.topic: tutorial
-ms.date: 08/05/2020
-ms.openlocfilehash: 166e6f90218eb519242da0d89ae6146a2d589863
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.date: 10/15/2020
+ms.openlocfilehash: 7a4f130e82338dea7c4fd344cfbedb2ed7f88c67
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057533"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137086"
 ---
 # <a name="tutorial-migrate-a-weblogic-server-cluster-to-azure-with-azure-application-gateway-as-a-load-balancer"></a>教程：使用 Azure 应用程序网关作为负载均衡器将 WebLogic Server 群集迁移到 Azure
 
 本教程介绍使用 Azure 应用程序网关部署 WebLogic Server (WLS) 的过程。  其中涉及特定步骤来创建 Key Vault、在 Key Vault 中存储 SSL 证书和使用该证书终止 SSL。  尽管所有这些元素均在各自的文档中得到很好的阐述，但本教程展示了一种特定的方式，将所有这些元素结合起来，以便为 Azure 上的 WLS 创建简单却又功能强大的负载均衡解决方案。
+
+<!-- Diagram source at https://github.com/wls-eng/arm-oraclelinux-wls/blob/master/src/main/resources/weblogic-app-gateway-key-vault.vsdx -->
 
 :::image type="content" border="false" source="media/migrate-weblogic-with-app-gateway/weblogic-app-gateway-key-vault.png" alt-text="显示 WLS、应用网关和 Key Vault 之间的关系的图形。":::
 
@@ -144,7 +146,7 @@ Key Vault 创建是很轻量级的操作，通常两分钟内即可完成。  �
 
 若要创建 WLS 群集和应用程序网关，请执行以下步骤：
 
-1. 按照 [Oracle 文档](https://aka.ms/arm-oraclelinux-wls-cluster-oracle-docs)中所述，开始执行预配 WebLogic Server 群集的步骤，但到达“Azure 应用程序网关”边栏选项卡时请回到此页面，如此处所示。
+1. 使用 [Azure 门户中的 WebLogic Server 群集产品/服务](https://portal.azure.com/#create/oracle.20191007-arm-oraclelinux-wls-cluster20191007-arm-oraclelinux-wls-cluster)，按照 [Oracle 文档](https://aka.ms/arm-oraclelinux-wls-cluster-oracle-docs)中所述，预配 WebLogic Server 群集，但到达“Azure 应用程序网关”边栏选项卡时请回到此页面，如此处所示。
 
    :::image type="content" source="media/migrate-weblogic-with-app-gateway/weblogic-app-gateway-blade.png" alt-text="显示 WLS、应用网关和 Key Vault 之间的关系的图形。":::
 
