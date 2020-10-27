@@ -5,28 +5,26 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846528"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200616"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Boot Starter 与 Azure Cosmos DB SQL API 配合使用
 
 Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员使用各种标准 API（如 SQL、MongoDB、Graph 和表 API）处理数据。 Microsoft 的 Spring Boot Starter 使开发人员可以使用 Spring Boot 应用程序，这些应用程序通过使用 SQL API 与 Azure Cosmos DB 轻松集成。
 
-本文演示如何使用 Azure 门户创建 Azure Cosmos DB，如何使用 **[Spring Initializr]** 创建自定义 Spring Boot 应用程序，以及如何将[用于 Azure 的 Spring Boot Cosmos DB Starter] 添加到自定义应用程序，以使用 Spring Data 和 Cosmos DB SQL API 在 Azure Cosmos DB 中执行数据的存储和检索操作。
+本文演示如何使用 Azure 门户创建 Azure Cosmos DB，如何使用 **[Spring Initializr]** 创建自定义 Spring Boot 应用程序，以及如何将 [用于 Azure 的 Spring Boot Cosmos DB Starter] 添加到自定义应用程序，以使用 Spring Data 和 Cosmos DB SQL API 在 Azure Cosmos DB 中执行数据的存储和检索操作。
 
 ## <a name="prerequisites"></a>先决条件
-
-为遵循本文介绍的步骤，需要以下先决条件：
 
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
@@ -43,7 +41,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
     * 选择要用于数据库的订阅。
     * 指定是否为数据库创建新的“资源组”，或选择现有资源组。
-    * 输入一个唯一的帐户名，作为数据库的 URI。 例如：*wingtiptoysdata*。
+    * 输入一个唯一的帐户名，作为数据库的 URI。 例如： *wingtiptoysdata* 。
     * 为 API 选择 **Core (SQL)** 。
     * 为数据库指定“位置”。
 
@@ -63,12 +61,21 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定你希望使用 Java 生成 Maven 项目，指定 Spring Boot 版本，输入应用程序的“组”名称和“项目”名称，在依赖项中添加“Azure 支持”，然后单击“生成项目”按钮      。
+1. 指定以下选项：
 
-    ![Spring Initializr 的基本选项][SI01]
+   * 使用 **Java** 生成一个 **Maven** 项目。
+   * 指定 Spring Boot 版本。
+   * 指定应用程序的“组”和“项目”名称。  
+   * 对于 Java 版本，选择“8”。
+   * 将 Azure 支持添加到依赖项中。
 
-    > [!NOTE]
-    > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.example.wingtiptoysdata 。
+   >[!div class="mx-imgBorder"]
+   >![Spring Initializr 的基本选项][SI01]
+
+   > [!NOTE]
+   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.example.wingtiptoysdata 。
+
+1. 指定上面列出的选项后，选择“生成”。
 
 1. 出现提示时，将项目下载到本地计算机中的路径，然后提取文件。
 
@@ -427,7 +434,7 @@ Azure Cosmos DB 是一种全球分布式数据库服务，它允许开发人员�
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 

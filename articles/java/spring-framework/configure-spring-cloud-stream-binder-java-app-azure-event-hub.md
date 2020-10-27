@@ -3,17 +3,17 @@ title: 如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程
 description: 了解如何配置基于 Java 的 Spring Cloud Stream Binder 应用程序，该应用程序是在 Azure 事件中心使用 Spring Boot Initializr 创建的。
 services: event-hubs
 documentationcenter: java
-ms.date: 09/11/2020
+ms.date: 10/13/2020
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f19f3a8d3e101b6cd8d6e9173e2dd99eae590ef9
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 609c848fee2243b132166781e9b2c6cd8f107787
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831273"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337155"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -21,16 +21,12 @@ ms.locfileid: "90831273"
 
 ## <a name="prerequisites"></a>必备条件
 
-为遵循本文介绍的步骤，需要以下先决条件：
-
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 * [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 > [!IMPORTANT]
->
-> 完成本文中的步骤需要 Spring Boot 2.0 或更高版本。
->
+> 完成本文中的步骤需要 Spring Boot 2.2 或更高版本。
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>使用 Azure 门户创建 Azure 事件中心
 
@@ -49,10 +45,10 @@ ms.locfileid: "90831273"
 
 1. 在“创建命名空间”页上，输入以下信息  ：
 
-   * 选择需要用于命名空间的“订阅”****。
-   * 指定是为命名空间创建新的“资源组”，还是选择现有资源组****。
-   * 输入一个唯一的**命名空间名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 *wingtiptoys-space* 作为**命名空间名称**，则 URI 将为 `wingtiptoys-space.servicebus.windows.net`。
-   * 指定事件中心命名空间的“位置”。****
+   * 选择需要用于命名空间的“订阅”  。
+   * 指定是为命名空间创建新的“资源组”，还是选择现有资源组  。
+   * 输入一个唯一的 **命名空间名称** ，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 *wingtiptoys-space* 作为 **命名空间名称** ，则 URI 将为 `wingtiptoys-space.servicebus.windows.net`。
+   * 指定事件中心命名空间的“位置”。 
    * 定价层。
    * 也可指定命名空间的“吞吐量单位”。 
    
@@ -90,7 +86,7 @@ ms.locfileid: "90831273"
    * 指定是为存储帐户创建新的“资源组”，还是选择现有资源组  。
    * 输入存储帐户的唯一“名称”。 
    * 指定存储帐户的“位置”。 
-   
+
    >[!div class="mx-imgBorder"]
    >![指定 Azure 存储帐户选项][IMG08]
 
@@ -109,17 +105,16 @@ ms.locfileid: "90831273"
    * 使用 **Java** 生成一个 **Maven** 项目。
    * 指定一个其值大于或等于 2.2 的 **Spring Boot** 版本。
    * 指定应用程序的“组”和“项目”名称。  
+   * 对于 Java 版本，选择“8”。
    * 添加 *Web* 依赖项。
 
    >[!div class="mx-imgBorder"]
    >![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
-   >
    > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.contoso.eventhubs.sample 。
-   >
 
-1. 指定上面列出的选项后，请选择“GENERATE CTRL +”。
+1. 指定上面列出的选项后，选择“生成”。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -142,6 +137,22 @@ ms.locfileid: "90831273"
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
       <version>1.2.7</version>
+   </dependency>
+   ```
+
+1. 如果使用的是 JDK 版本 9 或更高版本，请添加以下依赖项：
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
    </dependency>
    ```
 
@@ -224,7 +235,7 @@ ms.locfileid: "90831273"
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>配置 Spring Boot 应用以使用 Azure 事件中心
 
-1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
 
    *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
 
@@ -232,7 +243,7 @@ ms.locfileid: "90831273"
 
    */users/example/home/eventhubs-sample/src/main/resources/application.properties*
 
-2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性**：
+2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性  ：
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -414,7 +425,7 @@ ms.locfileid: "90831273"
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 
@@ -432,5 +443,4 @@ ms.locfileid: "90831273"
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-02.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-05.png
 [IMG08]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-08.png
-
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-01.png

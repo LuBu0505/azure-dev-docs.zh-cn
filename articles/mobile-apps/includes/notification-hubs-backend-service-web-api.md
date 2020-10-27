@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 3103fd6c75dbaeed3b5a0dd23d7cd68b6394ee76
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493136"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337177"
 ---
 ### <a name="create-a-web-project"></a>创建 Web 项目
 
@@ -46,10 +46,10 @@ ms.locfileid: "91493136"
 
     将占位符值替换为自己的通知中心名称和连接字符串值。 你已在[创建通知中心](#create-a-notification-hub)部分中记下了这些值。 否则，可以在 [Azure](https://portal.azure.com) 中查找这些值。
 
-    **NotificationsHub:Name**：  
+    **NotificationsHub:Name** ：  
     请参阅“概述”顶部“基础”摘要中的“名称” 。  
 
-    **NotificationHub:ConnectionString**：  
+    **NotificationHub:ConnectionString** ：  
     请参阅“访问策略”中的 DefaultFullSharedAccessSignature
 
     > [!NOTE]
@@ -180,7 +180,9 @@ API 密钥的安全性虽然不如令牌，但它也可以满足本教程的需�
 
     ```csharp
     using PushDemoApi.Authentication;
-    
+    using PushDemoApi.Models;
+    using PushDemoApi.Services;
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -534,6 +536,9 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
 
 1. 选择“ASP.NET Core” > “Web API 控制器类”，输入 NotificationsController 作为名称，然后单击“新建”  。
 
+    > [!NOTE]
+    > 如果使用的是 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)，请选择“包含读/写操作的 API 控制器”模板。
+
 1. 将以下命名空间添加到文件顶部。
 
     ```csharp
@@ -559,7 +564,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
     ```
 
     > [!NOTE]
-    > “控制器”基类为视图提供支持，但本例中不需要它，因此可以改为使用 ControllerBase 。
+    > “控制器”基类为视图提供支持，但本例中不需要它，因此可以改为使用 ControllerBase 。 如果使用的是 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)，可跳过此步骤。
 
 1. 如果选择完成[使用 API 密钥对客户端进行身份验证](#authenticate-clients-using-an-api-key-optional)部分，则还应该使用 Authorize 特性来修饰 NotificationsController 。
 
@@ -585,14 +590,14 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
     > [!NOTE]
     > Visual Studio 可能不会在浏览器中自动启动该应用。 此时将使用 [Postman](https://www.postman.com/downloads) 来测试 API。
 
-1. 在新的 [Postman](https://www.postman.com/downloads) 选项卡上，将请求设置为“GET”并在下面输入地址 。
+1. 在新的 [Postman](https://www.postman.com/downloads) 选项卡上，将请求设置为“GET” 。 输入以下地址，将占位符 &lt;applicationUrl> 替换为“属性” > “launchSettings.json”中找到的 https applicationUrl   。
 
     ```bash
-    https://localhost:5001/api/notifications
+    <applicationUrl>/api/notifications
     ```
 
     > [!NOTE]
-    > Localhost 地址应与“属性” > “launchSettings.json”中找到的 applicationUrl 值匹配  。 默认值应为 `https://localhost:5001;http://localhost:5000`，但是如果收到 404 响应，则需要验证这一点。
+    > 对于默认配置文件，applicationUrl 应为“https://localhost:5001”。 如果使用的是 IIS（Windows 上的 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) 中的默认设置），则应改为使用 iisSettings 项中指定的 applicationUrl  。 如果地址不正确，你会收到 404 响应。
 
 1. 如果选择完成[使用 API 密钥对客户端进行身份验证](#authenticate-clients-using-an-api-key-optional)部分，请确保将请求标头配置为包含 apikey 值。
 
@@ -722,6 +727,9 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
 
 接下来，需要将应用部署到 API 应用，以便可以从任意设备访问它。  
 
+>[!NOTE]
+> 以下步骤特定于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。 如果你使用 Windows 上的 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)，则发布流将有所不同。 请参阅[发布到 Windows 上的 Azure 应用服务](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)。
+
 1. 将配置从“调试”更改为“发布”（如果尚未这样做） 。
 
 1. 按住 Control 的同时单击 PushDemoApi 项目，然后从“发布”菜单中选择“发布到 Azure...”    。
@@ -734,7 +742,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
 
 ### <a name="validating-the-published-api"></a>验证已发布的 API
 
-1. 在 [Postman](https://www.postman.com/downloads) 中打开新选项卡，将请求设置为“POST”并在下面输入地址 。 将占位符替换为在之前的[发布后端服务](#publish-the-backend-service)部分中记下的基址。
+1. 在 [Postman](https://www.postman.com/downloads) 中打开新选项卡，将请求设置为“PUT”并输入下面的地址 。 将占位符替换为在之前的[发布后端服务](#publish-the-backend-service)部分中记下的基址。
 
     ```csharp
     https://<app_name>.azurewebsites.net/api/notifications/installations
@@ -758,9 +766,9 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
 1. 单击“Send”。
 
     > [!NOTE]
-    > 你应收到来自服务的“400 错误请求”状态。
+    > 你应收到来自服务的“422 UnprocessableEntity”状态。
 
-1. 再次执行步骤 1-4，但这次指定请求终结点以验证是否收到相同的“400 错误请求”响应。
+1. 再次执行步骤 1-4，但这次指定请求终结点，验证你是否收到“400 错误请求”响应。
 
     ```bash
     https://<app_name>.azurewebsites.net/api/notifications/requests

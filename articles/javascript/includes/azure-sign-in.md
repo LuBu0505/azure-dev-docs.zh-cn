@@ -1,13 +1,17 @@
 ---
 ms.custom: devx-track-js
-ms.openlocfilehash: 659f538569d2e2155c0eccd3c08684ee835e7449
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.topic: include
+ms.date: 010/16/2020
+ms.openlocfilehash: fb1c04fe82b67076ca38ef353daf7260544a5881
+ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208771"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92179323"
 ---
-在 VS Code 中安装 Azure 扩展以后，请通过导航到 **Azure** 资源管理器登录到 Azure 帐户，选择“登录 Azure”，然后按照提示操作。 （如果已安装多个 Azure 扩展，请针对你使用的区域选择一个扩展，如应用服务、Functions 等。）
+如果你已使用 Azure 服务扩展，则应该已经登录，可以跳过此步骤。 如果你不使用 Azure 服务扩展，请继续阅读本部分以登录到 Azure。
+
+在 Visual Studio Code 中安装 Azure 服务扩展以后，需要通过导航到 Azure 资源管理器登录到 Azure 帐户，选择“登录 Azure”，然后按照提示操作 。 （如果已安装多个 Azure 扩展，请针对你使用的区域选择一个扩展，如应用服务、Functions 等。）
 
 ![通过 VS Code 登录到 Azure](../media/deploy-azure/azure-sign-in.png)
 
