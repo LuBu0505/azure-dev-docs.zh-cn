@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 762e40aa656ddff76f3bc8e1b38b8845e8f20cdd
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 0e247a912429f8f798c174af3e79bb074e3da2ed
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830093"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337165"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -77,7 +77,7 @@ ms.locfileid: "90830093"
    >[!div class="mx-imgBorder"]
    >![选择你的 Azure 帐户名称][create-directory-03]
 
-1. 复制**租户 ID**；在本教程中，稍后需使用该值来配置 *application.properties* 文件。
+1. 复制 **租户 ID** ；在本教程中，稍后需使用该值来配置 *application.properties* 文件。
    
    >[!div class="mx-imgBorder"]
    >![复制租户 ID][create-directory-04]
@@ -94,7 +94,7 @@ ms.locfileid: "90830093"
    >[!div class="mx-imgBorder"]
    >![新建应用注册][create-app-registration-02]
 
-1. 当应用注册页出现时，复制你的**应用程序 ID** 和**租户 ID**；在本教程中，稍后需使用这两个值来配置 *application.properties* 文件。
+1. 当应用注册页出现时，复制你的 **应用程序 ID** 和 **租户 ID** ；在本教程中，稍后需使用这两个值来配置 *application.properties* 文件。
    
    >[!div class="mx-imgBorder"]
    >![复制应用注册密钥][create-app-registration-03]
@@ -131,7 +131,7 @@ ms.locfileid: "90830093"
    >[!div class="mx-imgBorder"]
    >![编辑回复 URL][create-app-registration-09]
 
-1. 输入“http://localhost:8080/login/oauth2/code/azure”用作新的**重定向 URI**，单击单击“配置”。
+1. 输入“http://localhost:8080/login/oauth2/code/azure”用作新的 **重定向 URI** ，单击单击“配置”。
    
    >[!div class="mx-imgBorder"]
    >![添加新的回复 URL][create-app-registration-10]
@@ -151,7 +151,7 @@ ms.locfileid: "90830093"
    >[!div class="mx-imgBorder"]
    >![添加新用户帐户][create-user-01]
 
-1. 当“用户”面板显示时，输入**用户名**和**名称**。  然后单击“创建”。
+1. 当“用户”面板显示时，输入 **用户名** 和 **名称** 。  然后单击“创建”。
    
    >[!div class="mx-imgBorder"]
    >![输入用户帐户信息][create-user-02]
@@ -163,7 +163,7 @@ ms.locfileid: "90830093"
 
 1. 从 Active Directory 的“概述”页面上，单击“组”，然后单击“创建新组”，该组将用于在应用程序中授权  。
 
-1. 然后单击“未选择任何成员”。 （在本教程中，我们将创建一个名为 *users* 的组。）搜索在上一步创建的用户。  单击“选择”将该用户添加到组中。  然后，单击“创建”以创建新组。
+1. 然后单击“未选择任何成员”。 （在本教程中，我们将创建一个名为 Users 的组。）搜索在上一步创建的用户。  单击“选择”将该用户添加到组中。  然后，单击“创建”以创建新组。
    
    >[!div class="mx-imgBorder"]
    >![选择组的用户][create-user-03]
@@ -226,7 +226,7 @@ ms.locfileid: "90830093"
 
 1. 保存并关闭 application.properties 文件。
 
-1. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。
+1. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如： *src/main/java/com/wingtiptoys/security/controller* 。
 
 1. 在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
@@ -280,7 +280,7 @@ ms.locfileid: "90830093"
    > }
    > ```
 
-1. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。
+1. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如： *src/main/java/com/wingtiptoys/security/security* 。
 
 1. 在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 

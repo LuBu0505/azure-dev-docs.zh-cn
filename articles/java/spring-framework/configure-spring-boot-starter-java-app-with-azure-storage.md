@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java
-ms.openlocfilehash: a944739722a657636200d31bd7bf04242c8ea040
-ms.sourcegitcommit: a4131409651d6d4f56733fe8311ca77b2004bc59
+ms.openlocfilehash: 18b02ab5ffbb5fc84878685d4301f284d431a216
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88830401"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337145"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -47,7 +47,7 @@ ms.locfileid: "88830401"
 
    * 选择“订阅”。
    * 选择“资源组”或创建新资源组。
-   * 输入独一无二的“存储帐户名称”，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为**名称**，则 URI 将为 *wingtiptoysstorage.core.windows.net*。
+   * 输入独一无二的“存储帐户名称”，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为 **名称** ，则 URI 将为 *wingtiptoysstorage.core.windows.net* 。
    * 指定存储帐户的“位置”。
 1. 指定上面列出的选项后，请单击“查看 + 创建”。 
 1. 查看具体细节，然后单击“创建”以创建存储帐户。
@@ -107,6 +107,22 @@ ms.locfileid: "88830401"
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
       <version>1.2.7</version>
+   </dependency>
+   ```
+
+1. 如果使用的是 JDK 版本 9 或更高版本，请添加以下依赖项：
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
    </dependency>
    ```
 
@@ -193,7 +209,7 @@ ms.locfileid: "88830401"
 
 以下过程将 Spring Boot 应用程序配置为使用你的 Azure 存储帐户。
 
-1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
 
    `C:\SpringBoot\storage\src\main\resources\application.properties`
 
