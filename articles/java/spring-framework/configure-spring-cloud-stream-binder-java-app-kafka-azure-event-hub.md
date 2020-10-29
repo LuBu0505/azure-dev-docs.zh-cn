@@ -6,13 +6,13 @@ documentationcenter: java
 ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
-ms.custom: devx-track-java
-ms.openlocfilehash: 523d7b7eb0465bc9b1e367b7b450591319f5995a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 452119b467d3b92e7b8deec3b0e22d2d1d18ee9e
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831263"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689207"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>如何将适用于 Apache Kafka 的 Spring Boot Starter 与 Azure 事件中心配合使用
 
@@ -45,7 +45,7 @@ ms.locfileid: "90831263"
 
 1. 在“创建命名空间”页上，输入以下信息  ：
 
-   * 输入一个唯一**名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 **wingtiptoys** 作为**名称**，则 URI 将为 *wingtiptoys.servicebus.windows.net*。
+   * 输入一个唯一 **名称** ，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 **wingtiptoys** 作为 **名称** ，则 URI 将为 *wingtiptoys.servicebus.windows.net* 。
    * 定价层。
    * 为命名空间指定“启用 Kafka”设置。 
    * 选择需要用于命名空间的“订阅”  。
@@ -201,7 +201,7 @@ ms.locfileid: "90831263"
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>配置 Spring Boot 应用以使用 Azure 事件中心
 
-1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
 
    `C:\SpringBoot\eventhub\src\main\resources\application.properties`
 
@@ -360,7 +360,7 @@ ms.locfileid: "90831263"
 
 > [!NOTE]
 > 
-> 若要进行测试，可以修改 *KafkaSource.java*，使之包含简单的 HTML 窗体，如以下示例所示：
+> 若要进行测试，可以修改 *KafkaSource.java* ，使之包含简单的 HTML 窗体，如以下示例所示：
 > 
 > ```java
 > package com.wingtiptoys.kafka;

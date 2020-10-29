@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 3103fd6c75dbaeed3b5a0dd23d7cd68b6394ee76
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 7a7128a475b428243f3c7280fc154d1d4c8fe8a6
+ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337177"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92438071"
 ---
 ### <a name="create-a-web-project"></a>创建 Web 项目
 
@@ -518,6 +518,10 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
 1. 在 Startup.cs 中，更新 ConfigureServices 方法，以将 NotificationHubsService 添加为 INotificationService 的单一实现   。
 
     ```csharp
+    
+    using PushDemoApi.Models;
+    using PushDemoApi.Services;
+
     public void ConfigureServices(IServiceCollection services)
     {
         ...

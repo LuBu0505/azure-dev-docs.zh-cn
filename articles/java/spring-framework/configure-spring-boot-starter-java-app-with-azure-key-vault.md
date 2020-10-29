@@ -8,13 +8,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
-ms.custom: devx-track-java
-ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
-ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409969"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688847"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>教程：在 Spring Boot 应用程序中从 Azure Key Vault 读取机密
 
@@ -96,7 +96,7 @@ Spring Boot 应用程序将用户名和密码等敏感信息外部化。  外部
 
 ### <a name="create-a-service-principal-for-use-in-by-your-app"></a>创建服务主体以供你的应用使用
 
-Azure AD“服务主体”** 提供对订阅中的 Azure 资源的访问权限。 可以将服务主体视为服务的用户标识。  “服务”是任何需要访问 Azure 资源的应用程序、服务或平台，包括本教程中生成的示例应用。 可以为服务主体配置作用域仅限于你指定的那些资源的访问权限。 然后，将应用程序或服务配置为使用服务主体的凭据来访问这些资源。
+Azure AD“服务主体”  提供对订阅中的 Azure 资源的访问权限。 可以将服务主体视为服务的用户标识。  “服务”是任何需要访问 Azure 资源的应用程序、服务或平台，包括本教程中生成的示例应用。 可以为服务主体配置作用域仅限于你指定的那些资源的访问权限。 然后，将应用程序或服务配置为使用服务主体的凭据来访问这些资源。
 
 使用此命令创建服务主体。
 
@@ -236,13 +236,13 @@ az ad sp create-for-rbac --name contososp
 
 1. 浏览到 <https://start.spring.io/>。
 1. 选择此列表后面的图片中所示的选项。
-   1. **项目**：`Maven Project`
-   1. **语言**：`Java`
-   1. **Spring Boot**：`2.3.3`
-   1. **组**：`com.contoso`（你可以在此处输入任何有效的 Java 包名称。）
-   1. **项目**：keyvault（你可以在此处输入任何有效的 Java 类名。）
-   1. **打包**：`Jar`
-   1. **Java**：`11`（你可以选择 8，但本教程使用 11 进行验证。）
+   1. **项目** ：`Maven Project`
+   1. **语言** ：`Java`
+   1. **Spring Boot** ：`2.3.3`
+   1. **组** ：`com.contoso`（你可以在此处输入任何有效的 Java 包名称。）
+   1. **项目** ：keyvault（你可以在此处输入任何有效的 Java 类名。）
+   1. **打包** ：`Jar`
+   1. **Java** ：`11`（你可以选择 8，但本教程使用 11 进行验证。）
 1. 选择“添加依赖关系…”
 1. 在文本字段中，输入 `Spring Web` 并按 Ctrl+Enter。
 1. 在文本字段中，输入 `Azure Key Vault` 并按 Enter。  你的屏幕应与下图中所示类似。
@@ -261,15 +261,15 @@ az ad sp create-for-rbac --name contososp
    ├── pom.xml
    └── src
        ├── main
-       │   ├── java
-       │   │   └── com
-       │   │       └── contoso
-       │   │           └── keyvault
-       │   │               └── KeyvaultApplication.java
-       │   └── resources
-       │       ├── application.properties
-       │       ├── static
-       │       └── templates
+       │   ├── java
+       │   │   └── com
+       │   │       └── contoso
+       │   │           └── keyvault
+       │   │               └── KeyvaultApplication.java
+       │   └── resources
+       │       ├── application.properties
+       │       ├── static
+       │       └── templates
    ```
 
 1. 在文本编辑器中打开 KeyvaultApplication.java 文件。  修改该文件，使其如下。
@@ -398,7 +398,7 @@ az ad sp create-for-rbac --name contososp
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.11.0</version>
+     <version>1.12.0</version>
     </plugin>
    ```
 
@@ -439,7 +439,7 @@ az ad sp create-for-rbac --name contososp
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.11.0</version>  
+       <version>1.12.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
          *<subscriptionId>********-****-****-****-************</subscriptionId>
@@ -449,8 +449,8 @@ az ad sp create-for-rbac --name contososp
          *<region>eastus</region>
          <runtime>
            <os>linux</os>
-           <javaVersion>java11</javaVersion>
-           <webContainer>java11</webContainer>
+           <javaVersion>java 11</javaVersion>
+           <webContainer>Java SE</webContainer>
          </runtime>
          *<!-- Begin of App Settings  -->
          *<appSettings>

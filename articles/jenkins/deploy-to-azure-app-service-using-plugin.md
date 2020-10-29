@@ -4,13 +4,13 @@ description: 了解如何在 Jenkins 中使用 Azure App Service Jenkins 插件�
 keywords: jenkins, azure, devops, 应用服务
 ms.topic: tutorial
 ms.date: 08/10/2018
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 1be8e126a5fee2dd83682ece559998a45645ac36
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 2179002df5f387e2656cf116b369d035c7c68e18
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831683"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688631"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>教程：使用 Jenkins 插件部署到 Azure 应用服务
 
@@ -58,7 +58,7 @@ sudo apt-get install -y maven
 部署到 Azure 需要 Azure 服务主体。 
 
 
-1. 要创建 Azure 服务主体，请使用 [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)  或 [Azure 门户](/azure/azure-resource-manager/resource-group-create-service-principal-portal)。
+1. 要创建 Azure 服务主体，请使用 [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) 或 [Azure 门户](/azure/azure-resource-manager/resource-group-create-service-principal-portal)。
 
 1. 在 Jenkins 仪表板中，选择“凭据” > “系统”   。 然后选择“全局凭据(不受限制)”  。
 
@@ -154,7 +154,7 @@ Azure App Service Jenkins 插件中管道已就绪。 可参考 GitHub 存储库
 
 ## <a name="configure-jenkins-to-deploy-web-app-for-containers"></a>配置 Jenkins 以部署用于容器的 Web 应用
 
-Linux 版 Web 应用支持使用 Docker 进行部署。 要使用 Docker 部署 Web 应用，需提供 Dockerfile，以便使用服务运行时将 Web 应用打包到 Docker 映像中。 随后，Jenkins 插件生成映像、将其推送到 Docker 注册表，并将映像部署到 Web 应用。
+Linux 版 Web 应用支持使用 Docker 进行部署。 要使用 Docker 部署 Web 应用，需提供 Dockerfile，以便使用服务运行时将 Web 应用打包到 Docker 映像。 随后，Jenkins 插件生成映像、将其推送到 Docker 注册表，并将映像部署到 Web 应用。
 
 Linux 上的 Web 应用还支持 Git 和文件上传等传统部署方法，但仅限内置语言（.NET Core、Node.js、PHP 和 Ruby）。 对于其他语言，需将应用程序代码和服务运行时一并打包到 Docker 映像并使用 Docker 进行部署。
 

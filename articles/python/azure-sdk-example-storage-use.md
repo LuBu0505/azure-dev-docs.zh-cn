@@ -3,13 +3,13 @@ title: 通过用于 Python 的 Azure SDK 使用 Azure 存储
 description: 使用用于 Python 的 Azure SDK 库访问 Azure 存储帐户中预配的 Blob 容器，然后将文件上传到该容器。
 ms.date: 08/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010277"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689232"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>示例：使用用于 Python 的 Azure 库访问 Azure 存储
 

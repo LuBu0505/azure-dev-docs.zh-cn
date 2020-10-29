@@ -4,13 +4,13 @@ description: 了解如何使用 Ansible 通过 Azure Key Vault 配置 VM 安全�
 keywords: ansible, azure, 开发, 密钥保管库, 安全性, 凭据, 机密, 密钥, 证书, 适用于 azure 的 ansible 模块, 资源组, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 472a155b172de06cff4df99db7a4861f1cb60f52
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682015"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688947"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>教程：通过 Ansible 将 Azure Key Vault 与 Linux 虚拟机配合使用
 
@@ -241,7 +241,7 @@ tasks:
 
 注意：
 
-- **azure_rm_keyvaultsecret_info 模块**用于获取密钥保管库机密。 只有在使用适用于 Azure 模块的 Ansible 集合的情况下，此模块才可用。 
+- **azure_rm_keyvaultsecret_info 模块** 用于获取密钥保管库机密。 只有在使用适用于 Azure 模块的 Ansible 集合的情况下，此模块才可用。 
 - 如果在运行此代码片段时收到错误，请确保已遵循[“先决条件”部分](#prerequisites)中的所有说明。
 - 为了简单起见，本演示包含 `secret_name` 和 `secret_value`。 不过，playbook 就像项目的任何源代码一样，是“基础结构即代码”(IaC) 文件。 因此，在生产环境中使用时，这样的值不应存储在纯文本文件中。
 

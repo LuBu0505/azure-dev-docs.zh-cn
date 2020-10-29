@@ -3,13 +3,13 @@ title: 使用 Azure CLI 将应用代码部署到 Azure 应用服务
 description: Azure CLI 教程第 4 部分：部署网站
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 6006c25b9f2cb77ed472d8e4cb7d0eb96e85da48
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364780"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689121"
 ---
 # <a name="deploy-the-app-to-app-service"></a>将应用部署到应用服务
 
@@ -17,7 +17,7 @@ ms.locfileid: "91364780"
 
 在此步骤中，将使用将本地 Git 存储库推送到 Azure 的基本过程，将 Node.js 应用代码部署到 Azure 应用服务。
 
-1. 在终端中或命令提示符下，运行以下命令以初始化本地 Git 存储库并进行初始提交。 （*node_modules* 文件夹被忽略，因为它是在你之前运行 Express Generator 时创建的 *.gitignore* 文件中指定的。）
+1. 在终端中或命令提示符下，运行以下命令以初始化本地 Git 存储库并进行初始提交。 （ *node_modules* 文件夹被忽略，因为它是在你之前运行 Express Generator 时创建的 *.gitignore* 文件中指定的。）
 
     ```bash
     git init

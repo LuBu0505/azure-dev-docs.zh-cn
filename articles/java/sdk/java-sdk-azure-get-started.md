@@ -7,13 +7,13 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
+ms.openlocfilehash: a2dbb6a83837e716f48304a8013ba198280e9624
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831783"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689182"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 

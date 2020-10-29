@@ -4,13 +4,13 @@ description: 了解如何使用 Jenkins 和蓝/绿部署模式部署到 Azure Ku
 keywords: jenkins, azure, devops, kubernetes, k8s, aks, 蓝绿部署, 持续交付, cd
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832043"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688661"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>教程：使用蓝/绿部署模式部署到 Azure Kubernetes 服务 (AKS)
 
@@ -144,7 +144,7 @@ GitHub 上的 Microsoft 存储库中提供了一个演示如何使用 Jenkins �
     kubectl apply -f  test-endpoint-green.yml
     ```
 
-1. 更新公共和测试终结点的 DNS 名称。 创建 Kubernetes 群集时，还会创建采用 **MC_&lt;your-resource-group-name> _&lt;your-kubernetes-cluster-name>_ &lt;your-location>** 命名模式的[附加资源组](https://github.com/Azure/AKS/issues/3)。
+1. 更新公共和测试终结点的 DNS 名称。 创建 Kubernetes 群集时，还会创建采用 **MC_&lt;your-resource-group-name> _&lt;your-kubernetes-cluster-name>_ &lt;your-location>** 命名模式的 [附加资源组](https://github.com/Azure/AKS/issues/3)。
 
     在资源组中查找公共 IP。
 

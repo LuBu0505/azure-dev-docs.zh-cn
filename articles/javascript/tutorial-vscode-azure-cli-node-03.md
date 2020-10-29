@@ -3,13 +3,13 @@ title: 通过 Azure CLI 创建用于托管应用的 Azure 应用服务
 description: Azure CLI 教程第 3 部分：创建应用服务
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 3279c215b1822b3e989eeacb66a725c91e023a34
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: c22896484e07c8657582265e70dda41b12efb155
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364790"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688656"
 ---
 # <a name="create-the-app-service"></a>创建应用服务
 
@@ -17,7 +17,7 @@ ms.locfileid: "91364790"
 
 这一步通过 Azure CLI 创建用于托管应用代码的 Azure 应用服务。
 
-1. 在终端或命令提示符处，使用以下命令创建应用服务的**资源组**。 资源组实际上是 Azure 中应用资源的命名集合，例如网站、数据库、Azure Functions 等。
+1. 在终端或命令提示符处，使用以下命令创建应用服务的 **资源组** 。 资源组实际上是 Azure 中应用资源的命名集合，例如网站、数据库、Azure Functions 等。
 
     ```azurecli
     az group create --name myResourceGroup --location westus
@@ -33,7 +33,7 @@ ms.locfileid: "91364790"
     az configure --defaults group=myResourceGroup location=westus
     ```
 
-1. 运行以下命令，创建一个**应用服务计划**，用于定义应用服务所使用的底层虚拟机：
+1. 运行以下命令，创建一个 **应用服务计划** ，用于定义应用服务所使用的底层虚拟机：
 
     ```azurecli
     az appservice plan create --name myPlan --sku F1

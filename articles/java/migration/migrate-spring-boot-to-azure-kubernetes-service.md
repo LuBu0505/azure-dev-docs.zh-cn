@@ -5,13 +5,13 @@ author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 4d3da50042074b724f614b718ceb0edc7fb83077
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 77ad38a4fb1290e392ee933a04aaf802a910e577
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831703"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689048"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>将 Spring Boot 应用程序迁移到 Azure Kubernetes 服务
 

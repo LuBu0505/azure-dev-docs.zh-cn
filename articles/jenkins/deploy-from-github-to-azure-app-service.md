@@ -4,13 +4,13 @@ description: 了解如何配置 Jenkins，以便从 GitHub 持续集成 (CI)，�
 keywords: jenkins, azure, devops, 应用服务
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: ef404f1d2e3d1ed042a99eccd2469fdd112e931b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 30b916cadc2c15f1226ab06f6925a87f6be4b3a7
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832013"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688682"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>教程：使用 Jenkins 从 GitHub 部署到 Azure 应用服务
 
@@ -125,7 +125,7 @@ ms.locfileid: "90832013"
 az ad sp create-for-rbac
 ```
 
-**注释**：
+**注释** ：
 
 - 成功完成后，`az ad sp create-for-rbac` 会显示多个值。 下一步中将使用 `name`、`password` 和 `tenant` 值。
 - 默认情况下，使用参与者角色创建服务主体，该角色拥有对 Azure 帐户的完整读取和写入权限。 有关基于角色的访问控制 (RBAC) 和角色的详细信息，请参阅 [RBAC：内置角色](/azure/active-directory/role-based-access-built-in-roles)。
@@ -136,11 +136,11 @@ az ad sp create-for-rbac
 
 1. 在 Jenkins 主页上，选择“凭据” > “系统” 。 
 
-1. 在“系统”页上的“域”下，选择“全局凭据(无限制)”。************
+1. 在“系统”页上的“域”下，选择“全局凭据(无限制)”。 
 
-1. 在左侧菜单中，选择“添加凭据”。****
+1. 在左侧菜单中，选择“添加凭据”。 
 
-1. 在“类型”列表中，选择“Azure 服务主体”。********
+1. 在“类型”列表中，选择“Azure 服务主体”。 
 
 1. 在此步骤的表格所述的属性中提供服务主体和 Azure 订阅的信息：
 
@@ -148,13 +148,13 @@ az ad sp create-for-rbac
 
    | 属性 | 值 | 描述 | 
    |----------|-------|-------------| 
-   | **订阅 ID** | <*yourAzureSubscription-ID*> | 你的 Azure 订阅的 GUID 值 <p>**提示**：如果你不知道自己的 Azure 订阅 ID，请从命令行或 Cloud Shell 运行以下 Azure CLI 命令，然后使用 `id` GUID 值： <p>`az account list` | 
+   | **订阅 ID** | <*yourAzureSubscription-ID*> | 你的 Azure 订阅的 GUID 值 <p>**提示** ：如果你不知道自己的 Azure 订阅 ID，请从命令行或 Cloud Shell 运行以下 Azure CLI 命令，然后使用 `id` GUID 值： <p>`az account list` | 
    | **客户端 ID** | <*yourAzureServicePrincipal-ID*> | 之前为 Azure 服务主体生成的 `appId` GUID 值 | 
    | **客户端机密** | <*yourSecurePassword*> | 为 Azure 服务主体提供的 `password` 值或“机密” | 
    | **租户 ID** | <*yourAzureActiveDirectoryTenant-ID*> | Azure Active Directory 租户的 `tenant` GUID 值 | 
    | **ID** | <*yourAzureServicePrincipalName*> | Azure 服务主体的 `displayName` 值 | 
 
-1. 若要确认服务主体是否正常工作，请选择“验证服务主体”。**** 完成后，请选择“确定”。
+1. 若要确认服务主体是否正常工作，请选择“验证服务主体”。  完成后，请选择“确定”。
 
 接下来，创建用于生成和部署应用的 Jenkins 管道。
 
@@ -162,19 +162,19 @@ az ad sp create-for-rbac
 
 在 Jenkins 中，创建用于生成和部署应用的管道作业。
 
-1. 返回到 Jenkins 主页，选择“新建项”。**** 
+1. 返回到 Jenkins 主页，选择“新建项”。  
 
    ![创建 Jenkins 管道](media/deploy-from-github-to-azure-app-service/jenkins-select-new-item.png)
 
-1. 为管道作业提供一个名称（例如“My-Java-Web-App”），然后选择“管道”。**** 在底部选择“确定”****。  
+1. 为管道作业提供一个名称（例如“My-Java-Web-App”），然后选择“管道”。  在底部选择“确定”  。  
 
    ![命名 Jenkins 管道作业](media/deploy-from-github-to-azure-app-service/jenkins-select-pipeline.png)
 
 1. 使用服务主体设置 Jenkins，使 Jenkins 能够部署到 Azure，且无需使用你自己的凭据。
 
-   1. 在“常规”选项卡上，选择“准备运行的环境”。******** 
+   1. 在“常规”选项卡上，选择“准备运行的环境”。  
 
-   1. 在显示的“属性内容”框中，添加以下环境变量及其值。**** 
+   1. 在显示的“属性内容”框中，添加以下环境变量及其值。  
 
       ```ini
       AZURE_CRED_ID=yourAzureServicePrincipalName
@@ -239,19 +239,19 @@ az ad sp create-for-rbac
 
    ![为 Web 应用选择 Jenkins 管道作业](media/deploy-from-github-to-azure-app-service/select-pipeline-job.png)
 
-1. 在左侧菜单中，选择“配置”****。
+1. 在左侧菜单中，选择“配置”  。
 
-1. 在“管道”选项卡上的“定义”列表中，选择“来自 SCM 的管道脚本”。************
+1. 在“管道”选项卡上的“定义”列表中，选择“来自 SCM 的管道脚本”。 
 
-   1. 在显示的“SCM”框中，选择“Git”作为源代码管理。******** 
+   1. 在显示的“SCM”框中，选择“Git”作为源代码管理。  
 
-   1. 在“存储库”部分，对于“存储库 URL”，请输入 GitHub 分叉的 URL，例如：******** 
+   1. 在“存储库”部分，对于“存储库 URL”，请输入 GitHub 分叉的 URL，例如：  
 
       `https://github.com/<your-GitHub-username>/gs-spring-boot`
 
-   1. 对于“凭据”，请选择前面创建的 GitHub 个人访问令牌。****
+   1. 对于“凭据”，请选择前面创建的 GitHub 个人访问令牌。 
 
-   1. 在“脚本路径”框中，添加“Jenkinsfile”脚本的路径。****
+   1. 在“脚本路径”框中，添加“Jenkinsfile”脚本的路径。 
 
    完成后，管道定义如以下示例所示： 
 
@@ -279,7 +279,7 @@ az ad sp create-for-rbac
 
    * [**`az webapp create`**](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
 
-1. 在 Jenkins 中选择你的管道作业，然后选择“立即生成”。****
+1. 在 Jenkins 中选择你的管道作业，然后选择“立即生成”。 
 
    生成完成后，Jenkins 将部署该应用。该应用随即会使用发布 URL 在 Azure 中上线，例如： 
 
@@ -293,7 +293,7 @@ az ad sp create-for-rbac
 
    `complete/src/main/java/Hello/Application.java`
    
-1. 在 GitHub 的右上角，选择“编辑此文件”。****
+1. 在 GitHub 的右上角，选择“编辑此文件”。 
 
 1. 对 `commandLineRunner()` 方法进行以下更改，然后将更改提交到存储库的 `master` 分支。 提交到 `master` 分支会在 Jenkins 中启动生成。 
    

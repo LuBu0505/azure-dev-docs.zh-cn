@@ -12,12 +12,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: df9b9f659d504c18c9dfd9afb3b5f201448d4866
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 7cd477bfa511f44cf8dfacbd7d10e0f6299ad4f5
+ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010123"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898779"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器来保护 Java Web 应用
 
@@ -67,14 +67,14 @@ ms.locfileid: "92010123"
     ├── pom.xml
     └── src
         ├── main
-        │   ├── java
-        │   │   └── yourProject
-        │   │       └── yourProject
-        │   │           └── YourProjectApplication.java
-        │   └── resources
-        │       ├── application.properties
-        │       ├── static
-        │       └── templates
+        │   ├── java
+        │   │   └── yourProject
+        │   │       └── yourProject
+        │   │           └── YourProjectApplication.java
+        │   └── resources
+        │       ├── application.properties
+        │       ├── static
+        │       └── templates
         └── test
             └── java
                 └── yourProject
@@ -186,7 +186,7 @@ ms.locfileid: "92010123"
 
     对于 `azure-active-directory-b2c-spring-boot-starter`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) 来查找最新版本。 截至本次更新，最新版本是 `2.3.5`。
 
-    对于 `spring-boot-starter-thymeleaf`，使用与前面选择的Spring Boot 版本相对应的版本，例如 `2.3.4.RELASE`。
+    对于 `spring-boot-starter-thymeleaf`，使用与前面选择的Spring Boot 版本相对应的版本，例如 `2.3.4.RELEASE`。
 
     对于 `thymeleaf-extras-springsecurity5`，使用可用的最新版本。 你也许可以使用 [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) 来查找最新版本。 截至本文撰写时，最新版本是 `3.0.4.RELEASE`。
 
@@ -203,7 +203,7 @@ ms.locfileid: "92010123"
       activedirectory:
         b2c:
           tenant: ejb0518domain
-          client-id: ejb0518
+          client-id: 11111111-1111-1111-1111-1111111111111111
           client-secret: '<yourAppKey>'
           reply-url: http://localhost:8080/home
           logout-success-url: http://localhost:8080/home

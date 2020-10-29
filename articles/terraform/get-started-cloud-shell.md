@@ -4,13 +4,13 @@ description: 本快速入门介绍如何在 Azure Cloud Shell 上安装和配置
 keywords: azure devops terraform 安装 配置 cloud shell init 计划 应用 执行 门户 登录 rbac 服务主体 自动化脚本
 ms.topic: quickstart
 ms.date: 09/27/2020
-ms.custom: devx-track-terraform
-ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 70a7c1dc9db76c51d5923fc3b82200eca2976b2c
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401607"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688910"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>快速入门：使用 Azure Cloud Shell 配置 Terraform
  
@@ -44,7 +44,7 @@ ms.locfileid: "91401607"
 
 1. 如果以前未使用过 Cloud Shell，请配置环境和存储设置。 本文使用 Bash 环境。
 
-**注释**：
+**注释** ：
 - Cloud Shell 会自动安装最新版本的 Terraform。 此外，Terraform 还会自动使用来自当前 Azure 订阅的信息。 因此，无需进行安装或配置。
 
 ## <a name="authenticate-to-azure"></a>向 Azure 进行身份验证
@@ -64,14 +64,14 @@ Terraform 支持多种向 Azure 进行身份验证的选项。 本文介绍以�
 az login
 ```
 
-**注释**：
+**注释** ：
 
 - 成功登录后，`az login` 会显示与已登录 Microsoft 帐户相关联的 Azure 订阅的列表。
 - 对于每个可用 Azure 订阅，都会显示一个属性列表。 `isDefault` 属性标识所使用的 Azure 订阅。 若要了解如何切换到另一个 Azure 订阅，请参阅[设置当前的 Azure 订阅](#set-the-current-azure-subscription)一节。
 
 ### <a name="authenticate-via-azure-service-principal"></a>通过 Azure 服务主体进行身份验证
 
-**创建 Azure 服务主体**：若要使用服务主体登录到 Azure 订阅，首先需要访问服务主体。 如果已有一个服务主体，则可以跳过该节的此部分。
+**创建 Azure 服务主体** ：若要使用服务主体登录到 Azure 订阅，首先需要访问服务主体。 如果已有一个服务主体，则可以跳过该节的此部分。
 
 部署或使用 Azure 服务的自动化工具（例如 Terraform）应始终具有受限权限。 Azure 提供了服务主体，而不是让应用程序以具有完全特权的用户身份登录。 但是，如果没有用于登录的服务主体，该怎么办？ 在这种情况下，可以使用用户凭据登录，然后创建服务主体。 一旦创建了服务主体，就可以将其信息用于将来的登录尝试。
 
@@ -83,12 +83,12 @@ az login
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-**注释**：
+**注释** ：
 
 - 成功完成后，`az ad sp create-for-rbac` 会显示多个值。 下一步中将使用 `name`、`password` 和 `tenant` 值。
 - 如果丢失了密码，则无法对其进行检索。 因此，应将密码存储在安全的位置。 如果忘记了密码，则需要[重置服务主体凭据](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)。
 
-**使用 Azure 服务主体登录**：在以下对 `az login` 的调用中，将占位符替换为你的服务主体的信息。
+**使用 Azure 服务主体登录** ：在以下对 `az login` 的调用中，将占位符替换为你的服务主体的信息。
 
 ```azurecli
 az login --service-principal -u <service_principal_name> -p "<service_principal_password>" --tenant "<service_principal_tenant>"
@@ -116,7 +116,7 @@ Microsoft 帐户可以与多个 Azure 订阅相关联。 以下步骤概述了�
     az account set --subscription="<subscription_id>"
     ```
 
-    **注意**：
+    **注意** ：
 
     - 调用 `az account set` 不会显示切换到指定的 Azure 订阅的结果。 但是，可以使用 `az account show` 来确认当前的 Azure 订阅是否已更改。
 

@@ -3,13 +3,13 @@ title: 更改应用代码并重新部署到 Azure
 description: Azure CLI 教程第 6 部分：进行更改并重新部署
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 1ceec642f0e8eab517e8fee464ac604f760c9229
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: a087bb948c33df43e0cc25afce0f308c6d97fbd7
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364750"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689117"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>第 6 部分：进行更改并重新部署
 

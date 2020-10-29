@@ -4,13 +4,13 @@ description: 了解如何在 Azure 中使用 Ansible 创建和配置虚拟机规
 keywords: ansible, azure, devops, bash, playbook, 虚拟机, 虚拟机规模集, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 64bf3cbd79f2b2b1e68a3019669bce1115ac7333
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681863"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689223"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>教程：使用 Ansible 在 Azure 中配置虚拟机规模集
 
@@ -35,13 +35,13 @@ ms.locfileid: "90681863"
 
 本部分中的 playbook 代码定义以下资源：
 
-* 所有资源将部署到的**资源组**。
-* 10.0.0.0/16 地址空间中的**虚拟网络**
-* 虚拟网络中的**子网**
-* 用于通过 Internet 访问资源的**公共 IP 地址**
-* **网络安全组**，控制传入和传出规模集的网络流量
-* **负载均衡器**，使用负载均衡器规则将流量分配到一组定义的 VM
-* 使用所有已创建资源的**虚拟机规模集**
+* 所有资源将部署到的 **资源组** 。
+* 10.0.0.0/16 地址空间中的 **虚拟网络**
+* 虚拟网络中的 **子网**
+* 用于通过 Internet 访问资源的 **公共 IP 地址**
+* **网络安全组** ，控制传入和传出规模集的网络流量
+* **负载均衡器** ，使用负载均衡器规则将流量分配到一组定义的 VM
+* 使用所有已创建资源的 **虚拟机规模集**
 
 可通过两种方式获取示例 playbook：
 

@@ -4,13 +4,13 @@ description: 本快速入门介绍如何在 Ubuntu、CentOS 和 SLES 上安装�
 keywords: ansible, azure, devops, bash, cloudshell, playbook, azure cli
 ms.topic: quickstart
 ms.date: 09/30/2020
-ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
-ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
+ms.custom: devx-track-ansible,devx-track-cli, devx-track-azurecli
+ms.openlocfilehash: 7103c40c0b95ae07c60fcccff03ea60e9667a331
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91621623"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688951"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Ansible
 
@@ -38,8 +38,8 @@ ms.locfileid: "91621623"
 
 基于密钥的身份验证有两种密钥：
 
-- **公钥**：公钥存储在主机上（例如在本文中存储在 VM 上）
-- **私钥**：使用私钥，可以安全地连接到主机。 私钥实际上就是你的密码，因此应该加以保护。
+- **公钥** ：公钥存储在主机上（例如在本文中存储在 VM 上）
+- **私钥** ：使用私钥，可以安全地连接到主机。 私钥实际上就是你的密码，因此应该加以保护。
         
 以下步骤将指导你创建 SSH 密钥对。
 
@@ -53,7 +53,7 @@ ms.locfileid: "91621623"
     ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-    **注释**：
+    **注释** ：
 
     - `ssh-keygen` 命令显示生成的密钥文件的位置。 创建虚拟机时需要此目录名称。
     - 公钥存储在 `ansible_rsa.pub` 中，私钥存储在 `ansible_rsa` 中。
@@ -83,7 +83,7 @@ ms.locfileid: "91621623"
     az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-    **注释**：
+    **注释** ：
 
     - `az vm list` 命令的输出包括用于通过 SSH 连接到虚拟机的公共 IP 地址。
 

@@ -4,13 +4,13 @@ description: 了解如何在 Azure Linux 虚拟机上安装 Jenkins 以及如何
 keywords: jenkins, azure, devops, 门户, linux, 虚拟机
 ms.topic: quickstart
 ms.date: 08/21/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 7e7c8de6353a29af949231709675a4d2785405c3
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 6fc5eafbec8917b517b38d7a02c3149512675ac9
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831363"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689132"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>快速入门：使用 Azure CLI 配置 Jenkins
 
@@ -60,7 +60,7 @@ ms.locfileid: "90831363"
       - service jenkins restart
     ```
 
-1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+1. 保存文件 ( **&lt;Ctrl>S** ) 并退出编辑器 ( **&lt;Ctrl>Q** )。
 
 1. 使用 [az group create](/cli/azure/group#az-group-create) 创建资源组。 可能需要将 `--location` 参数替换为你的环境的相应值。
 
@@ -109,7 +109,7 @@ ms.locfileid: "90831363"
     --output tsv
     ```
 
-    **注释**：
+    **注释** ：
 
     - `--query` 参数将输出限制为虚拟机的公共 IP 地址。
 
@@ -119,7 +119,7 @@ ms.locfileid: "90831363"
     ssh azureuser@<ip_address>
     ```
 
-    **注释**：
+    **注释** ：
 
     - 成功连接后，Cloud Shell 提示符会包含用户名和虚拟机名称：`azureuser@QuickstartJenkins-vm`。
 
@@ -183,7 +183,7 @@ ms.locfileid: "90831363"
 
     ![选择 Gradle 脚本选项](./media/configure-on-linux-vm/invoke-gradle-script-option.png)
 
-1. 选择“使用 Gradle 包装器”，然后在“包装器位置”中输入 `complete`，并输入 `build` 作为“任务”。************
+1. 选择“使用 Gradle 包装器”，然后在“包装器位置”中输入 `complete`，并输入 `build` 作为“任务”。 
 
     ![Gradle 脚本选项](./media/configure-on-linux-vm/gradle-script-options.png)
 

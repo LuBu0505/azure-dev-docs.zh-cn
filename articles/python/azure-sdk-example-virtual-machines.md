@@ -3,13 +3,13 @@ title: 使用用于 Python 的 Azure SDK 库预配虚拟机
 description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机。
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010225"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689244"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 

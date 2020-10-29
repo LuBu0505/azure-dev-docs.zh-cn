@@ -4,13 +4,13 @@ description: 了解如何配置 Jenkins，以便从 GitHub 持续集成 (CI) 并
 keywords: jenkins, azure, devops, aks, azure kubernetes 服务, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: c73e5c567f237c6f859b52230742ae74b87326f5
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240999"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688644"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>教程：使用 Jenkins 从 GitHub 部署到 Azure Kubernetes 服务
 
@@ -35,7 +35,7 @@ ms.locfileid: "88240999"
 
 - [Azure 容器注册表 (ACR) 注册表](/azure/container-registry/container-registry-get-started-azure-cli)、ACR 登录服务器名称，以及已配置为[使用 ACR 注册表进行身份验证](/azure/aks/cluster-container-registry-integration)的 AKS 群集。
 
-- 已安装并配置 Azure CLI 2.0.46 或更高版本。 运行  `az --version` 即可查找版本。 如果需要进行安装或升级，请参阅 [安装 Azure CLI](/cli/azure/install-azure-cli)。
+- 已安装并配置 Azure CLI 2.0.46 或更高版本。 运行 `az --version` 即可查找版本。 如果需要进行安装或升级，请参阅[安装 Azure CLI](/cli/azure/install-azure-cli)。
 
 - 在开发系统上[安装的 Docker](https://docs.docker.com/install/)
 

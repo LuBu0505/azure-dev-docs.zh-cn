@@ -6,13 +6,13 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
-ms.custom: github-actions-azure
-ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.custom: github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493118"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689213"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>使用 GitHub Actions 连接到 Azure
 
