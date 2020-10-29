@@ -1,0 +1,46 @@
+### YamlMime:Tutorial
+title: 在 Visual Studio Code 中将 Node.js MongoDB 应用部署到应用服务
+metadata:
+  title: 在 Visual Studio Code 中将 Node.js MongoDB 应用部署到应用服务
+  description: 在本教程中，通过 MongoDB 本机 API 将 Node.js 应用和 MongoDB 数据库配合使用。 将 Node.js 应用程序部署到 Azure 应用服务（在 Linux 上），然后验证基于云的应用是否正常运行。
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 10/13/2020
+  ms.topic: tutorial
+  ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
+  ms.openlocfilehash: 826d4a2ffb4a36d22cb48398fb2bf3b3d1073890
+  ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 10/22/2020
+  ms.locfileid: "92437172"
+items:
+- durationInMinutes: 2
+  content: >
+    [!INCLUDE [Tutorial introduction](../includes/tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-00.md)]
+- title: 准备使用本教程
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Prepare to use this tutorial](../includes/tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-01.md)]
+- title: 在本地运行站点
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Run site locally](../includes/tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-02.md)]
+- title: 将站点部署到 Azure
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Deploy site to Azure](../includes/tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-03.md)]
+- title: 连接本地数据库
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Connect local database](../includes/tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-04.md)]
+- title: 连接远程数据库
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Connect remote database](../includes/tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-05.md)]
+- title: 清理资源
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clean up resources](../includes/tutorial-visualstudiocode-app-service-mongodb/clean-up-resources.md)]
+- content: '[!INCLUDE [Completed tutorial](../includes/tutorial-visualstudiocode-app-service-mongodb/completed.md)]'
