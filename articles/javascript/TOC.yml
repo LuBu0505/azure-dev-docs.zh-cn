@@ -11,91 +11,6 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: 向 Azure 进行身份验证
           href: core/node-sdk-azure-authenticate.md
-    - name: 快速入门
-      expanded: false
-      items:
-        - name: 应用托管
-          items:
-            - name: Azure Static Web Apps
-              href: /azure/static-web-apps/getting-started
-            - name: 来自存储的静态站点
-              href: tutorial-vscode-static-website-node-01.md
-            - name: Node.js web 应用和 API
-              href: tutorial-vscode-azure-app-service-node-01.md
-            - name: Deno API
-              href: tutorial-visual-studio-code-azure-app-service-deno-01.md
-            - name: 无服务器
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Docker
-              href: tutorial-vscode-docker-node-01.md
-            - name: Kubernetes
-              href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Linux VM
-              href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: DevOps
-          items:
-            - name: Azure Repos
-              href: /azure/devops/repos/get-started/index?view=azure-devops&toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 将 CI/CD 与 Azure Pipelines 配合使用
-              href: /azure/devops/pipelines/languages/javascript?view=azure-devops&toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 将 CI/CD 与 Azure DevOps Projects 配合使用
-              href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 将 Application Insights 与 Azure Monitor 配合使用
-              href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 将 Log Analytics 与 Azure Monitor 配合使用
-              href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: GitHub 操作
-              href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
-        - name: 调试和诊断
-          items:
-            - name: 适用于 Azure 应用服务的远程调试
-              href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            - name: 在 VS Code 中调试本地 Node.js 应用
-              href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-        - name: 存储数据
-          items:
-            - name: Blob 存储
-              href: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: SQL 数据库
-              href: /azure/sql-database/sql-database-connect-query-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Cosmos DB
-              href: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Redis 缓存
-              href: /azure/azure-cache-for-redis/cache-nodejs-get-started?toc=/azure/developer/javascript/toc.json&bc=/
-            - name: PostgreSQL
-              href: /azure/postgresql/connect-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: MySQL
-              href: /azure/mysql/connect-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: 安全性和身份验证
-          items:
-            - name: Azure Active Directory
-              href: /azure/active-directory/develop/quickstart-v1-nodejs-webapi?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Azure AD B2C
-              href: /azure/active-directory-b2c/active-directory-b2c-tutorials-spa?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Key Vault
-              href: /azure/key-vault/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: 消息传送和集成
-          items:
-            - name: 事件网格
-              href: /azure/event-grid/custom-event-quickstart?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 服务总线
-              href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 队列存储
-              href: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: IoT
-          items:
-            - name: IoT 中心
-              href: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 大数据流式处理
-              href: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: 认知服务
-          items:
-            - name: 文本分析
-              href: /azure/cognitive-services/text-analytics/quickstarts/nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 计算机视觉
-              href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 语音识别
-              href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
     - name: 教程
       items:
         - name: 将映像上传到存储 Blob
@@ -196,16 +111,12 @@
           href: how-to/deploy-web-app.md
         - name: 部署容器
           href: how-to/deploy-containers.md
-        - name: 通过持续交付进行部署
-          href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: 与数据库集成
           href: how-to/integrate-database.md
         - name: 编写无服务器代码
           href: how-to/develop-serverless-apps.md
         - name: 创建静态 (JAMstack) 站点
           href: how-to/create-static-site.md
-        - name: 创建 REST API
-          href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: 日志记录和指标
           href: how-to/node-sdk-logging.md
     - name: 示例
