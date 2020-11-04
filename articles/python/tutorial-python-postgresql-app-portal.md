@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
-ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
+ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
+ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91947532"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629931"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
@@ -91,7 +91,7 @@ ms.locfileid: "91947532"
     | 位置 | 选择附近的位置。 |
     | 版本 | 保留默认值（即最新版）。 |
     | 计算 + 存储 | 选择“配置服务器”，然后选择“基本”和“第 5 代”  。 将“vCore”设置为 1，将“存储”设置为 5 GB，然后选择“确定”  。 这些选项可预配成本最低的服务器，该服务器可用于 Azure 上的 PostgreSQL。 还可能在 Azure 帐户中获得涵盖服务器开销的信用额度。 |
-    | 管理员用户名、密码、确认密码 | 在数据库服务器上输入管理员帐户的凭据。 记下这些凭据，稍后在本教程中将需要使用。 |
+    | 管理员用户名、密码、确认密码 | 在数据库服务器上输入管理员帐户的凭据。 记下这些凭据，稍后在本教程中将需要使用。 注意：请勿在用户名或密码中使用 `$` 字符。 稍后，将使用这些值创建环境变量，其中 `$` 字符在用于运行 Python 应用的 Linux 容器中具有特殊含义。 |
 
 1. 选择“查看 + 创建”，然后选择“创建” 。 Azure 预配 Web 应用需要数分钟。
 
@@ -154,6 +154,8 @@ ms.locfileid: "91947532"
     | DBNAME | `pollsdb` |
     | DBUSER | 预配数据库时使用的管理员用户名。 （示例代码会自动添加 `@<server-name>` 部分；请参阅 azuresite/production.py。） |
     | DBPASS | 之前创建的管理员密码。 |
+
+    如前所述，不应在用户名或密码中使用 `$` 字符，因为该字符在托管 Python 应用的 Linux 容器的环境变量中会进行转义。
 
 1. 选择“保存”，然后选择“继续”以应用设置 。
 

@@ -4,12 +4,12 @@ description: 教程步骤 2，设置应用程序
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846688"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688894"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:对应用进行部署到 Azure 应用服务的准备
 
@@ -23,7 +23,7 @@ ms.locfileid: "91846688"
 
 ## <a name="option-1-vs-code-flask-tutorial-sample"></a>选项 1：VS Code Flask 教程示例
 
-下载或克隆 [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial)，这是按 [Flask 教程](https://code.visualstudio.com/docs/python/tutorial-flask)操作后获得的结果。
+下载或克隆 [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial)，这是按 [Flask 教程](https://code.visualstudio.com/docs/python/tutorial-flask)操作后获得的结果。 请注意，应用代码位于“hello_app”文件夹中。 查看示例的 readme.md 文件，获取本地运行应用的说明。
 
 ## <a name="option-2-vs-code-django-tutorial-sample"></a>选项 2：VS Code Django 教程示例
 

@@ -4,13 +4,13 @@ description: 了解如何在持续集成管道中使用 Azure Dev Spaces 插件�
 keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes 服务
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 39a730507df89186b8934d4ded7d2ff92c07b420
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831373"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689101"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>教程：将 Azure Dev Spaces 用于 Azure Kubernetes 服务
 
@@ -38,7 +38,7 @@ ms.locfileid: "90831373"
 
 * [已安装 Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)（版本 2.0.43 或更高版本）。
 
-* Jenkins 主服务器。 如果还没有 Jenkins master，在 Azure 上通过执行此 [快速入门](/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) 。 
+* Jenkins 主服务器。 如果还没有 Jenkins master，请在 Azure 上通过执行此[快速入门](/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)。 
 
 * Helm 和 kubectl 必须已安装在 Jenkins 服务器上并可供 Jenkins 帐户使用，正如本教程后面部分所述。
 
@@ -203,7 +203,7 @@ ms.locfileid: "90831373"
 
 ### <a name="add-credentials-to-jenkins"></a>将凭据添加到 Jenkins
 
-1. Jenkins 需要 Azure 服务主体用于身份验证和访问 Azure 资源。 若要创建服务主体，请参阅“部署到 Azure 应用服务”教程中的 [创建服务主体](deploy-from-github-to-azure-app-service.md#create-service-principal) 部分。 请务必保存来自 `create-for-rbac` 的输出的副本，因为你需要该信息来完成下一步。 输出将如下所示：
+1. Jenkins 需要 Azure 服务主体用于身份验证和访问 Azure 资源。 若要创建服务主体，请参阅“部署到 Azure 应用服务”教程中的[创建服务主体](deploy-from-github-to-azure-app-service.md#create-service-principal)部分。 请务必保存来自 `create-for-rbac` 的输出的副本，因为你需要该信息来完成下一步。 输出将如下所示：
 
     ```json
     {
@@ -221,7 +221,7 @@ ms.locfileid: "90831373"
 
     ![将服务主体凭据添加到 Jenkins](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    “说明”是可选的  。 有关详细说明，请参阅“部署到 Azure 应用服务”教程中的[将服务主体添加到 Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins)  部分。 
+    “说明”是可选的  。 有关详细说明，请参阅“部署到 Azure 应用服务”教程中的[将服务主体添加到 Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) 部分。 
 
 
 

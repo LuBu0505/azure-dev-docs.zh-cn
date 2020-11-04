@@ -3,13 +3,13 @@ title: 为 Azure 开发配置本地 Python 环境
 description: 如何设置适用于 Azure 的本地 Python 开发环境，包括 Visual Studio Code、Azure SDK 库以及库身份验证所需的凭据。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e3ddedf44c339aaf4f30933d99d5b27052f1aea3
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 8f18d579259e1510c0aac0f7d66bb219cb327d1b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846748"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688581"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>为 Azure 配置本地 Python 开发环境
 
@@ -94,7 +94,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
     az ad sp create-for-rbac --name localtest-sp-rbac --skip-assignment --sdk-auth > local-sp.json
     ```
 
-    此命令会将其输出保存到 local-sp.json 中。 有关该命令及其参数的更多详细信息，请参阅 [create-for-rbac 命令的功能](#what-the-create-for-rbac-command-does)。
+    此命令会将其输出保存在 local-sp.json 中。 有关该命令及其参数的更多详细信息，请参阅 [create-for-rbac 命令的功能](#what-the-create-for-rbac-command-does)。
 
     如果你在组织中，则可能没有在订阅中运行此命令的权限。 在这种情况下，请与订阅所有者联系，让他们为你创建服务主体。
 
