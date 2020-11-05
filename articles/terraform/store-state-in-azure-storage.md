@@ -4,12 +4,12 @@ description: 了解如何在 Azure 存储中存储 Terraform 状态。
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d3d2ab0ff605883926260928d3e7174a5c526781
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401737"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278412"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>教程：在 Azure 存储中存储 Terraform 状态
 
@@ -43,7 +43,7 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob
 
 # Get storage account key
-ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query [0].value -o tsv)
+ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv)
 
 # Create blob container
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --account-key $ACCOUNT_KEY
@@ -59,10 +59,10 @@ echo "access_key: $ACCOUNT_KEY"
 
 Terraform 状态后端是在运行 `terraform init` 命令时配置的。 配置状态后端需要以下数据：
 
-- **storage_account_name**：Azure 存储帐户的名称。
-- **container_name**：blob 容器的名称。
-- **key**：要创建的状态存储文件的名称。
-- **access_key**：存储访问密钥。
+- **storage_account_name** ：Azure 存储帐户的名称。
+- **container_name** ：blob 容器的名称。
+- **key** ：要创建的状态存储文件的名称。
+- **access_key** ：存储访问密钥。
 
 其中每个值都可以在 Terraform 配置文件中或在命令行上指定。 建议对 `access_key` 值使用环境变量。 使用环境变量可防止将密钥写入磁盘。
 

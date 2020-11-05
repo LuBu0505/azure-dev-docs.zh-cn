@@ -3,14 +3,14 @@ title: 在 Azure Kubernetes 服务中创建应用程序网关入口控制器
 description: 了解如何使用将应用程序网关作为入口控制器的 Azure Kubernetes 服务创建 Kubernetes 群集。
 keywords: azure devops terraform application gateway ingress aks kubernetes
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401657"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192549"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>在 Azure Kubernetes 服务中创建应用程序网关入口控制器
 
@@ -31,13 +31,13 @@ ms.locfileid: "91401657"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **配置 Terraform**：遵循[安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)一文中的指导
+- **配置 Terraform** ：遵循 [安装 Terraform 并配置对 Azure 的访问权限](get-started-cloud-shell.md)一文中的指导
 
-- **Azure 资源组**：如果没有用于演示的 Azure 资源组，请[创建 Azure 资源组](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 记下资源组名称和位置，因为这些值将在演示中使用。
+- **Azure 资源组** ：如果没有用于演示的 Azure 资源组，请 [创建 Azure 资源组](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 记下资源组名称和位置，因为这些值将在演示中使用。
 
-- **Azure 服务主体**：遵循[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName` 和 `password` 的值。
+- **Azure 服务主体** ：遵循 [使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)一文的“创建服务主体”部分中的指导  。 记下 `appId`、`displayName` 和 `password` 的值。
 
-- **获取服务主体对象 ID**：在 Cloud Shell 中运行以下命令：`az ad sp list --display-name <displayName>`
+- **获取服务主体对象 ID** ：在 Cloud Shell 中运行以下命令：`az ad sp list --display-name <displayName>`
 
 ## <a name="create-the-directory-structure"></a>创建目录结构
 
@@ -90,7 +90,7 @@ ms.locfileid: "91401657"
     }
     ```
 
-1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+1. 保存文件 ( **&lt;Ctrl>S** ) 并退出编辑器 ( **&lt;Ctrl>Q** )。
 
 ## <a name="define-input-variables"></a>定义输入变量
 
@@ -131,42 +131,42 @@ ms.locfileid: "91401657"
     }
 
     variable "virtual_network_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "VNET address prefix"
       default     = "15.0.0.0/8"
     }
 
     variable "aks_subnet_name" {
-      description = "AKS Subnet Name."
+      description = "Subnet Name."
       default     = "kubesubnet"
     }
 
     variable "aks_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet address prefix."
       default     = "15.0.0.0/16"
     }
 
     variable "app_gateway_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet server IP address."
       default     = "15.1.0.0/16"
     }
 
     variable "app_gateway_name" {
-      description = "Name of the Application Gateway."
+      description = "Name of the Application Gateway"
       default = "ApplicationGateway1"
     }
 
     variable "app_gateway_sku" {
-      description = "Name of the Application Gateway SKU."
+      description = "Name of the Application Gateway SKU"
       default = "Standard_v2"
     }
 
     variable "app_gateway_tier" {
-      description = "Tier of the Application Gateway SKU."
+      description = "Tier of the Application Gateway tier"
       default = "Standard_v2"
     }
 
     variable "aks_name" {
-      description = "Name of the AKS cluster."
+      description = "AKS cluster name"
       default     = "aks-cluster1"
     }
     variable "aks_dns_prefix" {
@@ -185,27 +185,27 @@ ms.locfileid: "91401657"
     }
 
     variable "aks_agent_vm_size" {
-      description = "The size of the Virtual Machine."
+      description = "VM size"
       default     = "Standard_D3_v2"
     }
 
     variable "kubernetes_version" {
-      description = "The version of Kubernetes."
+      description = "Kubernetes version"
       default     = "1.11.5"
     }
 
     variable "aks_service_cidr" {
-      description = "A CIDR notation IP range from which to assign service cluster IPs."
+      description = "CIDR notation IP range from which to assign service cluster IPs"
       default     = "10.0.0.0/16"
     }
 
     variable "aks_dns_service_ip" {
-      description = "Containers DNS server IP address."
+      description = "DNS server IP address"
       default     = "10.0.0.10"
     }
 
     variable "aks_docker_bridge_cidr" {
-      description = "A CIDR notation IP for Docker bridge."
+      description = "CIDR notation IP for Docker bridge."
       default     = "172.17.0.1/16"
     }
 
@@ -233,10 +233,11 @@ ms.locfileid: "91401657"
     }
     ```
 
-1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+1. 保存文件 ( **&lt;Ctrl>S** ) 并退出编辑器 ( **&lt;Ctrl>Q** )。
 
-## <a name="define-the-resources"></a>定义资源 
-创建 Terraform 配置文件，用于创建所有资源。 
+## <a name="define-the-resources"></a>定义资源
+
+创建 Terraform 配置文件，用于创建所有资源。
 
 1. 在 Cloud Shell 中，创建名为 `resources.tf` 的文件。
 
@@ -473,7 +474,7 @@ ms.locfileid: "91401657"
 
     ```
 
-1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+1. 保存文件 ( **&lt;Ctrl>S** ) 并退出编辑器 ( **&lt;Ctrl>Q** )。
 
 本部分中的代码将设置群集的名称、位置和 resource_group_name。 将设置 `dns_prefix` 值 - 构成了用于访问群集的完全限定域名 (FQDN) 的一部分。
 
@@ -531,7 +532,7 @@ ms.locfileid: "91401657"
     }
     ```
 
-1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+1. 保存文件 ( **&lt;Ctrl>S** ) 并退出编辑器 ( **&lt;Ctrl>Q** )。
 
 ## <a name="configure-azure-storage-to-store-terraform-state"></a>将 Azure 存储配置为存储 Terraform 状态
 
@@ -591,7 +592,7 @@ Terraform 在本地通过 `terraform.tfstate` 文件跟踪状态。 在单用户
         
     ```
 
-1. 保存文件 ( **&lt;Ctrl>S**) 并退出编辑器 ( **&lt;Ctrl>Q**)。
+1. 保存文件 ( **&lt;Ctrl>S** ) 并退出编辑器 ( **&lt;Ctrl>Q** )。
 
 1. 运行 `terraform plan` 命令，以创建定义基础结构元素的 Terraform 计划。 
 
@@ -670,13 +671,13 @@ Azure Active Directory Pod Identity 提供对 [Azure 资源管理器](/azure/azu
   - [托管标识控制器 (MIC)](https://github.com/Azure/aad-pod-identity#managed-identity-controllermic) 组件
   - [节点托管标识 (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identitynmi) 组件
 
-如果**已启用** RBAC，请运行以下命令，将 Azure AD Pod Identity 安装到群集：
+如果 **已启用** RBAC，请运行以下命令，将 Azure AD Pod Identity 安装到群集：
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
 ```
 
-如果**已禁用** RBAC，请运行以下命令，将 Azure AD Pod Identity 安装到群集：
+如果 **已禁用** RBAC，请运行以下命令，将 Azure AD Pod Identity 安装到群集：
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -686,7 +687,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 
 本部分中的代码使用 [Helm](/azure/aks/kubernetes-helm) - Kubernetes 包管理器 - 来安装 `application-gateway-kubernetes-ingress` 包：
 
-1. 如果**已启用** RBAC，请运行以下命令集来安装并配置 Helm：
+1. 如果 **已启用** RBAC，请运行以下命令集来安装并配置 Helm：
 
     ```bash
     kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -694,7 +695,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
     helm init --tiller-namespace kube-system --service-account tiller-sa
     ```
 
-1. 如果**已禁用** RBAC，请运行以下命令来安装并配置 Helm：
+1. 如果 **已禁用** RBAC，请运行以下命令来安装并配置 Helm：
 
     ```bash
     helm init

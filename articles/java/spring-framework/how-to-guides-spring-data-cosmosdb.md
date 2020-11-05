@@ -6,12 +6,12 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: f2fb9a1af0634e0cecb3b6d990ae423b31da6210
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cf565e233e505cc1d55a8d05883026e710f1e506
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90829983"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192389"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 开发人员指南
 
@@ -121,7 +121,7 @@ class AddressService {
     @Autowired
     AddressRepository repository;
 
-    final Address newAddress = new Address("12345", "city");
+    final Address newAddress = new Address("12345", "Seattle");
 
     // There's no need to specify a partition key in the save operation.
     repository.save(updatedAddress);
@@ -222,7 +222,7 @@ public CosmosDBConfig getConfig() {
 
 2\.2.x 版 Spring Data Cosmos DB SDK 支持响应诊断字符串和查询指标。
 
-若要启用查询指标，请在 `application.properties` 文件中将 `populateQueryMetrics` 标志设置为 **true**。 然后，扩展 `ResponseDiagnosticsProcessor` 接口并实现 `processResponseDiagnostics` 方法来记录诊断信息。 最后，将实现的实例传递给 `CosmosDbConfig.setResponseDiagnosticsProcessor` 方法。 以下代码演示示例实现。
+若要启用查询指标，请在 `application.properties` 文件中将 `populateQueryMetrics` 标志设置为 **true** 。 然后，扩展 `ResponseDiagnosticsProcessor` 接口并实现 `processResponseDiagnostics` 方法来记录诊断信息。 最后，将实现的实例传递给 `CosmosDbConfig.setResponseDiagnosticsProcessor` 方法。 以下代码演示示例实现。
 
 ```java
 @Configuration

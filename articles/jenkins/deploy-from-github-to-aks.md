@@ -3,14 +3,14 @@ title: 教程 - 使用 Jenkins 从 GitHub 部署到 Azure Kubernetes 服务
 description: 了解如何配置 Jenkins，以便从 GitHub 持续集成 (CI) 并持续部署 (CD) 到 Azure Kubernetes 服务 (AKS)
 keywords: jenkins, azure, devops, aks, azure kubernetes 服务, github
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688644"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192499"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>教程：使用 Jenkins 从 GitHub 部署到 Azure Kubernetes 服务
 
@@ -106,7 +106,7 @@ docker push <acrLoginServer>/azure-vote-front:v1
 ```yaml
 containers:
 - name: azure-vote-front
-  image: microsoft/azure-vote-front:v1
+  image: azuredocs/azure-vote-front
 ```
 
 接下来，运行 [kubectl apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) 命令，将应用程序部署到 AKS 群集：
