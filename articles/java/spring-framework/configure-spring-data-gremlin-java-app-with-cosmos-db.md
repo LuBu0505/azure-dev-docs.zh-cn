@@ -3,26 +3,24 @@ title: 如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合�
 description: 了解如何为使用 Spring Boot Initializr 创建的应用程序配置 Azure Cosmos DB SQL API。
 services: cosmos-db
 documentationcenter: java
-ms.date: 08/03/2020
+ms.date: 10/14/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b1fe15704e325316febc405289df27be1cfea37c
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846578"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192460"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
 
-## <a name="overview"></a>概述
+本文将介绍如何使用 Azure 门户创建 Azure Cosmos DB 资源以用于 Gremlin API。 还将介绍如何使用 [Spring initializer] 创建自定义 Java 应用程序，然后添加 Spring Data Gremlin Starter 功能以使用 Gremlin 访问数据。
 
 Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring Data 支持，开发人员可对 Gremlin 兼容的任何数据存储使用这项支持。
-
-本文演示如何使用 Azure 门户创建可与 Gremlin API 配合使用的 Azure Cosmos DB，使用 **[Spring Initializr]** 创建自定义的 Java 应用程序，然后将 Spring Data Gremlin Starter 功能添加到自定义应用程序用于存储数据，并使用 Gremlin 从 Azure Cosmos DB 检索数据。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -96,15 +94,14 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定希望使用 Java 生成 Maven 项目，输入应用程序的“组”名称和“项目”名称，指定 Spring Boot 版本为版本 2.3.1，然后选择“生成”     。
-
-> [!NOTE]
->
-> Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：`com.example.wintiptoysdata` 。
-
+1. 指定希望使用 Java 生成 Maven 项目，输入应用程序的组和项目名称，指定 Spring Boot 版本为版本 2.3.4，然后选择“生成”     。
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
+   
+   > [!NOTE]
+   > 1. Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：`com.example.wintiptoysdata` 。
+   > 2. Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -144,11 +141,11 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    | 字段              | 说明                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | `endpoint`         | 指定数据库的 Gremlin URI，此 URI 派生自前面在本快速入门中创建 Azure Cosmos DB 时指定的唯一 ID。                                                 |
-   | `port`             | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443**。                                                                                                                                                           |
+   | `port`             | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443** 。                                                                                                                                                           |
    | `username`         | 指定前面在本快速入门中添加图形时使用的唯一数据库 ID 和图形 ID；必须使用以下语法输入这些值：“/dbs/{Database ID}/colls/{Graph ID}”   。 |
    | `password`         | 指定前面在本快速入门中复制的主要或辅助访问密钥。                                                                                                                      |
    | `sslEnabled`       | 指定是否启用 SSL。                                                                                                                                                                                           |
-   | `telemetryAllowed` | 若要启用遥测，请指定 **true**；否则指定 **false**。
+   | `telemetryAllowed` | 若要启用遥测，请指定 **true** ；否则指定 **false** 。
    | `maxContentLength` | 指定最大内容长度。                                                                                                                                                                                           |
 
 ## <a name="build-and-run-the-project"></a>生成并运行项目
@@ -165,6 +162,10 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    >[!div class="mx-imgBorder"]
    >![execute-result][execute-result-01]
 
+
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -203,7 +204,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
 
 有关如何将 Azure 与 Java 配合使用的详细信息，请参阅[面向 Java 开发人员的 Azure] 和[使用 Azure DevOps 和 Java]。
 
-[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
+[Spring Framework] 是一种开放源代码解决方案，可帮助 Java 开发人员创建企业级应用程序  。 基于该平台构建的其中一个更常用的项目是 [Spring Boot]，该项目提供了一种用于创建独立 Java 应用程序的简化方法。 为帮助开发人员开始使用 Spring Boot，<https://github.com/spring-guides/> 上提供了几个 Spring Boot 示例。 除了从基本的 Spring Boot 项目列表中选择之外，[Spring Initializr] 也可帮助开发人员开始创建自定义 Spring Boot 应用程序。
 
 <!-- URL List -->
 
