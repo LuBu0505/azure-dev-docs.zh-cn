@@ -1,15 +1,15 @@
 ---
-title: 在 Azure 中使用 IntelliJ IDEA 创建你的第一个函数
+title: 使用 IntelliJ IDEA 通过 Azure Functions 创建你的第一个无服务器函数
 description: 使用 Azure Toolkit for IntelliJ 创建一个简单的 HTTP 触发函数并将其发布到 Azure。
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: b27655657d763e295a1817acf200a67c090ff67d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: d796d6974d9591ae9df79d37c48f47d7e1cb5a72
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831403"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278462"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>快速入门：使用 IntelliJ IDEA 创建 Azure Functions 项目
 

@@ -3,18 +3,18 @@ title: 关于在 Spring Boot 应用程序中从 Azure Key Vault 读取机密的�
 description: 关于在 Spring Boot 应用程序中从 Azure Key Vault 读取机密的教程
 services: key-vault
 documentationcenter: java
-ms.date: 08/15/2020
+ms.date: 10/14/2020
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 9636ae27950f0ffabf6c9a433c802b3101447dab
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688847"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192399"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>教程：在 Spring Boot 应用程序中从 Azure Key Vault 读取机密
 
@@ -96,7 +96,7 @@ Spring Boot 应用程序将用户名和密码等敏感信息外部化。  外部
 
 ### <a name="create-a-service-principal-for-use-in-by-your-app"></a>创建服务主体以供你的应用使用
 
-Azure AD“服务主体”  提供对订阅中的 Azure 资源的访问权限。 可以将服务主体视为服务的用户标识。  “服务”是任何需要访问 Azure 资源的应用程序、服务或平台，包括本教程中生成的示例应用。 可以为服务主体配置作用域仅限于你指定的那些资源的访问权限。 然后，将应用程序或服务配置为使用服务主体的凭据来访问这些资源。
+Azure AD“服务主体”提供对订阅中的 Azure 资源的访问权限。 可以将服务主体视为服务的用户标识。  “服务”是任何需要访问 Azure 资源的应用程序、服务或平台，包括本教程中生成的示例应用。 可以为服务主体配置作用域仅限于你指定的那些资源的访问权限。 然后，将应用程序或服务配置为使用服务主体的凭据来访问这些资源。
 
 使用此命令创建服务主体。
 
@@ -108,11 +108,11 @@ az ad sp create-for-rbac --name contososp
 
 ```json
 {
-  "appId": "8r7o486s-o5q9-450s-8457-pr26p86n0497",
+  "appId": "sample-app-id",
   "displayName": "ejbcontososp",
   "name": "http://ejbcontososp",
-  "password": "4bt.lCKJKlbYLn_3XF~wWtUwyHU0jKggu2",
-  "tenant": "72s988os-86s1-41ns-91no-2d7cd011db47"
+  "password": "sample-password",
+  "tenant": "sample-tenant"
 }
 ```
 
@@ -218,7 +218,7 @@ az ad sp create-for-rbac --name contososp
        "updated": "2020-08-24T21:48:09+00:00"
      },
      "contentType": null,
-     "id": "https://contosokv.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
+     "id": "https://contosokv.vault.azure.net/secrets/connectionString/sample-id",
      "kid": null,
      "managed": null,
      "tags": {
@@ -639,6 +639,10 @@ Azure Spring Cloud 是一个完全托管的平台，用于在 Azure 中部署和
 ## <a name="summary"></a>总结
 
 你使用 Spring Initializr 创建了新的 Java Web 应用程序。  你创建了一个 Azure Key Vault 来存储敏感信息，然后将你的应用程序配置为从 Key Vault 检索信息。  在本地对应用进行测试后，你将其部署到了 Azure App Service 和 Azure Spring Cloud。
+
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 

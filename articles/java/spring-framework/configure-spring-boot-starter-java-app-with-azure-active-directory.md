@@ -3,22 +3,20 @@ title: 如何使用适用于 Azure Active Directory 的 Spring Boot 起动器
 description: 了解如何使用 Azure Active Directory 起动器配置 Spring Boot Initializer 应用。
 services: active-directory
 documentationcenter: java
-ms.date: 03/05/2020
+ms.date: 10/14/2020
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 0e247a912429f8f798c174af3e79bb074e3da2ed
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: e21e1ada221473c3b645da24736d179b92cff07f
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337165"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192520"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
-
-## <a name="overview"></a>概述
 
 本文演示了如何使用 **[Spring Initializr]** 创建一个 Java 应用，该应用使用适用于 Azure Active Directory (Azure AD) 的 Spring Boot 起动器。
 
@@ -44,10 +42,13 @@ ms.locfileid: "92337165"
 
 1. 指定使用 Java 生成 Maven 项目，并输入应用程序的“组”名称和“项目”名称   。
 1. 为 Spring Web、Azure Active Directory 和 Spring 安全性添加依赖关系   。
-1. 在页面底部，单击“生成”按钮。
+1. 在页面底部，选择“生成”按钮。
    
    >[!div class="mx-imgBorder"]
    >![指定组和项目名称，选择依赖关系][create-spring-app-01]
+
+   > [!NOTE]
+   > Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -57,7 +58,7 @@ ms.locfileid: "92337165"
 
 1. 登录到 <https://portal.azure.com>。
 
-1. 依次单击“+创建资源”、“标识”和“Azure Active Directory”。  
+1. 选择“创建资源”，再选择“标识”，然后选择“Azure Active Directory”  。
    
    >[!div class="mx-imgBorder"]
    >![创建新的 Azure Active Directory 实例][create-directory-01]
@@ -67,12 +68,12 @@ ms.locfileid: "92337165"
 
     复制你的目录的完整 URL；在本教程中，稍后你将使用它来添加用户帐户。 （例如：azuresampledirectory.onmicrosoft.com.）。
 
-    完成后，单击“创建”。 创建新资源将需要几分钟时间。
+    完成后，选择“创建”。 创建新资源将需要几分钟时间。
    
    >[!div class="mx-imgBorder"]
    >![指定 Azure Active Directory 名称][create-directory-02]
 
-1. 完成后，单击即可访问新目录。
+1. 完成后，选择以访问新目录。
    
    >[!div class="mx-imgBorder"]
    >![选择你的 Azure 帐户名称][create-directory-03]
@@ -84,12 +85,12 @@ ms.locfileid: "92337165"
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>添加 Spring Boot 应用的应用程序注册
 
-1. 在门户菜单中单击“应用注册”，然后单击“注册应用程序”。 
+1. 在门户菜单中选择“应用注册”，然后选择“注册应用程序” 。
    
    >[!div class="mx-imgBorder"]
    >![添加新的应用注册][create-app-registration-01]
 
-1. 指定应用程序，然后单击“注册”。
+1. 指定应用程序，然后选择“注册”。
    
    >[!div class="mx-imgBorder"]
    >![新建应用注册][create-app-registration-02]
@@ -99,7 +100,7 @@ ms.locfileid: "92337165"
    >[!div class="mx-imgBorder"]
    >![复制应用注册密钥][create-app-registration-03]
 
-1. 在左侧导航窗格中单击“证书和机密”。  然后，单击“新建客户端机密”。
+1. 在左侧导航窗格中单击“证书和机密”。  然后选择“新建客户端机密”。
    
    >[!div class="mx-imgBorder"]
    >![创建应用注册密钥][create-app-registration-03-5]
@@ -121,22 +122,22 @@ ms.locfileid: "92337165"
    >[!div class="mx-imgBorder"]
    >![添加访问权限][create-app-registration-08]
    
-1. 单击“为 Azure 示例授予管理员同意”，然后单击“是” 。
+1. 单击“为 Azure 示例授予管理员同意”，然后选择“是” 。
    
    >[!div class="mx-imgBorder"]
    >![授予访问权限][create-app-registration-05]
 
-1. 在应用注册的主页上单击“身份验证”，然后单击“添加平台”。   然后单击“Web 应用程序”。
+1. 在应用注册的主页上选择“身份验证”，然后选择“添加平台” 。  然后选择“Web 应用程序”。
    
    >[!div class="mx-imgBorder"]
    >![编辑回复 URL][create-app-registration-09]
 
-1. 输入“http://localhost:8080/login/oauth2/code/azure”用作新的 **重定向 URI** ，单击单击“配置”。
+1. 输入“http://localhost:8080/login/oauth2/code/azure”作为新的“重定向 URI”，然后选择“配置” 。
    
    >[!div class="mx-imgBorder"]
    >![添加新的回复 URL][create-app-registration-10]
 
-1. 从应用注册主页面上，单击“清单”，将 `oauth2AllowIdTokenImplicitFlow` 和 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后单击“保存” 。
+1. 从应用注册主页面上，选择“清单”，然后将 `oauth2AllowIdTokenImplicitFlow` 和 `oauth2AllowImplicitFlow` 参数的值设置为 `true`，然后选择“保存” 。
    
    >[!div class="mx-imgBorder"]
    >![配置应用清单][create-app-registration-11]
@@ -146,12 +147,12 @@ ms.locfileid: "92337165"
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>将用户帐户添加到你的目录，并将该帐户添加到某个组
 
-1. 从 Active Directory 的“概述”页面上，单击“用户”，然后单击“新建用户”  。
+1. 从 Active Directory 的“概览”页面上，选择“用户”，然后选择“新建用户”  。
    
    >[!div class="mx-imgBorder"]
    >![添加新用户帐户][create-user-01]
 
-1. 当“用户”面板显示时，输入 **用户名** 和 **名称** 。  然后单击“创建”。
+1. 当“用户”面板显示时，输入 **用户名** 和 **名称** 。  然后选择“创建”。
    
    >[!div class="mx-imgBorder"]
    >![输入用户帐户信息][create-user-02]
@@ -161,15 +162,15 @@ ms.locfileid: "92337165"
    >
    > `test-user@azuresampledirectory.onmicrosoft.com`
 
-1. 从 Active Directory 的“概述”页面上，单击“组”，然后单击“创建新组”，该组将用于在应用程序中授权  。
+1. 从 Active Directory 的“概览”页面上，选择“组”，然后选择“新建组”，该组将用于在应用程序中授权  。
 
-1. 然后单击“未选择任何成员”。 （在本教程中，我们将创建一个名为 Users 的组。）搜索在上一步创建的用户。  单击“选择”将该用户添加到组中。  然后，单击“创建”以创建新组。
-   
+1. 选择“未选择任何成员”。 （在本教程中，我们将创建一个名为 *users* 的组。）搜索在上一步创建的用户。  选择“选择”，将该用户添加到组中。  然后，选择“创建”以创建新组。
+
    >[!div class="mx-imgBorder"]
    >![选择组的用户][create-user-03]
 
-1. 返回到“用户”面板，选择测试用户，单击“重置密码”，然后复制密码；在本教程的后面部分，登录到应用程序时将使用此密码。 
-   
+1. 返回到“用户”面板，选择测试用户，再选择“重置密码”，然后复制密码；在本教程的后面部分，登录到应用程序时将使用此密码 。
+
    >[!div class="mx-imgBorder"]
    >![显示密码][create-user-04]
 

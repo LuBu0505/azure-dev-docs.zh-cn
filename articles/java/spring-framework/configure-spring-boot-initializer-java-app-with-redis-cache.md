@@ -3,17 +3,17 @@ title: 创建 Spring Boot Initializer 应用 - Azure Redis 缓存
 description: 将使用 Spring Initializer 创建的 Spring Boot 应用程序配置为使用云中的 Redis 和 Azure Redis 缓存。
 services: redis-cache
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 7d8ee875339adb741fbddeba6d4328eb22cd3e46
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846598"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066267"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>将 Spring Boot Initializer 应用配置为使用云中的 Redis 和 Azure Redis 缓存
 
@@ -31,7 +31,7 @@ ms.locfileid: "91846598"
 
 1. 浏览到 <https://start.spring.io/>。
 
-1. 指定使用 Java 生成 Maven 项目，并输入应用程序的“组”名称和“项目”名称     。
+1. 指定希望使用 Java 生成一个 Maven 项目，选择 Java 版本“8”，并为应用程序输入“组”和“项目”名称    。
 
 1. 添加“Spring Web”部分的依赖项，选中“Web”框，然后向下滚动到“NoSQL”部分，选中“Spring Data Reactive Redis”框     。 
 1. 滚动到页面底部，单击“生成项目”对应的按钮。 

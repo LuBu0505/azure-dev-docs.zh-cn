@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: efccf07733cb4ae509753f5e384453a46e2bf678
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379211"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192449"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
 
@@ -76,7 +76,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 ### <a name="use-a-service-bus-queue"></a>使用服务总线队列
 
-1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
 
     `C:\SpringBoot\servicebus\application.properties`
 
@@ -86,7 +86,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 在文本编辑器中打开 application.properties 文件  。
 
-1. 将以下代码追加到 application.properties  文件的末尾。 将示例值替换为适用于你的服务总线的值：
+1. 将以下代码追加到 application.properties  文件的末尾。 将占位符值替换为服务总线的适当值，并且不要在值周围加引号。
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -104,7 +104,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 ### <a name="use-service-bus-topic"></a>使用服务总线主题
 
-1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
 
     `C:\SpringBoot\servicebus\application.properties`
 
@@ -114,11 +114,11 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 在文本编辑器中打开 application.properties 文件  。
 
-1. 将以下代码追加到 application.properties  文件的末尾。 将示例值替换为适用于你的服务总线的值：
+1. 将以下代码追加到 application.properties  文件的末尾。 将占位符值替换为服务总线的适当值，并且不要在值周围加引号。
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.jms.servicebus.topic-client-id=<ServiceBusTopicClientId>
+    spring.jms.servicebus.topic-client-id=<ServiceBusSubscriptionID>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
     ```
 
@@ -127,7 +127,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     | 字段                                     | 说明                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | 指定从 Azure 门户内你的服务总线命名空间中获取的连接字符串。   |
-    | `spring.jms.servicebus.topic-client-id`   | 指定 JMS 客户端 ID（如果使用的是包含持久订阅的 Azure 服务总线主题）。 |
+    | `spring.jms.servicebus.topic-client-id`   | 指定 JMS 客户端 ID，它是 Azure 门户中的服务总线订阅 ID。                | 
     | `spring.jms.servicebus.idle-timeout`      | 指定空闲超时时间（以毫秒为单位）。 在本教程中，建议的值为 1800000。     |
 
 1. 保存并关闭 application.properties 文件  。

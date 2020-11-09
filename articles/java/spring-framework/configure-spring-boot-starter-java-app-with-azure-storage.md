@@ -3,17 +3,17 @@ title: 如何使用适用于 Azure 存储的 Spring Boot 起动器
 description: 了解如何使用 Azure 存储起动器配置 Spring Boot Initializer 应用。
 services: storage
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/14/2020
 ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 3ea7c5ef098cbf9a6bed2b541db00b09451a12d6
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688699"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192421"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -26,7 +26,7 @@ ms.locfileid: "92688699"
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册[免费的 Azure 帐户](https://azure.microsoft.com/pricing/free-trial/)。
 * [Azure 命令行接口 (CLI)](/cli/azure/index)。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
-* Apache 的 [Maven](http://maven.apache.org/) 3.0 或更高版本。
+* [Apache Maven](http://maven.apache.org/) 3.0 或更高版本。
 
 > [!IMPORTANT]
 >
@@ -35,11 +35,11 @@ ms.locfileid: "92688699"
 
 ## <a name="create-an-azure-storage-account-and-blob-container-for-your-application"></a>为应用程序创建 Azure 存储帐户和 Blob 容器
 
-以下过程创建 Azure 存储帐户和容器。
+以下过程在门户中创建 Azure 存储帐户和容器。
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“存储”、“存储帐户”。  
+1. 依次选择“创建资源”、“开始使用”和“存储帐户”  。
 
    ![创建 Azure 存储帐户][IMG01]
 
@@ -49,11 +49,11 @@ ms.locfileid: "92688699"
    * 选择“资源组”或创建新资源组。
    * 输入独一无二的“存储帐户名称”，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为 **名称** ，则 URI 将为 *wingtiptoysstorage.core.windows.net* 。
    * 指定存储帐户的“位置”。
-1. 指定上面列出的选项后，请单击“查看 + 创建”。 
-1. 查看具体细节，然后单击“创建”以创建存储帐户。
-1. 部署完成后，单击“转到资源”。
-1. 单击“容器”。
-1. 单击“+ 容器”。
+1. 指定上面列出的选项后，选择“查看 + 创建”。 
+1. 查看具体细节，然后选择“创建”以创建存储帐户。
+1. 部署完成后，选择“转到资源”。 
+1. 选择“容器”。
+1. 选择“容器”。
    * 为该容器命名。
    * 从下拉列表中选择“Blob”。
 
@@ -61,6 +61,40 @@ ms.locfileid: "92688699"
 
 1. Blob 容器创建好以后，Azure 门户会将其列出。
 
+也可以使用 Azure CLI 通过以下步骤创建 Azure 存储帐户和容器。 请务必将尖括号中的占位符值替换为你自己的值。
+
+1. 打开命令提示符。
+1. 请登录到 Azure 帐户：
+
+   ```azurecli
+   az login
+   ```
+   
+1. 如果没有资源组，请使用以下命令创建一个资源组：
+   
+   ```azurecli
+   az group create \
+      --name <resource-group> \
+      --location <location>
+   ```
+   
+1. 使用以下命令创建存储帐户：
+  
+   ```azurecli
+    az storage account create \
+      --name <storage-account> \
+      --resource-group <resource-group> \
+      --location <location> 
+   ```
+
+1. 若要创建容器，请使用以下命令：
+   
+   ```azurecli
+    az storage container create \
+      --account-name <storage-account-name> \
+      --name <container-name> \
+      --auth-mode login
+   ```
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>使用 Spring Initializr 创建简单的 Spring Boot 应用程序
 
 以下过程创建该 Spring Boot 应用程序。
@@ -70,19 +104,18 @@ ms.locfileid: "92688699"
 1. 指定以下选项：
 
    * 生成 **Maven** 项目。
-   * 指定“Java”。
-   * 指定一个其值大于或等于 2.0 的 **Spring Boot** 版本。
-   * 指定应用程序的“组”和“项目”名称。 
-   * 添加 **Web** 依赖项。
+   * 指定“Java 8”。
+   * 指定一个其值高于或等于 2.3 的 Spring Boot 版本。
+   * 指定应用程序的“组”和“项目”名称。  
+   * 添加 **Spring Web** 依赖项。
 
       ![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
-   >
-   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.storage 。
-   >
+   > 1. Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.storage 。
+   > 2. Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
-1. 指定上面列出的选项后，请单击“生成”。
+1. 指定上面列出的选项后，选择“生成”。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -106,7 +139,7 @@ ms.locfileid: "92688699"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
-      <version>1.2.7</version>
+      <version>1.2.8</version>
    </dependency>
    ```
 
@@ -136,13 +169,13 @@ ms.locfileid: "92688699"
 
 1. 导航到 Spring Boot 应用的 *resources* 目录，例如：
 
-   ```shell
+   ```cmd
    cd C:\SpringBoot\storage\src\main\resources
    ```
 
    -或-
 
-   ```shell
+   ```bash
    cd /users/example/home/storage/src/main/resources
    ```
 
@@ -323,11 +356,15 @@ ms.locfileid: "92688699"
 
 1. 打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
 
-   `cd C:\SpringBoot\storage`
+   ```cmd
+   cd C:\SpringBoot\storage
+   ```
 
    -或-
-
-   `cd /users/example/home/storage`
+   
+   ```bash
+   cd /users/example/home/storage
+   ```
 
 1. 使用 Maven 生成 Spring Boot 应用程序，然后运行该程序，例如：
 
@@ -358,6 +395,11 @@ ms.locfileid: "92688699"
 
 在本教程中，你已使用 **[Spring Initializr]** 创建了一个新的 Java 应用程序，将 Azure Storage Starter 添加到了该应用程序，然后对应用程序进行了配置来将 Blob 上传到 Azure 存储帐户。
 
+
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
+
 ## <a name="next-steps"></a>后续步骤
 
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
@@ -379,9 +421,5 @@ ms.locfileid: "92688699"
 
 [IMG01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-01.png
 [IMG02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-02.png
-[IMG03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-03.png
-[IMG04]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-04.png
-[IMG05]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-05.png
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
-[SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png

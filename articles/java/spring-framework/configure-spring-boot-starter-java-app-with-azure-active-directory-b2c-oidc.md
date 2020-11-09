@@ -6,18 +6,18 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 10/10/2020
+ms.date: 10/23/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 7cd477bfa511f44cf8dfacbd7d10e0f6299ad4f5
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898779"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066291"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>教程：使用适用于 Azure Active Directory B2C 的 Spring Boot 起动器来保护 Java Web 应用
 
@@ -110,29 +110,31 @@ ms.locfileid: "92898779"
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>添加 Spring Boot 应用的应用程序注册
 
-1. 在左侧的“管理”窗格中，选择“应用程序”，然后选择“添加”。
+1. 在左侧“管理”窗格中，选择“应用注册”，然后选择“新建注册”  。
 
-    ![添加新的应用注册](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
+   ![显示 Azure AD B2C 应用注册屏幕的 Azure 门户屏幕截图](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. 在“名称”字段中，输入上面的“组”的值，然后将“包括 web 应用/web API”控件设置为“是”。
+2. 在“名称”字段中，为上面的“组”输入值，然后将“重定向 URI (推荐)”设置为“http://localhost:8080/home”，并选择“注册”  。
 
-3. 将“回复 URL”设置为 `http://localhost:8080/home`。
+   ![配置新的应用注册](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
-4. 将其他字段保留为其默认值。
+3. 回到“管理”窗格，选择“应用程序(旧版)”，然后选择你创建的应用程序名称 。
 
-5. 选择“创建”。 可能需要等一会儿应用程序才会显示。
+   ![更新应用程序](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c5-n.png)
 
-    ![添加应用程序重定向 URI](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+4. 选择“属性”，然后将“允许隐式流”控件设置为“是”  。
+   
+5. 将其他字段保留为其默认值。
+    
+6. 选择“保存”。 可能还需要一点时间，应用程序才能准备就绪。
+    
+   ![更新应用密钥](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c6-n.png)
 
-6. 选择“概述”，然后选择“应用程序”。
+7. 在“常规”窗格中选择“密钥”，然后选择“生成密钥”  。
 
-7. 在应用程序表中，选择有你项目名称的那一行。
+8. 将“应用密钥”设置为你在上面为“组”输入的值 。
 
-8. 在“常规”窗格中选择“密钥”，然后选择“生成密钥”。
-
-9. 将“应用密钥”设置为 `yourGroupIdkey`，将 `yourGroupId` 替换为你在上面为“组”输入的值。
-
-10. 选择“保存”。 等待“应用密钥”部分中显示出密钥，然后复制它以供稍后使用。
+9. 选择“保存”。 等待“应用密钥”部分中显示出密钥，然后复制它以供稍后使用。
 
     > [!NOTE]
     > 如果离开“密钥”部分再返回，密钥值会消失。 在这种情况下，必须再创建一个密钥并复制它以供稍后使用。
@@ -140,11 +142,11 @@ ms.locfileid: "92898779"
 
     ![创建机密](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
-11. 选择“概述”。
+10. 选择“概述”。
 
-12. 在左侧窗格的“策略”部分中，选择“用户流”，然后选择“新用户流”。
+11. 在左侧窗格的“策略”部分中，选择“用户流”，然后选择“新用户流”。
 
-13. 现在需要离开本教程，去执行另一个教程，并在完成后返回本教程。 下面是转到其他教程时需要记住的一些事项。
+12. 现在需要离开本教程，去执行另一个教程，并在完成后返回本教程。 下面是转到其他教程时需要记住的一些事项。
 
     * 从要求你选择“新用户流”的步骤开始。
     * 当此教程提到 `webapp1` 时，请改为使用你为“组”输入的值。

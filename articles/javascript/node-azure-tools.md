@@ -2,16 +2,16 @@
 title: Azure 上的面向 JavaScript 开发人员的工具
 description: 安装用于在 Azure 上进行 Node.js 和 JavaScript 开发的各个工具
 ms.topic: reference
-ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fbfc22eb0c9455900b6fe511b52f443289815931
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.date: 10/30/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689165"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066256"
 ---
-# <a name="azure-tools-for-javascript-developers"></a>面向 JavaScript 开发人员的 Azure 工具
+# <a name="tools-for-javascript-developers"></a>面向 JavaScript 开发人员的工具
 建议使用以下工具在 Azure 上开发 JavaScript 应用。
 
 ## <a name="azure-cli"></a>Azure CLI
@@ -22,6 +22,19 @@ Azure CLI 经过优化，可从命令行管理 Azure 资源。
 > [!div class="nextstepaction"]
 > [安装 Azure CLI 2.0](/cli/azure/install-az-cli2)
 
+> [!div class="nextstepaction"]
+> [使用 Azure CLI 2.0容器](/cli/azure/run-azure-cli-docker)
+
+## <a name="typescript"></a>TypeScript
+
+[TypeScript](https://www.typescriptlang.org/) 与JavaScript 有着不寻常的关系。 TypeScript 提供了 JavaScript 具有的所有功能，并在此基础上增加了一层：TypeScript 的类型系统。
+
+这意味着你现有的有效 JavaScript 代码也是 TypeScript 代码。 TypeScript 的主要优点在于，它可以突出显示代码中的意外行为，从而降低 bug 出现的几率。
+
+> [!div class="nextstepaction"]
+> [安装 TypeScript](https://www.typescriptlang.org/download)
+
+
 ## <a name="visual-studio-code"></a>Visual Studio Code
 在任何 OS 上编辑和调试 JavaScript 应用。
 
@@ -30,7 +43,7 @@ Azure CLI 经过优化，可从命令行管理 Azure 资源。
 > [!div class="nextstepaction"]
 > [下载 Visual Studio Code](https://code.visualstudio.com)
 
-### <a name="azure-extensions"></a>Azure 扩展
+## <a name="visual-studio-code-extensions"></a>Visual Studio Code 扩展
 在 Visual Studio Code 中使用以下免费扩展来直接与 Azure 服务对接。
 
 | 工具 | 说明  |

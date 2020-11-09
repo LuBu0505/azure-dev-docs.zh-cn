@@ -3,14 +3,14 @@ title: 教程：通过 Azure 门户使用 PostgreSQL 部署 Django 应用
 description: 在 Azure 上预配 Web 应用和 PostgreSQL 数据库，然后从 GitHub 部署应用代码。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 10/09/2020
+ms.date: 11/02/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
-ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
+ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
+ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629931"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93284531"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用
 
@@ -38,8 +38,7 @@ ms.locfileid: "92629931"
 （可选）关于本示例：djangoapp 示例包含数据驱动的 Django 投票应用，该应用是根据 Django 文档中的[编写你的第一个 Django 应用](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)创建的。 此外，使用 [Django 部署清单](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/) 修改了该示例，以便在 Azure 应用服务等生产环境中运行。 （这些更改适用于任何生产环境，并不特定于 Azure。）
 
 - 生产设置位于 azuresite/production.py 文件中。 开发详细信息位于 azuresite/settings.py 中。
-
-- 当 `DJANGO_ENV` 环境变量设置为“生产”时，应用将使用生产设置。 你将稍后在本教程中创建此环境变量以及用于 PostgreSQL 数据库配置的其他环境变量。
+- 当设置了 `WEBSITE_HOSTNAME` 环境变量时，应用将使用生产设置。 Azure 应用服务会自动将此变量设置为 Web 应用的 URL，例如 `msdocs-django.azurewebsites.net`。
 
 [存在问题？请告诉我们。](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -149,7 +148,6 @@ ms.locfileid: "92629931"
 
     | 设置名称 | 值 |
     | --- | --- |
-    | DJANGO_ENV | `production`（该值告知应用使用前面[示例概述](#fork-the-sample-repository)中所述的生产配置。） |
     | DBHOST | 来自上一部分的数据库服务器的名称，也就是服务器 URL 中位于 `.postgres.database.azure.com` 前面的 `<server-name>` 部分。 （azuresite/production.py 中的代码自动构造完整 URL。） |
     | DBNAME | `pollsdb` |
     | DBUSER | 预配数据库时使用的管理员用户名。 （示例代码会自动添加 `@<server-name>` 部分；请参阅 azuresite/production.py。） |

@@ -3,14 +3,14 @@ title: 教程 - 使用 Ansible 配置 Azure 资源的动态库存
 description: 了解如何使用 Ansible 管理 Azure 动态库存
 keywords: ansible, azure, devops, bash, cloudshell, 动态库存
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688627"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192349"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>教程：使用 Ansible 配置 Azure 资源的动态库存
 
@@ -42,7 +42,7 @@ ms.locfileid: "92688627"
     > [!IMPORTANT]
     > 在此步骤中创建的 Azure 资源组必须具有完全小写的名称。 否则，生成动态清单将会失败。
 
-    ```azurecli-interactive
+    ```azurecli
     az group create --resource-group ansible-inventory-test-rg --location eastus
     ```
 
@@ -52,13 +52,13 @@ ms.locfileid: "92688627"
 
     - **Azure CLI** - 在 Cloud Shell 中发出以下每条命令，以创建两个虚拟机：
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm1 \
                      --image UbuntuLTS --generate-ssh-keys
         ```
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm2 \
                      --image UbuntuLTS --generate-ssh-keys
@@ -71,14 +71,14 @@ ms.locfileid: "92688627"
 ### <a name="using-ansible-version--28"></a>使用低于 2.8 的 Ansible 版本
 输入以下 [az resource tag](/cli/azure/resource#az-resource-tag) 命令和键 `nginx` 来标记虚拟机 `ansible-inventory-test-vm1`：
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
 ### <a name="using-ansible-version--28"></a>使用 2.8 及更高的 Ansible 版本
 输入以下 [az resource tag](/cli/azure/resource#az-resource-tag) 命令和键 `Ansible=nginx` 来标记虚拟机 `ansible-inventory-test-vm1`：
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
@@ -92,36 +92,23 @@ Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible-collections/
 
 1. 使用 GNU `wget` 命令检索 `azure_rm.py` 脚本：
 
-    ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
+    ```bash
+    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
     ```
 
 1. 使用 `chmod` 命令更改对 `azure_rm.py` 脚本的访问权限。 以下命令使用 `+x` 参数允许执行（运行）指定的文件 (`azure_rm.py`)：
 
-    ```python
+    ```bash
     chmod +x azure_rm.py
     ```
 
-1. 使用 [ansible 命令](https://docs.ansible.com/ansible/2.4/ansible.html)连接到资源组： 
+1. 使用 [ansible 命令](https://docs.ansible.com/ansible/2.4/ansible.html)连接到资源组：
 
-    ```python
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping 
+    ```bash
+    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
     ```
 
-1. 连接后，将看到类似于以下输出的结果：
-
-    ```output
-    ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ansible-inventory-test-vm2 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
+1. 连接后，你将看到结果指示正在创建的虚拟机的结果。
 
 ### <a name="ansible-version--28"></a>Ansible 版本为 2.8 及更高版本
 
@@ -146,7 +133,7 @@ Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible-collections/
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. 运行上述命令时，可能会收到以下错误：
+1. 运行上述命令时，可能会收到一个错误。 该错误指示可能由于以下输出而无法连接到主机 
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
@@ -278,7 +265,7 @@ Ansible 提供一个名为 [azure_rm.py](https://github.com/ansible-collections/
 
 1. 使用 [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) 命令检索 `ansible-inventory-test-vm1` 虚拟机的 IP 地址。 然后，将返回值（虚拟机的 IP 地址）用作 SSH 命令的参数，以连接到该虚拟机。
 
-    ```azurecli-interactive
+    ```azurecli
     ssh `az vm list-ip-addresses \
     -n ansible-inventory-test-vm1 \
     --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv`

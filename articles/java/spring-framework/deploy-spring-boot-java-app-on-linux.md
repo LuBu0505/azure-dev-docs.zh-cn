@@ -3,18 +3,18 @@ title: 将 Spring Boot Web 应用部署到 Linux 的 Azure 应用服务上
 description: 本教程将指导用户完成在 Microsoft Azure 中将 Spring Boot 应用程序部署为 Linux Web 应用的步骤。
 services: azure app service
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/14/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c0baf7ee7b1b672d7eb17bc3a689cc7d58401834
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846448"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192489"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>将 Spring Boot 应用程序部署到 Linux 的 Azure 应用服务上
 
@@ -27,7 +27,7 @@ ms.locfileid: "91846448"
 * Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益]或注册[免费的 Azure 帐户]。
 * [Azure 命令行接口 (CLI)]。
 * 一个受支持的 Java 开发工具包 (JDK)。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
-* Apache 的 [Maven] 生成工具（版本 3）。
+* [Apache Maven] 生成工具（版本 3）。
 * [Git] 客户端。
 * [Docker] 客户端。
 
@@ -77,7 +77,7 @@ ms.locfileid: "91846448"
    curl http://localhost
    ```
 
-1. 应当会看到显示了以下消息：**Hello Docker World**
+1. 应当会看到显示了以下消息： **Hello Docker World**
 
    ![本地浏览示例应用][SB01]
 
@@ -93,11 +93,11 @@ ms.locfileid: "91846448"
 
    登录到你在 Azure 门户的帐户后，请按照[使用 Azure 门户创建专用 Docker 容器注册表]一文中的步骤操作，为方便起见，这些步骤在以下步骤中进行了改述。
 
-1. 单击“+ 新建”  菜单图标，然后依次单击“容器”、  “Azure 容器注册表”  。
+1. 单击“新建”的菜单图标，选择“容器”，然后选择“Azure 容器注册表”  。
 
    ![创建新的 Azure 容器注册表][AR01]
 
-1. 显示“创建容器注册表”  页面时，请输入注册表名称  、订阅  、资源组  和位置  。 然后单击“创建”  。
+1. 显示“创建容器注册表”  页面时，请输入注册表名称  、订阅  、资源组  和位置  。 然后选择“创建”。
 
    ![配置 Azure 容器注册表设置][AR03]
 
@@ -119,7 +119,7 @@ ms.locfileid: "91846448"
 
    在 `<from>/<image>` 中指定基本映像（此处为 `mcr.microsoft.com/java/jre:8-zulu-alpine`）。 指定要从 `<to>/<image>` 中的基本映像生成的最终映像的名称。  
 
-   身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的**登录服务器**。 `{project.artifactId}` 是项目的第一个 Maven Build 中的 JAR 文件的名称和版本号。
+   身份验证 `{docker.image.prefix}` 是之前显示的注册表页上的 **登录服务器** 。 `{project.artifactId}` 是项目的第一个 Maven Build 中的 JAR 文件的名称和版本号。
 
    ```xml
    <plugin>
@@ -152,7 +152,7 @@ ms.locfileid: "91846448"
 
 1. 浏览到 [Azure 门户]并登录。
 
-2. 依次单击“+ 创建资源”  的菜单图标、“计算”、  “用于容器的 Web 应用”  。
+2. 单击“创建资源”的菜单图标，选择“计算”，然后选择“用于容器的 Web 应用”  。
    
    ![在 Azure 门户中创建新的 Web 应用][LX01]
 
@@ -170,7 +170,7 @@ ms.locfileid: "91846448"
 
    * 选择“区域”。 
 
-   * 接受“Linux 计划”并选择现有的应用服务计划；或者单击“新建”，创建新的应用服务计划。   
+   * 接受“Linux 计划”并选择现有的“应用服务计划”，或者选择“新建”，创建新的应用服务计划  。
 
    * 单击“下一步:  Docker”。
 
@@ -180,23 +180,23 @@ ms.locfileid: "91846448"
 
    * 选择“单个容器”  。
 
-   * **注册表**：选择容器，例如：“wingtiptoysregistry” 
+   * **注册表** ：选择容器，例如：“wingtiptoysregistry” 
 
-   * **映像**：选择之前创建的映像，例如：“gs-boot-docker” 
+   * **映像** ：选择之前创建的映像，例如：“gs-boot-docker” 
 
-   * **标记**：选择映像的标记，例如“*latest*”
+   * **标记** ：选择映像的标记，例如“ *latest* ”
 
-   * **启动命令**：将此项留空，因为映像已经有启动命令
+   * **启动命令** ：将此项留空，因为映像已经有启动命令
 
-   输入上述所有信息后，单击“查看 + 创建”  。
+   输入上述所有信息后，选择“查看 + 创建”。
 
    ![选择“查看 + 创建”来完成操作。][LX02-A]
 
    * 单击“查看 + 创建”  。
 
-查看信息，并单击“创建”  。
+查看信息，然后选择“创建”。
 
-部署完成后，单击“转到资源”。   部署页将显示用于访问应用程序的 URL。
+部署完成后，选择“转到资源”。   部署页将显示用于访问应用程序的 URL。
 
    ![获取部署的 URL][LX02-B]
 
@@ -206,13 +206,13 @@ ms.locfileid: "91846448"
 >
 > 1. 浏览到 [Azure 门户]并登录。
 >
-> 2. 单击 **Web 应用**的图标，然后从“应用服务”  页选择应用。
+> 2. 选择“Web 应用”的图标，然后从“应用程序服务”页选择应用 。
 >
-> 3. 单击左侧导航窗格中的“配置”  。
+> 3. 在左侧导航窗格中选择“配置”。
 >
 > 4. 在“应用程序设置”  部分，添加一个名为 **WEBSITES_PORT** 的新设置，并为该值输入自定义端口号。
 >
-> 5. 单击“确定”。  然后单击“保存”  。
+> 5. 选择“确定”  。 再选择“保存”。
 >
 > ![在 Azure 门户中保存自定义端口号][LX03]
 
@@ -237,6 +237,10 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 1. Save and close the *application.yml* file.
 -->
 
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
+
 ## <a name="next-steps"></a>后续步骤
 
 若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
@@ -254,7 +258,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 有关 Docker 上的 Spring Boot 示例项目的详细信息，请参阅 [Docker 上的 Spring Boot 入门]。
 
-如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr**。
+如果在开始使用自己的 Spring Boot 应用程序时需要帮助，请参阅 https://start.spring.io/ 上的 **Spring Initializr** 。
 
 有关开始创建简单 Spring Boot 应用程序入门的详细信息，请参阅 https://start.spring.io/ 上的“Spring Initializr”。
 
