@@ -1,0 +1,11 @@
+- name: 开发人员体验实验室
+  href: index.yml
+  items:
+    - name: 教程格式实验室
+      items:
+        - name: Python flask 单页
+          href: quickstart-python-flask.md
+        - name: Python flask 多页
+          href: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+        - name: 已最小化 Python flask 单页
+          href: quickstart-python-flask-minimized.md

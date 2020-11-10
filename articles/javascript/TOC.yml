@@ -17,18 +17,18 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: 将 Express.js 与 MongoDB 配合使用
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
-        - name: 使用 VS Code 部署 Azure Functions
+        - name: 创建和部署无服务器函数
           items:
-            - name: 简介和先决条件
-              href: tutorial-vscode-serverless-node-01.md
-            - name: 创建 Functions 应用
-              href: tutorial-vscode-serverless-node-02.md
-            - name: 在本地测试函数
-              href: tutorial-vscode-serverless-node-03.md
-            - name: 部署 Functions 应用
-              href: tutorial-vscode-serverless-node-04.md
-            - name: 清理资源
-              href: tutorial-vscode-serverless-node-05.md
+            - name: 1. 简介和先决条件
+              href: tutorial/tutorial-vscode-serverless-node-install.md
+            - name: 2. 创建 Functions 应用
+              href: tutorial/tutorial-vscode-serverless-node-create-local.md
+            - name: 3. 在本地测试函数
+              href: tutorial/tutorial-vscode-serverless-node-test-local.md
+            - name: 4. 部署 Functions 应用
+              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+            - name: 5. 清理资源
+              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
         - name: 使用 VS Code 将 Node.js 部署到应用服务
           items:
             - name: 简介和先决条件
