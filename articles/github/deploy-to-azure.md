@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 098c9d35c541f7f6f05cb8470418c8bee4f01ea7
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: db05f984c92a2c7ba99ec2df07fc3924d90107f2
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898736"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405696"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>将应用从 GitHub 部署到 Azure 
 
@@ -31,4 +31,4 @@ ms.locfileid: "92898736"
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes 服务
 
 - [使用 GitHub Actions 部署到 Kubernetes](/azure/aks/kubernetes-action)  
-- [使用 GitHub Actions 部署到 Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/how-to/github-actions)
+- [使用 GitHub Actions 部署到 Azure Dev Spaces](/azure/dev-spaces/how-to/github-actions)

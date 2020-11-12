@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 6506aae7aacf26d08bcb6c47ef947dfb8f6cef46
-ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
+ms.openlocfilehash: 992ce6dfd32de9fc20016542b11f2792bf0a8e9b
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91947512"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405846"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>使用 IntelliJ 创建适用于 Azure 应用服务的 Hello World Web 应用
 
@@ -39,7 +39,7 @@ ms.locfileid: "91947512"
 
 以下步骤将指导你完成 IntelliJ 开发环境中登录 Azure 的过程。
 
-1. 如果尚未安装该插件，请参阅[安装 Azure Toolkit for IntelliJ](installation.md)。
+1. 如果尚未安装该插件，请参阅[安装 Azure Toolkit for IntelliJ](./index.yml)。
 
 1. 若要登录 Azure 帐户，请导航到左侧的 Azure 资源管理器边栏，然后单击“Azure 登录”图标 。 或者，你可导航到“工具”，展开“Azure”，然后单击“Azure 登录”  。
 
@@ -61,13 +61,13 @@ ms.locfileid: "91947512"
 
 1. 在“新建项目”对话框中，选择“Maven”，并确保已选中“从原型创建”选项  。 从列表中选择“maven-archetype-webapp”，然后单击“下一步” 。
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="在 IntelliJ 上登录到 Azure。"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="选择“maven-archetype-webapp”选项。"::: 
 
 1. 展开“项目坐标”下拉列表查看所有输入字段，并为新的 Web 应用指定以下信息，然后单击“下一步” ：
 
    * 名称：Web 应用的名称。 这将自动填写 Web 应用的 ArtifactId 字段。
    * GroupId：项目组的名称，通常为公司域。 （例如 com.microsoft.azure）
-   * **版本**：我们将保留默认版本 1.0-SNAPSHOT。
+   * **版本** ：我们将保留默认版本 1.0-SNAPSHOT。
 
 1. 自定义任何 Maven 设置或接受默认设置，然后单击“完成”。
 
@@ -80,7 +80,7 @@ ms.locfileid: "91947512"
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="在 IntelliJ 上登录到 Azure。":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="打开 index.jsp 文件。":::
 
 ## <a name="deploying-web-app-to-azure"></a>将 Web 应用部署到 Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "91947512"
 
    a. 单击“没有可用的 Web 应用，单击以新建一个”，创建一个新的 Web 应用。 如果订阅中已存在现有的 Web 应用，则请从“Web 应用”下拉列表中选择“创建新的 Web 应用”。
 
-      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="在 IntelliJ 上登录到 Azure。":::
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="“部署到 Azure”对话框窗口。":::
 
    在弹出的“创建 Web 应用”对话框中，指定以下信息，然后单击“确定” ： 
 
@@ -98,8 +98,8 @@ ms.locfileid: "91947512"
       * 订阅：指定要用于新的 Web 应用的 Azure 订阅。
       * Platform：选择“Linux”。
       * Web 容器：选择“TOMCAT 9.0-jre8”或视情况而定。
-      * **资源组**：指定 Web 应用的资源组。 可选择与你的 Azure 帐户关联的现有资源组，也可创建一个新的资源组。
-      * **应用服务计划**：指定 Web 应用的应用服务计划。 可选择与你的 Azure 帐户关联的现有计划，也可创建一个新计划。
+      * **资源组** ：指定 Web 应用的资源组。 可选择与你的 Azure 帐户关联的现有资源组，也可创建一个新的资源组。
+      * **应用服务计划** ：指定 Web 应用的应用服务计划。 可选择与你的 Azure 帐户关联的现有计划，也可创建一个新计划。
 
    b. 若要部署到现有的 Web 应用，请从“Web 应用”下拉菜单中选择 Web 应用，然后单击“运行”。
 
@@ -107,7 +107,7 @@ ms.locfileid: "91947512"
 
 1. 可使用状态消息中提供的链接转到 Web 应用。
 
-   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="在 IntelliJ 上登录到 Azure。":::
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="浏览 Web 应用。":::
 
 ## <a name="managing-deploy-configurations"></a>管理部署配置
 
@@ -116,9 +116,9 @@ ms.locfileid: "91947512"
 
 1. 在运行 Web 应用的部署之前，可单击 Web 应用的下拉菜单并选择“编辑配置”来修改默认设置。
 
-   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="在 IntelliJ 上登录到 Azure。":::
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="编辑配置菜单。":::
 
-1. 在“运行/调试配置”对话框中，可修改任何默认设置。 单击“确定”保存设置。****
+1. 在“运行/调试配置”对话框中，可修改任何默认设置。 单击“确定”保存设置。
 
 ## <a name="cleaning-up-resources"></a>清理资源
 

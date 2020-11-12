@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 7a7128a475b428243f3c7280fc154d1d4c8fe8a6
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 6fbc1036b06a318d81729691331adb6b868e1d5c
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92438071"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93406664"
 ---
 ### <a name="create-a-web-project"></a>创建 Web 项目
 
@@ -732,7 +732,7 @@ ASP.NET Core 支持[依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-i
 接下来，需要将应用部署到 API 应用，以便可以从任意设备访问它。  
 
 >[!NOTE]
-> 以下步骤特定于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。 如果你使用 Windows 上的 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)，则发布流将有所不同。 请参阅[发布到 Windows 上的 Azure 应用服务](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)。
+> 以下步骤特定于 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。 如果你使用 Windows 上的 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)，则发布流将有所不同。 请参阅[发布到 Windows 上的 Azure 应用服务](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)。
 
 1. 将配置从“调试”更改为“发布”（如果尚未这样做） 。
 

@@ -4,12 +4,12 @@ description: 了解如何在 Azure 存储中存储 Terraform 状态。
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d3d2ab0ff605883926260928d3e7174a5c526781
-ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
+ms.openlocfilehash: 33a49a9c6b8f62dd5f9a47f7171ba1cd3c55195b
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93278412"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333785"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>教程：在 Azure 存储中存储 Terraform 状态
 
@@ -94,6 +94,14 @@ terraform {
     container_name        = "tstate"
     key                   = "terraform.tfstate"
   }
+}
+
+# Configure the Azure provider
+provider "azurerm" { 
+  # The "feature" block is required for AzureRM provider 2.x. 
+  # If you are using version 1.x, the "features" block is not allowed.
+  version = "~>2.0"
+  features {}
 }
 
 resource "azurerm_resource_group" "state-demo-secure" {

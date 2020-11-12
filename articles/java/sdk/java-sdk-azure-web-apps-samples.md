@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: 43633e5c-9fb1-4807-ba63-e24c126754e2
 ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 1fd24b0b6f8b0bc47dd763428a6fbfed8e1872f4
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: d28fb164b4b7ba862e5297225bd34ac2f93c1a54
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805948"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405806"
 ---
 # <a name="azure-management-libraries-for-java---web-app-samples"></a>用于 Java 的 Azure 管理库 - Web 应用示例 
 
@@ -32,7 +32,7 @@ ms.locfileid: "91805948"
 | [将 Web 应用连接到存储帐户][5] | 创建 Azure 存储帐户，并将存储帐户连接字符串添加到应用设置。 |
 | [将 Web 应用连接到 SQL 数据库][6] | 创建 Web 应用和 SQL 数据库，然后将 SQL 数据库连接字符串添加到应用设置。 |
 
-[1]: java-sdk-configure-webapp-sources.md
+[1]: ./index.yml
 [2]: https://github.com/Azure-Samples/app-service-java-manage-staging-and-production-slots-for-web-apps/
 [3]: https://github.com/Azure-Samples/app-service-java-manage-web-apps-with-custom-domains/
 [4]: https://github.com/Azure-Samples/app-service-java-scale-web-apps-on-linux

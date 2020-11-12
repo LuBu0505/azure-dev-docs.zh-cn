@@ -4,12 +4,12 @@ description: Node.js 教程第 5 部分：清理资源
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: d8e3653d7f08ea1352d7ca8fad9d5a7f73e31860
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 19f94218059da688aed9fb806427ae8179b78baa
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365220"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405916"
 ---
 # <a name="part-5-clean-up-resources"></a>第 5 部分：清理资源
 
@@ -24,4 +24,4 @@ ms.locfileid: "91365220"
 [!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
 
 > [!div class="nextstepaction"]
-> [我已完成](node-howto-deploy-web-app.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=clean-up-resources)
+> [我已完成](./how-to/deploy-web-app.md) [我遇到了问题](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=clean-up-resources)

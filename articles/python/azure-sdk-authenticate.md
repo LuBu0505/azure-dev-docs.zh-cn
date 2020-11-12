@@ -4,12 +4,12 @@ description: 如何使用 Azure 库获取必要的凭据对象，以使 Python �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764673"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405897"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>如何在 Azure 上对 Python 应用进行身份验证和授权
 
@@ -391,7 +391,7 @@ Azure 库默认的订阅 ID，你也可使用 [`az account`](/cli/azure/manage-a
 
 #### <a name="cli-based-authentication-with-azurecore-libraries"></a>使用 azure.core 库的基于 CLI 的身份验证
 
-使用[已为 azure.core 更新的 Azure 库](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore)时，请使用 azure-identity 库（版本 1.4.0+）中的 [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) 对象。 例如，可将以下代码用于 azure-mgmt-resource 版本 15.0.0+：
+使用[已为 azure.core 更新的 Azure 库](./azure-sdk-library-package-index.md#libraries-using-azurecore)时，请使用 azure-identity 库（版本 1.4.0+）中的 [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) 对象。 例如，可将以下代码用于 azure-mgmt-resource 版本 15.0.0+：
 
 ```python
 from azure.identity import AzureCliCredential

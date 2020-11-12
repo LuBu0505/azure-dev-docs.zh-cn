@@ -4,12 +4,12 @@ description: 如何使用 Azure 构建 JAMstack 应用（JavaScript、API 和标
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: b126cb60341733451be555fa7759773aac99f6ce
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 421464b76a8276ef87b84596a6434e991a3c2b25
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437160"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333795"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>使用 Node.js 在 Azure 上构建 JAMstack（静态站点）Web 应用
 
@@ -34,14 +34,14 @@ ms.locfileid: "92437160"
   
 - **无服务器 API** ：
 
-  - 从[在 Visual Studio Code 中部署 Azure Functions](../tutorial-vscode-serverless-node-01.md) 开始。该文章在 Visual Studio Code 的上下文中介绍 Azure Functions，以简化很多详细信息。
+  - 从[在 Visual Studio Code 中部署 Azure Functions](../tutorial/tutorial-vscode-serverless-node-install.md) 开始。该文章在 Visual Studio Code 的上下文中介绍 Azure Functions，以简化很多详细信息。
   - 完成本文后，将拥有一个 Azure Functions 项目（文件夹），其中包含为该函数命名的子文件夹，该子文件夹与该项目的 HTTP 终结点的子文件夹相同。 该函数文件夹中的 index.js 文件包含代码。
   - 可以根据需要修改该函数，还可以向该项目中添加更多函数，然后将其重新部署到 Azure，以供公开发布。
   - 有关无服务器开发的其他资源，请参阅[如何在 Azure 上编写无服务器 Node.js 代码](develop-serverless-apps.md)
 
 - **将前端部署到 Azure 存储** ：如果手头有 API，可以立即通过任何所需的框架编写前端代码以使用这些 API。 准备就绪后，请按照本文[教程：在 Blob 存储上托管静态网站](/azure/storage/blobs/storage-blob-static-website-host)的说明，将这些文件上传到 Azure 并打开静态网站托管。
 
-- **创建反向代理** ：使用反向代理（如[使用 Azure Functions 代理](/azure/azure-functions/functions-proxies)中所述），可以轻松地将某些请求定向到不同的 URL。 在这种情况下，需要将前端文件请求定向到这些文件已部署到的 Azure 存储 URL，并将 API 请求定向到 Azure Functions URL。
+- **创建反向代理** ：使用反向代理（如 [使用 Azure Functions 代理](/azure/azure-functions/functions-proxies)中所述），可以轻松地将某些请求定向到不同的 URL。 在这种情况下，需要将前端文件请求定向到这些文件已部署到的 Azure 存储 URL，并将 API 请求定向到 Azure Functions URL。
 
   - 若要创建这些代理，请在 Functions 项目中编辑 proxies.json 文件，以使该文件如下所示，并将 URL 替换为 `<storage_url>` 和 `<api_url>`：
   
