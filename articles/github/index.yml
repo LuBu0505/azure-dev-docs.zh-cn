@@ -10,12 +10,12 @@ metadata:
   ms.author: ushan
   ms.date: 05/05/2020
   ms.custom: github-actions-azure
-  ms.openlocfilehash: 2e25fcbe07742d0fbca64565dea8dadc50939949
-  ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+  ms.openlocfilehash: f2dddbae2eac63fdab7e5956ebcda6003e3c2028
+  ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/28/2020
-  ms.locfileid: "92898717"
+  ms.lasthandoff: 11/10/2020
+  ms.locfileid: "94432778"
 landingContent:
 - title: 适用于 Azure 的 GitHub Actions
   linkLists:
@@ -47,3 +47,9 @@ landingContent:
     links:
     - text: 从 Azure 和其他服务连接到 GitHub
       url: connect-from-azure.md
+- title: 通过 GitHub 管理 Azure 策略
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 通过 GitHub 将 Azure 策略作为代码进行管理
+      url: manage-azure-policy.md

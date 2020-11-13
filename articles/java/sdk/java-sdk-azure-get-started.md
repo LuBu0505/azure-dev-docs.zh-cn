@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a2dbb6a83837e716f48304a8013ba198280e9624
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: a6022875af3a15f7140e4db7fcc669d47f55b3d2
+ms.sourcegitcommit: dee8dc9ce6c255c53913e27813dc3659ff238a01
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689182"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94378997"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 
@@ -25,22 +25,17 @@ ms.locfileid: "92689182"
 
 - 一个 Azure 帐户。 如果没有帐户，可[获取一个免费试用帐户](https://azure.microsoft.com/free/)
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart) 或 [Azure CLI 2.0](/cli/azure/install-az-cli2)。
-- [Java 8](https://www.azul.com/downloads/zulu/)（Azure Cloud Shell 中已随附）
+- [Java 8](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support)（Azure Cloud Shell 中已随附）
 - [Maven 3](https://maven.apache.org/download.cgi)（Azure Cloud Shell 中已随附）
 
 ## <a name="set-up-authentication"></a>设置身份验证
 
 Java 应用程序需要 Azure 订阅中的读取和创建权限才能运行本教程中的示例代码。 创建一个服务主体，并将应用程序配置为使用该服务主体的凭据运行。 通过服务主体可以创建一个与用户标识关联的非交互式帐户，该帐户仅拥有运行应用所需的特权。
 
-[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。 在密码参数而非 `MY_SECURE_PASSWORD` 中提供[安全密码](/azure/active-directory/active-directory-passwords-policy)。 密码必须为 8 到 16 个字符，并且至少符合以下 4 个条件中的 3 个：
-
-* 包含小写字符
-* 包含大写字符
-* 包含数字
-* 包含以下符号之一：@ # $ % ^ & * - _ ！ + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ;
+[使用 Azure CLI 2.0 创建服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)并捕获输出。
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
+az ad sp create-for-rbac --name AzureJavaTest
 ```
 
 这会提供采用以下格式的回复：
@@ -50,7 +45,7 @@ az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
   "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
   "displayName": "AzureJavaTest",
   "name": "http://AzureJavaTest",
-  "password": password,
+  "password": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
   "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
 }
 ```
@@ -61,7 +56,7 @@ az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
 # sample management library properties file
 subscription=ssssssss-ssss-ssss-ssss-ssssssssssss
 client=cccccccc-cccc-cccc-cccc-cccccccccccc
-key=kkkkkkkkkkkkkkkk
+key=aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 tenant=tttttttt-tttt-tttt-tttt-tttttttttttt
 managementURI=https\://management.core.windows.net/
 baseURL=https\://management.azure.com/
@@ -110,14 +105,9 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ```XML
 <dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure</artifactId>
-    <version>1.3.0</version>
-</dependency>
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-storage</artifactId>
-    <version>5.0.0</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-storage-blob</artifactId>
+      <version>12.8.0</version>
 </dependency>
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
@@ -144,11 +134,11 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>安装用于 IntelliJ 的 Azure 工具包
 
-若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](../toolkit-for-intellij/installation.md)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 IntelliJ 的 Azure 工具包快速入门](../toolkit-for-intellij/create-hello-world-web-app.md)。
+若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](../toolkit-for-intellij/index.yml)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 IntelliJ 的 Azure 工具包快速入门](../toolkit-for-intellij/create-hello-world-web-app.md)。
 
-- 选择“文件”菜单，然后选择“设置...”。  
+- 选择“文件”菜单，然后选择“设置...”。
 
-- 选择“浏览存储库...”，搜索“Azure”，然后安装“用于 Intellij 于 Azure 工具包”。  
+- 选择“浏览存储库...”，搜索“Azure”，然后安装“用于 Intellij 于 Azure 工具包”。
 
 - 重启 IntelliJ。
 
@@ -156,15 +146,15 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 若要以编程方式部署 Web 应用或 API，则需要使用 [Azure 工具包](../toolkit-for-eclipse/index.yml)，但是，该工具包目前不可用于其他任何类型的开发。 下面是安装过程的摘要。 有关快速入门，请访问[用于 Eclipse 的 Azure 工具包快速入门](../toolkit-for-eclipse/create-hello-world-web-app.md)。
 
-- 选择“帮助”菜单，然后选择“安装新软件”。  
+- 选择“帮助”菜单，然后选择“安装新软件”。
 
-- 在“使用:”字段中，输入 `http://dl.microsoft.com/eclipse/` 并按 Enter。 
+- 在“使用:”字段中，输入 `http://dl.microsoft.com/eclipse/` 并按 Enter。
 
-- 然后，选中“用于 Java 的 Azure 工具包”旁边的复选框，并取消选中“在安装过程中联系所有更新站点以查找所需的软件”对应的复选框。   然后选择“下一步”。
+- 然后，选中“用于 Java 的 Azure 工具包”旁边的复选框，并取消选中“在安装过程中联系所有更新站点以查找所需的软件”对应的复选框。 然后选择“下一步”。
 
 ## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
 
-在项目的 `src/main/java/com/fabirkam` 目录中创建名为 `AzureApp.java` 的新文件，并在其中粘贴以下代码块。 使用计算机的实际值更新 `userName` 和 `sshKey` 变量。 该代码会在美国东部 Azure 区域中运行的资源组 `sampleResourceGroup` 内创建名为 `testLinuxVM` 的新 Linux VM。
+在项目的 `src/main/java/com/fabrikam` 目录中创建名为 `AzureApp.java` 的新文件，并在其中粘贴以下代码块。 使用计算机的实际值更新 `userName` 和 `sshKey` 变量。 该代码会在美国东部 Azure 区域中运行的资源组 `sampleResourceGroup` 内创建名为 `testLinuxVM` 的新 Linux VM。
 
 ```java
 package com.fabrikam;
@@ -184,14 +174,19 @@ import com.microsoft.azure.management.resources.fluentcore.utils.SdkContext;
 
 import com.microsoft.rest.LogLevel;
 
-import com.microsoft.azure.storage.*;
-import com.microsoft.azure.storage.blob.*;
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
+import com.azure.storage.blob.models.PublicAccessType;
+import com.azure.storage.common.StorageSharedKeyCredential;
 
-import java.io.File;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 public class AzureApp {
 
@@ -406,26 +401,32 @@ public static void main(String[] args) {
 
         // create a storage container to hold the file
         List<StorageAccountKey> keys = storage.getKeys();
-        final String storageConnection = "DefaultEndpointsProtocol=https;"
-                + "AccountName=" + storage.name()
-                + ";AccountKey=" + keys.get(0).value()
-                + ";EndpointSuffix=core.windows.net";
+        PublicEndpoints endpoints = storage.endPoints();
+        String accountName = storage.name();
+        String accountKey = keys.get(0).value();
+        String endpoint = endpoints.primary().blob();
 
-        CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
-        CloudBlobClient serviceClient = account.createCloudBlobClient();
+        StorageSharedKeyCredential credential = new StorageSharedKeyCredential(accountName, accountKey);
 
-        // Container name must be lower case.
-        CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
-        container.createIfNotExists();
+        BlobServiceClient storageClient =new BlobServiceClientBuilder()
+                                    .endpoint(endpoint)
+                                    .credential(credential)
+                                    .buildClient();
+
+        // Container name must be lower case
+        BlobContainerClient blobContainerClient = storageClient.getBlobContainerClient("helloazure");
+        blobContainerClient.create();
 
         // Make the container public
-        BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
-        containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
-        container.uploadPermissions(containerPermissions);
+        blobContainerClient.setAccessPolicy(PublicAccessType.CONTAINER, null);
 
         // write a blob to the container
-        CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
-        blob.uploadText("hello Azure");
+        String fileName = "helloazure.txt";
+        String textNew = "Hello Azure";
+
+        BlobClient blobClient = blobContainerClient.getBlobClient(fileName);
+        InputStream is = new ByteArrayInputStream(textNew.getBytes());
+        blobClient.upload(is, textNew.length());
 
     } catch (Exception e) {
         System.out.println(e.getMessage());
