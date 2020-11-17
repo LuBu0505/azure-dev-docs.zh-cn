@@ -2,14 +2,14 @@
 title: 使用 Node.js 创建 Azure 服务主体
 description: 了解如何通过 Node.js 和 JavaScript 使用服务主体身份验证
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 88724ca9ecdb24088e437a5b9b407fbdde69650a
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: e7f885b0af5e7a25d0e706c235a1521bb44c4b36
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437156"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515168"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>创建适用于 Node.js 的 Azure 服务主体
 
@@ -26,21 +26,11 @@ ms.locfileid: "92437156"
 
 [!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
-## <a name="create-a-service-principal-using-the-azure-portal"></a>使用 Azure 门户创建服务主体
-
-请遵循[使用门户创建可访问资源的 Azure Active Directory 应用程序和服务主体](/azure/active-directory/develop/howto-create-service-principal-portal)主题中所述的步骤来生成服务主体。
-
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>使用 Azure CLI 2.0 创建服务主体
 
-可执行以下步骤，使用 [Azure CLI 2.0](/cli/azure/install-az-cli2) 创建服务主体：
+若要执行以下步骤，请[安装 Azure CLI](/cli/azure/install-azure-cli)，然后[登录到 Azure](/cli/azure/authenticate-azure-cli)。 
 
-1. 下载 [Azure CLI 2.0](/cli/azure/install-az-cli2)。
-
-2. 打开终端窗口并键入命令 `az login`以启动登录过程。
-
-3. 调用 `az login` 可生成一个 URL 和一个代码。 浏览到指定的 URL，输入该代码，使用 Azure 标识登录（如果已登录，则此过程可自动完成）。 然后，即可通过 CLI 访问帐户。
-
-4. 使用 `az account list` 命令获取订阅和租户 ID。 使用任何 Azure 包时，你将需要用到它们。 下面显示的是此命令的输出示例：
+1. 使用 `az account list` 命令获取订阅和租户 ID。 使用任何 Azure 包时，你将需要用到它们。 下面显示的是此命令的输出示例：
 
     ```shell
     {
@@ -58,9 +48,13 @@ ms.locfileid: "92437156"
     }
     ```
 
-5. 按照主题中所述的步骤（[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)）来生成服务主体。 输出中的 JSON 对象将包含进行 Azure 身份验证所需的信息。
-
+1. 按照主题中所述的步骤（[使用 Azure CLI 创建 Azure 服务主体](/cli/azure/create-an-azure-service-principal-azure-cli)）来生成服务主体。 输出中的 JSON 对象将包含进行 Azure 身份验证所需的信息。
 
 ## <a name="using-the-service-principal"></a>使用服务主体
 
-如果拥有服务主体，请查看[对适用于 JavaScript 的 Azure 管理模块进行身份验证](./node-sdk-azure-authenticate.md)主题，了解如何创建凭据对象（可使用该对象通过 Azure Active Directory 对客户端进行身份验证）。
+拥有服务主体后，可以执行以下操作：
+
+1. 通过证书、环境变量或 `.json` 使用服务主体以编程方式向 Azure 进行身份验证。 
+1. 使用服务主体创建 Azure 资源并使用服务。
+
+请查看[对适用于 JavaScript 的 Azure 管理模块进行身份验证](./node-sdk-azure-authenticate.md)主题，了解如何创建凭据对象（可使用该对象通过 Azure Active Directory 对客户端进行身份验证）。

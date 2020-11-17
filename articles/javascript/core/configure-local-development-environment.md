@@ -1,15 +1,15 @@
 ---
 title: 为 Azure 开发配置本地 JavaScript 环境
 description: 如何设置适用于 Azure 的本地 JavaScript 开发环境，包括编辑器、Azure SDK 库、可选工具以及库身份验证所需的凭据。
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 2e61facd2065773dcbef7d0cdd20353671121422
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437169"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333817"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>为 Azure 配置本地 JavaScript 开发环境
 
@@ -23,57 +23,42 @@ Azure 资源是在订阅中创建的，订阅是使用 Azure 的计费单位。 
 
 |类型|说明|
 |--|--|
-|[试用订阅](https://azure.microsoft.com/free/cognitive-services)|创建一个免费的试用订阅。|
-|[现有订阅](https://portal.azure.com)|如果你已经拥有订阅，请在 Azure 门户、Azure CLI 或 JavaScript 中访问你的现有订阅。|
-|[跨多个订阅](/azure/governance/management-groups/create-management-group-javascript)|如果你需要管理多个订阅，请了解如何使用 JavaScript 创建管理组。|
+|试用订阅|创建一个免费的[试用订阅](https://azure.microsoft.com/free/)。|
+|现有订阅|如果你已经拥有订阅，请在 [Azure 门户](https://portal.azure.com)、[Azure CLI]() 或 JavaScript 中访问你的现有订阅。|
+|跨多个订阅|如果你需要管理多个订阅，请[了解如何](/azure/governance/management-groups/create-management-group-javascript)使用 JavaScript 创建管理组。|
 
-## <a name="one-time-installation"></a>一次性安装
+## <a name="one-time-software-installation"></a>一次性软件安装
 
 若要在本地工作站上结合 JavaScript 使用 Azure 资源进行开发，需要一次性安装以下各项：
 
 |名称/安装程序|说明|
 |--|--|
-|[Node.js](https://www.npmjs.com/)|安装最新的长期支持 (LTS) 运行时环境进行本地工作站开发。 |
-| NPM（与新版 Node.js 一起安装）或 [Yarn](https://yarnpkg.com/)|安装 Azure SDK 库的包管理器。|
+[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code 将为你提供强大的 JavaScript 集成和编码体验，但它不是必需的。 你可以使用任何代码编辑器。 对于本文档，如果你使用的是其他编辑器，请检查是否与 Azure 集成或使用 Azure CLI。|
-|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI 可用于从命令行、终端或 bash shell 重新创建和管理 Azure 资源。|
 
 > [!CAUTION]
 > 如果计划使用 Azure 资源（如 Azure Web 应用或 Azure 容器实例）作为代码的运行时环境，则应验证本地 Node.js 开发环境是否与计划使用的 Azure 资源运行时匹配。
 
-### <a name="optional-local-installations"></a>可选的本地安装
+### <a name="recommended-local-installations"></a>推荐的本地安装
 
-你可以视情况选择以下常见的本地工作站安装来帮助执行本地开发任务。
+推荐使用以下常见的本地工作站安装来帮助执行本地开发任务。
 
 |名称/安装程序|说明|
 |--|--|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) 或[适用于 Azure 的 Visual Studio Code 扩展](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |通常通过 [Azure 门户](https://ms.portal.azure.com/)、Azure CLI 或特定 Visual Studio Code 扩展来使用 Azure。 虽然无需使用 Azure CLI（除非在快速入门或教程中指定），但它是一种使用 Azure 的单一工具（Visual Studio Code 可基于每个服务的扩展提供相同的功能）。|
 | [git](https://git-scm.com/downloads) | 用于源代码管理的命令行工具。 可以根据需要使用不同的源代码管理工具。 |
+
 
 ## <a name="one-time-configuration-of-service-principal"></a>一次性配置服务主体
 
 每项 Azure 服务都有一个身份验证机制。 这可以包括密钥和终结点、连接字符串或其他机制。 若要遵循最佳做法，请使用[服务主体](node-sdk-azure-authenticate-principal.md)创建资源并对资源进行身份验证。 使用服务主体可以具体定义即时开发需要的访问范围。
 
-服务主体的创建步骤： 
-
-1. 使用个人用户帐户登录 Azure。
-1. 创建一个具有特定范围的命名服务主体。 由于大多数快速入门都要求创建 Azure 资源，因此服务主体需要能够创建资源。
-1. 使用个人用户帐户注销 Azure。
-
-服务主体的使用步骤：
-
-1. 通过证书、环境变量或 `.json` 使用服务主体以编程方式向 Azure 进行身份验证。 
-1. 使用服务主体创建 Azure 资源并使用服务。
-
-了解[如何创建服务主体](node-sdk-azure-authenticate-principal.md)。 请记得保存创建步骤中的响应信息。 若要使用服务主体，需要响应的 `appId`、`tenant` 和 `password` 值。
-
-[使用服务主体创建 Azure 资源](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal).
-
-## <a name="steps-for-each-new-development-project-setup"></a>设置每个新开发项目的步骤
+## <a name="working-with-azure-and-the-azure-sdk-client-libraries"></a>使用 Azure 和 Azure SDK 客户端库
 
 [Azure SDK 库](../azure-sdk-library-package-index.md)是为每项服务单独提供的。 根据需要使用的 Azure 服务安装每个库。
 
 使用 Azure 的每个新项目都应执行以下操作：
-- 创建 Azure 资源，并将关联的密钥或配置保存到[安全位置]()。
+- 创建 Azure 资源，并将关联的密钥或配置保存到[安全位置](#securing-configuration-information)。
 - 从 NPM 或 Yarn 安装 Azure SDK 库。 
 - 使用服务主体向 Azure SDK 进行身份验证，然后使用配置信息访问特定服务。
 
@@ -81,7 +66,7 @@ Azure 资源是在订阅中创建的，订阅是使用 Azure 的计费单位。 
 
 有多个选项可用来存储配置信息：
 - [Dotenv](https://www.npmjs.com/package/dotenv) 是一种常用的 npm 包，它用于从 `.env` 文件中读取环境变量。 请确保将 `.env` 文件添加到 `.gitignore` 文件，以便 `.env` 文件不会被签入到源代码管理中。
-- Azure [Key Vault](https://docs.microsoft.com/azure/key-vault/) 可创建并维护用于访问和加密云资源、应用和解决方案的密钥
+- Azure [Key Vault](/azure/key-vault/) 可创建并维护用于访问和加密云资源、应用和解决方案的密钥
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>为 Azure 库创建环境变量
 

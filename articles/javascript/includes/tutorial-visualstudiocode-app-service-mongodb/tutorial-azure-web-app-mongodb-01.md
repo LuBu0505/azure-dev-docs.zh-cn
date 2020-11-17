@@ -4,12 +4,12 @@ description: include 文件 tutorial-azure-web-app-mongodb-01.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a8c9fcca1b7374ae5122cfabb3fcbfc6ba8cdd07
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 61bb61d147e01061dcf58701132feddd09c53b59
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183796"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94341087"
 ---
 在本教程的这一部分，需要一个 Azure 订阅和所有软件才能使用本教程。
 
@@ -19,7 +19,7 @@ ms.locfileid: "92183796"
 
 ## <a name="install-software"></a>安装软件
 
-- [Node.js 和 npm](https://nodejs.org/en/download)，即安装到本地计算机的 Node.js 包管理器。
+- [Node.js 8.x+ 和 npm](https://nodejs.org/en/download)，即安装到本地计算机的 Node.js 包管理器。
 - [Docker](https://docs.docker.com/get-docker/) - Docker 用于提供本地 MongoDB 数据库，而无需安装 MongoDB。 
     - 如果需要使用 Docker 获取本地 MongoDB 数据库，还需要使用：
         -  Visual Studio [开发容器](https://code.visualstudio.com/docs/remote/containers)提供了几个用于 JavaScript 开发的常用容器。 

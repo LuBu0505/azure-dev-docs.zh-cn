@@ -7,22 +7,20 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689213"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405746"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>使用 GitHub Actions 连接到 Azure
 
 了解如何将 [Azure 登录](https://github.com/Azure/login)与 [Azure PowerShell](https://github.com/Azure/PowerShell) 或 [Azure CLI](https://github.com/Azure/CLI) 搭配使用，以便与你的 Azure 资源进行交互。
 
-若要使用 Azure PowerShell 或 Azure CLI，首先需要使用 [Azure 登录名](https://github.com/marketplace/actions/azure-login)登录。 Azure 登录操作使用服务主体将你的 Azure 订阅连接到 GitHub。
+若要在 GitHub Actions 工作流中使用 Azure PowerShell 或 Azure CLI，首先需要使用 [Azure 登录](https://github.com/marketplace/actions/azure-login)操作进行登录。 借助 Azure 登录操作，可在 [Azure AD 服务主体](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)的上下文中执行工作流中的命令。
 
-设置登录操作后，便可以使用 Azure CLI 或 Azure PowerShell。  
-Azure CLI 为 Azure CLI 设置 GitHub 操作运行程序环境。 Azure PowerShell 使用 Azure PowerShell 模块设置 GitHub 操作运行程序环境。
-
+设置登录操作后，便可以使用 Azure CLI 或 Azure PowerShell。 默认情况下，该操作使用 Azure CLI 登录，从而为 Azure CLI 设置 GitHub 操作运行程序环境。 通过使用 Azure 登录操作的 enable-AzPSSession 属性，你可以使用 Azure PowerShell。  这将使用 Azure PowerShell 模块设置 GitHub 操作运行程序环境。
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>创建一个服务主体，并将其添加到 GitHub 机密
 
@@ -67,11 +65,11 @@ Azure CLI 为 Azure CLI 设置 GitHub 操作运行程序环境。 Azure PowerShe
 
 1. 依次选择“机密”和“新建机密” 。
 
-    :::image type="content" source="media/select-secrets.png" alt-text="在导航中选择“设置”":::
+    :::image type="content" source="media/select-secrets.png" alt-text="选择以添加机密":::
 
 1. 粘贴名为 `AZURE_CREDENTIALS` 的服务主体的 JSON 对象。 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="在导航中选择“设置”":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="在 GitHub 中添加机密":::
 
 1. 通过选择“添加机密”保存。
 
@@ -79,9 +77,9 @@ Azure CLI 为 Azure CLI 设置 GitHub 操作运行程序环境。 Azure PowerShe
 
 将服务主体机密与 [Azure 登录操作](https://github.com/Azure/login)配合使用，以向 Azure 进行身份验证。
 
-在此工作流中，你需要使用 `secrets.AZURE_CREDENTIALS` 进行身份验证，然后运行 Azure CLI 操作。
+在此工作流中，将结合使用 Azure 登录操作和存储在 `secrets.AZURE_CREDENTIALS` 中的服务主体详细信息进行身份验证。 然后，运行 Azure CLI 操作。 有关如何在工作流文件中引用 GitHub 机密的详细信息，请参阅 GitHub 文档中的[在工作流中使用加密的机密](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)。
 
-拥有可用的 Azure 登录名后，便可以使用 Azure PowerShell 或 Azure CLI 操作。 还可以使用其他 Azure 操作，如 [Azure webapp 部署](https://github.com/Azure/webapps-deploy)和 [Azure Functions](https://github.com/Azure/functions-action)。
+拥有可用的 Azure 登录步骤后，便可以使用 [Azure PowerShell](https://github.com/Azure/PowerShell) 或 [Azure CLI](https://github.com/Azure/CLI) 操作。 还可以使用其他 Azure 操作，如 [Azure webapp 部署](https://github.com/Azure/webapps-deploy)和 [Azure Functions](https://github.com/Azure/functions-action)。
 
 ```yaml
 on: [push]
@@ -100,7 +98,7 @@ jobs:
 
 ## <a name="use-the-azure-powershell-action"></a>使用 Azure PowerShell 操作
 
-在本例中，你需要使用 [Azure 登录操作](https://github.com/Azure/login)登录，然后使用 [Azure CLI 操作](https://github.com/azure/powershell)检索资源组。
+在此示例中，你将使用 [Azure 登录操作](https://github.com/Azure/login)进行登录，然后使用 [Azure PowerShell 操作](https://github.com/azure/powershell)检索资源组。
 
 ```yaml
 on: [push]

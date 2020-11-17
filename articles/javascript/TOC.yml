@@ -17,6 +17,22 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: 将 Express.js 与 MongoDB 配合使用
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
+        - name: 将应用部署到 Linux 虚拟机
+          items:
+            - name: 1. 简介和先决条件
+              href: tutorial/nodejs-virtual-machine-vm/introduction.md
+            - name: 2. 创建 Application Insights 资源
+              href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
+            - name: 3. 创建虚拟机
+              href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
+            - name: 4. 连接到 Linux 虚拟机
+              href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
+            - name: 5. 将云日志记录添加到应用
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
+            - name: 6. 查看日志
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
+            - name: 7. 清理资源
+              href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
         - name: 创建和部署无服务器函数
           items:
             - name: 1. 简介和先决条件

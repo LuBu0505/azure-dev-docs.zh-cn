@@ -4,12 +4,12 @@ description: Azure CLI 教程第 1 部分：简介和先决条件。
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a23a09cfdd36cd67b8fc09a1cb3bac266c2db813
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 2ff59026c3f250f3ef83982f799633094a5cd9f7
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688669"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515178"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>使用 Azure CLI 部署到 Azure 应用服务
 
@@ -20,25 +20,15 @@ ms.locfileid: "92688669"
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Node.js 和 npm 6.x 或更高版本](https://nodejs.org/en/download)，即 Node.js 包管理器。
 - [Git](https://git-scm.com/downloads)，其后命令 `git --version` 应显示版本号。
-- [Azure CLI](/cli/azure/install-azure-cli)。
-
-可以选择使用 [Visual Studio Code 的 Azure CLI 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)，在编写 Azure CLI 脚本时该扩展提供语法彩色显示、IntelliSense (完成) 和代码片段。
-
-另一种替代方法是 [Azure Cloud Shell](/azure/cloud-shell/overview)，可以使用 [Azure 帐户扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)从 Visual Studio Code 中使用它。
+[!INCLUDE [Azure CLI](~/../azure-docs/includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ### <a name="azure-subscription"></a>Azure 订阅
 
 如果你没有 Azure 订阅，请[立即注册](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-node-git&mktingSource=vscode-tutorial-node-git)一个免费使用的帐户来试用任何服务组合，并获得 200 美元的 Azure 额度。
 
-### <a name="sign-in-to-the-azure-cli"></a>登录 Azure CLI
+### <a name="sign-in-to-azure-with-azure-cli"></a>使用 Azure CLI 登录到 Azure
 
-安装 Azure CLI 后，请从终端或命令提示符运行以下命令：
-
-```azurecli
-az login
-```
-
-该命令将打开一个浏览器窗口，要求你在其中登录 Azure。 登录后，终端窗口会显示包含订阅详细信息的 JSON 输出。
+[!INCLUDE [Sign in ](../azure-cli/includes/interactive-login.md)]
 
 ## <a name="check-npm-version"></a>检查 npm 版本
 
