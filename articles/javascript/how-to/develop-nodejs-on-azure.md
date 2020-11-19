@@ -3,13 +3,13 @@ title: 通过 VS Code 和 Azure 部署容器化 Node.js 应用
 description: 演示如何创建、容器化 Node.js 应用并将其部署到 Azure 的完整端到端教程
 ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 658d25726b8cdedb8925ebaac5bdc4da66eafd0f
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437165"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872888"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
@@ -38,11 +38,11 @@ ms.locfileid: "92437165"
 
 1. 按 **F1** 显示命令面板。
 
-1. 在命令面板的提示符下输入 `gitcl`，选择“Git:  克隆”命令，然后按 **Enter** 。
+1. 在命令面板的提示符下输入 `gitcl`，选择“Git:  克隆”命令，然后按 **Enter**。
 
     ![Visual Studio Code 命令面板提示符中的 gitcl 命令](../media/node-howto-e2e/visual-studio-code-git-clone.png)
 
-1. 系统提示输入“存储库 URL”时，请输入 `https://github.com/scotch-io/node-todo`，然后按 **Enter** 。 
+1. 系统提示输入“存储库 URL”时，请输入 `https://github.com/scotch-io/node-todo`，然后按 **Enter**。 
 
 1. 选择（或创建）要将项目克隆到的本地目录。
 
@@ -54,7 +54,7 @@ ms.locfileid: "92437165"
 
 1. 按 **Ctrl**+ **`** 显示 Visual Studio Code 集成终端。 
 
-1. 输入 `yarn`，然后按 **Enter** 。  
+1. 输入 `yarn`，然后按 **Enter**。  
 
      ![在 Visual Studio Code 中运行 yarn 命令](../media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
@@ -66,7 +66,7 @@ ms.locfileid: "92437165"
 
 1. 在 Visual Studio Code 中，切换到集成式 Git 选项卡（带有 Git 徽标）。
 
-1. 在“消息”框中输入提交消息，并按 **Ctrl**+**Enter** 。 
+1. 在“消息”框中输入提交消息，并按 **Ctrl**+**Enter**。 
 
     ![将 yarn.lock 文件添加到 Git](../media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
@@ -74,19 +74,19 @@ ms.locfileid: "92437165"
 
 为了在代码库中定位，让我们演练一下 Visual Studio Code 提供的某些导航功能的一些示例。
 
-1. 按 **Ctrl**+**P** 。
+1. 按 **Ctrl**+**P**。
 
 1. 输入 `.js` 显示项目中的所有 JavaScript/JSON 文件以及每个文件的父目录 
 
     ![在 Visual Studio Code 中显示所有 .js* 文件](../media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
-1. 选择 *server.js* ，即应用的启动脚本。
+1. 选择 *server.js*，即应用的启动脚本。
 
 1. 将鼠标悬停在 **database** 变量（在第 6 行导入）上，以查看其类型。 在开发项目期间，可以使用这种在文件中快速检查变量/模块/类型的功能。 
 
     ![通过悬停帮助发现 Visual Studio Code 中的类型](../media/node-howto-e2e/visual-studio-code-hover-help.png)
 
-1. 在变量（例如 **database** ）的范围中单击鼠标可查看同一文件中对该变量的所有引用。 若要在项目中查看对某个变量的所有引用，请右键单击该变量，并从上下文菜单中选择“查找所有引用”。 
+1. 在变量（例如 **database**）的范围中单击鼠标可查看同一文件中对该变量的所有引用。 若要在项目中查看对某个变量的所有引用，请右键单击该变量，并从上下文菜单中选择“查找所有引用”。 
 
     ![使用 Visual Studio Code 查找所有引用](../media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
@@ -132,7 +132,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 ## <a name="running-the-app"></a>运行应用
 
-稍微了解代码之后，便可以开始运行应用了。 若要从 Visual Studio Code 运行应用，请按 **F5** 。 通过 **F5** （调试模式）运行代码时，Visual Studio Code 会启动应用并显示“调试控制台”窗口，其中显示了应用的 stdout。 
+稍微了解代码之后，便可以开始运行应用了。 若要从 Visual Studio Code 运行应用，请按 **F5**。 通过 **F5**（调试模式）运行代码时，Visual Studio Code 会启动应用并显示“调试控制台”窗口，其中显示了应用的 stdout。 
 
 ![通过调试控制台监视应用的 stdout](../media/node-howto-e2e/visual-studio-code-debug-console.png)
 
@@ -140,7 +140,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 ![在调试控制台中键入代码](../media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
-之所以能够按 **F5** 运行应用，是因为当前打开的文件是 JavaScript 文件 ( *server.js* )。 因此，Visual Studio Code 假设项目是 Node.js 应用。 如果在 Visual Studio Code 中关闭所有 JavaScript 文件，再按 **F5** ，则 Visual Studio Code 会向你询问环境：
+之所以能够按 **F5** 运行应用，是因为当前打开的文件是 JavaScript 文件 (*server.js*)。 因此，Visual Studio Code 假设项目是 Node.js 应用。 如果在 Visual Studio Code 中关闭所有 JavaScript 文件，再按 **F5**，则 Visual Studio Code 会向你询问环境：
 
 ![指定运行时环境](../media/node-howto-e2e/visual-studio-code-select-environment.png)
 
@@ -206,7 +206,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 }
 ```
 
-请注意，Visual Studio Code 能够检测到应用的启动脚本为 *server.js* 。
+请注意，Visual Studio Code 能够检测到应用的启动脚本为 *server.js*。
 
 打开 *launch.json* 文件后，选择“添加配置”（右下角），然后选择“Chrome:   使用 userDataDir 启动”。
 
@@ -240,13 +240,13 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 ]
 ```
 
-在 **compounds.configurations** 数组中指定的字符串值引用 **配置** 列表中各个条目的 **名称** 。 如果已修改这些名称，则需要在数组中进行相应的更改。 例如，切换到调试选项卡，将选定的配置更改为 **Full-Stack** （复合配置的名称），然后按 **F5** 运行该配置。
+在 **compounds.configurations** 数组中指定的字符串值引用 **配置** 列表中各个条目的 **名称**。 如果已修改这些名称，则需要在数组中进行相应的更改。 例如，切换到调试选项卡，将选定的配置更改为 **Full-Stack**（复合配置的名称），然后按 **F5** 运行该配置。
 
 ![在 Visual Studio Code 中运行配置](../media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 运行配置会启动 Node.js 应用（可在调试控制台输出中查看）和 Chrome（配置为导航到 `http://localhost:8080` 上的 Node.js 应用）。
 
-按 **Ctrl**+**P** ，然后输入（或选择） *todos.js* ，即应用前端的 Angular 主控制器。
+按 **Ctrl**+**P**，然后输入（或选择）*todos.js*，即应用前端的 Angular 主控制器。
 
 在第 11 行设置一个断点，这是要创建的新待办事项条目的入口点。
 
@@ -278,7 +278,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 Visual Studio Code 的 Docker 扩展包含一条命令，用于生成 *Dockerfile* 以及现有项目的 *docker-compose.yml* 文件。
 
-若要查看可用的 Docker 命令，请显示命令面板 ( **F1** ) 并键入 `docker`。
+若要查看可用的 Docker 命令，请显示命令面板 (**F1**) 并键入 `docker`。
 
 ![Visual Studio Code 的 Docker 扩展支持的命令 ](../media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
@@ -308,13 +308,13 @@ FROM mhart
 
 一般而言，映像越小越好，因为这样可以尽量加速应用的生成和部署，从而可以更快地完成分发和缩放。
 
-生成 *Dockerfile* 后，需要生成实际的 Docker 映像。 同样，可以使用 Docker 扩展在 Visual Studio Code 中安装的命令。 按 **F1** ，在命令面板中输入 `dockerb`，选择“Docker:  生成映像”命令。 选择刚刚生成并修改的 *Dockerfile* 。 指定包含 DockerHub 用户名的标记（例如 `lostintangent/node`）。 按 **Enter** 启动集成终端窗口，其中显示了正在生成的 Docker 映像的输出。
+生成 *Dockerfile* 后，需要生成实际的 Docker 映像。 同样，可以使用 Docker 扩展在 Visual Studio Code 中安装的命令。 按 **F1**，在命令面板中输入 `dockerb`，选择“Docker:  生成映像”命令。 选择刚刚生成并修改的 *Dockerfile*。 指定包含 DockerHub 用户名的标记（例如 `lostintangent/node`）。 按 **Enter** 启动集成终端窗口，其中显示了正在生成的 Docker 映像的输出。
 
 ![Docker 映像生成输出](../media/node-howto-e2e/docker-build-image-output.png)
 
 请注意，该命令已自动完成 `docker build` 的运行过程（这是可以选择用来提高工作效率的另一个例子）。也可以直接使用 Docker CLI。
 
-此时，若要使此映像可方便用于部署，只需将它推送到 DockerHub。 若要推送映像，请确保已在 CLI 中运行 `docker login` 并输入帐户凭据完成了 DockerHub 的身份验证。 然后，可在 Visual Studio Code 中打开命令面板，输入 `dockerpush`，并选择 `Docker: Push` 命令。 选择刚刚生成的映像标记（例如 `lostintangent/node`），按 **Enter** 。 该命令会自动调用 `docker push` 并在集成式终端中显示输出。
+此时，若要使此映像可方便用于部署，只需将它推送到 DockerHub。 若要推送映像，请确保已在 CLI 中运行 `docker login` 并输入帐户凭据完成了 DockerHub 的身份验证。 然后，可在 Visual Studio Code 中打开命令面板，输入 `dockerpush`，并选择 `Docker: Push` 命令。 选择刚刚生成的映像标记（例如 `lostintangent/node`），按 **Enter**。 该命令会自动调用 `docker push` 并在集成式终端中显示输出。
 
 ## <a name="deploying-the-app"></a>部署应用
 
@@ -417,7 +417,7 @@ az acr create -n $ACR_NAME -l westus --admin-enabled
 ```
 
 > [!NOTE]
-> 为方便阐述，本主题的示例使用了 **管理员帐户** ，但不建议对生产注册表使用该帐户。
+> 为方便阐述，本主题的示例使用了 **管理员帐户**，但不建议对生产注册表使用该帐户。
 
 `az acr create` 命令通过 `LOGIN SERVER` 列显示可用于在 Docker CLI 中进行登录的登录服务器 URL（例如 `ninademo.azurecr.io`）。 此外，该命令会生成可用于对服务器进行身份验证的管理员凭据。 若要检索这些凭据，请运行以下命令，并记下显示的用户名和密码：
 
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 ## <a name="scaling-up-and-out"></a>纵向和横向扩展
 
-在将来的某个时候，你的 Web 应用可能会变得很受欢迎，以致分配的资源（CPU 和 RAM）并不足以处理流量和操作需求的提高。 前面创建的应用服务计划 ( **B1** ) 附带一个 CPU 核心和 1.75 GB RAM，可能很容易变得过载。 **B2** 计划附带的 RAM 和 CPU 是 B1 的两倍，因此，如果发现应用即将耗尽其中的任何一项资源，可通过运行以下命令来纵向扩展底层虚拟机：
+在将来的某个时候，你的 Web 应用可能会变得很受欢迎，以致分配的资源（CPU 和 RAM）并不足以处理流量和操作需求的提高。 前面创建的应用服务计划 (**B1**) 附带一个 CPU 核心和 1.75 GB RAM，可能很容易变得过载。 **B2** 计划附带的 RAM 和 CPU 是 B1 的两倍，因此，如果发现应用即将耗尽其中的任何一项资源，可通过运行以下命令来纵向扩展底层虚拟机：
 
 ```shell
 az appservice plan update -n nina-demo-plan --sku B2

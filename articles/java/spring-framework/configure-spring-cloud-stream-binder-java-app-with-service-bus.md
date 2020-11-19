@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010006"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601249"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>如何使用适用于 Azure 服务总线的 Spring Cloud Azure Stream Binder
 
@@ -47,7 +47,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>使用 Spring Cloud Stream Binder 入门版
 
-1. 在应用的父目录中找到 pom.xml** 文件，例如：
+1. 在应用的父目录中找到 pom.xml 文件，例如：
 
     `C:\SpringBoot\servicebus\pom.xml`
 
@@ -55,7 +55,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
     `/users/example/home/servicebus/pom.xml`
 
-1. 在文本编辑器中打开 pom.xml 文件**。
+1. 在文本编辑器中打开 pom.xml 文件。
 
 1. 将以下代码块添加到 **&lt;dependencies>** 元素的下方，具体取决于使用的是服务总线队列还是服务总线主题：
 
@@ -63,32 +63,29 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-queue-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-queue;current} -->
     </dependency>
     ```
-
-    ![编辑服务总线队列的 pom.xml 文件。](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-queue.png)
 
     **服务总线主题**
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-topic-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-topic</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-topic;current} -->
     </dependency>
     ```
 
-    ![编辑服务总线主题的 pom.xml 文件。](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-topic.png)
 
 1. 保存并关闭 pom.xml 文件。
 
 ## <a name="configure-the-app-for-your-service-bus"></a>针对服务总线配置应用
 
-可以基于连接字符串或凭据文件配置应用。 本教程使用连接字符串。 有关使用凭据文件的详细信息，请参阅[适用于服务总线队列的 Spring Cloud Azure Stream Binder 代码示例](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-queue-binder-sample#credential-file-based-usage
-)和[适用于服务总线主题的 Cloud Azure Stream Binder 代码示例](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-topic-binder-sample#credential-file-based-usage)。
+可以基于连接字符串或凭据文件配置应用。 本教程使用连接字符串。 有关使用凭据文件的详细信息，请参阅[适用于服务总线队列的 Spring Cloud Azure Stream Binder 代码示例](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-servicebus-queue-binder
+)和[适用于服务总线主题的 Cloud Azure Stream Binder 代码示例](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-cloud-stream-binder-servicebus-topic)。
 
 1. 在应用的“资源”目录中找到 application.properties 文件，例如 ：
 
@@ -98,9 +95,9 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
    `/users/example/home/servicebus/src/main/resources/application.properties`
 
-1. 在文本编辑器中打开 application.properties 文件**。
+1. 在文本编辑器中打开 application.properties 文件。
 
-1. 将适当的代码追加到 application.properties** 文件的末尾，具体取决于使用的是服务总线队列还是服务总线主题。 使用[字段说明表](#fd)将示例值替换为服务总线的相应属性。
+1. 将适当的代码追加到 application.properties 文件的末尾，具体取决于使用的是服务总线队列还是服务总线主题。 使用[字段说明表](#fd)将示例值替换为服务总线的相应属性。
 
     **服务总线队列**
 
@@ -171,7 +168,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 ### <a name="create-a-new-class-for-the-source-connector"></a>为源连接器创建新类
 
-1. 使用文本编辑器，在应用的包目录中创建名为 StreamBinderSource.java** 的 Java 文件。
+1. 使用文本编辑器，在应用的包目录中创建名为 StreamBinderSource.java 的 Java 文件。
 
 1. 将以下代码添加到新文件：
 
@@ -201,11 +198,11 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     }
     ```
 
-1. 保存并关闭 StreamBinderSources.java** 文件。
+1. 保存并关闭 StreamBinderSources.java 文件。
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>为接收器连接器创建新类
 
-1. 使用文本编辑器，在应用的包目录中创建名为 StreamBinderSink.java** 的 Java 文件。
+1. 使用文本编辑器，在应用的包目录中创建名为 StreamBinderSink.java 的 Java 文件。
 
 1. 将以下代码行添加到新文件：
 
@@ -235,13 +232,13 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     }
     ```
 
-1. 保存并关闭 StreamBinderSink.java** 文件。
+1. 保存并关闭 StreamBinderSink.java 文件。
 
 ## <a name="build-and-test-your-application"></a>生成和测试应用程序
 
 1. 打开命令提示符。
 
-1. 将目录更改为 pom.xml** 文件的位置；例如：
+1. 将目录更改为 pom.xml 文件的位置；例如：
 
     `cd C:\SpringBoot\servicebus`
 
@@ -255,7 +252,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     mvn clean spring-boot:run
     ```
 
-3. 在应用程序运行后，你可以使用 curl** 对其进行测试：
+3. 在应用程序运行后，你可以使用 curl 对其进行测试：
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

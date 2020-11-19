@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 2cee5871b49574fd4e4643b206c1454404219b9b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688690"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560300"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>如何使用 Azure 事件中心创建Spring Cloud Stream Binder 应用程序
 
@@ -45,10 +45,10 @@ ms.locfileid: "92688690"
 
 1. 在“创建命名空间”页上，输入以下信息  ：
 
-   * 选择需要用于命名空间的“订阅”  。
-   * 指定是为命名空间创建新的“资源组”，还是选择现有资源组  。
-   * 输入一个唯一的 **命名空间名称** ，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 *wingtiptoys-space* 作为 **命名空间名称** ，则 URI 将为 `wingtiptoys-space.servicebus.windows.net`。
-   * 指定事件中心命名空间的“位置”。 
+   * 选择需要用于命名空间的“订阅”。
+   * 指定是为命名空间创建新的“资源组”，还是选择现有资源组。
+   * 输入一个唯一的 **命名空间名称**，该名称将成为事件中心命名空间 URI 的一部分。 例如，如果输入 *wingtiptoys-space* 作为 **命名空间名称**，则 URI 将为 `wingtiptoys-space.servicebus.windows.net`。
+   * 指定事件中心命名空间的“位置”。
    * 定价层。
    * 也可指定命名空间的“吞吐量单位”。 
    
@@ -164,7 +164,7 @@ ms.locfileid: "92688690"
 
 1. 导航到 Spring Boot 应用的 *resources* 目录，例如：
 
-   ```bash
+   ```cmd
    cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
@@ -235,7 +235,7 @@ ms.locfileid: "92688690"
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>配置 Spring Boot 应用以使用 Azure 事件中心
 
-1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
 
    *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
 
@@ -243,7 +243,7 @@ ms.locfileid: "92688690"
 
    */users/example/home/eventhubs-sample/src/main/resources/application.properties*
 
-2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性  ：
+2. 在文本编辑器中打开 application.properties 文件，添加以下行，然后将示例值替换为事件中心的相应属性：
 
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
@@ -378,7 +378,7 @@ ms.locfileid: "92688690"
 
 1. 打开命令提示符并将目录更改为 pom.xml 文件所在的文件夹位置，例如：
 
-   ```bash
+   ```cmd
     cd C:\SpringBoot\eventhubs-sample
    ```
    -或-
@@ -401,7 +401,7 @@ ms.locfileid: "92688690"
    ```
    此时会看到“hello”发布到应用程序的日志中。 例如：
 
-   ```text
+   ```output
    2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
    2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```

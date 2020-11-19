@@ -3,13 +3,13 @@ title: 教程 - 使用 Terratest 在 Azure 中测试 Terraform 模块
 description: 了解如何使用 Terratest 来测试 Terraform 模块。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.custom: devx-track-terraform
-ms.openlocfilehash: ec42182fd20ce073f727b8096d15e2a87a3c1207
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: a8e5f674e28ed3ba7265b3f97541f49f27013bdd
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401697"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872848"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>教程：使用 Terratest 在 Azure 中测试 Terraform 模块
 
@@ -23,7 +23,7 @@ ms.locfileid: "91401697"
 我们查看了所有最常用的测试性基础结构，选择了 [Terratest](https://github.com/gruntwork-io/terratest) 来测试 Terraform 模块。 Terratest 以 Go 库的形式实现。 Terratest 提供一系列适用于常见基础结构测试任务的帮助程序函数和模式，例如向特定的虚拟机发出 HTTP 请求以及通过 SSH 访问该虚拟机。 以下列表介绍使用 Terratest 时的一些主要优势：
 
 - **便于检查基础结构的帮助程序** - 需要在实际环境中验证实际基础结构时，此功能很有用。
-- **文件夹结构组织有序** - 测试用例会经过有序组织，并使用[标准的 Terraform 模块文件夹结构](https://www.terraform.io/docs/modules/create.html#standard-module-structure)。
+- **文件夹结构组织有序** - 测试用例会经过有序组织，并使用 [标准的 Terraform 模块文件夹结构](https://www.terraform.io/docs/modules/create.html#standard-module-structure)。
 - **测试用例以 Go 编写** - 使用 Terraform 的许多开发人员都是 Go 开发人员。 如果是 Go 开发人员，则不需要再学习一种编程语言就可以使用 Terratest。
 - **可扩展的基础架构** - 可以在 Terratest 的基础上扩展其他功能，包括特定于 Azure 的功能。
 

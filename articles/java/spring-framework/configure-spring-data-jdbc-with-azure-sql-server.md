@@ -2,18 +2,18 @@
 title: 将 Spring Data JDBC 用于 Azure SQL 数据库
 description: 了解如何将 Spring Data JDBC 用于 Azure SQL 数据库。
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2bfa70765c8c98b4a590b86cacb979a2ca0d95ce
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831243"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560240"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>将 Spring Data JDBC 用于 Azure SQL 数据库
 
@@ -36,6 +36,9 @@ ms.locfileid: "90831243"
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>将 Spring Boot 配置为使用 Azure SQL 数据库
 
@@ -100,3 +103,7 @@ CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), detail
 有关 Spring Data JDBC 的详细信息，请参阅 Spring 的[参考文档](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)。
 
 若要详细了解如何将 Azure 与 Java 配合使用，请参阅[面向 Java 开发人员的 Azure](../index.yml) 和[使用 Azure DevOps 和 Java](/azure/devops/)。
+
+### <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。

@@ -3,13 +3,13 @@ title: 教程 - 在 Azure 存储中存储 Terraform 状态
 description: 了解如何在 Azure 存储中存储 Terraform 状态。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.custom: devx-track-terraform
-ms.openlocfilehash: 33a49a9c6b8f62dd5f9a47f7171ba1cd3c55195b
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 7f1c200a96efa16d65a8f94bc3bc70a236f969a7
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333785"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872878"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>教程：在 Azure 存储中存储 Terraform 状态
 
@@ -59,10 +59,10 @@ echo "access_key: $ACCOUNT_KEY"
 
 Terraform 状态后端是在运行 `terraform init` 命令时配置的。 配置状态后端需要以下数据：
 
-- **storage_account_name** ：Azure 存储帐户的名称。
-- **container_name** ：blob 容器的名称。
-- **key** ：要创建的状态存储文件的名称。
-- **access_key** ：存储访问密钥。
+- **storage_account_name**：Azure 存储帐户的名称。
+- **container_name**：blob 容器的名称。
+- **key**：要创建的状态存储文件的名称。
+- **access_key**：存储访问密钥。
 
 其中每个值都可以在 Terraform 配置文件中或在命令行上指定。 建议对 `access_key` 值使用环境变量。 使用环境变量可防止将密钥写入磁盘。
 
