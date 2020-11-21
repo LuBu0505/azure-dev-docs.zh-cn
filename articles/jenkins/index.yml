@@ -11,12 +11,12 @@ metadata:
   ms.author: tarcher
   ms.date: 02/24/2020
   ms.custom: devx-track-jenkins
-  ms.openlocfilehash: 3b46fe61590cc4a3410275a37fde3c6ce2ad98eb
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: b00d65638bdc9d695a064183f3de058728164b13
+  ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88240809"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94983546"
 landingContent:
 - title: 关于 Azure 上的 Jenkins
   linkLists:
@@ -64,20 +64,12 @@ landingContent:
       url: deploy-from-github-to-aks.md
     - text: 使用蓝/绿模式部署到 AKS
       url: deploy-to-aks-using-blue-green-deployment-pattern.md
-    - text: 使用 Azure Dev Spaces 插件进行部署
-      url: azure-dev-spaces-and-aks.md
 - title: CI/CD 到应用服务
   linkLists:
   - linkListType: tutorial
     links:
     - text: 在管道作业中创建 Azure 资源
       url: deploy-to-azure-app-service-using-azure-cli.md
-    - text: 从 GitHub 部署到应用服务
-      url: deploy-from-github-to-azure-app-service.md
-  - linkListType: how-to-guide
-    links:
-    - text: 使用应用服务插件进行部署
-      url: deploy-to-azure-app-service-using-plugin.md
 - title: CI/CD 到 Azure DevOps
   linkLists:
   - linkListType: tutorial

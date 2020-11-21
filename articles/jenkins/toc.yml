@@ -31,14 +31,10 @@
               maintainContext: true
             - name: 使用蓝/绿模式部署到 AKS
               href: deploy-to-aks-using-blue-green-deployment-pattern.md
-            - name: 将 CI/CD 与 Azure Dev Spaces 配合使用
-              href: azure-dev-spaces-and-aks.md
         - name: 应用服务
           items:
             - name: 在管道作业中创建 Azure 资源
               href: deploy-to-azure-app-service-using-azure-cli.md
-            - name: 将来自 GitHub 的应用部署到应用服务
-              href: deploy-from-github-to-azure-app-service.md
         - name: 将 Jenkins 和 Azure DevOps 配合使用
           href: deploy-to-linux-vm-using-azure-devops-services.md
           maintainContext: true
@@ -53,10 +49,6 @@
         - name: CI/CD 到 Service Fabric
           href: deploy-to-service-fabric-cluster.md
           maintainContext: true
-- name: 操作说明
-  items:
-    - name: 使用应用服务插件
-      href: deploy-to-azure-app-service-using-plugin.md
 - name: 示例
   items:
     - name: 示例作业和脚本
