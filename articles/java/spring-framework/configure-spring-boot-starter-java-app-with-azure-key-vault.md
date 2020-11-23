@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9636ae27950f0ffabf6c9a433c802b3101447dab
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 10efa527f60d2dae15f84ca2c34862e5c899fa65
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192399"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560270"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>教程：在 Spring Boot 应用程序中从 Azure Key Vault 读取机密
 
@@ -236,13 +236,13 @@ az ad sp create-for-rbac --name contososp
 
 1. 浏览到 <https://start.spring.io/>。
 1. 选择此列表后面的图片中所示的选项。
-   1. **项目** ：`Maven Project`
-   1. **语言** ：`Java`
-   1. **Spring Boot** ：`2.3.3`
-   1. **组** ：`com.contoso`（你可以在此处输入任何有效的 Java 包名称。）
-   1. **项目** ：keyvault（你可以在此处输入任何有效的 Java 类名。）
-   1. **打包** ：`Jar`
-   1. **Java** ：`11`（你可以选择 8，但本教程使用 11 进行验证。）
+   1. **项目**：`Maven Project`
+   1. **语言**：`Java`
+   1. **Spring Boot**：`2.3.3`
+   1. **组**：`com.contoso`（你可以在此处输入任何有效的 Java 包名称。）
+   1. **项目**：keyvault（你可以在此处输入任何有效的 Java 类名。）
+   1. **打包**：`Jar`
+   1. **Java**：`11`（你可以选择 8，但本教程使用 11 进行验证。）
 1. 选择“添加依赖关系…”
 1. 在文本字段中，输入 `Spring Web` 并按 Ctrl+Enter。
 1. 在文本字段中，输入 `Azure Key Vault` 并按 Enter。  你的屏幕应与下图中所示类似。
@@ -646,7 +646,7 @@ Azure Spring Cloud 是一个完全托管的平台，用于在 Azure 中部署和
 
 ## <a name="next-steps"></a>后续步骤
 
-若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心。
+若要了解有关 Spring 和 Azure 的详细信息，请继续访问“Azure 上的 Spring”文档中心上的下一个主题。
 
 > [!div class="nextstepaction"]
-> [将 Spring Boot Initializer 应用配置为使用 Application Insights](configure-spring-boot-java-applicationinsights.md)
+> [如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter](configure-spring-boot-starter-java-app-with-azure-service-bus.md)

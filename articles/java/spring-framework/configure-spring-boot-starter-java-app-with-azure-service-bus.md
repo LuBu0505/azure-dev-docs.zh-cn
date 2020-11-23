@@ -4,15 +4,15 @@ description: 本文介绍如何使用 Spring JMS Starter 从 Azure 服务总线�
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192449"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560281"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
 
@@ -28,11 +28,11 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 在本文中，需要满足以下先决条件：
 
-1. 如果还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)或注册获取[免费帐户](https://azure.microsoft.com/free/)。
+1. Azure 订阅；如果没有 Azure 订阅，可激活 [MSDN 订阅者权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)或注册[免费帐户](https://azure.microsoft.com/free/)。
 
 1. 支持的 Java 开发工具包 (JDK) 8 或更高版本。 有关在 Azure 上进行开发时可供使用的 JDK 的详细信息，请参阅 <https://aka.ms/azure-jdks>。
 
-1. Apache 的 [Maven](http://maven.apache.org/) 3.2 或更高版本。
+1. [Apache Maven](http://maven.apache.org/) 3.2 或更高版本。
 
 1. 如果已有一个已配置的服务总线队列或服务总线主题，请确保服务总线命名空间满足以下要求：
 
@@ -42,17 +42,20 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 如果没有已配置的服务总线队列或服务总线主题，请使用 Azure 门户[创建服务总线队列](/azure/service-bus-messaging/service-bus-quickstart-portal)或[创建服务总线主题](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)。 确保该命名空间满足上一步中指定的要求。 另外，请记下该命名空间中的连接字符串，因为本教程的测试应用需要用到它。
 
-1. 如果没有 Spring Boot 应用程序，请[使用 Spring Initializer 创建一个 Maven  项目](https://start.spring.io/)。 请记得选择“Maven 项目”  ，然后在“依赖项”  下方，添加“Web”  依赖项。
+1. 如果没有 Spring Boot 应用程序，请使用 [Spring Initializr](https://start.spring.io/) 创建一个 Maven项目。 请记得选择“Maven 项目”  ，然后在“依赖项”  下方，添加“Web”  依赖项。
+
+   > [!NOTE]
+   > Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>使用 Azure 服务总线 JMS Starter
 
 1. 在应用的父目录中找到 pom.xml  文件，例如：
 
-    `C:\SpringBoot\servicebus\pom.xml`
+    *C:\SpringBoot\servicebus\pom.xml*
 
-    -或-
+    或
 
-    `/users/example/home/servicebus/pom.xml`
+    */users/example/home/servicebus/pom.xml*
 
 1. 在文本编辑器中打开 pom.xml 文件  。
 
@@ -62,7 +65,7 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7</version>
+        <version>2.3.5</version>
     </dependency>
     ```
 
@@ -76,13 +79,13 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 ### <a name="use-a-service-bus-queue"></a>使用服务总线队列
 
-1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
-    -或-
+    或
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. 在文本编辑器中打开 application.properties 文件  。
 
@@ -104,13 +107,13 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 ### <a name="use-service-bus-topic"></a>使用服务总线主题
 
-1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
-    -或-
+    或
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. 在文本编辑器中打开 application.properties 文件  。
 
@@ -140,11 +143,11 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 在应用的程序包目录中找到主应用程序 Java 文件，例如：
 
-    `C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java`
+    *C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java*
 
-    -或-
+    或
 
-    `/users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java`
+    */users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java*
 
 1. 在文本编辑器中打开主应用程序 Java 文件。
 
@@ -320,11 +323,15 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 打开命令提示符，然后将目录更改为 pom.xml  的位置；例如：
 
-    `cd C:\SpringBoot\servicebus`
+    ```cmd
+    cd C:\SpringBoot\servicebus 
+    ```
 
     -或-
 
-    `cd cd /users/example/home/servicebus`
+    ```bash
+    cd /users/example/home/servicebus 
+    ```
 
 1. 使用 Maven 构建 Spring Boot 应用程序，然后运行该应用程序：
 

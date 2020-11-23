@@ -3,17 +3,17 @@ title: 如何将 Spring Data Apache Cassandra API 用于 Azure Cosmos DB
 description: 了解如何将 Spring Data Apache Cassandra API 用于 Azure Cosmos DB。
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 52fbaa611f0c9367eede649dac644fd478f8855e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 7879a47bdcbc9b1a4cf41210fc9fb49ad28d8dd8
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831253"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560316"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>如何将 Spring Data Apache Cassandra API 用于 Azure Cosmos DB
 
@@ -41,25 +41,28 @@ ms.locfileid: "90831253"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 依次单击“+创建资源”、“数据库”和“Azure Cosmos DB”。   
-
-   ![创建 Azure Cosmos DB 帐户][COSMOSDB01]
+1. 依次选择“创建资源”、“开始使用”和“Azure Cosmos DB”  。
+    
+   >[!div class="mx-imgBorder"]
+   >![创建 Azure Cosmos DB 帐户][COSMOSDB01]
 
 1. 指定以下信息：
 
    - **订阅**：指定要使用的 Azure 订阅。
    - **资源组**：指定是要创建新资源组，还是选择现有资源组。
    - **帐户名**：为 Cosmos DB 帐户选择一个唯一名称；这将用来创建完全限定的域名，例如 *wingtiptoyscassandra.documents.azure.com*。
-   - **API**：对于本教程，请指定 `Cassandra`。
+   - **API**：为本教程指定 Cassandra。
    - **位置**：指定最靠近你的数据库的地理区域。
-
-   ![指定 Cosmos DB 帐户设置][COSMOSDB02]
+   
+   >[!div class="mx-imgBorder"]
+   >![指定 Cosmos DB 帐户设置][COSMOSDB02]
    
 1. 输入上述所有信息后，单击“查看 + 创建”  。
 
 1. 如果查看页面上的所有信息看起来都是正确的，则单击“创建”。 
-
-   ![查看 Cosmos DB 帐户设置][COSMOSDB03]
+   
+   >[!div class="mx-imgBorder"]
+   >![查看 Cosmos DB 帐户设置][COSMOSDB03]
 
 部署数据库需要几分钟的时间。
 
@@ -67,21 +70,26 @@ ms.locfileid: "90831253"
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”  ，然后单击你刚才创建的 Azure Cosmos DB 帐户。
+1. 选择“所有资源”，然后选择刚才创建的 Azure Cosmos DB 帐户。
 
-1. 依次单击“数据资源管理器”、“新建密钥空间”   。 为“密钥空间 ID”输入一个唯一标识符，然后单击“确定”。  
-
-   ![创建 Cosmos DB 密钥空间][COSMOSDB05]
+1. 选择“数据资源管理器”，选择向下箭头，然后选择“新建密钥空间” 。 为“密钥空间 ID”输入一个唯一标识符，然后选择“确定”。 
+    
+   >[!div class="mx-imgBorder"]
+   >选择“新建密钥”![][COSMOSDB05]
+   
+   >[!div class="mx-imgBorder"]
+   >![创建 Cosmos DB 密钥空间][COSMOSDB05-1]
 
 ### <a name="retrieve-the-connection-settings-for-your-azure-cosmos-db-account"></a>检索 Azure Cosmos DB 帐户的连接设置
 
 1. 浏览到 <https://portal.azure.com/> 上的 Azure 门户并登录。
 
-1. 单击“所有资源”  ，然后单击你刚才创建的 Azure Cosmos DB 帐户。
+1. 选择“所有资源”，然后选择刚才创建的 Azure Cosmos DB 帐户。
 
-1. 单击“连接字符串”，复制“接触点”、“端口”、“用户名”和“主要密码”字段的值；稍后需要使用这些值来配置应用程序。     
-
-   ![检索 Cosmos DB 连接设置][COSMOSDB06]
+1. 选择“连接字符串”，复制“接触点”、“端口”、“用户名”和“主要密码”字段的值；稍后需要使用这些值来配置应用程序。    
+   
+   >[!div class="mx-imgBorder"]
+   >![检索 Cosmos DB 连接设置][COSMOSDB06]
 
 ## <a name="configure-the-sample-application"></a>配置示例应用程序
 
@@ -98,21 +106,21 @@ ms.locfileid: "90831253"
 1. 在文本编辑器中打开 *application.properties* 文件，在文件中添加或配置以下行，并将示例值替换为上文中的相应值：
 
    ```yaml
-   spring.data.cassandra.contact-points=wingtiptoyscassandra.cassandra.cosmosdb.azure.com
+   spring.data.cassandra.contact-points=wingtiptoyscassandra.cassandra.cosmos.azure.com
    spring.data.cassandra.port=10350
    spring.data.cassandra.username=wingtiptoyscassandra
    spring.data.cassandra.password=********
    ```
    其中：
 
-   | 参数 | 说明 |
+   | 参数 | 描述 |
    |---|---|
-   | `spring.data.cassandra.contact-points` | 指定本文上文中所述的**接触点**。 |
-   | `spring.data.cassandra.port` | 指定本文上文中所述的**端口**。 |
-   | `spring.data.cassandra.username` | 指定本文上文中所述的**用户名**。 |
-   | `spring.data.cassandra.password` | 指定本文上文中所述的**主要密码**。 |
+   | `spring.data.cassandra.contact-points` | 指定本文上文中所述的 **接触点**。 |
+   | `spring.data.cassandra.port` | 指定本文上文中所述的 **端口**。 |
+   | `spring.data.cassandra.username` | 指定本文上文中所述的 **用户名**。 |
+   | `spring.data.cassandra.password` | 指定本文上文中所述的 **主要密码**。 |
 
-1. 保存并关闭 application.properties 文件  。
+1. 保存并关闭 application.properties 文件。
 
 ## <a name="package-and-test-the-sample-application"></a>打包并测试示例应用程序 
 
@@ -158,9 +166,13 @@ ms.locfileid: "90831253"
    [{"id":"60fa8cb0-0423-11e9-9a70-39311962166b","name":"dog","species":"canine"},{"id":"72c1c9e0-0423-11e9-9a70-39311962166b","name":"cat","species":"feline"}]
    ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，你创建了一个示例 Java 应用程序，该应用程序使用 Spring Data 通过 Azure Cosmos DB Cassandra API 存储和检索信息。
+
+## <a name="clean-up-resources"></a>清理资源
+
+如果不再需要，请使用 [Azure 门户](https://portal.azure.com/)删除本文中创建的资源，以避免产生意外的费用。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -189,6 +201,6 @@ ms.locfileid: "90831253"
 [COSMOSDB01]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-01.png
 [COSMOSDB02]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-02.png
 [COSMOSDB03]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-03.png
-[COSMOSDB04]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-04.png
 [COSMOSDB05]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05.png
+[COSMOSDB05-1]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05-1.png
 [COSMOSDB06]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-06.png
