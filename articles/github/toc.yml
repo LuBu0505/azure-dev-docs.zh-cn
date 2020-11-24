@@ -2,12 +2,19 @@
   href: index.yml
   items:
     - name: 适用于 Azure 的 GitHub Actions
-      href: github-actions.md
-    - name: 将应用从 GitHub 部署到 Azure
-      href: deploy-to-azure.md
-    - name: 适用于 GitHub Actions 的工具集成
-      href: deploy-with-visual-studio.md
-    - name: Azure DevOps 和 GitHub 集成
+      expanded: true
+      items:
+        - name: 适用于 Azure 的 GitHub Actions 简介
+          href: github-actions.md
+        - name: 从 Azure 到 GitHub 的身份验证
+          href: connect-from-azure.md
+        - name: 将应用部署到 Azure
+          href: deploy-to-azure.md
+        - name: 将数据库部署到 Azure
+          href: database-actions-deploy.md
+        - name: 管理 Azure Policy
+          href: manage-azure-policy.md
+    - name: Azure DevOps 和 GitHub
       href: integrate-azure-devops.md
-    - name: 从 Azure 连接到 GitHub
-      href: connect-from-azure.md
+    - name: Visual Studio 和 Visual Studio Code
+      href: deploy-with-visual-studio.md

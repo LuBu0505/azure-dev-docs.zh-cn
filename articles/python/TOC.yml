@@ -148,6 +148,8 @@
           href: azure-sdk-example-database.md
         - name: 预配虚拟机
           href: azure-sdk-example-virtual-machines.md
+        - name: 将 Azure 托管磁盘与 VM 一起使用
+          href: azure-sdk-samples-managed-disks.md
     - name: 配置日志记录
       href: azure-sdk-logging.md
     - name: 配置代理
