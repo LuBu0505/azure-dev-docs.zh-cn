@@ -1,15 +1,15 @@
 ---
 title: include 文件 create-storage-resource.md
 description: include 文件 create-storage-resource.md
-ms.date: 10/13/2020
+ms.date: 11/13/2020
 ms.topic: include
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-javascript, devx-track-azurecli
+ms.openlocfilehash: 19a21dbf557c31f7eeae6afdb4722bfed35c86fe
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755931"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94884666"
 ---
 在本教程的这一部分中，使用 Visual Studio 扩展创建 Azure 存储资源，然后在 Azure 门户中配置该资源。 
 
@@ -33,7 +33,7 @@ ms.locfileid: "92755931"
 
 1. 应用创建过程完成后，将显示一条通知，其中包含有关新资源的信息。 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="导航到 Azure 存储扩展。右键单击该订阅，然后选择“创建存储帐户…”。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="应用创建过程完成后，将显示一条通知，其中包含有关新资源的信息。":::
 
 ## <a name="set-storage-account-name-in-code-file"></a>在代码文件中设置存储帐户名称
 
@@ -62,7 +62,7 @@ const storageAccountName = process.env.storageresourcename || "";
     |首选路由层|Basic|
     |签名密钥|已选择 key1|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="导航到 Azure 存储扩展。右键单击该订阅，然后选择“创建存储帐户…”。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="如图所示配置 SAS 令牌。图像下方对设置进行了说明。":::
 
 1.  选择“生成 SAS 和连接字符串”。 立即复制 SAS 令牌。 你将无法列出此令牌，因此如果你没有复制它，则需要生成一个新的 SAS 令牌。 
 
@@ -71,8 +71,8 @@ const storageAccountName = process.env.storageresourcename || "";
 SAS 令牌值为部分查询字符串，并在对基于云的资源进行查询时在 URL 中使用。
 
 令牌格式取决于你用来创建它的工具： 
-* **Azure 门户** ：如果在门户中创建 SAS 令牌，该令牌将包含 `?` 作为字符串的第一个字符。
-* **Azure CLI** ：如果使用 Azure CLI 创建 SAS 令牌，则返回的值不包括 `?` 作为字符串的第一个字符。 
+* **Azure 门户**：如果在门户中创建 SAS 令牌，该令牌将包含 `?` 作为字符串的第一个字符。
+* **Azure CLI**：如果使用 Azure CLI 创建 SAS 令牌，则返回的值不包括 `?` 作为字符串的第一个字符。 
 
 1. 如果 `?` 是令牌的第一个字符，请将其删除。 该代码文件为你提供了 `?`，因此令牌中不需要它。
 
@@ -87,7 +87,7 @@ const sasToken = process.env.storagesastoken || "";
 
 为资源配置 CORS，以便客户端 React 代码可以访问你的存储帐户。 
 
-1. 仍处于 Azure 门户中时，请在“设置”部分选择“CORS” 。 
+1. 仍处于 Azure 门户中时，请在“设置”部分选择“CORS”。 
 1. 如图所示配置 CORS。 图像下方对设置进行了说明。 
 
     | 属性|“值”|
@@ -98,7 +98,7 @@ const sasToken = process.env.storagesastoken || "";
     |公开的标题|`*`|
     |最长时间|86400|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="导航到 Azure 存储扩展。右键单击该订阅，然后选择“创建存储帐户…”。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="如图所示配置 CORS。图像下方对设置进行了说明。":::
 
 1. 选择设置上面的“保存”，将其保存到资源中。 此代码无需任何更改即可使用这些 CORS 设置。 
 
@@ -114,11 +114,19 @@ SAS 令牌和存储帐户名称已在 `src/uploadToBlob.ts` 文件中设置，�
 
 1. 当终端显示 URL（如 `http://localhost:3000`）时，应用已就绪。 打开浏览器并输入该 URL。 连接到 Azure 存储 Blob 的网站应显示一个文件选择按钮和一个文件上传按钮。 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="导航到 Azure 存储扩展。右键单击该订阅，然后选择“创建存储帐户…”。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="连接到 Azure 存储 Blob 的 React 网站应显示一个文件选择按钮和一个文件上传按钮。":::
 
 1. 从 `images` 文件夹中选择要上传的映像。 对于此测试，`spring-flowers.jpg` 是一个不错的视觉对象。 然后选择“上传”！ 按钮。 
 
-    React 前端客户端代码调用 `src/uploadToBlob.ts` 以向 Azure 进行身份验证，然后创建一个存储容器（如果尚不存在），并将 blob 上传到该容器。 
+    React 前端客户端代码调用 `src/uploadToBlob.ts` 以向 Azure 进行身份验证，然后创建一个存储容器（如果尚不存在），然后将文件上传到该容器。 
+
+## <a name="troubleshooting"></a>疑难解答
+
+如果收到错误或文件未上传到容器，请检查以下各项：
+
+* 重新创建 SAS 令牌，确保令牌是在存储资源级别创建而不是在容器级别创建的。 将新令牌复制到代码中的正确位置。
+* 检查复制到代码中的令牌字符串是否在字符串开头不包含 `?`（问号）。
+* 验证存储资源的 CORS 设置。
 
 ## <a name="want-to-know-more"></a>想要了解更多信息？ 
 

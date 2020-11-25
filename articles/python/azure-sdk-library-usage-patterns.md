@@ -1,15 +1,15 @@
 ---
 title: 用于 Python 的 Azure 库的使用模式
 description: 用于 Python 的 Azure SDK 库的常见使用模式概述
-ms.date: 09/21/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764778"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601379"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>用于 Python 的 Azure 库的使用模式
 
@@ -37,9 +37,11 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>异步操作
 
-通过客户端和管理客户端对象调用的许多操作（如 [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)）会返回一个类型 `AzureOperationPoller[<type>]` 的对象，其中 `<type>` 是特定于操作的。
+通过客户端和管理客户端对象调用的许多操作（如 [`ComputeManagementClient.virtual_machines.begin_create_or_update`](/python/api/azure-mgmt-compute/azure.mgmt.compute.v2020_06_01.operations.virtualmachinesoperations#begin-create-or-update-resource-group-name--vm-name--parameters----kwargs-) 和 [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)）会返回一个类型 `AzureOperationPoller[<type>]` 的对象，其中 `<type>` 是特定于操作的。
 
-[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) 返回类型意味着操作是异步的。 相应地，必须调用该轮询器的 `result` 方法，以等待操作的实际结果变为可用。
+这两个方法是异步的。 方法名称的差异是因版本差异所导致。 非基于 azure.core 的旧库通常使用 `create_or_update` 命名方式。 基于 azure.core 的库会将 `begin_` 前缀添加到方法名称，更明确地指示它们是异步的。 将旧代码迁移到基于 azure.core 的新库通常意味着将 `begin_` 前缀添加到方法名称中，因为大多数方法签名保持不变。
+
+在任一情况下，[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) 返回类型明确表示操作是异步的。 相应地，必须调用该轮询器的 `result` 方法，以等待操作完成并获取结果。
 
 下面的代码摘自[示例：预配和部署 web 应用](azure-sdk-example-web-app.md)，展示了使用轮询器等待结果的示例：
 

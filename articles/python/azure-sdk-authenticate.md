@@ -1,15 +1,15 @@
 ---
 title: 如何通过 Azure 服务对 Python 应用程序进行身份验证
 description: 如何使用 Azure 库获取必要的凭据对象，以使 Python 应用向 Azure 服务进行身份验证
-ms.date: 10/05/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405897"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601359"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>如何在 Azure 上对 Python 应用进行身份验证和授权
 
@@ -146,7 +146,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>将 DefaultAzureCredential 与 SDK 管理库配合使用
 
-`DefaultAzureCredential` 适用于[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表上显示的 Azure SDK 管理库的版本（即名称中带有“mgmt”的版本）。 （此外，已更新的库的 pypi 页面还包含“凭据系统进行了彻底更新和优化”这一行内容，以指示所作更改。）
+`DefaultAzureCredential` 适用于较新版本的 Azure SDK 管理库，即名称中带有“mgmt”且也显示在[使用 azure.core 的库](azure-sdk-library-package-index.md#libraries-using-azurecore)列表中的“资源管理”库。 （此外，已更新的库的 pypi 页面通常包含“凭据系统进行了彻底更新和优化”这一行内容，以指示所作更改。）
 
 例如，可将 `DefaultAzureCredential` 与 azure-mgmt-resource 的版本 15.0.0 或更高版本结合使用：
 
@@ -160,6 +160,8 @@ subscription_client = SubscriptionClient(credential)
 sub_list = subscription_client.subscriptions.list()
 print(list(sub_list))
 ```
+
+如果库尚未更新，则使用 `DefaultAzureCredential` 的代码将假定“对象没有 signed-session 特性”，如下一部分所述。
 
 ### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>“DefaultAzureCredential 对象没有 signed-session 特性”
 
@@ -303,6 +305,37 @@ print(subscription.subscription_id)
 
 ### <a name="authenticate-with-token-credentials"></a>使用令牌凭据进行身份验证
 
+可使用显式订阅、租户和客户端标识符以及客户端密码对 Azure 库进行身份验证。
+
+使用基于 azure.core 的新版 SDK 库时，请使用 [azure.identity 库中的 `ClientSecretCredential` 对象](#using-clientsecretcredential-azureidentity)。 使用旧版 SDK 库时，请使用 [azure.common 库中的 `ServicePrincipalCredentials`](#using-serviceprincipalcredentials-azurecommon)。
+
+若要将使用 `ServicePrincipalCredentials` 的现有代码迁移到较新的库版本，请将使用的类替换为 `ClientSecretCredential`，如以下部分所示。 请注意，两个构造函数的参数名称略有不同：`tenant` 变成 `tenant_id`，`secret` 变成 `client_secret`。
+
+#### <a name="using-clientsecretcredential-azureidentity"></a>使用 ClientSecretCredential (azure.identity)
+
+```python
+import os
+from azure.mgmt.resource import SubscriptionClient
+from azure.identity import ClientSecretCredential
+
+# Retrieve the IDs and secret to use with ClientSecretCredential
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
+
+credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
+
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+在此方法中（再次用于基于 azure.core 的新库），将使用从安全存储（例如 Azure Key Vault 或环境变量）中获取的凭据创建 [`ClientSecretCredential`](/python/api/azure-identity/azure.identity.clientsecretcredential) 对象。 前面的代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)中所述的环境变量。
+
+#### <a name="using-serviceprincipalcredentials-azurecommon"></a>使用 ServicePrincipalCredentials (azure.common)
+
 ```python
 import os
 from azure.mgmt.resource import SubscriptionClient
@@ -322,9 +355,11 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-在此方法中，将使用从安全存储（例如，Azure Key Vault 或环境变量）中获取的凭据创建 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) 对象。 前面的代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)中所述的环境变量。
+在此方法中（再次用于非基于 azure.core 的旧库），将使用从安全存储（例如 Azure Key Vault 或环境变量）中获取的凭据创建 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) 对象。 前面的代码假定已创建[配置本地开发环境](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)中所述的环境变量。
 
-使用此方法，可以通过为客户端对象指定 `base_url` 参数来使用 [Azure 主权或国家云](/azure/active-directory/develop/authentication-national-cloud)，而不是 Azure 公有云：
+#### <a name="use-an-azure-sovereign-national-cloud"></a>使用 Azure 主权国家云
+
+使用这些令牌凭据方法的其中一个，可以通过为客户端对象指定 `base_url` 参数来使用 [Azure 主权或国家云](/azure/active-directory/develop/authentication-national-cloud)，而不是 Azure 公有云：
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD

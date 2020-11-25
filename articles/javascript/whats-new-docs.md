@@ -2,17 +2,28 @@
 title: 'JavaScript 文档的新增内容： '
 description: 2020 年 10 月 JavaScript 文档中的新增内容
 ms.topic: conceptual
-ms.date: 10/28/2020
-ms.openlocfilehash: 1b95a18d3ea8cb5947dfd5525326d69460c3a00b
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.date: 11/13/2020
+ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405946"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601269"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript 文档：2020 年 10 月新增内容
 
 查找面向 JavaScript 和 TypeScript 开发人员的新内容和更新内容。
+
+
+## <a name="2020-november"></a>2020 年 11 月
+
+欢迎查看 2020 年 11 月以来 JavaScript 文档中的新增内容。 本文列出了 7 月份对文档进行的一些重大更改。
+
+### <a name="whats-new"></a>新增功能
+
+|名称|说明|
+|---------------------------------------|--|
+|[教程：将应用部署到 Linux 虚拟机](./tutorial/nodejs-virtual-machine-vm/introduction.md)|在本教程中，将为 Express.js 应用创建一个 Linux 虚拟机 (VM)。 VM 是使用 cloud-init 配置文件配置的，并且它包含 NGINX 以及 Express.js 应用的 GitHub 存储库。 VM 运行后，可使用 SSH 连接到 VM，将 Web 应用更改为包含跟踪日志记录，并在 Web 浏览器中查看公共 Express.js 服务器应用。|
 
 ## <a name="2020-october"></a>2020 年 10 月
 
