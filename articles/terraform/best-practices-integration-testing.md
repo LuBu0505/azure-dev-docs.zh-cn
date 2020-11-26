@@ -4,12 +4,12 @@ description: 了解集成测试，学习如何使用 Azure DevOps 为 Terraform 
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192559"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983986"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>教程：在 Azure 中为 Terraform 项目配置集成测试
 
@@ -28,11 +28,11 @@ ms.locfileid: "93192559"
 ## <a name="prerequisites"></a>必备条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 组织和项目** ：如果没有，请 [创建 Azure DevOps 组织](/azure/devops/organizations/projects/create-project)。
-- **“Terraform 构建和发布任务”扩展** ： [将“Terraform 构建/发布任务”扩展](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)安装到 Azure DevOps 组织中。
-- **向 Azure DevOps 授予访问你的 Azure 订阅的权限** ：创建一个名为 `terraform-basic-testing-azure-connection` 的 [Azure 服务连接](/azure/devops/pipelines/library/connect-to-azure)，以允许 Azure Pipelines 连接到你的 Azure 订阅
-- **安装 Terraform** ：根据你的环境， [下载并安装 Terraform](https://www.terraform.io/downloads.html)。
-- **创建测试示例的分支** ：创建 [GitHub 上的 Terraform 示例](https://github.com/Azure/terraform)的分支，并将其复制到开发/测试计算机。
+- **Azure DevOps 组织和项目**：如果没有，请 [创建 Azure DevOps 组织](/azure/devops/organizations/projects/create-project)。
+- **“Terraform 构建和发布任务”扩展**：[将“Terraform 构建/发布任务”扩展](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)安装到 Azure DevOps 组织中。
+- **向 Azure DevOps 授予访问你的 Azure 订阅的权限**：创建一个名为 `terraform-basic-testing-azure-connection` 的 [Azure 服务连接](/azure/devops/pipelines/library/connect-to-azure)，以允许 Azure Pipelines 连接到你的 Azure 订阅
+- **安装 Terraform**：根据你的环境，[下载并安装 Terraform](https://www.terraform.io/downloads.html)。
+- **创建测试示例的分支**：创建 [GitHub 上的 Terraform 示例](https://github.com/Azure/terraform)的分支，并将其复制到开发/测试计算机。
 
 ## <a name="validate-a-local-terraform-configuration"></a>验证本地 Terraform 配置
 
@@ -99,8 +99,8 @@ terraform plan
 下列工具为 Terraform 文件提供静态分析：
 
 - [Checkov](https://github.com/bridgecrewio/checkov/)
-- [Terrascan](https://github.com/cesar-rodriguez/terrascan)
-- [tfsec](https://github.com/liamg/tfsec) 
+- [Terrascan](https://github.com/accurics/terrascan)
+- [tfsec](https://github.com/tfsec/tfsec)
 - [Deepsource](https://deepsource.io/blog/release-terraform-static-analysis/) 
 
 静态分析通常作为持续集成管道的一部分执行。 这些测试不要求创建执行计划或部署。 因此，它们比其他测试运行速度更快，通常在持续集成过程中最先运行。

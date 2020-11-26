@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
-ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
+ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
+ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91882198"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96035365"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
 
@@ -116,7 +116,7 @@ ms.locfileid: "91882198"
 
 有关如何使用此起动器提供的 Azure Active Directory 功能的示例，请参阅以下文章：
 
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/>
 
 将此起动器添加到 Spring Boot 项目时，会对 *pom.xml* 文件进行以下更改：
 
@@ -237,7 +237,7 @@ ms.locfileid: "91882198"
 有关如何使用此起动器提供的 Azure 存储功能的示例，请参阅以下文章：
 
 * [如何使用适用于 Azure 存储的 Spring Boot 起动器](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-queue-operation>
 
 将此起动器添加到 Spring Boot 项目时，会对 *pom.xml* 文件进行以下更改：
 

@@ -5,14 +5,16 @@ keywords: jenkins, azure, devops, 管道, cicd, docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: eb4c12fe249b485941221d382ab0090f7aa88227
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689057"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035455"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>教程：使用 GitHub 和 Docker 创建 Jenkins 管道
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 要将应用程序开发的生成和测试阶段自动化，可以使用持续集成和部署 (CI/CD) 管道。 本教程介绍如何在 Azure VM 上创建 CI/CD 管道，包括如何：
 
@@ -77,7 +79,7 @@ az vm create --resource-group myResourceGroupJenkins \
 
 创建并配置 VM 需要几分钟的时间。
 
-若要允许 Web 流量抵达 VM，请使用 [az vm open-port](/cli/azure/vm) 为 Jenkins 流量打开端口 *8080* ，并为用于运行示例应用的 Node.js 应用打开端口 *1337* ：
+若要允许 Web 流量抵达 VM，请使用 [az vm open-port](/cli/azure/vm) 为 Jenkins 流量打开端口 *8080*，并为用于运行示例应用的 Node.js 应用打开端口 *1337*：
 
 ```azurecli-interactive 
 az vm open-port --resource-group myResourceGroupJenkins --name myVM --port 8080 --priority 1001
@@ -124,8 +126,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 现在，请打开 Web 浏览器并转到 `http://<publicIps>:8080`。 按如下所示完成初始 Jenkins 安装：
 
 - 选择“选择要安装的插件” 
-- 在顶部的文本框中搜索 *GitHub* 。 选中“GitHub”对应的框，然后选择“安装”  
-- 创建第一个管理用户。 输入用户名（例如 **admin** ），然后提供自己的安全密码。 最后，键入全名和电子邮件地址。
+- 在顶部的文本框中搜索 *GitHub*。 选中“GitHub”对应的框，然后选择“安装”  
+- 创建第一个管理用户。 输入用户名（例如 **admin**），然后提供自己的安全密码。 最后，键入全名和电子邮件地址。
 - 选择“保存并完成” 
 - 准备好 Jenkins 后，选择“开始使用 Jenkins” 
   - 如果开始使用 Jenkins 时 Web 浏览器显示空白页，请重启 Jenkins 服务。 在 SSH 会话中键入 `sudo service jenkins restart`，然后刷新 Web 浏览器。
@@ -231,7 +233,7 @@ az vm show --resource-group myResourceGroupJenkins --name myVM -d --query [publi
 
 ![运行 Node.js 应用](media/pipeline-with-github-and-docker/running-nodejs-app.png)
 
-现在，请再次在 GitHub 中编辑 *index.js* ，并提交更改。 等待几秒钟让作业在 Jenkins 中完成，并刷新 Web 浏览器查看新容器中运行的应用的更新版本，如下所示：
+现在，请再次在 GitHub 中编辑 *index.js*，并提交更改。 等待几秒钟让作业在 Jenkins 中完成，并刷新 Web 浏览器查看新容器中运行的应用的更新版本，如下所示：
 
 ![在 GitHub 中再次提交更改后运行 Node.js 应用](media/pipeline-with-github-and-docker/another-running-nodejs-app.png)
 

@@ -2,18 +2,19 @@
 title: 使用用于 Java 的 Azure 管理库进行身份验证
 description: 在用于 Java 的 Azure 管理库中使用服务主体进行身份验证
 keywords: Azure, Java, SDK, API, Maven, Gradle, 身份验证, active directory, 服务主体
-author: rloutlaw
+author: bmitchell287
+ms.author: brendm
 ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
 ms.custom: seo-java-september2019, devx-track-java
-ms.openlocfilehash: b7cf132dfe82e8c93f8b0eae0fd27dddd1de77fd
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: d4266c0089a371dd87711bfb692b5db32d9fc881
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379551"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983936"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>使用用于 Java 的 Azure 库进行身份验证
 

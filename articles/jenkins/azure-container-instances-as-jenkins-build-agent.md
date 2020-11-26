@@ -5,14 +5,16 @@ keywords: jenkins, azure, devops, 容器实例, 生成代理
 ms.topic: article
 ms.date: 08/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 20e8180ab0ac721366c2071fdfaa0882f913f945
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240899"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035435"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>教程：使用 Azure 容器实例作为 Jenkins 生成代理
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Azure 容器实例 (ACI) 提供按需、可迸发的隔离环境用于运行容器化工作负荷。 这些特性使得 ACI 成了大规模运行 Jenkins 生成作业的极佳平台。 本文逐步说明如何部署和使用一个将 ACI 预先配置为生成目标的 Jenkins 服务器。
 

@@ -5,14 +5,16 @@ keywords: jenkins, 插件, azure, devops
 ms.date: 04/25/2020
 ms.topic: article
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a8738ad8a66f85467527051f383975890fb5dcd2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d5f470c7355314b488d811f03f175379ad211c96
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240609"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035445"
 ---
 # <a name="jenkins-plug-ins-for-azure"></a>适用于 Azure 的 Jenkins 插件
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 可以通过 Jenkins 插件访问许多 Azure 服务和功能。对于针对你的 DevOps 环境进行持续集成和持续部署 (CI/CD)，这些服务提供了广泛的支持。 单击以下任何 Jenkins 插件了解有关该插件的详细信息。
 
