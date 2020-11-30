@@ -12,6 +12,8 @@
           href: deploy-to-azure.md
         - name: 将数据库部署到 Azure
           href: database-actions-deploy.md
+        - name: 使用变量替换
+          href: github-variable-substitution.md
         - name: 管理 Azure Policy
           href: manage-azure-policy.md
     - name: Azure DevOps 和 GitHub
