@@ -5,18 +5,18 @@ keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes 服务
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3652d0bc1dc418c4037296fdacc3a56384b592c3
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689101"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983706"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>教程：将 Azure Dev Spaces 用于 Azure Kubernetes 服务
 
 使用 Azure Dev Spaces，可以测试并以迭代方式开发在 Azure Kubernetes 服务 (AKS) 中运行的微服务应用程序，而无需复制或模拟依赖项。 适用于 Jenkins 的 Azure Dev Spaces 插件有助于在持续集成和交付 (CI/CD) 管道中使用 Dev Spaces。
 
-本教程还会使用 Azure 容器注册表 (ACR)。 ACR 存储映像，ACR 任务生成 Docker 和 Helm 项目。 使用 ACR 和 ACR 任务进行项目生成使你无需在 Jenkins 服务器上安装其他软件，例如 Docker。 
+本教程还会使用 Azure 容器注册表 (ACR)。 ACR 存储映像，ACR 任务生成 Docker 和 Helm 项目。 使用 ACR 和 ACR 任务进行项目生成使你无需在 Jenkins 服务器上安装其他软件，例如 Docker。
 
 在本教程中，你将完成以下任务：
 
@@ -36,9 +36,9 @@ ms.locfileid: "92689101"
 
 * 已安装 [Visual Studio Code](https://code.visualstudio.com/download) 和 [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) 扩展。
 
-* [已安装 Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)（版本 2.0.43 或更高版本）。
+* [已安装 Azure CLI](/cli/azure/install-azure-cli)（版本 2.0.43 或更高版本）。
 
-* Jenkins 主服务器。 如果还没有 Jenkins master，请在 Azure 上通过执行此[快速入门](/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)。 
+* Jenkins 服务器。 如果还没有 Jenkins，请在 Azure 上通过执行此[快速入门](/azure/jenkins/install-jenkins-solution-template)中的步骤部署 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)。 
 
 * Helm 和 kubectl 必须已安装在 Jenkins 服务器上并可供 Jenkins 帐户使用，正如本教程后面部分所述。
 

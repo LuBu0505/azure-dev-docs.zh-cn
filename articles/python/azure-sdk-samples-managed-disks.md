@@ -1,32 +1,32 @@
 ---
-title: 托管磁盘
-description: 创建、调整和更新托管磁盘。
+title: 通过适用于 Python 的 Azure 库使用 Azure 托管磁盘
+description: 使用 Azure SDK 创建、更新托管磁盘和重设其大小。
 ms.topic: conceptual
-ms.date: 10/13/2020
+ms.date: 11/18/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: e596d02aad2cbaf97ef588737bedd58c10d8093f
-ms.sourcegitcommit: acdd366aef550c0a75f2315a6a07e1a230df499f
+ms.openlocfilehash: fe2378bcb836dbfc52ad1d5d3e88f048d6ef117e
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92060195"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932411"
 ---
-# <a name="managed-disks"></a>托管磁盘
+# <a name="use-azure-managed-disks-with-the-azure-libraries-sdk-for-python"></a>通过适用于 Python 的 Azure 库 (SDK) 使用 Azure 托管磁盘
 
-Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更好的安全性和更大的规模。 它消除了磁盘的存储帐户概念，使客户能够进行缩放，而无需担心存储帐户相关的限制。 本文提供有关从 Python 使用该服务的快速简介和参考信息。
+Azure 托管磁盘提供了简化的磁盘管理、增强的可伸缩性、更好的安全性和更好的缩放性，而无需直接使用存储帐户。
 
-从开发人员的角度来看，Azure CLI 中的托管磁盘体验与其他跨平台工具中的 CLI 体验有异曲同工之处。 可使用 [azure-mgmt-compute package](/python/api/overview/azure/virtualmachines) 来管理托管磁盘。 若要通过示例了解如何使用 azure-mgmt-compute 库来预配虚拟机，请参阅[示例 - 预配虚拟机](azure-sdk-example-virtual-machines.md)。
+使用 [`azure-mgmt-compute`](/python/api/overview/azure/virtualmachines) 库来管理托管磁盘。 （若要通过示例了解如何使用 `azure-mgmt-compute` 库来预配虚拟机，请参阅[示例 - 预配虚拟机](azure-sdk-example-virtual-machines.md)。）
 
 ## <a name="standalone-managed-disks"></a>独立托管磁盘
 
-可通过多种方式轻松创建独立托管磁盘。
+可以通过以下各部分中介绍的多种方法创建独立的托管磁盘。
 
 ### <a name="create-an-empty-managed-disk"></a>创建空托管磁盘
 
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.disks.begin_create_or_update(
+poller = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -37,7 +37,7 @@ async_creation = compute_client.disks.begin_create_or_update(
         }
     }
 )
-disk_resource = async_creation.result()
+disk_resource = poller.result()
 ```
 
 ### <a name="create-a-managed-disk-from-blob-storage"></a>从 blob 存储创建托管磁盘
@@ -45,7 +45,7 @@ disk_resource = async_creation.result()
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.disks.begin_create_or_update(
+poller = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -56,7 +56,7 @@ async_creation = compute_client.disks.begin_create_or_update(
         }
     }
 )
-disk_resource = async_creation.result()
+disk_resource = poller.result()
 ```
 
 ### <a name="create-a-managed-disk-image-from-blob-storage"></a>从 blob 存储创建托管磁盘映像
@@ -64,7 +64,7 @@ disk_resource = async_creation.result()
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.images.begin_create_or_update(
+poller = compute_client.images.begin_create_or_update(
     'my_resource_group',
     'my_image_name',
     {
@@ -79,7 +79,7 @@ async_creation = compute_client.images.begin_create_or_update(
         }
     }
 )
-image_resource = async_creation.result()
+image_resource = poller.result()
 ```
 
 ### <a name="create-a-managed-disk-from-your-own-image"></a>从自己的映像创建托管磁盘
@@ -90,7 +90,7 @@ from azure.mgmt.compute.models import DiskCreateOption
 # If you don't know the id, do a 'get' like this to obtain it
 managed_disk = compute_client.disks.get(self.group_name, 'myImageDisk')
 
-async_creation = compute_client.disks.begin_create_or_update(
+poller = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -102,14 +102,14 @@ async_creation = compute_client.disks.begin_create_or_update(
     }
 )
 
-disk_resource = async_creation.result()
+disk_resource = poller.result()
 ```
 
 ## <a name="virtual-machine-with-managed-disks"></a>包含托管磁盘的虚拟机
 
-可以根据特定的磁盘映像创建包含隐式托管磁盘的虚拟机。 在不指定所有磁盘详细信息的情况下隐式创建托管磁盘简化了创建过程。 无需担心如何创建和管理存储帐户。
+可以为特定的磁盘映像创建具有隐式托管磁盘的虚拟机，这样便无需指定所有详细信息。
 
-从 Azure 中的 OS 映像创建 VM 时，会隐式创建托管磁盘。 在 `storage_profile` 参数中，`os_disk` 现在是可选的；而在过去，创建虚拟机之前必须事先创建存储帐户。
+从 Azure 中的 OS 映像创建 VM 时，会隐式创建托管磁盘。 在 `storage_profile` 参数中，`os_disk` 是可选的，并且无需在创建虚拟机之前事先创建存储帐户。
 
 ```python
 storage_profile = azure.mgmt.compute.models.StorageProfile(
@@ -122,7 +122,7 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-此 `storage_profile` 参数现在有效。 若要获取有关如何在 Python 中创建 VM（包括网络等）的完整示例，请查看完整的 [Python 中的 VM 教程](https://github.com/Azure-Samples/virtual-machines-python-manage)。
+有关如何使用适用于 Python 的 Azure 管理库创建虚拟机的完整示例，请参阅[示例 - 预配虚拟机](azure-sdk-example-virtual-machines.md)。
 
 也可以从自己的映像创建 `storage_profile`：
 
@@ -137,7 +137,7 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-可以轻松附加以前预配的托管磁盘。
+可以轻松附加以前预配的托管磁盘：
 
 ```python
 vm = compute.virtual_machines.get(
@@ -165,9 +165,9 @@ async_update.wait()
 
 ## <a name="virtual-machine-scale-sets-with-managed-disks"></a>带托管磁盘的虚拟机规模集
 
-在托管磁盘推出之前，需针对要放入规模集的所有 VM 手动创建存储帐户，然后使用列表参数 `vhd_containers` 将所有存储帐户名称提供给规模集 RestAPI。 可在[转换规模集模板来管理磁盘规模集模板](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md)一文中查看官方转换指南。
+在托管磁盘推出之前，需针对要放入规模集的所有 VM 手动创建存储帐户，然后使用列表参数 `vhd_containers` 将所有存储帐户名称提供给规模集 RestAPI。 （若要获取迁移指南，请参阅[将规模集模板转换为托管磁盘规模集模板](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md)。）
 
-现在，有了托管磁盘，不需要管理任何存储帐户。 如果熟悉虚拟机规模集 Python SDK，你会发现现在的 `storage_profile` 与创建 VM 时所用的配置文件完全相同：
+由于不需要使用 Azure 托管磁盘管理存储帐户，因此 `storage_profile` 现在可以与 VM 创建过程中使用的配置文件完全相同：
 
 ```python
 'storage_profile': {
@@ -180,7 +180,7 @@ async_update.wait()
 },
 ```
 
-完整示例：
+完整的示例如下所示：
 
 ```python
 naming_infix = "PyTestInfix"
@@ -305,3 +305,7 @@ async_snapshot_creation = self.compute_client.snapshots.begin_create_or_update(
     )
 snapshot = async_snapshot_creation.result()
 ```
+
+## <a name="see-also"></a>请参阅
+
+- [示例 - 预配虚拟机](azure-sdk-example-virtual-machines.md)

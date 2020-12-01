@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, 群集
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831543"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983976"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>教程：部署到 Service Fabric 群集
 
@@ -23,7 +23,7 @@ ms.locfileid: "90831543"
    * [在现有 Jenkins 环境中安装 Service Fabric 插件](#install-service-fabric-plugin-in-an-existing-jenkins-environment)。
 1. 设置 Jenkins 后，按照[创建和配置 Jenkins 作业](#create-and-configure-a-jenkins-job)中的步骤将 GitHub 设置为在应用程序发生更改时触发 Jenkins 并且通过生成步骤将 Jenkins 作业管道配置为从 GitHub 拉取更改并生成应用程序。 
 1. 最后，配置 Jenkins 作业生成后步骤，将应用程序部署到 Service Fabric 群集。 有两种方法可将 Jenkins 配置为将应用程序部署到群集：    
-   * 对于开发和测试环境，使用[通过群集管理终结点配置部署](#configure-deployment-using-cluster-management-endpoint)。 这是设置最简单的部署方法。
+   * 对于开发和测试环境，使用[通过群集管理终结点配置部署](#configure-deployment-using-cluster-management-endpoint)。 此方法是设置的最简单的部署方法。
    * 对于生产环境，使用[通过 Azure 凭据配置部署](#configure-deployment-using-azure-credentials)。 Microsoft 建议对生产环境使用此方法，因为借助 Azure 凭据，可以限制 Jenkins 作业对 Azure 资源的访问权限。 
 
 ## <a name="prerequisites"></a>先决条件
@@ -66,8 +66,8 @@ ms.locfileid: "90831543"
    ```
 
 1. 保留文件共享中 Jenkins 容器的状态：
-   1. 使用名称（如 `sfjenkinsstorage1`）在群集所在的**同一区域**中创建 Azure 存储帐户。
-   1. 使用名称（如 `sfjenkins`）在该存储帐户下创建一个**文件共享**。
+   1. 使用名称（如 `sfjenkinsstorage1`）在群集所在的 **同一区域** 中创建 Azure 存储帐户。
+   1. 使用名称（如 `sfjenkins`）在该存储帐户下创建一个 **文件共享**。
    1. 针对文件共享单击“连接”  ，并记下它在“从 Linux 进行连接”  下显示的值，该值应如下所示：
 
       ```sh
@@ -224,7 +224,7 @@ ms.locfileid: "90831543"
 
      以下屏幕截图显示了命令示例，这些命令用于生成[计数器服务](https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-started/tree/master/Services/CounterService)示例（其中的 Jenkins 作业名称为 `CounterServiceApplication`）。
 
-      ![Service Fabric Jenkins 生成操作](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
+      ![用于生成服务的命令示例](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
 
 1. 若要将 Jenkins 配置为在生成后操作中将应用部署到 Service Fabric 群集，需要 Jenkins 容器中群集的证书的位置。 基于 Jenkins 容器是在群集内还是群集外运行，选择以下选项之一，并记录群集证书的位置：
 

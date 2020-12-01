@@ -4,12 +4,12 @@ description: 概述了用于 Python 的 Azure 库的特性和功能，这些特�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3c1cd0deb0c1df31ef3b191a9526bc99ad01fbc1
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764693"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932381"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>使用用于 Python 的 Azure 库 (SDK)
 
@@ -27,7 +27,7 @@ ms.locfileid: "91764693"
 
 - 利用 `pip install <library_name>`，并使用 [Python SDK 包索引](azure-sdk-library-package-index.md)上的库名称，安装所需的库包。 有关更多详细信息，请参阅[安装 Azure 库](azure-sdk-install.md)。
 
-- 有不同的“管理”库和“客户端”库（有时称为“管理平面”库和“数据平面”库）。 每一组的库都有不同的用途，由不同类型的代码使用。 有关详细信息，请参阅本文后面的以下部分：
+- 有不同的“管理”库和“客户端”库（有时称为“管理平面”库和“数据平面”库） 。 每一组的库都有不同的用途，由不同类型的代码使用。 有关详细信息，请参阅本文后面的以下部分：
   - [使用管理库预配和管理 Azure 资源](#provision-and-manage-azure-resources-with-management-libraries)
   - [通过客户端库连接并使用 Azure 资源](#connect-to-and-use-azure-resources-with-client-libraries)
 
@@ -65,11 +65,37 @@ SDK 的管理（或“管理平面”）库（其名称都以 `azure-mgmt-` 开�
 
 借助管理库，可以编写配置和部署脚本，以执行可通过 [Azure 门户](https://portal.azure.com)或 [Azure CLI](/cli/azure/install-azure-cli) 执行的相同任务。 （如前文所述，Azure CLI 是用 Python 编写的，并使用管理库来实现其各种命令。）
 
-若要详细了解如何使用每个管理库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api)和 [Azure 示例](/samples/browse/?languages=python&products=azure)中找到其他代码片段。
+以下示例说明了如何使用一些主管理库：
+
+- [预配资源组](azure-sdk-example-resource-group.md)
+- [列出订阅中的资源组](azure-sdk-example-list-resource-groups.md)
+- [预配 Azure 存储](azure-sdk-example-storage.md)
+- [预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
+- [预配和查询数据库](azure-sdk-example-database.md)
+- [预配虚拟机](azure-sdk-example-virtual-machines.md)
+
+若要详细了解如何使用每个管理库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api)和 [Azure 示例](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing)中找到其他代码片段。
+
+如果要从较旧版本的管理库迁移代码，请参阅以下详细信息：
+
+- 如果使用 `ServicePrincipalCredentials` 类，请参阅[如何使用令牌凭据进行身份验证](azure-sdk-authenticate.md#authenticate-with-token-credentials)。
+- 异步 API 的名称已更改，如[库使用模式 - 异步操作](azure-sdk-library-usage-patterns.md#asynchronous-operations)中所述。 简单地说，较新的库中异步 API 的名称以 `begin_` 开头。 在大多数情况下，API 签名保持不变。
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>通过客户端库连接并使用 Azure 资源
 
 SDK 的客户端（或“数据平面”）库可帮助你编写 Python 应用程序代码，以与已预配的服务进行交互。 只有那些支持客户端 API 的服务才存在客户端库。
+
+[示例：使用 Azure 存储](azure-sdk-example-storage-use.md)一文提供了使用客户端库的基本说明。
+
+不同的 Azure 服务还提供了使用这些库的示例。 请参阅以下索引页以获取更多链接：
+
+- [应用托管](quickstarts-app-hosting.md)
+- [认知服务](quickstarts-cognitive-services.md)
+- [数据解决方案](quickstarts-data-solutions.md)
+- [标识和安全](quickstarts-identity-security.md)
+- [机器学习](quickstarts-machine-learning.md)
+- [消息传递和 IoT](quickstarts-messaging-iot.md)
+- [其他服务](quickstarts-other-services.md)
 
 若要详细了解如何使用每个客户端库，请参阅 *README.md* 或 *README.rst* 文件（位于 [SDK 的 GitHub 存储库](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)的库项目文件夹中）。 也可在[参考文档](/python/api)和 [Azure 示例](/samples/browse/?languages=python&products=azure)中找到其他代码片段。
 

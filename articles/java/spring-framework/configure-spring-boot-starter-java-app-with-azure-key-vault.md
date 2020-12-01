@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 10efa527f60d2dae15f84ca2c34862e5c899fa65
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: e075c4dbc26e0d7c09d3dfedf8d2d6da0ef731fc
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560270"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983816"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>教程：在 Spring Boot 应用程序中从 Azure Key Vault 读取机密
 
@@ -412,7 +412,7 @@ az ad sp create-for-rbac --name contososp
    mvn azure-webapp:config
    ```
 
-1. 对于 `Subscription`，请确保选择与创建的 Key Vault 相同的订阅 ID。
+1. 对于 `Subscription`，请确保选择了与创建的 Key Vault 相同的订阅 ID。
 1. 对于 `Web App`，你可以选择现有的 Web 应用，也可以选择 `<create>` 新建一个。如果选择现有的 Web 应用，将直接跳到最后的“确认”步骤。
 1. 对于 `OS`，请确保已选择 `linux`。
 1. 对于 `javaVersion`，请确保选择了 Spring Initializr 中所选的 Java 版本。  我们在上面选择了 `11`，所以在这里选择 11。

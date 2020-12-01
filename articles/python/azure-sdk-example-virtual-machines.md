@@ -4,12 +4,12 @@ description: 如何使用 Python 和 Azure SDK 管理库预配 Azure 虚拟机�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d22f403195fd3cba143d9539220ec3376a7f2509
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689244"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932431"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>示例：使用 Azure 库预配虚拟机
 
@@ -315,6 +315,7 @@ az group delete -n PythonAzureExample-VM-rg  --no-wait
 - [示例：使用 Azure 存储](azure-sdk-example-storage-use.md)
 - [示例：预配 Web 应用并部署代码](azure-sdk-example-web-app.md)
 - [示例：预配和查询数据库](azure-sdk-example-database.md)
+- [将 Azure 托管磁盘与虚拟机一起使用](azure-sdk-samples-managed-disks.md)
 
 以下资源容器使用 Python 创建虚拟机的更全面的示例：
 

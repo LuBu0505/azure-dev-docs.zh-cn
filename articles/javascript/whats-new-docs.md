@@ -3,12 +3,12 @@ title: 'JavaScript 文档的新增内容： '
 description: 2020 年 10 月 JavaScript 文档中的新增内容
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601269"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983666"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript 文档：2020 年 10 月新增内容
 
@@ -23,7 +23,14 @@ ms.locfileid: "94601269"
 
 |名称|说明|
 |---------------------------------------|--|
+|[教程：构建 React 静态 Web 应用并将其部署到 Azure](./tutorial/static-web-app/introduction.md)|在本教程中，使用 GitHub 操作构建 React 客户端应用程序并将其部署到 Azure 静态 Web 应用。<br>使用 create-react-app，可以通过认知服务计算机视觉分析图像。 当推送到特定的远程分支时，GitHub 操作便会启动，构建 React (create-react-app) 客户端并将生成的文件移动到 Azure 静态 Web 应用资源。|
 |[教程：将应用部署到 Linux 虚拟机](./tutorial/nodejs-virtual-machine-vm/introduction.md)|在本教程中，将为 Express.js 应用创建一个 Linux 虚拟机 (VM)。 VM 是使用 cloud-init 配置文件配置的，并且它包含 NGINX 以及 Express.js 应用的 GitHub 存储库。 VM 运行后，可使用 SSH 连接到 VM，将 Web 应用更改为包含跟踪日志记录，并在 Web 浏览器中查看公共 Express.js 服务器应用。|
+
+### <a name="whats-updated"></a>更新内容
+
+|名称|注释|
+|---------------------------------------|--|
+|[Learn](learn-azure-javascript.md)|针对 JavaScript 的新模块和认证。|
 
 ## <a name="2020-october"></a>2020 年 10 月
 

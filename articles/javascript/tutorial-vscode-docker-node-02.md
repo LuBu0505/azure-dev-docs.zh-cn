@@ -4,12 +4,12 @@ description: Docker 教程第 2 部分：使用容器注册表
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: eb029d8e4dc2e6eddc68e0ee9112324b38e84ffe
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 975ea12307a6b6488ba331e1075cea2ea4850dbb
+ms.sourcegitcommit: 6c112c184273d9df7b59de3caadc83c471532696
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365130"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95782997"
 ---
 # <a name="use-a-container-registry"></a>使用容器注册表
 
@@ -21,7 +21,7 @@ ms.locfileid: "91365130"
 
 ## <a name="create-an-azure-container-registry"></a>创建 Azure 容器注册表
 
-1. 在 Visual Studio Code 中选择 F1  键，打开命令面板。
+1. 在 Visual Studio Code 中，选择 F1 或 Ctrl+Shift+P 打开命令面板 。
 
 1. 在搜索框中输入“注册表”。  从结果中选择“Azure 容器注册表:  创建注册表”。
 

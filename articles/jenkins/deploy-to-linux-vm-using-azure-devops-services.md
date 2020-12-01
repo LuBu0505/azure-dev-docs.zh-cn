@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 虚拟机, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831323"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983646"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>教程：使用 Jenkins 和 Azure DevOps Services 部署到 Linux 虚拟机
 
@@ -18,7 +18,7 @@ ms.locfileid: "90831323"
 
 在本教程中，将使用 Jenkins 生成 Node.js Web 应用。 然后，使用 Azure DevOps 将其部署到
 
-包含 Linux 虚拟机 (VM) 的[部署组](/azure/devops/pipelines/release/deployment-groups/index?view=vsts)。 学习如何：
+包含 Linux 虚拟机 (VM) 的[部署组](/azure/devops/pipelines/release/deployment-groups/index)。 学习如何：
 
 > [!div class="checklist"]
 > * 获取示例应用。
@@ -38,7 +38,7 @@ ms.locfileid: "90831323"
   你可以获取[免费 Azure DevOps Services 组织](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)。
 
   > [!NOTE]
-  > 有关详细信息，请参阅[连接到 Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects?view=vsts)。
+  > 有关详细信息，请参阅[连接到 Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects)。
 
 *  部署目标需用到 Linux 虚拟机。  有关详细信息，请参阅[使用 Azure CLI 创建和管理 Linux VM](/azure/virtual-machines/linux/tutorial-manage-vm)。
 
@@ -90,12 +90,12 @@ ms.locfileid: "90831323"
  
 1.  如果尚没有 PAT，请在你的 Azure DevOps Services 组织中创建一个 PAT。 Jenkins 需要使用此信息来访问你的 Azure DevOps Services 组织。 确保存储令牌信息以用于本部分后面的步骤。
   
-    若要了解如何生成令牌，请阅读[如何为 Azure DevOps Services 创建个人访问令牌？](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)。
+    若要了解如何生成令牌，请阅读[如何为 Azure DevOps Services 创建个人访问令牌？](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)。
 2. 在“生成后操作”  选项卡中，选择“添加生成后操作”  。 选择“存档项目”  。
 3. 对于“要存档的文件”，输入 `**/*` 以包括所有文件  。
 4. 若要创建其他操作，请选择“添加生成后操作”  。
 5. 选择“在 TFS/Team Services 中触发发布”  。 输入你的 Azure DevOps Services 组织的 URI，例如 **https://{your-organization-name}.visualstudio.com**。
-6. 输入**项目**名称。
+6. 输入 **项目** 名称。
 7. 为发布管道选择一个名称。 （稍后你将在 Azure DevOps Services 中创建此发布管道。）
 8. 选择用于连接到 Azure DevOps Services 或 Azure DevOps Server 环境的凭据：
    - 如果你正在使用 Azure DevOps Services，请将“用户名”  留空。 

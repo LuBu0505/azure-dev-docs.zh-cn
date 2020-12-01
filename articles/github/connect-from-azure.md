@@ -5,22 +5,25 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 08/31/2020
+ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405746"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983626"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>使用 GitHub Actions 连接到 Azure
 
 了解如何将 [Azure 登录](https://github.com/Azure/login)与 [Azure PowerShell](https://github.com/Azure/PowerShell) 或 [Azure CLI](https://github.com/Azure/CLI) 搭配使用，以便与你的 Azure 资源进行交互。
 
-若要在 GitHub Actions 工作流中使用 Azure PowerShell 或 Azure CLI，首先需要使用 [Azure 登录](https://github.com/marketplace/actions/azure-login)操作进行登录。 借助 Azure 登录操作，可在 [Azure AD 服务主体](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)的上下文中执行工作流中的命令。
+若要在 GitHub Actions 工作流中使用 Azure PowerShell 或 Azure CLI，首先需要使用 [Azure 登录](https://github.com/marketplace/actions/azure-login)操作进行登录。
+借助 Azure 登录操作，可在 [Azure AD 服务主体](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)的上下文中执行工作流中的命令。
 
-设置登录操作后，便可以使用 Azure CLI 或 Azure PowerShell。 默认情况下，该操作使用 Azure CLI 登录，从而为 Azure CLI 设置 GitHub 操作运行程序环境。 通过使用 Azure 登录操作的 enable-AzPSSession 属性，你可以使用 Azure PowerShell。  这将使用 Azure PowerShell 模块设置 GitHub 操作运行程序环境。
+设置登录操作后，便可以使用 Azure CLI 或 Azure PowerShell。
+
+默认情况下，该操作使用 Azure CLI 登录，从而为 Azure CLI 设置 GitHub 操作运行程序环境。 可以通过 Azure 登录操作的 `enable-AzPSSession` 属性使用 Azure PowerShell。 这将使用 Azure PowerShell 模块设置 GitHub 操作运行程序环境。
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>创建一个服务主体，并将其添加到 GitHub 机密
 
@@ -39,7 +42,7 @@ ms.locfileid: "93405746"
         --identifier-uris http://localhost/$appName
     ```
 
-1. 在 Azure 门户中为你的应用[创建新服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 
+1. 在 Azure 门户中为你的应用[创建新服务主体](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)。 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \

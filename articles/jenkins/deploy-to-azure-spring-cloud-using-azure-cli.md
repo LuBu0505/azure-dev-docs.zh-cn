@@ -3,14 +3,14 @@ title: 使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 description: 了解如何使用持续集成和部署管道中的 Azure CLI 将微服务部署到 Azure Spring Cloud 服务
 keywords: jenkins, azure, devops, azure spring cloud, azure cli
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586132"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983966"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>教程：使用 Jenkins 和 Azure CLI 将应用部署到 Azure Spring Cloud
 
@@ -26,20 +26,19 @@ ms.locfileid: "91586132"
 ## <a name="prerequisites"></a>必备知识
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-
 - **Jenkins**：[在 Linux VM 上安装 Jenkins](configure-on-linux-vm.md)
-
-- **GitHub 帐户**：如果没有 GitHub 帐户，请在开始前创建一个[免费帐户](https://github.com/)。
+- **GitHub 帐户**：如果没有 GitHub 帐户，请在开始前创建一个 [免费帐户](https://github.com/)。
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>预配服务实例并启动 Java Spring 应用程序
 
 我们使用 [Piggy 指标](https://github.com/Azure-Samples/piggymetrics)作为 Microsoft 服务应用程序示例，按照[快速入门：使用 Azure CLI 启动 Java Spring 应用程序](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)中的步骤来预配服务实例并设置应用程序。 如果你已完成同一过程，则可跳到下一部分。 否则，请执行下面提供的 Azure CLI 命令。 请参阅[快速入门：使用 Azure CLI 启动 Java Spring 应用程序](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)以获取其他背景信息。
 
 本地计算机需满足与 Jenkins 生成服务器相同的先决条件。 请确保安装以下内容，以便生成并部署微服务应用程序：
-    * [Git](https://git-scm.com/)
-    * [JDK 8](/java/azure/jdk/?view=azure-java-stable)
-    * [Maven 3.0 或更高版本](https://maven.apache.org/download.cgi)
-    * [已安装 Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 2.0.67 或更高版本
+
+* [Git](https://git-scm.com/)
+* [JDK 8](/java/azure/jdk)
+* [Maven 3.0 或更高版本](https://maven.apache.org/download.cgi)
+* [已安装 Azure CLI](/cli/azure/install-azure-cli) 2.0.67 或更高版本
 
 1. 安装 Azure Spring Cloud 扩展：
 
@@ -130,7 +129,7 @@ ms.locfileid: "91586132"
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>在 Jenkins 凭据存储中添加 Azure 服务主体凭据
 
-1. 部署到 Azure 需要 Azure 服务主体。 有关详细信息，请参阅“部署到 Azure 应用服务”教程中的 [创建服务主体](deploy-from-github-to-azure-app-service.md#create-service-principal)部分。  `az ad sp create-for-rbac` 的输出如下所示：
+1. 部署到 Azure 需要 Azure 服务主体。 有关详细信息，请参阅“部署到 Azure 应用服务”教程中的[创建服务主体](deploy-from-github-to-azure-app-service.md#create-service-principal)部分。 `az ad sp create-for-rbac` 的输出如下所示：
 
     ```
     {
@@ -234,7 +233,7 @@ ms.locfileid: "91586132"
 
 1. 输入分叉存储库的 GitHub URL： **https://github.com/&lt ;your GitHub id&gt; /piggymetrics.git**
 
-1. 确保“分支说明符(空白表示‘任意’)”为 * **/Azure** 
+1. 确保“分支说明符(空白表示‘任意’)”为 */Azure
 
 1. 保留“脚本路径”  为 **Jenkinsfile**
 
@@ -256,7 +255,7 @@ ms.locfileid: "91586132"
 
 1. 在 Jenkins 中手动运行作业。 在 Jenkins 仪表板上单击作业 *Deploy-PiggyMetrics*，然后单击“立即生成”。 
 
-作业完成后，导航到**网关**应用程序的公共 IP，并验证应用程序是否已更新。 
+作业完成后，导航到 **网关** 应用程序的公共 IP，并验证应用程序是否已更新。 
 
 ![更新的 Piggy Metrics](./media/deploy-to-azure-spring-cloud-using-azure-cli/piggymetrics.png)
 

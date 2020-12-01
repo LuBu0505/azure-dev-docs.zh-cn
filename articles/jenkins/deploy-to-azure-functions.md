@@ -5,32 +5,35 @@ keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7258e3d20262e214bbe9461564210c0d84fe2e89
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240928"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035376"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>教程：使用 Jenkins 部署到 Azure Functions
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 [Azure Functions](/azure/azure-functions/) 是一个无服务器计算服务。 使用 Azure Functions 可以按需运行代码，而无需预配或管理基础结构。 本教程演示如何使用 Azure Functions 插件将 Java 函数部署到 Azure Functions。
 
 ## <a name="prerequisites"></a>先决条件
 
-- **Azure 订阅**：如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)。
-- **Jenkins 服务器**：如果未安装 Jenkins 服务器，请参阅文章[在 Azure 上创建 Jenkins 服务器](./configure-on-linux-vm.md)。
+- **Azure 订阅**：如果没有 Azure 订阅，请在开始之前创建一个 [免费帐户](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)。
+- **Jenkins 服务器**：如果未安装 Jenkins 服务器，请参阅文章 [在 Azure 上创建 Jenkins 服务器](./configure-on-linux-vm.md)。
 
-  > [!TIP]
-  > 本教程中使用的源代码位于 [Visual Studio China GitHub 存储库](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java)。
+## <a name="view-the-source-code"></a>查看源代码
+
+本教程中使用的源代码位于 [Visual Studio China GitHub 存储库](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java)。
 
 ## <a name="create-a-java-function"></a>创建 Java 函数
 
-若要使用 Java 运行时堆栈创建 Java 函数，请使用 [Azure 门户](https://portal.azure.com)或 [Azure CLI](/cli/azure/?view=azure-cli-latest)。
+若要使用 Java 运行时堆栈创建 Java 函数，请使用 [Azure 门户](https://portal.azure.com)或 [Azure CLI](/cli/azure/)。
 
 以下步骤演示如何使用 Azure CLI 创建 Java 函数：
 
-1. 创建资源组，将 &lt;resource_group>  占位符替换资源组名称。
+1. 创建资源组，将 &lt;resource_group> 占位符替换资源组名称。
 
     ```azurecli
     az group create --name <resource_group> --location eastus
@@ -84,7 +87,7 @@ ms.locfileid: "88240928"
 
 1. [登录到 GitHub 存储库获取奇数或偶数示例应用](https://github.com/VSChina/odd-or-even-function.git)。
 
-1. 在 GitHub 的右上角，选择“分叉”。 
+1. 在 GitHub 的右上角，选择“分叉”。
 
 1. 遵照提示选择 GitHub 帐户并完成分叉。
 
@@ -94,9 +97,9 @@ ms.locfileid: "88240928"
 
 1. 在 Jenkins 仪表板中，创建一个管道。
 
-1. 启用“为运行准备环境”  。
+1. 启用“为运行准备环境”。
 
-1. 在“内容属性”  中添加以下环境变量，将占位符替换为环境的相应值：
+1. 在“内容属性”中添加以下环境变量，将占位符替换为环境的相应值：
 
     ```
     AZURE_CRED_ID=<service_principal_credential_id>
@@ -104,7 +107,7 @@ ms.locfileid: "88240928"
     FUNCTION_NAME=<function_name>
     ```
     
-1. 在“管道”->“定义”部分中，选择“来自 SCM 的管道脚本”   。
+1. 在“管道”->“定义”部分中，选择“来自 SCM 的管道脚本”。
 
 1. 输入 GitHub 分叉的 URL 和要在 [JenkinsFile 示例](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile)中使用的脚本路径 ("doc/resources/jenkins/JenkinsFile")。
 
@@ -134,7 +137,7 @@ ms.locfileid: "88240928"
 
 1. 首先，通过 [Azure Functions HTTP 触发器和绑定](/azure/azure-functions/functions-bindings-http-webhook-trigger#authorization-keys)一文中的说明获取授权密钥。
 
-1. 在浏览器中，输入应用的 URL。 将占位符替换为适当的值并为 &lt;input_number>  指定数值作为 Java 函数的输入。
+1. 在浏览器中，输入应用的 URL。 将占位符替换为适当的值并为 &lt;input_number> 指定数值作为 Java 函数的输入。
 
     ```
     https://<function_app>.azurewebsites.net/api/HttpTrigger-Java?code=<authorization_key>&number=<input_number>
