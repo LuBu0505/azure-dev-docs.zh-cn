@@ -4,12 +4,12 @@ description: 了解 Terraform 如何帮助你在 Azure 上部署基础结构并�
 ms.topic: overview
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0b38c7c2d518087f7a49c0d7e4f462d7da7eaf76
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 883242a09129bbc864185786ccf99888e7d3d842
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401747"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442156"
 ---
 # <a name="terraform-with-azure"></a>Terraform 与 Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "91401747"
 
 本文介绍使用 Terraform 管理 Azure 基础结构的优点。
 
-## <a name="automate-infrastructure-management"></a>自动化基础结构管理。
+## <a name="automate-infrastructure-management"></a>自动化基础结构管理
 
 使用 Terraform 基于模板的配置文件，能够以可重复、可预测的方式定义、预配和配置 Azure 资源。 自动化基础结构有以下优点：
 

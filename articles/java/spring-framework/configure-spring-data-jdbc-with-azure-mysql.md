@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5a69307743226be661b95692d2a2681cce5b5d79
-ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
+ms.openlocfilehash: fe3cd9ba7da4458fbbf4b9f70cea22e33acec232
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200566"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441924"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>将 Spring Data JDBC 与 Azure Database for MySQL 配合使用
 
@@ -36,8 +36,6 @@ ms.locfileid: "92200566"
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-> [!NOTE]
-> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>将 Spring Boot 配置为使用 Azure Database for MySQL
 

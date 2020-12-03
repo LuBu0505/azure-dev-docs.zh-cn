@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: c1b8baa716fbe24efbf635bc5f8a17833590137a
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560281"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442140"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>如何使用适用于 Azure 服务总线 JMS 的 Spring Boot Starter
 
@@ -44,8 +44,6 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 如果没有 Spring Boot 应用程序，请使用 [Spring Initializr](https://start.spring.io/) 创建一个 Maven项目。 请记得选择“Maven 项目”  ，然后在“依赖项”  下方，添加“Web”  依赖项。
 
-   > [!NOTE]
-   > Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>使用 Azure 服务总线 JMS Starter
 

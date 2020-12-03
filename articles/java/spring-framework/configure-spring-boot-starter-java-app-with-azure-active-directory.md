@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: e21e1ada221473c3b645da24736d179b92cff07f
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 25164bb67f717acfc7aa8f12e77c1b158528c2e8
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192520"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442343"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>教程：使用适用于 Azure Active Directory 的 Spring Boot 起动器保护 Java Web 应用
 
@@ -29,7 +29,7 @@ ms.locfileid: "93192520"
 
 如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 为完成本文介绍的步骤，需要满足以下先决条件：
 
@@ -47,8 +47,6 @@ ms.locfileid: "93192520"
    >[!div class="mx-imgBorder"]
    >![指定组和项目名称，选择依赖关系][create-spring-app-01]
 
-   > [!NOTE]
-   > Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -78,7 +76,7 @@ ms.locfileid: "93192520"
    >[!div class="mx-imgBorder"]
    >![选择你的 Azure 帐户名称][create-directory-03]
 
-1. 复制 **租户 ID** ；在本教程中，稍后需使用该值来配置 *application.properties* 文件。
+1. 复制 **租户 ID**；在本教程中，稍后需使用该值来配置 *application.properties* 文件。
    
    >[!div class="mx-imgBorder"]
    >![复制租户 ID][create-directory-04]
@@ -95,7 +93,7 @@ ms.locfileid: "93192520"
    >[!div class="mx-imgBorder"]
    >![新建应用注册][create-app-registration-02]
 
-1. 当应用注册页出现时，复制你的 **应用程序 ID** 和 **租户 ID** ；在本教程中，稍后需使用这两个值来配置 *application.properties* 文件。
+1. 当应用注册页出现时，复制你的 **应用程序 ID** 和 **租户 ID**；在本教程中，稍后需使用这两个值来配置 *application.properties* 文件。
    
    >[!div class="mx-imgBorder"]
    >![复制应用注册密钥][create-app-registration-03]
@@ -152,7 +150,7 @@ ms.locfileid: "93192520"
    >[!div class="mx-imgBorder"]
    >![添加新用户帐户][create-user-01]
 
-1. 当“用户”面板显示时，输入 **用户名** 和 **名称** 。  然后选择“创建”。
+1. 当“用户”面板显示时，输入 **用户名** 和 **名称**。  然后选择“创建”。
    
    >[!div class="mx-imgBorder"]
    >![输入用户帐户信息][create-user-02]
@@ -227,7 +225,7 @@ ms.locfileid: "93192520"
 
 1. 保存并关闭 application.properties 文件。
 
-1. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如： *src/main/java/com/wingtiptoys/security/controller* 。
+1. 在应用程序的 Java 源文件夹中创建名为 *controller* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/controller*。
 
 1. 在 *controller* 文件夹中创建名为 *HelloController.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 
@@ -281,7 +279,7 @@ ms.locfileid: "93192520"
    > }
    > ```
 
-1. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如： *src/main/java/com/wingtiptoys/security/security* 。
+1. 在应用程序的 Java 源文件夹中创建名为 *security* 的文件夹，例如：*src/main/java/com/wingtiptoys/security/security*。
 
 1. 在 *security* 文件夹中创建名为 *WebSecurityConfig.java* 的新 Java 文件，并在文本编辑器中打开该文件。
 

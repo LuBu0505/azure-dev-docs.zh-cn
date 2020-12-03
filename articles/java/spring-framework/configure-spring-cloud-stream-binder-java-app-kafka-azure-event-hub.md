@@ -7,12 +7,12 @@ ms.date: 10/13/2018
 ms.service: event-hubs
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 53a50a7a32ff9e555f821d69688cc566fb7a3c62
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: 75ca8b04bd935e71b51c8d0c71eb189f89f2a512
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560388"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442089"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>如何将适用于 Apache Kafka 的 Spring Boot Starter 与 Azure 事件中心配合使用
 
@@ -28,7 +28,6 @@ ms.locfileid: "94560388"
 
 > [!NOTE]
 > * 完成本文中的步骤需要 Spring Boot 2.0 或更高版本。
-> * Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>使用 Azure 门户创建 Azure 事件中心
 
@@ -79,16 +78,15 @@ ms.locfileid: "94560388"
 
    * 使用 **Java** 生成一个 **Maven** 项目。
    * 指定一个其值大于或等于 2.0 的 **Spring Boot** 版本。
-   * 指定应用程序的“组”和“项目”名称。 
+   * 指定应用程序的“组”和“项目”名称。  
    * 添加 **Web** 依赖项。
 
       ![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
-   > 1. Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.kafka。
-   > 2. Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
+   > 1. Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.kafka    。
 
-1. 指定上面列出的选项后，请单击“生成项目”。
+1. 指定上面列出的选项后，请单击“生成项目”  。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -96,7 +94,7 @@ ms.locfileid: "94560388"
 
 ## <a name="configure-your-spring-boot-app-to-use-the-spring-cloud-kafka-stream-and-azure-event-hub-starters"></a>配置 Spring Boot 应用，以便使用 Spring Cloud Kafka Stream和 Azure Event Hub Starter
 
-1. 在应用的根目录中找到 pom.xml 文件，例如：
+1. 在应用的根目录中找到 pom.xml 文件，例如  ：
 
    *C:\SpringBoot\kafka\pom.xml*
 

@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 170d3727b661f18252edb39396739e2791101534
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601249"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441805"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>如何使用适用于 Azure 服务总线的 Spring Cloud Azure Stream Binder
 
@@ -42,20 +42,18 @@ Azure 提供了一个异步消息平台，称为 [Azure 服务总线](/azure/ser
 
 1. 如果没有 Spring Boot 应用程序，请使用 [Spring Initializr](https://start.spring.io/) 创建一个 Maven项目。 请记得选择“Maven 项目”，在“依赖项”下添加“Web”依赖项，然后选择 Java 版本 8   。
 
-    > [!NOTE]
-    > Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>使用 Spring Cloud Stream Binder 入门版
 
-1. 在应用的父目录中找到 pom.xml 文件，例如：
+1. 在应用的父目录中找到 pom.xml  文件，例如：
 
     `C:\SpringBoot\servicebus\pom.xml`
 
-    或
+    -或-
 
     `/users/example/home/servicebus/pom.xml`
 
-1. 在文本编辑器中打开 pom.xml 文件。
+1. 在文本编辑器中打开 pom.xml 文件  。
 
 1. 将以下代码块添加到 **&lt;dependencies>** 元素的下方，具体取决于使用的是服务总线队列还是服务总线主题：
 

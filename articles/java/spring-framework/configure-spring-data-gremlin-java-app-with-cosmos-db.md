@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 9a04f3eac457d22c728a11850d4a85aba88a71df
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192460"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441986"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>如何将 Spring Data Gremlin Starter 与 Azure Cosmos DB SQL API 配合使用
 
@@ -100,8 +100,7 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    >![spring-initializr][spring-initializr-01]
    
    > [!NOTE]
-   > 1. Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：`com.example.wintiptoysdata` 。
-   > 2. Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
+   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：`com.example.wintiptoysdata` 。
 
 1. 出现提示时，将项目下载到本地计算机中的路径。
 
@@ -141,11 +140,11 @@ Spring Data Gremlin Starter 为 Apache 中的 Gremlin 查询语言提供 Spring 
    | 字段              | 说明                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | `endpoint`         | 指定数据库的 Gremlin URI，此 URI 派生自前面在本快速入门中创建 Azure Cosmos DB 时指定的唯一 ID。                                                 |
-   | `port`             | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443** 。                                                                                                                                                           |
+   | `port`             | 指定 TCP/IP 端口，对于 HTTPS 通信，应是 **443**。                                                                                                                                                           |
    | `username`         | 指定前面在本快速入门中添加图形时使用的唯一数据库 ID 和图形 ID；必须使用以下语法输入这些值：“/dbs/{Database ID}/colls/{Graph ID}”   。 |
    | `password`         | 指定前面在本快速入门中复制的主要或辅助访问密钥。                                                                                                                      |
    | `sslEnabled`       | 指定是否启用 SSL。                                                                                                                                                                                           |
-   | `telemetryAllowed` | 若要启用遥测，请指定 **true** ；否则指定 **false** 。
+   | `telemetryAllowed` | 若要启用遥测，请指定 **true**；否则指定 **false**。
    | `maxContentLength` | 指定最大内容长度。                                                                                                                                                                                           |
 
 ## <a name="build-and-run-the-project"></a>生成并运行项目

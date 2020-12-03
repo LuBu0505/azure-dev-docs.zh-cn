@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 4b76368f46c7172375b6e6dbf88d99b9cc3ad7a1
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 7cdcae8f20101702e19757c270e81cafb712f8bf
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010066"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441951"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>将 Spring Data R2DBC 与 Azure Database for MySQL 配合使用
 
@@ -39,8 +39,6 @@ ms.locfileid: "92010066"
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
-> [!NOTE]
-> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>添加反应式 MySQL 驱动程序实现
 
