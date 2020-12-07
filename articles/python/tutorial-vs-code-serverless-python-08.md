@@ -1,21 +1,21 @@
 ---
-title: 步骤 8：清理 Azure Functions 中与 Python 代码配合使用的资源
+title: 步骤 8：清理 Azure Functions 中与无服务器 Python 代码配合使用的资源
 description: 教程步骤 8，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: af1ce614671d3da67725ca358a018026c76ccb5c
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137206"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441731"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:为 Azure Functions 清理 Azure 资源
 
 [上一步：添加存储绑定](tutorial-vs-code-serverless-python-07.md)
 
-本文介绍如何删除在本教程中创建的 Azure 资源。 使用 Visual Studio Code 创建的 Azure 函数应用包括可能会产生最小开销的资源。 （有关详细信息，请参阅 [Functions 定价](https://azure.microsoft.com/pricing/details/functions/)。）
+在学习本教程的过程中，使用 Visual Studio Code 创建的 Azure 函数应用包括可能会产生最小开销的资源。 （有关详细信息，请参阅 [Functions 定价](https://azure.microsoft.com/pricing/details/functions/)。）
 
 清理资源的最佳方式是删除包含本教程所用的所有单个资源的资源组。 资源包括函数应用、存储帐户和后备应用服务计划。
 

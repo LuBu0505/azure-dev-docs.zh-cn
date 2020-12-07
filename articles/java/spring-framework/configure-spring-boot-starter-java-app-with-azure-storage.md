@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 7e6437859b7b5e67edd9386d0391535dd6537ff7
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192421"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442109"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>如何使用适用于 Azure 存储的 Spring Boot 起动器
 
@@ -47,7 +47,7 @@ ms.locfileid: "93192421"
 
    * 选择“订阅”。
    * 选择“资源组”或创建新资源组。
-   * 输入独一无二的“存储帐户名称”，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为 **名称** ，则 URI 将为 *wingtiptoysstorage.core.windows.net* 。
+   * 输入独一无二的“存储帐户名称”，该名称将成为存储帐户 URI 的一部分。 例如，如果输入 **wingtiptoysstorage** 作为 **名称**，则 URI 将为 *wingtiptoysstorage.core.windows.net*。
    * 指定存储帐户的“位置”。
 1. 指定上面列出的选项后，选择“查看 + 创建”。 
 1. 查看具体细节，然后选择“创建”以创建存储帐户。
@@ -104,7 +104,7 @@ ms.locfileid: "93192421"
 1. 指定以下选项：
 
    * 生成 **Maven** 项目。
-   * 指定“Java 8”。
+   * 指定“Java 11”。
    * 指定一个其值高于或等于 2.3 的 Spring Boot 版本。
    * 指定应用程序的“组”和“项目”名称。  
    * 添加 **Spring Web** 依赖项。
@@ -112,8 +112,7 @@ ms.locfileid: "93192421"
       ![Spring Initializr 的基本选项][SI01]
 
    > [!NOTE]
-   > 1. Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.storage 。
-   > 2. Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
+   > Spring Initializr 使用“组”名称和“项目”名称创建包名称，例如：com.wingtiptoys.storage 。
 
 1. 指定上面列出的选项后，选择“生成”。
 
@@ -242,7 +241,7 @@ ms.locfileid: "93192421"
 
 以下过程将 Spring Boot 应用程序配置为使用你的 Azure 存储帐户。
 
-1. 在应用的 *resources* 目录中找到 *application.properties* ，例如：
+1. 在应用的 *resources* 目录中找到 *application.properties*，例如：
 
    `C:\SpringBoot\storage\src\main\resources\application.properties`
 

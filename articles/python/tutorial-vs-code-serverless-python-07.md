@@ -1,31 +1,31 @@
 ---
-title: 步骤 7：使用 VS Code 通过 Python 添加 Azure Functions 的存储绑定
-description: 教程步骤 7，通过在 Python 中添加绑定将消息写入 Azure 存储。
+title: 步骤 7：使用 VS Code 通过 Python 添加无服务器 Azure Functions 的存储绑定
+description: 教程步骤 7，通过在无服务器 Python 代码中添加绑定将消息写入 Azure 存储。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: c260d2b8708d770b62c9f94d651a1ba630660cab
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: aa0913f35915a4d4a97b1d0183976614509b704d
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137186"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442174"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:在 Python 中添加 Azure Functions 的存储绑定
 
 [上一步：部署另一个函数](tutorial-vs-code-serverless-python-06.md)
 
-可以为 Azure Functions 添加存储绑定。 可以通过绑定  将函数代码连接到资源（例如 Azure 存储），而无需编写任何数据访问代码。
+可以通过绑定  将函数代码连接到资源（例如 Azure 存储），而无需编写任何数据访问代码。
 
 绑定在 *function.json* 文件中定义，可以代表输入和输出。 一个函数可以使用多个输入和输出绑定，但只能使用一个触发器。 有关详细信息，请参阅 [Azure Functions 触发器和绑定的概念](/azure/azure-functions/functions-triggers-bindings)。
 
-在此部分，我们将存储绑定添加到此前在本教程中创建的 HttpExample 函数。 每次进行请求时，该函数通过此绑定将消息写入存储。 相关存储使用函数应用所使用的默认存储帐户。 但是，如果你打算大量使用存储，则需考虑创建单独的帐户。
+在此部分，我们将存储绑定添加到此前在本教程中创建的 HttpExample 函数。 每次进行请求时，该函数通过此绑定将消息写入存储。 （相关存储使用函数应用所使用的同一默认存储帐户。 但是，如果你打算大量使用存储，则需考虑创建单独的帐户。）
 
 1. 将 Azure Functions 项目的远程设置同步到 *local.settings.json* 文件中，方法是：打开命令面板，然后选择“Azure Functions:  下载远程设置”。
- 
+
     打开 *local.settings.json*，检查其中是否包含 `AzureWebJobsStorage` 的值。 该值是存储帐户的连接字符串。
 
-1. 在 `HttpExample` 文件夹中，右键单击 *function.json*，选择“添加绑定”： 
+1. 在 Azure Functions 资源管理器中的“本地项目”下，右键单击 `HttpExample` 函数并选择“添加绑定” ：
 
     ![Visual Studio Code 资源管理器中的“添加绑定”命令](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
@@ -33,8 +33,8 @@ ms.locfileid: "92137186"
 
     | Prompt | 要提供的值 |
     | --- | --- |
-    | 设置绑定方向 | out |
-    | 选择方向为 out 的绑定 | Azure Queue Storage |
+    | 选择绑定方向 | out |
+    | 选择方向为“out”的绑定 | Azure Queue Storage |
     | 用于在代码中标识此绑定的名称 | msg |
     | 要向其发送消息的队列 | outqueue |
     | 从 *local.settings.json* 中选择设置（请求存储连接） | AzureWebJobsStorage |
@@ -78,7 +78,7 @@ ms.locfileid: "92137186"
             # MODIFICATION: write the a message to the message queue, using msg.set
             msg.set(f"Request made for {name} at {datetime.datetime.now()}")
 
-            return func.HttpResponse(f"Hello {name}!")
+            return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
         else:
             return func.HttpResponse(
                  "Please pass a name on the query string or in the request body",
@@ -86,7 +86,7 @@ ms.locfileid: "92137186"
             )
     ```
 
-1. 若要在本地测试这些更改，请在 Visual Studio Code 中再次启动调试程序，方法是：按 F5 或选择“调试”   >   “启动调试”菜单命令。
+1. 要在本地测试这些更改，请在 Visual Studio Code 中再次启动调试程序，方法是按 F5 或选择“运行” > “启动调试”菜单命令 。
 
     与以前一样，“输出”窗口会显示项目中的终结点。 
 

@@ -1,39 +1,43 @@
 ---
 title: 教程：使用 VS Code 通过 Python 创建并部署无服务器 Azure Functions
-description: 教程第 1 步：为 Azure Functions 配置本地环境
+description: 教程步骤 1，为无服务器 Azure Functions 配置本地环境
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137216"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442236"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>教程：使用 Visual Studio Code 在 Python 中创建并部署无服务器 Azure Functions
 
-在本文中，我们使用 Visual Studio Code 和 Azure Functions 扩展通过 Python 创建一个无服务器 HTTP 终结点，并将连接（或“绑定”）添加到存储。
+在本文中，我们使用 Visual Studio Code 和 Azure Functions 扩展通过 Python 创建一个“无服务器”HTTP 终结点，并将连接（或“绑定”）添加到存储。 用于 Visual Studio Code 的 Azure Functions 扩展可以自动处理许多配置问题，大大简化了使用 Functions 的过程。
 
-Azure Functions 在无服务器环境中运行代码，不需预配虚拟机，也不需发布 Web 应用。 用于 Visual Studio Code 的 Azure Functions 扩展可以自动处理许多配置问题，大大简化了使用 Functions 的过程。
+Azure Functions 的无服务器环境意味着 Azure 可提供应用的终结点和公共 URL，而无需预配虚拟机、发布 Web 应用或以其他方式管理服务器和资源。 Azure 为你高效地管理所有这些资源，显著降低了托管应用程序的开销和成本。 （有关详细信息，请参阅 [Azure Functions 概述](/azure/azure-functions/functions-overview)。）
 
-如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 使用每篇文章末尾的**此页**反馈按钮。
+如果你在执行本教程中的任何步骤时遇到问题，请告知我们详情。 使用每篇文章末尾的 **此页** 反馈按钮。
 
-有关演示视频，请观看虚拟 PyCon 2020 中的<a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">使用 VS Code 生成 Azure Functions</a> (youtube.com)。 你可能还会对<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">通过 Azure Functions 轻松处理数据</a> (youtube.com) 会话感兴趣，该会话时间比较长。 
+有关演示视频，请观看虚拟 PyCon 2020 中的<a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">使用 VS Code 生成 Azure Functions</a> (youtube.com)。 你可能还会对<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">通过 Azure Functions 轻松处理数据</a> (youtube.com) 会话感兴趣，该会话时间比较长。
 
 ## <a name="configure-your-environment"></a>配置环境
 
-- 一个 [Azure 订阅](#azure-subscription)。
-- [Azure Functions Core Tools](#azure-functions-core-tools)。
-- [Visual Studio Code 与 Azure Functions 扩展](#visual-studio-code-python-and-the-azure-functions-extension)。
+- 如果没有具备有效订阅的 Azure 帐户，请[免费创建一个](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)。
 
-### <a name="azure-subscription"></a>Azure 订阅
+- 按照后续部分中的说明操作：
 
-如果你没有 Azure 订阅，请[立即注册](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)一个免费使用 30 天的帐户来试用任何服务组合，并获得 200 美元的 Azure 额度。
+  - [安装 Azure Functions Core Tools](#azure-functions-core-tools)。
 
+  - [安装 Python、Visual Studio Code 和 Azure Functions 扩展](#visual-studio-code-python-and-the-azure-functions-extension)。
+
+  - [登录到 Azure](#sign-in-to-azure)
+
+  - [验证环境](#verify-your-environment)
+ 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明安装 Azure Functions Core Tools。 忽略有关 Chocolatey 包管理器的文章中的注释，这些注释对于完成本教程而言并非必需。
+按照[使用 Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 一文中适用于你的操作系统的说明操作。 忽略有关 Chocolatey 包管理器的文章中的注释，这些注释对于完成本教程而言并非必需。
 
 安装 Node.js 时，请使用默认选项，不要选择用于自动安装必要工具的选项。  另外，请务必将 `-g` 选项与 `npm install` 命令一起使用，以使 Core Tools 可用于后续命令。
 

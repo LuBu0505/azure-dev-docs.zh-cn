@@ -1,23 +1,21 @@
 ---
-title: 步骤 4：使用 VS Code 在本地调试 Azure Functions Python 代码
-description: 教程步骤 4，在本地运行用于检查 Python 代码的 VS Code 调试程序。
+title: 步骤 4：使用 VS Code 在本地调试无服务器 Azure Functions Python 代码
+description: 教程步骤 4，在本地运行 VS Code 调试程序以检查无服务器 Python 代码。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 622453ab5de1eeeee547cf95687e2585813b7b31
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: ecd93f7b551525576123e57ed9efe55b335d4dd4
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137076"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441737"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4：在本地调试 Azure Functions Python 代码
 
 [上一步：检查代码文件](tutorial-vs-code-serverless-python-03.md)
 
-可以在 Visual Studio Code 中本地调试 Azure Functions Python 代码。
-
-1. 创建 Functions 项目时，Visual Studio Code 扩展也在 `.vscode/launch.json` 中创建启动配置，该文件包含名为“附加到 Python 含”的单个配置。 此配置意味着，若要启动项目，只需按 F5 或使用调试资源管理器：
+1. 创建 Functions 项目时，Azure Functions 扩展也在 `.vscode/launch.json` 中创建启动配置，该文件包含名为“附加到 Python 函数”的单个配置。 此配置意味着，若要启动项目，只需按 F5 或使用调试资源管理器：
 
     ![用于启动 Python 项目的调试浏览器的配置](media/tutorial-vs-code-serverless-python/configuration-to-start-a-python-project-for-debugging.png)
 
@@ -29,14 +27,14 @@ ms.locfileid: "92137076"
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
     </pre>
 
-1. 在 Visual Studio Code 的“输出”窗口中对 URL 使用 **Ctrl+单击**或 **Cmd+单击** 即可将浏览器打开到该地址，也可启动浏览器后在其中粘贴同一 URL。
+1. 在 Visual Studio Code 的“输出”窗口中对 URL 使用 **Ctrl+单击** 或 **Cmd+单击** 即可将浏览器打开到该地址，也可启动浏览器后在其中粘贴同一 URL。
 
     不管什么情况，终结点都是 `api/<function_name>`，在此示例中为 `api/HttpExample`。 但是，由于该 URL 不含名称参数，因此浏览器窗口会直接显示“请传递查询字符串或请求正文中的名称”，此名称与代码中的该路径相对应。
 
     > [!TIP]
     > 如果你无法访问该 URL 并在企业代理后运行（很可能已设置 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量），可将名为 `NO_PROXY` 的环境变量设置为 `localhost,127.0.0.1`，然后重试。
 
-1. 现在，请尝试添加一个要使用的名称参数，例如 `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`，然后浏览器窗口会显示“Hello Visual Studio Code!”消息，表示你已运行该代码路径。
+1. 现在，请尝试添加一个要使用的名称参数，例如 `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`，然后浏览器窗口会显示消息“Hello Visual Studio Code。 此 HTTP 触发函数已成功执行。”，表示你已运行该代码路径。
 
 1. 若要在 JSON 请求正文中传递名称值，可以使用 curl 之类的内联了 JSON 的工具：
 
@@ -69,7 +67,7 @@ ms.locfileid: "92137076"
 
     （若要快速了解基本的调试，请参阅 [Visual Studio Code 教程 - 配置和运行调试程序](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)。）
 
-1. 如果已在本地对函数进行详细的测试并对测试结果满意，请停止调试程序（使用“调试” > “停止调试”菜单命令，或者使用调试工具栏上的“断开连接”命令）。
+1. 如果已在本地对函数进行详细测试并对测试结果满意，请停止调试程序（使用“运行” > “停止调试”菜单命令，或者使用调试工具栏上的“断开连接”命令）  。
 
 > [!NOTE]
 > 如果遇到错误“无法验证在‘local.settings.json’中指定的‘AzureWebJobsStorage’连接”，则项目中的 local.settings.json 文件包含行 `"AzureWebJobsStorage": "UseDevelopmentStorage=true"`。 此行表明调试程序要在本地使用 Azure 存储模拟器，但模拟器没有安装。 在这种情况下，可以[安装 Azure 存储模拟器](/azure/storage/common/storage-use-emulator#get-the-storage-emulator)，[启动和初始化模拟器](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator)，然后重启调试程序。

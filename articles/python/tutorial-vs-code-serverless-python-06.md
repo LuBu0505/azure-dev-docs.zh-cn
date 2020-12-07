@@ -1,15 +1,15 @@
 ---
-title: 步骤 6：使用 VS Code 向 Azure Functions 添加另一个 Python 函数
-description: 教程步骤 6，通过添加另一个函数扩展 Azure Functions 项目。
+title: 步骤 6：使用 VS Code 向 Azure Functions 添加另一个 Python 无服务器函数
+description: 教程步骤 6，通过添加另一个无服务器函数扩展 Azure Functions 项目。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: bbf89352bbbb93a90ac6f41bea97ba0def9bf815
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 18cc5b138a46e4194c82bd0339c1566e20107347
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137096"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441712"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6：向 Azure Functions 添加另一个 Python 函数
 
@@ -23,9 +23,9 @@ ms.locfileid: "92137096"
     - 姓名：“DigitsOfPi”
     - 授权级别：匿名
 
-1. 在 Visual Studio Code 文件资源管理器中是一个使用函数名称的子文件夹，同样，其中包含名为 *\_\_init\_\_.py*、*function.json* 和 *sample.dat* 的文件。
+    Azure Functions 资源管理器中的“本地项目”部分现在显示一个 DigitsOfPi 函数。 在编辑器中，可以在函数的 \_\_init\_\_.py、function.json 和 sample.dat 文件之间切换  。
 
-1. 替换 *\_\_init\_\_.py* 的内容，使之与以下代码匹配，此代码生成的字符串包含的值为 PI，其中的位数在 URL 中指定（此代码仅使用一个 URL 参数）
+1. 替换 \_\_init\_\_.py 的内容，使之与以下代码匹配，此代码生成的字符串包含的值为 PI，其中的位数在 URL 中指定（此代码仅使用一个 URL 参数）：
 
     ```python
     import logging
@@ -102,7 +102,7 @@ ms.locfileid: "92137096"
     }
     ```
 
-1. 启动调试程序，方法是：按 F5 或选择“调试”   >   “启动调试”菜单命令。 现在，“输出”窗口会显示项目中的两个终结点： 
+1. 通过按 F5 或选择“运行” > “启动调试”菜单命令，启动本地调试程序 。 现在，“输出”窗口会显示项目中的两个终结点： 
 
     <pre>
     Http Functions:
@@ -110,11 +110,11 @@ ms.locfileid: "92137096"
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
     </pre>
 
-1. 通过浏览器或 curl 向 `http://localhost:7071/api/DigitsOfPi?digits=125` 发出一个请求，然后观察输出。 （你可能会注意到，此代码算法不是很精确，但我们将改进的任务交给你了！）完成后，停止调试程序。
+1. 通过浏览器或 curl 向 `http://localhost:7071/api/DigitsOfPi?digits=125` 发出一个请求，然后观察输出。 （你可能会注意到，此代码的算法不是很精确，但我们将改进的任务交给你！）完成后，停止调试程序。
 
 1. 使用  **Azure:Functions** 资源管理器中的“部署到函数应用”命令重新部署代码。 当系统提示时，请选择以前创建的函数应用。
 
-1. 部署完成（需要数分钟！）后，“输出”窗口会显示可以用来重复你的测试的公共终结点。 
+1. 几分钟后，部署完成，“输出”窗口显示可用于重复测试的公共终结点。
 
 > [!div class="nextstepaction"]
 > [我添加了另一个函数 - 转到步骤 7 >>>](tutorial-vs-code-serverless-python-07.md)
