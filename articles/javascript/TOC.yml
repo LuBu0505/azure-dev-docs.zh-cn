@@ -28,7 +28,7 @@
             - name: 6. 清理资源
               href: tutorial/static-web-app/clean-up-resources.md
         - name: 将映像上传到存储 Blob
-          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+          href: tutorial/browser-file-upload-azure-storage-blob.md
         - name: 添加“登录”按钮
           href: tutorial/single-page-application-azure-login-button-sdk-msal.md
         - name: 将 Express.js 与 MongoDB 配合使用
@@ -74,7 +74,7 @@
             - name: 清理资源
               href: tutorial-vscode-azure-app-service-node-05.md
         - name: 将 Deno 部署到应用服务
-          href: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
+          href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
         - name: 使用 VS Code 部署容器
           items:
             - name: 简介和先决条件
