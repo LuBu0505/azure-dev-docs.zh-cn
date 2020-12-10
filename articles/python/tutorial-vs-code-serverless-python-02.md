@@ -3,13 +3,13 @@ title: 步骤 2：使用 VS Code 创建用于 Azure Functions 的无服务器 Py
 description: 教程步骤 2，使用用于 VS Code 的 Azure Functions 扩展添加无服务器 Python 函数。
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b9805a99ff12108787a85635c308d1c5145491a6
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: ac9bf8f90399a5ad2421689104fd5a6d9772c462
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441910"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759304"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2:为 Azure Functions 创建 Python 函数
 
