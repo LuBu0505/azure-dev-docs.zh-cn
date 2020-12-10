@@ -4,12 +4,12 @@ description: 演示如何创建、容器化 Node.js 应用并将其部署到 Azu
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872888"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857815"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>通过 Visual Studio Code 和 Azure 开发和部署容器化 Node.js 应用
 
@@ -77,8 +77,6 @@ ms.locfileid: "94872888"
 1. 按 **Ctrl**+**P**。
 
 1. 输入 `.js` 显示项目中的所有 JavaScript/JSON 文件以及每个文件的父目录 
-
-    ![在 Visual Studio Code 中显示所有 .js* 文件](../media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. 选择 *server.js*，即应用的启动脚本。
 

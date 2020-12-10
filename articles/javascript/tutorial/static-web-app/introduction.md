@@ -4,12 +4,12 @@ description: 使用 GitHub 操作在本地构建 React 客户端应用程序并�
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5d70e14a9a5247f99c8b6e033af0a225b27da30b
-ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
+ms.openlocfilehash: 1a034d2746fae453019325d01f20c7073a6ce9a3
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820681"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559251"
 ---
 # <a name="1-build-and-deploy-a-static-web-app-to-azure"></a>1.构建静态 Web 应用并将其部署到 Azure
 
@@ -36,7 +36,7 @@ React (create-react-app) 提供以下功能：
 
 ## <a name="prerequisites"></a>先决条件
 
-- [安装 Azure CLI](/cli/azure/install-azure-cli)，或使用 [Azure Cloud Shell](https://shell.azure.com.)
+- [安装 Azure CLI](/cli/azure/install-azure-cli)，或使用 [Azure Cloud Shell](https://shell.azure.com)
 - [Node.js 和 npm](https://nodejs.org/en/download) - 已安装到本地计算机。
 - [Visual Studio Code](https://code.visualstudio.com/) - 已安装到本地计算机。 
     - [Azure Static Web Apps（预览版）](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) - 用于将 React 应用部署到 Azure 静态 Web 应用。

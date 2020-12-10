@@ -3,13 +3,13 @@ title: 步骤 5：使用 VS Code 通过 Python 部署无服务器 Azure Function
 description: 教程步骤 5，将 Python 无服务器函数代码部署到 Azure，学习如何在本地项目和 Azure 之间流式传输日志并同步设置。
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 294ecb106ab55c87e0191f5a0df807da89a8acee
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: bcbc7116c1c0bc0cf323d56e46471856ebc5e9ea
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759294"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5：在 Python 中部署 Azure Functions
 

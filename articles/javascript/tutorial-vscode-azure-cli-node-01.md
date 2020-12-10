@@ -4,12 +4,12 @@ description: Azure CLI 教程第 1 部分：简介和先决条件。
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fab8d3af108fb5b81f8360ec84320da5e4ca5c15
-ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
+ms.openlocfilehash: 6e16b4baacf845648f021d1bb7cbbd9080e29804
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820672"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559281"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>使用 Azure CLI 部署到 Azure 应用服务
 
@@ -20,7 +20,7 @@ ms.locfileid: "95820672"
 - 一个 [Azure 订阅](#azure-subscription)。
 - [Node.js 和 npm 6.x 或更高版本](https://nodejs.org/en/download)，即 Node.js 包管理器。
 - [Git](https://git-scm.com/downloads)，其后命令 `git --version` 应显示版本号。
-- [安装 Azure CLI](/cli/azure/install-azure-cli)，或使用 [Azure Cloud Shell](https://shell.azure.com.)
+- [安装 Azure CLI](/cli/azure/install-azure-cli)，或使用 [Azure Cloud Shell](https://shell.azure.com)
 
 ### <a name="azure-subscription"></a>Azure 订阅
 

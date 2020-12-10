@@ -4,12 +4,12 @@ description: 在本教程中，使用扩展和 JavaScript 在 Visual Studio Code
 ms.topic: tutorial
 ms.date: 11/05/2020
 ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: cba66f22c3750e33d8de04fd35e32e38fc08d744
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: ead5dffddff84a8c00f5087796e68c3d379b929d
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94338459"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759314"
 ---
 # <a name="1-create-and-deploy-azure-functions-from-visual-studio-code"></a>1.在 Visual Studio Code 中创建和部署 Azure Functions
 
@@ -28,8 +28,6 @@ ms.locfileid: "94338459"
 [!INCLUDE [Node.js version text as bullet list](../includes/environment-nodejs-bullet-list.md)]
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Azure Functions 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
-
-> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions">安装 Azure Functions 扩展</a>
 
 ## <a name="sign-in-to-azure-in-visual-studio-code"></a>在 Visual Studio Code 中登录到 Azure
 

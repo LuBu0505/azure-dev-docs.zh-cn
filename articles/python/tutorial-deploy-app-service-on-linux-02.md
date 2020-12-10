@@ -4,12 +4,12 @@ description: 教程步骤 2，设置应用程序
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95485656"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559191"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:对应用进行部署到 Azure 应用服务的准备
 
@@ -40,7 +40,7 @@ ms.locfileid: "95485656"
 
 理想情况下，部署到云的 Django 应用同样使用基于云的数据库，例如 PostgreSQL for Azure。 有关详细信息，请参阅[教程：通过 Azure 门户使用 PostgreSQL 部署 Django Web 应用](tutorial-python-postgresql-app-portal.md)。
 
-如果 Django 应用使用类似本示例的本地 SQLite 数据库，则本教程中最简单的方法是在存储库中包含 db.sqlite3 文件的预初始化且预填充的副本。 否则，需要配置生成后命令，以便在部署应用的容器中运行 Django 的 `migrate` 命令。 有关详细信息，请参阅[应用服务配置 - 自定义生成自动化](/app-service/configure-language-python#customize-build-automation)。
+如果 Django 应用使用类似本示例的本地 SQLite 数据库，则本教程中最简单的方法是在存储库中包含 db.sqlite3 文件的预初始化且预填充的副本。 否则，需要配置生成后命令，以便在部署应用的容器中运行 Django 的 `migrate` 命令。 有关详细信息，请参阅[应用服务配置 - 自定义生成自动化](/azure/app-service/configure-language-python#customize-build-automation)。
 
 ### <a name="option-3-create-a-minimal-flask-app"></a>选项 3：创建最小 Flask 应用
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
+ms.openlocfilehash: 89df7fe719cd8c8301c729bb33cb1d3632a80b0d
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96035365"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559262"
 ---
 # <a name="spring-boot-starters-for-azure"></a>适用于 Azure 的 Spring Boot 起动器
 
@@ -21,10 +21,6 @@ ms.locfileid: "96035365"
 >[!div class="mx-imgBorder"]
 ![使用 Initializr 配置 Azure Spring Boot 起动器][configure-azure-spring-boot-starters-with-initializr]
 
-> [!NOTE]
->
-> Spring Initializr 使用 Java 11 作为默认版本。 若要使用本主题中所述的 Spring Boot 起动器，必须改为选择 Java 8。
-> 
 
 以下 Spring Boot 起动器目前适用于 Azure：
 
