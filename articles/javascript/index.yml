@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: e98e1fb3e6640eb25dd5f7b69da8342028024455
-  ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+  ms.openlocfilehash: 244a4fd10fc0c3968354ec565c2f95c117ee2d8a
+  ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 12/07/2020
-  ms.locfileid: "96759414"
+  ms.lasthandoff: 12/08/2020
+  ms.locfileid: "96857865"
 landingContent:
 - title: 不熟悉 Azure？
   linkLists:
@@ -33,34 +33,36 @@ landingContent:
       url: core/node-sdk-azure-authenticate.md
     - text: Azure SDK 博客
       url: https://devblogs.microsoft.com/azure-sdk/
-- title: Hosting
+- title: 部署和托管
   linkLists:
   - linkListType: tutorial
     links:
-    - text: 前端应用
+    - text: 静态 Web 应用：React 与认知服务
       url: tutorial/static-web-app/introduction.md
-    - text: Node.js 和应用服务
+    - text: 应用服务：React 上传到存储 Blob
+      url: tutorial/browser-file-upload-azure-storage-blob.md
+    - text: 应用服务：Express.js
       url: tutorial-vscode-azure-app-service-node-01.md
-    - text: Deno 和应用服务
-      url: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
-    - text: 将应用部署到 Linux 虚拟机
-      url: tutorial/nodejs-virtual-machine-vm/introduction.md
-    - text: 容器
+    - text: 应用服务：将 Express.js 与 MongoDB 配合使用
+      url: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
+    - text: 应用服务：Express.js 容器
       url: tutorial-vscode-docker-node-01.md
-  - linkListType: how-to-guide
-    links:
-    - text: 全堆栈（无服务器 API 和前端）
-      url: how-to/create-static-site.md
-- title: 无服务器函数
+    - text: Azure Functions：HTTP 无服务器触发器
+      url: tutorial/tutorial-vscode-serverless-node-install.md
+    - text: Azure 虚拟机：NGINX/Express.js 容器
+      url: tutorial/nodejs-virtual-machine-vm/introduction.md
+- title: Azure SDK 客户端库教程
   linkLists:
   - linkListType: tutorial
     links:
-    - text: 开发和部署
-      url: tutorial/tutorial-vscode-serverless-node-install.md
-  - linkListType: how-to-guide
-    links:
-    - text: 编写无服务器代码
-      url: how-to/develop-serverless-apps.md
+    - text: 静态 Web 应用：使用计算机视觉分析图像
+      url: /tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-code-as-separate-module
+    - text: 静态 Web 应用：将文件上传到存储 Blob
+      url: tutorial/browser-file-upload-azure-storage-blob.md#upload-button-functionality
+    - text: 静态 Web 应用：“登录/注销”按钮
+      url: tutorial/single-page-application-azure-login-button-sdk-msal.md#5-add-login-and-logoff-buttons
+    - text: Express.js：添加 Application Insights 日志记录
+      url: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md#edit-indexjs-for-logging-with-azure-monitor-application-insights
 - title: 数据
   linkLists:
   - linkListType: quickstart
