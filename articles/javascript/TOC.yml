@@ -64,17 +64,7 @@
             - name: '服务器:Express.js/MongoDB'
               href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
             - name: '服务器:使用 VS Code 部署 Express.js'
-              items:
-                - name: 简介和先决条件
-                  href: tutorial-vscode-azure-app-service-node-01.md
-                - name: 创建应用
-                  href: tutorial-vscode-azure-app-service-node-02.md
-                - name: 部署网站
-                  href: tutorial-vscode-azure-app-service-node-03.md
-                - name: 流式传输日志
-                  href: tutorial-vscode-azure-app-service-node-04.md
-                - name: 清理资源
-                  href: tutorial-vscode-azure-app-service-node-05.md
+              href: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
             - name: '服务器:使用 Azure CLI 进行部署'
               items:
                 - name: 简介和先决条件
