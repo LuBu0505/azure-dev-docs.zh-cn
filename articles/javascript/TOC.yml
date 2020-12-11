@@ -131,6 +131,8 @@
       href: learn-azure-javascript.md
     - name: 操作指南
       items:
+        - name: 配置应用程序
+          href: how-to/configure-web-app-settings.md
         - name: 将端到端 Node.js 与 VS Code 配合使用
           href: how-to/develop-nodejs-on-azure.md
         - name: 部署 Web 应用
