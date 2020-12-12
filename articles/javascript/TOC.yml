@@ -5,6 +5,8 @@
       href: whats-new-docs.md
     - name: 开始在 Azure 上使用 JavaScript
       items:
+        - name: 安装 Node.js
+          href: core/install-nodejs-develop-azure-sdk-project.md
         - name: 面向 JavaScript 开发人员的 Azure 工具
           href: node-azure-tools.md
         - name: 设置开发环境
@@ -138,31 +140,7 @@
         - name: 日志记录和指标
           href: how-to/node-sdk-logging.md
     - name: 示例
-      items:
-        - name: Web 应用与无服务器
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-functions%252cazure-app-service%252cazure-logic-apps
-        - name: 数据库
-          items:
-            - name: Cosmos DB
-              href: /samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db
-            - name: SQL DB
-              href: /samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database
-            - name: Mongo DB
-              href: /samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB
-        - name: 存储
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-storage
-        - name: 标识与安全性
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-active-directory%252cazure-key-vault
-        - name: IoT
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-iot-hub%252cazure-iot-edge%252cazure-iot-central
-        - name: 微服务
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-event-grid
-        - name: AI 与认知服务
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-cognitive-services
-        - name: 搜索
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-search
-        - name: 所有示例
-          href: /samples/browse/?languages=javascript%252cnodejs
+      href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
     - name: npm 包
       href: azure-sdk-library-package-index.md
     - name: npm 包文档
