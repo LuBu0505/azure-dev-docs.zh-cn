@@ -8,18 +8,18 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 927f20601ded9a0ea6b2793ef1b0c8e1b5e6ac19
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400615"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857765"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>通过用于 Java 的 Azure SDK 配置日志记录
 
 本文提供适用于 Java 的 [Azure SDK](https://azure.microsoft.com/downloads/) 的示例日志记录配置。 有关配置选项的更多详细信息（例如设置日志级别或按类列出自定义日志记录），请参阅所选记录框架的文档。
 
-适用于 Java 的 Azure SDK 客户端库使用[适用于 Java 的简单日志门面](https://www.slf4j.org/) (SLF4J)。 通过 SLF4J，你可使用首选的记录框架，该框架在应用程序部署时调用。
+适用于 Java 的 Azure SDK 客户端库使用[适用于 Java 的简单日志门面](https://www.slf4j.org/) (SLF4J)。 通过 SLF4J，你可使用首选的记录框架，该框架在应用程序部署时调用。 如果客户端生成器提供了设置 [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable) 的功能，则还必须指定 [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) 以及任何允许的标头和查询参数，以便输出任何日志。
 
 > [!NOTE]
 > 本文适用于最新版本的 Azure SDK 客户端库。 若要查看库是否受支持，请参阅 [Azure SDK 最新版本](https://azure.github.io/azure-sdk/releases/latest/java.html)列表。 如果应用程序使用旧版 Azure SDK 客户端库，请参阅适用服务文档中的具体说明。
@@ -249,6 +249,20 @@ logging.config=classpath:logback.xml
 |信息|info、information、informational  |
 |WARNING     |warn、warning       |
 |ERROR    |err、error  |
+
+## <a name="setting-an-httplogdetaillevel"></a>设置 HttpLogDetailLevel
+无论使用哪种日志记录机制，如果客户端生成器提供了设置 [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable) 的功能，则还必须额外配置这些选项以输出任何日志。 必须指定 [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) 以指示应记录哪些信息。  此值默认为 `NONE`，因此，如果未指定，即使正确配置了日志记录框架或回退日志记录，也不会输出任何日志。 出于安全原因，系统会默认修正标头和查询参数，因此还必须为日志选项提供一个 `Set<String>`，以指示哪些标头和查询参数可以安全地打印。 可按下面所示配置这些值。 日志记录设置为同时打印正文内容和标头值，除用户指定的与键 `"foo"` 相对应的元数据的值外，所有标头值都将被修正，并且除 sas 令牌查询参数 `"sv"`（指示可能存在的任何 sas 的已签名版本）外，所有查询参数都将被修正。 
+
+```
+new BlobClientBuilder().endpoint(<endpoint>)
+            .httpLogOptions(new HttpLogOptions()
+                .setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS)
+                .setAllowedHeaderNames(Set.of("x-ms-meta-foo"))
+                .setAllowedQueryParamNames(Set.of("sv")))
+            .buildClient();
+```
+> [!NOTE]
+> 此示例使用存储客户端生成器，但此原则适用于任何接受 `HttpLogOptions` 的生成器。 此外，此示例不会演示客户端的完整配置，仅会说明日志记录的配置。 有关配置客户端的详细信息，请参阅各自生成器的相关文档。
 
 ## <a name="next-steps"></a>后续步骤
 

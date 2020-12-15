@@ -3,17 +3,24 @@ title: 'JavaScript 文档的新增内容： '
 description: 2020 年 10 月 JavaScript 文档中的新增内容
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: f54af7f5f89b38cc32191fc2acd4f32e386c29fb
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759284"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript 文档：2020 年 10 月新增内容
 
 查找面向 JavaScript 和 TypeScript 开发人员的新内容和更新内容。
 
+## <a name="2020-december"></a>2020 年 12 月
+
+### <a name="whats-new"></a>新增功能
+
+|名称|说明|
+|---------------------------------------|--|
+|[教程：将登录按钮添加到用于 Microsoft 身份验证的 React Static Web 应用](./tutorial/single-page-application-azure-login-button-sdk-msal.md)|本教程中介绍的 Azure 身份验证是一个登录和注销按钮，可用于访问用户帐户。 使用 Azure 客户端 SDK `@azure/msal-browser` 开发应用程序，以在单页应用程序 (SPA) 中管理用户的交互。|
 
 ## <a name="2020-november"></a>2020 年 11 月
 
@@ -40,8 +47,8 @@ ms.locfileid: "94983666"
 
 |名称|说明|
 |---------------------------------------|--|
-|[教程：将映像上传到 Blob 存储](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|在本教程中，使用 React 应用将文件上传到 Azure 存储 Blob 。 已为你完成编程工作，本教程重点介绍如何借助 Azure 扩展从 Visual Studio Code 内部成功使用本地和远程 Azure 环境。|
-|[教程：在 Visual Studio Code 中将 Node.js MongoDB 应用部署到应用服务](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|在本教程中，通过 MongoDB 本机 API 将 Express Node.js 应用和 MongoDB 数据库配合使用 。 将 Node.js 应用程序部署到 Azure 应用服务（在 Linux 上），然后验证基于云的应用是否正常运行。 已为你完成编程工作，本教程重点介绍如何借助 Azure 扩展从 Visual Studio Code 内部成功使用本地和远程 Azure 环境。|
+|[教程：将映像上传到 Blob 存储](./tutorial/browser-file-upload-azure-storage-blob.md)|在本教程中，使用 React 应用将文件上传到 Azure 存储 Blob 。 已为你完成编程工作，本教程重点介绍如何借助 Azure 扩展从 Visual Studio Code 内部成功使用本地和远程 Azure 环境。|
+|[教程：在 Visual Studio Code 中将 Node.j 和数据库应用部署到应用服务](./tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)|在本教程中，通过 MongoDB 本机 API 将 Express.js Node.js 应用和 MongoDB 数据库配合使用 。 将 Node.js 应用程序部署到 Azure 应用服务（在 Linux 上），然后验证基于云的应用是否正常运行。 我们已为你完成编程工作，本教程重点介绍如何借助 Azure 扩展从 Visual Studio Code 内部创建 Azure 资源并将其部署到 Azure。|
 
 ### <a name="whats-updated"></a>更新内容
 
