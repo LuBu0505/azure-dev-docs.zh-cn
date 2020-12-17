@@ -4,12 +4,12 @@ description: Azure CLI 教程第 6 部分：进行更改并重新部署
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a087bb948c33df43e0cc25afce0f308c6d97fbd7
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3333a805a6ce05742220a6d507dfe25bcc13431b
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689117"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522376"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>第 6 部分：进行更改并重新部署
 
@@ -32,7 +32,7 @@ ms.locfileid: "92689117"
 1. 将更改推送到我们之前创建的名为 Azure 的 Git remote：
 
     ```bash
-    git push azure master
+    git push azure <DEFAULT-BRANCH-NAME>
     ```
 
 1. 由于应用服务已连接到 Git 存储库，该命令的输出显示更改已自动发布到 Azure： 
@@ -57,8 +57,7 @@ ms.locfileid: "92689117"
     remote: Using start-up script bin/www from package.json.
     remote: Generated web.config.
     remote: The package.json file does not specify node.js engine version constraints.
-    remote: The node.js application will run with the default node.js version 6.9.5.
-    remote: Selected npm version 3.10.10
+    remote: The node.js application will run with the 
     remote: ..
     remote: Finished successfully.
     remote: Running post deployment command(s)...

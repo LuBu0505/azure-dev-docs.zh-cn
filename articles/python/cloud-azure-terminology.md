@@ -4,12 +4,12 @@ description: 使用 Microsoft Azure 时，需要了解的最重要的术语和�
 ms.date: 12/07/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0be44d246af0f34b60b9ca1403f1889cc5708e9c
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: f79864b39bb70c7ae703468f205e420417698200
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934283"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97521978"
 ---
 # <a name="azure-terminology-in-brief"></a>Azure 术语概述
 
@@ -73,7 +73,7 @@ Azure 帐户包含基本联系信息（电话号码、电子邮件地址）和�
 
 ## <a name="azure-command-line-interface-cli"></a>Azure 命令行接口 (CLI)
 
-[Azure CLI](/azure/what-is-azure-cli) 是一组用来创建和管理 Azure 资源的命令，这对自动化特别有用。 Azure CLI 可在所有操作系统上使用，并且可在大多数 Azure 服务中运行。
+[Azure CLI](/cli/azure/what-is-azure-cli) 是一组用来创建和管理 Azure 资源的命令，这对自动化特别有用。 Azure CLI 可在所有操作系统上使用，并且可在大多数 Azure 服务中运行。
 
 如果你更愿意使用 PowerShell，可使用 [Azure PowerShell 模块](/powershell/azure)。
 

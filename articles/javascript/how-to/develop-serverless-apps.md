@@ -3,13 +3,13 @@ title: 使用 Azure Functions 的无服务器 Node.js 代码
 description: Azure Functions 提供无服务器代码基础结构，使你能够创建响应式按需 HTTP 终结点。
 ms.topic: how-to
 ms.date: 10/27/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: eb33717761d492051737b0c4ec86a93a6e2b6256
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
+ms.openlocfilehash: b90837cdb144e433a7d776e571291ff09610a845
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192539"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522307"
 ---
 # <a name="use-azure-functions-to-develop-nodejs-serverless-code"></a>使用 Azure Functions 开发 Node.js 无服务器代码
 

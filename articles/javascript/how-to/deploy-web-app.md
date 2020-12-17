@@ -3,13 +3,13 @@ title: 将 JavaScript 应用部署到 Azure
 description: 托管选项和部署方案包括多个用于 Azure 的服务和工具。 在 Azure 上发布应用并为其提供服务。
 ms.topic: how-to
 ms.date: 12/09/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: 27a923313f7ccbb3f3a4deff368cd6ff8b5121dc
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
+ms.openlocfilehash: 9f9f28204abf8537aeda933083ca5802210b6c20
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933300"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522327"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>在 Azure 上部署和托管 Node.js 应用
 

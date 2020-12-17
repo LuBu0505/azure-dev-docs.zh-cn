@@ -3,13 +3,13 @@ title: 创建和部署 JavaScript Functions
 description: 在本教程中，使用扩展和 JavaScript 在 Visual Studio Code 中新建无服务器应用，然后将该应用程序部署到 Azure 云以使用公共 HTTP 终结点进行托管。
 ms.topic: tutorial
 ms.date: 11/05/2020
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: ead5dffddff84a8c00f5087796e68c3d379b929d
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: dba446d20b8300ea97b5186b2d4cc3a3006e8811
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759314"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522360"
 ---
 # <a name="1-create-and-deploy-azure-functions-from-visual-studio-code"></a>1.在 Visual Studio Code 中创建和部署 Azure Functions
 

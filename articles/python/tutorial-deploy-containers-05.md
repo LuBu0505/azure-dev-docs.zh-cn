@@ -2,14 +2,14 @@
 title: 步骤 5：清理 Azure 资源
 description: 教程步骤 5，清理 Azure 资源，避免持续产生费用。
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 12/09/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 9140f5b695fe4b20e1e9417fe1d5e6ad115bb4eb
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 61fba3abfbc6cf8f382704b91bf684448ffeafef
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831413"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522070"
 ---
 # <a name="5-clean-up-azure-resources"></a>5：清理 Azure 资源
 

@@ -9,18 +9,16 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c98e9194d7c9b391206104f249f1356351938d32
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: 7c34254cbe45fdb6e60f9f1a30ab409f72c2aee4
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442290"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034538"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>在 Azure 上使用 Java 开始云开发
 
 本文逐步讲解如何针对使用 Java 的 Azure 开发设置开发环境。 然后，创建一些 Azure 资源并连接到它们，以执行一些基本任务，例如，上传文件或部署 Web 应用程序。 完成本指南后，便可以在自己的 Java 应用程序中开始使用 Azure 服务。
-
-[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="prerequisites"></a>先决条件
 

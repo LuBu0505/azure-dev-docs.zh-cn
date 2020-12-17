@@ -2,14 +2,14 @@
 title: 步骤 4：将日志从用于容器的 Azure 应用服务流式传递到 Visual Studio Code 中
 description: 教程第 4 部分，查看 Azure 应用服务中的日志以监视其行为。
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 12/09/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 47316324010d5a74568bb55be508128917702780
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: b4e380fa556f6cc806205e8fb446545328e35976
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772640"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522025"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4：从用于容器的 Azure 应用服务流式传输日志
 
