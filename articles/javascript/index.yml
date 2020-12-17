@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 8c624baedef4ff4131691cb9f36dd58e30b39022
-  ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+  ms.openlocfilehash: c0e7382b6c04c20d65f41c1a5a41922a4b658de4
+  ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 12/15/2020
-  ms.locfileid: "97522240"
+  ms.lasthandoff: 12/16/2020
+  ms.locfileid: "97601068"
 landingContent:
 - title: 不熟悉 Azure？
   linkLists:
@@ -46,7 +46,7 @@ landingContent:
     - text: 应用服务：将 Express.js 与 MongoDB 配合使用
       url: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
     - text: 应用服务：Express.js 容器
-      url: tutorial-vscode-docker-node-01.md
+      url: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
     - text: Azure Functions：HTTP 无服务器触发器
       url: tutorial/tutorial-vscode-serverless-node-install.md
     - text: Azure 虚拟机：NGINX/Express.js 容器

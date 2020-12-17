@@ -49,6 +49,10 @@
           href: create-vm-scaleset-network-disks-hcl.md
         - name: 从 Packer 映像创建虚拟机规模集
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: 安全性
+      items:
+        - name: Azure 证明
+          href: create-attestation-provider.md
 - name: 教程
   items:
     - name: 网络
