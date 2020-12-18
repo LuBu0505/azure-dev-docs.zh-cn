@@ -17,6 +17,8 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: 向 Azure 进行身份验证
           href: core/node-sdk-azure-authenticate.md
+        - name: 使用 Azure CLI 进行自动化操作
+          href: core/automate-tasks-with-azure-cli.md
     - name: 教程
       items:
         - name: 部署和托管
@@ -42,17 +44,17 @@
             - name: 客户端应用：从 Azure 存储托管
               items:
                 - name: 简介和先决条件
-                  href: tutorial-vscode-static-website-node-01.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md
                 - name: 创建应用代码
-                  href: tutorial-vscode-static-website-node-02.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md
                 - name: 创建存储帐户
-                  href: tutorial-vscode-static-website-node-03.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-03.md
                 - name: 部署到 Azure 存储
-                  href: tutorial-vscode-static-website-node-04.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-04.md
                 - name: 进行更改并重新部署
-                  href: tutorial-vscode-static-website-node-05.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-05.md
                 - name: 清理资源
-                  href: tutorial-vscode-static-website-node-06.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-06.md
             - name: 无服务器：创建和部署
               items:
                 - name: 1. 简介和先决条件
@@ -72,39 +74,39 @@
             - name: '服务器:使用 Azure CLI 进行部署'
               items:
                 - name: 简介和先决条件
-                  href: tutorial-vscode-azure-cli-node-01.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-01.md
                 - name: 创建应用
-                  href: tutorial-vscode-azure-cli-node-02.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-02.md
                 - name: 创建应用服务
-                  href: tutorial-vscode-azure-cli-node-03.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md
                 - name: 部署应用
-                  href: tutorial-vscode-azure-cli-node-04.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md
                 - name: 流式传输日志
-                  href: tutorial-vscode-azure-cli-node-05.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md
                 - name: 进行更改并重新部署
-                  href: tutorial-vscode-azure-cli-node-06.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-06.md
                 - name: 清理资源
-                  href: tutorial-vscode-azure-cli-node-07.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md
             - name: '服务器:使用 Azure CLI 部署 Deno'
               href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
             - name: 容器：使用 VS Code 部署 Express.js
               items:
                 - name: 简介和先决条件
-                  href: tutorial-vscode-docker-node-01.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
                 - name: 使用容器注册表
-                  href: tutorial-vscode-docker-node-02.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md
                 - name: 创建本地 Node.js 应用
-                  href: tutorial-vscode-docker-node-03.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-03.md
                 - name: 创建应用映像
-                  href: tutorial-vscode-docker-node-04.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md
                 - name: 部署应用映像
-                  href: tutorial-vscode-docker-node-05.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md
                 - name: 进行更改并重新部署
-                  href: tutorial-vscode-docker-node-06.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-06.md
                 - name: 流式传输日志
-                  href: tutorial-vscode-docker-node-07.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-07.md
                 - name: 清理资源
-                  href: tutorial-vscode-docker-node-08.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-08.md
             - name: VM：使用日志记录来部署容器
               items:
                 - name: 1. 简介和先决条件
@@ -143,7 +145,7 @@
           href: how-to/create-static-site.md
         - name: 日志记录和指标
           href: how-to/node-sdk-logging.md
-    - name: Learn
+    - name: 了解
       href: learn-azure-javascript.md
     - name: 示例
       href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
