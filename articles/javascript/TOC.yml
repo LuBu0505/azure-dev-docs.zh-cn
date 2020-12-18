@@ -5,6 +5,8 @@
       href: whats-new-docs.md
     - name: 开始在 Azure 上使用 JavaScript
       items:
+        - name: 什么是面向 JavaScript 开发人员的 Azure？
+          href: core/what-is-azure-for-javascript-development.md
         - name: 安装 Node.js
           href: core/install-nodejs-develop-azure-sdk-project.md
         - name: 面向 JavaScript 开发人员的 Azure 工具
@@ -119,8 +121,10 @@
                   href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
                 - name: 7. 清理资源
                   href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
-    - name: Learn
-      href: learn-azure-javascript.md
+    - name: 概念
+      items:
+        - name: 标识、身份验证和用户
+          href: concepts/identity-authentication-users.md
     - name: 操作指南
       items:
         - name: 配置应用程序
@@ -139,6 +143,8 @@
           href: how-to/create-static-site.md
         - name: 日志记录和指标
           href: how-to/node-sdk-logging.md
+    - name: Learn
+      href: learn-azure-javascript.md
     - name: 示例
       href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
     - name: npm 包
