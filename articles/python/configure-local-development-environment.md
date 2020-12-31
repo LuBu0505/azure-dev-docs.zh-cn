@@ -106,7 +106,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
     set AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
     set AZURE_TENANT_ID=00112233-7777-8888-9999-aabbccddeeff
     set AZURE_CLIENT_ID=12345678-1111-2222-3333-1234567890ab
-    set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
+    set AZURE_CLIENT_SECRET=w7oua1YUhsV1OO4.QGn-kT5IJqAmV7-1_o #这里的值不应该是一串GUID，而是AAD中生成的Secrets的Value值，而非ID，不然容易引起误解 
     ```
 
     # <a name="bash"></a>[bash](#tab/bash)
@@ -115,7 +115,7 @@ Azure CLI 通常会维护多个会话的登录，但最好在每次打开新的�
     AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
     AZURE_TENANT_ID="00112233-7777-8888-9999-aabbccddeeff"
     AZURE_CLIENT_ID="12345678-1111-2222-3333-1234567890ab"
-    AZURE_CLIENT_SECRET="abcdef00-4444-5555-6666-1234567890ab"
+    AZURE_CLIENT_SECRET="w7oua1YUhsV1OO4.QGn-kT5IJqAmV7-1_o" #这里的值不应该是一串GUID，而是AAD中生成的Secrets的Value值，而非ID，不然容易引起误解 
     ```
 
     ---
